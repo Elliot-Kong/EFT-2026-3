@@ -1,0 +1,278 @@
+\section{S-矩阵的对称性}
+\subsection{幺正性}
+入态和出态分别构成一套正交完备基矢，现在将入态用出态展开，同时将出态用入态展开：
+\[\begin{aligned}
+                \ket{\alpha;+}
+                &=
+                \int d\beta \, \ket{\beta;-}
+                \braket{\beta;-|\alpha;+}
+                =
+                \int d\beta \, \ket{\beta;-} \, S_{\beta\alpha},
+                \\
+                \ket{\alpha;-}
+                &=
+                \int d\beta \, \ket{\beta;+}
+                \braket{\beta;+|\alpha;-}
+                =
+                \int d\beta \, \ket{\beta;+} \, S^{*}_{\alpha\beta}
+                =
+                \int d\beta \, \ket{\beta;+} \, (S^\dagger)_{\beta\alpha}
+\end{aligned}\]
+由此可以看出，$S$ 矩阵是将入态到出态基矢的变换矩阵，其厄米共轭对应逆变换，因此若两组基矢都正交完备，则 $S$矩阵 必须满足幺正条件。
+    验证如下：
+    \begin{equation}
+        \begin{aligned}
+        \int d\beta \, (S^\dagger)_{\gamma\beta} S_{\beta\alpha}
+        &=
+        \int d\beta \, S^{*}_{\beta\gamma} S_{\beta\alpha}
+        \\
+        &=
+        \int d\beta \,
+        \braket{\gamma;+|\beta;-}
+        \braket{\beta;-|\alpha;+}
+        \\
+        &=
+        \braket{\gamma;+|\alpha;+}
+        =
+        \delta(\alpha-\gamma)
+\end{aligned}
+    \end{equation}
+    同样的对于$S$算符，也有
+    \begin{equation}
+        \mathbf{1}=S^\dagger S
+    \end{equation}
+
+
+\subsection{Lorentz对称性}
+\begin{center}
+    \color{blue}\textbf{GOAL：最重要的结果是$S$矩阵是$Lorentz$不变的,\\这个结果会对场论带来一些约束
+    $\to\left\{\begin{aligned}
+    &\text{Boost 生成元的相互作用项 } W \text{ 矩阵元平滑} \\
+    &\text{微观因果性}
+\end{aligned}\right.$} 
+\end{center}
+ \color{blue}这也引出一个问题：是幺正性更重要还是$Lorentz$对称性更重要，这个问题也等价于是利$S$矩阵建立$QFT$还是利用路径积分建立$QFT$.\\利用$S$矩阵建立$qft$能得到显式的幺正性，可是在得到$Lorentz$对称性需要花费更多的力气去证明；同理利用路径积分建立$qft$能得到显式的$Lorentz$对称性，可是对于幺正性，据$S.Weinberg
+    $所讨论，唯一的办法是回到$S$矩阵.
+\normalcolor\vspace{0.5cm}
+\noindent
+进入主题：自由态$\ket{\alpha}$在\text{Lorentz}变换$U_0(\Lambda,a)$作用下为：
+\[\begin{aligned}
+             U_0(\Lambda,a)\Ket{\alpha}=
+            U_0(\Lambda,a)&\ket{p_1,\sigma_1,n_1;\,p_2,\sigma_2,n_2;\cdots}
+            \\=&
+            e^{-i a_\mu (p_1^\mu+p_2^\mu+\cdots)} 
+            \left[
+            \prod_i
+            \left(
+            \frac{(\Lambda p_i)^0}{p_i^0}
+            \right)^{1/2}
+            \sum_{\sigma_i'}
+            D^{(j_i)}_{\sigma_i'\sigma_i}
+            \bigl(W(\Lambda,p_i)\bigr)
+            \right]
+            \ket{\Lambda p_1,\sigma_1',n_1;\,\Lambda p_2,\sigma_2',n_2;\cdots}
+ \end{aligned}\]
+若存在\text{Lorentz}变换$U(\Lambda,a)$作用在“出、入”态，且这些态与自由态有相同的Poincar\'e变换形式,这便说明$S$矩阵是$Lorentz$不变的：\begin{equation}
+    S_{\beta\alpha}=\braket{\beta;-|\alpha;+}=\braket{\beta;-|U^\dagger(\Lambda,a)U(\Lambda,a)|\alpha;+}
+\end{equation}
+\begin{importantformula}
+    可以等价的写为
+                \footnote{式中左边是独
+                    立于$a^\mu$的，所以必须等于右边，并且除非四动量守恒，否则𝑆-矩阵为零;则对于任意的$\Lambda$和$a$，我们都有
+                    \[
+                    \left( p_1' + p_2' + \cdots - p_1' - p_2' - \cdots \right)=0\longrightarrow\sum p'_i=\sum p_i\]这便是$4-$动量守恒}
+                \footnote{由于S-Matrix是$4-$动量守恒，(\refeq{3.18})中的对于能量的$\delta$函数可以扩张,将(\refeq{3.18})改写为表示粒子间实际相互作用的S-Matrix部分：
+                    \begin{equation}
+                        S_{\beta\alpha}-\delta(\beta-\alpha)=- 2\pi i \, M_{\beta\alpha} \delta(p_{\alpha}-p_{\beta})
+                    \end{equation}在下一章看到，振幅$M_{\beta\alpha}$包含深一层的$\delta$-函数因子}
+            :
+                                \begin{equation}
+                                    \begin{aligned}\label{3.20}
+                                        &S_{p_1',\sigma_1',n_1';p_2',\sigma_2',n_2';\cdots;p_1,\sigma_1,n_1;p_2,\sigma_2,n_2;\cdots} \\
+                                        &= \exp\!\left[ i a_\mu \Lambda^\mu{}_\nu \left( p_1' + p_2' + \cdots - p_1' - p_2' - \cdots \right)^\nu \right] \\
+                                        &\quad\times \sqrt{ \frac{ (\Lambda p_1)^0 (\Lambda p_2)^0 \cdots (\Lambda p_1')^0 (\Lambda p_2')^0 \cdots }{ p_1^0 p_2^0 \cdots p_1'^0 p_2'^0 \cdots } } \\
+                                        &\quad\times \sum_{\bar{\sigma}_1 \bar{\sigma}_2 \cdots} D^{(j_1)}_{\bar{\sigma}_1 \sigma_1} \bigl( W(\Lambda, p_1) \bigr) \, D^{(j_2)}_{\bar{\sigma}_2 \sigma_2} \bigl( W(\Lambda, p_2) \bigr) \cdots \\
+                                        &\quad\times \sum_{\bar{\sigma}_1 \bar{\sigma}_2 \cdots} D^{(j_1)*}_{\sigma_1 \bar{\sigma}'_1} \bigl( W(\Lambda, p_1') \bigr) \, D^{(j_2)*}_{\sigma_2 \bar{\sigma}'_2} \bigl( W(\Lambda, p_2') \bigr) \cdots \\
+                                        &\quad\times S_{\Lambda p'_1,\bar{\sigma}'_1,n'_1;\Lambda p'_2,\bar{\sigma}'_2,n'_2;\cdots;\Lambda p_1,\bar{\sigma}_1,n_1;\Lambda p_2,\bar{\sigma}_2,n_2;\cdots} 
+                                    \end{aligned}
+                                \end{equation}
+\end{importantformula}
+\noindent
+\color{blue}\text{值得注意的是:并不是所有的场论都是这样}\normalcolor,因为“出、入”态$\ket{\alpha;\pm}$并不是单粒子态直积得到；
+这些态在$U(\Lambda,a)$作用下也仅仅是形式上与自由态相同;利用绝热算符,“出、入”态在$U(\Lambda,a)$作用下可以写为：
+\begin{equation}
+    U(\Lambda,a)\ket{\alpha;\pm}=U(\Lambda,a)\Omega(\pm\infty)\ket{\alpha}=\Omega(\pm\infty)U_0(\Lambda,a)\ket{\alpha}
+\end{equation}
+上式等价的写\footnote{$H_0$$\boldsymbol P_0$$\boldsymbol J_0$$\boldsymbol K_0$这些是自由态对应的\text{Poincar\'e}群里的生成元；$H$$\boldsymbol P$$\boldsymbol J$$\boldsymbol K$是这些是“出、入”态对应的\text{Poincar\'e}群里的生成元,根据群的结构，这些生成元满足他同样的李代数,参考粒子态\S2\text{Poincar\'e}代数}为：
+\begin{equation}
+\begin{array}{c c}
+U(\Lambda,a)\,\Omega(\pm) 
+= \Omega(\pm)\,U_0(\Lambda,a)\Longrightarrow 
+&
+\begin{aligned}
+H\,\Omega(\pm) &= \Omega(\pm) H_0 \\
+\boldsymbol P\,\Omega(\pm) &= \Omega(\pm) \boldsymbol P_0 \\
+\boldsymbol J\,\Omega(\pm) &= \Omega(\pm) \boldsymbol J_0 \\
+\boldsymbol K\,\Omega(\pm) &= \Omega(\pm) \boldsymbol K_0
+\end{aligned}
+\end{array}
+\end{equation}
+若一个场论满足上四式，则说明这个场论是$Lorentz$不变的。
+\begin{center}
+    \vspace{0.5cm}
+        \text{\color{red}\Large ***}\\
+    \vspace{0.5cm}
+\end{center}
+仔细讨论一下这里；\color{blue}\text{在已知几乎所以的场论}\footnote{在$S.Weinberg$书中提到：例外是：拓扑扭结场的理论}\normalcolor,相互作用都是通过映入$V$来实现的，这并不对$\boldsymbol{P}$和$\boldsymbol{J}$\footnote{这里暗含了约束：
+                                $
+                                \bigl[ V, \boldsymbol{P}_0 \bigr]
+                                =
+                                \bigl[ V, \boldsymbol{J}_0 \bigr]
+                                =
+                                0
+                                $}
+产生影响，
+\[
+            H = H_0 + V,
+            \qquad
+            \boldsymbol{P} = \boldsymbol{P}_0,
+            \qquad
+            \boldsymbol{J} = \boldsymbol{J}_0
+\]这告诉我们(3,28)中$\boldsymbol{P}$和$\boldsymbol{J}$变换关系的已满足；至于$H$，规定了$H_0$和$H$有相同的能谱，所以自然满足。对于$\boldsymbol{K}$则很不一样, 不能让$\boldsymbol{K}=\boldsymbol{K}_0$,这会导致$H=H_0$,因此，当我们向$H_0$上增加一个相互作用$V$，必须也要在$\boldsymbol{K}_0$上增加一个修正$\boldsymbol{W}$:
+\begin{equation}
+    \boldsymbol{K}=\boldsymbol{K}_0+\boldsymbol{W}
+\end{equation}
+
+考察$\boldsymbol{K}_0$和算符$U(t,t_0)$的李代数
+
+\[
+    \begin{aligned}
+        [\boldsymbol{K}_0,U(t,t_0)]&=[\boldsymbol{K}_0,e^{iH_0t}e^{-iH(t-t_0)}e^{-iH_0t_0}]\\
+        &=
+        e^{iH_0t}[\boldsymbol{K}_0,e^{-iH(t-t_0)}e^{-iH_0t_0}]+[\boldsymbol{K}_0,e^{iH_0t}e]^{-iH(t-t_0)}e^{-iH_0t_0}\\
+        &=
+        e^{iH_0t}[\boldsymbol{K}_0,e^{-iH(t-t_0)}e^{-iH_0t_0}]+t\boldsymbol{P}_0e^{iH_0t}e^{-iH(t-t_0)}e^{-iH_0t_0}\\
+        &=
+        e^{iH_0t}[\boldsymbol{K}_0,e^{-iH(t-t_0)}]e^{-iH_0t_0}+e^{iH_0t}e^{-iH(t-t_0)}[\boldsymbol{K}_0,e^{-iH_0t_0}]+t\boldsymbol{P}_0U(t,t_0)\\
+        &=
+        e^{iH_0t}[\boldsymbol{K}-\boldsymbol{W},e^{-iH(t-t_0)}]e^{-iH_0t_0}+e^{iH_0t}e^{-iH(t-t_0)}(-t_0\boldsymbol{P}_0)e^{-iH_0t_0}+t\boldsymbol{P}_0U(t,t_0)\\
+        &=
+        e^{iH_0t}[\boldsymbol{K},e^{-iH(t-t_0)}]e^{-iH_0t_0}+e^{iH_0t}[-\boldsymbol{W},e^{-iH(t-t_0)}]e^{-iH_0t_0}+(t-t_0)\boldsymbol{P}_0U(t,t_0)\\
+        &=
+        e^{iH_0t}(-(t-t_0)\boldsymbol{P}_0)e^{-iH(t-t_0)}e^{-iH_0t_0}+e^{iH_0t}[-\boldsymbol{W},e^{-iH(t-t_0)}]e^{-iH_0t_0}+(t-t_0)\boldsymbol{P}_0U(t,t_0)\\
+        &=
+        e^{iH_0t}[-\boldsymbol{W},e^{-iH(t-t_0)}]e^{-iH_0t_0}\\
+        &=
+        e^{iH_0t}\left(-\boldsymbol{W}e^{-iH(t-t_0)}+e^{-iH(t-t_0)}\boldsymbol{W}\right)e^{-iH_0t_0}\\
+        &=
+        e^{iH_0t}\left(-\boldsymbol{W}e^{-iH(t-t_0)}\right)e^{-iH_0t_0}-e^{iH_0t}\left(e^{-iH(t-t_0)}\boldsymbol{W}\right)e^{-iH_0t_0}\\
+        &=
+        e^{iH_0t}\left(-\boldsymbol{W}\underbrace{e^{-iH_0t}e^{iH_0t}}_{\mathbf{1}} e^{-iH(t-t_0)}\right)e^{-iH_0t_0}+e^{iH_0t}\left(e^{-iH(t-t_0)}\underbrace{e^{-iH_0t_0}e^{iH_0t_0}}_{\mathbf{1}}\boldsymbol{W}\right)e^{-iH_0t_0}\\
+        &=
+        -\underbrace{e^{iH_0t}\boldsymbol{W}e^{-iH_0t}}_{\boldsymbol{W(t)}}U(t,t_0)+U(t,t_0)\underbrace{e^{iH_0t_0}\boldsymbol{W}e^{-iH_0t_0}}_{\boldsymbol{W(t_0)}}\\
+    \end{aligned}
+\]
+如果满足$\boldsymbol{W}$满足在$H_0$本征态之间的矩阵元是能量光滑函数这一要求，那么当$t\rightarrow\pm\infty$时\footnote{这里的$t$指$t,t_0$},$\boldsymbol{W(t)}$在$H_0$本征态之间的矩阵元为零\footnote{这里指的是相互作用必须在时间 $t\to\mp\infty $时平滑地关闭（Adiabatic switching），或者说由于波包扩散，粒子在无穷远处不再重叠，因此相互作用项 $W(t) $在初末态矩阵元为零。}，那么有：
+\begin{equation}
+    \begin{aligned}
+        [\boldsymbol{K}_0,U(0,\pm)]&=-\boldsymbol{W}U(0,\pm)+U(0,\pm)\underbrace{e^{iH_0t_0}\boldsymbol{W}e^{-iH_0t_0}}_{0}\\
+        \longrightarrow&\boldsymbol{K}_0U(0,\pm)-U(0,\pm)\boldsymbol{K}_0=-\boldsymbol{W}U(0,\pm)\\
+        \overset{\Omega^\dagger(t)\Omega(t_0)=U(t,t_0)}{\longrightarrow}&\boldsymbol{K}_0\Omega(\pm)-\Omega(\pm)\boldsymbol{K}_0=-\boldsymbol{W}\Omega(\pm)\\
+        \longrightarrow&\boldsymbol{K}_0\Omega(\pm)+\boldsymbol{W}\Omega(\pm)=\Omega(\pm)\boldsymbol{K}_0\\
+        \longrightarrow&\boldsymbol{K}\Omega(\pm)=\Omega(\pm)\boldsymbol{K}_0\\
+    \end{aligned}
+\end{equation}
+成功得到第四式，这正是所要证明的。当$t\rightarrow\pm\infty$时$W(t)$为零，这提供了$S$矩阵Lorentz不变性的一个充分条件.
+
+\begin{comment}
+    利用李代数$[\boldsymbol{K}_0, H_0] = -i \boldsymbol{P}_0$和$[\boldsymbol{K}, H] = -i \boldsymbol{P}= -i \boldsymbol{P}_0$，后者变为：
+\begin{equation}
+    \begin{aligned}
+        &[\boldsymbol{K}, H]=-i \boldsymbol{P}_0\\
+        &\rightarrow[\boldsymbol{K}_0+\boldsymbol{W}, H_0+V]=-i \boldsymbol{P}_0\\
+        &\rightarrow -i \boldsymbol{P}_0+[\boldsymbol{K}_0,V]-[H,W]=-i \boldsymbol{P}_0\\
+        &\rightarrow [\boldsymbol{K}_0,V]-[H,W]=0
+    \end{aligned}
+\end{equation}
+这正是满足最后一式的约束。但这个条件是无用的
+\footnote{说明:方程 $[K_0,V]=-[W,H]$ 总可以通过适当定义 $W$ 来满足，
+取 $H$ 的本征态 $\{|\Psi_\alpha\rangle\}$：$H|\Psi_\alpha\rangle = E_\alpha |\Psi_\alpha\rangle $
+            在该完备基底中取矩阵元：
+                    \[
+                    \langle \Psi_\beta | [K_0,V] | \Psi_\alpha \rangle
+                    =
+                    -
+                    \langle \Psi_\beta | [W,H] | \Psi_\alpha \rangle .
+                    \]
+            展开对易子
+                $[W,H]=WH-HW$
+            并利用本征方程得
+                        $\langle \Psi_\beta | W H | \Psi_\alpha \rangle
+                        =
+                        E_\alpha
+                        \langle \Psi_\beta | W | \Psi_\alpha \rangle $
+            因此
+                    $\langle \Psi_\beta | [W,H] | \Psi_\alpha \rangle
+                    =
+                    (E_\alpha - E_\beta)
+                    \langle \Psi_\beta | W | \Psi_\alpha \rangle $
+            代回原式得到\[
+                        \langle \Psi_\beta | [K_0,V] | \Psi_\alpha \rangle
+                        =
+                        -
+                        (E_\alpha - E_\beta)
+                        \langle \Psi_\beta | W | \Psi_\alpha \rangle ,
+                        \]
+            从而在 $E_\beta \neq E_\alpha$ 时
+                    \[
+                    \langle \Psi_\beta | W | \Psi_\alpha \rangle
+                    =
+                    \frac{
+                    \langle \Psi_\beta | [K_0,V] | \Psi_\alpha \rangle
+                    }{
+                    E_\beta - E_\alpha
+                    }.
+                    \]}
+,\color{blue}还应该满足：$W$的矩阵元应该是能量的光滑函数，并且特定的没有形式为$\frac{1}{E_\alpha-E_\beta}$的奇点这一要
+求\normalcolor;现在证明满足上述条件，确实可以得到满足最后一式的$Lorentz$不变的条件$[\boldsymbol{K}_0,S]=0$。
+\end{comment}
+
+
+
+\begin{center}
+    \vspace{0.5cm}
+   \color{black}\rule{3cm}{1pt}
+   \vspace{0.5cm}
+\end{center}
+含有编时乘积的$S$矩阵为零
+\begin{equation}
+            S_{\beta\alpha}=\braket{\beta|S|\alpha}=\braket{\beta|Te^{\left(-i\int_{-\infty}^{\infty} dtV(t)\right)}|\alpha}
+\end{equation}
+根据幺正性,
+        $\braket{\beta|S |\alpha}=\braket{\beta|U_0^\dagger(\Lambda,a)SU_0(\Lambda,a)|\alpha}$
+ 这很容易得到$S$-算符也是显然$Lorentz$不变的; 
+\begin{equation}
+    \text{幺正性}\implies U_0^\dagger(\Lambda,a)SU_0(\Lambda,a)=S\to  [U_0(\Lambda,a),S]=0   \implies\text{$Lorentz$对称性}  
+\end{equation}
+自然的改写$V(t)$为三维空间的积分
+\begin{equation}
+    V(t)=\int d^3x \mathscr{H}(\boldsymbol{x},t)
+\end{equation}\begin{itemize}
+    \item $S$算符的$Lorentz$不变性，$\mathscr{H}(\boldsymbol{x},t)$是标量：
+    \begin{equation}
+        U_0(\Lambda,a)\mathscr{H}(x)U_0^{-1}(\Lambda,a)=\mathscr{H}(\Lambda x+a)
+    \end{equation}
+\end{itemize}
+那么$S$可以写为四维时空的积分
+\begin{equation}
+    S_{\beta\alpha}=\braket{\beta|Te^{\left(-i\int d^4x\mathscr{H}(x)\right)}|\alpha}
+\end{equation}
+式子中除了编时算符，其他都是显然$Lorentz$不变的，现在来证明这一点,同时也能得到非平庸的结果(\textbf{微观因果性})
+\begin{center}
+    \vspace{0.5cm}
+        \text{\color{red}\Large ***}\\
+    \vspace{0.5cm}
+\end{center}
+
+
+\subsection{内部对称性}

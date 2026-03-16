@@ -1,0 +1,231 @@
+\section{量子理论基础}
+\begin{center}
+\Large\textbf{量子理论：
+$\left\{
+    \begin{aligned}
+        &\left.
+            \begin{aligned}
+                &\text{态空间} \\
+                &\text{幺正演化}
+        \end{aligned}\right\}\text{线性结构}\\
+        &\text{可观测量谱结构}
+    \end{aligned}
+\right.$
+}
+
+\end{center}
+
+\subsection{状态,线性叠加}
+\begin{tcolorbox}[colback=white!5,colframe=black!55,title=线性的量子态]
+    系统的状态 $\psi$, 可以用 Hilbert 空间的矢量 $\ket{\psi}$ 来描述。
+    对于 $\forall c \neq 0$, 且 $c\in \mathbb{C}$, $c\ket{\psi}$
+    也是描述系统的同一个状态\footnote{也描述为: 量子态是希尔伯特空间中
+    的一条射线. 同理差一个相位因子 $e^{i\varphi}, \varphi\in [0,2\pi)$ 描述的态也是相同的}. 
+    且态可以做线性展开或者线性叠加：
+    \begin{equation}
+        \ket{\psi}=\sum_{i}\,c_i \ket{i}=\int d\alpha\,\psi(\alpha)\ket{\alpha}
+    \end{equation}
+    其中 $c_i=\braket{i|\psi}$ 是展开系数, $\psi(\alpha)=\braket{\alpha|\psi}$ 是展开的函数.
+    
+\par\vspace{2ex}
+\hrule
+\vspace{2ex}
+    
+    当系统涉及不同空间（如系统1和系统2）时，需区分\textbf{叠加}与\textbf{直积}：
+    \begin{enumerate}
+        \item \textbf{直积}\footnote{数学上，张量积 $\otimes: \mathbb{H}_1 \times \mathbb{H}_2 \to \mathbb{H}_1 \otimes \mathbb{H}_2$ 定义为\textbf{双线性映射}。表述为：
+        $(\lambda\ket{\phi_1} + \ket{\phi_2}) \otimes \ket{\chi} = \lambda(\ket{\phi_1}\otimes\ket{\chi}) + (\ket{\phi_2}\otimes\ket{\chi})$。}：
+        描述独立子系统的结合（\textbf{乘法运算}）。
+        若系统1处于 $\ket{\phi}_1$，系统2处于 $\ket{\chi}_2$，则复合态为：
+        \begin{equation}
+            \ket{\Psi_{12}} = \ket{\phi}_1 \otimes \ket{\chi}_2 
+        \end{equation}
+        
+        \item \textbf{复合系统的叠加}：复合系统的\textbf{一般态}是直积态的线性叠加：
+        \begin{equation}
+            \ket{\Psi_{\text{general}}} = \sum_{i,j} c_{ij} (\ket{i}_1 \otimes \ket{j}_2) \neq \ket{\psi}_1 \otimes \ket{\phi}_2
+        \end{equation}
+        当系数不能分解为$c_{ij}=a_i b_j$时，该态不能写成单一张量积形式，称为\textbf{纠缠态}
+    \end{enumerate}
+    
+    \textit{\small 辨析：直积 ($\otimes$) 是双线性映射，用于扩充空间维度；叠加 ($+$) 是线性组合，用于描述同一空间内的态干涉。}
+\end{tcolorbox}
+
+
+约定：\begin{enumerate}
+    \item 归一化：$\braket{i｜j}=\delta_{ij}$ 
+    \,$\braket{\beta|\alpha}=\delta(\beta-\alpha)$
+    \item 完备关系：$\sum_{i}\ket{\psi_i}\bra{\psi_i}=\mathbf{1}$ \,$\int d\alpha\,\ket{\alpha}\bra{\alpha}=\mathbf{1}$
+\end{enumerate}
+\newpage
+
+\subsection{状态,幺正演化}
+量子理论的线性,不仅适用于运动学,也是符合动力学的;系统的动力学演化可以用\text{Hilbert}空间的算符描述.
+\begin{tcolorbox}[colback=white!5,colframe=black!55,title=态的幺正演化]
+   对于封闭系统,我们假设态的演化是幺正的;记$t$时刻状态时$\ket{\psi(t)}$,则时间演化是：
+   \begin{equation}
+    \ket{\psi(t)}=U(t,0)\ket{\psi(0)},U^\dagger=U^{-1}
+   \end{equation}
+    \par\vspace{2ex}
+    \hrule
+    \vspace{2ex}
+   \textbf{另一形式}：取态做一时间平移\footnote{这里，并没有引入空间的概念，仅仅是时间}：
+   \begin{equation}
+    \begin{aligned}
+        \ket{\psi(t+dt)}=U(t+dt,0)\ket{\psi(0)}\quad
+        \to \quad0&=\ket{\psi(t+dt)}-U(t+dt,0)\ket{\psi(0)}
+        \\&=
+        \ket{\psi(t+dt)}-\left(U(t,0)+\frac{dU(t,0)}{dt}dt \right)\ket{\psi(0)}
+        \\&=
+        \ket{\psi(t+dt)}-\ket{\psi(t)}-\frac{dU(t,0)}{dt}U^{-1}(t,0)\ket{\psi(t)}dt
+        \\&=
+        d\ket{\psi(t)}-\frac{dU(t,0)}{dt}U^{-1}(t,0)\ket{\psi(t)}dt
+        \\&=
+        \frac{d}{dt}\ket{\psi(t)}-\frac{dU(t,0)}{dt}U^{-1}(t,0)\ket{\psi(t)}
+        \\&=
+        i\hbar\frac{d}{dt}\ket{\psi(t)}-
+        \underbrace{i\hbar\frac{dU(t,0)}{dt}U^{-1}(t,0)}_{H\footnote{$H$是系统的哈密顿量，作用到对应的态矢量上，便是系统的能量；也充分的说明了能量与时间的密切关系。}}\ket{\psi(t)}
+        \\&=\left(i\hbar\frac{d}{dt}-H\right)\ket{\psi(t)}\footnote{这便是$Schrodinger$方程，方程中时间$t$具有独特的地位，所以方程中洛伦兹对称性不明显.
+但“不明显对称”不等于“不对称”$Schrodinger$方程本身不需要被“相对论化；$Schrodinger$方程在我理解看来，是：幺正演化(态)的另一种形式.}
+    \end{aligned}
+   \end{equation}
+\end{tcolorbox}
+
+等价表述：\begin{enumerate}
+    \item 保模长：$\braket{\psi(t)|\psi(t)}=\braket{\psi(0)|\psi(0)}$或许这种等价表述更加直观,但在讨论测量问题的时候,先用到幺正演化.
+\end{enumerate}
+\subsection{测量问题}
+宏观系统中,假定存在“理想的实验仪器”
+$\left[
+    \begin{aligned}
+        &\text{1.无限准确的精度} \\
+        &\text{2.对系统的干扰无限小}
+    \end{aligned}
+\right]$
+于是可以通过“理想的实验仪器”测得系统的"真实状态",也就是说测量只是技术手段，而不是一个宏观物理的一部分.
+量子理论在测量问题中有很大区别,这里要讨论仪器的问题,这是因为:
+\begin{enumerate}
+    \item \text{外在影响:测不准.}测量扰动源于系统-仪器耦合哈密顿量及非对易结构,对系统的一般状态来说,是无法兼容“精度高”“和干扰小”的.
+    \item \text{内在原因:不确定.}线性叠加$\ket{\psi}=\ket{1}+\ket{2}+\ldots$,如何确定一个态,这是不可能的.
+\end{enumerate}
+那么,该如何描述(或者说制备)量子理论中实验仪器呢？考虑如下问题：
+\begin{enumerate}
+    \item 用宏观系统还是量子系统来描述理想仪器?
+    \item 如何用量子系统描述理想仪器？
+    \item 针对完备正交基$\left(\begin{aligned}
+        &\ket{i}\\&\ket{\alpha}
+    \end{aligned}\right)$设计的理想仪器，对一般量子态 $\ket{\Psi}=\sum_{i}\,c_i \ket{i}=\int d\alpha\,\psi(\alpha)\ket{\alpha}$进行测量，会
+出现什么结果？
+\end{enumerate}
+\color{blue} 上述问题涉及量子测量的诠释问题，目前存在多种解释方案。本文不涉及相关哲学讨论，
+而采用标准操作主义立场,这里就采用哥本哈根诠释;而不引入额外本体论解释.
+
+\normalcolor
+由以上考虑,要对量子理论中的概率做出基本假设,不过首先应该提出“仪器”的性质；
+\begin{tcolorbox}[colback=white!5,colframe=black!55,title=谱分解]
+    一种“可能存在的理想仪器”,对应一组完备正交基$\left(\begin{aligned}
+        &\ket{i}\\&\ket{\alpha}
+    \end{aligned}\right)$.
+    测量后,仪器示数为实数
+    $\left(\begin{aligned}
+        &\lambda_i\\&\lambda_\alpha
+    \end{aligned}\right)$
+    则测量后,系统处于$\left(\begin{aligned}
+        &\ket{i}\\&\ket{\alpha}
+    \end{aligned}\right)$态,
+    也就是说:$\left(\begin{aligned}
+        &\{\ket{i},\lambda_i\}\\ &\{\ket{\alpha},\lambda_\alpha\}
+    \end{aligned}\right)$可以理解为厄米算符\footnote{这里要论述一下self-adjoint operator以及
+    可观测量是否和厄米算符等价的问题,实际上应该是observable=self-adjoint operator with spectral measure}
+    \begin{equation}
+            \mathscr{O}
+            =\sum_{i} \lambda_i\ket{i}\bra{i}\
+            =\int d\alpha\,\lambda_\alpha\ket{\alpha}\bra{\alpha}
+    \end{equation}
+    的本征态,本征值的集合.而$\mathscr{O}$便是这个理想仪器的可观测量.
+\end{tcolorbox}
+
+几点说明：\begin{enumerate}
+    \item  原则上说：每一种正交基的选择,都代表一种理想仪器。
+    \item  理想仪器上的每个$\left(\begin{aligned}
+        &\ket{i}\\&\ket{\alpha}
+    \end{aligned}\right)$导致的仪器的示数$\left(\begin{aligned}
+        &\lambda_i\\&\lambda_\alpha
+    \end{aligned}\right)$不相等,这样才能利用示数判断测量后的系统状态。
+    \item  有些仪器尽管足够精确,有些仪器尽管精确，但提供的信息不够多. 对这样的仪器，有些示数 $\left(\begin{aligned}
+        &\lambda_i\\&\lambda_\alpha
+    \end{aligned}\right)$取值可以相等\footnote{我想,Quantum Mechanics中氢原子的模型足以体现2、3这两点,所以需要一个大的CSCO集来逐步确定氢原子的外电子的态}
+    \item 测量后,系统处于$\left(\begin{aligned}
+        &\ket{i}\\&\ket{\alpha}
+    \end{aligned}\right)$态,定义投影算符来刻画这一过程
+    $$\begin{aligned}
+        P_i=&\ket{i}\bra{i}
+        \\dP_\alpha=&d\alpha\,\ket{\alpha}\bra{\alpha}\text{这是投影到区间$[\alpha,\alpha+d\alpha]$的算符）。}
+    \end{aligned}$$
+    \item \color{blue}这里不对波函数坍缩的本体论问题作进一步讨论，而采用操作主义立场。\normalcolor
+\end{enumerate}
+
+得到了仪器(或者说算符)的相关性质,接下来就对概率问题做出假设：
+\begin{tcolorbox}[colback=white!5,colframe=black!55,title=概率]
+    若$\ket{\psi}$在正交完备基$\left(\begin{aligned}
+        &\ket{i}\\&\ket{\alpha}
+    \end{aligned}\right)$展开是$\left(\begin{aligned}
+        &\sum_{i}\,c_i \ket{i}\\&\int d\alpha\,\psi(\alpha)\ket{\alpha}
+    \end{aligned}\right)$,则对于$\ket{\psi}$测量\, 可观测量$\mathscr{O}=
+            \left\{\begin{aligned}
+            &\sum_{i} \lambda_i\ket{i}\bra{i}\\
+            &\int d\alpha\,\lambda_\alpha\ket{\alpha}\bra{\alpha}
+            \end{aligned}\right.$后得到$\left(\begin{aligned}
+        &\{\ket{i},\lambda_i\}\\ &\{\ket{\alpha},\lambda_\alpha\}
+    \end{aligned}\right)$的$\left(
+        \begin{aligned}
+        &\text{概率是}\,p_i = |c_i|^2.\\
+        &\text{概率密度是}\,\rho(\alpha+d\alpha)=|\psi(\alpha)|^2
+        \end{aligned}
+    \right)$
+\end{tcolorbox}
+几个推论;\begin{enumerate}
+    \item \textbf{期望值}:若可以重复制备相同态 $\ket{\psi}$，
+        对可观测量 $\mathscr{O}$ 做多次测量，结果的统计平均为
+        \begin{equation}
+            \braket{\mathscr{O}}=\braket{\psi|\mathscr{O}|\psi}=\left\{\begin{aligned}
+            &\sum_i p_i \lambda_i\\
+            &\int d\alpha\, \lambda_\alpha\, \rho(\alpha+d\alpha)
+        \end{aligned}\right.
+        \end{equation}
+    \item \textbf{概率归一化}
+    
+    物理体系处于所有可能状态的概率之和必然为 1。对于归一化的态矢量 $|\psi\rangle$，这意味着标量积为 1：
+    \begin{equation}
+        \langle \psi | \psi \rangle = 1\overset{ 根据谱的类型，具体展开形式为：}{=}      \begin{cases}
+            \displaystyle \sum_i |c_i|^2 = 1 &  \\
+            \displaystyle \int d\alpha \, |\psi(\alpha)|^2 = 1 & 
+        \end{cases}
+    \end{equation}
+
+    % --- 性质 3: 不确定性原理 ---
+    \item \textbf{不确定性原理}
+    
+    对于任意可观测量（厄米算符）$\mathscr{O}$，其在态 $|\psi\rangle$ 下的测量结果通常存在涨落。我们定义其\textbf{标准差}（Standard Deviation，即不确定度）$\Delta \mathscr{O}_1$ 为：
+    \begin{equation}
+        \Delta \mathscr{O}_1 = \sqrt{\langle \psi | (\mathscr{O}_1 - \langle \mathscr{O}_1 \rangle)^2 | \psi \rangle} = \sqrt{\langle \mathscr{O}_1^2 \rangle - \langle \mathscr{O}_1 \rangle^2}
+    \end{equation}
+    其中 $\langle \mathscr{O}_1 \rangle \equiv \langle \psi | \mathscr{O}_1 | \psi \rangle$ 是期望值。
+    
+    对于两个算符 $\mathscr{O}$ 和 $\mathscr{O}_2$，如果不满足对易关系（即 $[\mathscr{O}_1, \mathscr{O}_2] \equiv \mathscr{O}_1\mathscr{O}_2 - \mathscr{O}_2\mathscr{O}_1 \neq 0$），则它们无法同时具有确定的测量值。它们的不确定度满足广义测不准关系（Robertson 不等式）：
+    \begin{equation}
+        \Delta \mathscr{O}_1 \cdot \Delta \mathscr{O}_2 \ge \frac{1}{2} \left| \langle \psi | [\mathscr{O}_1, \mathscr{O}_2] | \psi \rangle \right|
+    \end{equation}
+    
+    举例：位置与动量 对于坐标算符 $\hat{x}$ 和动量算符 $\hat{p}$，由于基本对易关系 $[\hat{x}, \hat{p}] = i\hbar$，我们得到著名的海森堡不确定性原理：
+    \begin{equation}
+        \Delta x \cdot \Delta p \ge \frac{\hbar}{2}
+    \end{equation}
+\end{enumerate}
+
+
+
+
+
+
+

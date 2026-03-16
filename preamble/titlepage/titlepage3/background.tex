@@ -1,0 +1,32 @@
+% Standalone background figure for `titlepage3`.
+% Build (XeLaTeX):
+%   latexmk -xelatex -interaction=nonstopmode -halt-on-error background.tex
+
+\documentclass[svgnames,tikz]{standalone}
+
+\usepackage{cmbright,libertine,slashed,physics2,mathrsfs}
+\usephysicsmodule{ab}
+\newcommand \iu {{i\mkern1mu}}
+
+\usetikzlibrary{tikzmark}
+\tikzset
+  {
+    every node/.style =
+      { align = center, DarkSlateGray!60, font = \normalsize },
+    every path/.style = { Gray!60, line cap = round }
+  }
+
+\begin{document}
+  \begin{tikzpicture}
+    \node [ above right ] at (0,0)
+      { $ \displaystyle
+        \tikzmarknode a \int
+                             \mathscr{D} \left(all\,fields\right)
+                              e^{
+                              i \int d^4x\left(\mathscr L_{sm}
+                                    + \mathscr L_{\rm gf}
+                                    + \mathscr L_{\rm ghost}+  \sum_{d>4}\sum_r
+                          \frac{c_r^{(d)}}{\Lambda^{d-4}}\mathcal O_r^{(d)}\right)}
+                              $};
+  \end{tikzpicture}
+\end{document}

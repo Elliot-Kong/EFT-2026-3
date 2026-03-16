@@ -1,0 +1,72 @@
+\section{Poincar\'e 群}
+
+\begin{tikzpicture}[
+    scale=0.85,
+    transform shape,
+    node distance=0.4cm and 0.6cm,
+    every node/.style={align=center, font=\sffamily},
+    % 基础样式
+    base/.style={rectangle, rounded corners=2pt, draw=black!80, thick, inner sep=5pt, fill=white, minimum width=3cm, minimum height=1cm},
+    % 颜色区分
+    m_color/.style={fill=blue!5, draw=blue!50},
+    z_color/.style={fill=red!5, draw=red!50},
+    title_style/.style={font=\bfseries\color{gray!80!black}, inner sep=10pt},
+    arrow/.style={-stealth, thick, draw=black!50}
+]
+
+% --- 核心顶部 ---
+\node[base, fill=gray!10, minimum width=2cm] (top) 
+    { Poincar\'e 群的不可约表示};
+
+% --- 第一层：Casimir 分支 (错开排布) ---
+\node[base, m_color, below left=1.5cm and 0.1cm of top] (m_mass) 
+    {\textbf{有质量表示} ($m > 0$)\\ \footnotesize 小群: $SO(3)$};
+
+\node[base, z_color, below right=3.5cm and 0.1cm of top] (z_mass) 
+    {\textbf{零质量表示} ($m = 0$)\\ \footnotesize 小群: $ISO(2)$};
+
+% --- 第二层：具体表示 (纵向错位) ---
+% 有质量分支
+\node[base, m_color, below=1cm of m_mass] (m_0) {$(0,0)$ \\ \footnotesize 标量 (1D)};
+\node[base, m_color, below=1cm of m_0] (m_12) {$(\frac{1}{2},0)\oplus(0,\frac{1}{2})$ \\ \footnotesize Dirac 旋量 (4D)};
+\node[base, m_color, below=1cm of m_12] (m_1) {$(\frac{1}{2},\frac{1}{2})$ \\ \footnotesize 矢量 (4D)};
+
+% 零质量分支
+\node[base, z_color, below=1cm of z_mass] (z_12) {$(\frac{1}{2},0) \text{ or } (0,\frac{1}{2})$ \\ \footnotesize Weyl 旋量 (2D)};
+\node[base, z_color, below=1cm of z_12] (z_1) {螺旋度 $h=\pm 1$ \\ \footnotesize 规范矢量 (2 极化)};
+\node[base, z_color, below=1cm of z_1] (z_2) {螺旋度 $h=\pm 2$ \\ \footnotesize 规范张量 (2 极化)};
+
+% --- 第三层：场方程 (一一对应) ---
+\node[base, m_color, left=1.2cm of m_0] (eq_kg) {Klein-Gordon};
+\node[base, m_color, left=1.2cm of m_12] (eq_dirac) {Dirac};
+\node[base, m_color, left=1.2cm of m_1] (eq_proca) {Proca};
+
+\node[base, z_color, right=1.2cm of z_12] (eq_weyl) {Weyl};
+\node[base, z_color, right=1.2cm of z_1] (eq_maxwell) {Maxwell};
+\node[base, z_color, right=1.2cm of z_2] (eq_einstein) {Linearized Einstein};
+
+% --- 连线 ---
+\draw[arrow] (top.south) -- ++(0,-0.5) -| (m_mass.north);
+\draw[arrow] (top.south) -- ++(0,-0.5) -| (z_mass.north);
+
+% 有质量连线
+\draw[arrow] (m_mass) -- (m_0);
+\draw[arrow] (m_0) -- (m_12);
+\draw[arrow] (m_12) -- (m_1);
+\draw[arrow] (m_0.west) -- (eq_kg.east);
+\draw[arrow] (m_12.west) -- (eq_dirac.east);
+\draw[arrow] (m_1.west) -- (eq_proca.east);
+
+% 零质量连线
+\draw[arrow] (z_mass) -- (z_12);
+\draw[arrow] (z_12) -- (z_1);
+\draw[arrow] (z_1) -- (z_2);
+\draw[arrow] (z_12.east) -- (eq_weyl.west);
+\draw[arrow] (z_1.east) -- (eq_maxwell.west);
+\draw[arrow] (z_2.east) -- (eq_einstein.west);
+
+% --- 补充说明标注 ---
+%\node[below=0.8cm of eq_proca, font=\itshape\small, color=blue!70] {* 具有 3 个物理极化};
+%\node[below=0.8cm of eq_einstein, font=\itshape\small, color=red!70] {* 具有规范不变性};
+
+\end{tikzpicture}

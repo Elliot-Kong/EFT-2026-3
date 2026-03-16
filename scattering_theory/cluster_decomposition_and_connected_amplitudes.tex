@@ -1,0 +1,435 @@
+\section{集团分解与连通振幅}
+\begin{importantformula}
+    \color{blue}本应该直接论述集团分解原理\footnote{这里的图都是基于位置空间的，$p$$q$有时代表动量又时也代表坐标。}，这里绕个弯子，采用所谓教学式的方法，先举特例再总结一般规律。\normalcolor
+为了以简单而精确的方式表达远隔过程的因子化思想，引入$S$矩阵连通部分\text{（connected parts）$S^c$}的概念是方便的。这使我们能够将$S$矩阵中对应于粒子子集之间非平凡相互作用的部分，与对应于粒子无相互作用直接通过的平凡情况的部分分离开来\footnote{说人话就是：“S矩阵是一个大杂烩，它把所有可能发生的情况都混在了一起。我们需要把‘真打架’（有相互作用）的情况，和‘路过打酱油’（无相互作用）的情况分离开来。”}
+\end{importantformula}
+\vspace{0.5cm}\noindent\textbf{考虑$1\rightarrow1$散射过程}
+如果出态和末态都只含有一个稳定粒子，它们是不发生相互作用的，所以此时S矩阵是一个单位算符$\delta(p-p')$:
+
+\begin{equation}
+    S_{p';p}=S^c_{p';p}=\delta(p-p')\qquad\text{对应\autoref{1-1 scattering}}
+\end{equation}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}
+        % 左边：S矩阵
+        \node[blob] (S) at (0,0) {}; % 空白圆圈
+        \draw[leg, mid arrow] (0, -1.5) node[below]{$p$} -- (S);
+        \draw[leg, mid arrow] (S) -- (0, 1.5) node[above]{$p'$};
+        
+        % 等号
+        \node at (1.5, 0) {\large $=$};
+        
+        % 右边：直通
+        \draw[leg, mid arrow] (3, -1.5) node[below]{$p$} -- (3, 1.5) node[above]{$p'$};
+    \end{tikzpicture}
+    \caption{单粒子区的 S 矩阵}
+    \label{1-1 scattering}
+\end{figure}
+
+\noindent
+\textbf{考虑$2\rightarrow2$散射过程},$S$矩阵将分解为：
+\begin{equation}
+    \begin{split}
+    S_{p'_1p'_2;p_1p_2}&
+    =S^c_{p'_1;p_1}S^c_{p'_2;p_2}+S^c_{p'_1;p_2}S^c_{p'_2;p_1}+ S^c_{p'_1p'_2;p'_1p_2}\\
+    &=\delta(p'_1 - p_1)\delta(p'_2 - p_2) 
+    + \delta(p'_1 - p_2)\delta(p'_2 - p_1) 
+    + S^{\mathrm{C}}_{p'_1 p'_2; p_1 p_2}
+    \end{split}\qquad\text{对应\autoref{2-2 scattering}}
+\end{equation}
+\color{blue}若:当粒子1和2互相远离,也就是说他们不发生相互作用,那对于$2\to2$散射来说,\autoref{2-2 scattering}前两部分存在，第三部分也就是连通部分将趋于0,也就是：
+\begin{equation*}
+    S^{\mathrm{C}}_{p'_1 p'_2; p_1 p_2}\to 0
+\end{equation*}
+\normalcolor
+\noindent
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}
+        % 左边：完整 S 矩阵
+        \node[blob] (S) at (0,0) {}; 
+        \draw[leg, mid arrow] (-0.6, -1.8) node[below]{$p_1$} -- (S.250);
+        \draw[leg, mid arrow] (0.6, -1.8) node[below]{$p_2$} -- (S.290);
+        \draw[leg, mid arrow] (S.110) -- (-0.6, 1.8) node[above]{$p'_1$};
+        \draw[leg, mid arrow] (S.70) -- (0.6, 1.8) node[above]{$p'_2$};
+
+        % 等号
+        \node at (1.8, 0) {$=$};
+
+        % 右边 1：不连通 (直通)
+        \begin{scope}[shift={(3,0)}]
+            \draw[leg, mid arrow] (-0.4, -1.8)node[below]{$p_1$} -- (-0.4, 1.8)node[above]{$p'_1$} ;
+            \draw[leg, mid arrow] (0.4, -1.8)node[below]{$p_2$} -- (0.4, 1.8)node[above]{$p'_2$} ;
+        \end{scope}
+        
+        \node at (4.5, 0) {$+$};
+
+        % 右边 2：连通
+        \begin{scope}[shift={(6,0)}]
+             \draw[leg, mid arrow] (-0.4, -1.8)node[below]{$p_1$} -- (0.4, 1.8)node[above]{$p'_2$};
+             \draw[leg, mid arrow] (0.4, -1.8)node[below]{$p_2$} -- (-0.4, 1.8)node[above]{$p'_1$};
+        \end{scope}
+
+        \node at (7.5, 0) {$+$};
+
+        % 右边 3：连通部分 (Connected)
+        \begin{scope}[shift={(9,0)}]
+            \node[blob] (C) at (0,0) {C}; % 圆圈里写个 C
+            \draw[leg, mid arrow] (-0.6, -1.8)node[below]{$p_1$} -- (C.250);
+            \draw[leg, mid arrow] (0.6, -1.8)node[below]{$p_2$} -- (C.290);
+            \draw[leg, mid arrow] (C.110) -- (-0.6, 1.8)node[above]{$p'_1$};
+            \draw[leg, mid arrow] (C.70) -- (0.6, 1.8)node[above]{$p'_2$};
+        \end{scope}
+    \end{tikzpicture}
+    \caption{$2 \to 2$\,S矩阵振幅分解至连通部分}
+    \label{2-2 scattering}
+\end{figure}
+\noindent
+\textbf{考虑$3\rightarrow3$散射过程},$S$矩阵将分解为：
+\begin{equation}
+\begin{split}
+    S_{p'_1 p'_2 p'_3, p_1 p_2 p_3} 
+    &= S^{\mathrm{C}}_{p'_1 p'_2 p'_3, p_1 p_2 p_3} \\
+    &\quad + \left( S^{\mathrm{C}}_{p'_1, p_1} S^{\mathrm{C}}_{p'_2 p'_3, p_2 p_3} \pm \text{置换} \right)
+     + \left( S^{\mathrm{C}}_{p'_1, p_1} S^{\mathrm{C}}_{p'_2, p_2} S^{\mathrm{C}}_{p'_3, p_3} \pm \text{置换} \right) \\
+    &= S^{\mathrm{C}}_{p'_1 p'_2 p'_3, p_1 p_2 p_3} \\
+    &\quad + \left( \delta(p'_1 - p_1) S^{\mathrm{C}}_{p'_2 p'_3, p_2 p_3} \pm \text{置换} \right) + \left(\delta(p'_1 - p_1)\delta(p'_2 - p_2)\delta(p'_3 - p_3) \pm \text{置换} \right)
+\end{split}\qquad\text{对应\autoref{3-3 scattering}}
+\end{equation}
+
+\color{blue}若:当粒子1远离2、3粒子,也就是说1和2、3不发生相互作用,那对于$3\to3$散射来,\autoref{3-3 scattering}第三部分必须消失;也就是连通部分0:
+\begin{equation*}
+    S^{\mathrm{C}}_{p'_1 p'_2 p'_3, p_1 p_2 p_3}\to 0
+\end{equation*}
+\normalcolor
+
+\begin{figure}[htbp]
+    \centering
+    % 自动缩放图片宽度适应页面
+    \resizebox{\textwidth}{!}{
+    \begin{tikzpicture}[>=Stealth]
+        
+        % =========================================
+        % 1. 左边 (LHS): 完整的 S 矩阵
+        % =========================================
+        \node[blob] (S) at (0,0) {}; % S矩阵空泡
+        
+        % 入射 (Incoming)
+        \draw[leg, mid arrow] (-1.0, -2.0) node[below]{$p_1$} -- (S.225);
+        \draw[leg, mid arrow] (0,    -2.0) node[below]{$p_2$} -- (S.270);
+        \draw[leg, mid arrow] (1.0,  -2.0) node[below]{$p_3$} -- (S.315);
+        
+        % 出射 (Outgoing)
+        \draw[leg, mid arrow] (S.135) -- (-1.0, 2.0) node[above]{$p'_1$};
+        \draw[leg, mid arrow] (S.90)  -- (0,    2.0) node[above]{$p'_2$};
+        \draw[leg, mid arrow] (S.45)  -- (1.0,  2.0) node[above]{$p'_3$};
+
+        % 等号
+        \node at (2.0, 0) {\huge $=$};
+
+        % =========================================
+        % 2. 右边项 1: 完全不连通 (3个自由粒子)
+        % =========================================
+        \begin{scope}[shift={(4.5,0)}]
+            \draw[leg, mid arrow] (-0.8, -2.0) node[below]{$p_1$} -- (-0.8, 2.0) node[above]{$p'_1$};
+            \draw[leg, mid arrow] (0,    -2.0) node[below]{$p_2$} -- (0,    2.0) node[above]{$p'_2$};
+            \draw[leg, mid arrow] (0.8,  -2.0) node[below]{$p_3$} -- (0.8,  2.0) node[above]{$p'_3$};
+        \end{scope}
+
+        % 加号 + 排列 (perms)
+        \node at (7.0, 0) {\large $+\ \text{perms}\ +$};
+
+        % =========================================
+        % 3. 右边项 2: 部分连通 (1自由 + 2连通)
+        % =========================================
+        \begin{scope}[shift={(10.0,0)}]
+            % 自由粒子 (Spectator)
+            \draw[leg, mid arrow] (-1.2, -2.0) node[below]{$p_1$} -- (-1.2, 2.0) node[above]{$p'_1$};
+            
+            % 连通泡 (Connected Blob)
+            \node[blob, minimum size=1.0cm] (C2) at (0.8, 0) {C};
+            
+            % 参与相互作用的粒子
+            \draw[leg, mid arrow] (0.2, -2.0) node[below]{$p_2$} -- (C2.240);
+            \draw[leg, mid arrow] (1.4, -2.0) node[below]{$p_3$} -- (C2.300);
+            
+            \draw[leg, mid arrow] (C2.120) -- (0.2, 2.0) node[above]{$p'_2$};
+            \draw[leg, mid arrow] (C2.60)  -- (1.4, 2.0) node[above]{$p'_3$};
+        \end{scope}
+
+        % 加号 + 排列 (perms)
+        \node at (13.5, 0) {\large $+\ \text{perms}\ +$};
+
+        % =========================================
+        % 4. 右边项 3: 完全连通 (Connected)
+        % =========================================
+        \begin{scope}[shift={(16.5,0)}]
+            \node[blob] (C3) at (0,0) {\large C};
+            
+            % 3个入射 (Connected)
+            \draw[leg, mid arrow] (-1.2, -2.0) node[below]{$p_1$} -- (C3.230);
+            \draw[leg, mid arrow] (0,    -2.0) node[below]{$p_2$} -- (C3.270);
+            \draw[leg, mid arrow] (1.2,  -2.0) node[below]{$p_3$} -- (C3.310);
+            
+            % 3个出射
+            \draw[leg, mid arrow] (C3.130) -- (-1.2, 2.0) node[above]{$p'_1$};
+            \draw[leg, mid arrow] (C3.90)  -- (0,    2.0) node[above]{$p'_2$};
+            \draw[leg, mid arrow] (C3.50)  -- (1.2,  2.0) node[above]{$p'_3$};
+        \end{scope}
+
+    \end{tikzpicture}
+    }
+    \caption{ $3 \to 3$ \,S矩阵振幅分解至连通部分}
+    \label{3-3 scattering}
+\end{figure}
+对于$2\to2$和$3\to3$散射,其中连通部分$S^c_{p'_1p'_2;p_1p_2}$和$S^c_{p'_1 p'_2 p'_3, p_1 p_2 p_3}$在要求部分远离时，我们发现这种散射种中连通部分必须趋于零；\color{blue}那么为0的要求暗含了什么?\normalcolor 下面就来论述这背后的机理。
+\begin{center}
+    \vspace{0.5cm}
+    \Large\text{\color{red}***}
+    \vspace{0.5cm}
+\end{center}
+\textbf{考虑N$\to$N散射},其中$N=\alpha+\beta$，且 $\alpha$个粒子在远离 $\beta$个粒子的地方散射。S 矩阵因子化为 和 独立散射的 S 矩阵之积（此处为简化记号，我们仅假设散射守恒粒子数，这在相对论量子理论中通常并不成立）。S 矩阵按连通部分的一般展开意味着我们可以将完整 N→N 过程的图形表示写为\autoref{cluster_decomposition}。
+当两组粒子在空间上远隔时，整个过程因子化为独立的$\alpha\to\alpha$和$\beta\to\beta$散射——为入射和出射粒子构造波包,这时连通部分变为：
+
+
+\begin{figure}[htbp]
+    \centering
+    % 使用 resizebox 自动缩放以适应页面宽度
+    \resizebox{\textwidth}{!}{
+    \begin{tikzpicture}[
+        >=Stealth,
+        node distance=1cm,
+        % 定义样式
+        mid arrow/.style={
+            postaction={decorate},
+            decoration={
+                markings,
+                mark=at position 0.6 with {\arrow{Stealth[length=2mm, width=1.5mm]}}
+            }
+        },
+        blob/.style={
+            circle, draw=black, thick, fill=white,
+            minimum size=1.8cm, inner sep=0pt
+        },
+        smallblob/.style={
+            circle, draw=black, thick, fill=white,
+            minimum size=0.7cm, inner sep=0pt, font=\bfseries
+        },
+        line/.style={thick}
+    ]
+
+    % ==========================================
+    % 1. 左侧 (LHS): 总 S 矩阵 (混合了 x 和 y)
+    % ==========================================
+    \node[blob] (S) at (0,0) {};
+    
+    % 入射 x (原 p)
+    \draw[mid arrow] (-1.2, -2.0) node[below] {$x_1$} -- (S.220);
+    \node at (-0.6, -1.5) {$\cdots$};
+    \draw[mid arrow] (-0.4, -2.0) node[below] {$x_\alpha$} -- (S.240);
+    
+    % 入射 y (原 q)
+    \draw[mid arrow] (0.4, -2.0) node[below] {$y_1$} -- (S.300);
+    \node at (0.7, -1.5) {$\dots$};
+    \draw[mid arrow] (1.2, -2.0) node[below] {$y_\beta$} -- (S.320);
+
+    % 出射 x'
+    \draw[mid arrow] (S.140) -- (-1.2, 2.0) node[above] {$x'_1$};
+    \node at (-0.6, 1.5) {$\dots$};
+    \draw[mid arrow] (S.120) -- (-0.4, 2.0) node[above] {$x'_\alpha$};
+
+    % 出射 y'
+    \draw[mid arrow] (S.60) -- (0.4, 2.0) node[above] {$y'_1$};
+    \node at (0.7, 1.5) {$\dots$};
+    \draw[mid arrow] (S.40) -- (1.2, 2.0) node[above] {$y'_\beta$};
+
+    % 等号
+    \node at (1.8, 0) {\huge $=$};
+
+    % ==========================================
+    % 2. 右侧第一部分: x 簇的展开 (Cluster X)
+    % ==========================================
+    \begin{scope}[shift={(3, 0)}]
+        
+        % 左大括号 { (从下往上画，无 mirror)
+        \draw[thick, decoration={brace, amplitude=10pt}, decorate] 
+            (-0.3, -2.2) -- (-0.3, 2.2);
+
+        % --- Term 1: 直通 (Identity) ---
+        \begin{scope}[shift={(0.2,0)}]
+            \draw[mid arrow] (0, -2.0) node[below] {$x_1$} -- (0, 2.0) node[above] {$x'_1$};
+            \node at (0.5, 0) {$\dots$};
+            \draw[mid arrow] (1.0, -2.0) node[below] {$x_\alpha$} -- (1.0, 2.0) node[above] {$x'_\alpha$};
+        \end{scope}
+
+        \node at (1.8, 0) {\Large $+$};
+
+        % --- Term 2: 部分连通 ---
+        \begin{scope}[shift={(2.6,0)}]
+            \node[smallblob] (C1) at (0,0) {C};
+            \draw[mid arrow] (-0.3, -2.0) node[below] {$x_1$} -- (C1.250);
+            \draw[mid arrow] (0.3, -2.0) node[below] {$x_2$} -- (C1.290);
+            \draw[mid arrow] (C1.110) -- (-0.3, 2.0) node[above] {$x'_1$};
+            \draw[mid arrow] (C1.70) -- (0.3, 2.0) node[above] {$x'_2$};
+            % 旁观者
+            \draw[mid arrow] (1.0, -2.0) node[below] {$x_3$} -- (1.0, 2.0) node[above] {$x'_3$};
+            \node at (1.34, 0) {$\dots$};
+        \end{scope}
+
+        \node at (5, 0) {\Large $+\dots  +$};
+
+        % --- Term 3: 完全连通 ---
+        \begin{scope}[shift={(6.5,0)}]
+            \node[smallblob] (C2) at (0,0) {C};
+            \draw[mid arrow] (-0.5, -2.0) node[below] {$x_1$} -- (C2.240);
+            \node at (0, -1.2) {$\dots$};
+            \draw[mid arrow] (0.5, -2.0) node[below] {$x_\alpha$} -- (C2.300);
+            \draw[mid arrow] (C2.120) -- (-0.5, 2.0) node[above] {$x'_1$};
+            \node at (0, 1.2) {$\dots$};
+            \draw[mid arrow] (C2.60) -- (0.5, 2.0) node[above] {$x'_\alpha$};
+        \end{scope}
+
+        % 右大括号 } (从上往下画，无 mirror，或者从下往上加 mirror)
+        % 这里使用从上到下画，使得凸出向右
+        \draw[thick, decoration={brace, amplitude=10pt}, decorate] 
+            (7.5, 2.2) -- (7.5, -2.2);
+
+    \end{scope}
+
+    % ==========================================
+    % 中间的乘号
+    % ==========================================
+    \node at (11.2, 0) {\huge $\otimes$};
+
+    % ==========================================
+    % 3. 右侧第二部分: y 簇的展开 (Cluster Y)
+    % ==========================================
+    \begin{scope}[shift={(12.24,0)}] % 放在右边，而不是下面
+        
+        % 左大括号 {
+        \draw[thick, decoration={brace, amplitude=10pt}, decorate] 
+            (-0.3, -2.2) -- (-0.3, 2.2);
+
+        % --- Term 1: 直通 ---
+        \begin{scope}[shift={(0.2,0)}]
+            \draw[mid arrow] (0, -2.0) node[below] {$y_1$} -- (0, 2.0) node[above] {$y'_1$};
+            \node at (0.5, 0) {$\dots$};
+            \draw[mid arrow] (1.0, -2.0) node[below] {$y_\beta$} -- (1.0, 2.0) node[above] {$y'_\beta$};
+        \end{scope}
+
+        \node at (1.8, 0) {\Large $+$};
+
+        % --- Term 2: 部分连通 ---
+        \begin{scope}[shift={(2.6,0)}]
+            \node[smallblob] (C3) at (0,0) {C};
+            \draw[mid arrow] (-0.3, -2.0) node[below] {$y_1$} -- (C3.250);
+            \draw[mid arrow] (0.3, -2.0) node[below] {$y_2$} -- (C3.290);
+            \draw[mid arrow] (C3.110) -- (-0.3, 2.0) node[above] {$y'_1$};
+            \draw[mid arrow] (C3.70) -- (0.3, 2.0) node[above] {$y'_2$};
+            % 旁观者
+            \draw[mid arrow] (1.0, -2.0) node[below] {$y_3$} -- (1.0, 2.0) node[above] {$y'_3$};
+            \node at (1.34, 0) {$\dots$};
+        \end{scope}
+
+        \node at (5, 0) {\Large $+\dots+$};
+
+        % --- Term 3: 完全连通 ---
+        \begin{scope}[shift={(6.5,0)}]
+            \node[smallblob] (C4) at (0,0) {C};
+            \draw[mid arrow] (-0.5, -2.0) node[below] {$y_1$} -- (C4.240);
+            \node at (0, -1.2) {$\dots$};
+            \draw[mid arrow] (0.5, -2.0) node[below] {$y_\beta$} -- (C4.300);
+            \draw[mid arrow] (C4.120) -- (-0.5, 2.0) node[above] {$y'_1$};
+            \node at (0, 1.2) {$\dots$};
+            \draw[mid arrow] (C4.60) -- (0.5, 2.0) node[above] {$y'_\beta$};
+        \end{scope}
+
+        % 右大括号 }
+        \draw[thick, decoration={brace, amplitude=10pt}, decorate] 
+            (7.5, 2.2) -- (7.5, -2.2);
+
+    \end{scope}
+
+    % 置换项说明 (放在最右边或下方)
+    \node[right] at (20, 0) { $+ \text{置换}$};
+
+    \end{tikzpicture}
+    }
+    \caption{ $x$ 和 $y$粒子组的分离}
+    \label{cluster_decomposition}
+\end{figure}
+\begin{equation}
+    \begin{aligned}
+    S^\mathbb{C}_{x'_1,\ldots,x'_\alpha,y'_1,\ldots,y'_\beta;x_1,\ldots,x_\alpha,y_1,\ldots,y_\beta}
+    &=
+    \int \left( \prod_{i=1}^\alpha d^3\boldsymbol{p}'_i d^3\boldsymbol{p}_i g^*(\boldsymbol{p}'_i)\,g(\boldsymbol{p}_i) \right)
+    \left( \prod_{j=1}^\beta d^3\boldsymbol{q}'_j d^3\boldsymbol{q}_j\,g^*(\boldsymbol{q}'_j) g(\boldsymbol{q}_j) \right)
+    \\
+    &\times
+    S^\mathbb{C}_{p'_1,\ldots,p'_\alpha,q'_1,\ldots,q'_\beta;p_1,\ldots,p_\alpha,q_1,\ldots,q_\beta}\\
+    &\times
+    \exp\left[ i \left( \sum_{i=1}^\alpha (\boldsymbol{p}'_i \cdot \boldsymbol{x}'_i - \boldsymbol{p}_i \cdot \boldsymbol{x}_i) + \sum_{j=1}^\beta (\boldsymbol{q}'_j \cdot \boldsymbol{y}'_j - \boldsymbol{q}_j \cdot \boldsymbol{y}_j) \right) \right]
+\end{aligned}
+\end{equation}
+为了展现远离的过程,0️令
+$\left[\begin{aligned}
+    &\boldsymbol{x}_i \to \boldsymbol{x}_i \\
+    & \boldsymbol{x}'_i \to \boldsymbol{x}'_i  \\
+    &\boldsymbol{y}_j \to \boldsymbol{y}_j+ \boldsymbol{d}\\
+    & \boldsymbol{y}'_j \to \boldsymbol{y}'_j+ \boldsymbol{d}
+\end{aligned}\right.$ 
+且 $\boldsymbol{d}\to\infty$，也就是说，$y$（$\beta$组）这组粒子在位置上远离 $x$（$\alpha$组）粒子。此时上式中的相位部分变为：
+\begin{equation}
+    \exp\left[i\left(\dots\right)+\sum_{j=1}^\beta \boldsymbol{q}' \cdot \boldsymbol{y}' - \boldsymbol{q} \cdot \boldsymbol{y} \right]
+\to\exp\left[i\left(\dots\right)+ i\sum_{j=1}^\beta (\boldsymbol{q}'_j \cdot \boldsymbol{y}'_j - \boldsymbol{q}_j \cdot \boldsymbol{y}_j) \right]
+    \times \exp\left[ i \left( \sum_{j=1}^\beta (\boldsymbol{q}'_j - \boldsymbol{q}_j) \right) \cdot \boldsymbol{d} \right]
+\end{equation}
+其中 $\exp\left[ i \left( \sum_{j=1}^\beta (\boldsymbol{q}'_j - \boldsymbol{q}_j) \right) \cdot \boldsymbol{d} \right]$ 是由于空间分离引入的额外相位因子。
+设$\left(\begin{aligned}
+    &\boldsymbol{Q}_{\beta} = \sum \boldsymbol{q}_j \\ &\boldsymbol{Q}'_{\beta} = \sum \boldsymbol{q}'_j
+\end{aligned}\right)$  分别为 $\beta$ 组粒子的总入射和总出射动量。\\
+\vspace{0.2cm}
+
+当 $|\mathbf{d}| \to \infty$ 时，相位因子 $e^{i(Q'_\beta - Q_\beta)\cdot \mathbf{d}}$ 会随动量变量的微小变化而发生极快速的振荡。\color{blue}根据 \textbf{Riemann-Lebesgue 引理}，只要波包函数 $g$ 和 $S$ 矩阵的核函数\footnote{S矩阵的核函数是$M$矩阵}是\textbf{光滑}（smooth）的，这种速振荡必然导致积分结果因相消干涉而趋于 $0$。
+\normalcolor 这是物理上对应了“连通部分”的性质：即当两组粒子在空间上无限远离时，它们之间不可能发生关联散射，因此描述相互作用的连通振幅必须消失。
+\\
+然而，一般来说，物理上存在两组粒子各自独立发生反应的情况（即非连通过程），其总概率振幅不应随距离增大而消失。这引出了一个数学上的矛盾：如何让积分在 $|\mathbf{d}| \to \infty$ 时依然保持非零？唯一的解决办法是破坏 Riemann-Lebesgue 引理的成立条件，即被积函数必须在相位为零点（$Q'_\beta = Q_\beta$）处具有\textbf{奇点}。这正是\textbf{狄拉克 $\delta$ 函数}\footnote{以\autoref{3-3 scattering}举例：当1远离2和3，第三张图就为零，可是，第二张图及置换是存在的，它们不能消失，所以要求有奇点}：
+\begin{equation}
+    \delta(Q'_\beta - Q_\beta)
+\end{equation}
+它能够抵消相位因子的振荡（使指数项恒为 1）。因此，为了得到非零的物理结果（即描述两个空间上独立的实验），$S$ 矩阵必须包含一个强制 $\beta$ 组动量独立守恒的 $\delta$ 函数。
+
+\begin{equation*}
+    \delta^3(\boldsymbol{Q}'_{\beta} - \boldsymbol{Q}_{\beta}) = \delta^3\left( \sum_{j=1}^\beta \boldsymbol{q}'_j - \sum_{j=1}^\beta \boldsymbol{q}_j \right)
+\end{equation*}
+\text{\color{blue}由于系统具备时间平移不变性，整体能量必然守恒\footnote{时间真的守恒吗？或许是因为我们用了那个很大的时间盒子}}，即包含因子 $\delta(E'_{total} - E_{total})$。结合上述空间分离导出的子系统动量守恒，在 $|\boldsymbol{d}|\to\infty$ 极限下，S 矩阵的非零贡献项必然包含如下的乘积形式：
+\begin{equation*}
+    \delta(E'_{\alpha} + E'_{\beta} - E_{\alpha} - E_{\beta}) \times \delta^3(\boldsymbol{Q}'_{\beta} - \boldsymbol{Q}_{\beta})
+\end{equation*}
+这隐含了两个子系统各自的四维动量守恒（因为 $\alpha$ 组动量也因整体守恒而被迫独立守恒）。这表明在此极限下，空间上分离的两个子系统之间不再有相互作用（即连接两者的连通图贡献趋于零）。整个系统的 \textbf{S 矩阵元}退化为两个独立 S 矩阵元的乘积：
+\begin{equation}
+    S_{p',q';p,q} \xrightarrow{|\boldsymbol{d}|\to\infty} S_{p';p} \times S_{q';q}
+\end{equation}
+将此动量空间的因子化结果代回坐标空间积分公式，整个散射过程的振幅即分解为两个独立积分的乘积：
+\begin{equation}
+    S_{\alpha+\beta \to \alpha+\beta} = S_{\alpha\to\alpha} \times S_{\beta\to\beta}
+\end{equation}
+这一结果严格证明了集团分解原理：当两个散射过程在空间上互不重叠时，它们在量子力学描述中是统计独立的，这也正是定域量子场论的基本特征.
+\begin{align*}
+    &\text{\textbf{集团分解原理}} \\
+    &\quad \implies S \text{ 矩阵因子化：} S \to S_A \otimes S_B \\
+    &\quad \implies \text{非连通部分包含多个 } \delta \text{ 函数} \\
+    &\quad \implies \text{连通部分 } S^C \text{ 仅包含\textbf{单个} } \delta^3(\sum\boldsymbol{p}_{in} - \sum\boldsymbol{p}_{out}) \\
+    &\quad \implies \text{相互作用振幅是\textbf{平滑且解析的}}
+\end{align*}
+
+
+
+
+
+
+
+
+

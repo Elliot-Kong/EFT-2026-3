@@ -1,0 +1,102 @@
+\section{“出”和“入”态}
+
+在典型散射实验中，我们以时间$t\longrightarrow-\infty$的粒子开始，在$t=0$时刻发生相互作用，$t\longrightarrow+\infty$探测作用后的产物。那么在$t\longrightarrow\mp\infty$\textbf{时刻},我们定义“入态”“出态”：
+\[
+    \ket{\alpha;+}\qquad\Ket{\alpha;-}
+\]
+为了显式的保持\text{Lorentz不变性},这里的态矢都是不随时间改变的\footnote{$\ket{\alpha;\pm}$描述的是整个时空的时间进程，是弥散全时间轴的。}(Heisenberg绘景\footnote{\color{blue}这里有更加深刻的原因：关于场论公理化构造，具体后续我学了再说})，也就是说：
+\[
+    \lim_{t\rightarrow\mp\infty}\ket{\alpha}\neq \ket{\alpha;\pm}
+\]
+态的定义表明:若我们考察不同坐标系的态,仅能通过$U(\mathbf{1},\tau)\ket{\alpha}=e^{-iH\tau}\ket{\alpha}$来得到\footnote{这里很关键的是：变换后的态时能说是等价的态，而不是同样的态。};\textbf{“入态”“出态”都是H的本征态,这说明这些态不可能在时间上定域}。所以必须要利用波包描述散射过程：
+\[
+    \begin{aligned}
+        &\ket{\psi(\tau)_\alpha}=\int d\alpha \ket{\alpha}\psi(\alpha)e^{-iE_\alpha\tau}\\
+        &\ket{\psi(\tau)_\alpha;\pm}=\int d\alpha \ket{\alpha;\pm}\psi(\alpha)e^{-iE_\alpha\tau}
+    \end{aligned}
+\]
+其中$\psi(\alpha)$非零且光滑，且波包把能量约束在一个有限范围内，这时“入态”“出态”可写为：
+\[
+    e^{iH\tau}\int d\alpha \psi(\alpha)\ket{\alpha;\pm}\longrightarrow e^{iE_\alpha\tau}\int d\alpha \psi(\alpha)\ket{\alpha;\pm}
+\]
+叠加表现为，当$\lvert\tau\rvert\geqslant \frac{1}{\Delta E}$，相对应的自由粒子态的叠加
+\footnote{这里，不同的态叠加时,之间的相位有项干干涉:
+$$e^{-i(E_\alpha-E_\alpha')},$$根据“Riemann-Lebesgue”引理:“若$f(x)$是可积函数(这里指$\psi(\alpha)$),则其傅立叶变换有：$$f(k)=\int dx e^{-ikx}f(x)\overset{k\rightarrow\infty}{=}0$$所以我们得到$\lvert\tau\rvert\geqslant \frac{1}{\Delta E}$时，积分趋于0"；物理中：也就是不同态的能量几乎相同，此时保持相干相消，则这些态表现的和自由态一样(因为相互作用引起的能量变化，在如此窄的能量展宽中被抹平或者说平均掉)}\label{scattering,theory,1}。
+上述依据;使得我们把时间平移的算符H分为自由部分$H_0$和相互作用部分$V$:
+\begin{equation}
+    H=H_0+V
+\end{equation}
+        \color{blue}在这种情况下$\ket{\alpha}$ 是自由哈密顿量 $H_0$ 的本征态；且自由态和完整$H$对应的本征态具有相同的表现：\normalcolor
+                \begin{equation}
+                        \begin{aligned}
+                        H_0 \ket{\alpha}
+                        &=
+                        \left( p_1^0 + p_2^0 + \cdots \right)\ket{\alpha}
+                        = E_\alpha \ket{\alpha}
+                        \end{aligned}
+                \end{equation}
+    \begin{itemize}
+    \item 态的演化随自由$H_0$:
+        \begin{equation}
+            e^{-iH_0t}\int d\alpha \ket{\alpha}\psi(\alpha)=e^{-iE_\alpha t}\int d\alpha \ket{\alpha}\psi(\alpha)
+        \end{equation}
+    \item 正交归一及完备关系
+            \begin{equation}
+            \braket{\alpha|\alpha'} = \delta(\alpha-\alpha'),
+            \mathbf{1} = \int d\alpha \ket{\alpha}\bra{\alpha}
+        \end{equation}
+        \end{itemize}
+    \color{blue}那么“出态”和“入态”可以精确的定义为全哈密顿量 $H$ 的本征态：\normalcolor
+        \begin{equation}
+                 \begin{aligned}
+                H \ket{\alpha;\pm}
+                &=
+                \left( p_1^0 + p_2^0 + \cdots \right)\ket{\alpha;\pm}\footnote{这里假定,\(H\)和\(其中H_0\) 有相同的能谱,其中\(H_0\)中的质量是实际测量的质量,而\(H\)中的是‘裸’质量，他们不必相同,这里或许正是辐射修正以及重整化的来源吧,我猜测。}
+                = E_\alpha \ket{\alpha;\pm}
+                \end{aligned}
+        \end{equation}
+    \begin{itemize}
+        \item 态的演化随自由$H$:
+        \begin{equation}
+            e^{-iHt}\int d\alpha \ket{\alpha}\psi(\alpha)=e^{-iE_\alpha t}\int d\alpha \ket{\alpha}\psi(\alpha)
+        \end{equation}
+    \item 正交归一及关系
+            \begin{equation}
+                        \braket{\alpha;\pm|\alpha;\pm} = \delta(\alpha-\alpha'),
+                        \mathbf{1} = \int d\alpha \ket{\alpha;\pm}\bra{\alpha;\pm}
+            \end{equation}
+    \end{itemize}
+      
+\begin{tcolorbox}[colback=white!5,colframe=black!55,title=渐进行为]
+    当$t\rightarrow\mp\infty$\footnote{我想渐进行为的分析是场论的关键吧，多的之后再补充。},有$e^{-iE_\alpha t}\int d\alpha \ket{\alpha;\pm}\psi(\alpha)\longrightarrow e^{-iE_\alpha t}\int d\alpha \ket{\alpha}\psi(\alpha)$或者重新写为：
+    \begin{equation}
+        e^{-iH t}\int d\alpha \ket{\alpha;\pm}\psi(\alpha)\longrightarrow e^{-iH_0 t}\int d\alpha \ket{\alpha}\psi(\alpha)
+    \end{equation}
+    也可以写为：\begin{equation}
+        \ket{\alpha;\pm}=\Omega(\mp\infty)\ket{\alpha}
+    \end{equation}
+        这里,$\Omega(t)=e^{-iH t}e^{-iH_0 t}$称为\textbf{绝热算符}
+\end{tcolorbox}
+
+\begin{center}
+    \vspace{0.5cm}
+   \color{black}\rule{3cm}{1pt}
+   \vspace{0.5cm}
+\end{center}
+
+形式上推导一下\text{Lippmann-Schwinger}方程,将()()写为如下形式：
+\[\begin{aligned}
+    (E_\alpha-H_0)&\ket{\alpha;\pm}=V\ket{\alpha;\pm}\\
+    (E_\alpha-H_0)&\ket{\alpha}=0
+\end{aligned}\]
+两式相减：
+\[\begin{aligned}
+    &(\underbrace{E_\alpha}_{\text{为了区分出入态，令}E_\alpha=E_\alpha\pm i\epsilon,\text{同时也是为了顺利求逆}}-H_0)(\ket{\alpha;\pm}-\ket{\alpha})=V\ket{\alpha;\pm}\\
+    \rightarrow
+    &(E_\alpha-H_0\pm i\epsilon)\ket{\alpha;\pm}=(E_\alpha-H_0\pm i\epsilon)\ket{\alpha}+V\ket{\alpha;\pm}\\
+    \rightarrow&\ket{\alpha;\pm}=\ket{\alpha}+\frac{V}{E_\alpha-H_0\pm i\epsilon}\ket{\alpha;\pm}\\
+\end{aligned}\]
+利用自由态的完备基展开，\text{Lippmann-Schwinger}方程便是：
+    \begin{equation}
+        \ket{\alpha;\pm}=\ket{\alpha}+\int d\beta \ket{\beta} \frac{\bra{\beta}V\ket{\alpha;\pm}}{E_\alpha-H_0\pm i\epsilon}
+    \end{equation}

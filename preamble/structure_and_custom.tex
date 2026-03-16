@@ -1,0 +1,113 @@
+% ============================================================
+% Structure, links, and small custom macros
+% - Chapter / TOC formatting
+% - Notes / comments helpers
+% - Colors and hyperlinks
+% ============================================================
+
+% Colors (load before `hyperref`)
+% `svgnames` gives named colors like `DarkGreen`.
+\usepackage[svgnames]{xcolor}
+\begin{comment}
+  \setcounter{tocdepth}{2}   % 目录深度 (只显示到 section)
+\usepackage{titlesec}
+\setcounter{secnumdepth}{2}
+\usepackage{tocloft} \renewcommand{\cftsecpresnum}{\S} 
+\setlength{\cftchapnumwidth}{1.5em}
+\setlength{\cftsecnumwidth}{1.5em}
+\setlength{\cftsubsecnumwidth}{1.5em}
+
+% Chapter 样式
+\titleformat{\chapter}[display]
+  {\normalfont\LARGE\bfseries\raggedleft}
+  {第\,\thechapter\,章}
+  {0pt}
+  {
+    \vspace*{-1em}
+    \begin{tikzpicture}
+      \draw[thick] (0,0) -- (\linewidth,0);
+    \end{tikzpicture}
+    \vspace{1em}
+    \huge
+  }[\vspace{1em}]
+\titlespacing*{\chapter}{0pt}{120pt}{20pt}
+
+\renewcommand\thesection{\arabic{section}}
+
+% Section 样式
+\titleformat{\section}[block]
+  {\normalfont\large\bfseries\raggedright\sffamily}
+  {\S\thesection}{1em}{}
+\titlespacing*{\section}{0pt}{1.5em}{1.5em}
+\end{comment}
+
+   %TOC depth: show up to `\subsection`
+\setcounter{tocdepth}{3}   % 目录深度 (只显示到 section)
+% Chapter titles
+\usepackage[explicit]{titlesec}
+\usepackage{tocloft}
+\titleformat{\chapter}[block]
+  {\centering\huge\bfseries}
+  {第\,\thechapter\,章}
+  {10pt}
+  {
+    #1
+  }
+  
+\begin{comment}
+  % Section titles
+\renewcommand\thesection{\arabic{section}}
+\titleformat{\section}[block]
+  {\normalfont\large\bfseries\raggedright\sffamily}
+  {\S\thesection}{1em}{}
+\titlespacing*{\section}{0pt}{2em}{2em}
+
+\renewcommand{\cftsecpresnum}{\S} 
+\setlength{\cftchapnumwidth}{1.5em}
+\setlength{\cftsecnumwidth}{1.5em}
+\setlength{\cftsubsecnumwidth}{1.5em}
+
+\end{comment}
+
+
+% Chinese names for standard titles
+\renewcommand{\contentsname}{目录}
+\renewcommand{\partname}{部分}
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+\renewcommand{\appendixname}{附录}
+\renewcommand{\bibname}{参考文献}
+\renewcommand{\listfigurename}{插图目录}
+\renewcommand{\listtablename}{表格目录}
+\renewcommand{\indexname}{索引}
+\providecommand*{\abstractname}{摘要}
+
+% Names used by `\autoref` (hyperref)
+\providecommand*{\chapterautorefname}{章}
+\providecommand*{\sectionautorefname}{节}
+\providecommand*{\subsectionautorefname}{小节}
+\providecommand*{\subsubsectionautorefname}{小节}
+\providecommand*{\paragraphautorefname}{段}
+\providecommand*{\subparagraphautorefname}{段}
+\providecommand*{\equationautorefname}{式}
+\providecommand*{\figureautorefname}{图}
+\providecommand*{\tableautorefname}{表}
+
+% Notes
+\usepackage{comment}
+\usepackage{multicol}
+\newcommand{\Note}[1]{%
+  \footnote{\footnotesize #1}
+}
+
+% Hyperlinks (keep black by default; switch colors in `preamble/citecolor.tex`)
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=black,
+  pdfborder={0 0 0}
+}
+
+

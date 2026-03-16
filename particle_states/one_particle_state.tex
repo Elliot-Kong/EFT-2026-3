@@ -1,0 +1,189 @@
+\newpage
+\section{单粒子态}
+我们现在逐步构造庞加莱群的不可约表示。\\
+\noindent
+\\
+ 我们已经找到了Poincar\'e群所有生成元的的代数关系,可以开始推导单粒子态的表示了\footnote{也就是单粒子态是Poincar\'e群的不可约表示,也称为诱导表示。};
+回想 \(\left[\mathscr{P}^\nu,\mathscr{P}^\mu\right]=0\)，四动量的对易关系意味着它们有共同的本征态。而且，由于 \(\mathscr{P}^0=\mathscr{H}\)，表明 \(\boldsymbol{p}\) 是一个守恒量。我们首先用 \(p^\mu\) 标记粒子本征态，即。
+\begin{equation}\label{4.7}
+    \mathscr{P}^\mu\ket{p^\mu,\alpha}=p^\mu\ket{p^\mu,\alpha}
+\end{equation}
+这里,用 \(p^\mu\) 标记粒子隐含意味着我们已经部分约化了表示矩阵(例如，具有不同动量的粒子，或有质量与无质量粒子，不能相互变换)。\(\alpha\) 包括除动量以外的其他指标。\\
+\noindent
+\\
+ 考虑粒子在非齐次洛伦兹变换下的变换:
+\[U(\Lambda,\,a)\ket{p^\mu,\alpha}=?\]
+这里，由于 \(U(\Lambda,\,a)=U(\Lambda)U(1,\,a)\)，因此分为：
+\begin{itemize}
+    \item 纯时空平移：
+    $U(1,\,a)\ket{p^\mu,\alpha}=e^{-ip^\mu\,a_\mu}\ket{p^\mu,\alpha}$
+    此变换是trivial的。
+    \item 其次部分的变换:利用计算技巧：$\mathscr{P}^\mu U(\Lambda)\ket{p^\mu,\alpha}=\underbrace{U(\Lambda)U^{-1}(\Lambda)}_{\mathbf{1}}\mathscr{P}^\mu U(\Lambda)\ket{p^\mu,\alpha}
+    =\Lambda^\mu_{\,\nu}p^\nu U(\Lambda)\ket{p^\mu,\alpha}$
+    可以看出 \(U(\Lambda)\ket{p^\mu,\alpha}\) 的本征态 是\(\ket{\Lambda^\mu_{\,\nu}p^\nu,\alpha}\),所以：
+    \begin{equation}
+        U(\Lambda)\ket{p^\mu,\alpha}=\sum_{\alpha} C_{\alpha \alpha'}(\Lambda,p)\ket{(\Lambda p)^\mu,\alpha}
+    \end{equation}
+\end{itemize}
+\noindent
+\\
+问题现在归结为：如何找出表示矩阵 \(C_{a\sigma,n}(\Lambda,p)\)的具体形式；考虑\text{Lorentz}\footnote{约定俗称,指固有时正时的Lorentz变换}变换下的不变量只有$p^2=\eta_{\mu\nu}p^\mu p^\nu$,以及$p^2\geqslant0$时$p^0$的符号；\\所以我们选择一组标准动量${k^\mu}$\footnote{对于SU(2)，也就是有质量的粒子，是它们的静止系；对于ISO(2),也就是无质量粒子，不存在静止参考系，所以我们选择那些使得纵向极化消失的坐标系。}
+并且任意系中的动量可以通过一个标准\text{boost}得到${k^\mu}$，即：
+\begin{equation}
+    p^\mu=L^\mu_{\,\nu}(p)k^\nu
+\end{equation}
+所以，动量为$p^\mu$的本征态写为：
+\begin{equation}\label{4.10}
+    \ket{p^\mu,\alpha}=N(p)U\left\{L(p)\right\}\ket{k^\mu,\alpha}
+\end{equation}
+\noindent
+\\
+用任意\text{Lorentz}变换，作用到(\refeq{4.10})上,得到：
+\begin{equation}\label{4.11}
+      \begin{aligned}
+        U(\Lambda)\ket{p^\mu,\alpha}&=
+        N(p)U(\Lambda)U\left\{L(p)\right\}\ket{k^\mu,\alpha}\\
+        &=  N(p)U\left\{L(\Lambda p)\right\}\left[U^{-1}\left\{L(\Lambda p)\right\}U(\Lambda)U\left\{L(p)\right\}\right]\ket{k^\mu,\alpha}\\
+        &= N(p)U\left\{L(\Lambda p)\right\}U\left\{\underbrace{L^{-1}(\Lambda p)\Lambda L(p)}_{W(\Lambda,p)\text{}}\right\}\ket{k^\mu,\alpha}\\
+    \end{aligned}
+\end{equation}
+
+\begin{tcolorbox}[colback=white!5,colframe=black!55,title=Wigner的小群]
+    上面的方程涉及子群 \(W(\Lambda,p) = L^{-1}(p)\Lambda L(k)\)(Wigner小群)。
+    \begin{itemize}
+        \item \textbf{保持$k^\mu$不变的代数关系}
+               $$
+                    \begin{aligned}
+                        W(\Lambda&,p)= L^{-1}(\Lambda p)\Lambda L(p)\\
+                        \Rightarrow &W(\Lambda,p)^\mu_{\,\nu}k^\nu= \left[L^{-1}(\Lambda p)\Lambda L(p)\right]^\mu_{\,\nu}k^\nu\\
+                        &=\left[L^{-1}(\Lambda p)\Lambda \right]^\mu_{\,\nu}p^\nu\\
+                        &=\left[L^{-1}(\Lambda p)\right]^\mu_{\,\nu}\Lambda^\mu_{\,\nu}p^\nu\\
+                        &=k^\nu
+                    \end{aligned}
+                    \;\longleftrightarrow \qquad \;
+                    \raisebox{-0.5\height}{%
+                    \begin{tikzpicture}[>=Stealth, node distance=1.7cm, font=\small]
+                    % 节点
+                    \node (k) at (0,2) {$k$};
+                    \node (p) at (-1.5,0) {$p$};
+                    \node (k2) at (1.5,0) {$\Lambda p$};
+
+                    % 圆弧箭头
+                    \draw[->, bend right=20] (k) to node[left] {$L(p)$} (p);
+                    \draw[->, bend left=20] (k) to node[right] {$L(\Lambda p)$} (k2);
+                    \draw[->, bend right=20] (p) to node[below] {$\Lambda$} (k2);
+
+                    \end{tikzpicture}%
+                    }
+                $$
+        $\implies$所以，任意小群作用在标准动量的本质态$\ket{k^\mu,\alpha}$是：
+                    $U\left\{W(\Lambda,p)\right\}\ket{k^\mu,a}=\sum_{\alpha'}D_{\alpha \alpha'}\left\{W(\Lambda,p)\right\}\ket{k^\mu,\alpha}$
+        系数矩阵是小群的一个表示。
+        \item \textbf{小群的同态关系}
+                $$ D_{\alpha \alpha'}(\bar{W},W)=\sum_{\alpha'}D_{\alpha'' \alpha'}(\bar{W})D_{\alpha \alpha'}(W)$$
+    \end{itemize}
+\end{tcolorbox}
+    回到(\refeq{4.11}),利用小群的表示矩阵\footnote{这里的小群就是使得标准动量不变的}：
+            \[    \begin{aligned}
+                    U(\Lambda)\ket{p^\mu,\alpha}
+                    &=N(p)U\left\{L(\Lambda p)\right\}U\left\{W(\Lambda,p)\right\}\ket{k^\mu,\alpha}\\
+                    &=\sum_{\alpha'}D_{\alpha \alpha'}\left\{W(\Lambda,p)\right\}N(p)U\left\{L(\Lambda p)\right\}\underbrace{\ket{k^\mu,\alpha'}}_{\text{这里由(\refeq{4.10})变换得到}{\begin{aligned}
+                    &\ket{p^\mu,\alpha}=N(p)U\left\{L(p)\right\}\ket{k^\mu,\alpha}\\
+                    &\rightarrow \ket{(\Lambda p)^\mu,\alpha'}=N(\Lambda p)U\left\{L(\Lambda p)\right\}\ket{k^\mu,\alpha'}\\
+                    &\rightarrow \ket{k^\mu,\alpha'}=\frac{U^{-1}\left\{L(\Lambda p)\right\}}{N(\Lambda p)}\ket{(\Lambda p)^\mu,\alpha'}
+            \end{aligned}}}\\
+                    &=\sum_{\alpha'}D_{\alpha \alpha'}\left\{W(\Lambda,p)\right\}N(p)U\left\{L(\Lambda p)\right\}\frac{U^{-1}\left\{L(\Lambda p)\right\}}{N(\Lambda p)}\ket{(\Lambda p)^\mu,\alpha'}\\
+                    &=\frac{N(p)}{N(\Lambda p)}\sum_{\alpha'}D_{\alpha \alpha'}\left\{W(\Lambda,p)\right\}\ket{(\Lambda p)^\mu,\alpha'}
+            \end{aligned}
+            \]
+    归一化系数的选择:$$N(p)=\sqrt{\frac{k^0}{p^0}}$$
+
+$\implies$最终得到：
+    \begin{equation}
+        U(\Lambda)\ket{p^\mu,\alpha}=\frac{N(p)}{N(\Lambda p)}\sum_{\alpha'}D_{\alpha \alpha'}\underbrace{\left\{W(\Lambda,p)\right\}}_{\text{只需要分类讨论小群的种类即可,参考}\autoref{1}}\ket{(\Lambda p)^\mu,\alpha'}
+    \end{equation}
+
+                \usetikzlibrary{arrows.meta}
+                \begin{figure}[htbp]
+                \centering
+                \begin{tikzpicture}[scale=2.2]
+                % ===== 坐标轴 =====
+                \draw[dashed] (-2,0) -- (2,0) node[right] {$p_i$};
+                \draw[dashed] (0,-2) -- (0,2) node[above] {$p_0$};
+
+                % 原点
+                \fill (0,0) circle (0.04) node[below right] {$O_0$};
+
+                % ===== 光锥 =====
+                \draw (-2,-2) -- (2,2);
+                \draw (-2,2) -- (2,-2);
+
+                % ===== 质量壳：p_0^2 - p_3^2 = m^2 =====
+                \draw plot[domain=-1.4:1.4,smooth,variable=\x]
+                ({\x},{sqrt(\x*\x+1)});
+                \draw plot[domain=-1.4:1.4,smooth,variable=\x]
+                ({\x},{-sqrt(\x*\x+1)});
+
+                % ===== 空间样轨道：p_3^2 - p_0^2 = m^2 =====
+                \draw plot[domain=-1.4:1.4,smooth,variable=\x]
+                ({sqrt(\x*\x+1)},{\x});
+                \draw plot[domain=-1.4:1.4,smooth,variable=\x]
+                ({-sqrt(\x*\x+1)},{\x});
+
+                % ===== 标注 m, -m =====
+                \node[above] at (0,1) {$m$};
+                \node[below] at (0,-1) {$-m$};
+                \node[right] at (1,0) {$m$};
+                \node[left] at (-1,0) {$-m$};
+
+                % ===== 轨道标记 =====
+                \node at (0.4,1.3) {$\mathcal O(m,0,0,0)$};
+                \node at (-0.6,-1.3) {$\mathcal O(-m,0,0,0)$};
+
+                \node at (1.6,0.4) {$\mathcal O(0,0,0,m)$};
+
+                \node at (0.3,0.5) {$\mathcal O(1,0,0,1)$};
+                \node at (-0.2,-0.7) {$\mathcal O(-1,0,0,1)$};
+
+                \end{tikzpicture}
+                \caption{Wigner粒子分类的轨道图}
+                \label{1}
+                \end{figure}
+\begin{center}
+            \renewcommand{\arraystretch}{1.8}\label{2}
+            \begin{tabular}{|c|c|c|c|c|}
+            \hline
+            类别
+            & 四动量条件
+            & 图中区域
+            & 标准动量 $k^\mu$
+            & 小群 $W_k$ \\ \hline
+
+            (I) Massive
+            & $p^\mu p_\mu=m^2,\; p^0>0$
+            & 光锥内部（上支双曲线）
+            & $(m,0,0,0)$
+            & $SO(3)\simeq SU(2)$ \\ \hline
+
+            (II) Massless
+            & $p^\mu p_\mu=0,\; p^0>0$
+            & 光锥本身
+            & $(\kappa,0,0,\kappa)$
+            & $ISO(2)$ \\ \hline
+
+            (III) Tachyonic
+            & $p^\mu p_\mu=-m^2$
+            & 光锥外部（左右双曲线）
+            & $(0,0,0,m)$
+            & $SO(2,1)$ \\ \hline
+
+            (IV) Trivial
+            & $p^\mu=0$
+            & 原点
+            & $(0,0,0,0)$
+            & 全洛伦兹群 \\ \hline
+
+            \end{tabular}
+\end{center}
+\subsection{正定质量粒子\(\dagger\)}
+\subsection{零质量粒子\(\dagger\)}

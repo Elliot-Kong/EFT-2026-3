@@ -1,0 +1,41 @@
+\section{S-矩阵}
+定义S-矩阵：
+    \begin{equation}
+    S_{\beta\alpha} = \braket{\beta;- | \alpha;+},
+\end{equation}
+表示入态 $\ket{\alpha;+}$ 演化到出态 $\ket{\beta;-}$ 的概率幅。
+
+
+\begin{center}
+    \vspace{0.5cm}
+        \text{\color{red}\Large ***}\\
+    \vspace{0.5cm}
+\end{center}
+这里来推导一下,S矩阵散射振幅表示:\color{red}记得写\normalcolor
+\begin{center}
+    \vspace{0.5cm}
+        \text{\color{red}\Large ***}\\
+    \vspace{0.5cm}
+\end{center}
+
+\begin{tcolorbox}[colback=white!5,colframe=black!55,title=渐进形式]
+    S-算符是：
+\begin{equation}
+    S=\Omega^\dagger(\infty)\Omega(-\infty)=U(-\infty,\infty)
+\end{equation}
+其中\begin{equation}\label{5.5.2}
+   \begin{aligned}
+    U(t,t_0)=&\Omega^\dagger(t)\Omega(t_0)=e^{iH_0t}e^{-iH(t-t_0)}e^{-iH_0t_0}\\
+   \overset{t\to\infty,t_0\to-\infty}{\longrightarrow}
+   &U(\infty,-\infty)=T \exp\!\left(-i\int_{-\infty}^{\infty} dt\,V(t)\right)
+   \end{aligned}
+\end{equation}
+在这种情况下，$S$矩阵变为\footnote{\color{blue}值得注意的是，
+    ：Dyson 级数虽是渐进展开计算(并没有限定这个相互作用的大小，但仅仅在微扰的时候才能有效) S 矩阵的标准方法，但其依赖的相互作用绘景在严格数学意义下受 \textbf{Haag 定理} 限制（即相互作用表象在无限自由度下可能不存在）。
+    之后公理化 QFT 引入 \textbf{海森堡场 (Heisenberg Field)} 则是为了建立不依赖于微扰展开的严格定义。
+    物理上，严格的 S 矩阵元素是通过 \textbf{LSZ 约化公式} 从海森堡场的格林函数中提取的，而 Dyson 级数实则是对这一过程的渐近近似计算。
+}
+\begin{equation}
+    S_{\beta\alpha}\to\braket{\beta|T \exp\!\left(-i\int_{-\infty}^{\infty} dt\,V(t)\right)|\alpha}
+\end{equation}
+\end{tcolorbox}

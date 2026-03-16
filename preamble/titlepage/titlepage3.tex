@@ -1,0 +1,75 @@
+% ============================================================
+% Title page (style 3)
+% Source idea: the cover in `qftcover_elegant` (from the zip you provided).
+% Files used:
+% - preamble/titlepage3/background.pdf
+% - preamble/titlepage3/cat.pdf
+%
+% Note:
+% - This file assumes `xcolor` provides SVG color names (e.g. DarkGreen).
+% - This file assumes `pagecolor` is loaded (for `\newpagecolor`).
+% ============================================================
+
+\begingroup
+
+% Page background color
+\newpagecolor{gray!20}
+
+\begin{titlepage}
+  \begin{tikzpicture}[remember picture, overlay]
+    % White overlay blocks
+    \fill[white, opacity=.5] (current page.south east) rectangle +(-.8\paperwidth, .6\paperheight);
+    \fill[white, opacity=.5] (current page.south east) rectangle +(-.7\paperwidth, .7\paperheight);
+
+    % Main title (edit this)
+    \node[
+      shift={(-.35*\paperwidth,.65*\paperheight)},
+      darkgray,
+      font=\huge\bfseries\sffamily
+    ] at (current page.south east) { Effective Field Theory };
+
+    % Side subtitle (edit this)
+    \node[
+      shift={(-.75*\paperwidth,.3*\paperheight)},
+      rotate=90,
+      gray,
+      opacity=.6,
+      font=\LARGE\bfseries\sffamily
+    ] at (current page.south east) { Elliot,kong'sTheorical physics note };
+
+    % Bottom info (edit this)
+    \node[
+      shift={(.15*\paperwidth,.075*\paperheight)},
+      gray,
+      opacity=.8,
+      font=\large\sffamily
+    ] at (current page.south) 
+   {\normalsize Kyl0727@163.com} ;
+
+    % Background figure (rotate a little for style)
+    \node[
+      rotate around={4:(current page.north)},
+      opacity=.4
+    ] at ([yshift=.35\paperheight]current page.center) {
+      \includegraphics[width=\paperwidth]{preamble//titlepage/titlepage3/background}
+    };
+
+    % Logo with a pattern overlay
+    \node (coverlogo) [
+      shift={(.65*\paperwidth,.3*\paperheight)}
+    ] at (current page.south west) {
+      \includegraphics[height=.3\paperheight]{preamble//titlepage/titlepage3/cat}
+    };
+    \fill[
+      pattern=sixpointed stars,
+      pattern color=DarkGreen!15!white!5,
+      scope fading=south
+    ] (coverlogo.south west) rectangle (coverlogo.north east);
+  \end{tikzpicture}
+\end{titlepage}
+
+\thispagestyle{empty}
+\cleardoublepage
+\restorepagecolor
+\endgroup
+

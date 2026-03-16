@@ -1,0 +1,124 @@
+\section{0+1动力学问题:算符方法}
+\subsection{Schr\"odinger和Heisenberg绘景}
+\subsection{相互作用绘景和$Dyson$级数}
+\begin{tcolorbox}[colback=white!5,colframe=black!55,title=$Dirac$绘景]
+    \footnote{\color{blue}严格来说，相互作用绘景在相对论性量子场论（QFT）中是不存在的，这一结论由\textbf{ Haag's 定理} 给出。\\
+\textbf{(1) 严格的数学理论：} 由于 QFT 具有无穷多自由度，自由场与相互作用场属于正则对易关系 (CCR) 的\textit{幺正不等价表示 }。这意味着，数学上根本不存在一个幺正算符 $U(t, t_0)$ 能够将自由场的$Fock$空间，包含自由真空态）映射为相互作用场的$Hilbert$空间（包含真实的物理真空态）。\\
+\textbf{(2) 物理图像上的诠释：} 尽管数学基础被破坏，物理学家在微扰论中仍继续使用该绘景，其物理合理性在于引入了截断和渐近假设。首先，通过将系统置于有限体积 $V$ 内（红外截断）并限制最高动量（紫外截断），系统退化为有限自由度，此时相互作用绘景是合法的（基于冯·诺依曼唯一性定理）；其次，物理散射实验（S矩阵）只关注 $t \to \pm \infty$ 时粒子相距无穷远、相互作用衰减为零的渐近自由态。通过\textit{绝热开启 } 并在重整化后小心地取极限移除截断（LSZ约化公式），我们实际上绕过了有限时间内微观态幺正演化的数学严密性问题。}
+\footnote{为了彻底避开相互作用绘景中哈格定理带来的数学矛盾，现代量子场论在构建严格理论时直接采用\textbf{海森堡绘景 }。
+在数学理论上，我们引入随\textbf{全哈密顿量 } 演化的\textbf{海森堡场 }。这使得理论完全建立在真实的、相互作用的希尔伯特空间内，不再需要强求与自由场真空建立幺正联系，从而天然免疫了哈格定理的限制（如 Wightman 公理化场论就是基于海森堡场构建的）。
+在物理图像上，理论的核心变为了求解海森堡场的时间序真空期望值（即完全格林函数或 $n$ 点关联函数）。随后，依靠严格的 \textbf{LSZ 约化公式 }，将这些包含了所有相互作用信息的格林函数直接截取到质壳 (mass shell) 上，从而解析出物理的 S 矩阵元。这一套框架抛弃了有限时间内的虚假自由态演化，为量子场论提供了严密的非微扰基础。}在$Schr\"odinger$和$Heisenberg$绘景中，系统的动力学演化都可以被精确处理；而在现实情况中，动力学行为十分复杂，基本没有解析解，所以在这种情况下我们将完整的哈密顿量$H$分为自由部分$H_0$相互作用部分$V$：
+\begin{equation}
+    H=H_0+V
+\end{equation}
+同时约定由自由部分的$H_0$承担时间演化，\footnote{
+    幺正演化和模长(期望)是等价的，所以：
+\begin{equation}
+    \begin{aligned}
+        {}_{ip}\bra{\psi(t)}\mathscr{O}_{ip}(t)\ket{\psi(t)}_{ip}=&\bra{\psi}e^{iHt}\underbrace{e^{-iH_0t}e^{iH_0t}}_\mathbf{1}\mathscr{O}\underbrace{e^{-iH_0t}e^{iH_0t}}_\mathbf{1}  e^{-iHt}\ket{\psi}\\
+        &=
+        \bra{\psi}e^{iHt}\mathscr{O}  e^{-iHt}\ket{\psi}\\
+        &=
+        \bra{\psi(t)}\mathscr{O} \ket{\psi(t)}=\bra{\psi}\mathscr{O}_H(t) \ket{\psi}
+    \end{aligned}
+\end{equation}
+}
+\begin{equation}
+    \begin{aligned}
+        \text{态矢量的演化}:&\ket{\psi(t)}_{ip}=e^{iH_0t}\ket{\psi(t)}_S=e^{iH_0t}e^{-iHt}\ket{\psi}\footnote{约定：$\ket{\psi}=\ket{\psi}_H=\ket{\psi(0)}_S$}\\
+        \text{算符的演化}:&\mathscr{O}_{ip}(t)=e^{iH_0t}\mathscr{O}\footnote{约定：$\mathscr{O}=\mathscr{O}(0)_H=\mathscr{O}_S$}e^{-iH_0t}
+    \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\begin{center}
+    \vspace{0.5cm}
+        \text{\Large ***}\\
+    \vspace{0.5cm}
+\end{center}
+态的演化是$\ket{\psi(t)}_{ip}=e^{iH_0t}e^{-iHt}\ket{\psi}$,可以推导时间演化算符，
+\begin{equation*}
+    \begin{aligned}
+    \text{$t$时刻}:&\ket{\psi(t)}_{ip}=e^{iH_0t}e^{-iHt}\ket{\psi}\\
+    \text{$t_0$时刻}:&\ket{\psi(t_0)}_{ip}=e^{iH_0t_0}e^{-iHt_0}\ket{\psi}\to \ket{\psi}=e^{iHt_0}e^{-iH_0t_0}\ket{\psi(t_0)}_{ip}
+\end{aligned}
+\end{equation*}
+便可得到从$\ket{\psi(t)}_{ip}$演化到$\ket{\psi(t_0)}_{ip}$的方程，便定义时间演化算符：
+\begin{equation}
+    \begin{aligned}
+        \ket{\psi(t)}_{ip}=&
+        e^{iH_0t}e^{-iHt}\ket{\psi}\\
+        &=
+        e^{iH_0t}e^{-iHt}e^{iHt_0}e^{-iH_0t_0}\ket{\psi(t_0)}_{ip}\\&=
+        \underbrace{e^{iH_0t}e^{-iH(t-t_0)}e^{-iH_0t_0}}_{U(t,t_0)}\ket{\psi(t_0)}_{ip}
+    \end{aligned}\qquad\text{且}\quad
+    U(t,t)=1
+\end{equation}
+现在来推导时间演化算符$U(t,t_0)$的形式，对$U(t,t_0)=e^{iH_0t}e^{-iH(t-t_0)}e^{-iH_0t_0}$两端求时间的导数：
+\begin{equation*}
+        \begin{aligned}
+        \frac{d}{dt}U(t,t_0)=&\frac{d}{dt}\left\{e^{iH_0t}e^{-iH(t-t_0)}e^{iH_0t_0}\right\}\\
+        =&iH_0U(t,t_0)-ie^{iH_0t}He^{-iH(t-t_0)}e^{iH_0t_0}\\
+        =&iH_0U(t,t_0)-ie^{iH_0t}H\underbrace{e^{-iH_0t}e^{-iH_0t}}_{\mathbf{1}}e^{-iH(t-t_0)}e^{iH_0t_0}\\
+        =&iH_0U(t,t_0)-ie^{iH_0t}He^{-iH_0t}U(t,t_0)\\
+        =&iH_0U(t,t_0)-ie^{iH_0t}(\underbrace{H_0}_\text{自由哈密顿量时间演化后不变}+V)e^{-iH_0t}U(t,t_0)\\
+        =&-ie^{iH_0t}Ve^{-iH_0t}U(t,t_0)\\
+        =&-iV(t)U(t,t_0)
+    \end{aligned}
+\end{equation*}
+对上式积分:
+\begin{equation*}
+    \begin{aligned}
+        &\int^{t}_{t_0}dU(t,t_0)=\int^{t}_{t_0}dt\left[-iV(t)U(t,t_0)\right]\\
+        &\rightarrow U(t,t_0)-U(t_0,t_0)=-i\int^{t}_{t_0}dt\left[V(t)U(t,t_0)\right]\\
+        &\rightarrow U(t,t_0)=1-i\int^{t}_{t_0}dt\left[V(t)U(t,t_0)\right]\\
+    \end{aligned}
+\end{equation*}
+ 不断迭代这个积分,可以得到对于$V$的幂次展开的积分式：
+\[    \begin{aligned}
+        \rightarrow U(t,t_0)=1-&i\int^{t}_{t_0}dt_1V(t_1)+(-i)^2\int^{t}_{t_0}dt_1\int_{t_0}^{t_1}dt_2V(t_1)V(t_1)\\
+        &+(-i)^3\int^{t}_{t_0}dt_1\int^{t_1}_{t_0}dt_2\int^{t_2}_{t_0}dt_3V(t_1)V(t_2)V(t_3)+\cdots
+    \end{aligned}\]
+取渐近极限$t\rightarrow\infty$和$t_0\rightarrow-\infty$,就给出了时间演化算符的渐近展开形式：
+\begin{equation}\label{dyson}
+    \begin{aligned}
+        \rightarrow U(\infty,-\infty)=1-&i\int^{\infty}_{-\infty}dt_1V(t_1)+(-i)^2\int^{\infty}_{-\infty}dt_1\int_{-\infty}^{t_1}dt_2V(t_1)V(t_1)\\
+        &+(-i)^3\int^{\infty}_{-\infty}dt_1\int^{t_1}_{-\infty}dt_2\int^{t_2}_{-\infty}dt_3V(t_1)V(t_2)V(t_3)+\cdots
+    \end{aligned}
+\end{equation}
+这里利用算符的\textbf{编时乘积}(按时间排序)写为编时乘积的形式，编时算符的形式为：
+\[
+\begin{aligned}
+T\{V(t)\} &= V(t), \\
+T\{V(t_1)V(t_2)\} &= \theta(t_1-t_2)V(t_1)V(t_2)
++ \theta(t_2-t_1)V(t_2)V(t_1)\\
+&\ldots
+\end{aligned}
+\]
+其中 $\theta(\tau)$ 是阶跃函数，$\tau>0$ 时等于 $+1$ 而 $\tau<0$ 时等于 $0$。
+$n$ 个 $V$ 的编时乘积是对全部 $n!$ 个 $V$ 的置换的求和，
+每一个都对所有的 $t_1,\ldots,t_n$ 积分，所以方程(\refeq{dyson})可以写为
+\begin{equation*}
+    \begin{aligned}
+        U(\infty,-\infty)
+        = 1 + \sum_{n=1}^{\infty} \frac{(-i)^n}{n!}
+        \int_{-\infty}^{\infty} dt_1\,dt_2 \cdots dt_n\,
+        T\{V(t_1)\cdots V(t_n)\}
+\end{aligned}
+\end{equation*}
+如果不同时刻的所有 $V(t)$ 是对易的，
+这个级数可以进行求和，其和是
+\[
+\begin{aligned}
+U = \exp\!\left(-i\int_{-\infty}^{\infty} dt\,V(t)\right).
+\end{aligned}
+\]
+当然，通常不是这种情况；一般而言，上式甚至不收敛，
+它充其量是 $V$ 中出现的任何耦合常数的渐近展开\footnote{关于渐近展开的入门介绍，Erdelyi的短篇专著《Asymptotic Expansions》（Dover, 1956）非常有用}式。
+然而在一般情况下，上式有时写为
+
+
+    \begin{equation}
+        U = T \exp\!\left(-i\int_{-\infty}^{\infty} dt\,V(t)\right)   
+\end{equation}
+
+\section{0+1维动力学问题:泛函方法}

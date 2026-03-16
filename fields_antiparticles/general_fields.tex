@@ -1,0 +1,271 @@
+\section{$Lorentz$群的不可约表示}
+在数学上，Poincaré group 与 Lorentz group 的关系是一个标准的半直积结构，表述为：
+\begin{equation}
+\boxed{
+\mathbb{P} = \mathbb{R}^{1,3} \rtimes SO(1,3)
+}
+\end{equation}
+Poincar\'e 变换对应希尔伯特空间中的幺正算符的无穷小形式是：
+\begin{equation*}
+    {U}(1+\omega,\epsilon)={1}+\frac{i}{2}\omega_{\rho\sigma}\mathscr{J}^{\rho\sigma}-i\epsilon_\rho \mathscr{P}^\rho+\ldots
+\end{equation*}
+以及Poincar\'e 代数是：
+    \begin{equation*}
+            \begin{aligned}
+        &i\left[\mathscr{J}^{\mu\nu},\mathscr{J}^{\rho\sigma} \right]=
+        \eta^{\nu\rho}\mathscr{J}^{\mu\sigma}
+        -\eta^{\mu\rho}\mathscr{J}^{\nu\sigma}
+        -\eta^{\sigma\mu}\mathscr{J}^{\rho\nu}
+        +\eta^{\sigma\nu}\mathscr{J}^{\rho\mu}\\
+        &i\left[\mathscr{P}^\mu,\mathscr{J}^{\rho\sigma} \right]=
+        \eta^{\mu\rho}\mathscr{P}^\sigma-\eta^{\mu\sigma}\mathscr{P}^\rho\\
+        &\left[ \mathscr{P}^\mu,\mathscr{P}^\rho\right]=0
+    \end{aligned}
+\end{equation*}
+去掉半直积的平移部分，便是$Lorentz$变换的无穷小形式以及代数关系是：
+\begin{subequations}
+    \begin{align}
+        M(1+\omega)&={1}+\frac{i}{2}\omega_{\rho\sigma}\mathscr{J}^{\rho\sigma}+\dots\\
+         i\left[\mathscr{J}^{\mu\nu},\mathscr{J}^{\rho\sigma} \right]
+         &=
+        \eta^{\nu\rho}\mathscr{J}^{\mu\sigma}
+        -\eta^{\mu\rho}\mathscr{J}^{\nu\sigma}
+        -\eta^{\sigma\mu}\mathscr{J}^{\rho\nu}
+        +\eta^{\sigma\nu}\mathscr{J}^{\rho\mu}
+    \end{align}
+\end{subequations}
+$Lorentz$代数的三维角动量和$boost$\footnote{别忘了$boost$是不守恒且反厄米的}是：
+\begin{subequations}
+    \begin{align}
+        &\mathbf{J} = \{\mathscr{J}^{23}, \mathscr{J}^{31}, \mathscr{J}^{12}\}\\
+        &\mathbf{K} = \{\mathscr{J}^{01}, \mathscr{J}^{02}, \mathscr{J}^{03}\}
+    \end{align}
+\end{subequations}
+相应的对易关系是：
+\begin{subequations}
+    \begin{align}
+        [J_{i}, J_{j}] &= i\epsilon_{ijk} J_{k}  \\
+        [J_{i}, K_{j}] &= i\epsilon_{ijk} K_{k} \\
+        [K_{i}, K_{j}] &= -i\epsilon_{ijk} J_{k} 
+    \end{align}
+\end{subequations}
+\text{\color{blue}利用线性组合，$Lorentz$代数变为}：
+\begin{subequations}
+    \begin{align}
+        &A_i=\frac{1}{2}(J_i-iK_i)\\
+        &B_i=\frac{1}{2}(J_i+iK_i)
+    \end{align}
+\end{subequations}
+这俩个算符的对易关系是：
+\begin{subequations}
+    \begin{align}
+        &[A_i,A_j]=i\epsilon_{ijk} A_{k}\\
+        &[B_i,B_j]=i\epsilon_{ijk} B_{k}\\
+        &[A_i,B_j]=0
+    \end{align}
+\end{subequations}
+这时，\color{blue}$Lorentz$群可以被视为两个“角动量群”。
+值得注意：给“角动量群”加上引号，是因为生成元
+并非厄米的，因此它们生成的群严格来说不是通常的幺正SU(2)群，而是其复化版本。的直积\normalcolor；因此复化后的$Lorentz$代数分解为
+\begin{equation}
+\boxed{\mathfrak{so}(1,3)_{\mathbb C}
+\simeq
+\mathfrak{su}(2)\oplus\mathfrak{su}(2)}
+\end{equation}
+将完整的HLG代数分解为两个对易子群，有效地解决了$Lorentz$群所有有限维表示的分类问题。HLG的一般表示可以用自旋对$(A,B)$标记，它们的取值是：
+\begin{subequations}
+    \begin{align}
+        &a=-A,-A+1,\dots,+A\\
+        &b=-B,-B+1,\dots,+B
+    \end{align}
+\end{subequations}
+两组角动量的基底为：
+\begin{equation}
+    \ket{A,a}\oplus\Ket{B,b}=\Ket{A,B;a,b}\overset{\text{简写为}}{=}\Ket{a,b}
+\end{equation}
+\begin{subequations}
+\begin{align}
+    \braket{a',b'|\mathbf{A}|a,b}
+    &= 
+    \braket{a'|\mathbf{J}^{A}|a}\,\delta_{bb'} ,\\
+    &\to J^A_3\ket{a}
+    = a\ket{a},\\
+    &\to (J^A_1 \pm iJ^A_2)\ket{a}
+    = 
+    \sqrt{(A \mp a)(A \pm a + 1)}\,\ket{a \pm 1}
+\end{align}
+\begin{align}
+    \braket{a',b'|\mathbf{B}|a,b}
+    &=
+    \delta_{aa'}\,\braket{b'|\mathbf{J}^{B}|b},\\
+    &\to J^B_3\ket{b}
+    = b\ket{b},\\
+    &\to (J^B_1 \pm iJ^B_2)\ket{b}
+    = 
+    \sqrt{(B \mp b)(B \pm b + 1)}\,\ket{b \pm 1}.
+\end{align}
+\end{subequations}
+\text{\color{blue}所以场和角动量耦合理论息息相关}：一般的总角动量$\boldsymbol{J}$可以通过$\boldsymbol{J}=\boldsymbol{J}^A+\boldsymbol{J}^B$,取值遍及两个角动量差到和：
+\begin{equation}
+    |A-B|\leq j\leq |A+B|
+\end{equation}
+这时，将(A,B)翻译成各种物理场;给出表格
+\begin{table}[htbp]
+    \centering
+    \renewcommand{\arraystretch}{1.4}
+    % 如果你需要图表标题是中文可以自己把 caption 改回来
+    \caption{Representations of the Lorentz Group and Corresponding Physical Fields}
+    \vspace{0.2cm}
+    \begin{tabular}{c c l}
+        \toprule
+        \textbf{$(A,B)$ Representation} & \textbf{Max Spin $j$} & \textbf{Field Type} \\
+        \midrule
+        $(0, 0)$ & $0$ & Scalar Field \\
+        
+        $(\frac{1}{2}, 0)$ or $(0, \frac{1}{2})$ & $\frac{1}{2}$ & Left/Right-handed Weyl Spinor \\
+        
+        $(\frac{1}{2}, 0) \oplus (0, \frac{1}{2})$ & $\frac{1}{2}$ & Dirac Spinor or  Majorana Spinor \\
+        
+        $(\frac{1}{2}, \frac{1}{2})$ & $1$ & Vector Field \\
+        
+        $(1, 0)$ or $(0, 1)$ & $1$ & (Anti-)Self-dual Tensor Field \\
+        
+        $(1, 0) \oplus (0, 1)$ & $1$ & Antisymmetric Tensor Field (2-form) \\
+        
+        $(1, \frac{1}{2}) \oplus (\frac{1}{2}, 1)$ & $\frac{3}{2}$ & Rarita-Schwinger Field (Vector-Spinor) \\
+        
+        $(1, 1)$ & $2$ & Symmetric Traceless Tensor Field \\
+        \midrule
+        $(A, A)$ & $2A$ & Totally Symmetric Traceless Tensor Field of Rank $2A$ \\
+        \bottomrule
+    \end{tabular}
+    \label{tab:fields_representation_english}
+\end{table}
+\begin{center}
+    各类物理场的自由度
+\end{center}
+\vspace{0.2cm}
+在量子场论中，场在$Lorentz$群表示下的“Off-shell”数学分量，与实际满足运动方程的“On-shell”物理传播自由度是截然不同的。特别是对于无质量规范场，规范对称性会消除非物理的纵向极化。具体讨论如下：
+
+\begin{itemize}
+    \setlength{\itemsep}{0.8em} % 增加条目间的垂直间距，用留白代替加粗来区分层次
+
+    \item 标量场 $(0,0)$，自旋 $j=0$。
+    \begin{itemize}
+        \item 物理上对应无方向性的标量粒子，如 Klein-Gordon 场、Higgs Boson。
+        \item 离壳维度为 $(2\times0+1)^2=1$，在壳（无论有无质量）始终保持 $1$ 个物理自由度。
+    \end{itemize}
+
+    \item Weyl 旋量场 $(\frac{1}{2}, 0)$ 或 $(0, \frac{1}{2})$，自旋 $j=1/2$。
+    \begin{itemize}
+        \item 描述具有确定手征性（左手或右手）的无质量费米子，是构建标准模型的基本模块。
+        \item 具有 $2$ 个物理自由度（对应螺旋度 $\pm 1/2$）。
+    \end{itemize}
+
+    \item Dirac / Majorana 旋量场 $(\frac{1}{2}, 0) \oplus (0, \frac{1}{2})$，自旋 $j=1/2$。
+    \begin{itemize}
+        \item Dirac 场：由左右手外尔旋量直和而成，描述有质量的费米子（如电子、夸克）。离壳具有 $2+2=4$ 个复分量；在壳具有 $4$ 个物理自由度（正/反粒子 $\times$ 自旋上下）。
+        \item Majorana 场：对狄拉克场施加实数条件（要求反粒子就是其自身，如中微子假说），自由度减半，仅剩 $2$ 个物理自由度。
+    \end{itemize}
+
+    \item 四维矢量场 $(\frac{1}{2}, \frac{1}{2})$，自旋 $j=1$。
+    \begin{itemize}
+        \item 对应四维协变矢量 $A_\mu$。离壳分量数为 $(2\times\frac{1}{2}+1)^2 = 4$。
+        \item 若有质量（ W/Z 玻色子）：存在纵向极化，物理状态数为 $2j+1 = 3$，即 $3$ 个物理自由度。
+        \item 若无质量（光子\footnote{光字到底装进无质量矢量场还是反对称张量场，或许是一个值得讨论的问题
+        }）：规范对称性消除纵极化，仅剩横向极化，具有 $2$ 个物理自由度。
+    \end{itemize}
+
+    \item 反对称张量场 $(1, 0) \oplus (0, 1)$，自旋 $j=1$ 的反对称部分。
+    \begin{itemize}
+        \item 对应二阶反对称张量（2-form）$B_{\mu\nu} = -B_{\nu\mu}$，如弦论中的 Kalb-Ramond 场。离壳有 $3+3=6$ 个独立分量。
+        \item 若有质量：具有 $3$ 个物理自由度。
+        \item 若无质量：它只有 $1$ 个物理自由度。这可通过两种视角理解：
+        \begin{enumerate}
+            \item 小群横向截面法：无质量粒子的极化只能存在于垂直运动方向的 $2\times 2$ 横向平面内。在此平面内的反对称矩阵只有唯一的独立分量（$B_{12} = -B_{21}$）。
+            \item Hodge Duality：在四维时空中，2-形式场 $B_{\mu\nu}$ 的场强是 3-形式。通过 $\star$ 对偶操作，3-形式等价于 1-形式的导数。因此它在物理上完全等同于一个无质量标量场。
+        \end{enumerate}
+    \end{itemize}
+
+    \item Rarita-Schwinger 场 $(1, \frac{1}{2}) \oplus (\frac{1}{2}, 1)$，自旋 $j=3/2$。
+    \begin{itemize}
+        \item 描述带有矢量指标和旋量指标的场 $\Psi_\mu^\alpha$，是超对称理论中引力微子（Gravitino）的标准描述。离壳分量数为 $3\times2 + 2\times3 = 12$。
+        \item 若有质量，具有 $4$ 个物理自由度；若无质量，具有 $2$ 个物理自由度。
+    \end{itemize}
+
+    \item 二阶对称无迹张量场 $(1, 1)$，自旋 $j=2$。
+    \begin{itemize}
+        \item 对应度规微扰 $h_{\mu\nu}$，描述引力场。
+        \item 离壳计数：一个一般的四维二阶对称张量有 $4 \times 5 / 2 = 10$ 个分量。扣除 $1$ 个无迹条件（$h^\mu_\mu = 0$）后，剩余 $9$ 个分量，完美吻合群论维度 $(2\times 1+1)^2 = 9$。
+        \item 若有质量（Fierz-Pauli 场）：具有 $2j+1 = 5$，即 $5$ 个物理自由度。
+        \item 若无质量（广义相对论的引力波）：微分同胚不变性去除了多余极化，仅保留加号（$+$）和叉号（$\times$）极化，具有 $2$ 个物理自由度。
+    \end{itemize}
+
+    \item 完全对称无迹张量场 $(A, A)$，广义高自旋场，自旋 $j=2A$（整数）。
+    \begin{itemize}
+        \item 张量构造与无迹操作的本质：这是一个带有 $2A$ 个$Lorentz$指标的完全对称张量 $\Phi_{\mu_1 \mu_2 \dots \mu_{2A}}$（如 Fronsdal 场）。为了使其构成$Lorentz$群的不可约表示，必须扣除所有包含低阶表示的“迹”。即要求对任意两个指标缩并都为零：$\eta^{\mu_1 \mu_2} \Phi_{\mu_1 \mu_2 \dots \mu_{2A}} = 0$。
+        \item 离壳自由度完美闭环计算：
+        \begin{itemize}
+            \item 在 4 维时空中，秩为 $N=2A$ 的完全对称张量有 $\binom{4+N-1}{N}$ 个分量。
+            \item 它的迹本身是一个秩为 $N-2$ 的完全对称张量，拥有 $\binom{4+(N-2)-1}{N-2}$ 个分量。
+            \item 无迹操作相当于强行减去这些分量：$\binom{N+3}{N} - \binom{N+1}{N-2} = (N+1)^2$。
+            \item 代入 $N=2A$，得到离壳维度正好是 $(2A+1)^2$，与$Lorentz$群表示 $(A,A)$ 的维度公式严丝合缝。
+        \end{itemize}
+        \item 若有质量：具有 $2(2A)+1 = 4A+1$ 个物理自由度。
+        \item 若无质量：所有自旋 $j \ge 1$ 的无质量规范场都只有两个螺旋度状态 $\lambda = \pm 2A$，因此恒为 $2$ 个物理自由度。
+    \end{itemize}
+
+\end{itemize}
+\begin{center}
+    \vspace{0.5cm}
+    \text{\color{red}$Lorentz$群的表示：非紧致性与空间反演}\\
+    \vspace{0.5cm}
+\end{center}
+在通过 $SU(2)_L \times SU(2)_R$ 代数构建$Lorentz$群的有限维表示 $(A,B)$ 后，有两个深刻的数学物理性质决定了量子场论的具体形态。
+
+\vspace{0.2cm}
+\noindent \textit{1. $Lorentz$ group:Non-compactness and Non-unitarity}
+\vspace{0.1cm}
+
+\begin{itemize}
+    \setlength{\itemsep}{0.6em}
+    
+    \item 拓扑差异：$Lorentz$群 $SO(1,3)$ 与四维欧几里得转动群 $SO(4)$ 有着本质区别。$SO(4)$ 描述的是纯空间的旋转，其群流形是闭合有界的，因此是紧致群（Compact Group）。而 $SO(1,3)$ 包含了闵可夫斯基时空中的$Lorentz$平移（Boost）。
+
+    \item Rapidity的发散：对于 Boost 变换，我们可以Rapidity参数 $\phi$。它与速度 $v$ 的关系为 $v/c = \tanh \phi$。由此可得：
+    \begin{equation}
+        \phi = \text{arctanh}\Big(\frac{v}{c}\Big) = \frac{1}{2} \ln \left( \frac{1 + v/c}{1 - v/c} \right)
+    \end{equation}
+    当粒子的速度趋近于光速（$v \to c$）时，快度参数 $\phi \to \infty$。这意味着 $SO(1,3)$ 的群参数空间是无界的，因此它是一个非紧致群
+
+    \item 数学定理的限制：根据$Winger theorem$，非紧致的单李群不存在有限维的Unitary Representation。这直接导致在 $(A,B)$ 表示中，虽然角动量生成元 $\boldsymbol{J}$ 是厄米的，但 Boost 生成元 $\boldsymbol{K}$ 必然是非厄米的（Anti-hermitian）。
+
+    \item 这意味着我们在表格中列出的所有有限维物理场（如 $2\times 2$ 的旋量场、$4\times 4$ 的矢量场）其$Lorentz$变换矩阵都是非幺正的。但是我们关注的对象是场算符，而不是态矢量，就不需要正定的范数
+\end{itemize}
+
+\vspace{0.4cm}
+\noindent \textit{2. Parity Symmetry and Direct Sums}
+\vspace{0.1cm}
+
+\begin{itemize}
+    \setlength{\itemsep}{0.6em}
+
+    \item $Lorentz$理论要求包含空间反演（Parity / 宇称），则必须存在一个表示矩阵 $\beta$，使得生成元在其作用下满足：
+    \begin{equation}
+        \beta \boldsymbol{J} \beta^{-1} = +\boldsymbol{J} \,, \qquad \beta \boldsymbol{K} \beta^{-1} = -\boldsymbol{K}
+    \end{equation}
+    物理上这很容易理解：空间反演下坐标 $\boldsymbol{x} \to -\boldsymbol{x}$，动量 $\boldsymbol{p} \to -\boldsymbol{p}$，因此角动量 $\boldsymbol{J} = \boldsymbol{r} \times \boldsymbol{p} \to \boldsymbol{J}$（伪矢量保持不变），而 Boost 生成元 $\boldsymbol{K} \sim t\boldsymbol{p} - \boldsymbol{x}E \to -\boldsymbol{K}$（极矢量反号）。
+
+    \item 对 $(A,B)$ 表示的破坏：由于我们定义了左右手生成元 $\boldsymbol{J}_{L,R} = \frac{1}{2}(\boldsymbol{J} \pm i\boldsymbol{K})$，在空间反演作用下，$\boldsymbol{K}$ 的反号会导致左右手生成元互相交换，即 $\boldsymbol{J}_L \leftrightarrow \boldsymbol{J}_R$。
+    
+    \item 直和构造：上述变换表明，空间反演会将一个 $(A,B)$ 表示直接映射为 $(B,A)$ 表示。结论是显而易见的：除非 $A=B$（如标量场 $(0,0)$、矢量场 $(1/2,1/2)$、引力场 $(1,1)$ 天生具有空间反演对称性），否则单一的 $(A,B)$ 不可约表示无法提供空间反演对称性。
+
+    \item 这就是为什么自然界中的手征费米子（Weyl Spinor）破坏了宇称对称性。为了在理论中恢复空间反演（QED），我们必须将不对称的表示进行直和，构造出 $(A,B) \oplus (B,A)$ 的形式。例如：
+    \begin{equation*}
+        \begin{aligned}
+            \text{Dirac 场：} &\quad (\frac{1}{2}, 0) \oplus (0, \frac{1}{2}) \\
+            \text{电磁场强张量：} &\quad (1, 0) \oplus (0, 1)
+        \end{aligned}
+    \end{equation*}
+    这正是狄拉克旋量必须是四分量，以及电磁场张量必须同时包含电场和磁场的深层含义。
+\end{itemize}

@@ -1,0 +1,108 @@
+% ============================================================
+% Visual / diagram packages
+% - Boxes (tcolorbox)
+% - Figures (graphicx, caption)
+% - TikZ drawings
+% - Plots (pgfplots)
+% - Feynman diagrams (tikz-feynman)
+% ============================================================
+
+% Boxes
+\usepackage{tcolorbox}
+\usepackage{tcolorbox}
+\tcbuselibrary{listings, breakable}
+\tcbuselibrary{skins, breakable}
+
+% 重要公式框
+\tcbuselibrary{listings, breakable}
+\newtcolorbox{importantformula}{
+  colback=gray!8,
+  colframe=black!40,
+  boxrule=0.4pt,
+  arc=2pt,
+  left=6pt, right=6pt, top=6pt, bottom=6pt,
+  breakable
+}
+\tcbset{
+  mybox/.style={
+    ,
+    boxrule=0.8pt,
+    arc=2pt,
+    left=6pt,right=6pt,top=6pt,bottom=6pt
+  }
+}
+% Figures
+\usepackage{graphicx}
+\usepackage{caption}
+
+
+% TikZ (general diagrams)
+\usepackage{tikz}
+
+% TikZ libraries
+\usetikzlibrary{
+  arrows.meta,
+  decorations.pathmorphing,
+  patterns,
+  calc,
+  positioning,
+  fadings
+}
+
+
+% Plots
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% Page background color (used by `titlepage3.tex`)
+\usepackage{pagecolor}
+
+% Feynman diagrams
+\usepackage{tikz-feynman}
+\tikzfeynmanset{
+  compat=1.1.0,
+  every diagram/.style={
+    small,
+    horizontal=a to b,
+    layered layout,
+  },
+  every vertex/.style={dot},
+}
+% --- 必须加载的包 ---
+\usepackage{tikz}
+\usepackage{graphicx} % 用于 resizebox 缩放图片
+
+% --- 加载 TikZ 库（报错通常是因为缺这个）---
+\usetikzlibrary{arrows.meta, decorations.markings, calc, shapes.geometric}
+
+% --- 定义绘图宏 (TikZ Styles) ---
+\tikzset{
+    % Style 1: 中间带箭头的线 (Mid Arrow)
+    % 原理：使用装饰器在路径 55% 处画一个箭头
+    mid arrow/.style={
+        postaction={decorate},
+        decoration={
+            markings,
+            mark=at position 0.55 with {\arrow{Stealth[length=2mm]}}
+        }
+    },
+    % Style 2: S矩阵/连通部分的圆圈 (Blob)
+    % 设置为圆形，白色填充（遮挡背后的线），加粗边缘
+    blob/.style={
+        circle,
+        draw=black,
+        thick,
+        fill=white,
+        minimum size=1.2cm, % 圆圈大小
+        inner sep=1pt,
+        font=\Large\bfseries % 字体加粗变大
+    },
+    % Style 3: 外部腿的通用线条样式
+    leg/.style={
+        thick,
+        line cap=round
+    }
+}
+
+
+

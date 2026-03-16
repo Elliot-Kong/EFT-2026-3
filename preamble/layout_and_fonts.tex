@@ -1,0 +1,51 @@
+% ============================================================
+% Layout and fonts
+% - Page margins (geometry)
+% - Header / footer style (fancyhdr)
+% - Fonts (fontspec + xeCJK)
+%
+% Note: Compile with XeLaTeX.
+% ============================================================
+
+\usepackage[
+  a4paper,
+  top=1.2cm,
+  bottom=1.2cm,
+  left=1.5cm,
+  right=1.5cm,
+]{geometry}
+
+% Header / footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Keep chapter-opening pages consistent: no header, centered page number in footer.
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+% Fonts
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\IfFontExistsTF{Times New Roman}
+  {\setmainfont{Times New Roman}}
+  {\setmainfont{TeX Gyre Termes}} % TeX Live fallback
+
+% CJK fonts (macOS)
+% If you want SimSun, replace `Songti SC` with `SimSun` (and make sure it is installed).
+\setCJKmainfont{Songti SC}[
+  AutoFakeBold = 5.0,
+  AutoFakeSlant = 0.25
+]
+\usepackage{lmodern}
+
+% A simple sans-serif CJK font
+\setCJKsansfont{Heiti SC}

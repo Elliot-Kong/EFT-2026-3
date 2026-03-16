@@ -1,0 +1,63 @@
+\contentsline {part}{I\hspace {1em}理论基础}{2}{part.1}%
+\contentsline {chapter}{\numberline {1}量子理论的基本原理}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}量子理论基础}{3}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}状态,线性叠加}{3}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}状态,幺正演化}{4}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}测量问题}{4}{subsection.1.1.3}%
+\contentsline {section}{\numberline {1.2}对称性}{6}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}对称群与投影表示}{7}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}李群与李代数}{8}{subsection.1.2.2}%
+\contentsline {section}{\numberline {1.3}基本对易关系}{9}{section.1.3}%
+\contentsline {section}{\numberline {1.4}0+1动力学问题:算符方法}{10}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Schr\"odinger和Heisenberg绘景}{10}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}相互作用绘景和$Dyson$级数}{10}{subsection.1.4.2}%
+\contentsline {section}{\numberline {1.5}0+1维动力学问题:泛函方法}{11}{section.1.5}%
+\contentsline {chapter}{\numberline {2}时空观}{12}{chapter.2}%
+\contentsline {section}{\numberline {2.1}q}{12}{section.2.1}%
+\contentsline {chapter}{\numberline {3}粒子态}{13}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Poincar\'e 变换}{13}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Poincar\'e 代数}{13}{section.3.2}%
+\contentsline {section}{\numberline {3.3}单粒子态}{17}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}正定质量粒子\(\dagger \)}{18}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}零质量粒子\(\dagger \)}{18}{subsection.3.3.2}%
+\contentsline {part}{II\hspace {1em}1+3维场论的构造}{20}{part.2}%
+\contentsline {chapter}{\numberline {4}散射理论}{21}{chapter.4}%
+\contentsline {section}{\numberline {4.1}“出”和“入”态}{22}{section.4.1}%
+\contentsline {section}{\numberline {4.2}S-矩阵}{23}{section.4.2}%
+\contentsline {section}{\numberline {4.3}S-矩阵的对称性}{24}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}幺正性}{24}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Lorentz对称性}{24}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}内部对称性}{27}{subsection.4.3.3}%
+\contentsline {section}{\numberline {4.4}玻色子和费米子}{27}{section.4.4}%
+\contentsline {section}{\numberline {4.5}算符的一般形式}{27}{section.4.5}%
+\contentsline {section}{\numberline {4.6}集团分解与连通振幅}{27}{section.4.6}%
+\contentsline {section}{\numberline {4.7}相互作用的结构}{30}{section.4.7}%
+\contentsline {chapter}{\numberline {5}场与反粒子}{31}{chapter.5}%
+\contentsline {section}{\numberline {5.1}自由场理论}{31}{section.5.1}%
+\contentsline {section}{\numberline {5.2}$Lorentz$群的不可约表示}{36}{section.5.2}%
+\contentsline {section}{\numberline {5.3}正定质量粒子因果场\(\dagger \)}{39}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Causal Scalar Field}{42}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Weyl Field}{43}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Dirac Formalism}{43}{subsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.3.4}Causal Dirac Field}{43}{subsection.5.3.4}%
+\contentsline {subsection}{\numberline {5.3.5}Causal Vector Field}{43}{subsection.5.3.5}%
+\contentsline {section}{\numberline {5.4}零质量粒子因果场\(\dagger \)}{43}{section.5.4}%
+\contentsline {chapter}{\numberline {6}相互作用理论}{44}{chapter.6}%
+\contentsline {section}{\numberline {6.1}费曼规则}{44}{section.6.1}%
+\contentsline {section}{\numberline {6.2}算符方法}{44}{section.6.2}%
+\contentsline {section}{\numberline {6.3}过渡到相互作用绘景：例子}{44}{section.6.3}%
+\contentsline {section}{\numberline {6.4}可观测量}{44}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}箱正规化}{44}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}速率:截面和衰变率}{44}{subsection.6.4.2}%
+\contentsline {subsection}{\numberline {6.4.3}末态的相空间积分}{47}{subsection.6.4.3}%
+\contentsline {subsection}{\numberline {6.4.4}运动学不变量}{48}{subsection.6.4.4}%
+\contentsline {subsection}{\numberline {6.4.5}物理区域}{48}{subsection.6.4.5}%
+\contentsline {section}{\numberline {6.5}物理例子与应用}{48}{section.6.5}%
+\contentsline {section}{\numberline {6.6}泛函方法}{48}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}波色子的路径积分}{48}{subsection.6.6.1}%
+\contentsline {subsection}{\numberline {6.6.2}费米子的路径积分}{48}{subsection.6.6.2}%
+\contentsline {part}{III\hspace {1em}散射振幅的解析理论}{49}{part.3}%
+\contentsline {chapter}{\numberline {7}非微扰方法}{50}{chapter.7}%
+\contentsline {part}{IV\hspace {1em}电动力学专题}{51}{part.4}%
+\contentsline {chapter}{\numberline {8}光子和费米子}{52}{chapter.8}%
+\contentsline {chapter}{\numberline {9}外场中的粒子}{53}{chapter.9}%

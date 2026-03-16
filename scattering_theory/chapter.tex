@@ -1,0 +1,107 @@
+\begin{center}
+    \textbf{多粒子态的约定}\footnote{这里的规则适用于自由态和“出态”和“入态}
+\end{center}
+   多粒子态假设为单粒子态的直积
+    \[
+    \begin{aligned}
+        \ket{p_1,\sigma_1,n_1}\otimes
+        \ket{p_2,\sigma_2,n_2}\otimes \cdots
+        &\equiv
+        \ket{p_1,\sigma_1,n_1;\,p_2,\sigma_2,n_2;\,\cdots} \\
+        &\equiv \ket{\alpha_1,\alpha_2,\cdots} \\
+        &\equiv \ket{\alpha}
+    \end{aligned} 
+    \]
+    \begin{itemize}
+    \item
+    这些态满足正交归一关系
+        \[
+         \begin{aligned}
+            \braket{p'_1,\sigma'_1,n'_1;\,p'_2,\sigma'_2,n'_2;\,\cdots|p_1,\sigma_1,n_1;\,p_2,\sigma_2,n_2;\,\cdots}
+            &=
+            \delta^{(3)}(p_1-p_1')\delta_{\sigma_1\sigma_1'}\delta_{n_1 n_1'}
+            \;
+            \delta^{(3)}(p_2-p_2')\delta_{\sigma_2\sigma_2'}\delta_{n_2 n_2'}
+            \;\cdots \\
+            &=
+            \braket{\alpha'|\alpha}\\
+            &=
+            \delta(\alpha'-\alpha)
+        \end{aligned}
+        \]      
+    \item  
+    完备性关系为\footnote{注意这里的体积元，未出现传统意义上\text{\color{blue}为了协变}出现的$2\pi \,E$等测度因子，它们是成对出现的，上面的$\delta$函数也不是传统式协变的形式；不过这些丢掉的因子在最终结果之前都会找补回来}
+        \[
+        \begin{aligned}
+                \mathbf{1}
+                &=
+                \sum_{\sigma_1,n_1;\sigma_2,n_2;\;\cdots}\int d^3p_1d^3p_2\;\cdots \ket{p_1,\sigma_1,n_1;\,p_2,\sigma_2,n_2;\,\cdots}\bra{p_1,\sigma_1,n_1;\,p_2,\sigma_2,n_2;\,\cdots}\\
+                &=
+                \int d\alpha \ket{\alpha}\bra{\alpha}
+        \end{aligned}\]
+        \item 
+    Poincar\'e 变换的表示\footnote{这里也$\mathscr{U}(\Lambda,a)$适用于自由态和“出态”和“入态”，对于后者，稍加证明：$$
+                            \begin{aligned}
+                            U(\Lambda,a)&\ket{p_1,\sigma_1,n_1;\,p_2,\sigma_2,n_2;\cdots;\pm}\\
+                            &=
+                            \lim_{t\to\mp\infty}
+                            U(\Lambda,a)\,\underbrace{U^{-1}(1,-t)\,
+                            U(1,t)}_\mathbf{1}\ket{p_1,\sigma_1,n_1;\,p_2,\sigma_2,n_2;\cdots} \\[0.4em]
+                            &=
+                            \lim_{t\to\mp\infty}
+                            U(\Lambda,a)\,U^{-1}(1,-t)\,
+                            e^{-i(p_1^0+p_2^0+\cdots)t}
+                            \ket{p_1,\sigma_1,n_1;\,p_2,\sigma_2,n_2;\cdots} \\[0.4em]
+                            &=
+                            \lim_{t\to\mp\infty}
+                            e^{+i(p_1^0+p_2^0+\cdots)t}\,
+                            e^{-i\left[a_\mu(p_1^\mu+p_2^\mu+\cdots)\right]}\,
+                            e^{-i(p_1^0+p_2^0+\cdots)t} \\
+                            &\qquad\times\left[
+                                        \prod_i
+                                        \left(
+                                        \frac{(\Lambda p_i)^0}{p_i^0}
+                                        \right)^{1/2}
+                                        \sum_{\sigma_i'}
+                                        D^{(s_i)}_{\sigma_i'\sigma_i}
+                                        \bigl(W(\Lambda,p_i)\bigr)
+                                        \right]
+                            \ket{\Lambda p_1,\sigma_1',n_1;\,\Lambda p_2,\sigma_2',n_2;\cdots} \\[0.4em]
+                            &=
+                            e^{-i\left[a_\mu(p_1^\mu+p_2^\mu+\cdots)\right]}
+                            \left[\prod_i
+                                        \left(
+                                        \frac{(\Lambda p_i)^0}{p_i^0}
+                                        \right)^{1/2}
+                                        \sum_{\sigma_i'}
+                                        D^{(j_i)}_{\sigma_i'\sigma_i}
+                                        \bigl(W(\Lambda,p_i)\bigr)
+                                        \right]
+                            \ket{\Lambda p_1,\sigma_1',n_1;\,\Lambda p_2,\sigma_2',n_2;\cdots;\pm}
+                        \end{aligned}$$}为
+        \begin{equation}   
+        \begin{aligned}
+            \mathscr{U}
+        (\Lambda,a)&\ket{p_1,\sigma_1,n_1;\,p_2,\sigma_2,n_2;\cdots}\\
+            &=
+            e^{-i a_\mu (p_1^\mu+p_2^\mu+\cdots)} 
+            \left[
+            \prod_i
+            \left(
+            \frac{(\Lambda p_i)^0}{p_i^0}
+            \right)^{1/2}
+            \sum_{\sigma_i'}
+            D^{(j_i)}_{\sigma_i'\sigma_i}
+            \bigl(W(\Lambda,p_i)\bigr)
+            \right]
+            \ket{\Lambda p_1,\sigma_1',n_1;\,\Lambda p_2,\sigma_2',n_2;\cdots}
+        \end{aligned}                        
+        \end{equation}
+    \end{itemize}
+\input{scattering_theory/in_out_states.tex}
+\input{scattering_theory/s_matrix.tex}
+\input{scattering_theory/lorentz_symmetry_of_s_matrix.tex}
+\input{scattering_theory/bosons_and_fermions.tex}
+\input{scattering_theory/creation_and_annihilation_operators.tex}
+\input{scattering_theory/cluster_decomposition_and_connected_amplitudes.tex}
+\input{scattering_theory/structure_of_the_interaction.tex}

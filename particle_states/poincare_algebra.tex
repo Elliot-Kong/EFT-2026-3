@@ -1,0 +1,298 @@
+
+\section{Poincar\'e 代数}
+Poincar\'e 变换的无穷小形式为：
+\begin{equation}
+    \Lambda^\mu_{\,\nu}=\delta^\mu_{\,\nu}+\omega^\mu_{\,\nu},\quad\,a^\mu=\epsilon^\mu
+\end{equation}
+
+这里,\begin{itemize}
+    \item 由于保度规条件
+    \[\begin{aligned}
+        \eta_{\rho\sigma}&= \eta_{\rho\sigma}=\eta_{\mu\nu}\Lambda^\mu_{\,\rho}\Lambda^\nu_{\,\sigma}\\
+        &=\eta_{\mu\nu}(\delta^\mu_{\,\rho}+\omega^\mu_{\,\rho})(\delta^\nu_{\,\sigma}+\omega^\nu_{\,\sigma})\\
+        &=\eta_{\mu\nu}\delta^\mu_{\,\rho}\delta^\nu_{\,\sigma}+\eta_{\mu\nu}(\delta^\mu_{\,\rho}\omega^\nu_{\,\sigma}+\delta^\nu_{\,\sigma}\omega^\mu_{\,\rho})\\
+        &=\eta_{\mu\nu}+\omega_{\sigma\rho}+\omega_{\rho\sigma}
+    \end{aligned}\]
+    我们得到\(\omega_{\mu\nu}\) 是反对称的。
+    \item 由于 \(\omega_{\mu\nu}\) 是反对称的，它包含六个独立参数。再加上四个平移参数，这意味着
+    \text{Poincar\'e 群} 一共具有十个参数。
+\end{itemize}
+\noindent
+相应地，考虑，Poincar\'e 变换对应希尔伯特空间中的幺正算符的无穷小形式是：
+\begin{equation}
+    {U}(1+\omega,\epsilon)={1}+\frac{i}{2}\omega_{\rho\sigma}\mathscr{J}^{\rho\sigma}-i\epsilon_\rho \mathscr{P}^\rho+\ldots
+\end{equation}
+\begin{itemize}
+    \item 显然，这里的生成元是厄米算符。
+    \[\mathscr{J}^{\mu\nu\dagger}= \mathscr{J}^{\mu\nu},\quad \mathscr{P}^{\mu\dagger}=\mathscr{P}^\mu\]
+\end{itemize}
+为了得到\(\mathscr{J}\) 和 \(\mathscr{P}\)代数关系;我们首先推导\(\mathscr{J}\) 和 \(\mathscr{P}\)在Poincar\'e变换下，如何变换：
+
+\[ 
+\begin{aligned}
+        {U}(\Lambda,\,a){U}(1+\omega,\epsilon){U}^\dagger(\Lambda,\,a)&={U}(\Lambda,\,a){U}(1+\omega,\epsilon){U}(\Lambda^{-1},-\Lambda^{-1}\,a)\\
+        &={U}(\Lambda,\,a){U}\left\{(1+\omega)\Lambda^{-1},-(1+\omega)\Lambda^{-1}\,a+\epsilon\right\}\\
+        &={U}\left\{\Lambda(1+\omega)\Lambda^{-1},-\Lambda(1+\omega)\Lambda^{-1}\,a+\Lambda\epsilon+\,a\right\}\\
+        &={U}\left\{\Lambda(1+\omega)\Lambda^{-1},\Lambda\epsilon-\Lambda\omega\Lambda^{-1}\,a\right\}
+\end{aligned}
+\]
+
+    上式展开：
+\[    \begin{aligned}
+        L.H.S&={U}(\Lambda,\,a){U}(1+\omega,\epsilon){U}^\dagger(\Lambda,\,a)\\
+        &={U}(\Lambda,\,a){U}\left\{{1}+\frac{i}{2}\omega_{\rho\sigma}\mathscr{J}^{\rho\sigma} -i\epsilon_\rho \mathscr{P}^\rho\right\}{U}^\dagger(\Lambda,\,a)\\
+        &={1} +\frac{i}{2}\omega_{\rho\sigma}(\Lambda,\,a){U}\mathscr{J}^{\rho\sigma}{U}^\dagger(\Lambda,\,a)-i\epsilon_\rho{U}(\Lambda,\,a)\mathscr{P}^\rho{U}^\dagger(\Lambda,\,a)\\
+    \end{aligned}\]
+\[    \begin{aligned}
+        R.H.S&={U}\left\{\Lambda(1+\omega)\Lambda^{-1},\Lambda\epsilon-\Lambda\omega\Lambda^{-1}\,a\right\}\\
+        &={1} +\frac{i}{2}\left\{ \Lambda\omega\Lambda^{-1}\right\}_{\mu\nu}\mathscr{J}^{\mu\nu}-i\left\{\Lambda\epsilon-\Lambda\omega\Lambda^{-1}\,a\right\}_\mu\mathscr{P}^\mu\\
+        &={1} +\frac{i}{2}\left\{ \Lambda_\mu^{\,\rho}\omega_{\rho\sigma}(\Lambda^{-1})^\sigma_{\,\nu}\mathscr{J}^{\mu\nu}\right\}-i\left\{\Lambda^{\,\rho}_\mu\epsilon_\rho\mathscr{P}^\mu-\Lambda_\mu^{\,\rho}\omega_{\rho\sigma}(\Lambda^{-1})^\sigma_{\,\nu}\,a^\nu \mathscr{P}^\mu\right\}\\
+        &={1} +\frac{i}{2} \Lambda_\mu^{\,\rho}\omega_{\rho\sigma}\Lambda^{\,\sigma}_\nu\mathscr{J}^{\mu\nu}
+        -i\Lambda^{\,\rho}_\mu\epsilon_\rho\mathscr{P}^\mu
+        +i\Lambda_\mu^{\,\rho}\omega_{\rho\sigma}\Lambda^{\,\sigma}_\nu\,a^\nu\mathscr{P}^\mu\\
+        %11
+        &={1} +\frac{i}{2} \Lambda_\mu^{\,\rho}\omega_{\rho\sigma}\Lambda^{\,\sigma}_\nu\mathscr{J}^{\mu\nu}
+        +\frac{i}{2}\left\{\Lambda_\mu^{\,\rho}\omega_{\rho\sigma}\Lambda^{\,\sigma}_\nu\,a^\nu\mathscr{P}^\mu+  
+        \Lambda_\mu^{\,\sigma}\omega_{\sigma\rho}\Lambda^{\,\rho}_\nu\,a^\nu\mathscr{P}^\mu\right\}
+        -i\Lambda^{\,\rho}_\mu\epsilon_\rho\mathscr{P}^\mu\\
+        %22
+        &={1} +\frac{i}{2}\omega_{\rho\sigma} \Lambda_\mu^{\,\rho}\Lambda^{\,\sigma}_\nu\mathscr{J}^{\mu\nu}
+        +\frac{i}{2}\omega_{\rho\sigma}\left\{\Lambda_\mu^{\,\rho}\Lambda^{\,\sigma}_\nu\,a^\nu\mathscr{P}^\mu-
+        \Lambda_\mu^{\,\sigma}\Lambda^{\,\rho}_\nu\,a^\nu\mathscr{P}^\mu\right\}
+        -i\Lambda^{\,\rho}_\mu\epsilon_\rho\mathscr{P}^\mu\\
+        %33
+        &={1} +\frac{i}{2}\omega_{\rho\sigma} \left\{
+        \Lambda_\mu^{\,\rho}\Lambda^{\,\sigma}_\nu\mathscr{J}^{\mu\nu}+
+        \Lambda_\mu^{\,\rho}\Lambda^{\,\sigma}_\nu\,a^\nu\mathscr{P}^\mu-
+        \Lambda_\mu^{\,\rho}\Lambda^{\,\sigma}_\nu\,a^\mu\mathscr{P}^\nu\right\}
+        -i\Lambda^{\,\rho}_\mu\epsilon_\rho\mathscr{P}^\mu\\
+        %44
+        &={1} +\frac{i}{2}\omega_{\rho\sigma} \Lambda_\mu^{\,\rho}\Lambda^{\,\sigma}_\nu\left\{
+        \mathscr{J}^{\mu\nu}+
+        \,a^\nu\mathscr{P}^\mu-
+        \,a^\mu\mathscr{P}^\nu\right\}
+        -i\Lambda^{\,\rho}_\mu\epsilon_\rho\mathscr{P}^\mu\\
+    \end{aligned}\]
+我们得到
+\[\Rightarrow \frac{i}{2}\omega_{\rho\sigma}{U}(\Lambda,\,a)\mathscr{J}^{\rho\sigma}{U}^\dagger(\Lambda,\,a)
+    -i\epsilon_\rho{U}(\Lambda,\,a)\mathscr{P}^\rho{U}^\dagger(\Lambda,\,a)=
+    \frac{i}{2}\omega_{\rho\sigma} \Lambda_\mu^{\,\rho}\Lambda^{\,\sigma}_\nu\left\{
+    \mathscr{J}^{\mu\nu}+
+    \,a^\nu\mathscr{P}^\mu-
+    \,a^\mu\mathscr{P}^\nu\right\}
+    -i\Lambda^{\,\rho}_\mu\epsilon_\rho\mathscr{P}^\mu
+    \]
+对比两边，我们得到 \(\mathscr{J}\) 和 \(\mathscr{P}\) 在Poincar\'e下的变换关系为：
+
+        \begin{subequations}\label{4.3}
+        \begin{align}
+        &{U}(\Lambda,\,a)\mathscr{J}^{\rho\sigma}{U}^\dagger(\Lambda,\,a)
+        =
+        \Lambda_\mu^{\,\rho}\Lambda^{\,\sigma}_\nu
+        \left(
+        \mathscr{J}^{\mu\nu}
+        +\,a^\nu\mathscr{P}^\mu
+        -\,a^\mu\mathscr{P}^\nu
+        \right)
+        \label{4.3a}
+        \\
+        &{U}(\Lambda,\,a)\mathscr{P}^\rho{U}^\dagger(\Lambda,\,a)
+        =
+        \Lambda^{\,\rho}_\mu\mathscr{P}^\mu
+        \label{4.3b}
+    \end{align}
+\end{subequations}
+接下来，我们对(\ref{4.3a})和(\ref{4.3b})两式的变换算符 \({U}(\Lambda,\,a)
+\rightarrow {U}(1+\omega,\epsilon)\)进行展开：\\
+
+\text{\(
+        {U}(\Lambda,\,a)\mathscr{J}^{\rho\sigma}{U}^\dagger(\Lambda,\,a)=
+        \Lambda_\mu^{\,\rho}\Lambda^{\,\sigma}_\nu
+        \left(
+        \mathscr{J}^{\mu\nu}
+        +\,a^\nu\mathscr{P}^\mu
+        -\,a^\mu\mathscr{P}^\nu
+        \right)
+    \):}
+
+    \[
+        \begin{aligned}
+                L.H.S&={U}(\Lambda,\,a)\mathscr{J}^{\rho\sigma}{U}^\dagger(\Lambda,\,a)\\&={U}(1+\omega,\epsilon)\mathscr{J}^{\rho\sigma}{U}^\dagger(1+\omega,\epsilon)
+                %1
+                \\&=\left\{{1}+\frac{i}{2}\omega_{\mu\nu}\mathscr{J}^{\mu\nu}-i\epsilon_\mu \mathscr{P}^\mu+\ldots\right\}
+                \mathscr{J}^{\rho\sigma}
+                \left\{{1}+\frac{i}{2}\omega_{\mu\nu}\mathscr{J}^{\mu\nu}-i\epsilon_\mu \mathscr{P}^\mu+\ldots\right\}^\dagger
+                %2
+                \\&=\mathscr{J}^{\rho\sigma}
+                +\frac{i}{2}\omega_{\mu\nu}\left\{\mathscr{J}^{\mu\nu}\mathscr{J}^{\rho\sigma}-\mathscr{J}^{\rho\sigma}\mathscr{J}^{\mu\nu} \right\}
+                -i\epsilon_\mu\left\{\mathscr{P}^\mu\mathscr{J}^{\rho\sigma}-\mathscr{P}^\mu\mathscr{J}^{\rho\sigma} \right\}+\ldots
+                %3
+                \\&=\mathscr{J}^{\rho\sigma}
+                +\frac{i}{2}\omega_{\mu\nu}\left[\mathscr{J}^{\mu\nu},\mathscr{J}^{\rho\sigma} \right]
+                -i\epsilon_\mu\left[\mathscr{P}^\mu,\mathscr{J}^{\rho\sigma} \right]
+    \end{aligned}
+    \] 
+    \[
+        \begin{aligned}
+                    R.H.S&=\Lambda_\mu^{\,\rho}\Lambda^{\,\sigma}_\nu
+                    \left(\mathscr{J}^{\mu\nu}
+                    +\,a^\nu\mathscr{P}^\mu
+                    -\,a^\mu\mathscr{P}^\nu\right)
+                    %1
+                    \\&=\left(\delta_\mu^{\,\rho}+\omega_\mu^{\,\rho}\right)\left(\delta_\nu^{\,\sigma}+\omega_\nu^{\,\sigma}\right)
+                    \left(\mathscr{J}^{\mu\nu}+\epsilon^\nu\mathscr{P}^\mu-\epsilon^\mu\mathscr{P}^\nu\right)
+            %2
+                    \\&=\mathscr{J}^{\rho\sigma}+
+                    \delta_\mu^{\,\rho}\delta_\nu^{\,\sigma}\left\{\epsilon^\nu\mathscr{P}^\mu-\epsilon^\mu\mathscr{P}^\nu\right\}
+                    +\left\{\delta_\mu^{\,\rho}\omega_\nu^{\,\sigma}+\delta_\nu^{\,\sigma}\omega_\mu^{\,\rho}\right\}\mathscr{J}^{\mu\nu}
+                    +\left\{\delta_\mu^{\,\rho}\omega_\nu^{\,\sigma}+\delta_\nu^{\,\sigma}\omega_\mu^{\,\rho}\right\}
+                    \left\{\epsilon^\nu\mathscr{P}^\mu-\epsilon^\mu\mathscr{P}^\nu\right\}
+            %3
+                    \\&=\mathscr{J}^{\rho\sigma}+
+                    \left\{\delta_\mu^{\,\rho}\omega_\nu^{\,\sigma}\mathscr{J}^{\mu\nu}+\delta_\nu^{\,\sigma}\omega_\mu^{\,\rho}\mathscr{J}^{\mu\nu}\right\}
+                    +\left\{\epsilon^\sigma\mathscr{P}^\rho-\epsilon^\rho\mathscr{P}^\sigma\right\}
+                    +\left\{\delta_\mu^{\,\rho}\omega_\nu^{\,\sigma} \left[\epsilon^\nu\mathscr{P}^\mu-\epsilon^\mu\mathscr{P}^\nu\right]
+                    +\delta_\nu^{\,\sigma}\omega_\mu^{\,\rho}\left[\epsilon^\nu\mathscr{P}^\mu-\epsilon^\mu\mathscr{P}^\nu\right]\right\}
+            %4
+                    \\&=\mathscr{J}^{\rho\sigma}+
+                    \left\{\omega_\nu^{\,\sigma}\mathscr{J}^{\mu\sigma}+\omega_\mu^{\,\rho}\mathscr{J}^{\rho\nu}\right\}
+                    +\left\{\epsilon_\mu\eta^{\mu\sigma}\mathscr{P}^\rho-\epsilon_\mu\eta^{\mu\rho}\mathscr{P}^\sigma\right\}
+                    +\left\{\omega_\nu^{\,\sigma}\left[\epsilon^\nu\mathscr{P}^\rho-\epsilon^\rho\mathscr{P}^\nu\right]
+                    +\omega_\mu^{\,\rho}\left[\epsilon^\sigma\mathscr{P}^\mu-\epsilon^\mu\mathscr{P}^\sigma\right]\right\}\\
+            %5
+                    &=\mathscr{J}^{\rho\sigma}+
+                    \left\{\omega_{\mu\nu}\eta^{\nu\rho}\mathscr{J}^{\mu\sigma}+\omega_{\nu\mu}\eta^{\mu\sigma}\mathscr{J}^{\rho\nu}\right\}
+                    +\epsilon_\mu\left\{\eta^{\mu\sigma}\mathscr{P}^\rho-\eta^{\mu\rho}\mathscr{P}^\sigma\right\}
+                    \\&+\left\{\omega_\nu^{\,\sigma}\left[\epsilon^\nu\mathscr{P}^\rho-\epsilon^\rho\mathscr{P}^\nu\right]
+                    +\omega_\nu^{\,\rho} \left[\epsilon^\rho\mathscr{P}^\nu-\epsilon^\nu\mathscr{P}^\rho\right]\right\}\\
+                    &=\mathscr{J}^{\rho\sigma}+\frac{1}{2}
+                    \left\{\omega_{\mu\nu}\eta^{\nu\rho}\mathscr{J}^{\mu\sigma}+ \omega_{\nu\mu}\eta^{\mu\rho}\mathscr{J}^{\nu\sigma}
+                    +\omega_{\nu\mu}\eta^{\mu\sigma}\mathscr{J}^{\rho\nu}+\omega_{\mu\nu}\eta^{\nu\sigma}\mathscr{J}^{\rho\mu}\right\}
+                    +\epsilon_\mu\left\{\eta^{\mu\sigma}\mathscr{P}^\rho-\eta^{\mu\rho}\mathscr{P}^\sigma\right\}\\
+            %5
+                    &=\mathscr{J}^{\rho\sigma}+\frac{1}{2}
+                    \omega_{\mu\nu}\left\{\eta^{\nu\rho}\mathscr{J}^{\mu\sigma}-\eta^{\mu\rho}\mathscr{J}^{\nu\sigma}
+                    -\eta^{\mu\sigma}\mathscr{J}^{\rho\nu}+\eta^{\nu\sigma}\mathscr{J}^{\rho\mu}\right\}
+                    +\epsilon_\mu\left\{\eta^{\mu\sigma}\mathscr{P}^\rho-\eta^{\mu\rho}\mathscr{P}^\sigma\right\}
+        \end{aligned}
+    \]
+我们得到:
+\[
+    \Rightarrow \frac{i}{2}\omega_{\mu\nu}\left[\mathscr{J}^{\mu\nu},\mathscr{J}^{\rho\sigma} \right]
+    -i\epsilon_\mu\left[\mathscr{P}^\mu,\mathscr{J}^{\rho\sigma} \right]=
+    \frac{1}{2}\omega_{\mu\nu}\left\{\eta^{\nu\rho}\mathscr{J}^{\mu\sigma}
+    -\eta^{\mu\rho}\mathscr{J}^{\nu\sigma}
+    -\eta^{\sigma\mu}\mathscr{J}^{\rho\nu}
+    +\eta^{\sigma\nu}\mathscr{J}^{\rho\mu}\right\}
+    +\epsilon_\mu\left\{\eta^{\mu\sigma}\mathscr{P}^\rho
+    -\eta^{\mu\rho}\mathscr{P}^\sigma\right\} 
+\]
+
+
+对比两边，得到代数关系：
+\begin{subequations}\label{4.4}
+    \begin{align}
+    &i\left[\mathscr{J}^{\mu\nu},\mathscr{J}^{\rho\sigma}\right]
+    =\eta^{\nu\rho}\mathscr{J}^{\mu\sigma}
+    -\eta^{\mu\rho}\mathscr{J}^{\nu\sigma}
+    -\eta^{\sigma\mu}\mathscr{J}^{\rho\nu}
+    +\eta^{\sigma\nu}\mathscr{J}^{\rho\mu}
+    \\
+    &i\left[\mathscr{P}^\mu,\mathscr{J}^{\rho\sigma}\right]
+    =\eta^{\mu\rho}\mathscr{P}^\sigma
+    -\eta^{\mu\sigma}\mathscr{P}^\rho
+    \end{align}
+\end{subequations}
+\noindent
+\\
+\text{ \(
+        {U}(\Lambda,\,a)\mathscr{P}^\rho{U}^\dagger(\Lambda,\,a)
+        =\Lambda^{\,\rho}_\mu\mathscr{P}^\mu
+    \):} 
+    \[
+        \begin{aligned}
+                    L.H.S&={U}(\Lambda,\,a)\mathscr{P}^\rho{U}^\dagger(\Lambda,\,a)\\
+    %1
+                    &=\left\{{1}+\frac{i}{2}\omega_{\mu\nu}\mathscr{J}^{\mu\nu}-i\epsilon_\mu \mathscr{P}^\mu+\ldots\right\}
+                    \mathscr{P}^\rho
+                    \left\{{1}+\frac{i}{2}\omega_{\mu\nu}\mathscr{J}^{\mu\nu}-i\epsilon_\mu \mathscr{P}^\mu+\ldots\right\}^\dagger\\
+    %2
+                    &=\mathscr{P}^\rho+\frac{i}{2}\omega_{\mu\nu}\left\{ \mathscr{J}^{\mu\nu}\mathscr{P}^\rho-\mathscr{P}^\rho\mathscr{J}^{\mu\nu}\right\}
+                     -i\epsilon_\mu\left\{ \mathscr{P}^\mu\mathscr{P}^\rho-\mathscr{P}^\rho\mathscr{P}^\mu\right\}\\    
+    %3
+                    &=\mathscr{P}^\rho+\frac{i}{2}\omega_{\mu\nu}\left[\mathscr{J}^{\mu\nu},\mathscr{P}^\rho\right]
+                     -i\epsilon_\mu\left[ \mathscr{P}^\mu,\mathscr{P}^\rho\right]
+        \end{aligned}
+    \]
+    \[
+        \begin{aligned}
+            R.H.S&=\Lambda^{\,\rho}_\mu\mathscr{P}^\mu
+            \\&=\left\{\delta_\mu^{\,\rho}+\omega_\mu^{\,\rho}\right\}\mathscr{P}^\mu
+            =\delta_\mu^{\,\rho}\mathscr{P}^\mu+\omega_\mu^{\,\rho}\mathscr{P}^\mu
+            \\&=\mathscr{P}^\rho+\omega_{\mu\nu}\eta^{\nu\rho}\mathscr{P}^\mu
+            =\mathscr{P}^\rho+\frac{1}{2}\omega_{\mu\nu}\left\{\eta^{\nu\rho}\mathscr{P}^\mu-\eta^{\mu\rho}\mathscr{P}^\nu\right\}
+        \end{aligned}
+    \]
+得到：
+\[
+    \Rightarrow \frac{i}{2}\omega_{\mu\nu}\left[\mathscr{J}^{\mu\nu},\mathscr{P}^\rho\right]
+    -i\epsilon_\mu\left[ \mathscr{P}^\mu,\mathscr{P}^\rho\right]=
+    \frac{1}{2}\omega_{\mu\nu}\eta^{\nu\rho}\mathscr{P}^\mu-\eta^{\mu\rho}\mathscr{P}^\nu
+\]
+
+对比两边，得到代数关系：
+\begin{subequations}\label{4.5}
+        \begin{align}
+        &\left[\mathscr{J}^{\mu\nu},\mathscr{P}^\rho\right]=
+        \eta^{\nu\rho}\mathscr{P}^\mu-\eta^{\mu\rho}\mathscr{P}^\nu\\
+        &\left[ \mathscr{P}^\mu,\mathscr{P}^\rho\right]=0
+    \end{align}
+\end{subequations}
+
+\begin{tcolorbox}[colback=white!5,colframe=black!55,title=Poincar\'e代数]
+    将(\refeq{4.4})(\refeq{4.5})写在一起,这些正是Poincar\'e群中生成元的代数关系：
+    \begin{subequations}\label{4.6}
+            \begin{align}
+        &i\left[\mathscr{J}^{\mu\nu},\mathscr{J}^{\rho\sigma} \right]=
+        \eta^{\nu\rho}\mathscr{J}^{\mu\sigma}
+        -\eta^{\mu\rho}\mathscr{J}^{\nu\sigma}
+        -\eta^{\sigma\mu}\mathscr{J}^{\rho\nu}
+        +\eta^{\sigma\nu}\mathscr{J}^{\rho\mu}\\
+        &i\left[\mathscr{P}^\mu,\mathscr{J}^{\rho\sigma} \right]=
+        \eta^{\mu\rho}\mathscr{P}^\sigma-\eta^{\mu\sigma}\mathscr{P}^\rho\\
+        &\left[ \mathscr{P}^\mu,\mathscr{P}^\rho\right]=0
+    \end{align}
+\end{subequations}
+\end{tcolorbox}
+\begin{center}
+    \vspace{0.5cm}
+        \text{\Large ***}\\
+    \vspace{0.5cm}
+\end{center}
+在$0+1$维量子场论中，一个特殊的角色由那些是守恒的，即与能量算符\(H = \mathscr{P}^{0}\)对易的算符扮演。
+对方程(\refeq{4.6})的考察说明了这 是动量三矢
+
+\[\mathbf{P} = \{\mathscr{P}^{1}, \mathscr{P}^{2}, \mathscr{P}^{3}\}\]
+
+以及角动量三矢
+
+\[\mathbf{J} = \{\mathscr{J}^{23}, \mathscr{J}^{31}, \mathscr{J}^{12}\}\]
+
+当然，还有能量\(\mathscr{P}^{0}\)本身。剩下的生成元形成所谓的“boost”三矢
+
+\[\mathbf{K} = \{\mathscr{J}^{01}, \mathscr{J}^{02}, \mathscr{J}^{03}\}\]
+
+这些是不守恒的，这是为什么我们不使用K的本征值标记物理态的原因。在一个三维标记下，对
+易关系(\refeq{4.6})可以重写为
+
+\begin{subequations}
+    \begin{align}
+        [J_{i}, J_{j}] &= i\epsilon_{ijk} J_{k} , \\
+        [J_{i}, K_{j}] &= i\epsilon_{ijk} K_{k} , \\
+        [K_{i}, K_{j}] &= -i\epsilon_{ijk} J_{k} , \\
+        [J_{i}, P_{j}] &= i\epsilon_{ijk} P_{k} , \\
+        [K_{i}, P_{j}] &= -i H \delta_{ij} , \\
+        [J_{i}, H] &= [P_{i}, H] = [H, H] = 0 , \\
+        [K_{i}, H] &= -i P_{i} ,
+    \end{align}
+\end{subequations}

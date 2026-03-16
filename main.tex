@@ -1,0 +1,93 @@
+% ============================================================
+% 主文件：main.tex
+% ============================================================
+\documentclass[
+  %fleqn,
+  a4paper,
+  11pt,
+  oneside
+]{book}
+
+% Preamble (packages, layout, macros)
+% ============================================================
+% Preamble entry point
+% Keep `main.tex` clean. Put package blocks in `preamble/*.tex`.
+%
+% Build engine:
+% - This project uses `fontspec` + `xeCJK`, so compile with XeLaTeX.
+% ============================================================
+
+% 1) Page layout + header/footer + fonts
+\input{preamble/layout_and_fonts.tex}
+
+% 2) Graphics / plots / diagrams (includes TikZ and tikz-feynman)
+\input{preamble/visual_packages.tex}
+
+% 3) Math / physics packages (symbols, operators, notation)
+\input{preamble/math_packages.tex}
+
+% 4) Document structure + links + small custom macros
+%    (loads `xcolor` before `hyperref`)
+\input{preamble/structure_and_custom.tex}
+
+% 5) Footnote formatting (requires `xcolor`)
+\input{preamble/footnote.tex}
+
+
+\begin{document}
+\input{preamble/titlepage/titlepage3.tex}
+%\input{preamble/titlepage/titlepage2.tex}
+%\input{preamble/titlepage/titlepage.tex}
+%\input{preamble/titlepage/first page.tex}
+%\input{preamble/titlepage/Four golden lessons.tex}
+
+% Front matter (TOC, page numbering, etc.)
+\input{preamble/frontmatter.tex}
+
+% Link colors for the main content.
+% Keep TOC links black, then switch colors after the front matter.
+\input{preamble/citecolor.tex}
+        
+% ============================================================
+% Main content
+% ============================================================
+\part{理论基础}
+\chapter{量子理论的基本原理}
+\input{quantum_theory_basic/chapter.tex}
+% ============================================================
+\chapter{时空观}
+\input{spacetime/chapter.tex}
+% ============================================================
+\chapter{粒子态}
+\input{particle_states/chapter.tex}
+% ============================================================
+%\input{nonrelativistic_particle_state/chapter.tex}
+% ============================================================
+%\chapter*{附录A：对称性理论}
+%\addcontentsline{toc}{chapter}{附录A：对称性}
+%\noindent
+%\input{symmetry/chapter.tex}
+% ============================================================
+% ============================================================
+\part{1+3维场论的构造}% ============================================================
+%\chapter{理论框架}
+%\input{framework/chapter.tex}
+% ============================================================
+\chapter{散射理论}
+\input{scattering_theory/chapter.tex}
+% ============================================================
+\chapter{场与反粒子}
+\input{fields_antiparticles/chapter.tex}
+% ============================================================
+\chapter{相互作用理论}
+\input{intercation_theory/chapter.tex}
+%\chapter{量子电动力学专题}
+%\input{qed/chapter.tex}
+\part{散射振幅的解析理论}
+\chapter{非微扰方法}
+% ============================================================
+\part{电动力学专题}
+\chapter{光子和费米子}
+\chapter{外场中的粒子}
+
+\end{document}

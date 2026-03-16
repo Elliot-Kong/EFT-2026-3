@@ -1,0 +1,146 @@
+\section{对称性}
+一个\textbf{对称变换}改变的是观察方式，而非物理系统本身，因而不改变任何可能的实验结果。
+从\textbf{被动观点}看，物理系统并未发生任何变化，改变的只是描述它的参考框架（或观测者）。设观测者 $O$ 用射线 $\mathscr{R},\,\mathscr{R}_1,\,\mathscr{R}_2,\dots$ 描述同一系统的各个态，而等价观测者 $O'$（例如相对于 $O$ 做了旋转或平移）用射线 $\mathscr{R}',\,\mathscr{R}'_1,\,\mathscr{R}'_2,\dots$ 来描述\textbf{同一个}系统的对应态。所谓"对称"，就是要求两位观测者计算的跃迁几率完全一致：
+\begin{equation}
+    P(\mathscr{R} \to \mathscr{R}_n) = P(\mathscr{R}' \to \mathscr{R}'_n)
+\end{equation}
+
+换言之：
+\begin{itemize}
+    \item \textbf{不变的}：物理系统本身、实验结果（几率）。
+    \item \textbf{改变的}：观测者（参考框架），以及随之而来的态的数学描述（射线 $\mathscr{R}\mapsto\mathscr{R}'$）。
+\end{itemize}
+
+这正是\textbf{被动观点}的核心：对称变换并非"动了系统"，而是"换了观测者"，物理规律（几率）在这一更换下保持不变。
+
+\begin{tcolorbox}[colback=white!5,colframe=black!55,title=Wigner对称性表述]\footnote{Wigner 的证明省略了一些步骤。一个更加完整的证明参考S.Weinberg书}
+    Wigner在20世纪30年代早期所证明的一个重要定理告诉我们,对于任意这样的射线变换 $\mathscr{R} \to \mathscr{R}'$，我们可以定义 Hilbert 空间上的一个算符 $U$，使得如果 $|\psi\rangle$ 在射线 $\mathscr{R}$ 中，那么 $U|\psi\rangle$ 在射线 $\mathscr{R}'$ 中，则 $U$ 要么是么正且线性的：
+\begin{align}
+    \langle U\varphi| U\psi \rangle &= \langle \varphi| \psi \rangle \;, \\
+    U(\alpha|\varphi\rangle + \beta|\psi\rangle) &= \alpha U|\varphi\rangle + \beta U|\psi\rangle \;.
+\end{align}
+要么是反么正且反线性的：
+\begin{align}
+    \langle U\varphi| U\psi \rangle &= \langle \varphi| \psi \rangle^* \;, \label{eq:anti_unitary_prod}\\
+    U(\alpha|\varphi\rangle + \beta|\psi\rangle) &= \alpha^* U|\varphi\rangle + \beta^* U|\psi\rangle \;.
+\end{align}
+这里么正或反么正的条件均采取以下形式\footnote{反线性算符 $A$ 的共轭定义为
+\begin{equation}
+    \langle \varphi| \mathscr{O}^\dagger | \psi \rangle = \langle A\mathscr{O}\varphi| \psi \rangle^* = \langle \psi | \mathscr{O}\varphi\rangle \;.
+\end{equation}}
+\begin{equation}
+    U^\dagger = U^{-1} \;.
+\end{equation}
+\end{tcolorbox}
+ 平庸的对称变换 $\mathscr{R} \to \mathscr{R}$，是单位算符 $U=\mathbf{1}$ 显然，单位算符 $U=\mathbf{1}$ 是线性且么正的。由于\textbf{连续对称性}可以通过调节参数连续地变回单位算符，因此它们必须由线性么正算符表示。而反线性反么正算符仅用于涉及时间反演的非连续变换。
+
+ 特别的，一个无限小的接近于平庸的对称变换可以表示为一个线性么正算符：$$U = \mathbf{1} + i\epsilon t$$其中$\epsilon$ 是一个实的无限小参量。由于 $U$ 是么正且线性的，$t$ 必须厄米且线性；所以它可能是可观测量，确实，大多数（也许是全部）物理的可观测量从对称变换中诞生。
+\subsection{对称群与投影表示}
+
+对称变换构成一个群：两次连续变换 $T_1, T_2$ 等价于另一次变换 $T_3 = T_2 T_1$；存在逆变换 $T^{-1}$ 和单位变换 $\mathbf{1}$。数学表述是：
+\begin{importantformula}
+      对称变换的集合 $\mathcal{G}$ 在\textbf{群乘法}（连续变换）下构成一个\textbf{群}。
+\textbf{乘法定义}：若 $T_1$ 将射线 $\mathscr{R}$ 变换为 $\mathscr{R}'$，$T_2$ 将 $\mathscr{R}'$ 变换为 $\mathscr{R}''$，则乘积 $T_2 T_1$ 定义为将 $\mathscr{R}$ 直接变换为 $\mathscr{R}''$ 的单一变换。
+该集合满足以下群公理：
+\begin{itemize}
+    \item \textbf{封闭性}：任意两个变换的乘积仍属于该集合，即 $\forall T_1, T_2 \in \mathcal{G} \implies T_2 T_1 \in \mathcal{G}$；
+    \item \textbf{结合律 }：变换的顺序满足 $(T_3 T_2) T_1 = T_3 (T_2 T_1)$；
+    \item \textbf{单位元 }：存在恒等变换 $\mathbf{1} \in \mathcal{G}$，使得 $\forall T \in \mathcal{G}, T \mathbf{1} = \mathbf{1} T = T$；
+    \item \textbf{逆元 }：对任意变换 $T$，存在逆变换 $T^{-1}$ 使得 $T T^{-1} = T^{-1} T = \mathbf{1}$。
+\end{itemize}
+\end{importantformula}
+由于量子力学中的物理态由希尔伯特空间中的\textbf{射线 (Ray)} 而非矢量唯一确定（即 $|\psi\rangle$ 与 $e^{i\alpha}|\psi\rangle$ 描述同一物理态），对称性变换算符 $U(T)$ 必须满足 Wigner 定理，即 $U(T)$ 是幺正或反幺正的。然而，这一性质使得群的乘法规则在希尔伯特空间中表现得更为复杂。当两个对称操作连续作用时，其结果只需在“射线意义上”与群乘法一致。这意味着算符的乘积关系可以相差一个相位因子：
+\begin{equation}
+    U(T_2)U(T_1)|\psi_n\rangle = e^{i\varphi_n(T_2, T_1)} U(T_2 T_1)|\psi_n\rangle \;.
+\end{equation}
+乍看之下，相位 $\varphi_n$ 似乎可以依赖于具体的态 $|\psi_n\rangle$。但我们有如下重要结论：
+\begin{importantformula}
+    如果 $U(T)$ 是线性（或反线性）算符，则上述相位因子 $\varphi(T_2, T_1)$ 必须是\textbf{全局的}，即与具体状态 $|\psi\rangle$ 无关。
+\end{importantformula}
+\noindent
+\\
+\textbf{证明：}
+利用量子力学的态叠加原理。考虑两个线性无关的态 $|\psi_A\rangle$ 和 $|\psi_B\rangle$，以及它们的叠加态 $|\psi_{AB}\rangle = |\psi_A\rangle + |\psi_B\rangle$。
+
+一方面，直接作用于叠加态：
+\begin{equation}
+    U(T_2)U(T_1) |\psi_{AB}\rangle = e^{i\varphi_{AB}} U(T_2 T_1) (|\psi_A\rangle + |\psi_B\rangle) \;. \label{eq:phase_proof_1}
+\end{equation}
+另一方面，利用算符 $U$ 的线性（分配律），先分别作用再叠加：
+\begin{equation}
+    \begin{aligned}
+        U(T_2)U(T_1) (|\psi_A\rangle + |\psi_B\rangle) &= U(T_2)U(T_1)|\psi_A\rangle + U(T_2)U(T_1)|\psi_B\rangle \\
+        &= e^{i\varphi_A} U(T_2 T_1)|\psi_A\rangle + e^{i\varphi_B} U(T_2 T_1)|\psi_B\rangle \;.
+    \end{aligned} \label{eq:phase_proof_2}
+\end{equation}
+比较式 \eqref{eq:phase_proof_1} 和 \eqref{eq:phase_proof_2} 的右边。由于 $|\psi_A\rangle$ 和 $|\psi_B\rangle$ 是线性无关的，变换后的态 $U(T_2 T_1)|\psi_A\rangle$ 和 $U(T_2 T_1)|\psi_B\rangle$ 依然保持线性无关（因为 $U$ 是可逆的幺正/反幺正算符）。
+
+因此，要使等式成立，对应基底前的系数必须严格相等：
+\begin{equation}
+    e^{i\varphi_{AB}} = e^{i\varphi_A} \quad \text{且} \quad e^{i\varphi_{AB}} = e^{i\varphi_B} \;.
+\end{equation}
+这直接导致 $\varphi_A = \varphi_B = \varphi_{AB} \equiv \varphi(T_2, T_1)$。所以，对称群在希尔伯特空间上的实现遵循如下乘积规则：
+\begin{equation}
+    U(T_2)U(T_1) = e^{i\varphi(T_2, T_1)} U(T_2 T_1) \;. \label{eq:projective_rep}
+\end{equation}
+这种包含相位因子的表示被称为群的\textbf{投影表示 (Projective Representation)}。
+\begin{itemize}
+    \item 若对于所有 $T_1, T_2$ 均可选择相位使得 $\varphi=0$，则退化为\textbf{普通表示}。
+    \item 在特定拓扑条件下（如庞加莱群），可以通过重新定义算符相位或考虑群的万有覆盖群，将投影表示提升为普通表示。\footnote{深入来讲，这一相位模糊性源于群流形的\textbf{非单连通性}。
+对于固有的洛伦兹群 $SO(3,1)^\uparrow$，其第一同伦群（基本群）为 $\pi_1(SO(3,1)^\uparrow) \cong \mathbb{Z}_2$。这意味着群空间是“双连通”的，存在两类闭合路径：一类可收缩为点，另一类（如绕轴旋转 $2\pi$）不可收缩。
+根据代数拓扑原理，我们可以通过构造\textbf{万有覆盖群（Universal Covering Group）} $\tilde{G}$ 来消除这种拓扑障碍。对于洛伦兹群，$\tilde{G} \cong SL(2, \mathbb{C})$。
+二者之间存在一个 $2 \to 1$ 的覆盖映射 $\Phi: SL(2, \mathbb{C}) \to SO(3,1)^\uparrow$，即 $SL(2, \mathbb{C})$ 中的元素 $A$ 和 $-A$ 均映射为同一个洛伦兹变换 $\Lambda$。
+这一数学结构有着深刻的物理意义：$SO(3,1)^\uparrow$ 的投影表示直接对应于 $SL(2, \mathbb{C})$ 的\textbf{普通表示}。这解释了为何自然界允许\textbf{半整数自旋（费米子）}存在——它们在 $2\pi$ 旋转下波函数会变号（对应 $SL(2, \mathbb{C})$ 中的 $-1$），而在物理射线意义上保持不变。}
+\end{itemize}
+\subsection{李群与李代数}
+物理中最重要的对称群是\textbf{连通李群} (Connected Lie Group)，即可以通过连续参数 $\theta^a$ 描述、且能连续变回单位元的群。这个群的乘法规则是：
+\begin{equation}
+    T(\xi)T(\theta)=T\left\{g(\xi,\theta)\right\}\footnote{这里，$g^a(\xi,\theta)$是$\xi$和$\theta$的函数,由于李群在有限领域内都可以有限变换到单位元令$\xi^a=0$或$\theta^a=0$是单位元的坐标,必须有
+    $$g^a(0,\theta)=g^a(\xi,0)=\theta^a\text{或}\xi^a$$且展开到二阶为：
+    $$g^a(\xi,\theta)=\xi^a+\theta^a+f^a_{bc}\xi^b\theta^c+\ldots$$}
+\end{equation}
+对于李群，我们关注其在单位元附近的性质。将幺正算符 $U(T(\theta))$ 在 $\theta=0$ 处展开：
+\begin{equation}
+    U\left\{T(\theta)\right\} = \mathbf{1} + i\theta^a t_a + \frac{1}{2}\theta^b \theta^c t_{bc} + \dots \;
+\end{equation}
+对于两次变换,群表示变为：
+\begin{equation}
+    U\left\{ T(\xi)\right\}U\left\{ T(\theta)\right\}=U\left\{ T(g^a(0,\theta))\right\}
+\end{equation}
+上式：\[\begin{aligned}L.H.S=
+    U\left\{ T(\theta)\right\}U\left\{ T(\xi)\right\}
+    &=
+   (\mathbf{1} + i\theta^a t_a + \frac{1}{2}\theta^b \theta^c t_{bc} + \dots \;)(\mathbf{1} + i\xi^a t_a + \frac{1}{2}\xi^b \xi^c t_{bc} + \dots \;)\\
+    &=
+    \mathbf{1}+i(\xi^a+\theta^a)t_a
+    +\frac{1}{2}t_{bc}(\theta^b \theta^c+\xi^b \xi^c)-\xi^b\theta^c t_bt_c+\dots \;
+\end{aligned}\]
+\[\begin{aligned}R.H.S=
+    U\left\{ T(g^a(0,\theta))\right\}
+    &=U\left\{T(\xi^a+\theta^a+f^a_{bc}\xi^b\theta^c+\ldots)\right\}\\
+    &=
+    \mathbf{1}+
+    i(\xi^a+\theta^a+f^a_{bc}\xi^b\theta^c+\ldots)t_a+
+    \frac{1}{2}(\xi^b+\theta^b+\ldots)(\xi^c+\theta^c+\ldots)t_{bc}
+    \\&=
+    \mathbf{1}+i(\xi^a+\theta^a)t_a+if^a_{bc}\xi^b\theta^c t_a
+    +\frac{1}{2}(\xi^b\xi^c+\xi^b\theta^c+\theta^c\xi^b+\theta^b\theta^c)t_{bc}
+\end{aligned}\]
+比较展开式中 $\bar{\theta}\theta$ 的交叉项系数，我们得到二阶项与一阶项的约束：
+\begin{equation}
+    \begin{aligned}
+    &\xi^b\theta^c(t_bt_c+if^a_{bc} t_a+t_{bc})=0\\
+    &\xi^b\theta^c(t_ct_b+if^a_{cb} t_a+t_{cb})=0\qquad\text{交换b和c的指标,且$t_{cb}$是对称的}
+\end{aligned}
+\end{equation}两式相减，得到导出了生成元必须满足的\textbf{对易关系}——即\textbf{李代数}：
+\begin{equation}
+    [t_b,t_c]=i(f^a_{cb}-f^a_{bc})t_a=iC^a_{bc}t_a
+\end{equation}
+\subsubsection*{阿贝尔群}
+若群的变换可以任意交换顺序（如平移群），即为\textbf{阿贝尔群}。此时所有生成元对易，$C^a_{\; bc} = 0$，算符乘积的相位因子通常可以取为 1。
+在此情况下，生成元相互独立，算符直接写为指数形式：
+\begin{equation}
+    U(T(\theta)) = \exp(i\theta^a t_a) \;.
+\end{equation}
+
+

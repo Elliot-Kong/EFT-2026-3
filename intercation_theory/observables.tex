@@ -1,0 +1,230 @@
+\section{可观测量}
+\subsection{箱正规化}
+$S_{\beta\alpha}$中含有因子$\delta^4(p_\alpha-p_\beta)$,那么跃迁几率中就有$|\delta^4(p_\alpha-p_\beta)|^2$，这是发散的；将系统装于一个大盒子(时空的盒子),便可以解决这个问题：
+\begin{itemize}
+    \item 时间部分：将反应限制在时间间隔为$T$内，那么$\delta(p^0-p'^0)$变为：
+    \[\delta(p^0-p'^0)\to\frac{1}{2\pi}\int_T\,e^{-it(p^0-p'^0)}\,dt
+    \]
+    \item 空间部分：将反应限制在边长为$L$的立方体内，由于“\textbf{施加了边界条件，允许的解被限制，本征值只能取某些离散值，因此体系发生了量子化}”,所以动量是量子化的：$\boldsymbol{p}=\frac{2\pi}{L}\boldsymbol{n}$，这诗全部的$\delta^3(\boldsymbol{p}-\boldsymbol{p'})$变为：
+    \[\delta^3(\boldsymbol{p}-\boldsymbol{p'})\to \frac{1}{(2\pi^3)}\int_V\,e^{-i(\boldsymbol{p}-\boldsymbol{p'})\cdot\boldsymbol{x}}\,d^3x=\frac{V}{(2\pi)^3}\delta_{\boldsymbol{p}\boldsymbol{p}'}
+    \]
+\end{itemize}
+时空都处理之后，就可以解决这个发散问题了，$S$矩阵就变为
+$$S_{\beta\alpha}=\delta(p_\beta-p_\alpha)\to
+\delta(p_\alpha^0-p_\beta^0)\frac{V}{(2\pi)^3}\delta_{\boldsymbol{p}_\alpha\boldsymbol{p}_\beta}$$
+这是不归一的，处理办法是：定义盒子内的态,使得S矩阵归一化
+\footnote{为什么不处理时间的因子？$\frac{T}{2\pi}$其中的$T$之后通过定义速率这样的方式来解决，$2\pi$这个因子刚好与四维$\delta$函数中的归一相抵消，综合这两点，所以我们不处理时间的归一问题}
+$$
+    \ket{\alpha;box}=\left[\frac{(2\pi)^3}{V}\right]^{\frac{N_\alpha}{2}}\Ket{\alpha}
+    \longrightarrow\delta(p_\alpha-p_\beta)
+    =\braket{\beta;box|S|\alpha;box}
+    =\left[\frac{(2\pi)^3}{V}\right]^{\frac{N_\beta+N_\alpha}{2}}\braket{\beta|S|\alpha}
+$$
+\subsection{速率:截面和衰变率}
+多粒子系统，在相互作用打开前处在态$\ket{\alpha}$，在相互作用关闭后处在态$\ket{\beta}$，这样跃迁的几率为
+$$
+    P(\alpha\to\beta)=|\braket{\beta;box|S|\alpha;box}|^2=\left[\frac{(2\pi)^3}{V}\right]^{N_\beta+N_\alpha}|\braket{\beta|S|\alpha}|^2
+$$
+这是跃迁到\text{\color{blue}特定的$\ket{\beta}$}中.但是我们的大盒子是一个很大的态，其中末态的体积元是：
+$$
+    d\mathcal{N}_\beta=\left[\frac{V}{(2\pi)^3}\right]^{N_\beta}\prod_{i}d^3p_i=\left[\frac{V}{(2\pi)^3}\right]^{N_\beta}d\beta
+$$
+系统跃迁到末态$d\beta$范围内的总概率是：
+\begin{equation}
+    dP(\alpha\to\beta)=P(\alpha\to\beta)d\mathcal{N}_\beta=\left[ \frac{(2\pi)^3}{V}\right]^{N_\alpha}|S_{\beta\alpha}|^2d\beta
+\end{equation}
+这里仅考察$S$矩阵的连通\footnote{参考集团分解和连接振幅，$S^\mathbb{C}\varpropto M\delta^4(\sum p-\beta)$}部分，可以定义不含$\delta$函数的矩阵元$M_{\beta\alpha}$：
+$$
+    S^\mathbb{C}_{\beta\alpha}=-2i\pi\delta^3_V(\boldsymbol{p}_{\beta}-\boldsymbol{p}_{\alpha})\delta(p^0_\beta-p^0_\alpha)M_{\beta\alpha}
+$$
+这种条件下，微分跃迁几率变为
+\begin{equation}
+    \begin{aligned}
+        dP(\alpha\to\beta)
+        &=\left[ \frac{(2\pi)^3}{V}\right]^{N_\alpha}|S_{\beta\alpha}|^2d\beta
+        \\&=
+        (2\pi)^2\left[ \frac{(2\pi)^3}{V}\right]^{N_\alpha}|\delta^3_V(\boldsymbol{p}_{\beta}-\boldsymbol{p}_{\alpha})\delta(p^0_\beta-p^0_\alpha)|^2|M_{\beta\alpha}|^2d\beta
+        \\\overset{\text{盒子的假设可以消去一些}\delta\text{函数}}{\longrightarrow}&=
+        (2\pi)^2\left[ \frac{(2\pi)^3}{V}\right]^{N_\alpha}\frac{VT}{(2\pi)^4}\delta^3_V(\boldsymbol{p}_{\beta}-\boldsymbol{p}_{\alpha})\delta(p^0_\beta-p^0_\alpha)|M_{\beta\alpha}|^2d\beta
+    \end{aligned}
+\end{equation}
+若盒子的时空 \textbf{相当的大},$\delta^3_V(\boldsymbol{p}_{\beta}-\boldsymbol{p}_{\alpha})\delta(p^0_\beta-p^0_\alpha)$就可以变为$\delta^4(p_\beta-p_\alpha)$;这个极限下，跃迁几率就正比于相互作用的时间$T$，便可以定义微分跃迁速率：
+\begin{equation}
+    \frac{dP(\alpha\to\beta)}{T}=\left[ \frac{(2\pi)^3}{V}\right]^{N_\alpha}\frac{V}{(2\pi)^2}\delta^4(p_\beta-p_\alpha)|M_{\beta\alpha}|^2d\beta
+\end{equation}
+直到现在，得到的任何东西都不是$Lorentz$不变的，这也并不奇怪，前文的讨论中都是在静止系中考虑跃迁；然而现实情况是，由于要变换参考系来处理问题，所以需要$Lorentz$不变的形式，下面就来构造$Lorentz$不变的微分跃迁速率.
+\begin{center}
+    \vspace{0.5cm}
+        \text{\Large\color{red} ***}\\
+    \vspace{0.5cm}
+\end{center}
+考虑$M_{\beta\alpha}$矩阵元的模方$|M_{\beta\alpha}|^2$，上文已经证明$S$矩阵是$Lorentz$不变,可以推出$M_{\beta\alpha}$矩阵元$Lorentz$不变的形式，显式表述为：
+                                \begin{equation*}
+                                    \begin{aligned}
+                                        &S_{p_1',\sigma_1',n_1';p_2',\sigma_2',n_2';\cdots;p_1,\sigma_1,n_1;p_2,\sigma_2,n_2;\cdots} \\
+                                        &= \exp\!\left[ i a_\mu \Lambda^\mu{}_\nu \left( p_1' + p_2' + \cdots - p_1' - p_2' - \cdots \right)^\nu \right] \\
+                                        &\quad\times \sqrt{ \frac{ (\Lambda p_1)^0 (\Lambda p_2)^0 \cdots (\Lambda p_1')^0 (\Lambda p_2')^0 \cdots }{ p_1^0 p_2^0 \cdots p_1'^0 p_2'^0 \cdots } } \\
+                                        &\quad\times \sum_{\bar{\sigma}_1 \bar{\sigma}_2 \cdots} D^{(j_1)}_{\bar{\sigma}_1 \sigma_1} \bigl( W(\Lambda, p_1) \bigr) \, D^{(j_2)}_{\bar{\sigma}_2 \sigma_2} \bigl( W(\Lambda, p_2) \bigr) \cdots \\
+                                        &\quad\times \sum_{\bar{\sigma}_1 \bar{\sigma}_2 \cdots} D^{(j_1)*}_{\sigma_1 \bar{\sigma}'_1} \bigl( W(\Lambda, p_1') \bigr) \, D^{(j_2)*}_{\sigma_2 \bar{\sigma}'_2} \bigl( W(\Lambda, p_2') \bigr) \cdots \\
+                                        &\quad\times S_{\Lambda p'_1,\bar{\sigma}'_1,n'_1;\Lambda p'_2,\bar{\sigma}'_2,n'_2;\cdots;\Lambda p_1,\bar{\sigma}_1,n_1;\Lambda p_2,\bar{\sigma}_2,n_2;\cdots} 
+                                    \end{aligned}
+                                    \longrightarrow
+                                    \begin{aligned}
+                                        &M_{p_1',\sigma_1',n_1';p_2',\sigma_2',n_2';\cdots;p_1,\sigma_1,n_1;p_2,\sigma_2,n_2;\cdots} \\
+                                        &= \exp\!\left[ i a_\mu \Lambda^\mu{}_\nu \left( p_1' + p_2' + \cdots - p_1' - p_2' - \cdots \right)^\nu \right] \\
+                                        &\quad\times \sqrt{ \frac{ (\Lambda p_1)^0 (\Lambda p_2)^0 \cdots (\Lambda p_1')^0 (\Lambda p_2')^0 \cdots }{ p_1^0 p_2^0 \cdots p_1'^0 p_2'^0 \cdots } } \\
+                                        &\quad\times \sum_{\bar{\sigma}_1 \bar{\sigma}_2 \cdots} D^{(j_1)}_{\bar{\sigma}_1 \sigma_1} \bigl( W(\Lambda, p_1) \bigr) \, D^{(j_2)}_{\bar{\sigma}_2 \sigma_2} \bigl( W(\Lambda, p_2) \bigr) \cdots \\
+                                        &\quad\times \sum_{\bar{\sigma}_1 \bar{\sigma}_2 \cdots} D^{(j_1)*}_{\sigma_1 \bar{\sigma}'_1} \bigl( W(\Lambda, p_1') \bigr) \, D^{(j_2)*}_{\sigma_2 \bar{\sigma}'_2} \bigl( W(\Lambda, p_2') \bigr) \cdots \\
+                                        &\quad\times M_{\Lambda p'_1,\bar{\sigma}'_1,n'_1;\Lambda p'_2,\bar{\sigma}'_2,n'_2;\cdots;\Lambda p_1,\bar{\sigma}_1,n_1;\Lambda p_2,\bar{\sigma}_2,n_2;\cdots} 
+                                    \end{aligned}
+                                \end{equation*}
+对上式两侧求模方，并利用$D^\dagger D=1$,且对所有的自旋进行求和，便得到一个$Lorentz$不变的量：
+$$
+                                \sum_{spins}|M_{\beta\alpha}|^2\prod_{\alpha}E_\alpha\prod_{\beta}E_\beta=R_{\beta\alpha}\quad\text{是$Lorentz$不变}
+$$
+就得到了$Lorentz$不变的微分跃迁速率：
+\begin{equation}
+    \sum_{spins}\frac{dP(\alpha\to\beta)}{T}=\left[ \frac{(2\pi)^3}{V}\right]^{N_\alpha}\frac{V}{(2\pi)^2}\delta^4(p_\beta-p_\alpha)\frac{1}{\prod_{\alpha}E_\alpha}R_{\beta\alpha}\frac{d\beta}{\prod_{\beta}E_{\beta}}
+\end{equation}
+有两种特别重要的情况：
+\begin{center}
+    \begin{tcolorbox}[colback=white!5,colframe=black!55,width=8cm]
+        \centering$N_\alpha=1$\,衰变率\qquad$\alpha\to p\footnote{这里的$p$只出态是\color{blue}单态\normalcolor,而不是单粒子，下文同理。}\quad\beta\to\beta$
+    \end{tcolorbox}
+\end{center}
+这种情况下,$V$被抵消了，所以微分反应速率被解释为衰变率：
+\begin{equation}
+    \begin{aligned}
+        \sum_{spins}d\Gamma(p\to\beta)=
+        &\sum_{spins}\frac{dP(p\to\beta)}{T}\\
+        &=\frac{2\pi}{E}\delta^4(p-\beta)R_{p;\beta}\frac{d\beta}{\prod_{\beta}E_{\beta}}
+    \end{aligned}
+\end{equation}
+注意：\begin{enumerate}
+    \item 讨论的情况是包括不稳定的粒子，式子中$\delta^4(p-\beta)$成立的条件是“$T$足够大”，物理上我们就要求：相互作用的时间远大与粒子的寿命$\tau$；为根据不确定原理，能量不能够确定，且具有模糊的展宽，表述为：
+    $$
+        \Delta E \Delta t >1\,\to \Delta E\geq \frac{1}{T}\gtrapprox \frac{1}{\tau}
+    $$
+    \item 因子$\frac{1}{E}$正是$Lorentz$尺缩效应的体现.
+\end{enumerate}
+
+\begin{center}
+    \begin{tcolorbox}[colback=white!5,colframe=black!55,width=7.5cm]
+        \centering$N_\alpha=2$\,截面\qquad $\alpha\to p_1+p_2\quad\beta\to\beta$
+    \end{tcolorbox}
+\end{center}
+此时的微分反应速率是：
+$$
+     \sum_{spins}\frac{dP(p_1+p_2\to\beta)}{T}= \frac{(2\pi)^2}{VE_1E_2}\delta^4(p_1+p_2-\beta)R_{p_1+p_2;\beta}\frac{d\beta}{\prod_{\beta}E_{\beta}}     
+$$
+注意到出现了因子$\frac{1}{V}$,处理的方式是：引入截面这个物理表述：
+\[
+\text{截面}=\frac{\text{反应速率}}{\text{单位流强}}=\frac{P(p_1+p_2\to\beta)V}{|\boldsymbol{v}_1-\boldsymbol{v}_2|}
+\]
+那么微分截面是
+\begin{equation}
+    \begin{aligned}
+            \sum_{spins}d\sigma(p_1+p_2\to\beta)
+            &=\sum_{spins}\frac{dP(p_1+p_2\to\beta)V}{T|\boldsymbol{v}_1-\boldsymbol{v}_2|}\\
+            &=\frac{(2\pi)^4}{E_1E_2|\boldsymbol{v}_1-\boldsymbol{v}_2|}\delta^4(p_1+p_2-\beta)R_{p_1+p_2;\beta}\frac{d\beta}{\prod_{\beta}E_{\beta}}
+    \end{aligned}
+\end{equation}
+处理因子$|\boldsymbol{v}_1-\boldsymbol{v}_2|$:利用质心系：
+\[\begin{aligned}
+    &p_1=(E_1,\boldsymbol{p})\\
+    &p_2=(E_2,-\boldsymbol{p})
+\end{aligned}
+\,\to\,\begin{aligned}
+    &\boldsymbol{p}=0\\
+    &E_1+E_2=E
+\end{aligned}\]
+相对速度就变为：
+$$
+   |\boldsymbol{v}_1-\boldsymbol{v}_2|=|\frac{\boldsymbol{p}E}{E_1E_2}| 
+$$
+强调的是这个只能叫做相对速度，不是真正的物理速度。这是位于质心系观测者看到两个态的相对速率；并且相对速度不能大于2，考虑极端相对论情况：两个粒子(仍然是态，勿混淆)都是光速，且迎面相撞.
+$$|\boldsymbol{v}_1-\boldsymbol{v}_2|=|1-(-1)|=2$$
+$N_\alpha=3$以后再说
+
+\subsection{末态的相空间积分}
+以上，只处理了积分外的过程，还剩这个末态的积分及$\delta$函数没有处理，现在论述这个过程；依然将系统搁至质心系；
+$$
+    \boldsymbol{p_1}+\boldsymbol{p_2}+\dots=0\qquad E_1+E_2+\dots=E
+$$
+那么任意情形的末态的积分及$\delta$就变成
+$$
+    \delta^4(p_\beta-p_\alpha)\frac{d\beta}{\prod_{\beta}E_{\beta}}
+    =
+    \delta^3(\boldsymbol{p_1'}+\boldsymbol{p_2'}+\dots)\delta(E_1'+E_2'+\dots-E)\prod_{i} \frac{d^3\boldsymbol{p_i'}}{E'_i}
+$$
+其中可以积掉$\delta^3(\boldsymbol{p_1'}+\boldsymbol{p_1'}+\dots)$，则会提供关系：
+$$
+    \boldsymbol{p_1'}=-\boldsymbol{p_1'}-\boldsymbol{p_2'}-\dots
+$$
+当$N_{\beta}$数目较多时很难处理，所以我们只讨论$N_{\beta}=2$以及$N_{\beta}=3$.
+\begin{center}
+    \vspace{0.5cm}
+   \color{black}\text{***}
+   \vspace{0.5cm}
+\end{center}
+考虑$N_{\beta}=2$,此时给出
+\[\begin{aligned}
+    \delta^4(p_\beta-p_\alpha)\frac{d\beta}{\prod_{\beta}E_{\beta}}
+    &=
+    \delta(E_1'+E_2'+\dots-E) \frac{d^3\boldsymbol{p'_1}}{E'_1E'_2}
+    \\&=\delta(\sqrt{|\boldsymbol{p'_1}|^2+m_1'^2}+\sqrt{|\boldsymbol{p'_1}|^2+m_2'^2}\dots-E) \frac{d\boldsymbol{p_1'}\,|\boldsymbol{p_1'}|^2 d\Omega}{E'_1E'_2}
+\end{aligned}
+\quad\text{其中}\quad\begin{aligned}
+    &\boldsymbol{p'}_1=-\boldsymbol{p'}_2\to|\boldsymbol{p'_1}|=|\boldsymbol{p'_2}|\\&d\Omega=sin\theta d\theta d\phi
+\end{aligned}\]
+利用$\delta$函数的等式$\delta(f(x)) =\frac{\delta(x - x_0) }{|f'(x_0)|}$,其中 $f(x)$ 是在 $x=x_0$ 处有简单的单零点的任意实函数。在我们的情况下，方程中$\delta$-函数的变量 $E'_1 + E'_2 - E$ 有唯一的零点 $|\mathbf{p}'_1| = k'$，其中
+\begin{align*}
+k' &= \sqrt{\frac{E^2-m'^2_1-m'^2_2-2E'_1E'_2}{2}}  \\
+E'_1 &= \sqrt{k'^2 + m'^2_1}  \\
+E'_2 &= \sqrt{k'^2 + m'^2_2} 
+\end{align*}
+所以末态积分形式变为：
+\begin{equation}
+    \begin{aligned}
+    \delta^4(p_\beta-p_\alpha)\frac{d\beta}{\prod_{\beta}E_{\beta}}
+    &=\frac{\delta(\boldsymbol{p_1'}-k')}{\boldsymbol{p_1'}(\frac{1}{E'_1}+\frac{1}{E'_2})} \frac{d \boldsymbol{p_1'}\,|\boldsymbol{p_1'}|^2 d\Omega}{E'_1E'_2}
+    \\&=\frac{k'\,d\Omega}{E'_1+E'_2}
+    \\&=\frac{k'\,d\Omega}{E}
+\end{aligned}\qquad\text{其中能量守恒所以}E'_1+E'_2=E
+\end{equation}
+那么这种末态情况，$1\to1'+2'$衰变率就变为：
+\begin{equation}
+    \begin{aligned}
+        \sum_{spins}d\Gamma(p\to\beta)
+        &=\frac{2\pi}{E}\delta^4(p-\beta)R_{p;\beta}\frac{d\beta}{\prod_{\beta}E_{\beta}}
+        \\&=\frac{2\pi k'E'_1E'_2d\Omega}{E}|M_{\beta\alpha}|^2
+    \end{aligned}
+\end{equation}
+也可以写为
+\begin{equation}
+    \frac{\sum_{spins}d\Gamma(p\to\beta)}{d\Omega}=\frac{2\pi k'E'_1E'_2}{E}|M_{\beta\alpha}|^2
+\end{equation}
+而$1+2\to1'+2'$截面就变为
+\begin{equation}
+    \begin{aligned}
+            \sum_{spins}d\sigma(p_1+p_2\to\beta)
+            &=
+            \frac{(2\pi)^4}{E_1E_2|\boldsymbol{v}_1-\boldsymbol{v}_2|}\delta^4(p_1+p_2-\beta)R_{p_1+p_2;\beta}\frac{d\beta}{\prod_{\beta}E_{\beta}}\\
+            &=
+            \frac{(2\pi)^4k'E'_1E'_2d\Omega}{E|\boldsymbol{v}_1-\boldsymbol{v}_2|}
+            \\&=
+            \frac{(2\pi)^4k'E_1E_2E'_1E'_2d\Omega}{pE^2}
+    \end{aligned}\qquad \text{其中}p=|\boldsymbol{p_1}|=|\boldsymbol{p_2}|
+\end{equation}
+也可以写为
+\begin{equation}
+    \frac{\sum_{spins}d\sigma(p_1+p_2\to\beta)}{d\Omega}=\frac{(2\pi)^4k'E_1E_2E'_1E'_2}{pE^2}|M_{\beta\alpha}|^2
+\end{equation}
+
+
+$N_{\beta}=2$先不写了
+
+举例：$\pi$衰变成中微子和谬子
+
+\subsection{运动学不变量}
+\subsection{物理区域}

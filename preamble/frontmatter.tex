@@ -1,0 +1,25 @@
+% ============================================================
+% Front matter
+% - Table of contents
+% - Page numbering reset
+% ============================================================
+
+\cleardoublepage
+
+\pagestyle{empty}
+\hypersetup{linkcolor=black} 
+% keep TOC links 
+\begin{center}
+  \color{black}\rule{\linewidth}{0.6pt}
+\end{center}%%%%%%%%%%%%% content and titlepage
+%%%%%%%%%%%%%%%%%% Two-column table of contents
+%\tableofcontents
+\begin{multicols}{2}
+  \begin{center}
+    \tableofcontents
+  \end{center}
+\end{multicols}
+%\noindent\color{black}\rule{\linewidth}{0.6pt}%%%%%%%%%%%%%
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\pagestyle{fancy}% 开启正文页码与页脚样式
