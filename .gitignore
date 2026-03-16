@@ -1,0 +1,15 @@
+# LaTeX build files
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+
+# temporary files
+*.swp
+*.DS_Store
+
+# pdf if you don't want to track compiled output
+# *.pdf
