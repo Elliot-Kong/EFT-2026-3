@@ -34,30 +34,25 @@
 \contentsline {section}{\numberline {4.7}相互作用的结构}{30}{section.4.7}%
 \contentsline {chapter}{\numberline {5}场与反粒子}{31}{chapter.5}%
 \contentsline {section}{\numberline {5.1}自由场理论}{31}{section.5.1}%
-\contentsline {section}{\numberline {5.2}$Lorentz$群的不可约表示}{36}{section.5.2}%
+\contentsline {section}{\numberline {5.2}$\operatorname {Lorentz}$群的不可约表示}{36}{section.5.2}%
 \contentsline {section}{\numberline {5.3}正定质量粒子因果场\(\dagger \)}{39}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Causal Scalar Field}{42}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Weyl Field}{43}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}Dirac Formalism}{43}{subsection.5.3.3}%
-\contentsline {subsection}{\numberline {5.3.4}Causal Dirac Field}{43}{subsection.5.3.4}%
-\contentsline {subsection}{\numberline {5.3.5}Causal Vector Field}{43}{subsection.5.3.5}%
-\contentsline {section}{\numberline {5.4}零质量粒子因果场\(\dagger \)}{43}{section.5.4}%
-\contentsline {chapter}{\numberline {6}相互作用理论}{44}{chapter.6}%
-\contentsline {section}{\numberline {6.1}费曼规则}{44}{section.6.1}%
-\contentsline {section}{\numberline {6.2}算符方法}{44}{section.6.2}%
-\contentsline {section}{\numberline {6.3}过渡到相互作用绘景：例子}{44}{section.6.3}%
-\contentsline {section}{\numberline {6.4}可观测量}{44}{section.6.4}%
-\contentsline {subsection}{\numberline {6.4.1}箱正规化}{44}{subsection.6.4.1}%
-\contentsline {subsection}{\numberline {6.4.2}速率:截面和衰变率}{44}{subsection.6.4.2}%
-\contentsline {subsection}{\numberline {6.4.3}末态的相空间积分}{47}{subsection.6.4.3}%
-\contentsline {subsection}{\numberline {6.4.4}运动学不变量}{48}{subsection.6.4.4}%
-\contentsline {subsection}{\numberline {6.4.5}物理区域}{48}{subsection.6.4.5}%
-\contentsline {section}{\numberline {6.5}物理例子与应用}{48}{section.6.5}%
-\contentsline {section}{\numberline {6.6}泛函方法}{48}{section.6.6}%
-\contentsline {subsection}{\numberline {6.6.1}波色子的路径积分}{48}{subsection.6.6.1}%
-\contentsline {subsection}{\numberline {6.6.2}费米子的路径积分}{48}{subsection.6.6.2}%
-\contentsline {part}{III\hspace {1em}散射振幅的解析理论}{49}{part.3}%
-\contentsline {chapter}{\numberline {7}非微扰方法}{50}{chapter.7}%
-\contentsline {part}{IV\hspace {1em}电动力学专题}{51}{part.4}%
-\contentsline {chapter}{\numberline {8}光子和费米子}{52}{chapter.8}%
-\contentsline {chapter}{\numberline {9}外场中的粒子}{53}{chapter.9}%
+\contentsline {section}{\numberline {5.4}零质量粒子因果场\(\dagger \)}{42}{section.5.4}%
+\contentsline {chapter}{\numberline {6}相互作用理论}{43}{chapter.6}%
+\contentsline {section}{\numberline {6.1}费曼规则}{43}{section.6.1}%
+\contentsline {section}{\numberline {6.2}算符方法}{43}{section.6.2}%
+\contentsline {section}{\numberline {6.3}过渡到相互作用绘景：例子}{43}{section.6.3}%
+\contentsline {section}{\numberline {6.4}可观测量}{43}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}箱正规化}{43}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}速率:截面和衰变率}{43}{subsection.6.4.2}%
+\contentsline {subsection}{\numberline {6.4.3}末态的相空间积分}{46}{subsection.6.4.3}%
+\contentsline {subsection}{\numberline {6.4.4}运动学不变量}{47}{subsection.6.4.4}%
+\contentsline {subsection}{\numberline {6.4.5}物理区域}{47}{subsection.6.4.5}%
+\contentsline {section}{\numberline {6.5}物理例子与应用}{47}{section.6.5}%
+\contentsline {section}{\numberline {6.6}泛函方法}{47}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}波色子的路径积分}{47}{subsection.6.6.1}%
+\contentsline {subsection}{\numberline {6.6.2}费米子的路径积分}{47}{subsection.6.6.2}%
+\contentsline {part}{III\hspace {1em}散射振幅的解析理论}{48}{part.3}%
+\contentsline {chapter}{\numberline {7}非微扰方法}{49}{chapter.7}%
+\contentsline {part}{IV\hspace {1em}电动力学专题}{50}{part.4}%
+\contentsline {chapter}{\numberline {8}光子和费米子}{51}{chapter.8}%
+\contentsline {chapter}{\numberline {9}外场中的粒子}{52}{chapter.9}%
