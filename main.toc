@@ -17,42 +17,42 @@
 \contentsline {chapter}{\numberline {3}粒子态}{13}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Poincar\'e 变换}{13}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Poincar\'e 代数}{13}{section.3.2}%
-\contentsline {section}{\numberline {3.3}单粒子态}{17}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}正定质量粒子\(\dagger \)}{18}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}零质量粒子\(\dagger \)}{18}{subsection.3.3.2}%
-\contentsline {part}{II\hspace {1em}1+3维场论的构造}{20}{part.2}%
-\contentsline {chapter}{\numberline {4}散射理论}{21}{chapter.4}%
-\contentsline {section}{\numberline {4.1}“出”和“入”态}{22}{section.4.1}%
-\contentsline {section}{\numberline {4.2}S-矩阵}{23}{section.4.2}%
-\contentsline {section}{\numberline {4.3}S-矩阵的对称性}{24}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}幺正性}{24}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Lorentz对称性}{24}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}内部对称性}{27}{subsection.4.3.3}%
-\contentsline {section}{\numberline {4.4}玻色子和费米子}{27}{section.4.4}%
-\contentsline {section}{\numberline {4.5}算符的一般形式}{27}{section.4.5}%
-\contentsline {section}{\numberline {4.6}集团分解与连通振幅}{27}{section.4.6}%
-\contentsline {section}{\numberline {4.7}相互作用的结构}{30}{section.4.7}%
-\contentsline {chapter}{\numberline {5}场与反粒子}{31}{chapter.5}%
-\contentsline {section}{\numberline {5.1}自由场理论}{31}{section.5.1}%
-\contentsline {section}{\numberline {5.2}$\operatorname {Lorentz}$群的不可约表示}{36}{section.5.2}%
+\contentsline {section}{\numberline {3.3}单粒子态}{16}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}正定质量粒子\(\dagger \)}{17}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}零质量粒子\(\dagger \)}{17}{subsection.3.3.2}%
+\contentsline {part}{II\hspace {1em}1+3维场论的构造}{19}{part.2}%
+\contentsline {chapter}{\numberline {4}散射理论}{20}{chapter.4}%
+\contentsline {section}{\numberline {4.1}“出”和“入”态}{21}{section.4.1}%
+\contentsline {section}{\numberline {4.2}S-矩阵}{22}{section.4.2}%
+\contentsline {section}{\numberline {4.3}S-矩阵的对称性}{23}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}幺正性}{23}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Lorentz对称性}{23}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}内部对称性}{26}{subsection.4.3.3}%
+\contentsline {section}{\numberline {4.4}玻色子和费米子}{26}{section.4.4}%
+\contentsline {section}{\numberline {4.5}算符的一般形式}{26}{section.4.5}%
+\contentsline {section}{\numberline {4.6}集团分解与连通振幅}{26}{section.4.6}%
+\contentsline {section}{\numberline {4.7}相互作用的结构}{29}{section.4.7}%
+\contentsline {chapter}{\numberline {5}场与反粒子}{30}{chapter.5}%
+\contentsline {section}{\numberline {5.1}自由场理论}{30}{section.5.1}%
+\contentsline {section}{\numberline {5.2}$\operatorname {Lorentz}$群的不可约表示}{35}{section.5.2}%
 \contentsline {section}{\numberline {5.3}正定质量粒子因果场\(\dagger \)}{39}{section.5.3}%
-\contentsline {section}{\numberline {5.4}零质量粒子因果场\(\dagger \)}{42}{section.5.4}%
-\contentsline {chapter}{\numberline {6}相互作用理论}{43}{chapter.6}%
-\contentsline {section}{\numberline {6.1}费曼规则}{43}{section.6.1}%
-\contentsline {section}{\numberline {6.2}算符方法}{43}{section.6.2}%
-\contentsline {section}{\numberline {6.3}过渡到相互作用绘景：例子}{43}{section.6.3}%
-\contentsline {section}{\numberline {6.4}可观测量}{43}{section.6.4}%
-\contentsline {subsection}{\numberline {6.4.1}箱正规化}{43}{subsection.6.4.1}%
-\contentsline {subsection}{\numberline {6.4.2}速率:截面和衰变率}{43}{subsection.6.4.2}%
-\contentsline {subsection}{\numberline {6.4.3}末态的相空间积分}{46}{subsection.6.4.3}%
-\contentsline {subsection}{\numberline {6.4.4}运动学不变量}{47}{subsection.6.4.4}%
-\contentsline {subsection}{\numberline {6.4.5}物理区域}{47}{subsection.6.4.5}%
-\contentsline {section}{\numberline {6.5}物理例子与应用}{47}{section.6.5}%
-\contentsline {section}{\numberline {6.6}泛函方法}{47}{section.6.6}%
-\contentsline {subsection}{\numberline {6.6.1}波色子的路径积分}{47}{subsection.6.6.1}%
-\contentsline {subsection}{\numberline {6.6.2}费米子的路径积分}{47}{subsection.6.6.2}%
-\contentsline {part}{III\hspace {1em}散射振幅的解析理论}{48}{part.3}%
-\contentsline {chapter}{\numberline {7}非微扰方法}{49}{chapter.7}%
-\contentsline {part}{IV\hspace {1em}电动力学专题}{50}{part.4}%
-\contentsline {chapter}{\numberline {8}光子和费米子}{51}{chapter.8}%
-\contentsline {chapter}{\numberline {9}外场中的粒子}{52}{chapter.9}%
+\contentsline {section}{\numberline {5.4}零质量粒子因果场\(\dagger \)}{41}{section.5.4}%
+\contentsline {chapter}{\numberline {6}相互作用理论}{42}{chapter.6}%
+\contentsline {section}{\numberline {6.1}费曼规则}{42}{section.6.1}%
+\contentsline {section}{\numberline {6.2}算符方法}{42}{section.6.2}%
+\contentsline {section}{\numberline {6.3}过渡到相互作用绘景：例子}{42}{section.6.3}%
+\contentsline {section}{\numberline {6.4}可观测量}{42}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}箱正规化}{42}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}速率:截面和衰变率}{42}{subsection.6.4.2}%
+\contentsline {subsection}{\numberline {6.4.3}末态的相空间积分}{45}{subsection.6.4.3}%
+\contentsline {subsection}{\numberline {6.4.4}运动学不变量}{46}{subsection.6.4.4}%
+\contentsline {subsection}{\numberline {6.4.5}物理区域}{46}{subsection.6.4.5}%
+\contentsline {section}{\numberline {6.5}物理例子与应用}{46}{section.6.5}%
+\contentsline {section}{\numberline {6.6}泛函方法}{46}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}波色子的路径积分}{46}{subsection.6.6.1}%
+\contentsline {subsection}{\numberline {6.6.2}费米子的路径积分}{46}{subsection.6.6.2}%
+\contentsline {part}{III\hspace {1em}散射振幅的解析理论}{47}{part.3}%
+\contentsline {chapter}{\numberline {7}非微扰方法}{48}{chapter.7}%
+\contentsline {part}{IV\hspace {1em}电动力学专题}{49}{part.4}%
+\contentsline {chapter}{\numberline {8}光子和费米子}{50}{chapter.8}%
+\contentsline {chapter}{\numberline {9}外场中的粒子}{51}{chapter.9}%

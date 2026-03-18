@@ -1,8 +1,8 @@
 \section{正定质量粒子因果场\(\dagger\)}
 一般形式场写为：\begin{equation*}
-    \varphi_\ell(x) =(\frac{1}{2\pi})^\frac{3}{2}\sum_{\sigma}\int d^3p \, \left\{\chi_\ell u_\ell(\boldsymbol{p},\sigma)b^\dagger(\mathbf{p},\sigma) e^{-ipx} + \xi_\ell v_\ell(\boldsymbol{p},\sigma) a(\mathbf{p},\sigma)e^{ipx} \right\}
+    \Psi_\ell(x) =(\frac{1}{2\pi})^\frac{3}{2}\sum_{\sigma}\int d^3p \, \left\{\chi_\ell u_\ell(\boldsymbol{p},\sigma)b^\dagger(\mathbf{p},\sigma) e^{-ipx} + \xi_\ell v_\ell(\boldsymbol{p},\sigma) a(\mathbf{p},\sigma)e^{ipx} \right\}
 \end{equation*}
-若理论本身无荷，，是$a^{\dagger}(\mathbf{p},\sigma)=a^{c\dagger}(\mathbf{p},\sigma)=a^{\dagger}(\mathbf{p},\sigma)$；系数$u_\ell(\boldsymbol{p},\sigma)$和$v_\ell(\boldsymbol{p},\sigma)$的变换是
+若理论本身无荷，就有$a^{\dagger}(\mathbf{p},\sigma)=a^{c\dagger}(\mathbf{p},\sigma)=a^{\dagger}(\mathbf{p},\sigma)$；系数$u_\ell(\boldsymbol{p},\sigma)$和$v_\ell(\boldsymbol{p},\sigma)$的变换是
 \begin{equation*}是：
     \begin{aligned}
             &\sum_{\bar{\sigma}}
@@ -32,7 +32,7 @@
 \end{center}
 通过 $SU(2)_L \times SU(2)_R$ 代数构建$Lorentz$群的有限维表示 $(A,B)$ 后，，般不可约$(A,B)$ 表示变换的场。指标$\ell$在这里被替换为一对指标$a$、$b$：
 一般形式场可以写为：\begin{equation}
-    \varphi_{ab}(x) =(\frac{1}{2\pi})^\frac{3}{2}\sum_{\sigma}\int d^3p \, \left\{\chi_{ab} u_{ab}(\boldsymbol{p},\sigma)b^\dagger(\mathbf{p},\sigma) e^{-ipx} + \xi_{ab} v_{ab}(\boldsymbol{p},\sigma) a(\mathbf{p},\sigma)e^{ipx} \right\}
+    \Psi_{ab}(x) =(\frac{1}{2\pi})^\frac{3}{2}\sum_{\sigma}\int d^3p \, \left\{\chi_{ab} u_{ab}(\boldsymbol{p},\sigma)b^\dagger(\mathbf{p},\sigma) e^{-ipx} + \xi_{ab} v_{ab}(\boldsymbol{p},\sigma) a(\mathbf{p},\sigma)e^{ipx} \right\}
 \end{equation}
 以及系数函数的选择变为：
 \begin{subequations}
@@ -56,18 +56,18 @@
             v_{\bar{a}\bar{b}}(\Lambda \boldsymbol{p},\sigma)
             \end{align}
 \end{subequations}
-首先确定系数的选择；考虑剩下的两组Poincar\'e变换，，次考察$Boost$和$Rotation$，
+首先确定系数的选择；考虑剩下的两组Poincar\'e变换，依次考察$\operatorname{Boost}$和$\operatorname{Rotation}$；
 \vspace{0.5cm}
 \begin{center}
     \large\textbf{boost}  
 \end{center}
 \vspace{0.5cm}
-令$\boldsymbol{p}=0$，，就是$\Lambda p=q$，，以$\Lambda=L(q)$是静止系到任意系标准$Lorentz$变换，，么有$L(p)=1$，，以：
+令$\boldsymbol{p}=0$，就是$\Lambda p=q$，，以$\Lambda=L(q)$是静止系到任意系标准$Lorentz$变换，那么有$L(p)=1$，所以：
 \[\begin{aligned}
     &W(\Lambda,p)=1\to\sum_{\bar{\sigma}}D_{\sigma \bar{\sigma}}^{j_n*}\!\left\{W^{-1}(\Lambda,p)\right\} =1\\
     &p^0\to m\qquad(\Lambda p)^0\to q^0
 \end{aligned}\]
-这种情况下，，数函数表述为：
+这种情况下，系数函数表述为：
 \begin{subequations}
     \begin{align}\label{eq:8.38a}
        &u_{ab}(0,\sigma)\sqrt{\frac{m}{q^0}}
@@ -81,13 +81,13 @@
    \large \textbf{rotation}  
 \end{center}
 \vspace{0.5cm}
-令$\boldsymbol{p}=0$，，$\Lambda=R(\theta)$也就是静止系中，，维的旋，，，以得到：
+令$\boldsymbol{p}=0$，$\Lambda=R(\theta)$也就是静止系中三维的旋转：
 \[W(\Lambda,p)=R\]
 \color{blue}由于$\boldsymbol{J}=\boldsymbol{J}^A+\boldsymbol{J}^B$，，$Winger$的转动表征为总的自旋，，场的自旋拆为$\boldsymbol{J}^A+\boldsymbol{J}^B$
 $$ D_{\sigma\bar{\sigma}}^{(j)}(R^{-1}) = \left[ \exp\left( +i \boldsymbol{\theta}\cdot\boldsymbol{J}^{(j)} \right) \right]_{\sigma\bar{\sigma}} $$
 而场的自旋拆为$\boldsymbol{J}^A+\boldsymbol{J}^B$
 \[M_{{ab};\bar{a}\bar{{b}}}(R^{-1})=\left[\exp\left( +i \boldsymbol{\theta}\cdot\boldsymbol{J}^{(A)}+i \boldsymbol{\theta}\cdot\boldsymbol{J}^{(B)} \right) \right]_{{ab};\bar{a}\bar{{b}}}\]\normalcolor
-在这种分解下，，数函数的选择变为：
+在这种分解下系数函数的选择变为：
 \begin{subequations}
     \begin{align}
             &\sum_{\bar{\sigma}} 
@@ -103,12 +103,13 @@ $$ D_{\sigma\bar{\sigma}}^{(j)}(R^{-1}) = \left[ \exp\left( +i \boldsymbol{\thet
             v_{\bar{a}\bar{b}}(0,\sigma)
             \end{align}
 \end{subequations}
-\color{blue}接下来是讨论静止系中系数的选择；之后通过选择一个标准的$boost$来获得动量。\normalcolor
+\color{blue}接下来是讨论静止系中系数的选择；之后通过选择一个标准的$boost$来获得动量，这个方程也叫做交织方程。\normalcolor
 \begin{center}
-    \large\text{系数$u(0,\sigma)$和$v(0,\sigma)$和C-G系数}
+    \vspace{0.5cm}
+    \large\text{系数$u(0,\sigma)$和$v(0,\sigma)$和角动量加法}
 \end{center}
 \vspace{0.5cm}
-在$\boldsymbol{\theta}$ 在 $\boldsymbol{\theta}=0$ 处展开至一阶对比两边 $\boldsymbol{\theta}$ 的系数，，到静止系下系数函数必须满足的李代数关系：
+交织方程在$\boldsymbol{\theta}$ 在 $\boldsymbol{\theta}=0$ 处展开至一阶对比两边 $\boldsymbol{\theta}$ 的系数，，到静止系下系数函数的代数关系变为
 \begin{subequations}
     \begin{align}
        \sum_{\bar{\sigma}} u_{ab}(0,\bar{\sigma}) \left[ \mathbf{J}^{(j)} \right]_{\bar{\sigma}\sigma} &= 
@@ -117,44 +118,45 @@ $$ D_{\sigma\bar{\sigma}}^{(j)}(R^{-1}) = \left[ \exp\left( +i \boldsymbol{\thet
         -\sum_{\bar{\sigma}} v_{ab}(0,\bar{\sigma}) \left[ \mathbf{J}^{(j)} \right]_{\bar{\sigma}\sigma} &= 
         \sum_{\bar{a}\bar{b}} \left[ \mathbf{J}^{(A)}_{a\bar{a}} \delta_{b\bar{b}} + \delta_{a\bar{a}} \mathbf{J}^{(B)}_{b\bar{b}} \right] v_{\bar{a}\bar{b}}(0,\sigma)
     \end{align}
-\end{subequations}这是一个极其深刻的物理方程。这是两个角动量算符的直积之和：$\mathbf{J}^{(A)} \otimes \mathbb{I} + \mathbb{I} \otimes \mathbf{J}^{(B)}$；而等式左边则是单一的总角动量算符 $\mathbf{J}^{(j)}$。实际上，，束场系数 $u_{ab}(0, \sigma)$ 的等式，，质上就是角动量理论中标准的\textbf{角动量相加方法}。为了清晰地展现这一点，，们先明确系统的两种物理表象：
+\end{subequations}
+\color{blue}这是一个极其深刻的物理方程。这是两个角动量算符的直积之和：$\mathbf{J}^{(A)} \otimes \mathbb{I} + \mathbb{I} \otimes \mathbf{J}^{(B)}$；而等式左边则是单一的总角动量算符 $\mathbf{J}^{(j)}$。实际上,系数 $u_{ab}(0, \sigma)$ 的等式，本质上就是角动量相加方法\normalcolor。为了清晰地展现这一点，首先明确系统的两种物理表象：
 \begin{enumerate}
-    \item \textbf{非耦合表象}：
+    \item 非耦合表象：
     场的洛伦兹张量指标 $(a,b)$ 属于表示空间 $V_A \otimes V_B$。如果我们将 $A$ 和 $B$ 视为两个独立的子系统，，对应的正交归一基底为：
     \begin{equation}
         |A,a; B,b\rangle \equiv |A,a\rangle \otimes |B,b\rangle, \quad a = -A, \dots, A, \quad b = -B, \dots, B.
     \end{equation}
-    这组基底构成了系统的完备集，，足 $\sum_{a,b} |A,a; B,b\rangle \langle A,a; B,b| = \mathbb{I}$。
+    这组基底构成了系统的完备集，满足 $\sum_{a,b} |A,a; B,b\rangle \langle A,a; B,b| = \mathbb{I}$。
 
     \item \textbf{耦合表象}：
-    对于静止参考系下的物理单粒子态，，必须在旋转下按确定自旋 $j$ 的不可约表示变换。我们用总角动量基底来标记物理态：
+    对于静止参考系下的物理单粒子态，必须在旋转下按确定自旋 $j$ 的不可约表示变换。我们用总角动量基底来标记物理态：
     \begin{equation}
-        |j, \sigma\rangle, \quad \sigma = -j, \dots, j.
+        |j, \bar{\sigma}\rangle, \quad \bar{\sigma} = -j, \dots, j.
     \end{equation}
 \end{enumerate}
-如何将一个具有耦合出总角动量的物理态 $|j, \sigma\rangle$ 表达出来？我们只需在其中插入非耦合表象的完备基底：
+在耦合表象中插入非耦合表象的完备基底，就可以表达出$|j, \bar{\sigma}\rangle$；
 \begin{equation}
-    |j, \sigma\rangle = \mathbb{I} \, |j, \sigma\rangle = \sum_{a,b} |A,a; B,b\rangle \langle A,a; B,b | j, \sigma\rangle.
+    |j, \bar{\sigma}\rangle = \mathbb{I} \, |j, \bar{\sigma}\rangle = \sum_{a,b} |A,a; B,b\rangle \langle A,a; B,b | j, \bar{\sigma}\rangle.
     \label{eq:QM_expansion}
 \end{equation}
-这里的展开系数 $\langle A,a; B,b | j, \sigma\rangle$，，定义就是连接这两个空间的 \textbf{Clebsch-Gordan 系数}
+这里的展开系数 $\langle A,a; B,b | j, \bar{\sigma}\rangle$，，定义就是连接这两个空间的 \textbf{Clebsch-Gordan 系数}
 \vspace{0.5cm}\\
-现在，，到场，，，止系系数 $u_{ab}(0, \sigma)$ 的物理意义，，是将抽象的物理自旋态“投影”到具体的场张量分量上。不严谨但形象的说，$u_{ab}(0, \sigma)$ 充当了态矢量的展开系数：
+系数 $u_{ab}(0, \sigma)$ 的物理意义;是将物理自旋态“投影”到具体的场张量分量上。不严谨但形象的说，$u_{ab}(0, \sigma)$ 充当了态矢量的展开系数：
 \begin{equation}
     |j, \sigma\rangle \sim \sum_{a,b} |A,a; B,b\rangle \, u_{ab}(0, \sigma).
     \label{eq:Field_expansion}
 \end{equation}
-比较式 \eqref{eq:QM_expansion} 与式 \eqref{eq:Field_expansion}，，结合我们刚刚推导出的李代数方程：方程要求 $u_{ab}(0, \sigma)$ 必须满足总角动量守恒的变换规则，，与 C-G 系数所满足的代数方程是完全同构的。
+比较式 \eqref{eq:QM_expansion} 与式 \eqref{eq:Field_expansion}，结合我们刚刚推导出的交织方程：方程要求 $u_{ab}(0, \sigma)$ 必须满足总角动量守恒的变换规则，与 C-G 系数所满足的代数方程是完全一致的。
 \vspace{0.5cm}\\
-从群表示论的严格角度来看，， $SU(2)$ 的角动量加法 
+从群表示论的严格角度来看， $SU(2)$ 的角动量加法 
 \begin{equation}
 V^{(A)} \otimes V^{(B)}
 =
 \bigoplus_{j=|A-B|}^{A+B}
 V^{(j)} .
 \label{eq:CG_decomposition}
-\end{equation} 中，，一个自旋 $j$ 的不可约表示在直和分解中只出现一次。这意味着，，够满足这种旋转协变性的基底变换矩阵是\textbf{唯一确定的}（Schur 引理的推论）。
-这种唯一性说明了 $u_{ab}(0, \sigma)$  C-G 系数：
+\end{equation} 中，一个自旋 $j$ 的不可约表示在直和分解中只出现一次。这意味着：够满足这种旋转协变性的基底变换矩阵是\textbf{唯一确定的}（Schur 引理的推论）。
+这种唯一性说明了 $u_{ab}(0, \sigma)$是正比于C-G 系数：
 \begin{equation}
     u_{ab}(0, \sigma) = N \langle A,a; B,b \,|\, j, \sigma\rangle.
     \label{eq:uCG_proportional}
@@ -163,154 +165,57 @@ V^{(j)} .
 \begin{equation}
     u_{ab}(0, \sigma) = \frac{1}{\sqrt{2m}} \langle A,a; B,b \,|\, j, \sigma\rangle.
 \end{equation}
-利用角动量态在反演下的相因子变换性质，，及 C-G 系数的内在对称性，，们可以推导出 $v_{ab}$ 对应于物理自旋方向相反的态，，带有一个标准的 Condon-Shortley 相位：
+利用角动量态在反演下的相因子变换性质，及 C-G 系数的内在对称性，可以推导出 $v_{ab}$ 对应于物理自旋方向相反的态，带有一个标准的 Condon-Shortley 相位：
 \begin{equation}
     v_{ab}(0,\sigma) = \xi^{AB} \, (-1)^{j-\sigma} \langle A, a ; B, b \,|\, j, -\sigma \rangle
     \label{eq:v_CG}
 \end{equation}
-其中 $\xi^{AB}$ 是与粒子的内禀宇称和场定义相关的纯相因子（通常取为 $\pm 1$ 或 $\pm i$）。保证了微观因果性在类空间隔上的严格成立。
+其中 $\xi^{AB}$ 是与粒子的内禀宇称和场定义相关的纯相因子（通常取为 $\pm 1$ 或 $\pm i$）
 
 \vspace{0.5cm}
 \begin{center}
     \large\text{标准$boost$获得动量}
 \end{center}
 \vspace{0.5cm}
-已经确定了静止参考系下的旋量系数 $u_{ab}(0, \sigma)$ 正比于 C-G 系数。那么，，何获得具有任意有限动量 $\boldsymbol{q}$ 的物理态系数 $u_{ab}(\boldsymbol{q}, \sigma)$ 采取的办法是做一个$boost$获得有限动，；由于 $M(\Lambda)$ 是洛伦兹群的表示矩阵，，足 $M(L(\boldsymbol{q})) M(L^{-1}(\boldsymbol{q})) = \mathbb{I}$。我们在方程\eqref{eq:8.38a} 两边同时左乘 $M(L(\boldsymbol{q}))$，，以解出动量为 $\boldsymbol{q}$ 时的场系数：
+已经确定了静止参考系下的系数 $u_{ab}(0, \sigma)$ 正比于 C-G 系数。那么如何获得具有任意有限动量 $\boldsymbol{q}$ 的物理态系数 $u_{ab}(\boldsymbol{q}, \sigma)$？ 
+
+采取的办法是做一个$boost$获得有限动，由于 $M(\Lambda)$ 是洛伦兹群的表示矩阵，满足 $M(L(\boldsymbol{q})) M(L^{-1}(\boldsymbol{q})) = \mathbb{I}$。我们在方程\eqref{eq:8.38a} 两边同时左乘 $M(L(\boldsymbol{q}))$，以解出动量为 $\boldsymbol{q}$ 时的场系数：
 \begin{equation}
     u_{\bar{a}\bar{b}}(\boldsymbol{q}, \sigma) = \sqrt{\frac{m}{q^0}} \sum_{\bar{a}\bar{b}} M_{ \bar{a}\bar{b};ab}\bigl(L(q)\bigr) \, u_{ab}(0, \sigma)
     \label{eq:u_boosted}
 \end{equation}
-物理图像到这里变得无比清晰：\textbf{要构造一个动量为 $\boldsymbol{q}$、自旋投影为 $\sigma$ 的系数函数，我们只需要先在静止系用 C-G 系数把它“拼装”出来，然后再用一个标准的洛伦兹 Boost 矩阵 $M(L(\boldsymbol{q}))$ 把整个张量“加速”到动量 $q$ 即可。}为了让这个公式具备实际的可计算性，，们需要写出 $M(L(\boldsymbol{q}))$ 在 $(A,B)$ 表示下的具体指数形式。设 Boost 的快度矢量为 $\boldsymbol{\phi} = \hat{\boldsymbol{q}} \text{arctanh}(|\boldsymbol{q}|/q^0)$，，应的生成元为 $\mathbf{K}$。在 $(A,B)$ 表示中，，成元满足：
+物理图像到这里变得无比清晰：
+
+\color{blue}要构造一个动量为 $\boldsymbol{q}$、自旋投影为 $\sigma$ 的系数函数，我们只需要先在静止系用 C-G 系数把它“拼装”出来，然后再用一个标准的洛伦兹 Boost 矩阵 $M(L(\boldsymbol{q}))$ 把整个张量“加速”到动量 $q$ 即可。\normalcolor
+
+为了让这个公式具备实际的可计算性，需要写出 $M(L(\boldsymbol{q}))$ 在 $(A,B)$ 表示下的具体指数形式。设 Boost 的快度矢量为 $\boldsymbol{\phi} = \hat{\boldsymbol{q}} \text{arctanh}(|\boldsymbol{q}|/q^0)$，对应的生成元为 $\mathbf{K}$。在 $(A,B)$ 表示中，生成元满足：
 \begin{equation}
     \mathbf{J} = \mathbf{J}^{(A)} + \mathbf{J}^{(B)}, \quad \mathbf{K} = -i\mathbf{J}^{(A)} + i\mathbf{J}^{(B)}
 \end{equation}
-因此，，限 Boost 操作的表示矩阵可以彻底分解为左右两部分的张量积：
+所以，有限 Boost 操作的表示矩阵可以彻底分解为左右两部分的张量积：
 \begin{align}
     M\bigl(L(q)\bigr) &= \exp\left( -i \boldsymbol{\phi} \cdot \mathbf{K} \right) \nonumber \\
     &= \exp\left( -i \boldsymbol{\phi} \cdot (-i\mathbf{J}^{(A)} + i\mathbf{J}^{(B)}) \right) \nonumber \\
     &= \exp\left( -\boldsymbol{\phi} \cdot \mathbf{J}^{(A)} \right) \otimes \exp\left( +\boldsymbol{\phi} \cdot \mathbf{J}^{(B)} \right)
 \end{align}
-将此矩阵代入 \eqref{eq:u_boosted}，，结合静止系下的 C-G 系数结果，，们最终得到了场论中\textbf{最一般的动力学系数展开式}：
+将此矩阵代入 \eqref{eq:u_boosted}，，结合静止系下的 C-G 系数结果，最终得到了场论中\textbf{最一般的动力学系数展开式}：
 \begin{equation}
     u_{\bar{a}\bar{b}}(\boldsymbol{q}, \sigma) = \frac{1}{\sqrt{2q^0}} \sum_{\bar{a}\bar{b}} \left[ e^{-\boldsymbol{\phi} \cdot \mathbf{J}^{(A)}} \right]_{\bar{a}a} \left[ e^{+\boldsymbol{\phi} \cdot \mathbf{J}^{(B)}} \right]_{\bar{b}b} \langle A,a; B,b \,|\, j, \sigma \rangle
 \end{equation}
-而反粒子的是：
+而反粒子对应的系数的是：
 \begin{equation}
     v_{\bar{a}\bar{b}}(\boldsymbol{q}, \sigma)=(-)^{j+\sigma}u_{\bar{a}\bar{b}}(\boldsymbol{q}, -\sigma)
 \end{equation}
-注意这里的归一化因子自动从 $\sqrt{m} \cdot \frac{1}{\sqrt{2m}} \cdot \frac{1}{\sqrt{q^0}}$ 约化成了相对论协变的 $\frac{1}{\sqrt{2q^0}}$。至此，，有任何人为的方程猜测，，伦兹对称性已经替我们彻底“算”出了任意自旋粒子的系数函数
+
+\vspace{0.5cm}
+\begin{center}
+    \large\text{微观因果性和反粒子}
+\end{center}
+\vspace{0.5cm}
 
 
-
-\begin{comment}
-    %====================================================
-\subsection{Causal Scalar Field}
-%====================================================
-
-对于自旋 $j=0$ 的标量粒子，，对应的 Lorentz 群不可约表示只能是平凡表示 $(A, B) = (0, 0)$。
-此时，，部张量指标 $a$ 和 $b$ 只能取 $0$；自旋投影 $\sigma = 0$。
-
-1. 静止系系数构造：
-根据公式 (8.47)，，静止系下利用 C-G 系数构造场分量系数。由于两子系统的角动量均为 $0$，，应的 C-G 系数是平庸的：
-\begin{equation}
-    u_{00}(\vec{0}, 0) = \frac{1}{\sqrt{2m}} \langle 0, 0; 0, 0 \mid 0, 0 \rangle = \frac{1}{\sqrt{2m}}
-\end{equation}
-同理，，粒子的静止系系数为 $v_{00}(\vec{0}, 0) = \eta / \sqrt{2m}$（其中 $\eta$ 为相位因子）。
-
-2. Boost 获得任意动量：
-对于 $(0,0)$ 表示，Lorentz 生成元 $\vec{J}^{(A)} = \vec{J}^{(B)} = 0$。因此，，意有限动量的 Boost 矩阵 $M(L(p))$ 彻底退化为单位阵 1。代入动量展开公式，，们得到：
-\begin{equation}
-    u_{00}(\vec{p}, 0) = \sqrt{\frac{m}{p^0}} \cdot 1 \cdot \frac{1}{\sqrt{2m}} = \frac{1}{\sqrt{2p^0}}, \qquad
-    v_{00}(\vec{p}, 0) = \frac{\eta}{\sqrt{2p^0}}
-\end{equation}
-这解释了为什么标量场在量子化时，，分测度中总是自然地涌现出 $\frac{1}{\sqrt{2p^0}}$ 这一归一化因子。
-
-3. 场的具体形式：
-将上述系数代回一般形式场方程 (8.36)，，于指标全部为 $0$，，不再带有张量或旋量指标，，化为单一的标量场 $\phi(x)$：
-\begin{equation}
-    \phi(x) = \int \frac{d^3p}{(2\pi)^{3/2}} \frac{1}{\sqrt{2p^0}} \Big[ a(\vec{p}) e^{-ip\cdot x} + \eta b^\dagger(\vec{p}) e^{ip\cdot x} \Big]
-\end{equation}
-若描述的是本征无荷粒子（即粒子等于其反粒子，$b^\dagger = a^\dagger$ 且取 $\eta=1$），，就给出了标准的实标量场展开。
-%====================================================
-\subsection{Weyl Field}
-%====================================================
-
-%====================================================
-\subsection{Dirac Formalism}
-%====================================================
-
-%====================================================
-\subsection{Causal Dirac Field}
-%====================================================
-
-对于自旋 $j=1/2$ 的费米子，，了在理论中包含空间反演（宇称）对称性，，须将左手表示 $(1/2,0)$ 和右手表示 $(0,1/2)$ 进行直和，，而构造出四分量的 Dirac 旋量场。
-
-1. 静止系系数构造：
-我们分别对左手和右手部分使用 C-G 系数进行组装：
-左手部分 $(A=1/2, B=0)$：指标 $a = \pm 1/2$, $b=0$。对应的 C-G 系数为 $\langle 1/2, a; 0, 0 \mid 1/2, \sigma \rangle = \delta_{a\sigma}$。
-右手部分 $(A=0, B=1/2)$：指标 $a=0$, $b = \pm 1/2$。对应的 C-G 系数为 $\langle 0, 0; 1/2, b \mid 1/2, \sigma \rangle = \delta_{b\sigma}$。
-于是静止系系数为：
-\begin{equation}
-    u_{a0}^{(L)}(\vec{0}, \sigma) = \frac{1}{\sqrt{2m}} \delta_{a\sigma}, \qquad 
-    u_{0b}^{(R)}(\vec{0}, \sigma) = \frac{1}{\sqrt{2m}} \delta_{b\sigma}
-\end{equation}
-
-2. Boost 获得任意动量：
-利用 Pauli 矩阵 $\vec{\sigma}$，，引入快度参数 $\vec{\phi} = \hat{p}\operatorname{arctanh}(|\vec{p}|/p^0)$。
-左手部分的 Boost 矩阵为 $M^{(L)} = \exp(+\frac{1}{2}\vec{\phi} \cdot \vec{\sigma})$；
-右手部分的 Boost 矩阵为 $M^{(R)} = \exp(-\frac{1}{2}\vec{\phi} \cdot \vec{\sigma})$。
-结合因子 $\sqrt{m/p^0}$，，数矩阵可以化为严格的平方根形式。将左右手分量合并为一个四分量列向量，，得到了熟知的 Dirac 旋量：
-\begin{equation}
-    u(\vec{p}, \sigma) = \frac{1}{\sqrt{2p^0}} 
-    \begin{pmatrix}
-        \sqrt{p \cdot \sigma} \, \xi_\sigma \\[6pt]
-        \sqrt{p \cdot \bar{\sigma}} \, \xi_\sigma
-    \end{pmatrix}, \qquad
-    v(\vec{p}, \sigma) = \frac{1}{\sqrt{2p^0}} 
-    \begin{pmatrix}
-        \sqrt{p \cdot \sigma} \, \eta_\sigma \\[6pt]
-        -\sqrt{p \cdot \bar{\sigma}} \, \eta_\sigma
-    \end{pmatrix}
-\end{equation}
-其中 $\sigma^\mu = (1, \vec{\sigma})$，$\bar{\sigma}^\mu = (1, -\vec{\sigma})$，， $\xi_\sigma, \eta_\sigma$ 是对应投影 $\sigma$ 的二维基本旋量。
-
-3. 场的具体形式：
-将上述四分量系数代回场方程，，可得到四分量 Dirac 旋量场 $\psi(x)$ 的具体展开形式：
-\begin{equation}
-    \psi(x) = \int \frac{d^3p}{(2\pi)^{3/2}} \sum_{\sigma=\pm 1/2} \Big[ u(\vec{p}, \sigma) a(\vec{p}, \sigma) e^{-ip\cdot x} + v(\vec{p}, \sigma) b^\dagger(\vec{p}, \sigma) e^{ip\cdot x} \Big]
-\end{equation}
-
-
-%====================================================
-\subsection{Causal Vector Field}
-%====================================================
-
-对于有质量的自旋 $j=1$ 粒子（如 W/Z 玻色子），，对应的 Lorentz 不可约表示为 $(A, B) = (1/2, 1/2)$。
-此时，，量指标由两个二维旋量指标构成 $a, b = \pm 1/2$，，旋投影 $\sigma = -1, 0, 1$。
-
-1. 静止系系数构造：
-由公式 (8.47)，，表示下的静止系系数完全由自旋 $1/2$ 加 $1/2$ 耦合为 $1$ 的 C-G 系数决定：
-\begin{equation}
-    u_{ab}(\vec{0}, \sigma) = \frac{1}{\sqrt{2m}} \langle 1/2, a; 1/2, b \mid 1, \sigma \rangle
-\end{equation}
-比如当 $\sigma=+1$ 时 $a=b=+1/2$；当 $\sigma=0$ 时 $a=-b=\pm 1/2$；这精确地给出了三个独立的自旋状态。
-
-2. Boost 与四维矢量场的同构：
-在 $(1/2,1/2)$ 表示下，，旋量系数 $u_{ab}(\vec{p}, \sigma)$ 实际上可以通过 Pauli 矩阵 $\sigma^\mu_{ab}$ 的收缩，，格同构于一个四维的极化矢量 $\epsilon^\mu(\vec{p}, \sigma)$。
-在静止系 $\vec{p}=0$ 下，C-G 系数恰好给出了三个纯空间方向的极化基底：
-\begin{equation}
-    \epsilon^\mu(\vec{0}, \pm 1) = \frac{1}{\sqrt{2m}}(0, 1, \pm i, 0)^T, \qquad \epsilon^\mu(\vec{0}, 0) = \frac{1}{\sqrt{2m}}(0, 0, 0, 1)^T
-\end{equation}
-任意动量 $\vec{p}$ 下的极化矢量，，是通过对这些静止基底应用标准的四维 Lorentz 矩阵 $\Lambda^\mu{}_\nu(L(p))$ 得到的：
-\begin{equation}
-    \epsilon^\mu(\vec{p}, \sigma) = \sqrt{\frac{m}{p^0}} \Lambda^\mu{}_\nu(L(p)) \, \epsilon^\nu(\vec{0}, \sigma)
-\end{equation}
-在常规物理记号中，，们习惯提走归一化因子，，义纯粹的物理极化矢量 $e^\mu(\vec{p}, \sigma) = \sqrt{2m p^0} \, \epsilon^\mu(\vec{p}, \sigma)$，，天然满足横截条件 $p_\mu e^\mu = 0$。
-
-3. 场的具体形式：
-利用同构关系，，具有 $(1/2,1/2)$ 双指标的场转化为带有一个四维协变指标 $\mu$ 的矢量场 $A^\mu(x)$：
-\begin{equation}
-    A^\mu(x) = \int \frac{d^3p}{(2\pi)^{3/2}} \frac{1}{\sqrt{2p^0}} \sum_{\sigma=-1,0,1} \Big[ e^\mu(\vec{p}, \sigma) a(\vec{p}, \sigma) e^{-ip\cdot x} + e^{\mu*}(\vec{p}, \sigma) b^\dagger(\vec{p}, \sigma) e^{ip\cdot x} \Big]
-\end{equation}
-这就是带有纵向和横向极化分量的有质量矢量场（Proca 场）的完整表达式。
-\end{comment}
+\input{fields_antiparticles/spin0.tex}
+\input{fields_antiparticles/spin1:2.tex}
+\input{fields_antiparticles/dirac_form.tex}
+\input{fields_antiparticles/dirac_field.tex}
+\input{fields_antiparticles/spin1.tex}

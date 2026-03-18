@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.11.8)  16 MAR 2026 16:58
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.11.8)  18 MAR 2026 09:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1299,25 +1299,35 @@ Overfull \hbox (26.7226pt too wide) detected at line 189
 [14]
 
 [15]) (./particle_states/one_particle_state.tex
+Underfull \hbox (badness 10000) in paragraph at lines 2--7
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--14
+
+ []
+
+
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 3--8
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 10--15
-
- []
-
-
-
-[17]
-Overfull \hbox (10.10144pt too wide) detected at line 98
+Overfull \hbox (10.10144pt too wide) detected at line 97
 [][]
  []
 
 Missing character: There is no 图 ("56FE) in font rm-lmr8!
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\(' on input line 187.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\dagger' on input line 187.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\)' on input line 187.
+
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\(' on input line 188.
@@ -1330,71 +1340,59 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\)' on input line 188.
 
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\(' on input line 189.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\dagger' on input line 189.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\)' on input line 189.
-
 ))
+
+[17]
 
 [18]
 
-[19]
-
-[20
+[19
 
 ]
 Chapter 4.
 (./scattering_theory/chapter.tex (./scattering_theory/in_out_states.tex
 
-[21
+[20
 
 ]
 Missing character: There is no 其 ("5176) in font rm-lmr9!
 Missing character: There is no 中 ("4E2D) in font rm-lmr9!
 
 
-[22]) (./scattering_theory/s_matrix.tex) (./scattering_theory/lorentz_symmetry_of_s_matrix.tex
+[21]) (./scattering_theory/s_matrix.tex) (./scattering_theory/lorentz_symmetry_of_s_matrix.tex
 
-[23]
+[22]
 Missing character: There is no 𝑆 (U+1D446) in font [lmroman9-regular]:mapping=tex-text;!
 
-LaTeX Warning: Reference `3.18' on page 24 undefined on input line 87.
+LaTeX Warning: Reference `3.18' on page 23 undefined on input line 87.
 
 
-LaTeX Warning: Reference `3.18' on page 24 undefined on input line 87.
+LaTeX Warning: Reference `3.18' on page 23 undefined on input line 87.
 
 
 
-[24]
+[23]
 
-[25] Excluding 'comment' comment.
+[24] Excluding 'comment' comment.
 
-[26]) (./scattering_theory/bosons_and_fermions.tex) (./scattering_theory/creation_and_annihilation_operators.tex) (./scattering_theory/cluster_decomposition_and_connected_amplitudes.tex
+[25]) (./scattering_theory/bosons_and_fermions.tex) (./scattering_theory/creation_and_annihilation_operators.tex) (./scattering_theory/cluster_decomposition_and_connected_amplitudes.tex
 
-[27]
+[26]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <20.74> on input line 183.
 
 Missing character: There is no ️ (U+FE0F) in font Songti SC Regular/OT:script=hani;language=dflt;!
 
 
-[28]
+[27]
 
-[29]) (./scattering_theory/structure_of_the_interaction.tex))
+[28]) (./scattering_theory/structure_of_the_interaction.tex))
 
-[30]
+[29]
 Chapter 5.
 (./fields_antiparticles/chapter.tex (./fields_antiparticles/field_emergence.tex
 
-[31
+[30
 
 ] Excluding 'comment' comment.
 Overfull \hbox (11.93887pt too wide) detected at line 150
@@ -1426,11 +1424,11 @@ Overfull \hbox (1.94586pt too wide) detected at line 206
 []
  []
 
+[31]
+
 [32]
 
-[33]
-
-[34]) (./fields_antiparticles/general_fields.tex
+[33]) (./fields_antiparticles/general_fields.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
@@ -1445,17 +1443,17 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 
-[35]
+[34]
 LaTeX Font Info:    Trying to load font information for U+euf on input line 73.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
 
+[35]
+
 [36]
 
-[37]
-
-[38]) (./fields_antiparticles/massive_fields.tex
+[37]) (./fields_antiparticles/massive_fields.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\(' on input line 1.
@@ -1468,15 +1466,16 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\)' on input line 1.
 
+
+
+[38]
 Missing character: There is no 是 ("662F) in font rm-lmr10!
 Missing character: There is no ： ("FF1A) in font rm-lmr10!
 
 
 [39]
 
-[40]
-
-[41] Excluding 'comment' comment.) (./fields_antiparticles/massless_fields.tex
+[40] (./fields_antiparticles/spin0.tex) (./fields_antiparticles/spin1:2.tex) (./fields_antiparticles/dirac_form.tex) (./fields_antiparticles/dirac_field.tex) (./fields_antiparticles/spin1.tex)) (./fields_antiparticles/massless_fields.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\(' on input line 1.
@@ -1491,45 +1490,45 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 ))
 
-[42]
+[41]
 Chapter 6.
 (./intercation_theory/chapter.tex (./intercation_theory/feynman_rules.tex) (./intercation_theory/canonical_formalism.tex) (./intercation_theory/interaction_picture_example.tex) (./intercation_theory/observables.tex
 
-[43
+[42
 
 ]
 
+[43]
+
 [44]
 
-[45]
+[45]) (./intercation_theory/physical_examples_and_applications.tex) (./intercation_theory/functional_methods.tex (./intercation_theory/bosonic_path_integrals.tex) (./intercation_theory/fermionic_path_integrals.tex)))
 
-[46]) (./intercation_theory/physical_examples_and_applications.tex) (./intercation_theory/functional_methods.tex (./intercation_theory/bosonic_path_integrals.tex) (./intercation_theory/fermionic_path_integrals.tex)))
+[46]
 
-[47]
-
-[48
+[47
 
 ]
 Chapter 7.
 
 
-[49
+[48
 
 ]
 
-[50
+[49
 
 ]
 Chapter 8.
 
 
-[51
+[50
 
 ]
 Chapter 9.
 
 
-[52
+[51
 
 ] (./main.aux)
  ***********
@@ -1544,12 +1543,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 94B4904A83B3E4722978EFD2EB4725D3;6361.
  ) 
 Here is how much of TeX's memory you used:
- 48384 strings out of 473832
- 1210052 string characters out of 5729481
+ 48414 strings out of 473832
+ 1211040 string characters out of 5729481
  1815200 words of memory out of 5000000
- 70485 multiletter control sequences out of 15000+600000
+ 70500 multiletter control sequences out of 15000+600000
  640472 words of font info for 210 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  121i,18n,124p,758b,1289s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (53 pages).
+Output written on main.pdf (52 pages).
