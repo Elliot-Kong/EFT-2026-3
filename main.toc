@@ -19,18 +19,7 @@
 \contentsline {section}{\numberline {3.2}Poincar\'e 代数}{13}{section.3.2}%
 \contentsline {section}{\numberline {3.3}单粒子态}{16}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}正定质量粒子\(\dagger \)}{18}{subsection.3.3.1}%
-\contentsline {subsubsection}{升降算符与本征值谱}{18}{subsubsection*.2}%
-\contentsline {subsubsection}{Casimir 算符与表示的标记}{19}{subsubsection*.3}%
-\contentsline {subsubsection}{低维不可约表示的显式形式}{19}{subsubsection*.4}%
-\contentsline {subsubsection}{单粒子态的完整标记}{19}{subsubsection*.5}%
 \contentsline {subsection}{\numberline {3.3.2}零质量粒子\(\dagger \)}{20}{subsection.3.3.2}%
-\contentsline {section}{\numberline {3.4}零质量粒子的单粒子态 }{20}{section.3.4}%
-\contentsline {subsubsection}{小群的确定：哪些 Lorentz 变换保持 $k^\mu $ 不变？}{20}{subsubsection*.6}%
-\contentsline {subsubsection}{$ISO(2)$ 的 Lie 代数}{20}{subsubsection*.7}%
-\contentsline {subsubsection}{物理表示的选取：排除连续自旋}{21}{subsubsection*.8}%
-\contentsline {subsubsection}{螺旋度：$SO(2)$ 的不可约表示}{21}{subsubsection*.9}%
-\contentsline {subsubsection}{物理例子与有质量/无质量粒子的对比}{21}{subsubsection*.10}%
-\contentsline {subsubsection}{无质量粒子态的完整变换公式}{21}{subsubsection*.11}%
 \contentsline {part}{II\hspace {1em}1+3维场论的构造}{23}{part.2}%
 \contentsline {chapter}{\numberline {4}散射理论}{24}{chapter.4}%
 \contentsline {section}{\numberline {4.1}“出”和“入”态}{25}{section.4.1}%
@@ -46,64 +35,40 @@
 \contentsline {chapter}{\numberline {5}场与反粒子}{34}{chapter.5}%
 \contentsline {section}{\numberline {5.1}自由场理论}{34}{section.5.1}%
 \contentsline {section}{\numberline {5.2}$\operatorname {Lorentz}$群的不可约表示}{39}{section.5.2}%
-\contentsline {paragraph}{1. 非紧致性与有限维表示的非幺正性}{41}{paragraph*.17}%
-\contentsline {paragraph}{2. 空间反演与直和表示}{41}{paragraph*.18}%
-\contentsline {subparagraph}{$ISO(2)$ 生成元在 $(A,B)$ 表示中的分解}{42}{subparagraph*.19}%
-\contentsline {subparagraph}{旋转条件与``平移''条件对 $(A,B)$ 分量的约束}{42}{subparagraph*.20}%
-\contentsline {subparagraph}{核心结论}{43}{subparagraph*.21}%
-\contentsline {subparagraph}{与有质量情况的对比}{43}{subparagraph*.22}%
-\contentsline {subparagraph}{各类 $(A,B)$ 表示允许的螺旋度}{43}{subparagraph*.23}%
-\contentsline {section}{\numberline {5.3}正定质量粒子因果场\(\dagger \)}{44}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}因果标量场 }{47}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Weyl 场}{48}{subsection.5.3.2}%
-\contentsline {paragraph}{分立对称性：宇称破缺}{49}{paragraph*.24}%
-\contentsline {subsection}{\numberline {5.3.3}狄拉克形式体系 }{50}{subsection.5.3.3}%
-\contentsline {paragraph}{质量耦合与狄拉克方程}{50}{paragraph*.25}%
-\contentsline {paragraph}{Clifford 代数}{51}{paragraph*.26}%
-\contentsline {paragraph}{分立对称性的矩阵算符}{53}{paragraph*.27}%
+\contentsline {paragraph}{1. 非紧致性与有限维表示的非幺正性}{41}{paragraph*.7}%
+\contentsline {paragraph}{2. 空间反演与直和表示}{41}{paragraph*.8}%
+\contentsline {subparagraph}{核心结论}{43}{subparagraph*.9}%
+\contentsline {subparagraph}{与有质量情况的对比}{43}{subparagraph*.10}%
+\contentsline {section}{\numberline {5.3}正定质量粒子因果场\(\dagger \)}{43}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}因果标量场 }{46}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Weyl 场}{47}{subsection.5.3.2}%
+\contentsline {paragraph}{分立对称性：宇称破缺}{49}{paragraph*.11}%
+\contentsline {subsection}{\numberline {5.3.3}狄拉克形式体系 }{49}{subsection.5.3.3}%
+\contentsline {paragraph}{质量耦合与狄拉克方程}{50}{paragraph*.12}%
+\contentsline {paragraph}{Clifford 代数}{51}{paragraph*.13}%
+\contentsline {paragraph}{分立对称性的矩阵算符}{52}{paragraph*.14}%
 \contentsline {subsection}{\numberline {5.3.4}因果狄拉克场 }{53}{subsection.5.3.4}%
-\contentsline {subsection}{\numberline {5.3.5}因果矢量场 }{55}{subsection.5.3.5}%
-\contentsline {paragraph}{角动量加法}{55}{paragraph*.28}%
-\contentsline {paragraph}{$j=0$部分与横向条件}{56}{paragraph*.29}%
-\contentsline {paragraph}{无质量极限与规范不变性}{57}{paragraph*.30}%
+\contentsline {subsection}{\numberline {5.3.5}因果矢量场 }{54}{subsection.5.3.5}%
+\contentsline {paragraph}{角动量加法}{55}{paragraph*.15}%
+\contentsline {paragraph}{$j=0$部分与横向条件}{56}{paragraph*.16}%
+\contentsline {paragraph}{无质量极限与规范不变性}{57}{paragraph*.17}%
 \contentsline {section}{\numberline {5.4}零质量粒子因果场\(\dagger \)}{57}{section.5.4}%
-\contentsline {paragraph}{有质量与无质量场的关键差异}{57}{paragraph*.31}%
-\contentsline {paragraph}{场的一般形式}{57}{paragraph*.32}%
-\contentsline {paragraph}{产生与湮灭算符的变换}{58}{paragraph*.34}%
-\contentsline {paragraph}{系数函数的变换关系}{58}{paragraph*.40}%
-\contentsline {subsubsection}{标准动量与标准 boost}{58}{subsubsection*.43}%
-\contentsline {paragraph}{标准动量处的系数}{58}{paragraph*.44}%
-\contentsline {paragraph}{标准 boost 的分解}{58}{paragraph*.47}%
-\contentsline {subsubsection}{小群条件的分析：$(A,B)$ 表示}{59}{subsubsection*.49}%
-\contentsline {paragraph}{小群条件}{59}{paragraph*.50}%
-\contentsline {paragraph}{旋转条件：$\lambda = a + b$}{59}{paragraph*.55}%
-\contentsline {paragraph}{$S(\alpha ,\beta )$ 条件：螺旋度的唯一确定}{59}{paragraph*.59}%
-\contentsline {paragraph}{与有质量情况的对比}{61}{paragraph*.72}%
-\contentsline {subsubsection}{物理推论}{61}{subsubsection*.74}%
-\contentsline {paragraph}{各类场允许的螺旋度}{61}{paragraph*.75}%
-\contentsline {paragraph}{不同自旋场的导数关系}{61}{paragraph*.76}%
-\contentsline {subsubsection}{矢量场的阻碍与规范不变性的起源}{61}{subsubsection*.77}%
-\contentsline {paragraph}{为什么四矢量场失败}{61}{paragraph*.78}%
-\contentsline {paragraph}{``几乎''四矢量：规范不变性的诞生}{62}{paragraph*.84}%
-\contentsline {paragraph}{从群论到规范原理}{62}{paragraph*.89}%
-\contentsline {paragraph}{为什么使用矢量场而不是张量场}{62}{paragraph*.90}%
-\contentsline {paragraph}{推广到更高自旋}{63}{paragraph*.91}%
-\contentsline {chapter}{\numberline {6}相互作用理论}{64}{chapter.6}%
-\contentsline {section}{\numberline {6.1}费曼规则}{64}{section.6.1}%
-\contentsline {section}{\numberline {6.2}算符方法}{64}{section.6.2}%
-\contentsline {section}{\numberline {6.3}过渡到相互作用绘景：例子}{64}{section.6.3}%
-\contentsline {section}{\numberline {6.4}可观测量}{64}{section.6.4}%
-\contentsline {subsection}{\numberline {6.4.1}箱正规化}{64}{subsection.6.4.1}%
-\contentsline {subsection}{\numberline {6.4.2}速率:截面和衰变率}{64}{subsection.6.4.2}%
-\contentsline {subsection}{\numberline {6.4.3}末态的相空间积分}{67}{subsection.6.4.3}%
-\contentsline {subsection}{\numberline {6.4.4}运动学不变量}{68}{subsection.6.4.4}%
-\contentsline {subsection}{\numberline {6.4.5}物理区域}{68}{subsection.6.4.5}%
-\contentsline {section}{\numberline {6.5}物理例子与应用}{68}{section.6.5}%
-\contentsline {section}{\numberline {6.6}泛函方法}{68}{section.6.6}%
-\contentsline {subsection}{\numberline {6.6.1}波色子的路径积分}{68}{subsection.6.6.1}%
-\contentsline {subsection}{\numberline {6.6.2}费米子的路径积分}{68}{subsection.6.6.2}%
-\contentsline {part}{III\hspace {1em}散射振幅的解析理论}{69}{part.3}%
-\contentsline {chapter}{\numberline {7}非微扰方法}{70}{chapter.7}%
-\contentsline {part}{IV\hspace {1em}电动力学专题}{71}{part.4}%
-\contentsline {chapter}{\numberline {8}光子和费米子}{72}{chapter.8}%
-\contentsline {chapter}{\numberline {9}外场中的粒子}{73}{chapter.9}%
+\contentsline {chapter}{\numberline {6}相互作用理论}{58}{chapter.6}%
+\contentsline {section}{\numberline {6.1}费曼规则}{58}{section.6.1}%
+\contentsline {section}{\numberline {6.2}算符方法}{58}{section.6.2}%
+\contentsline {section}{\numberline {6.3}过渡到相互作用绘景：例子}{58}{section.6.3}%
+\contentsline {section}{\numberline {6.4}可观测量}{58}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}箱正规化}{58}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}速率:截面和衰变率}{58}{subsection.6.4.2}%
+\contentsline {subsection}{\numberline {6.4.3}末态的相空间积分}{61}{subsection.6.4.3}%
+\contentsline {subsection}{\numberline {6.4.4}运动学不变量}{62}{subsection.6.4.4}%
+\contentsline {subsection}{\numberline {6.4.5}物理区域}{62}{subsection.6.4.5}%
+\contentsline {section}{\numberline {6.5}物理例子与应用}{62}{section.6.5}%
+\contentsline {section}{\numberline {6.6}泛函方法}{62}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}波色子的路径积分}{62}{subsection.6.6.1}%
+\contentsline {subsection}{\numberline {6.6.2}费米子的路径积分}{62}{subsection.6.6.2}%
+\contentsline {part}{III\hspace {1em}散射振幅的解析理论}{63}{part.3}%
+\contentsline {chapter}{\numberline {7}非微扰方法}{64}{chapter.7}%
+\contentsline {part}{IV\hspace {1em}电动力学专题}{65}{part.4}%
+\contentsline {chapter}{\numberline {8}光子和费米子}{66}{chapter.8}%
+\contentsline {chapter}{\numberline {9}外场中的粒子}{67}{chapter.9}%
