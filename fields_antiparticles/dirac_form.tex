@@ -1,0 +1,211 @@
+\subsection{狄拉克形式体系 }
+
+在上一节对 Weyl 场的构造中，我们得出了一个深刻的结论：单独的左手 Weyl 场 $(1/2, 0)$ 在空间反演下无法保持封闭——宇称操作 $\mathcal{P}$ 使得 Boost 生成元符号翻转 $\mathbf{K} \to -\mathbf{K}$，将 $(1/2, 0)$ 的 Boost 矩阵 $e^{-\frac{1}{2}\boldsymbol{\phi}\cdot\boldsymbol{\sigma}}$ 变成了 $(0, 1/2)$ 的 Boost 矩阵 $e^{+\frac{1}{2}\boldsymbol{\phi}\cdot\boldsymbol{\sigma}}$。
+
+因此，如果大自然中存在具有空间反演对称性且有质量的自旋 $1/2$ 粒子（如电子），其数学描述必须同时包容左手和右手两种手征性。本节我们将详细搭建这一四分量旋量空间的数学结构，为下一节的量子化场论构造打下严密的基础。
+\vspace{2ex}\par
+在 Weyl 场中，$(1/2, 0)$ 表示的生成元为：
+\begin{equation}
+    \mathbf{J}^{(A)} = \frac{1}{2}(\mathbf{J} + i\mathbf{K}) = \frac{\boldsymbol{\sigma}}{2}, \quad \mathbf{J}^{(B)} = \frac{1}{2}(\mathbf{J} - i\mathbf{K}) = 0
+\end{equation}
+空间反演使 $\mathbf{K} \to -\mathbf{K}$，$\mathbf{J} \to \mathbf{J}$，因此：
+\begin{equation}
+    \mathcal{P}: \quad \mathbf{J}^{(A)} = \frac{1}{2}(\mathbf{J} + i\mathbf{K}) \longrightarrow \frac{1}{2}(\mathbf{J} - i\mathbf{K}) = \mathbf{J}^{(B)}
+\end{equation}
+这表明宇称操作将 $(1/2, 0)$ 表示映射为 $(0, 1/2)$ 表示。
+为了在宇称变换下封闭，我们必须将两者组合为直和表示：
+\begin{equation}
+    \left(\frac{1}{2}, 0\right) \oplus \left(0, \frac{1}{2}\right)
+\end{equation}
+这便是四分量狄拉克旋量的来源。我们将四分量 Dirac 旋量 $\psi$ 构造为左右手 Weyl 旋量的列向量：
+\begin{equation}
+    \psi = \begin{pmatrix} \psi_R \\ \psi_L \end{pmatrix}, \quad \psi_R \in \left(0, \frac{1}{2}\right), \quad \psi_L \in \left(\frac{1}{2}, 0\right)
+\end{equation}
+这种将左右手分量明确分开的写法称为手征表示（Chiral/Weyl Representation）。
+
+在洛伦兹变换下，上下两个二分量旋量按各自的表示独立变换。因此，直和表示的 $4 \times 4$ 变换矩阵是块对角化的：
+\begin{equation}
+    \mathscr{D}^{(1/2)}[\Lambda] = \begin{pmatrix} D^{(0,1/2)}[\Lambda] & 0 \\ 0 & D^{(1/2,0)}[\Lambda] \end{pmatrix}
+\end{equation}
+其中 $D^{(1/2,0)}[\Lambda] = e^{-\frac{1}{2}\boldsymbol{\phi}\cdot\boldsymbol{\sigma}}$ 和 $D^{(0,1/2)}[\Lambda] = e^{+\frac{1}{2}\boldsymbol{\phi}\cdot\boldsymbol{\sigma}}$ 是我们在 Weyl 场中已经非常熟悉的 $2 \times 2$ 矩阵。
+
+对于纯空间旋转（$\boldsymbol{\phi} = 0$，旋转角 $\boldsymbol{\theta}$），两个子表示退化为相同的 $SU(2)$ 旋转矩阵 $e^{i\frac{1}{2}\boldsymbol{\theta}\cdot\boldsymbol{\sigma}}$，因此旋转矩阵不是块对角而是简单地在对角线上放置两个相同的矩阵：
+\begin{equation}
+    \mathscr{D}^{(1/2)}[R] = \begin{pmatrix} e^{i\frac{1}{2}\boldsymbol{\theta}\cdot\boldsymbol{\sigma}} & 0 \\ 0 & e^{i\frac{1}{2}\boldsymbol{\theta}\cdot\boldsymbol{\sigma}} \end{pmatrix}
+\end{equation}
+但对于Boost（$\boldsymbol{\theta} = 0$，快度 $\boldsymbol{\phi}$），两个子表示的矩阵符号相反：
+\begin{equation}
+    \mathscr{D}^{(1/2)}[L(p)] = \begin{pmatrix} e^{+\frac{1}{2}\boldsymbol{\phi}\cdot\boldsymbol{\sigma}} & 0 \\ 0 & e^{-\frac{1}{2}\boldsymbol{\phi}\cdot\boldsymbol{\sigma}} \end{pmatrix}
+\end{equation}
+正是 Boost 部分的这种"反对称性"，使得直和表示在宇称变换下能够保持封闭——$\gamma^0$ 矩阵交换上下两块，恰好补偿了 $\boldsymbol{\phi} \to -\boldsymbol{\phi}$ 带来的符号变化。
+
+\paragraph{质量耦合与狄拉克方程}
+对于无质量的粒子，左手和右手分量可以独立存在，分别满足 Weyl 方程。在动量空间中：
+\begin{align}
+    p_\mu \bar{\sigma}^\mu \psi_R &= (p^0 + \mathbf{p}\cdot\boldsymbol{\sigma}) \psi_R = 0 \\
+    p_\mu \sigma^\mu \psi_L &= (p^0 - \mathbf{p}\cdot\boldsymbol{\sigma}) \psi_L = 0
+\end{align}
+其中 $\sigma^\mu = (I, \boldsymbol{\sigma})$，$\bar{\sigma}^\mu = (I, -\boldsymbol{\sigma})$。
+当粒子具有静止质量 $m \neq 0$ 时，在静止参考系中（$\mathbf{p}=0, p^0=m$），洛伦兹群退化为空间旋转群 $SU(2)$。此时，左手 Weyl 旋量与右手 Weyl 旋量在纯旋转下变换完全相同，它们无法通过旋转来区分。因此，一个有质量的粒子在静止时不具有确定的手征性——左手态和右手态必须不可避免地通过质量 $m$ 发生耦合。
+
+满足洛伦兹协变性且量纲正确的唯一线性交叉耦合方式为：
+\begin{align}
+    p_\mu \bar{\sigma}^\mu \psi_R &= m \psi_L \label{eq:weyl_coupled1} \\
+    p_\mu \sigma^\mu \psi_L &= m \psi_R \label{eq:weyl_coupled2}
+\end{align}
+物理图像极为深刻： 这两个方程告诉我们，一个有质量的费米子在真空中传播时，实际上是在左手态和右手态之间不断地来回振荡。质量 $m$ 在这里充当的是"翻转手征性的耦合强度"。当 $m = 0$ 时，两个方程退耦，手征性成为守恒量，回到独立的无质量 Weyl 方程。
+为了将上述两个 $2 \times 2$ 的耦合方程写成一个统一的 $4 \times 4$ 矩阵方程，我们引入分块矩阵结构：
+\begin{equation}
+    \begin{pmatrix} 0 & p_\mu \bar{\sigma}^\mu \\ p_\mu \sigma^\mu & 0 \end{pmatrix} \begin{pmatrix} \psi_R \\ \psi_L \end{pmatrix} = m \begin{pmatrix} \psi_R \\ \psi_L \end{pmatrix}
+\end{equation}
+左侧的 $4 \times 4$ 矩阵恰好可以分解为动量 $p_\mu$ 乘以一组 $4 \times 4$ 矩阵。我们定义这组矩阵为 Dirac $\gamma$ 矩阵。
+
+\paragraph{Clifford 代数}
+
+在手征表示下，为了让上述分块矩阵精确地写成 $\gamma^\mu p_\mu$ 的形式，我们定义：
+\begin{equation}
+    \gamma^0 = \begin{pmatrix} 0 & I \\ I & 0 \end{pmatrix}, \quad \gamma^i = \begin{pmatrix} 0 & -\sigma^i \\ \sigma^i & 0 \end{pmatrix}
+\end{equation}
+容易验证：
+\begin{equation}
+    \gamma^\mu p_\mu = \gamma^0 p^0 + \gamma^i p_i = \begin{pmatrix} 0 & p^0 I - \mathbf{p}\cdot\boldsymbol{\sigma} \\ p^0 I + \mathbf{p}\cdot\boldsymbol{\sigma} & 0 \end{pmatrix} = \begin{pmatrix} 0 & p_\mu \bar{\sigma}^\mu \\ p_\mu \sigma^\mu & 0 \end{pmatrix}
+\end{equation}
+（其中 $p_i = -p^i$，因此 $\gamma^i p_i = -\gamma^i p^i$。）
+这恰好重现了我们的耦合方程！于是，统一的波动方程可以写为极为紧凑的狄拉克方程：
+\begin{equation}
+    (\gamma^\mu p_\mu - m)\psi = 0 \quad \xrightarrow{\text{坐标空间}} \quad (i\gamma^\mu \partial_\mu - m)\psi(x) = 0
+\end{equation}
+现在我们来推导 $\gamma$ 矩阵满足的代数关系。通过直接的 $2 \times 2$ 分块矩阵乘法：
+\vspace{2ex}\par 
+\textbf{计算 $\gamma^0 \gamma^0$：}
+\begin{equation}
+    \gamma^0 \gamma^0 = \begin{pmatrix} 0 & I \\ I & 0 \end{pmatrix} \begin{pmatrix} 0 & I \\ I & 0 \end{pmatrix} = \begin{pmatrix} I & 0 \\ 0 & I \end{pmatrix} = I_{4\times 4}
+\end{equation}
+
+\textbf{计算 $\gamma^i \gamma^j + \gamma^j \gamma^i$：}
+\begin{equation}
+    \gamma^i \gamma^j = \begin{pmatrix} 0 & -\sigma^i \\ \sigma^i & 0 \end{pmatrix} \begin{pmatrix} 0 & -\sigma^j \\ \sigma^j & 0 \end{pmatrix} = \begin{pmatrix} -\sigma^i\sigma^j & 0 \\ 0 & -\sigma^i\sigma^j \end{pmatrix}
+\end{equation}
+因此：
+\begin{equation}
+    \gamma^i \gamma^j + \gamma^j \gamma^i = \begin{pmatrix} -\{\sigma^i, \sigma^j\} & 0 \\ 0 & -\{\sigma^i, \sigma^j\} \end{pmatrix}
+\end{equation}
+由于泡利矩阵满足 $\{\sigma^i, \sigma^j\} = 2\delta^{ij} I$，我们得到 $\gamma^i \gamma^j + \gamma^j \gamma^i = -2\delta^{ij} I_{4\times 4}$。
+
+\textbf{计算 $\gamma^0 \gamma^i + \gamma^i \gamma^0$：}
+\begin{equation}
+    \gamma^0 \gamma^i = \begin{pmatrix} 0 & I \\ I & 0 \end{pmatrix} \begin{pmatrix} 0 & -\sigma^i \\ \sigma^i & 0 \end{pmatrix} = \begin{pmatrix} \sigma^i & 0 \\ 0 & -\sigma^i \end{pmatrix}
+\end{equation}
+\begin{equation}
+    \gamma^i \gamma^0 = \begin{pmatrix} 0 & -\sigma^i \\ \sigma^i & 0 \end{pmatrix} \begin{pmatrix} 0 & I \\ I & 0 \end{pmatrix} = \begin{pmatrix} -\sigma^i & 0 \\ 0 & \sigma^i \end{pmatrix}
+\end{equation}
+因此 $\gamma^0 \gamma^i + \gamma^i \gamma^0 = 0$。
+\vspace{2ex}\par 
+综合以上三种情形，我们得到了极其重要的 Clifford 代数：
+\begin{equation}
+    \boxed{\{\gamma^\mu, \gamma^\nu\} = \gamma^\mu \gamma^\nu + \gamma^\nu \gamma^\mu = 2\eta^{\mu\nu} I_{4\times 4}} \label{eq:clifford}
+\end{equation}
+这个代数关系保证了狄拉克方程的解自动满足 Klein-Gordon 方程（即正确的能量-动量关系）：
+\begin{equation}
+    (\gamma^\mu p_\mu + m)(\gamma^\nu p_\nu - m)\psi = (\gamma^\mu \gamma^\nu p_\mu p_\nu - m^2)\psi = \left(\frac{1}{2}\{\gamma^\mu,\gamma^\nu\}p_\mu p_\nu - m^2\right)\psi = (p^2 - m^2)\psi = 0
+\end{equation}
+为了方便地提取四分量旋量中的左手和右手分量，我们定义第五个矩阵 $\gamma^5$：
+\begin{equation}
+    \gamma^5 \equiv i\gamma^0\gamma^1\gamma^2\gamma^3 = \begin{pmatrix} -I & 0 \\ 0 & I \end{pmatrix}
+\end{equation}
+它满足如下代数关系：
+\begin{equation}
+    (\gamma^5)^2 = I, \quad \{\gamma^5, \gamma^\mu\} = 0 \quad (\text{即} \ \gamma^5 \gamma^\mu = -\gamma^\mu \gamma^5)
+\end{equation}
+作用在四分量旋量上时：
+\begin{equation}
+    \gamma^5 \psi = \begin{pmatrix} -I & 0 \\ 0 & I \end{pmatrix} \begin{pmatrix} \psi_R \\ \psi_L \end{pmatrix} = \begin{pmatrix} -\psi_R \\ \psi_L \end{pmatrix}
+\end{equation}
+利用 $\gamma^5$ 的本征值 $\pm 1$，可以定义精准的手征投影算符：
+\begin{equation}
+    P_L = \frac{1 + \gamma^5}{2} = \begin{pmatrix} 0 & 0 \\ 0 & I \end{pmatrix}, \quad P_R = \frac{1 - \gamma^5}{2} = \begin{pmatrix} I & 0 \\ 0 & 0 \end{pmatrix}
+\end{equation}
+满足 $P_L + P_R = I$，$P_L P_R = 0$，$P_L^2 = P_L$。
+\vspace{2ex}\par 
+在洛伦兹变换 $x \to \Lambda x$ 下，四分量旋量的变换为 $\psi'(x') = S(\Lambda) \psi(x)$。
+对于无穷小变换 $\Lambda^\mu_{\,\,\nu} \approx \delta^\mu_{\,\,\nu} + \omega^\mu_{\,\,\nu}$，旋量空间的变换矩阵可以由 Clifford 代数直接构造：
+\begin{equation}
+    S(1 + \omega) = I - \frac{i}{4} \omega_{\mu\nu} \Sigma^{\mu\nu}, \quad \Sigma^{\mu\nu} = \frac{i}{2}[\gamma^\mu, \gamma^\nu]
+\end{equation}
+
+\textbf{致命问题：洛伦兹群是非紧致群。}
+对于空间旋转（$\omega_{ij}$），$\Sigma^{ij}$ 是厄米矩阵，因此旋转部分的 $S$ 是幺正的（$S^\dagger = S^{-1}$）。
+但对于 Boost（$\omega_{0i}$），$\Sigma^{0i}$ 是反厄米矩阵，Boost 部分的 $S$ 不是幺正的（$S^\dagger \neq S^{-1}$）。
+
+这直接导致了如下灾难：非相对论量子力学中熟悉的概率密度 $\psi^\dagger \psi$ 在 Boost 下不再是不变量！
+\begin{equation}
+    \psi'^\dagger \psi' = \psi^\dagger S^\dagger S \psi \neq \psi^\dagger \psi \quad (\text{因为} \ S^\dagger S \neq I)
+\end{equation}
+
+为了构造真正的洛伦兹标量，我们需要一个矩阵来"修正" $S^\dagger$ 的非幺正性。利用 $\gamma$ 矩阵的显式形式，可以验证：
+\begin{equation}
+    (\gamma^0)^\dagger = \gamma^0, \quad (\gamma^i)^\dagger = -\gamma^i \quad \Longrightarrow \quad \gamma^0 (\gamma^\mu)^\dagger \gamma^0 = \gamma^\mu
+\end{equation}
+这导致了关键恒等式 $\gamma^0 S^\dagger \gamma^0 = S^{-1}$，即 $S^\dagger = \gamma^0 S^{-1} \gamma^0$。
+
+因此，我们定义狄拉克共轭 (Dirac Adjoint)：
+\begin{equation}
+    \bar{\psi} \equiv \psi^\dagger \gamma^0
+\end{equation}
+它在洛伦兹变换下的行为极其优美：
+\begin{equation}
+    \bar{\psi}' = \psi'^\dagger \gamma^0 = \psi^\dagger S^\dagger \gamma^0 = \psi^\dagger (\gamma^0 S^{-1} \gamma^0) \gamma^0 = \psi^\dagger \gamma^0 S^{-1} = \bar{\psi} S^{-1}
+\end{equation}
+从而保证了 $\bar{\psi}\psi$ 是真正的洛伦兹标量：
+\begin{equation}
+    \bar{\psi}'\psi' = \bar{\psi} S^{-1} S \psi = \bar{\psi}\psi
+\end{equation}
+这也是为什么拉格朗日量中的质量项必须写成 $m\bar{\psi}\psi$ 的根本原因。
+\vspace{2ex}\par 
+任意 $4 \times 4$ 复矩阵有 16 个独立分量，恰好可以用 16 个线性独立的 $\gamma$ 矩阵组合作为基底展开。将这些基底夹在 $\bar{\psi}$ 和 $\psi$ 之间，可以构造出 5 种具有确定洛伦兹张量变换性质的双线性形式：
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{类型} & \textbf{基底矩阵} & \textbf{自由度数} & \textbf{变换性质} \\
+\hline
+标量 (S) & $I$ & 1 & $\bar{\psi}\psi \to \bar{\psi}\psi$ \\
+\hline
+赝标量 (P) & $i\gamma^5$ & 1 & $\bar{\psi}i\gamma^5\psi \xrightarrow{\mathcal{P}} -\bar{\psi}i\gamma^5\psi$ \\
+\hline
+矢量 (V) & $\gamma^\mu$ & 4 & $\bar{\psi}\gamma^\mu\psi \to \Lambda^\mu_{\,\,\nu}\bar{\psi}\gamma^\nu\psi$ \\
+\hline
+轴矢量 (A) & $\gamma^\mu\gamma^5$ & 4 & $\bar{\psi}\gamma^\mu\gamma^5\psi \xrightarrow{\mathcal{P}} -\Lambda^\mu_{\,\,\nu}\bar{\psi}\gamma^\nu\gamma^5\psi$ \\
+\hline
+张量 (T) & $\Sigma^{\mu\nu} = \frac{i}{2}[\gamma^\mu,\gamma^\nu]$ & 6 & $\bar{\psi}\Sigma^{\mu\nu}\psi \to \Lambda^\mu_{\,\,\rho}\Lambda^\nu_{\,\,\sigma}\bar{\psi}\Sigma^{\rho\sigma}\psi$ \\
+\hline
+\end{tabular}
+\end{center}
+总计 $1 + 1 + 4 + 4 + 6 = 16$ 个，完美匹配 $4 \times 4$ 矩阵空间的维度。
+\paragraph{分立对称性的矩阵算符}
+在当前的经典容器层面，分立对称性表现为旋量空间中的特殊矩阵：
+
+\textbf{1. 空间反演 (Parity, $\mathcal{P}$)}
+
+空间反演使坐标 $\mathbf{x} \to -\mathbf{x}$，在狄拉克方程中翻转空间微商 $\partial_i \to -\partial_i$。我们需要一个矩阵能够同时实现"交换左右手分量"和"翻转空间 $\gamma^i$ 的符号"。根据 Clifford 代数 \eqref{eq:clifford}：
+\begin{equation}
+    \gamma^0 \gamma^i (\gamma^0)^{-1} = \gamma^0 \gamma^i \gamma^0 = -\gamma^i, \quad \gamma^0 \gamma^0 (\gamma^0)^{-1} = \gamma^0
+\end{equation}
+因此宇称矩阵正是 $\gamma^0$ 本身：
+\begin{equation}
+    \psi_P(t, \mathbf{x}) = \eta_P \gamma^0 \psi(t, -\mathbf{x})
+\end{equation}
+
+\textbf{2. 电荷共轭 (Charge Conjugation, $\mathcal{C}$)}
+
+电荷共轭将粒子解映射为反粒子解。对狄拉克方程 $(i\gamma^\mu\partial_\mu - m)\psi = 0$ 取复共轭后变为 $(-i\gamma^{\mu *}\partial_\mu - m)\psi^* = 0$。我们需要一个矩阵 $C$ 将 $-\gamma^{\mu *}$ 变回 $+\gamma^\mu$，即 $C^{-1}\gamma^\mu C = -(\gamma^\mu)^T$。在手征表示下：
+\begin{equation}
+    C = i\gamma^2\gamma^0, \quad \psi_C(t, \mathbf{x}) = \eta_C C \bar{\psi}^T(t, \mathbf{x})
+\end{equation}
+
+\textbf{3. 时间反演 (Time Reversal, $\mathcal{T}$)}
+
+时间反演是反线性算符，包含复共轭和时间坐标翻转 $t \to -t$：
+\begin{equation}
+    \psi_T(t, \mathbf{x}) = \eta_T B \psi^*(-t, \mathbf{x}), \quad \text{其中} \ B^{-1}\gamma^\mu B = (\gamma^\mu)^*
+\end{equation}

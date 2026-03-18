@@ -1,1 +1,488 @@
 \section{零质量粒子因果场\(\dagger\)}
+
+
+\paragraph{有质量与无质量场的关键差异}
+
+在 5.2 节中，我们系统地构造了有质量粒子的因果场。对于其中一些场（如标量场和 Dirac 场），取无质量极限时没有特殊困难。然而，5.2.5 节末尾已经暗示了矢量场在 $m\to 0$ 极限下的问题——纵向极化矢量 $\varepsilon^\mu(\mathbf{p},0) = (|\mathbf{p}|/m,\; p^0\hat{\mathbf{p}}/m)$ 在 $m\to 0$ 时发散。
+
+事实上，我们将在本节看到，\textbf{用于构建有质量粒子的所有不可约 $(A,B)$ 场，无法构建自旋 $j\geq 1$ 的无质量粒子的产生和湮灭算符}。场类型上的这个特殊限制将自然地导致\textbf{规范不变性}的引入。
+
+\begin{center}
+\fbox{\parbox{0.92\textwidth}{
+\textbf{核心差异的物理根源：}
+
+\medskip
+\begin{center}
+\begin{tabular}{c|c|c}
+\hline
+ & 有质量粒子 & 无质量粒子 \\
+\hline
+标准动量 & $k^\mu = (m,\mathbf{0})$ & $k^\mu = (\kappa, 0, 0, \kappa)$ \\
+小群 & $SU(2)$ & $ISO(2) \xrightarrow{\Pi=0} SO(2)$ \\
+内部量子数 & $\sigma = -j,\ldots,+j$ & $\lambda = \pm j$ \\
+Wigner 旋转 & 矩阵 $D^{(j)}_{\sigma'\sigma}(W)$ & 相位 $e^{i\lambda\theta}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\medskip
+有质量粒子在静止系中具有 $2j+1$ 个自旋自由度，对应角动量加法 $A\otimes B$ 中 $j$ 的全部 $2j+1$ 维空间；无质量粒子没有静止系，其小群条件将 $(2A+1)(2B+1)$ 维表示空间\textbf{坍缩}为单一分量。
+}}
+\end{center}
+
+
+\paragraph{场的一般形式}
+
+正如我们对有质量粒子所做的那样，我们将无质量粒子的一般自由场构造为动量 $\mathbf{p}$ 螺旋度 $\lambda$ 的粒子湮灭算符 $a(\mathbf{p},\lambda)$ 与反粒子产生算符 $a^{c\dagger}(\mathbf{p},\lambda)$ 的线性组合：
+\begin{equation}
+\Psi_\ell(x) = (2\pi)^{-3/2} \int d^3p \sum_\lambda \left[\kappa_\ell\, u_\ell(\mathbf{p},\lambda)\, a(\mathbf{p},\lambda)\, e^{ip\cdot x}
++ \lambda_\ell\, v_\ell(\mathbf{p},\lambda)\, a^{c\dagger}(\mathbf{p},\lambda)\, e^{-ip\cdot x}\right]
+\tag{5.145}
+\end{equation}
+其中 $p^0 = |\mathbf{p}|$（无质量条件）。与有质量场的形式~(5.21) 对比，唯一的区别是质壳条件从 $p^0 = \sqrt{\mathbf{p}^2 + m^2}$ 变为 $p^0 = |\mathbf{p}|$，以及对 $\lambda$ 的求和范围不同（螺旋度取离散值 $\pm j$ 而非自旋投影 $-j,\ldots,+j$）。
+
+
+\paragraph{产生与湮灭算符的变换}
+
+回忆第 3 章的结论：无质量粒子态在 Lorentz 变换下的行为为
+\begin{equation}
+U(\Lambda)|\mathbf{p},\lambda\rangle = \sqrt{\frac{(\Lambda p)^0}{p^0}}\, e^{i\lambda\theta(\Lambda,p)}\, |(\Lambda\mathbf{p}),\lambda\rangle
+\tag{5.146}
+\end{equation}
+因此，产生和湮灭算符的变换为
+\begin{align}
+U_0(\Lambda)\, a^\dagger(\mathbf{p},\lambda)\, U_0^{-1}(\Lambda)
+&= \sqrt{\frac{(\Lambda p)^0}{p^0}}\, e^{i\lambda\theta(\Lambda,p)}\, a^\dagger(\Lambda\mathbf{p},\lambda)
+\tag{5.147a} \\
+U_0(\Lambda)\, a(\mathbf{p},\lambda)\, U_0^{-1}(\Lambda)
+&= \sqrt{\frac{(\Lambda p)^0}{p^0}}\, e^{-i\lambda\theta(\Lambda,p)}\, a(\Lambda\mathbf{p},\lambda)
+\tag{5.147b}
+\end{align}
+与有质量情况~(5.7a)(5.7b) 对比：
+\[
+\text{有质量：}\quad \sum_{\bar\sigma} D^{(j)}_{\sigma\bar\sigma}\{W^{-1}(\Lambda,p)\}\, a^\dagger(\Lambda\mathbf{p},\bar\sigma) \qquad\longrightarrow\qquad \text{无质量：}\quad e^{i\lambda\theta(\Lambda,p)}\, a^\dagger(\Lambda\mathbf{p},\lambda)
+\]
+\textbf{关键差异：Wigner 矩阵退化为相位因子，螺旋度 $\lambda$ 不再混合——螺旋度是 Lorentz 不变量。}
+
+
+\paragraph{系数函数的变换关系}
+
+如果我们要求场按照齐次 Lorentz 群的某个表示 $\mathscr{D}(\Lambda)$ 变换
+\begin{equation}
+U_0(\Lambda)\,\Psi_\ell(x)\,U_0^{-1}(\Lambda) = \sum_{\bar\ell} \mathscr{D}_{\ell\bar\ell}(\Lambda^{-1})\,\Psi_{\bar\ell}(\Lambda x)
+\tag{5.148}
+\end{equation}
+那么，利用与 5.1 节完全相同的推导方法（平移部分给出平面波结构，Lorentz 变换部分给出系数约束），可以得到系数函数必须满足的方程。推导过程与有质量情况完全平行，唯一的替换是 $D^{(j)}_{\sigma\bar\sigma}\{W^{-1}\} \to e^{\pm i\lambda\theta}$：
+\begin{equation}
+\boxed{
+\begin{aligned}
+u_\ell(\mathbf{p},\lambda)\, e^{i\lambda\theta(\Lambda,p)}\, \sqrt{\frac{p^0}{(\Lambda p)^0}} &= \sum_{\bar\ell} \mathscr{D}_{\ell\bar\ell}(\Lambda^{-1})\, u_{\bar\ell}(\Lambda\mathbf{p},\lambda) \\[6pt]
+v_\ell(\mathbf{p},\lambda)\, e^{-i\lambda\theta(\Lambda,p)}\, \sqrt{\frac{p^0}{(\Lambda p)^0}} &= \sum_{\bar\ell} \mathscr{D}_{\ell\bar\ell}(\Lambda^{-1})\, v_{\bar\ell}(\Lambda\mathbf{p},\lambda)
+\end{aligned}
+}
+\tag{5.149}
+\end{equation}
+对比有质量情况~(5.11a)(5.11b)，唯一的差别是左边 Wigner 矩阵被相位因子替代。
+
+\begin{quote}
+\textbf{注意：}$v$ 的方程与 $u$ 的方程互为复共轭（$\theta \to -\theta$，$\mathscr{D}(\Lambda^{-1}) \to \mathscr{D}(\Lambda^{-1})^*$），因此在对系数 $\kappa_\ell$ 和 $\lambda_\ell$ 进行适当调整后，可以归一化使得
+\begin{equation}
+v_\ell(\mathbf{p},\lambda) = u_\ell(\mathbf{p},\lambda)^*
+\end{equation}
+\end{quote}
+
+
+%=================================================================
+\subsubsection{标准动量与标准 boost}
+
+\paragraph{标准动量处的系数}
+
+选择标准动量 $k^\mu = (\kappa, 0, 0, \kappa)$，$\kappa > 0$。令 $\mathscr{L}(p)$ 为使无质量粒子动量从 $k$ 变为 $p$ 的标准 Lorentz 变换。在~(5.149) 中取 $\Lambda = \mathscr{L}(p)$，$\mathbf{p} = \mathbf{k}$，由于标准 boost 不产生 Wigner 旋转（$\theta(\mathscr{L}(p),k) = 0$），得到
+
+\begin{equation}
+\boxed{
+u_{\bar\ell}(\mathbf{p},\lambda) = \sqrt{\frac{\kappa}{p^0}}\, \sum_\ell \mathscr{D}_{\bar\ell\ell}(\mathscr{L}(p))\, u_\ell(\mathbf{k},\lambda)
+}
+\tag{5.150}
+\end{equation}
+\begin{equation}
+v_{\bar\ell}(\mathbf{p},\lambda) = \sqrt{\frac{\kappa}{p^0}}\, \sum_\ell \mathscr{D}_{\bar\ell\ell}(\mathscr{L}(p))\, v_\ell(\mathbf{k},\lambda)
+\tag{5.151}
+\end{equation}
+因此，任意动量处的系数完全由标准动量处的系数 $u_\ell(\mathbf{k},\lambda)$ 和 $v_\ell(\mathbf{k},\lambda)$ 决定。
+
+\paragraph{标准 boost 的分解}
+
+使 $k^\mu = (\kappa,0,0,\kappa)$ 变为 $p^\mu = (|\mathbf{p}|, \mathbf{p})$ 的标准 Lorentz 变换可以分解为
+\begin{equation}
+\mathscr{L}(p) = R(\hat{\mathbf{p}})\cdot B(|\mathbf{p}|/\kappa)
+\tag{5.152}
+\end{equation}
+其中 $B(|\mathbf{p}|/\kappa)$ 是沿 $z$ 轴的推动（使粒子能量从 $\kappa$ 变为 $|\mathbf{p}|$），$R(\hat{\mathbf{p}})$ 是使 $z$ 轴朝向 $\hat{\mathbf{p}}$ 方向的标准旋转。
+
+
+%=================================================================
+\subsubsection{小群条件的分析：$(A,B)$ 表示}
+
+\paragraph{小群条件}
+
+对于小群的任意元素 $W$（保持 $k^\mu$ 不变的 Lorentz 变换），系数函数必须满足
+\begin{align}
+u_{\bar\ell}(\mathbf{k},\lambda)\, e^{i\lambda\theta(W)} &= \sum_\ell \mathscr{D}_{\bar\ell\ell}(W)\, u_\ell(\mathbf{k},\lambda)
+\tag{5.153a} \\
+v_{\bar\ell}(\mathbf{k},\lambda)\, e^{-i\lambda\theta(W)} &= \sum_\ell \mathscr{D}_{\bar\ell\ell}(W)\, v_\ell(\mathbf{k},\lambda)
+\tag{5.153b}
+\end{align}
+回忆第 3 章中 $k^\mu = (\kappa,0,0,\kappa)$ 的小群 $ISO(2)$ 有两类元素：
+\begin{enumerate}
+\item \textbf{绕 $z$ 轴的旋转} $R(\theta)$：生成元 $J_3$
+\item \textbf{旋转--推动组合} $S(\alpha,\beta)$：生成元 $\Pi_1 = K_1 - J_2$，$\Pi_2 = K_2 + J_1$
+\end{enumerate}
+下面在 $(A,B)$ 表示中分别分析这两类条件。
+
+
+\paragraph{旋转条件：$\lambda = a + b$}
+
+在 $(A,B)$ 表示中，绕 $z$ 轴角度 $\theta$ 的旋转的表示矩阵为
+\begin{equation}
+\mathscr{D}_{ab;\bar{a}\bar{b}}(R(\theta))
+= \left[e^{i\theta J_3^{(A)}}\right]_{a\bar{a}} \left[e^{i\theta J_3^{(B)}}\right]_{b\bar{b}}
+= e^{i\theta(a+b)}\,\delta_{a\bar{a}}\,\delta_{b\bar{b}}
+\tag{5.154}
+\end{equation}
+
+代入~(5.153a)，得到
+\[
+u_{ab}(\mathbf{k},\lambda)\, e^{i\lambda\theta} = e^{i\theta(a+b)}\, u_{ab}(\mathbf{k},\lambda)
+\]
+对任意 $\theta$ 成立要求
+\begin{equation}
+u_{ab}(\mathbf{k},\lambda) = 0 \quad \text{除非} \quad \lambda = a + b
+\tag{5.155}
+\end{equation}
+
+类似地，对 $v$ 系数，(5.153b) 给出
+\begin{equation}
+v_{ab}(\mathbf{k},\lambda) = 0 \quad \text{除非} \quad -\lambda = a + b
+\tag{5.156}
+\end{equation}
+
+\textbf{到目前为止，这与有质量情况类似。} 对于有质量粒子，旋转条件同样要求 $\sigma = a + b$（参见~(5.27a)），但 $\sigma$ 可以从 $-(A+B)$ 取到 $+(A+B)$ 中的任何一个值。差异将在下面的 $S(\alpha,\beta)$ 条件中显现。
+
+
+\paragraph{$S(\alpha,\beta)$ 条件：螺旋度的唯一确定}
+
+这是零质量场理论中\textbf{最关键的一步}。对于有质量粒子，Wigner 小群是 $SU(2)$，没有类似 $S(\alpha,\beta)$ 的变换——小群只包含旋转，系数由角动量加法中的 Clebsch--Gordan 系数给出，$\sigma$ 可以取 $2j+1$ 个值。对于无质量粒子，$ISO(2)$ 小群的``平移''部分 $S(\alpha,\beta)$ 施加了额外的约束~(5.153a)：
+\begin{equation}
+u_{ab}(\mathbf{k},\lambda) = \sum_{\bar{a}\bar{b}} \mathscr{D}_{ab;\bar{a}\bar{b}}(S(\alpha,\beta))\, u_{\bar{a}\bar{b}}(\mathbf{k},\lambda)
+\tag{5.157}
+\end{equation}
+对任意实数 $\alpha,\beta$ 成立。取无穷小 $\alpha,\beta$，即 $S \approx 1 + \alpha\Pi_1 + \beta\Pi_2$，得到
+\[
+0 = \alpha\,(\Pi_1)_{ab;\bar{a}\bar{b}}\, u_{\bar{a}\bar{b}}(\mathbf{k},\lambda) + \beta\,(\Pi_2)_{ab;\bar{a}\bar{b}}\, u_{\bar{a}\bar{b}}(\mathbf{k},\lambda)
+\]
+对任意 $\alpha,\beta$，因此
+\begin{equation}
+\boxed{(\Pi_1)_{ab;\bar{a}\bar{b}}\, u_{\bar{a}\bar{b}}(\mathbf{k},\lambda) = 0\,,\qquad (\Pi_2)_{ab;\bar{a}\bar{b}}\, u_{\bar{a}\bar{b}}(\mathbf{k},\lambda) = 0}
+\tag{5.158}
+\end{equation}
+
+现在将 $\Pi_1$ 和 $\Pi_2$ 用 $(A,B)$ 表示中的生成元显式展开。利用
+\begin{equation}
+\mathbf{J} = \mathbf{J}^{(A)} + \mathbf{J}^{(B)},\qquad \mathbf{K} = -i\mathbf{J}^{(A)} + i\mathbf{J}^{(B)}
+\tag{5.159}
+\end{equation}
+代入 $\Pi_1 = K_1 - J_2$ 和 $\Pi_2 = K_2 + J_1$，构造组合 $\Pi_1 \pm i\Pi_2$：
+
+\textbf{计算 $\Pi_1 + i\Pi_2$：}
+\[
+\Pi_1 + i\Pi_2 = (K_1 + iK_2) + (iJ_1 - J_2)
+\]
+逐项展开：
+\[
+K_1 + iK_2 = -iJ_1^{(A)} + J_2^{(A)} + iJ_1^{(B)} - J_2^{(B)}
+\]
+\[
+iJ_1 - J_2 = iJ_1^{(A)} + iJ_1^{(B)} - J_2^{(A)} - J_2^{(B)}
+\]
+相加：
+\[
+\Pi_1 + i\Pi_2 = 2iJ_1^{(B)} - 2J_2^{(B)} = 2i(J_1^{(B)} + iJ_2^{(B)})
+\]
+引入升降算符 $J_\pm^{(X)} = J_1^{(X)} \pm iJ_2^{(X)}$，上式即为
+\begin{equation}
+\Pi_1 + i\Pi_2 = 2i\,J_+^{(B)}
+\tag{5.160a}
+\end{equation}
+
+\textbf{计算 $\Pi_1 - i\Pi_2$：}
+\[
+\Pi_1 - i\Pi_2 = (K_1 - iK_2) + (-iJ_1 - J_2)
+\]
+逐项展开：
+\[
+K_1 - iK_2 = -iJ_1^{(A)} - J_2^{(A)} + iJ_1^{(B)} + J_2^{(B)}
+\]
+\[
+-iJ_1 - J_2 = -iJ_1^{(A)} - iJ_1^{(B)} - J_2^{(A)} - J_2^{(B)}
+\]
+相加：
+\[
+\Pi_1 - i\Pi_2 = -2iJ_1^{(A)} - 2J_2^{(A)} = -2i(J_1^{(A)} - iJ_2^{(A)})
+\]
+\begin{equation}
+\Pi_1 - i\Pi_2 = -2i\,J_-^{(A)}
+\tag{5.160b}
+\end{equation}
+
+\begin{center}
+\fbox{\parbox{0.88\textwidth}{
+\textbf{总结：$ISO(2)$ ``平移''生成元在 $(A,B)$ 表示中分解为}
+\[
+\Pi_1 + i\Pi_2 = 2i\,J_+^{(B)}\,,\qquad \Pi_1 - i\Pi_2 = -2i\,J_-^{(A)}
+\]
+其中 $J_+^{(B)}$ 是 $\mathbf{J}^{(B)}$ 的升算符，$J_-^{(A)}$ 是 $\mathbf{J}^{(A)}$ 的降算符。
+
+等价地：
+\[
+\Pi_1 = i(J_+^{(B)} - J_-^{(A)})\,,\qquad \Pi_2 = J_+^{(B)} + J_-^{(A)}
+\]
+}}
+\end{center}
+
+由此，$\Pi_1\,u = 0$ 且 $\Pi_2\,u = 0$ 等价于
+\begin{equation}
+J_-^{(A)}\,u = 0\,,\qquad J_+^{(B)}\,u = 0
+\tag{5.161}
+\end{equation}
+
+写出分量形式：
+\begin{align}
+\left(J_-^{(A)}\right)_{a\bar{a}}\, u_{\bar{a}b}(\mathbf{k},\lambda) &= 0
+\tag{5.162a} \\
+\left(J_+^{(B)}\right)_{b\bar{b}}\, u_{a\bar{b}}(\mathbf{k},\lambda) &= 0
+\tag{5.162b}
+\end{align}
+
+\textbf{方程~(5.162a) 的含义：} $J_-^{(A)}$ 是自旋 $A$ 表示中的降算符，它将 $J_3^{(A)}$ 的本征值 $a$ 降低 1。唯一使降算符给出零的本征态是\textbf{最低权态} $a = -A$：
+\[
+J_-^{(A)}|A, -A\rangle = 0
+\]
+因此 $u_{\bar{a}b} = 0$ 除非 $\bar{a} = -A$。
+
+\textbf{方程~(5.162b) 的含义：} $J_+^{(B)}$ 是自旋 $B$ 表示中的升算符，它将 $J_3^{(B)}$ 的本征值 $b$ 升高 1。唯一使升算符给出零的本征态是\textbf{最高权态} $b = +B$：
+\[
+J_+^{(B)}|B, +B\rangle = 0
+\]
+因此 $u_{a\bar{b}} = 0$ 除非 $\bar{b} = +B$。
+
+综合旋转条件 $\lambda = a + b$~(5.155) 和 $S(\alpha,\beta)$ 条件~(5.162)，我们得到
+
+\begin{equation}
+\boxed{
+u_{ab}(\mathbf{k},\lambda) = 0 \quad \text{除非}\quad a = -A,\;\; b = +B\,,\quad \text{即}\quad \lambda = B - A
+}
+\tag{5.163}
+\end{equation}
+
+这是零质量场论中\textbf{最深刻的结果之一}：
+
+\begin{center}
+\fbox{\textbf{一个 $(A,B)$ 类型的场仅能从螺旋度 $\lambda = B-A$ 的无质量粒子的湮灭算符构建。}}
+\end{center}
+
+对 $v$ 系数完全类似的分析给出 $v_{ab}(\mathbf{k},\lambda) = 0$ 除非 $a = -A$、$b = +B$，但旋转条件~(5.156) 要求 $-\lambda = a + b = B - A$，即 $v$ 的创造部分创造\textbf{螺旋度 $\lambda = A - B = -(B-A)$} 的反粒子。
+
+将结果写在一起：
+\begin{equation}
+\boxed{
+\text{$(A,B)$ 场}\;\begin{cases} \text{湮灭螺旋度}\;\lambda = B - A\;\text{的粒子} \\[4pt] \text{产生螺旋度}\;\lambda = A - B = -(B-A)\;\text{的反粒子} \end{cases}
+}
+\tag{5.164}
+\end{equation}
+
+这与物理一致：反粒子的螺旋度是粒子螺旋度的相反数。
+
+
+\paragraph{与有质量情况的对比}
+
+对于有质量粒子，在静止系中 Wigner 小群是 $SU(2)$，系数 $u_{ab}(0,\sigma)$ 由 Clebsch--Gordan 系数给出（方程~(5.34)）：
+\[
+u_{ab}(0,\sigma) = \frac{1}{\sqrt{2m}}\,\langle A,a;\,B,b\,|\,j,\sigma\rangle
+\]
+指标 $a$ 从 $-A$ 到 $+A$，$b$ 从 $-B$ 到 $+B$，$\sigma$ 从 $-j$ 到 $+j$——所有分量原则上都可以非零。
+
+对于无质量粒子，$ISO(2)$ 小群的 $S(\alpha,\beta)$ 条件\textbf{额外冻结}了 $a$ 和 $b$，使得 $(2A+1)(2B+1)$ 维表示空间中仅有\textbf{一个分量}存活：
+\begin{equation}
+u_{ab}(\mathbf{k},\lambda) \propto \delta_{a,-A}\,\delta_{b,+B}
+\tag{5.165}
+\end{equation}
+
+\begin{center}
+\fbox{\parbox{0.92\textwidth}{
+\textbf{物理图景：}
+
+有质量粒子具有静止系，在静止系中角动量可以指向空间任何方向——对应 $2j+1$ 个自旋投影。
+
+无质量粒子没有静止系，``平移''生成元 $\Pi_1, \Pi_2$ 的条件（物理上排除连续自旋）迫使场的自旋分量极度退化：整个 $(2A+1)(2B+1)$ 维空间坍缩到一维。这就是为什么无质量粒子只有两个螺旋度（$\pm j$）而非 $2j+1$ 个极化态的\textbf{场论层面的根源}。
+}}
+\end{center}
+
+
+%=================================================================
+\subsubsection{物理推论}
+
+\paragraph{各类场允许的螺旋度}
+
+利用公式 $\lambda = B - A$，我们可以列出各种 $(A,B)$ 场能够描述的无质量粒子螺旋度：
+
+\begin{center}
+\begin{tabular}{c|c|c|c}
+\hline
+$(A,B)$ 表示 & 场的类型 & $\lambda = B - A$ & 物理对应 \\
+\hline
+$(0,0)$ & 标量 & $0$ & 无质量标量（如 Goldstone 玻色子） \\
+$(\tfrac{1}{2},0)$ & 左手 Weyl 旋量 & $-\tfrac{1}{2}$ & 左手中微子 \\
+$(0,\tfrac{1}{2})$ & 右手 Weyl 旋量 & $+\tfrac{1}{2}$ & 右手反中微子 \\
+$(\tfrac{1}{2},\tfrac{1}{2})$ & 四矢量 & $0$ & \textbf{不能}描述光子！ \\
+$(1,0)$ & 自对偶张量 & $-1$ & 螺旋度 $-1$ 的光子 \\
+$(0,1)$ & 反自对偶张量 & $+1$ & 螺旋度 $+1$ 的光子 \\
+$(2,0)$ & --- & $-2$ & 螺旋度 $-2$ 的引力子 \\
+$(0,2)$ & --- & $+2$ & 螺旋度 $+2$ 的引力子 \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{最引人注目的结论：}
+
+\begin{enumerate}
+\item \textbf{四矢量场 $(\tfrac{1}{2},\tfrac{1}{2})$ 只能描述螺旋度零。} 这就是为什么不能用普通的四矢量场描述光子（螺旋度 $\pm 1$）！
+
+\item \textbf{描述螺旋度 $\pm 1$ 粒子的最简单的场}是反对称张量场 $(1,0)\oplus(0,1)$，即 $f_{\mu\nu}$——这正是电磁场强度张量。
+
+\item \textbf{描述两种螺旋度} $\pm\lambda$ 的自共轭无质量粒子，需要直和表示 $(A,B)\oplus(B,A)$。
+\end{enumerate}
+
+
+\paragraph{不同自旋场的导数关系}
+
+容易看到，自旋 $j$（螺旋度 $\pm j$）的无质量粒子的 $(A, A+j)$ 场或 $(B+j, B)$ 场分别是 $(0,j)$ 场的 $2A$ 阶导数和 $(j,0)$ 场的 $2B$ 阶导数。因此，本质上\textbf{独立的}最简单场只有 $(j,0)$ 和 $(0,j)$。
+
+例如，电磁场强度 $f_{\mu\nu} = \partial_\mu a_\nu - \partial_\nu a_\mu$ 正是矢量``场'' $a_\mu$ 的一阶导数。$f_{\mu\nu}$ 变换为真正的张量（$(1,0)\oplus(0,1)$），而 $a_\mu$ 则不是真正的四矢量——下面详细讨论这个问题。
+
+
+%=================================================================
+\subsubsection{矢量场的阻碍与规范不变性的起源}
+
+\paragraph{为什么四矢量场失败}
+
+让我们具体地看看为什么不能为螺旋度 $\pm 1$ 的无质量粒子构建一个真正的四矢量场。
+
+在四矢量表示 $(\tfrac{1}{2},\tfrac{1}{2})$ 中，$\mathscr{D}^\mu{}_\nu(\Lambda) = \Lambda^\mu{}_\nu$。将系数函数写成极化矢量的形式：
+\begin{equation}
+u^\mu(\mathbf{p},\lambda) \equiv (2p^0)^{-1/2}\,e^\mu(\mathbf{p},\lambda)
+\tag{5.166}
+\end{equation}
+
+旋转条件在标准动量处要求
+\begin{equation}
+e^\mu(\mathbf{k},\lambda)\,e^{i\lambda\theta} = R(\theta)^\mu{}_\nu\, e^\nu(\mathbf{k},\lambda)
+\tag{5.167}
+\end{equation}
+这给出（相差一个可以吸收进系数 $\kappa$ 和 $\lambda$ 的常数）
+\begin{equation}
+e^\mu(\mathbf{k},\pm 1) = \frac{1}{\sqrt{2}}(0,\, 1,\, \pm i,\, 0)
+\tag{5.168}
+\end{equation}
+
+但是 $S(\alpha,\beta)$ 条件要求
+\begin{equation}
+e^\mu(\mathbf{k},\lambda) = S(\alpha,\beta)^\mu{}_\nu\, e^\nu(\mathbf{k},\lambda)
+\tag{5.169}
+\end{equation}
+
+将 $S(\alpha,\beta)$ 的显式矩阵（参考第 3 章中的小群元素）作用于 $e^\mu(\mathbf{k},\pm 1)$，得到
+\begin{equation}
+S(\alpha,\beta)^\mu{}_\nu\, e^\nu(\mathbf{k},\pm 1) = e^\mu(\mathbf{k},\pm 1) + \frac{(\alpha \pm i\beta)}{\sqrt{2}\,|\mathbf{k}|}\, k^\mu
+\tag{5.170}
+\end{equation}
+
+右端有一个\textbf{额外的} $k^\mu$ 项！这要求 $\alpha \pm i\beta = 0$，但对于一般实数 $\alpha,\beta$ 这不可能满足。\textbf{因此，$S(\alpha,\beta)$ 条件~(5.169) 无法被满足——四矢量场无法严格地按照 Lorentz 四矢量变换来描述螺旋度 $\pm 1$ 的无质量粒子。}
+
+
+\paragraph{``几乎''四矢量：规范不变性的诞生}
+
+尽管如此，我们暂时无视这个困难，用方程~(5.168) 和标准 boost $\mathscr{L}(p) = R(\hat{\mathbf{p}})\cdot B(|\mathbf{p}|/\kappa)$ 定义任意动量的极化矢量。由于 $e^\nu(\mathbf{k},\pm 1)$ 是仅有 $x,y$ 分量的纯空间矢量，它不被沿 $z$ 轴的推动影响，因此
+\begin{equation}
+e^\mu(\mathbf{p},\pm 1) = R(\hat{\mathbf{p}})^\mu{}_\nu\, e^\nu(\mathbf{k},\pm 1)
+\tag{5.171}
+\end{equation}
+
+特别地，$e^0(\mathbf{p},\pm 1) = 0$ 且 $\mathbf{p}\cdot\mathbf{e}(\mathbf{p},\pm 1) = 0$（横向条件）。
+
+利用这些极化矢量定义场
+\begin{align}
+a_\mu(x) = (2\pi)^{-3/2} \int d^3p\,(2p^0)^{-1/2}
+\sum_{\lambda=\pm 1} \Big[&e_\mu(\mathbf{p},\lambda)\,a(\mathbf{p},\lambda)\,e^{ip\cdot x} \notag\\
++\; &e_\mu^*(\mathbf{p},\lambda)\,a^{c\dagger}(\mathbf{p},\lambda)\,e^{-ip\cdot x}\Big]
+\tag{5.172}
+\end{align}
+
+由于 $S(\alpha,\beta)$ 条件中的额外 $k^\mu$ 项~(5.170)，在一般 Lorentz 变换下，取代期望的四矢量变换，实际得到的是
+\begin{equation}
+\boxed{U(\Lambda)\,a_\mu(x)\,U^{-1}(\Lambda) = \Lambda^\nu{}_\mu\, a_\nu(\Lambda x) + \partial_\mu\,\Omega(x,\Lambda)}
+\tag{5.173}
+\end{equation}
+
+其中 $\Omega(x,\Lambda)$ 是产生和湮灭算符的某个线性组合。\textbf{场 $a_\mu(x)$ 在 Lorentz 变换下差一个梯度项——这正是规范变换的形式！}
+
+
+\paragraph{从群论到规范原理}
+
+为了使理论是 Lorentz 不变的，尽管场 $a_\mu$ 不是真正的四矢量，\textbf{所有的相互作用必须在如下两类变换下同时不变}：
+\begin{enumerate}
+\item \textbf{形式 Lorentz 变换：} $a_\mu \to \Lambda^\nu{}_\mu\, a_\nu$
+\item \textbf{规范变换：} $a_\mu \to a_\mu + \partial_\mu\,\Omega$
+\end{enumerate}
+这通过取 $a_\mu$ 的耦合形式为 $a_\mu\, j^\mu$ 来实现，其中 $j^\mu$ 是守恒四矢量流（$\partial_\mu j^\mu = 0$）。在此条件下，$\partial_\mu\Omega$ 对 $a_\mu j^\mu$ 的贡献为 $j^\mu\partial_\mu\Omega$，分部积分后由 $\partial_\mu j^\mu = 0$ 保证为零。
+
+\begin{center}
+\fbox{\parbox{0.92\textwidth}{
+\textbf{总结：}
+
+微观因果性 $+$ Lorentz 不变性 $\to$ 场必须由 $(A,B)$ 表示构建 $\to$ 无质量自旋 $\geq 1$ 粒子\textbf{不能}用变换性质``好''的场描述 $\to$ 被迫使用变换性质``差''的场（如四矢量 $a_\mu$） $\to$ 理论一致性要求\textbf{规范不变性}
+
+\medskip
+\textbf{规范不变性不是外加的原理，而是 Poincar\'{e} 群表示论、微观因果性和集团分解原理的不可避免的推论。}
+}}
+\end{center}
+
+
+\paragraph{为什么使用矢量场而不是张量场}
+
+一个自然的问题是：既然反对称张量场 $f_{\mu\nu} = \partial_\mu a_\nu - \partial_\nu a_\mu$ 作为 $(1,0)\oplus(0,1)$ 表示是真正的 Lorentz 张量（方程~(5.173) 中的额外项在取旋度后被抵消），为什么不直接用 $f_{\mu\nu}$ 构建理论？
+
+关键在于\textbf{导数的出现}。方程 $f_{\mu\nu} = \partial_\mu a_\nu - \partial_\nu a_\mu$ 中的导数意味着：对于能量和动量比较小的无质量粒子，仅由 $f_{\mu\nu}$ 及其导数构建的相互作用密度的矩阵元会比用 $a_\mu$ 构建的相互作用密度衰减更快。在动量空间中，每个额外的导数带来一个 $p$ 的幂次。因此：
+\begin{itemize}
+\item 用 $a_\mu$ 构建的理论可以包含\textbf{长程力}（如库仑力 $\sim 1/r^2$）；
+\item 仅用 $f_{\mu\nu}$ 构建的理论，相互作用在长距离会比平方反比定律衰减快得多。
+\end{itemize}
+
+因此，使用矢量场的规范不变理论代表一类更普遍的理论，其中包含了在自然界中真实实现的电磁相互作用。
+
+
+\paragraph{推广到更高自旋}
+
+相同的逻辑推广到引力子（螺旋度 $\pm 2$ 的无质量粒子）：
+\begin{itemize}
+\item \textbf{$(2,0)\oplus(0,2)$ 张量场} $R_{\mu\nu\rho\sigma}$（具有 Riemann 曲率张量的对称性）是严格的 Lorentz 张量，但它包含比度规微扰 $h_{\mu\nu}$ 更多的导数；
+\item \textbf{对称张量场} $h_{\mu\nu}$ 不是严格的 Lorentz 张量，但可以产生平方反比引力；
+\item 理论的 Lorentz 不变性要求 $h_{\mu\nu}$ 在类似广义坐标变换的\textbf{规范变换}下不变——这就是\textbf{广义协变性}的群论起源。
+\end{itemize}
+
+\textbf{对于自旋 $j \geq 3$ 的无质量粒子：} 场将不得不与时空指标不少于三个的守恒张量耦合，但除了全导数项外不存在这类张量\footnote{%
+唯一可能的守恒量是各种连续对称性附带的标量``荷''以及能动量四矢量。任何其它四矢量或高阶张量的守恒，除了前向散射都会被禁止。}，所以\textbf{高自旋无质量粒子无法产生长程力}。这一从 Poincar\'{e} 群表示论得出的结论，与 Weinberg--Witten 定理的精神完全一致。
+
+\bigskip
+\textbf{本节建立了零质量粒子场的一般理论框架。在接下来的章节中，我们将利用这些一般结果，具体构造自旋 $1/2$ 的零质量场（Weyl 场的无质量极限与手征费米子）以及自旋 $1$ 的零质量场（光子场与电磁规范不变性的完整推导）。}
+```

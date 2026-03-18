@@ -1,0 +1,114 @@
+
+\subsection{Weyl 场}
+一般形式的场是：
+\begin{equation}
+    \Psi_{ab}(x) =(\frac{1}{2\pi})^\frac{3}{2}\sum_{\sigma}\int d^3p \, \left\{ u_{ab}(\boldsymbol{q},\sigma)b^\dagger(\boldsymbol{q},\sigma) e^{-ipx} + (-)^{2B}(-)^{j+\sigma}u_{ab}(\boldsymbol{q},\sigma) a(\boldsymbol{q},\sigma)e^{ipx} \right\}
+\end{equation}
+上述我们知道静止系系数 $u(0)$ 和 $v(0)$ 是正比于Clebsch-Gordan  系数 
+\begin{equation}
+    u_{ab}(0, \sigma) = \frac{1}{\sqrt{2m}} \langle A, a; B, b | j, \sigma \rangle
+    \label{eq:u0_general_1/2}
+\end{equation}
+通过 Boost 获得有限动量系数 $u(\boldsymbol{q})$ 和 $v(\boldsymbol{q})$的一般公式是：
+\begin{equation}
+    u_{ab}(\boldsymbol{q}, \sigma) = \frac{1}{\sqrt{2q^0}} \sum_{\bar{a},\bar{b}} \left[e^{-\boldsymbol{\phi}\cdot\mathbf{J}^{(A)}}\right]_{a\bar{a}} \left[e^{+\boldsymbol{\phi}\cdot\mathbf{J}^{(B)}}\right]_{b\bar{b}} \langle A,\bar{a}; B,\bar{b} | j, \sigma \rangle
+    \label{eq:u_finite_general_1/2}
+\end{equation}
+其中$\boldsymbol{\phi} = \hat{\boldsymbol{q}} \text{arctanh}(|\boldsymbol{q}|/q^0)$
+\vspace{0.5cm}
+\begin{center}
+    \large\text{$(A, B) = (1/2, 0)$或$(1/2, 0)$}
+\end{center}
+\vspace{0.5cm}
+对于标量场，$(A, B) = (0, 0)$或$(1/2, 0)$，粒子自旋 $j = 1/2$。此时：
+\begin{itemize}
+    \item 角动量生成元全为零：$\mathbf{J}^{(A)} = 1/2$或${J}^{(B)} = 1/2$
+    \item 表示指标只有一个值：$a = 1/2$或$b = 1/2$。
+    \item 自旋投影只有一个值：$\sigma = 1/2$。
+    \item $j=1/2$根据自旋统计表明是费米子。
+\end{itemize}
+代入式 \eqref{eq:u0_general_1/2}，唯一的 C-G 系数为 $\langle 1/2, a; 0, 0 | 1/2, \sigma \rangle = \delta_{a\sigma}$。因此静止系下的系数为：
+\begin{equation}
+    u_a(0, \sigma) = \frac{1}{\sqrt{2m}} \langle \tfrac{1}{2}, a;\, 0, 0\, |\, \tfrac{1}{2}, \sigma \rangle = \frac{1}{\sqrt{2m}}\, \delta_{a\sigma}
+\end{equation}
+\textbf{静止系系数的具体列向量形式}将 $a = +1/2, -1/2$ 按顺序排列为列向量的两个分量，我们显式写出两个自旋投影对应的系数：
+
+\textbf{对于 $\sigma = +1/2$：} $u_a(0, +1/2) = \frac{1}{\sqrt{2m}}\delta_{a, +1/2}$，即
+\begin{equation}
+    u(0, +\tfrac{1}{2}) = \frac{1}{\sqrt{2m}} \begin{pmatrix} 1 \\ 0 \end{pmatrix}=\frac{1}{\sqrt{2m}}\, \xi_{\frac{1}{2}}
+\end{equation}
+
+\textbf{对于 $\sigma = -1/2$：} $u_a(0, -1/2) = \frac{1}{\sqrt{2m}}\delta_{a, -1/2}$，即
+\begin{equation}
+    u(0, -\tfrac{1}{2}) = \frac{1}{\sqrt{2m}} \begin{pmatrix} 0 \\ 1 \end{pmatrix}=\frac{1}{\sqrt{2m}}\, \xi_{-\frac{1}{2}}
+\end{equation}
+
+其中 $\xi_{+1/2} = \binom{1}{0}$ 和 $\xi_{-1/2} = \binom{0}{1}$ 是标准的二分量自旋基矢。
+\vspace{2ex}
+对于 $(A, B) = (1/2, 0)$ ，Boost 生成元为 $\mathbf{K} = -i\mathbf{J}^{(A)} + i\mathbf{J}^{(B)} = -i\frac{\boldsymbol{\sigma}}{2}$。因此，一般 Boost 分解公式简化为：
+\begin{equation}
+    \mathscr{D}_{1/2,0}(L(p)) = \exp\left(-\boldsymbol{\phi}\cdot\mathbf{J}^{(A)}\right) \otimes 1 = \exp\left(-\frac{\boldsymbol{\phi}\cdot\boldsymbol{\sigma}}{2}\right)
+\end{equation}
+利用泡利矩阵的性质 $(\hat{\boldsymbol{q}}\cdot\boldsymbol{\sigma})^2 = I$，指数矩阵可以精确展开为：
+\begin{equation}
+    \exp\left(-\frac{\phi}{2}\, \hat{\boldsymbol{q}}\cdot\boldsymbol{\sigma}\right) = \cosh\frac{\phi}{2}\cdot I - \sinh\frac{\phi}{2}\cdot \hat{\boldsymbol{q}}\cdot\boldsymbol{\sigma}
+\end{equation}
+利用双曲半角公式（其中 $\cosh\phi = q^0/m$，$\sinh\phi = |\boldsymbol{q}|/m$）：
+\begin{align}
+    \cosh\frac{\phi}{2} &= \sqrt{\frac{\cosh\phi + 1}{2}} = \sqrt{\frac{q^0 + m}{2m}} \\
+    \sinh\frac{\phi}{2} &= \sqrt{\frac{\cosh\phi - 1}{2}} = \sqrt{\frac{q^0 - m}{2m}}
+\end{align}
+代入得：
+\begin{equation}
+    \exp\left(-\frac{\boldsymbol{\phi}\cdot\boldsymbol{\sigma}}{2}\right) = \frac{1}{\sqrt{2m}}\left[\sqrt{q^0 + m}\cdot I - \sqrt{q^0 - m}\cdot \hat{\boldsymbol{q}}\cdot\boldsymbol{\sigma}\right]
+    \label{eq:weyl_boost_expanded}
+\end{equation}
+带入\eqref{eq:u_finite_general_1/2}
+\begin{equation}
+   \begin{aligned}
+     u(\boldsymbol{q}, \sigma) &= \sqrt{\frac{1}{2q^0}} \cdot \frac{1}{\sqrt{2m}} \cdot \frac{\sqrt{q^0+m}\cdot I - \sqrt{q^0-m}\cdot\hat{\boldsymbol{q}}\cdot\boldsymbol{\sigma}}{\sqrt{2m}} \xi_\sigma\\
+    & = \frac{1}{2\sqrt{mq^0}} \frac{\sqrt{q^0+m}\cdot I - \sqrt{q^0-m}\cdot\hat{\boldsymbol{q}}\cdot\boldsymbol{\sigma}}{\sqrt{2m}}\xi_\sigma
+    \label{eq:weyl_u_p}
+   \end{aligned}
+\end{equation}
+将式 \eqref{eq:weyl_u_p}  中的 Boost 矩阵的平方写成四维协变形式。注意到：
+\begin{equation}
+    \exp\left(-\boldsymbol{\phi}\cdot\boldsymbol{\sigma}\right) = \left[\exp\left(-\frac{\boldsymbol{\phi}\cdot\boldsymbol{\sigma}}{2}\right)\right]^2 = \cosh\phi\cdot I - \sinh\phi\cdot\hat{\boldsymbol{q}}\cdot\boldsymbol{\sigma} = \frac{q^0 I - \boldsymbol{q}\cdot\boldsymbol{\sigma}}{m}
+\end{equation}
+定义 $\sigma^\mu = (I, \boldsymbol{\sigma})$，则上式可紧凑地写为：
+\begin{equation}
+    \exp(-\boldsymbol{\phi}\cdot\boldsymbol{\sigma}) = \frac{p_\mu\sigma^\mu}{m}
+    \label{eq:boost_squared}
+\end{equation}
+这一恒等式是联系 Boost 矩阵与四维动量的桥梁，将在极化求和中发挥关键作用。计算旋量系数的完备性关系。利用式 \eqref{eq:weyl_u_p}，对两个自旋投影 $\sigma = \pm 1/2$ 求和：
+\begin{equation}
+    \sum_\sigma u(\boldsymbol{q},\sigma)\, u^\dagger(\boldsymbol{q},\sigma) = \frac{m}{q^0}\, \exp\left(-\frac{\boldsymbol{\phi}\cdot\boldsymbol{\sigma}}{2}\right) \underbrace{\left(\frac{1}{2m}\sum_\sigma \xi_\sigma\xi_\sigma^\dagger\right)}_{= I/(2m)} \exp\left(-\frac{\boldsymbol{\phi}\cdot\boldsymbol{\sigma}}{2}\right)^\dagger
+\end{equation}
+由于 $\sum_\sigma \xi_\sigma\xi_\sigma^\dagger = I$（二分量基矢的完备性），以及 $\exp(-\frac{\boldsymbol{\phi}\cdot\boldsymbol{\sigma}}{2})$ 是厄米矩阵（泡利矩阵厄米），上式化为：
+\begin{equation}
+    \sum_\sigma u(\boldsymbol{q},\sigma)\, u^\dagger(\boldsymbol{q},\sigma) = \frac{1}{2q^0}\, \exp(-\boldsymbol{\phi}\cdot\boldsymbol{\sigma})
+\end{equation}
+代入四维协变形式 \eqref{eq:boost_squared}：
+\begin{equation}
+    \boxed{\sum_\sigma u(\boldsymbol{q},\sigma)\, u^\dagger(\boldsymbol{q},\sigma) = \frac{p_\mu\sigma^\mu}{2mq^0}}
+    \label{eq:weyl_pol_u}
+\end{equation}
+
+对于 $v$ 系数，由于 $\sum_\sigma \eta_\sigma\eta_\sigma^\dagger = (i\sigma_2)I(i\sigma_2)^\dagger = I$，极化求和与 $u$ 完全相同：
+\begin{equation}
+    \boxed{\sum_\sigma v(\boldsymbol{q},\sigma)\, v^\dagger(\boldsymbol{q},\sigma) = \frac{p_\mu\sigma^\mu}{2mq^0}}
+    \label{eq:weyl_pol_v}
+\end{equation}
+与标量场的标量极化求和 $1/(2q^0)$ 对比，Weyl 场的极化求和是一个 $2 \times 2$ 矩阵 $p_\mu\sigma^\mu/(2mq^0)$，其中包含了非平凡的自旋信息。正是这个矩阵中的动量 $p_\mu$，在下一步的因果性验证中将被替换为微商，从而带来决定性的符号翻转。
+
+
+
+\paragraph{分立对称性：宇称破缺}
+
+空间反演使 $\boldsymbol{q} \to -\boldsymbol{q}$，即快度 $\boldsymbol{\phi} \to -\boldsymbol{\phi}$。在 $(1/2, 0)$ 表示中，Boost 矩阵在宇称下的行为为：
+\begin{equation}
+    \mathcal{P}: \quad \underbrace{\exp\left(-\frac{\boldsymbol{\phi}\cdot\boldsymbol{\sigma}}{2}\right)}_{\text{左手 }(1/2,0) \text{ 的 Boost}} \longrightarrow \underbrace{\exp\left(+\frac{\boldsymbol{\phi}\cdot\boldsymbol{\sigma}}{2}\right)}_{\text{右手 }(0,1/2) \text{ 的 Boost}}
+\end{equation}
+这表明宇称操作将 $(1/2, 0)$ 的 Boost 矩阵变成了 $(0, 1/2)$ 的 Boost 矩阵，两者符号相反、不可等同。
+
+因此，\textbf{单独的左手 Weyl 场在宇称变换下无法封闭回到自身}。如果物理理论要保持宇称对称性（如电磁力、强力），就必须同时引入左手 $(1/2, 0)$ 和右手 $(0, 1/2)$，构造它们的直和 $(1/2, 0) \oplus (0, 1/2)$。这就是下一节狄拉克形式体系的根本动机。

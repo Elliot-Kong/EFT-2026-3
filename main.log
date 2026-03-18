@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.11.8)  18 MAR 2026 09:42
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.11.8)  19 MAR 2026 02:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1039,12 +1039,25 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 )
 \Hy@SectionHShift=\skip121
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 111.
+Package hyperref Info: Option `colorlinks' set `true' on input line 97.
 ) (./preamble/footnote.tex (/usr/local/texlive/2025/texmf-dist/tex/latex/chngcntr/chngcntr.sty
 Package: chngcntr 2018/04/09 v1.1a change counter resetting
 Package chngcntr Info: \counterwithout already defined.
 (chngcntr)             Quitting chngcntr on input line 21.
-)) (./main.aux)
+)) (./main.aux
+
+LaTeX Warning: Label `eq:u0_general_1/2' multiply defined.
+
+
+LaTeX Warning: Label `eq:u_finite_general_1/2' multiply defined.
+
+
+LaTeX Warning: Label `eq:u0_general_1/2' multiply defined.
+
+
+LaTeX Warning: Label `eq:u_finite_general_1/2' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
@@ -1242,13 +1255,7 @@ Missing character: There is no 形 ("5F62) in font rm-lmr8!
 Missing character: There is no 式 ("5F0F) in font rm-lmr8!
 Missing character: There is no 为 ("4E3A) in font rm-lmr8!
 Missing character: There is no ： ("FF1A) in font rm-lmr8!
-) (./quantum_theory_basic/symmetry_about_qm.tex
-
-[6]
-
-[7]
-
-[8]) (./quantum_theory_basic/canonical_commutation.tex) (./quantum_theory_basic/dynamics.tex
+) (./quantum_theory_basic/canonical_commutation.tex) (./quantum_theory_basic/dynamics.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 3.
@@ -1258,10 +1265,16 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 3.
 
 
-LaTeX Warning: Command \" invalid in math mode on input line 10.
+LaTeX Warning: Command \" invalid in math mode on input line 5.
 
 Missing character: There is no ö ("F6) in font lmmi10!
 
+
+[6]
+
+[7]) (./quantum_theory_basic/symmetry_about_qm.tex
+
+[8]
 
 [9]
 
@@ -1311,124 +1324,142 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--14
 
 
 [16]
-Overfull \hbox (10.10144pt too wide) detected at line 97
-[][]
- []
-
 Missing character: There is no 图 ("56FE) in font rm-lmr8!
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\(' on input line 187.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\dagger' on input line 187.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\)' on input line 187.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\(' on input line 188.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\dagger' on input line 188.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\)' on input line 188.
-
-))
 
 [17]
 
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\(' on input line 184.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\dagger' on input line 184.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\)' on input line 184.
+
+
+
 [18]
 
-[19
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\(' on input line 284.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\dagger' on input line 284.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\)' on input line 284.
+
+
+
+[19]
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 295.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 295.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 295.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mu' on input line 295.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 295.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 320.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 320.
+
+
+
+[20]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 360.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 360.
+
+))
+
+[21]
+
+[22]
+
+[23
 
 ]
 Chapter 4.
 (./scattering_theory/chapter.tex (./scattering_theory/in_out_states.tex
 
-[20
+[24
 
 ]
 Missing character: There is no 其 ("5176) in font rm-lmr9!
 Missing character: There is no 中 ("4E2D) in font rm-lmr9!
 
 
-[21]) (./scattering_theory/s_matrix.tex) (./scattering_theory/lorentz_symmetry_of_s_matrix.tex
-
-[22]
-Missing character: There is no 𝑆 (U+1D446) in font [lmroman9-regular]:mapping=tex-text;!
-
-LaTeX Warning: Reference `3.18' on page 23 undefined on input line 87.
-
-
-LaTeX Warning: Reference `3.18' on page 23 undefined on input line 87.
-
-
-
-[23]
-
-[24] Excluding 'comment' comment.
-
-[25]) (./scattering_theory/bosons_and_fermions.tex) (./scattering_theory/creation_and_annihilation_operators.tex) (./scattering_theory/cluster_decomposition_and_connected_amplitudes.tex
+[25]) (./scattering_theory/s_matrix.tex) (./scattering_theory/lorentz_symmetry_of_s_matrix.tex
 
 [26]
+Missing character: There is no 𝑆 (U+1D446) in font [lmroman9-regular]:mapping=tex-text;!
+
+LaTeX Warning: Reference `3.18' on page 27 undefined on input line 87.
+
+
+LaTeX Warning: Reference `3.18' on page 27 undefined on input line 87.
+
+
+
+[27]
+
+[28] Excluding 'comment' comment.
+
+[29]) (./scattering_theory/bosons_and_fermions.tex) (./scattering_theory/creation_and_annihilation_operators.tex) (./scattering_theory/cluster_decomposition_and_connected_amplitudes.tex
+
+[30]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <20.74> on input line 183.
 
 Missing character: There is no ️ (U+FE0F) in font Songti SC Regular/OT:script=hani;language=dflt;!
 
 
-[27]
+[31]
 
-[28]) (./scattering_theory/structure_of_the_interaction.tex))
+[32]) (./scattering_theory/structure_of_the_interaction.tex))
 
-[29]
+[33]
 Chapter 5.
 (./fields_antiparticles/chapter.tex (./fields_antiparticles/field_emergence.tex
 
-[30
+[34
 
-] Excluding 'comment' comment.
-Overfull \hbox (11.93887pt too wide) detected at line 150
-[]
- []
+]
 
+[35]
 
-Overfull \hbox (2.01122pt too wide) detected at line 156
-[]
- []
+[36]
 
+[37]) (./fields_antiparticles/general_fields.tex
 
-Overfull \hbox (6.69699pt too wide) detected at line 172
-[]
- []
-
-
-Overfull \hbox (6.70036pt too wide) detected at line 186
-[]
- []
-
-
-Overfull \hbox (1.05054pt too wide) detected at line 192
-[]
- []
-
-
-Overfull \hbox (1.94586pt too wide) detected at line 206
-[]
- []
-
-[31]
-
-[32]
-
-[33]) (./fields_antiparticles/general_fields.tex
+[38]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
@@ -1441,94 +1472,137 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
 
-
-
-[34]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 73.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/ueuf.fd
+LaTeX Font Info:    Trying to load font information for U+euf on input line 74.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
 
-[35]
+[39] Excluding 'comment' comment.
 
-[36]
-
-[37]) (./fields_antiparticles/massive_fields.tex
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\(' on input line 1.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\dagger' on input line 1.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\)' on input line 1.
-
-
-
-[38]
-Missing character: There is no 是 ("662F) in font rm-lmr10!
-Missing character: There is no ： ("FF1A) in font rm-lmr10!
-
-
-[39]
-
-[40] (./fields_antiparticles/spin0.tex) (./fields_antiparticles/spin1:2.tex) (./fields_antiparticles/dirac_form.tex) (./fields_antiparticles/dirac_field.tex) (./fields_antiparticles/spin1.tex)) (./fields_antiparticles/massless_fields.tex
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\(' on input line 1.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\dagger' on input line 1.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\)' on input line 1.
-
-))
+[40]
 
 [41]
-Chapter 6.
-(./intercation_theory/chapter.tex (./intercation_theory/feynman_rules.tex) (./intercation_theory/canonical_formalism.tex) (./intercation_theory/interaction_picture_example.tex) (./intercation_theory/observables.tex
 
-[42
+[42]) (./fields_antiparticles/massive_fields.tex
 
-]
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\(' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\dagger' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\)' on input line 2.
+
+
 
 [43]
 
 [44]
 
-[45]) (./intercation_theory/physical_examples_and_applications.tex) (./intercation_theory/functional_methods.tex (./intercation_theory/bosonic_path_integrals.tex) (./intercation_theory/fermionic_path_integrals.tex)))
+[45] (./fields_antiparticles/spin0.tex
 
-[46]
+[46]) (./fields_antiparticles/spin1:2.tex
 
-[47
+[47]
+
+[48]) (./fields_antiparticles/dirac_form.tex
+
+[49]
+
+[50]
+
+[51]
+
+[52]) (./fields_antiparticles/dirac_field.tex
+
+[53]
+
+[54]) (./fields_antiparticles/spin1.tex
+
+[55]
+
+[56])) (./fields_antiparticles/massless_fields.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\(' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\dagger' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\)' on input line 1.
+
+
+
+[57]
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 96.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 125.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 125.
+
+
+
+[58]
+
+[59]
+
+[60]
+
+[61]
+
+[62]))
+
+[63]
+Chapter 6.
+(./intercation_theory/chapter.tex (./intercation_theory/feynman_rules.tex) (./intercation_theory/canonical_formalism.tex) (./intercation_theory/interaction_picture_example.tex) (./intercation_theory/observables.tex
+
+[64
+
+]
+
+[65]
+
+[66]
+
+[67]) (./intercation_theory/physical_examples_and_applications.tex) (./intercation_theory/functional_methods.tex (./intercation_theory/bosonic_path_integrals.tex) (./intercation_theory/fermionic_path_integrals.tex)))
+
+[68]
+
+[69
 
 ]
 Chapter 7.
 
 
-[48
+[70
 
 ]
 
-[49
+[71
 
 ]
 Chapter 8.
 
 
-[50
+[72
 
 ]
 Chapter 9.
 
 
-[51
+[73
 
 ] (./main.aux)
  ***********
@@ -1539,16 +1613,25 @@ L3 programming layer <2022/08/05>
 
 LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 94B4904A83B3E4722978EFD2EB4725D3;6361.
+
+LaTeX Warning: There were multiply-defined labels.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 7ACEF6EA37330B45277F91F914E00875;9469
+(rerunfilecheck)             After:  07BB76097A6FB61B5F9ECE94A2BA1887;9469.
  ) 
 Here is how much of TeX's memory you used:
- 48414 strings out of 473832
- 1211040 string characters out of 5729481
- 1815200 words of memory out of 5000000
- 70500 multiletter control sequences out of 15000+600000
- 640472 words of font info for 210 fonts, out of 8000000 for 9000
+ 48302 strings out of 473832
+ 1210327 string characters out of 5729481
+ 1815863 words of memory out of 5000000
+ 70391 multiletter control sequences out of 15000+600000
+ 640456 words of font info for 208 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 121i,18n,124p,758b,1289s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 121i,21n,124p,758b,1289s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (52 pages).
+Output written on main.pdf (74 pages).

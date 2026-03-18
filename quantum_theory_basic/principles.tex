@@ -26,12 +26,14 @@ $\left\{
         \ket{\psi}=\sum_{i}\,c_i \ket{i}=\int d\alpha\,\psi(\alpha)\ket{\alpha}
     \end{equation}
     其中 $c_i=\braket{i|\psi}$ 是展开系数, $\psi(\alpha)=\braket{\alpha|\psi}$ 是展开的函数.
-    
+    约定：\begin{enumerate}
+    \item 归一化：$\braket{i｜j}=\delta_{ij}$ 
+    \,$\braket{\beta|\alpha}=\delta(\beta-\alpha)$
+    \item 完备关系：$\sum_{i}\ket{\psi_i}\bra{\psi_i}=\mathbf{1}$ \,$\int d\alpha\,\ket{\alpha}\bra{\alpha}=\mathbf{1}$
+\end{enumerate}
 \par\vspace{2ex}
 \hrule
-\vspace{2ex}
-    
-    当系统涉及不同空间（如系统1和系统2）时，需区分\textbf{叠加}与\textbf{直积}：
+\vspace{2ex}当系统涉及不同空间（如系统1和系统2）时，需区分\textbf{叠加}与\textbf{直积}：
     \begin{enumerate}
         \item \textbf{直积}\footnote{数学上，张量积 $\otimes: \mathbb{H}_1 \times \mathbb{H}_2 \to \mathbb{H}_1 \otimes \mathbb{H}_2$ 定义为\textbf{双线性映射}。表述为：
         $(\lambda\ket{\phi_1} + \ket{\phi_2}) \otimes \ket{\chi} = \lambda(\ket{\phi_1}\otimes\ket{\chi}) + (\ket{\phi_2}\otimes\ket{\chi})$。}：
@@ -52,11 +54,7 @@ $\left\{
 \end{tcolorbox}
 
 
-约定：\begin{enumerate}
-    \item 归一化：$\braket{i｜j}=\delta_{ij}$ 
-    \,$\braket{\beta|\alpha}=\delta(\beta-\alpha)$
-    \item 完备关系：$\sum_{i}\ket{\psi_i}\bra{\psi_i}=\mathbf{1}$ \,$\int d\alpha\,\ket{\alpha}\bra{\alpha}=\mathbf{1}$
-\end{enumerate}
+
 \newpage
 
 \subsection{状态,幺正演化}
@@ -66,6 +64,9 @@ $\left\{
    \begin{equation}
     \ket{\psi(t)}=U(t,0)\ket{\psi(0)},U^\dagger=U^{-1}
    \end{equation}
+   等价表述：\begin{enumerate}
+    \item 保模长：$\braket{\psi(t)|\psi(t)}=\braket{\psi(0)|\psi(0)}$或许这种等价表述更加直观,但在讨论测量问题的时候,先用到幺正演化.
+\end{enumerate}
     \par\vspace{2ex}
     \hrule
     \vspace{2ex}
@@ -91,9 +92,6 @@ $\left\{
    \end{equation}
 \end{tcolorbox}
 
-等价表述：\begin{enumerate}
-    \item 保模长：$\braket{\psi(t)|\psi(t)}=\braket{\psi(0)|\psi(0)}$或许这种等价表述更加直观,但在讨论测量问题的时候,先用到幺正演化.
-\end{enumerate}
 \subsection{测量问题}
 宏观系统中,假定存在“理想的实验仪器”
 $\left[
