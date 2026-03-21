@@ -6,12 +6,12 @@
 \contentsline {subsection}{\numberline {1.1.3}测量问题}{3}{subsection.1.1.3}%
 \contentsline {section}{\numberline {1.2}基本对易关系}{5}{section.1.2}%
 \contentsline {section}{\numberline {1.3}0+1动力学问题:算符方法}{5}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Schr\"{o}dinger 绘景与 Heisenberg 绘景}{5}{section.1.4}%
-\contentsline {section}{\numberline {1.5}相互作用绘景和Dyson级数}{7}{section.1.5}%
-\contentsline {section}{\numberline {1.6}0+1 维动力学问题: 泛函方法}{8}{section.1.6}%
-\contentsline {section}{\numberline {1.7}对称性}{14}{section.1.7}%
-\contentsline {subsection}{\numberline {1.7.1}对称群与投影表示}{14}{subsection.1.7.1}%
-\contentsline {subsection}{\numberline {1.7.2}李群与李代数}{16}{subsection.1.7.2}%
+\contentsline {subsection}{\numberline {1.3.1}Schr\"{o}dinger 绘景与 Heisenberg 绘景}{5}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}相互作用绘景和Dyson级数}{7}{subsection.1.3.2}%
+\contentsline {section}{\numberline {1.4}0+1 维动力学问题: 泛函方法}{8}{section.1.4}%
+\contentsline {section}{\numberline {1.5}对称性}{14}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}对称群与投影表示}{14}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}李群与李代数}{16}{subsection.1.5.2}%
 \contentsline {chapter}{\numberline {2}时空观}{18}{chapter.2}%
 \contentsline {section}{\numberline {2.1}狭义相对论}{18}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Lorentz 变换与 Poincar\'e 变换}{20}{section.2.2}%
