@@ -198,7 +198,7 @@ U = \exp\!\left(-i\int_{-\infty}^{\infty} dt\,V(t)\right).
 \vspace{6pt}
 \noindent\textbf{第一类：对易的算符 $\longrightarrow$ 同时本征态}
 
-在 \S1.2 中我们已经建立了位置与动量的基本对易关系。位置算符之间是对易的：
+在 1.2 中我们已经建立了位置与动量的基本对易关系。位置算符之间是对易的：
 \begin{equation}\label{eq:qq-comm}
   [\hat{q}_i,\,\hat{q}_j] = 0
 \end{equation}
@@ -479,7 +479,7 @@ $\mathcal{D}q\,\mathcal{D}p$ 的严格定义是时间切片的极限。}：
 \]
 
 \vspace{8pt}
-\noindent\textbf{位型空间路径积分。}
+\noindent\textbf{位形空间路径积分。}
 对于标准二次动能 $T(p) = p^2/(2m)$，(\ref{eq:short-time}) 中的 $p_k$ 积分是高斯型的，
 可以精确完成。将指数中的 $p_k$ 配方\footnote{
 $p\dot{q} - \frac{p^2}{2m} = -\frac{1}{2m}(p - m\dot{q})^2 + \frac{m\dot{q}^2}{2}$。}，
@@ -496,7 +496,7 @@ $\displaystyle\int_{-\infty}^{+\infty}\!\frac{dp}{2\pi}\;e^{-iap^2/2}
 \end{equation}
 将全部 $N$ 个 $p_k$ 积分的结果合并，
 并利用 $L(q,\dot{q}) = \frac{m}{2}\dot{q}^2 - V(q)$，
-得到\textbf{位型空间路径积分}（拉格朗日路径积分）：
+得到\textbf{位形空间路径积分}（拉格朗日路径积分）：
 \begin{equation}\label{eq:config-PI}
 \boxed{
   K(q_f,t_f;\,q_i,t_i) = \int\mathcal{D}q\;\exp\!\Bigl\{iS[q]\Bigr\}
@@ -524,20 +524,6 @@ $S[q] = \int_{t_i}^{t_f}dt\;L(q,\dot{q})$，
 \footnotetext{数学上，对路径积分有贡献的典型路径是处处连续但处处不可微的，
 类似于布朗运动的 Wiener 轨迹。}
 
-\vspace{4pt}
-\noindent\textbf{示例：自由粒子。}
-对于 $V = 0$，作用量是 $q$ 的二次泛函，可以精确计算。
-经典轨迹为 $q_{\text{cl}}(t) = q_i + (q_f - q_i)\frac{t - t_i}{t_f - t_i}$，
-经典作用量为
-$S_{\text{cl}} = \frac{m(q_f-q_i)^2}{2(t_f-t_i)}$。
-由于作用量是二次的，围绕经典解的涨落积分只贡献一个预指数因子，最终结果为：
-\begin{equation}\label{eq:free-K}
-  K_0(q_f,t_f;\,q_i,t_i)
-  = \sqrt{\frac{m}{2\pi i(t_f-t_i)}}\;
-    \exp\!\left\{\frac{im(q_f-q_i)^2}{2(t_f-t_i)}\right\}
-\end{equation}
-当 $t_f \to t_i^+$ 时，$K_0 \to \delta(q_f - q_i)$，
-符合 $e^{-iH\cdot 0} = \mathbf{1}$ 的要求。
 
 \subsection*{经典极限与驻相近似}
 

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.11.8)  21 MAR 2026 17:54
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.11.8)  21 MAR 2026 21:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1046,20 +1046,7 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 78.
 Package: chngcntr 2018/04/09 v1.1a change counter resetting
 Package chngcntr Info: \counterwithout already defined.
 (chngcntr)             Quitting chngcntr on input line 21.
-)) (./main.aux
-
-LaTeX Warning: Label `eq:u0_general_1/2' multiply defined.
-
-
-LaTeX Warning: Label `eq:u_finite_general_1/2' multiply defined.
-
-
-LaTeX Warning: Label `eq:u0_general_1/2' multiply defined.
-
-
-LaTeX Warning: Label `eq:u_finite_general_1/2' multiply defined.
-
-)
+)) (./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
@@ -1238,12 +1225,12 @@ Overfull \hbox (27.92252pt too wide) in paragraph at lines 25--25
 
 
 ]
-Overfull \hbox (27.92252pt too wide) in paragraph at lines 67--67
+Overfull \hbox (27.92252pt too wide) in paragraph at lines 55--55
 [][] []  
  []
 
 
-Overfull \hbox (27.92252pt too wide) in paragraph at lines 67--67
+Overfull \hbox (27.92252pt too wide) in paragraph at lines 55--55
 []  
  []
 
@@ -1533,31 +1520,15 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [59]
 
-[60] (./fields_antiparticles/spin0.tex
+[60]
 
-[61]) (./fields_antiparticles/spin1:2.tex
+[61]
 
 [62]
 
-[63]) (./fields_antiparticles/dirac_form.tex
+[63]
 
-[64]
-
-[65]
-
-[66]
-
-[67]) (./fields_antiparticles/dirac_field.tex
-
-[68]
-
-[69]) (./fields_antiparticles/spin1.tex
-
-[70]
-
-[71]
-
-[72])) (./fields_antiparticles/massless_fields.tex
+[64]) (./fields_antiparticles/massless_fields.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\(' on input line 1.
@@ -1572,71 +1543,71 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 
-[73]
+[65]
 
-[74]
+[66]
 
-LaTeX Font Warning: Command \boldmath invalid in math mode on input line 160.
-
-
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 160.
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 137.
 
 
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 137.
 
-[75]))
+))
 
-[76]
+[67]
+
+[68]
 Chapter 6.
 (./intercation_theory/chapter.tex (./intercation_theory/feynman_rules.tex) (./intercation_theory/canonical_formalism.tex) (./intercation_theory/interaction_picture_example.tex) (./intercation_theory/observables.tex
 
-[77
+[69
 
 ]
 
-[78]
+[70]
 
-[79]
+[71]
 Overfull \hbox (1.11986pt too wide) detected at line 179
 [][] [] [][]
  []
 
 
 
-[80]) (./intercation_theory/physical_examples_and_applications.tex) (./intercation_theory/functional_methods.tex (./intercation_theory/bosonic_path_integrals.tex) (./intercation_theory/fermionic_path_integrals.tex)))
+[72]) (./intercation_theory/physical_examples_and_applications.tex) (./intercation_theory/functional_methods.tex (./intercation_theory/bosonic_path_integrals.tex) (./intercation_theory/fermionic_path_integrals.tex)))
 
-[81]
+[73]
 Chapter 7.
 
 
-[82
+[74
 
 ]
 
-[83
+[75
 
 ]
 Chapter 8.
 
 
-[84
+[76
 
 ]
 Chapter 9.
 
 
-[85
+[77
 
 ]
 Chapter 10.
 
 
-[86
+[78
 
 ]
 Chapter 11.
 
 
-[87
+[79
 
 ] (./main.aux)
  ***********
@@ -1647,19 +1618,16 @@ L3 programming layer <2022/08/05>
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 8B570BD47EDB5A8A5D558C2717442812;9659.
+(rerunfilecheck)             Checksum: 0F7E1BA77E04587B0D144624355E8C3A;9097.
  ) 
 Here is how much of TeX's memory you used:
- 48335 strings out of 473832
- 1208071 string characters out of 5729481
- 1778977 words of memory out of 5000000
- 70418 multiletter control sequences out of 15000+600000
+ 48272 strings out of 473832
+ 1205014 string characters out of 5729481
+ 1779033 words of memory out of 5000000
+ 70370 multiletter control sequences out of 15000+600000
  640700 words of font info for 210 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  121i,24n,124p,758b,1290s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (91 pages).
+Output written on main.pdf (83 pages).

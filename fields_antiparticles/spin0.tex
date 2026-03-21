@@ -39,19 +39,105 @@
 \begin{equation}
     u(\boldsymbol{q}, 0) = \frac{1}{\sqrt{2q^0}}
 \end{equation}
-所以最终因果标量场是：
-\begin{equation}
-    \phi(x) =(\frac{1}{2\pi})^\frac{3}{2}\int \frac{d^3p }{\sqrt{2q^0}}\, \left\{ b^\dagger(\boldsymbol{q},0) e^{-ipx} + a(\boldsymbol{q},0)e^{ipx} \right\}
-\end{equation}若粒子与反粒子不同（带电标量场，$a \neq b$），系统具有整体 $U(1)$ 规范对称性，对应守恒荷算符：
-\begin{equation}
-    Q = \int d^3p\left(a^\dagger(\boldsymbol{q})a(\boldsymbol{q}) - b^\dagger(\boldsymbol{q})b(\boldsymbol{q})\right)
+
+
+\paragraph{$\pi$函数与多项式结构.}
+由定义
+$\pi(\mathbf{p})/(2p^{0})
+=\sum_{\sigma}|u(\mathbf{p},\sigma)|^{2}
+=1/(2p^{0})$，
+立即得到
+\begin{equation}\label{eq:pi-scalar}
+  \pi(\mathbf{p})=1\;.
 \end{equation}
-利用玻色对易关系验证：
-\begin{equation}
-    [Q, \phi(x)] = -\phi(x), \quad [Q, \phi^\dagger(x)] = +\phi^\dagger(x)
+这是一个常数（零次多项式），自然满足分解
+$\pi = P + 2p^{0}Q$中$P=1$，$Q=0$。
+反射条件$P(-\mathbf{p})=(-)^{2A+2D}\,P(\mathbf{p})$
+退化为$1=(-)^{0}\cdot 1$，平凡成立。
+
+\paragraph{自旋—统计.}
+$(A,B)=(0,0)$时$2A+2B=0$为偶数，
+自旋—统计条件$\pm(-)^{2A+2B}=+1$
+要求取上号，即\textbf{对易子}。
+因此自旋$0$粒子是\textbf{玻色子}。
+同时$|\xi|=|\lambda|$。
+
+\paragraph{因果场的形式.}
+由$(-)^{2B}=(-)^{0}=1$，
+一般结果$\xi = (-)^{2B}\,c\,\lambda = c\,\lambda$
+退化为$\xi=c\lambda$。
+取$c=1$并归一化$\lambda=1$，
+唯一的因果标量场为
+\begin{equation}\label{eq:scalar-field}
+  \boxed{
+  \Psi(x)
+  = \frac{1}{(2\pi)^{3/2}}\int\frac{d^{3}p}{\sqrt{2p^{0}}}
+    \Bigl[a^{c\dagger}(\mathbf{p})\,e^{-ip\cdot x}
+    + a(\mathbf{p})\,e^{ip\cdot x}\Bigr]
+  }
 \end{equation}
-$\phi$ 每作用一次使系统总电荷减少 $1$（湮没正粒子或产生反粒子），$\phi^\dagger$ 使总电荷增加 $1$。
-为了后续计算传播子，需要考察系数函数的完备性。对于标量场，自旋 $j = 0$，只有一个极化态 $\sigma = 0$：
-\begin{equation}
-    \sum_{\sigma=0} u(\boldsymbol{q},\sigma)\, u^*(\boldsymbol{q},\sigma) = \frac{1}{2q^0}, \quad \sum_{\sigma=0} v(\boldsymbol{q},\sigma)\, v^*(\boldsymbol{q},\sigma) = \frac{1}{2q^0}
+若粒子是自共轭的（实标量场，不携带守恒荷），
+$a^{c\dagger}(\mathbf{p})=a^{\dagger}(\mathbf{p})$，
+场化为
+\begin{equation}\label{eq:real-scalar}
+  \phi(x)
+  = \frac{1}{(2\pi)^{3/2}}\int\frac{d^{3}p}{\sqrt{2p^{0}}}
+    \Bigl[a^{\dagger}(\mathbf{p})\,e^{-ip\cdot x}
+    + a(\mathbf{p})\,e^{ip\cdot x}\Bigr]\;.
 \end{equation}
+
+\paragraph{验证因果性.}
+对实标量场直接计算对易子：
+\begin{align}
+  [\phi(x),\,\phi(y)]
+  &= \frac{1}{(2\pi)^{3}}\int\frac{d^{3}p}{2p^{0}}\,
+    \Bigl[e^{ip\cdot(x-y)} - e^{-ip\cdot(x-y)}\Bigr]
+    \notag\\[3pt]
+  &\equiv i\Delta(x-y)\;.
+  \label{eq:scalar-commutator}
+\end{align}
+这正是$\pi=1$（$P=1$，$Q=0$）、
+$|\xi|^{2}=|\lambda|^{2}=1$
+代入一般公式(\ref{eq:comm-general})的直接结果。
+函数$i\Delta(x-y)$是一个Lorentz不变量%
+\footnote{
+  因为$\Delta(x-y)$仅依赖于不变间隔
+  $(x-y)^{2}=\eta_{\mu\nu}(x-y)^{\mu}(x-y)^{\nu}$。
+}，
+可以证明它在类空间隔$(x-y)^{2}<0$下恒为零。
+最直观的验证方式如下：
+\begin{itemize}
+  \item 类空间隔下，总可以找到一个Lorentz变换
+        将$x-y$反转为$y-x$%
+        \footnote{
+          精确地说：对于类空$x-y$，
+          存在$\Lambda\in SO^{+}(1,3)$使得
+          $\Lambda(x-y)=-(x-y)$。
+          例如可以选取在等时面上的
+          空间反射$\mathbf{x}-\mathbf{y}\to
+          -(\mathbf{x}-\mathbf{y})$。
+        }。
+        由于$\Delta_{+}(x-y)$是Lorentz标量，
+        在此变换下$\Delta_{+}(x-y)=\Delta_{+}(y-x)$；
+  \item 因此$i\Delta(x-y)
+        =\Delta_{+}(x-y)-\Delta_{+}(y-x)=0$。
+\end{itemize}
+
+
+
+
+\paragraph{复标量场.}
+若粒子携带守恒荷$q$（如电荷），
+则其反粒子不等于自身：$a^{c\dagger}\neq a^{\dagger}$。
+此时一般场(\ref{eq:scalar-field})中$a^{c\dagger}$
+产生反粒子，$a$湮灭粒子。
+场$\Psi$和$\Psi^{\dagger}$分别减少和增加系统的荷$q$：
+\[
+  [Q,\Psi(x)]=-q\,\Psi(x)\;,\qquad
+  [Q,\Psi^{\dagger}(x)]=+q\,\Psi^{\dagger}(x)\;.
+\]
+相互作用密度$\mathscr{H}(x)$中$\Psi$和$\Psi^{\dagger}$
+必须成对出现以保证$[Q,\mathscr{H}]=0$。
+因果律的验证完全平行于实标量情形，
+结论不变：自旋$0$携荷粒子仍是玻色子，
+场满足对易关系且满足Klein--Gordon方程。

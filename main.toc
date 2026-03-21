@@ -38,53 +38,41 @@
 \contentsline {section}{\numberline {5.1}自由场理论}{48}{section.5.1}%
 \contentsline {section}{\numberline {5.2}$\operatorname {Lorentz}$群的不可约表示}{54}{section.5.2}%
 \contentsline {section}{\numberline {5.3}正定质量粒子因果场\(\dagger \)}{58}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}因果标量场 }{61}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Weyl 场}{62}{subsection.5.3.2}%
-\contentsline {paragraph}{分立对称性：宇称破缺}{64}{paragraph*.7}%
-\contentsline {subsection}{\numberline {5.3.3}狄拉克形式体系 }{64}{subsection.5.3.3}%
-\contentsline {paragraph}{质量耦合与狄拉克方程}{65}{paragraph*.8}%
-\contentsline {paragraph}{Clifford 代数}{66}{paragraph*.9}%
-\contentsline {paragraph}{分立对称性的矩阵算符}{67}{paragraph*.10}%
-\contentsline {subsection}{\numberline {5.3.4}因果狄拉克场 }{68}{subsection.5.3.4}%
-\contentsline {subsection}{\numberline {5.3.5}因果矢量场 }{70}{subsection.5.3.5}%
-\contentsline {paragraph}{角动量加法}{70}{paragraph*.11}%
-\contentsline {paragraph}{$j=0$部分与横向条件}{71}{paragraph*.12}%
-\contentsline {paragraph}{无质量极限与规范不变性}{72}{paragraph*.13}%
-\contentsline {section}{\numberline {5.4}零质量粒子因果场\(\dagger \)}{73}{section.5.4}%
-\contentsline {chapter}{\numberline {6}相互作用理论}{77}{chapter.6}%
-\contentsline {section}{\numberline {6.1}费曼规则}{77}{section.6.1}%
-\contentsline {section}{\numberline {6.2}算符方法}{77}{section.6.2}%
-\contentsline {section}{\numberline {6.3}过渡到相互作用绘景：例子}{77}{section.6.3}%
-\contentsline {section}{\numberline {6.4}可观测量}{77}{section.6.4}%
-\contentsline {subsection}{\numberline {6.4.1}箱正规化}{77}{subsection.6.4.1}%
-\contentsline {subsection}{\numberline {6.4.2}速率:截面和衰变率}{78}{subsection.6.4.2}%
-\contentsline {subsection}{\numberline {6.4.3}末态的相空间积分}{80}{subsection.6.4.3}%
-\contentsline {section}{\numberline {6.5}物理例子与应用}{81}{section.6.5}%
-\contentsline {section}{\numberline {6.6}泛函方法}{81}{section.6.6}%
-\contentsline {subsection}{\numberline {6.6.1}波色子的路径积分}{81}{subsection.6.6.1}%
-\contentsline {subsection}{\numberline {6.6.2}费米子的路径积分}{81}{subsection.6.6.2}%
-\contentsline {chapter}{\numberline {7}电动力学基本过程}{82}{chapter.7}%
-\contentsline {part}{III\hspace {1em}散射振幅的解析理论}{83}{part.3}%
-\contentsline {chapter}{\numberline {8}公理化体系}{84}{chapter.8}%
-\contentsline {section}{\numberline {8.1}对称性}{84}{section.8.1}%
-\contentsline {section}{\numberline {8.2}渐近理论}{84}{section.8.2}%
-\contentsline {subsection}{\numberline {8.2.1}Haag 定理的启示与相互作用绘景的失效}{84}{subsection.8.2.1}%
-\contentsline {subsection}{\numberline {8.2.2}渐近条件和出入态}{84}{subsection.8.2.2}%
-\contentsline {subsection}{\numberline {8.2.3}LSZ 约化公式}{84}{subsection.8.2.3}%
-\contentsline {section}{\numberline {8.3}定极学}{84}{section.8.3}%
-\contentsline {section}{\numberline {8.4}传播子的精确结构}{84}{section.8.4}%
-\contentsline {subsection}{\numberline {8.4.1}质量重整化与场强重整化}{84}{subsection.8.4.1}%
-\contentsline {subsection}{\numberline {8.4.2}重整化电荷与 Ward 等式}{84}{subsection.8.4.2}%
-\contentsline {section}{\numberline {8.5}规范不变性}{84}{section.8.5}%
-\contentsline {subsection}{\numberline {8.5.1}K\"{a}ll\'{e}n-Lehmann 谱表示}{84}{subsection.8.5.1}%
-\contentsline {section}{\numberline {8.6}色散关系}{84}{section.8.6}%
-\contentsline {chapter}{\numberline {9}量子电动力学的辐射修正}{85}{chapter.9}%
-\contentsline {chapter}{\numberline {10}系统重整化理论}{86}{chapter.10}%
-\contentsline {chapter}{\numberline {11}有效理论}{87}{chapter.11}%
-\contentsline {section}{\numberline {11.1}Wilsonian 重整化群}{87}{section.11.1}%
-\contentsline {subsection}{\numberline {11.1.1}动量截断与模式积分}{87}{subsection.11.1.1}%
-\contentsline {subsection}{\numberline {11.1.2}相关算符、边缘算符与无关算符}{87}{subsection.11.1.2}%
-\contentsline {section}{\numberline {11.2}有效场论的构建原则}{87}{section.11.2}%
-\contentsline {subsection}{\numberline {11.2.1}算符乘积展开}{87}{subsection.11.2.1}%
-\contentsline {subsection}{\numberline {11.2.2}退耦定理}{87}{subsection.11.2.2}%
-\contentsline {subsection}{\numberline {11.2.3}匹配与高能自由度的积分}{87}{subsection.11.2.3}%
+\contentsline {section}{\numberline {5.4}零质量粒子因果场\(\dagger \)}{65}{section.5.4}%
+\contentsline {chapter}{\numberline {6}相互作用理论}{69}{chapter.6}%
+\contentsline {section}{\numberline {6.1}费曼规则}{69}{section.6.1}%
+\contentsline {section}{\numberline {6.2}算符方法}{69}{section.6.2}%
+\contentsline {section}{\numberline {6.3}过渡到相互作用绘景：例子}{69}{section.6.3}%
+\contentsline {section}{\numberline {6.4}可观测量}{69}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}箱正规化}{69}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}速率:截面和衰变率}{70}{subsection.6.4.2}%
+\contentsline {subsection}{\numberline {6.4.3}末态的相空间积分}{72}{subsection.6.4.3}%
+\contentsline {section}{\numberline {6.5}物理例子与应用}{73}{section.6.5}%
+\contentsline {section}{\numberline {6.6}泛函方法}{73}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}波色子的路径积分}{73}{subsection.6.6.1}%
+\contentsline {subsection}{\numberline {6.6.2}费米子的路径积分}{73}{subsection.6.6.2}%
+\contentsline {chapter}{\numberline {7}电动力学基本过程}{74}{chapter.7}%
+\contentsline {part}{III\hspace {1em}散射振幅的解析理论}{75}{part.3}%
+\contentsline {chapter}{\numberline {8}公理化体系}{76}{chapter.8}%
+\contentsline {section}{\numberline {8.1}对称性}{76}{section.8.1}%
+\contentsline {section}{\numberline {8.2}渐近理论}{76}{section.8.2}%
+\contentsline {subsection}{\numberline {8.2.1}Haag 定理的启示与相互作用绘景的失效}{76}{subsection.8.2.1}%
+\contentsline {subsection}{\numberline {8.2.2}渐近条件和出入态}{76}{subsection.8.2.2}%
+\contentsline {subsection}{\numberline {8.2.3}LSZ 约化公式}{76}{subsection.8.2.3}%
+\contentsline {section}{\numberline {8.3}定极学}{76}{section.8.3}%
+\contentsline {section}{\numberline {8.4}传播子的精确结构}{76}{section.8.4}%
+\contentsline {subsection}{\numberline {8.4.1}质量重整化与场强重整化}{76}{subsection.8.4.1}%
+\contentsline {subsection}{\numberline {8.4.2}重整化电荷与 Ward 等式}{76}{subsection.8.4.2}%
+\contentsline {section}{\numberline {8.5}规范不变性}{76}{section.8.5}%
+\contentsline {subsection}{\numberline {8.5.1}K\"{a}ll\'{e}n-Lehmann 谱表示}{76}{subsection.8.5.1}%
+\contentsline {section}{\numberline {8.6}色散关系}{76}{section.8.6}%
+\contentsline {chapter}{\numberline {9}量子电动力学的辐射修正}{77}{chapter.9}%
+\contentsline {chapter}{\numberline {10}系统重整化理论}{78}{chapter.10}%
+\contentsline {chapter}{\numberline {11}有效理论}{79}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Wilsonian 重整化群}{79}{section.11.1}%
+\contentsline {subsection}{\numberline {11.1.1}动量截断与模式积分}{79}{subsection.11.1.1}%
+\contentsline {subsection}{\numberline {11.1.2}相关算符、边缘算符与无关算符}{79}{subsection.11.1.2}%
+\contentsline {section}{\numberline {11.2}有效场论的构建原则}{79}{section.11.2}%
+\contentsline {subsection}{\numberline {11.2.1}算符乘积展开}{79}{subsection.11.2.1}%
+\contentsline {subsection}{\numberline {11.2.2}退耦定理}{79}{subsection.11.2.2}%
+\contentsline {subsection}{\numberline {11.2.3}匹配与高能自由度的积分}{79}{subsection.11.2.3}%
