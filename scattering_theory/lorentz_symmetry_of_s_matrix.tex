@@ -45,16 +45,17 @@
 
 \subsection{Lorentz对称性}
 \begin{center}
-    \color{blue}\textbf{GOAL：最重要的结果是$S$矩阵是$Lorentz$不变的,\\这个结果会对场论带来一些约束
+    \color{blue}\textbf{GOAL：最重要的结果是$S$矩阵是Lorentz不变的,\\这个结果会对场论带来一些约束
     $\to\left\{\begin{aligned}
     &\text{Boost 生成元的相互作用项 } W \text{ 矩阵元平滑} \\
     &\text{微观因果性}
 \end{aligned}\right.$} 
 \end{center}
- \color{blue}这也引出一个问题：是幺正性更重要还是$Lorentz$对称性更重要，这个问题也等价于是利$S$矩阵建立$QFT$还是利用路径积分建立$QFT$.\\利用$S$矩阵建立$qft$能得到显式的幺正性，可是在得到$Lorentz$对称性需要花费更多的力气去证明；同理利用路径积分建立$qft$能得到显式的$Lorentz$对称性，可是对于幺正性，据$S.Weinberg
+ \color{blue}这也引出一个问题：是幺正性更重要还是Lorentz对称性更重要，这个问题也等价于是利$S$矩阵建立$QFT$还是利用路径积分建立$QFT$.\\利用$S$矩阵建立$qft$能得到显式的幺正性，可是在得到Lorentz对称性需要花费更多的力气去证明；同理利用路径积分建立$qft$能得到显式的Lorentz对称性，可是对于幺正性，据$S.Weinberg
     $所讨论，唯一的办法是回到$S$矩阵.
-\normalcolor\vspace{0.5cm}
-\noindent
+\normalcolor\vspace{2ex}
+\vspace{2ex}
+\hrule\vspace{2ex}
 进入主题：自由态$\ket{\alpha}$在\text{Lorentz}变换$U_0(\Lambda,a)$作用下为：
 \[\begin{aligned}
              U_0(\Lambda,a)\Ket{\alpha}=
@@ -72,12 +73,11 @@
             \right]
             \ket{\Lambda p_1,\sigma_1',n_1;\,\Lambda p_2,\sigma_2',n_2;\cdots}
  \end{aligned}\]
-若存在\text{Lorentz}变换$U(\Lambda,a)$作用在“出、入”态，且这些态与自由态有相同的Poincar\'e变换形式,这便说明$S$矩阵是$Lorentz$不变的：\begin{equation}
+若存在\text{Lorentz}变换$U(\Lambda,a)$作用在“出、入”态，且这些态与自由态有相同的Poincar\'e变换形式,这便说明$S$矩阵是Lorentz不变的：\begin{equation}
     S_{\beta\alpha}=\braket{\beta;-|\alpha;+}=\braket{\beta;-|U^\dagger(\Lambda,a)U(\Lambda,a)|\alpha;+}
 \end{equation}
-\begin{importantformula}
-    可以等价的写为
-                \footnote{式中左边是独
+\begin{tcolorbox}[colback=white!5,colframe=black!45]
+    可以等价的写为\footnote{式中左边是独
                     立于$a^\mu$的，所以必须等于右边，并且除非四动量守恒，否则𝑆-矩阵为零;则对于任意的$\Lambda$和$a$，我们都有
                     \[
                     \left( p_1' + p_2' + \cdots - p_1' - p_2' - \cdots \right)=0\longrightarrow\sum p'_i=\sum p_i\]这便是$4-$动量守恒}
@@ -96,7 +96,7 @@
                                         &\quad\times S_{\Lambda p'_1,\bar{\sigma}'_1,n'_1;\Lambda p'_2,\bar{\sigma}'_2,n'_2;\cdots;\Lambda p_1,\bar{\sigma}_1,n_1;\Lambda p_2,\bar{\sigma}_2,n_2;\cdots} 
                                     \end{aligned}
                                 \end{equation}
-\end{importantformula}
+\end{tcolorbox}
 \noindent
 \color{blue}\text{值得注意的是:并不是所有的场论都是这样}\normalcolor,因为“出、入”态$\ket{\alpha;\pm}$并不是单粒子态直积得到；
 这些态在$U(\Lambda,a)$作用下也仅仅是形式上与自由态相同;利用绝热算符,“出、入”态在$U(\Lambda,a)$作用下可以写为：
@@ -117,11 +117,11 @@ H\,\Omega(\pm) &= \Omega(\pm) H_0 \\
 \end{aligned}
 \end{array}
 \end{equation}
-若一个场论满足上四式，则说明这个场论是$Lorentz$不变的。
+若一个场论满足上四式，则说明这个场论是Lorentz不变的。
 \begin{center}
-    \vspace{0.5cm}
-        \text{\color{red}\Large ***}\\
-    \vspace{0.5cm}
+    \vspace{2ex}
+        \text{\color{red}\Large ***}
+    \vspace{2ex}
 \end{center}
 仔细讨论一下这里；\color{blue}\text{在已知几乎所以的场论}\footnote{在$S.Weinberg$书中提到：例外是：拓扑扭结场的理论}\normalcolor,相互作用都是通过映入$V$来实现的，这并不对$\boldsymbol{P}$和$\boldsymbol{J}$\footnote{这里暗含了约束：
                                 $
@@ -234,15 +234,15 @@ H\,\Omega(\pm) &= \Omega(\pm) H_0 \\
                     }.
                     \]}
 ,\color{blue}还应该满足：$W$的矩阵元应该是能量的光滑函数，并且特定的没有形式为$\frac{1}{E_\alpha-E_\beta}$的奇点这一要
-求\normalcolor;现在证明满足上述条件，确实可以得到满足最后一式的$Lorentz$不变的条件$[\boldsymbol{K}_0,S]=0$。
+求\normalcolor;现在证明满足上述条件，确实可以得到满足最后一式的Lorentz不变的条件$[\boldsymbol{K}_0,S]=0$。
 \end{comment}
 
 
 
 \begin{center}
-    \vspace{0.5cm}
-   \color{black}\rule{3cm}{1pt}
-   \vspace{0.5cm}
+    \vspace{2ex}
+   \color{red}\Large ***
+   \vspace{2ex}
 \end{center}
 含有编时乘积的$S$矩阵为零
 \begin{equation}
@@ -250,15 +250,15 @@ H\,\Omega(\pm) &= \Omega(\pm) H_0 \\
 \end{equation}
 根据幺正性,
         $\braket{\beta|S |\alpha}=\braket{\beta|U_0^\dagger(\Lambda,a)SU_0(\Lambda,a)|\alpha}$
- 这很容易得到$S$-算符也是显然$Lorentz$不变的; 
+ 这很容易得到$S$-算符也是显然Lorentz不变的; 
 \begin{equation}
-    \text{幺正性}\implies U_0^\dagger(\Lambda,a)SU_0(\Lambda,a)=S\to  [U_0(\Lambda,a),S]=0   \implies\text{$Lorentz$对称性}  
+    \text{幺正性}\implies U_0^\dagger(\Lambda,a)SU_0(\Lambda,a)=S\to  [U_0(\Lambda,a),S]=0   \implies\text{Lorentz对称性}  
 \end{equation}
 自然的改写$V(t)$为三维空间的积分
 \begin{equation}
     V(t)=\int d^3x \mathscr{H}(\boldsymbol{x},t)
 \end{equation}\begin{itemize}
-    \item $S$算符的$Lorentz$不变性，$\mathscr{H}(\boldsymbol{x},t)$是标量：
+    \item $S$算符的Lorentz不变性，$\mathscr{H}(\boldsymbol{x},t)$是标量：
     \begin{equation}
         U_0(\Lambda,a)\mathscr{H}(x)U_0^{-1}(\Lambda,a)=\mathscr{H}(\Lambda x+a)
     \end{equation}
@@ -267,11 +267,11 @@ H\,\Omega(\pm) &= \Omega(\pm) H_0 \\
 \begin{equation}
     S_{\beta\alpha}=\braket{\beta|Te^{\left(-i\int d^4x\mathscr{H}(x)\right)}|\alpha}
 \end{equation}
-式子中除了编时算符，其他都是显然$Lorentz$不变的，现在来证明这一点,同时也能得到非平庸的结果(\textbf{微观因果性})
+式子中除了编时算符，其他都是显然Lorentz不变的，现在来证明这一点,同时也能得到非平庸的结果(\textbf{微观因果性})
 \begin{center}
-    \vspace{0.5cm}
+    \vspace{2ex}
         \text{\color{red}\Large ***}\\
-    \vspace{0.5cm}
+    \vspace{2ex}
 \end{center}
 
 

@@ -1,42 +1,35 @@
 \section{单粒子态}
-我们现在逐步构造庞加莱群的不可约表示。\\
-\noindent
-\\
- 我们已经找到了Poincar\'e群所有生成元的的代数关系,可以开始推导单粒子态的表示了\footnote{也就是单粒子态是Poincar\'e群的不可约表示,也称为诱导表示。};
+我们已经找到了Poincar\'e群所有生成元的的代数关系,可以开始推导单粒子态的表示\footnote{也就是单粒子态是Poincar\'e群的不可约表示,也称为诱导表示。};
 回想 \(\left[\mathscr{P}^\nu,\mathscr{P}^\mu\right]=0\)，四动量的对易关系意味着它们有共同的本征态。而且，由于 \(\mathscr{P}^0=\mathscr{H}\)，表明 \(\boldsymbol{p}\) 是一个守恒量。我们首先用 \(p^\mu\) 标记粒子本征态，即。
 \begin{equation}\label{4.7}
     \mathscr{P}^\mu\ket{p^\mu,\sigma}=p^\mu\ket{p^\mu,\sigma}
 \end{equation}
-这里,用 \(p^\mu\) 标记粒子隐含意味着我们已经部分约化了表示矩阵(例如，具有不同动量的粒子，或有质量与无质量粒子，不能相互变换)。\(\sigma\) 包括除动量以外的其他指标。\\
-\noindent
-\\
- 考虑粒子在非齐次洛伦兹变换下的变换:
-\[U(\Lambda,\,a)\ket{p^\mu,\sigma}=?\]
-这里，由于 \(U(\Lambda,\,a)=U(\Lambda)U(1,\,a)\)，因此分为：
+这里,用 \(p^\mu\) 标记粒子隐含意味着我们已经部分约化了表示矩阵\footnote{例如，具有不同动量的粒子，或正定质量与零质量粒子，不能相互变换}。\(\sigma\) 包括除动量以外的其他指标。
+\par
+\vspace{2ex}\noindent
+考虑粒子在非齐次洛伦兹变换下的变换:
+\[U(\Lambda,\;\;a)\ket{p^\mu,\sigma}=?\]
+这里，由于 \(U(\Lambda,\;\;a)=U(\Lambda)U(1,\;\;a)\)，因此分为：
 \begin{itemize}
     \item 纯时空平移：
-    $U(1,\,a)\ket{p^\mu,\sigma}=e^{-ip^\mu\,a_\mu}\ket{p^\mu,\sigma}$
+    $U(1,\;\;a)\ket{p^\mu,\sigma}=e^{-ip^\mu\;\;a_\mu}\ket{p^\mu,\sigma}$
     此变换是trivial的。
     \item 其次部分的变换:利用计算技巧：$\mathscr{P}^\mu U(\Lambda)\ket{p^\mu,\sigma}=\underbrace{U(\Lambda)U^{-1}(\Lambda)}_{\mathbf{1}}\mathscr{P}^\mu U(\Lambda)\ket{p^\mu,\sigma}
-    =\Lambda^\mu_{\,\nu}p^\nu U(\Lambda)\ket{p^\mu,\sigma}$
-    可以看出 \(U(\Lambda)\ket{p^\mu,\sigma}\) 的本征态 是\(\ket{\Lambda^\mu_{\,\nu}p^\nu,\sigma}\),所以：
+    =\Lambda^\mu_{\;\;\nu}p^\nu U(\Lambda)\ket{p^\mu,\sigma}$
+    可以看出 \(U(\Lambda)\ket{p^\mu,\sigma}\) 的本征态 是\(\ket{\Lambda^\mu_{\;\;\nu}p^\nu,\sigma}\),所以：
     \begin{equation}
-        U(\Lambda)\ket{p^\mu,\sigma}=\sum_{\sigma} C_{\sigma \sigma'}(\Lambda,p)\ket{(\Lambda p)^\mu,\sigma}
+        U(\Lambda)\ket{p^\mu,\sigma}=\sum_{\bar{\sigma}} C_{ \bar{\sigma}\sigma}(\Lambda,p)\ket{(\Lambda p)^\mu,\bar{\sigma}}
     \end{equation}
 \end{itemize}
-\noindent
-\\
-问题现在归结为：如何找出表示矩阵 \(C_{a\sigma,n}(\Lambda,p)\)的具体形式；考虑\text{Lorentz}\footnote{约定俗称,指固有时正时的Lorentz变换}变换下的不变量只有$p^2=\eta_{\mu\nu}p^\mu p^\nu$,以及$p^2\geqslant0$时$p^0$的符号；\\所以我们选择一组标准动量${k^\mu}$\footnote{对于SU(2)，也就是有质量的粒子，是它们的静止系；对于ISO(2),也就是无质量粒子，不存在静止参考系，所以我们选择那些使得纵向极化消失的坐标系。}
+问题现在归结为：如何找出表示矩阵 \(C_{\sigma\bar{\sigma}}(\Lambda,p)\)的具体形式；考虑\text{Lorentz}变换下的不变量只有$p^2=\eta_{\mu\nu}p^\mu p^\nu$,以及$p^2\geqslant0$时$p^0$的符号；所以我们选择一组标准动量${k^\mu}$\footnote{对于SU(2)，也就是正定质量的粒子，是它们的静止系；对于ISO(2),也就是零质量粒子，不存在静止参考系，所以我们选择那些使得纵向极化消失的坐标系。}
 并且任意系中的动量可以通过一个标准\text{boost}得到${k^\mu}$，即：
 \begin{equation}
-    p^\mu=L^\mu_{\,\nu}(p)k^\nu
+    p^\mu=L^\mu_{\;\;\nu}(p)k^\nu
 \end{equation}
 所以，动量为$p^\mu$的本征态写为：
 \begin{equation}\label{4.10}
     \ket{p^\mu,\sigma}=N(p)U\left\{L(p)\right\}\ket{k^\mu,\sigma}
 \end{equation}
-\noindent
-\\
 用任意\text{Lorentz}变换，作用到(\refeq{4.10})上,得到：
 \begin{equation}\label{4.11}
       \begin{aligned}
@@ -47,16 +40,16 @@
     \end{aligned}
 \end{equation}
 
-\begin{tcolorbox}[colback=white!5,colframe=black!55,title=Wigner的小群]
+\begin{tcolorbox}[colback=white!5,colframe=black!45]
     上面的方程涉及子群 \(W(\Lambda,p) = L^{-1}(p)\Lambda L(k)\)(Wigner小群)。
     \begin{itemize}
         \item \textbf{保持$k^\mu$不变的代数关系}
                $$
                     \begin{aligned}
                         W(\Lambda&,p)= L^{-1}(\Lambda p)\Lambda L(p)\\
-                        \Rightarrow &W(\Lambda,p)^\mu_{\,\nu}k^\nu= \left[L^{-1}(\Lambda p)\Lambda L(p)\right]^\mu_{\,\nu}k^\nu\\
-                        &=\left[L^{-1}(\Lambda p)\Lambda \right]^\mu_{\,\nu}p^\nu\\
-                        &=\left[L^{-1}(\Lambda p)\right]^\mu_{\,\nu}\Lambda^\mu_{\,\nu}p^\nu\\
+                        \Rightarrow &W(\Lambda,p)^\mu_{\;\;\nu}k^\nu= \left[L^{-1}(\Lambda p)\Lambda L(p)\right]^\mu_{\;\;\nu}k^\nu\\
+                        &=\left[L^{-1}(\Lambda p)\Lambda \right]^\mu_{\;\;\nu}p^\nu\\
+                        &=\left[L^{-1}(\Lambda p)\right]^\mu_{\;\;\nu}\Lambda^\mu_{\;\;\nu}p^\nu\\
                         &=k^\nu
                     \end{aligned}
                     \;\longleftrightarrow \qquad \;
@@ -76,26 +69,26 @@
                     }
                 $$
         $\implies$所以，任意小群作用在标准动量的本质态$\ket{k^\mu,\sigma}$是：
-                    $U\left\{W(\Lambda,p)\right\}\ket{k^\mu,a}=\sum_{\sigma'}D_{\sigma \sigma'}\left\{W(\Lambda,p)\right\}\ket{k^\mu,\sigma}$
+                    $U\left\{W(\Lambda,p)\right\}\ket{k^\mu,a}=\sum_{\bar{\sigma}}D_{\bar{\sigma}\sigma}\left\{W(\Lambda,p)\right\}\ket{k^\mu,\sigma}$
         系数矩阵是小群的一个表示。
         \item \textbf{小群的同态关系}
-                $$ D_{\sigma \sigma'}(\bar{W},W)=\sum_{\sigma'}D_{\sigma'' \sigma'}(\bar{W})D_{\sigma \sigma'}(W)$$
+                $$ D_{\bar{\sigma}\sigma }(\bar{W},W)=\sum_{\bar{\sigma}}D_{\bar{\sigma} \bar{\sigma}'}(\bar{W})D_{\bar{\sigma}'\sigma }(W)$$
     \end{itemize}
 \end{tcolorbox}
-    回到(\refeq{4.11}),利用小群的表示矩阵\footnote{这里的小群就是使得标准动量不变的}：
+回到(\refeq{4.11}),利用小群的表示矩阵\footnote{这里的小群就是使得标准动量不变的}：
             \[    \begin{aligned}
                     U(\Lambda)\ket{p^\mu,\sigma}
                     &=N(p)U\left\{L(\Lambda p)\right\}U\left\{W(\Lambda,p)\right\}\ket{k^\mu,\sigma}\\
-                    &=\sum_{\sigma'}D_{\sigma \sigma'}\left\{W(\Lambda,p)\right\}N(p)U\left\{L(\Lambda p)\right\}\underbrace{\ket{k^\mu,\sigma'}}_{\text{这里由(\refeq{4.10})变换得到}}\\
-                    &=\sum_{\sigma'}D_{\sigma \sigma'}\left\{W(\Lambda,p)\right\}N(p)U\left\{L(\Lambda p)\right\}\frac{U^{-1}\left\{L(\Lambda p)\right\}}{N(\Lambda p)}\ket{(\Lambda p)^\mu,\sigma'}\\
-                    &=\frac{N(p)}{N(\Lambda p)}\sum_{\sigma'}D_{\sigma \sigma'}\left\{W(\Lambda,p)\right\}\ket{(\Lambda p)^\mu,\sigma'}
+                    &=\sum_{\bar{\sigma}}D_{\bar{\sigma}\sigma}\left\{W(\Lambda,p)\right\}N(p)U\left\{L(\Lambda p)\right\}\underbrace{\ket{k^\mu,\bar{\sigma}}}_{\text{这里由(\refeq{4.10})变换得到}}\\
+                    &=\sum_{\bar{\sigma}}D_{\bar{\sigma}\sigma}\left\{W(\Lambda,p)\right\}N(p)U\left\{L(\Lambda p)\right\}\frac{U^{-1}\left\{L(\Lambda p)\right\}}{N(\Lambda p)}\ket{(\Lambda p)^\mu,\bar{\sigma}}\\
+                    &=\frac{N(p)}{N(\Lambda p)}\sum_{\bar{\sigma}}D_{\bar{\sigma}\sigma}\left\{W(\Lambda,p)\right\}\ket{(\Lambda p)^\mu,\bar{\sigma}}
             \end{aligned}
             \]
     归一化系数的选择:$$N(p)=\sqrt{\frac{k^0}{p^0}}$$
 
 $\implies$最终得到：
     \begin{equation}
-        U(\Lambda)\ket{p^\mu,\sigma}=\frac{N(p)}{N(\Lambda p)}\sum_{\sigma'}D_{\sigma \sigma'}\underbrace{\left\{W(\Lambda,p)\right\}}_{\text{类讨论小群的种类即可,参考}\autoref{1}}\ket{(\Lambda p)^\mu,\sigma'}
+        U(\Lambda)\ket{p^\mu,\sigma}=\frac{N(p)}{N(\Lambda p)}\sum_{\bar{\sigma}}D_{\bar{\sigma}\sigma}\underbrace{\left\{W(\Lambda,p)\right\}}_{\text{讨论小群的种类参考}\autoref{1}}\ket{(\Lambda p)^\mu,\bar{\sigma}}
     \end{equation}
 
                 \usetikzlibrary{arrows.meta}
@@ -103,7 +96,7 @@ $\implies$最终得到：
                 \centering
                 \begin{tikzpicture}[scale=2.5]
                 % ===== 坐标轴 =====
-                \draw[dashed] (-2,0) -- (2,0) node[right] {$p_i$};
+                \draw[dashed] (-2,0) -- (2,0) node[right] {$p_3$};
                 \draw[dashed] (0,-2) -- (0,2) node[above] {$p_0$};
 
                 % 原点
@@ -137,8 +130,8 @@ $\implies$最终得到：
 
                 \node at (1.6,0.4) {$\mathcal O(0,0,0,m)$};
 
-                \node at (0.3,0.5) {$\mathcal O(1,0,0,1)$};
-                \node at (-0.2,-0.7) {$\mathcal O(-1,0,0,1)$};
+                \node at (0.3,0.5) {$\mathcal O(\kappa,0,0,\kappa)$};
+                \node at (-0.2,-0.7) {$\mathcal O(-\kappa,0,0,\kappa)$};
 
                 \end{tikzpicture}
                 \caption{Wigner粒子分类的轨道图}
@@ -180,234 +173,433 @@ $\implies$最终得到：
 
             \end{tabular}
 \end{center}
+\begin{center}
+    \vspace{2ex}
+\Large ***
+\vspace{1ex}
+\end{center}
+深入探讨具体的小群之前，需要说明Wigner 小群严格来说是定义在 Poincaré 群中的.
+
+Poincaré 群的元素通常记为二元组 $(\Lambda, a)$，其中 $\Lambda$ 是齐次 Lorentz 变换，$a$ 是时空平移。当该群算符作用在四维动量本征态 $|p, \sigma\rangle$ 上时：
+\begin{itemize}
+    \item \textbf{纯平移 $a$ 只提供相位}：$U(1, a)|p, \sigma\rangle = e^{-ip \cdot a}|p, \sigma\rangle$
+    \item \textbf{Lorentz 变换改变动量}：$p \mapsto \Lambda p$
+\end{itemize}
+\vspace{2ex}
+Wigner 小群\footnote{严格意义上是对某个标准动量 $k$ 的稳定子群}定义为所有不改变该标准动量的 Poincaré 变换的集合：
+\begin{equation}
+    \boxed{W_k \equiv \{(\Lambda, a) \in \mathbb{P} \mid \Lambda k = k\}}
+\end{equation}
+请注意，在这个限制条件中\textbf{只出现了 $\Lambda k = k$}。这是因为时空平移 $a$ 根本不改变动量的本征值（它只改变相位）。这意味着，对于\emph{任意}的时空平移 $a$，元素 $(\mathbb{I}, a)$ 都天然属于这个稳定子群。
+\vspace{2ex}
+\\
+因此，这个真正的稳定子群 $W_k$ 在代数结构上表现为半直积：
+\begin{equation}\label{total_lorentz_group}
+    \boxed{W_k \cong \mathbb{R}^{1,3} \rtimes \mathbb{H}_k, \qquad \text{其中} \quad \mathbb{H}_k \equiv \{\Lambda \in SO(1,3)^\uparrow \mid \Lambda k = k\}}
+\end{equation}
+也就是说：
+\begin{tcolorbox}[colback=white!5,colframe=black!45]
+    \begin{center}
+    \textbf{Poincaré 的小群 $\mathbb{P}_k$ = 全体时空平移 $\mathbb{R}^{1,3}$ + 保持 $k$ 不变的 Lorentz 子群 $\mathbb{H}_k$。}
+\end{center}
+\end{tcolorbox}
+\vspace{2ex}
+为什么在后续的物理计算中，只谈论 $\mathbb{H}_k$（如 $SO(3)$ 或 $ISO(2)$）呢？这是因为在构造粒子的物理态时，平移部分 $\mathbb{R}^{1,3}$ 的作用已经被剥离出来，用于给出时空的平面波演化因子 $e^{-ip\cdot x}$。平移操作是平凡的，绝对不会导致粒子内部自旋/极化指标 $\sigma$ 的混合.真正能把态的内部指标 $\sigma$ 混合起来的，只有非平凡的 Lorentz 稳定子 $\mathbb{H}_k$.
+
+
+
 \newpage
 \subsection{正定质量粒子\(\dagger\)}
-
-
-正定质量粒子（$p^2 = m^2 > 0$，$p^0 > 0$）的 Wigner 小群是三维旋转群 $SO(3)$，而为了容纳半整数自旋，必须使用其覆盖群 $SU(2)$。
-
-在诱导表示公式 (3.13) 中，单粒子态的变换规律为：
+正定质量粒子（$p^2 = m^2 > 0$，$p^0 > 0$）的标准动量是$k
+^\mu=(m,0,0,0)$,保持空间旋转不变的小群是三维旋转群$SO(3)$；也就是Wigner 小群是三维旋转群 ；而为了容纳半整数自旋，必须使用其万有覆盖群 $SU(2)$，单粒子态的变换是：
 \begin{equation}
-    U(\Lambda)|\mathbf{p}, \sigma\rangle = \sqrt{\frac{(\Lambda p)^0}{p^0}} \sum_{\sigma'} D^{(j)}_{\sigma'\sigma}\{W(\Lambda, p)\}\, |(\Lambda\mathbf{p}), \sigma'\rangle
+U(\Lambda)|p^\mu,\sigma\rangle
+= \sqrt{\frac{(\Lambda p)^0}{p^0}}\;\;
+\sum_{\bar{\sigma}} D^{(j)}_{\bar{\sigma}\sigma}\{W(\Lambda,p)\}\;\;
+|(\Lambda p)^\mu,\bar{\sigma}\rangle
 \end{equation}
-其中 $W(\Lambda, p) = L^{-1}(\Lambda p)\Lambda L(p)$ 是 Wigner 旋转（一个纯粹的三维空间旋转），而 $D^{(j)}_{\sigma'\sigma}$ 是 $SU(2)$ 的 $(2j+1)$ 维不可约表示矩阵。
-
-因此，构造有质量粒子态的全部问题归结为：\textbf{找出 $SU(2)$ 的所有有限维不可约表示}。下面利用 Lie 代数方法系统地完成这一任务。
-
-\subsubsection*{升降算符与本征值谱}
-
-$SU(2)$ 的 Lie 代数由三个生成元 $J_1, J_2, J_3$ 构成，满足 $[J_i, J_j] = i\epsilon_{ijk}J_k$。我们选择 $J_3$ 为对角生成元（这总是可以做到的，因为至少可以通过相似变换使一个生成元对角化），并引入升降算符：
+其中 $W(\Lambda,p) = L^{-1}(\Lambda p)\;\;\Lambda\;\;L(p)$ 是 Wigner 旋转——一个纯粹的三维空间旋转，而 $D^{(j)}_{\bar{\sigma}\sigma}$ 是 $SU(2)$ 的 $(2j+1)$ 维不可约表示矩阵。因此，构造正定质量粒子态的全部问题归结为：\textbf{找出 $SU(2)$ 的所有有限维不可约表示}。下面利用 Lie 代数方法系统地完成这一任务。
+\begin{center}\vspace{2ex}
+\large$SU(2)$ 代数
+\vspace{2ex}\end{center}
+$SU(2)$ 的 Lie 代数由三个生成元 $J_1, J_2, J_3$ 构成，满足
 \begin{equation}
-    J_+ = \frac{1}{\sqrt{2}}(J_1 + iJ_2), \quad J_- = \frac{1}{\sqrt{2}}(J_1 - iJ_2)
+[J_i, J_j] = i\epsilon_{ijk}\;\;J_k
 \end{equation}
-利用 $[J_i, J_j] = i\epsilon_{ijk}J_k$ 可以推导出升降算符满足的对易关系：
+其中$SU(2)$包含一个Casimir算符$\pmb{J}^2$，它与所有生成元对易，以及cartan算符$J_3$，它与 $J_1, J_2$ ;且它们是对易的；
 \begin{equation}
-    [J_3, J_\pm] = \pm J_\pm, \quad [J_+, J_-] = J_3
+    [\pmb{J}^2,J_3]=0
 \end{equation}
-
-第一个关系 $[J_3, J_\pm] = \pm J_\pm$ 揭示了升降算符名字的来历。设 $|j, \sigma\rangle$ 是 $J_3$ 的本征态，本征值为 $\sigma$（即 $J_3|j,\sigma\rangle = \sigma|j,\sigma\rangle$），那么 $J_\pm|j,\sigma\rangle$ 仍然是 $J_3$ 的本征态，但本征值变成了 $\sigma \pm 1$：
+这是重要的，它们张开了一个完备的Hilbert空间，可以标记本征态为$\ket{a,b}$,有本征关系：
+\begin{subequations}
+    \begin{align}
+        &\pmb{J}^2\ket{b,m}=a\ket{b,m}\\
+        &J_3\ket{b,m}=m\ket{b,m}
+    \end{align}
+\end{subequations}
+利用$SU(2)$,可以定义一组新的算符：
 \begin{equation}
-    J_3(J_\pm|j,\sigma\rangle) = J_\pm J_3|j,\sigma\rangle + [J_3, J_\pm]|j,\sigma\rangle = \sigma J_\pm|j,\sigma\rangle \pm J_\pm|j,\sigma\rangle = (\sigma \pm 1)(J_\pm|j,\sigma\rangle)
+J_{\pm} = J_1 \pm iJ_2
 \end{equation}
-$J_+$ 将 $J_3$ 的本征值提高 $1$，$J_-$ 将其降低 $1$。
-
-由于我们讨论的是有限维表示（表示空间的维度有限，对应的线性独立本征向量个数有限），升降过程不能无限进行。必须存在一个最大本征值 $j$ 和一个最小本征值，使得：
+这组算符满足：
 \begin{equation}
-    J_+|j, j\rangle = 0, \quad J_-|j, -j\rangle = 0
+[\pmb{J}^2, J_{\pm}]=0\;\;,\qquad
+[J_3, J_{\pm}] = \pm J_{\pm}\;\;,\qquad
+[J_+, J_-] = 2J_3
 \end{equation}
-
-从 $|j, j\rangle$ 出发反复作用 $J_-$，经过有限步后到达 $|j, -j\rangle$。整个过程产生的本征值序列为：
+\par
+考虑代数关系：
 \begin{equation}
-    j, \; j-1, \; j-2, \; \ldots, \; -j+1, \; -j
+    \begin{aligned}
+        J_3\;\;J_\pm\ket{b,m}=&\left(J_\pm J_3\pm J_\pm\right)\ket{b,m}\\
+        &= (m \pm 1)\;\;J_\pm\ket{b,m}
+    \end{aligned}
 \end{equation}
-共 $2j+1$ 个值。为使序列终止于 $-j$，必须有 $2j$ 为非负整数，因此 $j$ 只能取 $0, 1/2, 1, 3/2, 2, \ldots$
-
-\subsubsection*{Casimir 算符与表示的标记}
-
-$SU(2)$ 恰好有一个 Casimir 算符（即与所有生成元都对易的算符）：
+可以看到,$J_{\pm}\Ket{b,m}$也是$J_3$的本征态。本征值被提升或降低了1。可以得到代数关系：
 \begin{equation}
-    \mathbf{J}^2 = J_1^2 + J_2^2 + J_3^2
+    J_\pm\ket{b,m} =constant \ket{b,m \pm 1}
 \end{equation}
-可以验证 $[\mathbf{J}^2, J_i] = 0$（对任意 $i$）。根据 Schur 引理，在一个不可约表示中，Casimir 算符必须正比于单位算符。
-
-将 $\mathbf{J}^2$ 用升降算符重写为 $\mathbf{J}^2 = J_+J_- + J_-J_+ + J_3^2$，并将其作用于 $|j, \sigma\rangle$（利用升降算符的具体作用结果），经过直接计算可以得到：
+所以算符$J_{\pm}$被称为升降算符。在$SU(2)$的有限维\footnote{具体表现在Hilbert空间中的范数正定}表示中，m应该是一个有限的值，应当有上界和下界,我们约定上界为$m_{max}$下界为$b_{min}$,可以断定代数关系：
+\begin{subequations}
+    \begin{align}
+        &J_+\ket{b,m_{max}}=0\\
+        &J_-\ket{b,m_{min}}=0
+    \end{align}
+\end{subequations}
+对第一式作用$J_-$，对第二式作用$J_+$；可以得到：
 \begin{equation}
-    \mathbf{J}^2 |j, \sigma\rangle = j(j+1)|j, \sigma\rangle
+    \begin{aligned}
+    0=&J_-\;\;J_+\ket{b,m_{max}}\\
+    =& \left(\pmb{J}^2 - J_3^2 - J_3\right)\ket{b,m_{max}}\\  
+    =& \left(a - m_{max}^2 - m_{max}\right)\ket{b,m_{max}}  
+    \end{aligned}
+    \\
+    \begin{aligned}
+        0=&J_+\;\;J_-\ket{b,m_{min}}\\
+        =& \left(\pmb{J}^2 - J_3^2 +J_3\right)\ket{b,m_{min}}\\  
+        =& \left(a - m_{min}^2 + m_{min}\right)\ket{b,m_{min}}  
+    \end{aligned}
 \end{equation}
-Casimir 算符的本征值 $j(j+1)$ 对于给定表示中的所有态 $|j, \sigma\rangle$（$\sigma = -j, \ldots, +j$）都相同。因此 $j$ 唯一地标记了 $SU(2)$ 的不可约表示。
-
-\subsubsection*{低维不可约表示的显式形式}
-
-\textbf{$j = 0$（一维表示，标量）：}
-
-表示空间维度为 $2 \times 0 + 1 = 1$。所有生成元在这个空间中只能表示为 $1\times 1$ 的零矩阵 $J_i = 0$。群元 $U = e^{i\theta_i J_i} = e^0 = 1$。在此表示下，Lorentz 变换对态不产生任何作用——这就是自旋为 $0$ 的粒子（标量粒子）。
-
-\textbf{$j = 1/2$（二维表示，旋量）：}
-
-表示空间维度为 $2 \times 1/2 + 1 = 2$。$J_3$ 的本征值为 $+1/2$ 和 $-1/2$，对应本征态 $|1/2, +1/2\rangle = \binom{1}{0}$ 和 $|1/2, -1/2\rangle = \binom{0}{1}$。
-
-生成元为 $J_i = \frac{1}{2}\sigma_i$（泡利矩阵的一半），这正是我们在第一轮中从 $SU(2)$ 的定义条件推导出的结果。群元 $U = e^{i\boldsymbol{\theta}\cdot\boldsymbol{\sigma}/2}$ 是 $2\times 2$ 幺正矩阵——它作用于二分量旋量。
-
-这就是自旋 $1/2$ 粒子（如电子、质子、中子）的态空间。旋转 $2\pi$ 后 $U(2\pi) = -I$，态矢获得一个负号——这是半整数自旋的标志性特征。
-
-\textbf{$j = 1$（三维表示，矢量）：}
-
-表示空间维度为 $2 \times 1 + 1 = 3$。$J_3$ 的本征值为 $+1, 0, -1$，对应三个本征态。生成元为 $3\times 3$ 矩阵：
+解出$a$，得到；
+\[\begin{aligned}
+    &a=m_{max}^2 + m_{max}\\
+    &a=m_{min}^2 - m_{min}
+\end{aligned}\]
+为了使是一个确定的值，必须满足$m_{max}^2 + m_{max} = m_{min}^2 - m_{min}$，成立的条件(同时将b重新约定为j)是
 \begin{equation}
-    J_1 = \frac{1}{\sqrt{2}}\begin{pmatrix} 0&1&0\\1&0&1\\0&1&0 \end{pmatrix}, \quad
-    J_2 = \frac{1}{\sqrt{2}}\begin{pmatrix} 0&-i&0\\i&0&-i\\0&i&0 \end{pmatrix}, \quad
-    J_3 = \begin{pmatrix} 1&0&0\\0&0&0\\0&0&-1 \end{pmatrix}
+    m_{max} = -m_{min} \equiv j
 \end{equation}
-
-这些生成元满足与 $SO(3)$ 的 $3\times 3$ 生成元相同的 Lie 代数——这正是因为 $SU(2)$ 的 $j=1$ 表示等价于 $SO(3)$ 的定义表示（矢量表示）。自旋为 $1$ 的粒子（如光子、$W^\pm$、$Z^0$ 玻色子）在静止系中有三个极化态。
-
-\subsubsection*{单粒子态的完整标记}
-
-综合 Wigner 诱导表示框架与 $SU(2)$ 的不可约表示理论，一个有质量单粒子态由以下量子数完整标记：
+因此，$J_3$ (同时将m重新约定为$\sigma$)的本征值序列为 
 \begin{equation}
-    |\mathbf{p}, \sigma\rangle, \quad \text{其中}\; \sigma = -j, -j+1, \ldots, +j
+    \sigma=j, j-1, j-2, \ldots, -j+1, -j。
 \end{equation}
-\begin{itemize}
-    \item $\mathbf{p}$：粒子的三维动量（连续量子数）。
-    \item $j$：粒子的自旋（Poincaré 群第二个 Casimir 算符 $W_\mu W^\mu$ 的本征值决定），取非负整数或半整数 $j = 0, 1/2, 1, 3/2, \ldots$
-    \item $\sigma$：自旋第三分量（$J_3$ 的本征值），取 $2j+1$ 个值。
-\end{itemize}
-
-粒子在一般 Lorentz 变换 $\Lambda$ 下的态变换为：
+由于 $m_{max} - m_{min} = 2j$ 必须是非负整数，得到 ：
 \begin{equation}
-    U(\Lambda)|\mathbf{p}, \sigma\rangle = \sqrt{\frac{(\Lambda p)^0}{p^0}} \sum_{\sigma'=-j}^{+j} D^{(j)}_{\sigma'\sigma}\{W(\Lambda, p)\}\, |(\Lambda\mathbf{p}), \sigma'\rangle
+    j = 0, \frac{1}{2}, 1, \frac{3}{2}, \ldots
 \end{equation}
-其中 $D^{(j)}_{\sigma'\sigma}$ 是 $SU(2)$ 自旋 $j$ 表示的 $(2j+1)\times(2j+1)$ 旋转矩阵，$W(\Lambda, p)$ 是 Wigner 旋转。
-
-这就是有质量单粒子态的完整数学描述。关键的物理图像是：粒子的动量在 Lorentz 变换下改变（$\mathbf{p} \to \Lambda\mathbf{p}$），而自旋态在 $2j+1$ 维内部空间中进行"旋转"混合——这种混合由 Wigner 旋转通过 $SU(2)$ 表示矩阵来实现。
-
-\subsection{零质量粒子\(\dagger\)}
-
-对于无质量粒子（$p^\mu p_\mu = 0$，$p^0 > 0$），不存在静止参考系——粒子在任何惯性系中都以光速运动。这意味着我们不能像有质量粒子那样选取静止系四动量 $k^\mu = (m, \mathbf{0})$ 作为标准动量。
-
-标准动量的选取改为沿 $z$ 轴传播的光子动量：
-\begin{equation}
-    k^\mu = (\kappa, 0, 0, \kappa)
-\end{equation}
-其中 $\kappa > 0$ 是一个任意的正能量参数。Wigner 小群由所有保持这个 $k^\mu$ 不变的 Lorentz 变换构成。
-
-\subsubsection*{小群的确定：哪些 Lorentz 变换保持 $k^\mu$ 不变？}
-
-我们需要找到所有满足 $W^\mu_{\;\nu} k^\nu = k^\mu$ 的固有正时 Lorentz 变换 $W$。
-
-\textbf{第一类：绕 $z$ 轴的旋转 $R_z(\theta)$}
-
-标准动量 $k^\mu = (\kappa, 0, 0, \kappa)$ 没有 $x, y$ 分量。绕 $z$ 轴旋转只混合 $x$ 和 $y$ 分量，对 $t$ 和 $z$ 分量无影响。因此 $R_z(\theta) k = k$ 对任意 $\theta$ 成立。这给出了小群的一个 $SO(2)$ 子群，由单参数 $\theta$ 描述。
-
-\textbf{第二类：两个"异常"变换}
-
-除了绕 $z$ 轴的旋转之外，还存在两个额外的保持 $k^\mu$ 不变的 Lorentz 变换。它们的物理图像不如旋转那么直观——它们是 Boost 和旋转的特定组合。
-
-为了系统地找到这些变换，我们考虑无穷小情况。设 $W \approx I + \omega$，其中 $\omega^{\mu\nu}$ 是反对称的无穷小参数。条件 $W k = k$ 要求 $\omega^{\mu}_{\;\nu} k^\nu = 0$，即：
-\begin{equation}
-    \omega^{\mu}_{\;\nu} k^\nu = \omega^{\mu}_{\;0} \kappa + \omega^{\mu}_{\;3} \kappa = (\omega^{\mu}_{\;0} + \omega^{\mu}_{\;3})\kappa = 0
-\end{equation}
-这给出约束 $\omega^{\mu}_{\;0} = -\omega^{\mu}_{\;3}$。
-
-利用 $\omega_{\mu\nu}$ 的反对称性（$\omega_{\mu\nu} = -\omega_{\nu\mu}$），独立的自由参数可以选取为三个：
-\begin{itemize}
-    \item $\omega_{12} = -\omega_{21}$：对应绕 $z$ 轴的旋转（即 $R_z(\theta)$），生成元为 $J_3$。
-    \item $\omega_{20} + \omega_{23} = 0$ 对应的组合：定义生成元 $\Pi_1 = K_1 - J_2$（即沿 $x$ 方向的 Boost 减去绕 $y$ 轴的旋转）。
-    \item $\omega_{10} + \omega_{13} = 0$ 对应的组合：定义生成元 $\Pi_2 = K_2 + J_1$（即沿 $y$ 方向的 Boost 加上绕 $x$ 轴的旋转）。
-\end{itemize}
-
-\subsubsection*{$ISO(2)$ 的 Lie 代数}
-
-利用 Lorentz 群的对易关系（式 (3.7a)--(3.7g)），可以直接计算这三个生成元 $J_3, \Pi_1, \Pi_2$ 之间的对易关系：
+j的取值代表了$SU(2)$的有限维表示：
 \begin{align}
-    [J_3, \Pi_1] &= [J_3, K_1 - J_2] = iK_2 + iJ_1 = i\Pi_2 \\
-    [J_3, \Pi_2] &= [J_3, K_2 + J_1] = -iK_1 + iJ_2 = -i\Pi_1 \\
-    [\Pi_1, \Pi_2] &= [K_1 - J_2, K_2 + J_1] = [K_1, K_2] + [K_1, J_1] - [J_2, K_2] - [J_2, J_1]
+& j = 0,   && \sigma = 0,                        && j(j+1) = 0 \nonumber \\
+& j = 1/2, && \sigma = 1/2, -1/2,                && j(j+1) = 3/4 \nonumber \\
+& j = 1,   && \sigma = 1, 0, -1,                 && j(j+1) = 2 \nonumber \\
+& j = 3/2, && \sigma = 3/2, 1/2, -1/2, -3/2, \quad && j(j+1) = 15/4 \nonumber \\
+& \dots    &&                               && 
 \end{align}
-逐项利用 Lorentz 代数（$[K_i, K_j] = -i\epsilon_{ijk}J_k$，$[J_i, K_j] = i\epsilon_{ijk}K_k$，$[J_i, J_j] = i\epsilon_{ijk}J_k$）：
+在讨论$SU(2)$的低维表示前，还需要找出$J_\pm$的本征值，通过计算可以得到：
 \begin{equation}
-    [K_1, K_2] = -iJ_3, \quad [K_1, J_1] = 0, \quad [J_2, K_2] = 0, \quad [J_2, J_1] = -iJ_3
+    \begin{aligned}
+        \braket{j,\sigma|J_-J_+|j,\sigma}=&\braket{j,\sigma|\pmb{J}^2 - J_3^2 - J_3|j,\sigma}\\
+        &= j(j+1) - \sigma^2 - \sigma
+    \end{aligned}
 \end{equation}
-因此：
+可以看出$J_+$和$J_-$的本征值为：    
 \begin{equation}
-    [\Pi_1, \Pi_2] = -iJ_3 + 0 - 0 - (-iJ_3) = -iJ_3 + iJ_3 = 0
-\end{equation}
-
-总结三个生成元的对易关系：
-\begin{equation}
-    [J_3, \Pi_1] = i\Pi_2, \quad [J_3, \Pi_2] = -i\Pi_1, \quad [\Pi_1, \Pi_2] = 0
+    J_{\pm}|j,\sigma\rangle = \sqrt{(j \mp \sigma)(j \pm \sigma + 1)}\;|j,\sigma \pm 1\rangle
 \end{equation}
 
-这正是\textbf{二维欧几里得群 $ISO(2)$ 的 Lie 代数}！其中 $J_3$ 是旋转生成元，$\Pi_1, \Pi_2$ 是"平移"生成元。$\Pi_1$ 和 $\Pi_2$ 之间对易（它们构成阿贝尔正规子群），而 $J_3$ 对 $\Pi_1, \Pi_2$ 的作用恰好是二维平面上的旋转。
 
-与 $SU(2)$（Lie 代数 $[J_i, J_j] = i\epsilon_{ijk}J_k$，所有生成元不对易）相比，$ISO(2)$ 包含一个对易的"平移"部分——这使得其表示论发生了质的变化。
+\begin{center}\vspace{2ex}
+\large 低维不可约表示
+\vspace{2ex}\end{center}
+$\mathbf{j=0}$ 表示空间维度为 $1$。是平凡表示。
+\vspace{2ex}
 
-\subsubsection*{物理表示的选取：排除连续自旋}
-
-$ISO(2)$ 的一般不可约表示可以用 $\Pi_1, \Pi_2$ 的本征值来标记。由于 $[\Pi_1, \Pi_2] = 0$，它们可以同时对角化。设 $\Pi_1|\psi\rangle = \pi_1|\psi\rangle$，$\Pi_2|\psi\rangle = \pi_2|\psi\rangle$。
-
-但 $J_3$ 对 $\Pi_1, \Pi_2$ 的作用效果（由 $[J_3, \Pi_i]$ 给出）表明：$J_3$ 会将 $(\pi_1, \pi_2)$ 在二维平面内旋转，但不改变 $\pi_1^2 + \pi_2^2$ 的值。因此 $\pi_1^2 + \pi_2^2$ 是一个 Casimir 算符。
-
-如果 $\pi_1^2 + \pi_2^2 \neq 0$，则 $J_3$ 的谱是连续的（因为 $J_3$ 的作用等价于在以 $\sqrt{\pi_1^2+\pi_2^2}$ 为半径的圆上旋转）。这样的表示称为\textbf{连续自旋表示}（continuous spin representation）。在自然界中从未观测到具有连续自旋的粒子。
-
-因此，物理要求我们选取：
+\noindent
+$\mathbf{j=1/2}$ 表示空间维度为 $2$。$J_3$ 的本征值为 $\pm 1/2$。生成元为 $2\times 2$ 矩阵
 \begin{equation}
-    \Pi_1 = \Pi_2 = 0
+    J_3=\frac{1}{2}
+    \begin{bmatrix}
+        & 1&0\\
+        & 0&-1
+    \end{bmatrix}
 \end{equation}
-即"平移"生成元的本征值为零。这个条件将 $ISO(2)$ 的表示约化为其旋转子群 $SO(2)$ 的表示。
-
-\subsubsection*{螺旋度：$SO(2)$ 的不可约表示}
-
-在 $\Pi_1 = \Pi_2 = 0$ 的条件下，剩余的生成元只有 $J_3$——绕动量方向的旋转。$SO(2)$ 是阿贝尔群，因此其全部不可约表示都是一维的，由 $J_3$ 的本征值 $\lambda$ 标记：
+所以选择对应的本征矢量为：
 \begin{equation}
-    J_3|\mathbf{k}, \lambda\rangle = \lambda|\mathbf{k}, \lambda\rangle
+    \ket{\frac{1}{2},\frac{1}{2}}
+    =\begin{bmatrix}
+        1 \\
+        0
+    \end{bmatrix},\qquad
+    \ket{\frac{1}{2},-\frac{1}{2}}
+    =\begin{bmatrix}
+        0 \\
+        1
+    \end{bmatrix}
 \end{equation}
-$\lambda$ 称为\textbf{螺旋度（helicity）}——它是角动量在动量方向上的投影。
-
-$\lambda$ 的取值范围是什么？在 $SO(2)$ 的普通表示中，$\lambda$ 可以取任意整数。但由于我们使用的是 Lorentz 群的覆盖群 $SL(2,\mathbb{C})$（这与第一轮中 $SU(2)$ 覆盖 $SO(3)$ 的逻辑完全平行），$\lambda$ 也可以取半整数值。
-
-对于给定的无质量粒子类型（由其自旋 $j$ 标记），螺旋度只取两个值：
+利用$J_\pm$和$J_1$,$J_2$,$J_3$之间的关系：
 \begin{equation}
-    \lambda = +j \quad \text{或} \quad \lambda = -j
+    \begin{aligned}
+        &J_1=\frac{1}{2}(J_++J_-)\\
+        &J_2=\frac{1}{2i}(J_+-J_-)
+    \end{aligned}
 \end{equation}
-这与有质量粒子具有 $2j+1$ 个自旋投影形成了鲜明对比！
+所以可以得到$J_1$和$J_2$作用在本征态上的值
+\begin{equation}
+    \begin{aligned}
+    J_1\Ket{\frac{1}{2},\frac{1}{2}}
+    =&\frac{1}{2}(J_++J_-)\Ket{\frac{1}{2},\frac{1}{2}}\\
+    =&\frac{1}{2}\sqrt{(j - \sigma)(j + \sigma + 1)}\ket{\frac{1}{2},-\frac{1}{2}}\\
+    =&\frac{1}{2}\ket{\frac{1}{2},-\frac{1}{2}}\\
+    \end{aligned}\\
+    \begin{aligned}
+        J_1\Ket{\frac{1}{2},-\frac{1}{2}}
+        =&\frac{1}{2}(J_++J_-)\Ket{\frac{1}{2},-\frac{1}{2}}\\
+        =&\frac{1}{2}\sqrt{(j + \sigma)(j - \sigma + 1)}\ket{\frac{1}{2},\frac{1}{2}}\\
+        =&\frac{1}{2}\ket{\frac{1}{2},\frac{1}{2}}\\
+    \end{aligned}
+\end{equation}
+以及
+\begin{equation}
+    \begin{aligned}
+        J_2\Ket{\frac{1}{2},\frac{1}{2}}
+        =&\frac{1}{2i}(J_+-J_-)\Ket{\frac{1}{2},\frac{1}{2}}\\
+        =&-\frac{i}{2}\ket{\frac{1}{2},-\frac{1}{2}}\\
+    \end{aligned}\\
+    \begin{aligned}
+        J_2\Ket{\frac{1}{2},-\frac{1}{2}}
+        =&\frac{1}{2i}(J_+-J_-)\Ket{\frac{1}{2},-\frac{1}{2}}\\
+        =&\frac{i}{2}\ket{\frac{1}{2},\frac{1}{2}}\\
+    \end{aligned}
+\end{equation}
+最终得到$J_1$和$J_2$的矩阵表示为：
+\begin{equation}
+    J_1=\frac{1}{2}
+    \begin{bmatrix}
+        & 0&1\\
+        & 1&0
+    \end{bmatrix},\qquad
+    J_2=\frac{1}{2}
+    \begin{bmatrix}
+        & 0&-i\\
+        & i&0
+    \end{bmatrix}
+\end{equation}
+以及Casimir算符$\pmb{J}^2$的矩阵表示为：
+\begin{equation}
+    \pmb{J}^2=\frac{3}{4}
+    \begin{bmatrix}
+        & 1&0\\
+        & 0&1
+    \end{bmatrix}
+\end{equation}
+\vspace{2ex}
+$\mathbf{j=1}$,利用一样的步骤；可以得到
+\begin{equation}
+    J_3=
+    \begin{bmatrix}
+        & 1&0&0\\
+        & 0&0&0\\
+        & 0&-1&0
+    \end{bmatrix},\qquad
+    J_1=\frac{1}{\sqrt{2}}
+    \begin{bmatrix}
+        & 0&1&0\\
+        & 1&0&1\\
+        & 0&1&0
+    \end{bmatrix},\qquad
+    J_2=\frac{1}{\sqrt{2}}
+    \begin{bmatrix}
+        & 0&-i&0\\
+        & i&0&-i\\
+        & 0&i&0
+    \end{bmatrix}
+\end{equation}
+以及casimir算符$\pmb{J}^2$的矩阵表示为：
+\begin{equation}
+    \pmb{J}^2=
+    2
+    \begin{bmatrix}
+        & 1&0&0\\
+        & 0&1&0\\
+        & 0&0&1
+    \end{bmatrix}
+\end{equation}
+更高维度的表示可以通过同样的步骤得到。
+\begin{center}\vspace{2ex}
+\large 单粒子态的完整标记
+\vspace{2ex}\end{center}
+综合 Wigner 诱导表示框架与 $SU(2)$ 的不可约表示理论，一个正定质量单粒子态由以下量子数完整标记：
+\begin{equation}
+|p^\mu,\sigma\rangle\;\;,\qquad \sigma = -j,\;\;-j+1,\;\;\ldots,\;\;+j
+\end{equation}
+\begin{itemize}
+\item $p^\mu$：动量
+\item $j$：自旋（Poincar\'{e} 群第二个 Casimir 算符 $W_\mu W^\mu$ 的本征值决定），取 $j = 0,\;\;\tfrac{1}{2},\;\;1,\;\;\tfrac{3}{2},\;\;\ldots$
+\item $\sigma$：自旋第三分量（$J_3$ 的本征值），取 $2j+1$ 个值。
+\end{itemize}
 
-\subsubsection*{物理例子与有质量/无质量粒子的对比}
+粒子在一般 Lorentz 变换 $\Lambda$ 下的态变换为
+\begin{equation}
+U(\Lambda)|p,\sigma\rangle
+= \sqrt{\frac{(\Lambda p)^0}{p^0}}\;\;
+\sum_{\bar{\sigma}=-j}^{+j} D^{(j)}_{\bar{\sigma}\sigma}\{W(\Lambda,p)\}\;\;
+|(\Lambda p),\bar{\sigma}\rangle
+\end{equation}
+其中 $D^{(j)}_{\bar{\sigma}\sigma}$ 是 $SU(2)$ 自旋 $j$  旋转矩阵，$W(\Lambda,p) = L^{-1}(\Lambda p)\;\;\Lambda\;\;L(p)$ 是 Wigner 旋转。关键的物理图像是：粒子的动量在 Lorentz 变换下改变（$\mathbf{p}\to\Lambda\mathbf{p}$），而自旋态在 $2j+1$ 维内部空间中进行旋转混合——这种混合由 Wigner 旋转通过 $SU(2)$ 表示矩阵来实现。
+\newpage
+\subsection{零质量粒子\(\dagger\)}
+对于零质量粒子，由于 $p^\mu p_\mu = 0$，不存在静止参考系。沿 $z$ 轴正方向传播的动量作为“标准动量”：
+\begin{equation}
+    k^\mu = (\kappa, 0, 0, \kappa)^T, \quad (\kappa > 0)
+\end{equation}
+Wigner 小群的定义是：所有保持标准动量 $k^\mu$ 不变的$W^{\mu}_{\;\;\nu}$ 构成的子群，即满足：
+\begin{equation}
+    W^{\mu}_{\;\;\nu} k^\nu = k^\mu
+\end{equation}
+\begin{center}\vspace{2ex}
+\large 小群的确定
+\vspace{2ex}\end{center}
+为了寻找小群的生成元，\footnote{为什么能这么操作，参考\refeq{total_lorentz_group}}考察Lorentz无穷小变换 $W^{\mu}_{\;\;\nu} = \delta^\mu_{\;\;\nu} + \omega^\mu_{\;\;\nu}$。代入小群条件：
+\begin{equation}
+    (\delta^\mu_{\;\;\nu} + \omega^\mu_{\;\;\nu}) k^\nu = k^\mu \implies \omega^\mu_{\;\;\nu} k^\nu = 0
+\end{equation}
+将 $k^\nu = (\kappa, 0, 0, \kappa)^T$ 代入上式并对 $\nu$ 求和，我们得到核心约束：
+\begin{equation}
+    \omega^\mu_{\;\;0} \kappa + \omega^\mu_{\;\;3} \kappa = 0 \implies \omega^\mu_{\;\;0} = -\omega^\mu_{\;\;3}
+\end{equation}
+小群的参数 $\omega_{\mu\nu}$ 在两个下指标时是严格反对称的（$\omega_{\mu\nu} = -\omega_{\nu\mu}$）。我们使用闵氏度规将上述约束的指标降下来：$\omega^\mu_{\;\;\nu} = \eta^{\mu\rho}\omega_{\rho\nu}$。
+\vspace{2ex}
+\\
+分别考察 $\mu = 1, 2, 3$ 的情况：
+\begin{itemize}
+    \item 当 $\mu = 1$ 时：$\eta^{11}\omega_{10} = -\eta^{11}\omega_{13} \implies -\omega_{10} = -(-\omega_{13}) \implies \omega_{10} + \omega_{13} = 0$
+    \item 当 $\mu = 2$ 时：$\eta^{22}\omega_{20} = -\eta^{22}\omega_{23} \implies -\omega_{20} = -(-\omega_{23}) \implies \omega_{20} + \omega_{23} = 0$
+    \item 当 $\mu = 3$ 时：$\eta^{33}\omega_{30} = -\eta^{33}\omega_{33}$。因为反对称性 $\omega_{33}=0$，所以 $\omega_{30}=0$（即不能有 $z$ 方向的 Boost）。
+\end{itemize}
+\color{blue}此外，约束方程中并未涉及 $\nu = 1, 2$ 的交叉项，因此空间旋转参数 $\mathbf{\omega_{12}}$ 是完全自由的。\normalcolor
+\vspace{2ex}
+\\
+至此，原有的 6 个 Lorentz 自由参数被约束减少了 3 个，只剩下 3 个独立参数：$\omega_{12}$，以及两组相互绑定的参数 $\omega_{01}=\omega_{13}$ 与 $\omega_{02}=\omega_{23}$。
 
-\textbf{光子（$j = 1$）：}螺旋度 $\lambda = \pm 1$，对应右旋和左旋圆偏振。纵向极化 $\lambda = 0$ 不存在——这正是为什么经典电磁波是横波。有质量的矢量玻色子（如 $W^\pm, Z^0$）则有三个极化态 $\sigma = -1, 0, +1$。
-
-\textbf{引力子（$j = 2$，假设存在）：}螺旋度 $\lambda = \pm 2$，对应引力波的两种极化模式（$+$ 和 $\times$）。
-
-\textbf{中微子（$j = 1/2$）：}如果中微子严格无质量，则螺旋度 $\lambda = -1/2$（左手中微子）或 $\lambda = +1/2$（右手反中微子）。实验中观测到中微子振荡表明中微子实际具有微小质量，但在高能极限下螺旋度仍然是一个极好的近似量子数。
-
-\textbf{小群与自由度的对比表：}
-
+\vspace{2ex}
+任意无穷小 Lorentz 变换的幺正算符可以展开为生成元 $\mathscr{J}^{\mu\nu}$ 的组合：
+\begin{equation}
+    U(\Lambda) = 1 - \frac{i}{2} \omega_{\mu\nu} \mathscr{J}^{\mu\nu}
+\end{equation}
+其中Rotation生成元和Boost生成元是：
+\begin{equation}
+    J_i = \frac{1}{2}\epsilon_{ijk}\mathscr{J}^{jk}\qquad
+    K_i =\mathscr{J}^{0i}
+\end{equation}
+具体对应为：$\mathscr{J}^{12} = J_3$，$\mathscr{J}^{23} = J_1$，$\mathscr{J}^{31} = J_2$(其中 $\mathscr{J}^{13} = -J_2$)，$\mathscr{J}^{01} = K_1$，$\mathscr{J}^{02} = K_2$。
+\vspace{2ex}
+\par
+我们将 $\frac{1}{2} \omega_{\mu\nu} \mathscr{J}^{\mu\nu}$ 展开，并代入我们得到的参数约束（$\omega_{13}=\omega_{01}, \omega_{23}=\omega_{02}$）：
+\begin{align}
+    \frac{1}{2} \omega_{\mu\nu} \mathscr{J}^{\mu\nu} &= \omega_{01}\mathscr{J}^{01} + \omega_{02}\mathscr{J}^{02} + \omega_{12}\mathscr{J}^{12} + \omega_{23}\mathscr{J}^{23} + \omega_{31}\mathscr{J}^{31} \nonumber \\
+    &= \omega_{01}K_1 + \omega_{02}K_2 + \omega_{12}J_3 + \omega_{23}J_1 - \omega_{13}J_2 \nonumber \\
+    &= \omega_{12}J_3 + \omega_{01}K_1 + \omega_{02}K_2 + \omega_{02}J_1 - \omega_{01}J_2 \nonumber \\
+    &= \omega_{12} J_3 + \omega_{01} (K_1 - J_2) + \omega_{02} (K_2 + J_1)
+\end{align}\label{massless_lorentz_transf}
+此时，物理图像极其清晰，原来互相独立的旋转 $J$ 和推动 $K$，在零质量条件下被迫组合成了新的生成元。我们定义这三个独立的生成元为：
+\begin{equation}
+    J_3, \quad \Pi_1 \equiv K_1 - J_2, \quad \Pi_2 \equiv K_2 + J_1
+\end{equation}
+\vspace{2ex}
 \begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{c c c c c}
-    \toprule
-    & \textbf{标准动量 $k^\mu$} & \textbf{小群} & \textbf{内部量子数} & \textbf{自由度数} \\
-    \midrule
-    有质量 & $(m, \mathbf{0})$ & $SO(3) \simeq SU(2)$ & $\sigma = -j, \ldots, +j$ & $2j+1$ \\
-    无质量 & $(\kappa, 0, 0, \kappa)$ & $ISO(2) \xrightarrow{\Pi=0} SO(2)$ & $\lambda = \pm j$ & $2$ \\
-    \bottomrule
-\end{tabular}
+  \large  $ISO(2)$ 的 Lie 代数
 \end{center}
-
-有质量粒子的内部自由度由 $SU(2)$ 的 $(2j+1)$ 维不可约表示描述，来源于粒子具有静止系——在静止系中角动量可以指向任意方向。
-
-无质量粒子没有静止系，角动量只能沿着（或反着）动量方向——因此只有两个螺旋度 $\lambda = \pm j$。从群论角度看，这是因为 $ISO(2)$ 的物理表示被约化为其阿贝尔子群 $SO(2)$ 的一维表示。
-
-\subsubsection*{无质量粒子态的完整变换公式}
-
-综合以上分析，无质量单粒子态在 Lorentz 变换下的行为为：
+\vspace{2ex}
+最后，我们利用已知的 Lorentz 代数来计算这三个新生成元的对易关系。首先计算 $J_3$ 对 $\Pi_1, \Pi_2$ 的作用：
+\begin{subequations}
+    \begin{align}
+    [J_3, \Pi_1] &= [J_3, K_1] - [J_3, J_2] = iK_2 - (-iJ_1) = i(K_2 + J_1) = i\Pi_2 \\
+    [J_3, \Pi_2] &= [J_3, K_2] + [J_3, J_1] = -iK_1 + iJ_2 = -i(K_1 - J_2) = -i\Pi_1
+\end{align}
+\end{subequations}
+再计算 $\Pi_1, \Pi_2$ 自身的对易子：
+\begin{align}
+    [\Pi_1, \Pi_2] &= [K_1 - J_2, K_2 + J_1] \nonumber \\
+    &= [K_1, K_2] + [K_1, J_1] - [J_2, K_2] - [J_2, J_1] \nonumber \\
+    &= (-iJ_3) + 0 - 0 - (-iJ_3) \nonumber \\
+    &= 0
+\end{align}
+总结得到的代数关系：
+\begin{subequations}
+    \begin{align}
+        & [J_3, \Pi_1] = i\Pi_2 \\
+        & [J_3, \Pi_2] = -i\Pi_1 \\
+        & [\Pi_1, \Pi_2] = 0
+    \end{align}
+\end{subequations}
+这在数学上同构于二维欧几里得平面的刚体运动群 $ISO(2)$。其中 $\Pi_1, \Pi_2$ 表现为平面上互相独立的“平移”，而 $J_3$ 表现为平面上的“旋转”。
+\begin{center}\vspace{2ex}
+\large 排除连续自旋
+\vspace{2ex}\end{center}
+$ISO(2)$ 的一般不可约表示可以用 $\Pi_1,\Pi_2$ 的本征值 $\pi_1,\pi_2$ 来标记\footnote{这里采用k标记动量，是约定俗称的}
+\begin{subequations}
+    \begin{align}
+        & \Pi_1|k,\pi_1,\pi_2\rangle = \pi_1 |k,\pi_1,\pi_2\rangle \\
+        & \Pi_2|k,\pi_1,\pi_2\rangle = \pi_2 |k,\pi_1,\pi_2\rangle
+    \end{align}
+\end{subequations}
+（因为 $[\Pi_1,\Pi_2]=0$，它们可以同时对角化）。\color{blue}但 $[J_3,\Pi_i]$ 的对易关系表明 $J_3$ 会将 $(\pi_1,\pi_2)$ 在二维平面内旋转，而不改变 $\pi_1^2+\pi_2^2$ 的值。因此 $\pi_1^2+\pi_2^2$ 是一个 Casimir 算符.\normalcolor
+\vspace{2ex}
+\\
+若 $\pi_1^2+\pi_2^2 \neq 0$，则 $J_3$ 的谱是连续的——$J_3$ 的作用等价于在以 $\sqrt{\pi_1^2+\pi_2^2}$ 为半径的圆上旋转。这样的表示称为\textbf{连续自旋表示}。自然界中从未观测到此类粒子。因此物理要求
 \begin{equation}
-    U(\Lambda)|\mathbf{p}, \lambda\rangle = \sqrt{\frac{(\Lambda p)^0}{p^0}}\, e^{i\lambda\theta(\Lambda, p)}\, |(\Lambda\mathbf{p}), \lambda\rangle
+\Pi_1 = \Pi_2 = 0
 \end{equation}
-其中 $\theta(\Lambda, p)$ 是 Wigner 旋转中绕 $z$ 轴旋转的角度（Wigner 旋转在无质量情况下退化为一个 $SO(2)$ 旋转加上物理上不可观测的 $\Pi$ "平移"）。
-
-与有质量粒子的公式对比：
+即``平移''生成元的本征值为零。这将 $ISO(2)$ 的表示约化为其旋转子群 $SO(2)$ 的表示。
+\begin{center}\vspace{2ex}
+\large Helcity标记自旋
+\vspace{2ex}\end{center}
+在 $\Pi_1 = \Pi_2 = 0$ 的条件下，剩余的生成元仅有 $J_3$。$SO(2)$ 是阿贝尔群，其全部不可约表示都是一维的，由 $J_3$ 的本征值 $\lambda$ 标记：
 \begin{equation}
-    U(\Lambda)|\mathbf{p}, \sigma\rangle = \sqrt{\frac{(\Lambda p)^0}{p^0}} \sum_{\sigma'} D^{(j)}_{\sigma'\sigma}\{W(\Lambda, p)\}\, |(\Lambda\mathbf{p}), \sigma'\rangle
+J_3|k,\lambda\rangle = \lambda\;\;|k,\lambda\rangle
 \end{equation}
-无质量情况中 $D$ 矩阵退化为一个相位因子 $e^{i\lambda\theta}$（$SO(2)$ 的一维表示），不再有自旋分量之间的混合——螺旋度 $\lambda$ 在 Lorentz 变换下是不变的。这是无质量粒子最显著的特征。
+$\lambda$ 称为\textbf{Helcity}——角动量在动量方向上的投影。
+\begin{equation}
+\lambda = \frac{\pmb{k} \cdot \pmb{p}}{|\pmb{k}|}
+\end{equation}
+由于使用的是 Lorentz 群的覆盖群 $SL(2,\mathbb{C})$（与 $SU(2)$ 覆盖 $SO(3)$ 的逻辑完全平行），$\lambda$ 可以取半整数值。对于给定的零质量粒子类型（自旋 $j$），螺旋度只取两个值：
+\begin{equation}
+\lambda = +j \quad \text{或} \quad \lambda = -j
+\end{equation}
+本征关系是：
+\begin{equation}
+  J_3|k,\lambda\rangle = \lambda\;\;|k,\lambda\rangle
+\end{equation}
+这与正定质量粒子具有 $2j+1$ 个自旋投影形成了鲜明对比。
+\begin{center}\vspace{2ex}
+ \large 单粒子态的完整标记
+\vspace{2ex}\end{center}
+综合以上分析，零质量单粒子态在 Lorentz 算符变成了
+\begin{equation}
+    U(\Lambda)=e^{iJ_3\omega_{12}}
+\end{equation}
+ Wigner 诱导表示框架与 $SU(2)$ 的不可约表示理论，零质量单粒子态由以下量子数完整标记：
+\begin{equation}
+|k^\mu,\lambda\rangle\;\;,\qquad \sigma = -j,+j
+\end{equation}
+\begin{itemize}
+    \item $k^\mu$：动量
+    \item $\lambda$；Helicity。由于 Casimir 算符 $W^2$ 失效，  $\lambda$ 成为了标记粒子内部状态的唯一合法量子数（在标准动量下即为 $J_3$ 的本征值）。对于给定的基本粒子，$\lambda$ 只能取固定的离散值.\normalcolor
+\end{itemize}
+\begin{equation}
+U(\Lambda)|\mathbf{p},\lambda\rangle
+= \sqrt{\frac{(\Lambda p)^0}{p^0}}\;
+e^{i\lambda\theta(\Lambda,p)}\;\delta_{\lambda\bar{\lambda}}
+|(\Lambda\mathbf{p}),\bar{\lambda}\rangle
+\end{equation}
+其中 $\theta(\Lambda,p)$ 是 Wigner 旋转中绕 $z$ 轴旋转的角度（Wigner 旋转在零质量情况下退化为一个 $SO(2)$ 旋转加上物理上不可观测的 $\Pi$``平移''）。

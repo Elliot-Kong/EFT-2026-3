@@ -6,13 +6,12 @@
 %
 % Note: Compile with XeLaTeX.
 % ============================================================
-
 \usepackage[
   a4paper,
-  top=1.2cm,
-  bottom=1.2cm,
-  left=1.5cm,
-  right=1.5cm,
+  top=1.5cm,
+  bottom=1.5cm,
+  left=1.6cm,
+  right=1.6cm,
 ]{geometry}
 
 % Header / footer
@@ -50,3 +49,7 @@
 
 % A simple sans-serif CJK font
 \setCJKsansfont{Heiti SC}
+\CJKsetecglue{\hspace{0.15em}} % 增加中西文之间的间距
+\usepackage{setspace}
+\setstretch{1.1} % 推荐 1.25 到 1.5 之间，物理笔记这类公式多的文档尤其建议加大
+\setlength{\parskip}{0.1em} % 设置段落之间的垂直间距

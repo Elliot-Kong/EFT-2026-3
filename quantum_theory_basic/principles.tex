@@ -1,6 +1,6 @@
 \section{量子理论基础}
 \begin{center}
-\Large\textbf{量子理论：
+\Large\textbf{量子理论
 $\left\{
     \begin{aligned}
         &\left.
@@ -16,7 +16,6 @@ $\left\{
 \end{center}
 
 \subsection{状态,线性叠加}
-\begin{tcolorbox}[colback=white!5,colframe=black!55,title=线性的量子态]
     系统的状态 $\psi$, 可以用 Hilbert 空间的矢量 $\ket{\psi}$ 来描述。
     对于 $\forall c \neq 0$, 且 $c\in \mathbb{C}$, $c\ket{\psi}$
     也是描述系统的同一个状态\footnote{也描述为: 量子态是希尔伯特空间中
@@ -49,17 +48,12 @@ $\left\{
         \end{equation}
         当系数不能分解为$c_{ij}=a_i b_j$时，该态不能写成单一张量积形式，称为\textbf{纠缠态}
     \end{enumerate}
-    
     \textit{\small 辨析：直积 ($\otimes$) 是双线性映射，用于扩充空间维度；叠加 ($+$) 是线性组合，用于描述同一空间内的态干涉。}
-\end{tcolorbox}
-
-
 
 \newpage
 
 \subsection{状态,幺正演化}
 量子理论的线性,不仅适用于运动学,也是符合动力学的;系统的动力学演化可以用\text{Hilbert}空间的算符描述.
-\begin{tcolorbox}[colback=white!5,colframe=black!55,title=态的幺正演化]
    对于封闭系统,我们假设态的演化是幺正的;记$t$时刻状态时$\ket{\psi(t)}$,则时间演化是：
    \begin{equation}
     \ket{\psi(t)}=U(t,0)\ket{\psi(0)},U^\dagger=U^{-1}
@@ -85,11 +79,15 @@ $\left\{
         \frac{d}{dt}\ket{\psi(t)}-\frac{dU(t,0)}{dt}U^{-1}(t,0)\ket{\psi(t)}
         \\&=
         i\hbar\frac{d}{dt}\ket{\psi(t)}-
-        \underbrace{i\hbar\frac{dU(t,0)}{dt}U^{-1}(t,0)}_{H\footnote{$H$是系统的哈密顿量，作用到对应的态矢量上，便是系统的能量；也充分的说明了能量与时间的密切关系。}}\ket{\psi(t)}
-        \\&=\left(i\hbar\frac{d}{dt}-H\right)\ket{\psi(t)}\footnote{这便是$Schrodinger$方程，方程中时间$t$具有独特的地位，所以方程中洛伦兹对称性不明显.
-但“不明显对称”不等于“不对称”$Schrodinger$方程本身不需要被“相对论化；$Schrodinger$方程在我理解看来，是：幺正演化(态)的另一种形式.}
+        \underbrace{i\hbar\frac{dU(t,0)}{dt}U^{-1}(t,0)}_{H}\ket{\psi(t)}
+        \\&=\left(i\hbar\frac{d}{dt}-H\right)\ket{\psi(t)}
     \end{aligned}
    \end{equation}
+
+\begin{tcolorbox}[colback=white!5,colframe=black!45]
+$H$是系统的哈密顿量，作用到对应的态矢量上，便是系统的能量；也充分的说明了能量与时间的密切关系。这便是Schrodinger方程;
+\vspace{2ex}\par
+方程中时间$t$具有独特的地位，所以方程中洛伦兹对称性不明显.但“不明显对称”不等于“不对称”Schrodinger方程本身不需要被“相对论化；Schrodinger方程在我理解看来，是：幺正演化(态)的另一种形式.
 \end{tcolorbox}
 
 \subsection{测量问题}
@@ -116,34 +114,31 @@ $\left[
 出现什么结果？
 \end{enumerate}
 \color{blue} 上述问题涉及量子测量的诠释问题，目前存在多种解释方案。本文不涉及相关哲学讨论，
-而采用标准操作主义立场,这里就采用哥本哈根诠释;而不引入额外本体论解释.
-
-\normalcolor
-由以上考虑,要对量子理论中的概率做出基本假设,不过首先应该提出“仪器”的性质；
-\begin{tcolorbox}[colback=white!5,colframe=black!55,title=谱分解]
-    一种“可能存在的理想仪器”,对应一组完备正交基$\left(\begin{aligned}
+而采用标准操作主义立场,这里就采用哥本哈根诠释;而不引入额外本体论解释\normalcolor
+由以上考虑,要对量子理论中的概率做出基本假设,不过首先应该提出“仪器”的性质,以及测量后系统状态的假设
+\vspace{2ex}\par
+一种“可能存在的理想仪器”,对应一组完备正交基
+$\left(\begin{aligned}
         &\ket{i}\\&\ket{\alpha}
-    \end{aligned}\right)$.
-    测量后,仪器示数为实数
+\end{aligned}\right)$.
+测量后,仪器示数为实数
     $\left(\begin{aligned}
         &\lambda_i\\&\lambda_\alpha
     \end{aligned}\right)$
-    则测量后,系统处于$\left(\begin{aligned}
+则测量后,系统处于$\left(\begin{aligned}
         &\ket{i}\\&\ket{\alpha}
     \end{aligned}\right)$态,
-    也就是说:$\left(\begin{aligned}
+也就是说:$\left(\begin{aligned}
         &\{\ket{i},\lambda_i\}\\ &\{\ket{\alpha},\lambda_\alpha\}
-    \end{aligned}\right)$可以理解为厄米算符\footnote{这里要论述一下self-adjoint operator以及
-    可观测量是否和厄米算符等价的问题,实际上应该是observable=self-adjoint operator with spectral measure}
+    \end{aligned}\right)$可以理解为厄米
+\footnote{这里要论述一下self-adjoint operator以及
+可观测量是否和厄米算符等价的问题,实际上应该是observable=self-adjoint operator with spectral measure}算符
     \begin{equation}
             \mathscr{O}
             =\sum_{i} \lambda_i\ket{i}\bra{i}\
             =\int d\alpha\,\lambda_\alpha\ket{\alpha}\bra{\alpha}
     \end{equation}
-    的本征态,本征值的集合.而$\mathscr{O}$便是这个理想仪器的可观测量.
-\end{tcolorbox}
-
-几点说明：\begin{enumerate}
+的本征态,本征值的集合.而$\mathscr{O}$便是这个理想仪器的可观测量.几点说明：\begin{enumerate}
     \item  原则上说：每一种正交基的选择,都代表一种理想仪器。
     \item  理想仪器上的每个$\left(\begin{aligned}
         &\ket{i}\\&\ket{\alpha}
@@ -162,10 +157,13 @@ $\left[
     \end{aligned}$$
     \item \color{blue}这里不对波函数坍缩的本体论问题作进一步讨论，而采用操作主义立场。\normalcolor
 \end{enumerate}
-
+\par\vspace{2ex}
+    \hrule
+\vspace{1ex}
 得到了仪器(或者说算符)的相关性质,接下来就对概率问题做出假设：
-\begin{tcolorbox}[colback=white!5,colframe=black!55,title=概率]
-    若$\ket{\psi}$在正交完备基$\left(\begin{aligned}
+    
+
+若$\ket{\psi}$在正交完备基$\left(\begin{aligned}
         &\ket{i}\\&\ket{\alpha}
     \end{aligned}\right)$展开是$\left(\begin{aligned}
         &\sum_{i}\,c_i \ket{i}\\&\int d\alpha\,\psi(\alpha)\ket{\alpha}
@@ -181,7 +179,10 @@ $\left[
         &\text{概率密度是}\,\rho(\alpha+d\alpha)=|\psi(\alpha)|^2
         \end{aligned}
     \right)$
-\end{tcolorbox}
+
+
+
+    
 几个推论;\begin{enumerate}
     \item \textbf{期望值}:若可以重复制备相同态 $\ket{\psi}$，
         对可观测量 $\mathscr{O}$ 做多次测量，结果的统计平均为

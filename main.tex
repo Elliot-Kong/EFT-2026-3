@@ -38,12 +38,12 @@
 \begin{document}
 \input{preamble/titlepage/titlepage3.tex}
 %\input{preamble/titlepage/titlepage2.tex}
-%\input{preamble/titlepage/titlepage.tex}
-%\input{preamble/titlepage/first page.tex}
-%\input{preamble/titlepage/Four golden lessons.tex}
+\input{preamble/titlepage/first page.tex}
+\input{preamble/frontmatter.tex}% Front matter (TOC, page numbering, etc.)
 
-% Front matter (TOC, page numbering, etc.)
-\input{preamble/frontmatter.tex}
+
+
+
 
 % Link colors for the main content.
 % Keep TOC links black, then switch colors after the front matter.
@@ -70,7 +70,7 @@
 %\input{symmetry/chapter.tex}
 % ============================================================
 % ============================================================
-\part{1+3维场论的构造}% ============================================================
+\part{1+3维场论}% ============================================================
 %\chapter{理论框架}
 %\input{framework/chapter.tex}
 % ============================================================
@@ -82,13 +82,39 @@
 % ============================================================
 \chapter{相互作用理论}
 \input{intercation_theory/chapter.tex}
-%\chapter{量子电动力学专题}
-%\input{qed/chapter.tex}
+\chapter{电动力学基本过程}
 \part{散射振幅的解析理论}
-\chapter{非微扰方法}
-% ============================================================
-\part{电动力学专题}
-\chapter{光子和费米子}
-\chapter{外场中的粒子}
+\chapter{公理化体系}
 
+\section{对称性}
+
+\section{渐近理论}
+\subsection{Haag 定理的启示与相互作用绘景的失效}
+\subsection{渐近条件和出入态}
+\subsection{LSZ 约化公式}
+
+\section{定极学} % 编者注：这里可能是“极点结构”或“运动学”的笔误？您可以根据需要调整
+
+\section{传播子的精确结构}
+\subsection{质量重整化与场强重整化}
+\subsection{重整化电荷与 Ward 等式} % 已将原图的“荷荷 wald”修正为标准译法
+
+\section{规范不变性}
+\subsection{K\"{a}ll\'{e}n-Lehmann 谱表示}
+
+\section{色散关系}
+\chapter{量子电动力学的辐射修正}
+% 留作未来的占位符，等您学完单圈图计算后再来丰富这里的 subsection
+
+\chapter{系统重整化理论}
+\chapter{有效理论}
+
+\section{Wilsonian 重整化群}
+\subsection{动量截断与模式积分}
+\subsection{相关算符、边缘算符与无关算符}
+
+\section{有效场论的构建原则}
+\subsection{算符乘积展开}
+\subsection{退耦定理}
+\subsection{匹配与高能自由度的积分}
 \end{document}

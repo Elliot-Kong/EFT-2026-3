@@ -1,13 +1,87 @@
 \section{0+1动力学问题:算符方法}
-\subsection{Schr\"odinger和Heisenberg绘景}
-\subsection{相互作用绘景和$Dyson$级数}
-\begin{tcolorbox}[colback=white!5,colframe=black!55,title=$Dirac$绘景]
-    在$Schr\"odinger$和$Heisenberg$绘景中，系统的动力学演化都可以被精确处理；而在现实情况中，动力学行为十分复杂，基本没有解析解，所以在这种情况下我们将完整的哈密顿量$H$分为自由部分$H_0$相互作用部分$V$：
+\section{Schr\"{o}dinger 绘景与 Heisenberg 绘景}
+
+在 1.1.2 节中我们已经建立了态的幺正演化 $|\psi(t)\rangle = U(t,0)|\psi(0)\rangle$，并由此导出了 Schr\"{o}dinger 方程。现在我们系统地比较两种等价的动力学描述方式。
+
+\begin{center}\vspace{2ex}
+\textbf{Schr\"{o}dinger 绘景}
+\vspace{2ex}\end{center}
+
+在 Schr\"{o}dinger 绘景中，\textbf{态随时间演化，算符不变}。具体地：
+\begin{itemize}
+\item 态矢量携带全部时间依赖性：
+\begin{equation}
+|\psi(t)\rangle_S = e^{-iHt}\,|\psi(0)\rangle
+\end{equation}
+\item 可观测量算符 $\mathcal{O}_S$ 不含时间（除非有显式的时间依赖）。
+\item 期望值为
+\begin{equation}
+\langle \mathcal{O} \rangle(t)
+= {}_S\langle\psi(t)|\,\mathcal{O}_S\,|\psi(t)\rangle_S
+\end{equation}
+\end{itemize}
+这是最直观的描述：物理系统的``状态''随时间改变，而``仪器''（算符）保持不动。Schr\"{o}dinger 方程
+\begin{equation}
+i\frac{d}{dt}|\psi(t)\rangle_S = H\,|\psi(t)\rangle_S
+\end{equation}
+就是这一绘景中的运动方程。
+
+\begin{center}\vspace{2ex}
+\textbf{Heisenberg 绘景}
+\vspace{2ex}\end{center}
+在 Heisenberg 绘景中，\textbf{态不变，算符随时间演化}。两种绘景通过幺正变换联系：
+\begin{equation}
+|\psi\rangle_H \equiv |\psi(0)\rangle_S\,,\qquad
+\mathcal{O}_H(t) \equiv e^{iHt}\,\mathcal{O}_S\,e^{-iHt}
+\end{equation}
+由于 $U(t)=e^{-iHt}$ 是幺正的，期望值在两种绘景中完全相同：
+\begin{equation}
+{}_S\langle\psi(t)|\,\mathcal{O}_S\,|\psi(t)\rangle_S
+= \langle\psi(0)|\,e^{iHt}\,\mathcal{O}_S\,e^{-iHt}\,|\psi(0)\rangle
+= {}_H\langle\psi|\,\mathcal{O}_H(t)\,|\psi\rangle_H
+\end{equation}
+这保证了两种绘景的物理等价性——\color{blue}所有可观测的概率和期望值完全一致。\normalcolor Heisenberg 绘景中算符的运动方程可以通过对 $\mathcal{O}_H(t)$ 求时间导数得到：
+\begin{align}
+\frac{d}{dt}\mathcal{O}_H(t)
+&= \frac{d}{dt}\bigl(e^{iHt}\,\mathcal{O}_S\,e^{-iHt}\bigr) \notag\\
+&= iH\,e^{iHt}\,\mathcal{O}_S\,e^{-iHt}
+- e^{iHt}\,\mathcal{O}_S\,e^{-iHt}\,iH \notag\\
+&= i[H,\,\mathcal{O}_H(t)]
+\end{align}
+即
+\begin{equation}
+\frac{d}{dt}\mathcal{O}_H(t) = i[H,\,\mathcal{O}_H(t)]
+\end{equation}
+这是 \textbf{Heisenberg 运动方程}。
+
+\begin{center}\vspace{2ex}
+\textbf{***}
+\vspace{2ex}\end{center}
+
+两种绘景在数学上严格等价，选择哪一种纯粹是方便性的问题：
+
+\begin{itemize}
+\item Schr\"{o}dinger 绘景更接近非相对论量子力学的直觉——波函数 $\psi(\pmb{x},t)=\langle\pmb{x}|\psi(t)\rangle_S$ 随时间演化。
+
+\item Heisenberg 绘景在相对论量子场论中具有根本性的优势。在这种绘景中，场算符 $\phi_H(\pmb{x},t)$ 同时依赖于空间和时间，因此可以被视为时空点 $x^\mu=(\pmb{x},t)$ 的函数——这使得 Lorentz 协变性得以显式体现\footnote{这也是为什么在第 4 章讨论散射理论时，``入''态和``出''态被定义为不随时间改变的 Heisenberg 绘景态。}。
+\end{itemize}
+下面讨论\textbf{相互作用绘景}（Dirac 绘景）是这两种绘景的混合体;但此绘景本身存在些许问题。
+\section{相互作用绘景和Dyson级数}
+在Schr\"odinger和Heisenberg绘景中，系统的动力学演化都可以被精确处理；而在现实情况中，动力学行为十分复杂，基本没有解析解，所以在这种情况下我们将完整的哈密顿量$H$分为自由部分$H_0$相互作用部分$V$：
 \begin{equation}
     H=H_0+V
 \end{equation}
 同时约定由自由部分的$H_0$承担时间演化，
-    幺正演化和模长(期望)是等价的，所以：
+\begin{equation}
+    \begin{aligned}
+        \text{态矢量的演化}:&\ket{\psi(t)}_{ip}=e^{iH_0t}\ket{\psi(t)}_S=e^{iH_0t}e^{-iHt}\ket{\psi}\\
+        \text{算符的演化}:&\mathscr{O}_{ip}(t)=e^{iH_0t}\mathscr{O}e^{-iH_0t}
+    \end{aligned}
+\end{equation}其中约定：$\mathscr{O}=\mathscr{O}(0)_H=\mathscr{O}_S$$\ket{\psi}=\ket{\psi}_H=\ket{\psi(0)}_S$
+\vspace{2ex}
+    \hrule
+\vspace{2ex}\par
+幺正演化和模长(期望)是等价的，所以：
 \begin{equation}
     \begin{aligned}
         {}_{ip}\bra{\psi(t)}\mathscr{O}_{ip}(t)\ket{\psi(t)}_{ip}=&\bra{\psi}e^{iHt}\underbrace{e^{-iH_0t}e^{iH_0t}}_\mathbf{1}\mathscr{O}\underbrace{e^{-iH_0t}e^{iH_0t}}_\mathbf{1}  e^{-iHt}\ket{\psi}\\
@@ -17,17 +91,12 @@
         \bra{\psi(t)}\mathscr{O} \ket{\psi(t)}=\bra{\psi}\mathscr{O}_H(t) \ket{\psi}
     \end{aligned}
 \end{equation}
-\begin{equation}
-    \begin{aligned}
-        \text{态矢量的演化}:&\ket{\psi(t)}_{ip}=e^{iH_0t}\ket{\psi(t)}_S=e^{iH_0t}e^{-iHt}\ket{\psi}\footnote{约定：$\ket{\psi}=\ket{\psi}_H=\ket{\psi(0)}_S$}\\
-        \text{算符的演化}:&\mathscr{O}_{ip}(t)=e^{iH_0t}\mathscr{O}\footnote{约定：$\mathscr{O}=\mathscr{O}(0)_H=\mathscr{O}_S$}e^{-iH_0t}
-    \end{aligned}
-\end{equation}
-\end{tcolorbox}
+
+
 \begin{center}
-    \vspace{0.5cm}
-        \text{\Large ***}\\
-    \vspace{0.5cm}
+    \vspace{2ex}
+        \text{\large Dyson级数}
+    \vspace{2ex}
 \end{center}
 态的演化是$\ket{\psi(t)}_{ip}=e^{iH_0t}e^{-iHt}\ket{\psi}$,可以推导时间演化算符，
 \begin{equation*}
@@ -115,4 +184,394 @@ U = \exp\!\left(-i\int_{-\infty}^{\infty} dt\,V(t)\right).
         U = T \exp\!\left(-i\int_{-\infty}^{\infty} dt\,V(t)\right)   
 \end{equation}
 
-\section{0+1维动力学问题:泛函方法}
+\section{0+1 维动力学问题: 泛函方法}
+
+前文中算符方法处理了量子动力学；本节引入一种概念上截然不同但数学上严格等价的描述——\textbf{路径积分}（Path Integral）。
+与算符方法不同，路径积分的出发点不是 Hilbert 空间中的算符和态矢量，而是经典构型空间中所有可能路径的加权求和——
+每一条路径 $q(t)$ 被赋予权重 $e^{iS[q]}$，其中 $S[q]$ 是沿该路径计算的经典作用量。
+
+
+\subsection*{对易关系与位置-动量表述}
+
+量子力学的全部运动学结构，归根到底建立在两类对易关系之上。
+
+\vspace{6pt}
+\noindent\textbf{第一类：对易的算符 $\longrightarrow$ 同时本征态}
+
+在 \S1.2 中我们已经建立了位置与动量的基本对易关系。位置算符之间是对易的：
+\begin{equation}\label{eq:qq-comm}
+  [\hat{q}_i,\,\hat{q}_j] = 0
+\end{equation}
+根据量子力学的一般原理（\S1.1.3），相互对易的算符可以被同时对角化，即存在一组
+\textbf{同时本征态} $|q\rangle$：
+\begin{equation}\label{eq:q-eigen}
+  \hat{q}\,|q\rangle = q\,|q\rangle
+\end{equation}
+这些本征态满足正交归一关系和完备关系\footnote{这里的讨论限于一维情况；
+推广到 $d$ 维只需将 $q \to \mathbf{q}$，$\delta(q'-q) \to \delta^{(d)}(\mathbf{q}'-\mathbf{q})$ 等。}：
+\begin{equation}\label{eq:q-complete}
+  \langle q'|q\rangle = \delta(q'-q)\,,\qquad
+  \int dq\;|q\rangle\langle q| = \mathbf{1}
+\end{equation}
+完全类似地，动量算符之间的对易关系 $[\hat{p}_i,\,\hat{p}_j] = 0$ 保证了动量本征态 $|p\rangle$ 的存在：
+\begin{equation}\label{eq:p-eigen}
+  \hat{p}\,|p\rangle = p\,|p\rangle
+\end{equation}
+
+\vspace{8pt}
+\noindent\textbf{第二类：不对易的算符 $\longrightarrow$ 位置-动量重叠 $e^{ipq}$}
+
+位置与动量之间的对易关系是不对易的（\S1.2）：
+\begin{equation}\label{eq:qp-comm}
+  [\hat{q},\,\hat{p}] = i
+\end{equation}
+这个对易关系完全决定了 $\langle q|p\rangle$ 的函数形式。推导如下。
+
+利用 \S1.2 中从 (\ref{eq:qp-comm}) 得到的平移算符 $U(a) = e^{-i\hat{p}a}$，其作用为
+$U(a)\hat{q}U^\dagger(a) = \hat{q} - a$，由此可以推出\footnote{
+具体地：$\hat{q}\bigl(U(a)|q\rangle\bigr)
+= U(a)\bigl[U^\dagger(a)\hat{q}U(a)\bigr]|q\rangle
+= U(a)(\hat{q}+a)|q\rangle
+= (q+a)\bigl(U(a)|q\rangle\bigr)$。
+因此 $U(a)|q\rangle$ 是 $\hat{q}$ 的本征值为 $q+a$ 的本征态，
+即 $U(a)|q\rangle = |q+a\rangle$（相位因子约定为 $1$）。}：
+\begin{equation}\label{eq:translation-q}
+  e^{-i\hat{p}a}|q\rangle = |q+a\rangle
+\end{equation}
+现在考虑矩阵元 $\langle q|e^{-i\hat{p}a}|p\rangle$，可以分别让算符作用于左或右：
+\begin{itemize}
+  \item 向右作用：$\langle q|e^{-i\hat{p}a}|p\rangle = e^{-ipa}\langle q|p\rangle$
+  \item 向左作用\footnote{由 (\ref{eq:translation-q}) 取厄米共轭：
+        $\langle q|e^{i\hat{p}a} = \langle q+a|$，
+        因此 $\langle q|e^{-i\hat{p}a} = \langle q-a|$。}：
+        $\langle q|e^{-i\hat{p}a}|p\rangle = \langle q-a|p\rangle$
+\end{itemize}
+两者相等，得到泛函方程：
+\begin{equation}\label{eq:func-eq}
+  \langle q-a|p\rangle = e^{-ipa}\,\langle q|p\rangle
+\end{equation}
+令 $f(q) \equiv \langle q|p\rangle$。将 (\ref{eq:func-eq}) 中 $a$ 取为无穷小 $\epsilon$，
+展开到一阶：
+\[
+  f(q) - \epsilon\,f'(q) = (1 - ip\epsilon)\,f(q)
+  \qquad\Longrightarrow\qquad
+  f'(q) = ip\,f(q)
+\]
+这是一个简单的一阶常微分方程，解为 $f(q) = C\,e^{ipq}$。至此，不对易关系 $[\hat{q},\hat{p}] = i$
+\textbf{唯一确定}了位置-动量重叠的函数形式：
+\begin{equation}\label{eq:qp-overlap}
+\boxed{
+  \langle q|p\rangle = C\,e^{ipq}
+}
+\end{equation}
+常数 $C$ 的取值取决于归一化约定。本章（以及后续场论）采用如下约定\footnote{
+另一种常见约定是 $C = (2\pi)^{-1/2}$，此时
+$\langle p'|p\rangle = \delta(p'-p)$ 且 $\int dp\,|p\rangle\langle p| = \mathbf{1}$。
+两种约定的物理内容完全一致。在场论中，
+$(2\pi)$ 因子出现在积分测度中更为自然，
+因此 $C = 1$ 的约定被广泛采用。}：
+\begin{equation}\label{eq:convention}
+  C = 1 :\qquad
+  \langle q|p\rangle = e^{ipq}
+\end{equation}
+由此确定动量态的归一化和完备关系：
+\begin{equation}\label{eq:p-complete}
+  \langle p'|p\rangle = 2\pi\,\delta(p'-p)\,,\qquad
+  \int\frac{dp}{2\pi}\;|p\rangle\langle p| = \mathbf{1}
+\end{equation}
+验证：$\langle p'|p\rangle = \int dq\,\langle p'|q\rangle\langle q|p\rangle
+= \int dq\,e^{-ip'q}e^{ipq}
+= \int dq\,e^{i(p-p')q} = 2\pi\,\delta(p'-p)$。$\checkmark$
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{lcc}
+  \hline
+  & 位置 & 动量 \\
+  \hline
+  本征方程 & $\hat{q}|q\rangle = q|q\rangle$ & $\hat{p}|p\rangle = p|p\rangle$ \\
+  正交关系 & $\langle q'|q\rangle = \delta(q'-q)$ & $\langle p'|p\rangle = 2\pi\,\delta(p'-p)$ \\
+  完备关系 & $\displaystyle\int dq\,|q\rangle\langle q| = \mathbf{1}$
+           & $\displaystyle\int\frac{dp}{2\pi}\,|p\rangle\langle p| = \mathbf{1}$ \\
+  重叠 & \multicolumn{2}{c}{$\langle q|p\rangle = e^{ipq}$} \\
+  \hline
+\end{tabular}
+\end{center}
+
+\subsection*{Heisenberg 绘景的严格表述}路径积分的自然语言是 Heisenberg 绘景——在这种描述中，\textbf{所有的时间演化都被编码在算符 $e^{iHt}$ 中}。
+
+\vspace{6pt}
+\noindent\textbf{Heisenberg 算符。}
+Heisenberg 绘景中的位置和动量算符定义为（\S1.3.1 式 (1.18)）：
+\begin{equation}\label{eq:Heis-ops}
+  \hat{q}_H(t) = e^{iHt}\,\hat{q}\,e^{-iHt}\,,\qquad
+  \hat{p}_H(t) = e^{iHt}\,\hat{p}\,e^{-iHt}
+\end{equation}
+其中省略了下标 $S$（Schr\"odinger 算符 $\hat{q} \equiv \hat{q}_S$, $\hat{p} \equiv \hat{p}_S$ 不含时间）。
+由于幺正变换保持对易关系不变\footnote{
+$[\hat{q}_H(t),\hat{p}_H(t)]
+= e^{iHt}[\hat{q},\hat{p}]e^{-iHt}
+= e^{iHt}\cdot i \cdot e^{-iHt} = i$。}，
+\textbf{等时}对易关系在每一个时刻都成立：
+\begin{equation}\label{eq:equal-time-CR}
+  [\hat{q}_H(t),\,\hat{p}_H(t)] = i\,,\qquad\forall\,t
+\end{equation}
+然而在\textbf{不等时}的情况下，位置算符之间一般不再对易\footnote{
+这是因为 $e^{iHt}\hat{q}e^{-iHt}$ 和 $e^{iHt'}\hat{q}e^{-iHt'}$
+包含不同的时间演化因子，只有当 $[\hat{q}, H] = 0$（自由度守恒）时才对易——
+而对于非平凡的哈密顿量，这一般是不成立的。
+在 1+3 维场论中，不等时对易子 $[\hat{\phi}(x),\hat{\phi}(y)]$
+是否为零——即\textbf{微观因果性}——将成为核心物理约束。
+}：
+\begin{equation}\label{eq:unequal-time}
+  [\hat{q}_H(t),\,\hat{q}_H(t')] \neq 0\,,\qquad t \neq t'
+\end{equation}
+这是 0+1 维的一个重要特征：\textbf{一个粒子在不同时刻的位置是不对易的}。
+这一事实是量子力学中路径不确定性的代数表述——
+如果不同时刻的位置可以同时确定（对易），粒子就走在一条确定的经典轨迹上。
+
+\vspace{8pt}
+\noindent\textbf{Heisenberg 位置本征态。}
+现在我们定义 Heisenberg 绘景中\textbf{最关键的对象}。
+$\hat{q}_H(t)$ 是一个厄米算符，对于每一个时刻 $t$，它都有一组完备的本征态。
+定义 $|q,t\rangle$ 为 $\hat{q}_H(t)$ 的本征值为 $q$ 的本征态：
+\begin{equation}\label{eq:Heis-eigen-def}
+  \hat{q}_H(t)\,|q,t\rangle = q\,|q,t\rangle
+\end{equation}
+将 (\ref{eq:Heis-ops}) 代入：
+\[
+  e^{iHt}\,\hat{q}\,e^{-iHt}\,|q,t\rangle = q\,|q,t\rangle
+\]
+两边左乘 $e^{-iHt}$：
+\[
+  \hat{q}\,\bigl(e^{-iHt}|q,t\rangle\bigr)
+  = q\,\bigl(e^{-iHt}|q,t\rangle\bigr)
+\]
+可以看出 $e^{-iHt}|q,t\rangle$ 是 Schr\"odinger 算符 $\hat{q}$ 的本征值为 $q$ 的本征态，
+即 $e^{-iHt}|q,t\rangle = |q\rangle$。因此\footnote{
+注意符号：Heisenberg 位置本征态含 $e^{+iHt}$，
+而 Schr\"odinger 态的时间演化含 $e^{-iHt}$。
+这是因为 $|q,t\rangle$ 不是"在时间 $t$ 的系统状态"，
+而是"时间 $t$ 时 Heisenberg 位置算符的本征态"——
+它是一个\textbf{标记时刻}的基矢，不是一个\textbf{演化中的态}。}：
+\begin{equation}\label{eq:Heis-eigenstate}
+\boxed{
+  |q,t\rangle = e^{iHt}|q\rangle
+}
+\end{equation}
+\textbf{所有的时间依赖性都被编码在因子 $e^{iHt}$ 中。}
+这组本征态在每一个时刻 $t$ 都构成 Hilbert 空间的完备正交基：
+\begin{align}
+  &\text{正交性：}\quad
+  \langle q',t|q,t\rangle = \langle q'|e^{-iHt}e^{iHt}|q\rangle = \langle q'|q\rangle
+  = \delta(q'-q) \label{eq:Heis-ortho}\\[4pt]
+  &\text{完备性：}\quad
+  \int dq\;|q,t\rangle\langle q,t|
+  = e^{iHt}\!\left(\int dq\;|q\rangle\langle q|\right)\!e^{-iHt}
+  = e^{iHt}\cdot\mathbf{1}\cdot e^{-iHt} = \mathbf{1} \label{eq:Heis-complete}
+\end{align}
+特别地，完备性 (\ref{eq:Heis-complete}) 对\textbf{任意}时刻 $t$ 都成立——
+这一性质是路径积分时间切片的数学基础。
+
+\vspace{8pt}
+\noindent\textbf{传播子：Heisenberg 本征态的内积。}
+现在考虑两个\textbf{不同时刻}的 Heisenberg 位置本征态的内积：
+\begin{equation}\label{eq:propagator}
+\boxed{
+  K(q_f, t_f;\, q_i, t_i)
+  \;\equiv\; \langle q_f, t_f\,|\,q_i, t_i\rangle
+  \;=\; \langle q_f|\,e^{-iH(t_f - t_i)}\,|q_i\rangle
+}
+\end{equation}
+这就是\textbf{传播子}——系统从 $(q_i, t_i)$ 到 $(q_f, t_f)$ 的概率幅。
+推导只用了一步：
+\[
+  \langle q_f,t_f|q_i,t_i\rangle
+  = \langle q_f|\,\underbrace{e^{-iHt_f}\,e^{iHt_i}}_{e^{-iH(t_f-t_i)}}\,|q_i\rangle
+\]
+物理图像极为清晰：
+\begin{itemize}
+  \item 在 Heisenberg 绘景中，传播子就是两个不同时刻的位置本征态之间的\textbf{内积}。
+  \item 时间演化\textbf{完全}由 $e^{iHt}$ 承担——它把不同时刻的本征态联系起来。
+  \item 传播子完全决定了系统的动力学：若已知初态波函数
+        $\psi(q_i, t_i) = \langle q_i, t_i|\psi\rangle$，
+        则末态波函数为
+        \begin{equation}
+          \psi(q_f, t_f) = \langle q_f, t_f|\psi\rangle
+          = \int dq_i\;\langle q_f, t_f|q_i, t_i\rangle\;\langle q_i, t_i|\psi\rangle
+          = \int dq_i\;K(q_f,t_f;\,q_i,t_i)\;\psi(q_i,t_i)
+        \end{equation}
+        其中第二步插入了 $t_i$ 时刻的完备关系 (\ref{eq:Heis-complete})。
+\end{itemize}
+
+\subsection*{时间切片与路径积分}
+
+传播子 (\ref{eq:propagator}) 包含算符 $e^{-iH(t_f-t_i)}$，
+对于一般的哈密顿量无法直接计算。
+路径积分的策略是：将\textbf{一大步}时间演化拆分为\textbf{许多小步}，
+然后在每一小步利用"短时近似"使计算变得可行。
+
+将时间区间 $[t_i, t_f]$ 等分为 $N$ 份，每份宽度为
+$\varepsilon = (t_f - t_i)/N$，
+记中间时刻为 $t_k = t_i + k\varepsilon$（$k = 0, 1, \ldots, N$）。
+在每两个相邻时刻之间插入 Heisenberg 完备关系 (\ref{eq:Heis-complete})：
+\begin{align}
+  K &= \langle q_f, t_f|q_i, t_i\rangle
+  \notag\\
+  &= \int\!\left(\prod_{k=1}^{N-1} dq_k\right)
+     \langle q_f, t_N|q_{N-1}, t_{N-1}\rangle
+     \langle q_{N-1}, t_{N-1}|q_{N-2}, t_{N-2}\rangle
+     \cdots
+     \langle q_1, t_1|q_i, t_0\rangle
+  \notag\\
+  &= \int\!\left(\prod_{k=1}^{N-1} dq_k\right)
+     \prod_{k=0}^{N-1}
+     \underbrace{\langle q_{k+1}|\,e^{-iH\varepsilon}\,|q_k\rangle}_{
+       \text{短时振幅}}
+  \label{eq:time-slice}
+\end{align}
+其中 $q_0 \equiv q_i$，$q_N \equiv q_f$。
+每个短时振幅只涉及微小时间间隔 $\varepsilon$ 的演化，可以做近似处理。
+
+\vspace{8pt}
+\noindent\textbf{相空间路径积分。}
+考虑形如 $H = T(\hat{p}) + V(\hat{q})$ 的哈密顿量，其中 $T = \hat{p}^2/(2m)$。
+当 $\varepsilon$ 足够小时，利用 Trotter 公式\footnote{
+$e^{(A+B)\varepsilon} = e^{A\varepsilon}e^{B\varepsilon} + O(\varepsilon^2)$。
+误差 $O(\varepsilon^2)$ 在 $N\to\infty$ 极限下被 $N$ 次累积，
+总误差为 $N \cdot O(\varepsilon^2) = O(\varepsilon) \to 0$。}：
+\begin{equation}
+  e^{-iH\varepsilon} \approx e^{-iT\varepsilon}\,e^{-iV\varepsilon}
+\end{equation}
+在短时振幅中插入 \S1.4.1 建立的动量完备关系
+$\int\frac{dp_k}{2\pi}|p_k\rangle\langle p_k| = \mathbf{1}$：
+\begin{align}
+  \langle q_{k+1}|e^{-iH\varepsilon}|q_k\rangle
+  &\approx
+  e^{-iV(q_k)\varepsilon}\int\frac{dp_k}{2\pi}\,
+  \langle q_{k+1}|p_k\rangle\,e^{-iT(p_k)\varepsilon}\,\langle p_k|q_k\rangle
+  \notag\\[3pt]
+  &= \int\frac{dp_k}{2\pi}\;
+     \exp\!\Bigl\{
+       i\bigl[p_k(q_{k+1}-q_k) - \varepsilon\,H(p_k, q_k)\bigr]
+     \Bigr\}
+  \label{eq:short-time}
+\end{align}
+其中关键的一步是利用了 $\langle q|p\rangle = e^{ipq}$（\S1.4.1 的核心结果）。
+定义离散"速度" $\dot{q}_k \equiv (q_{k+1} - q_k)/\varepsilon$，
+将 (\ref{eq:short-time}) 代入 (\ref{eq:time-slice})，得到\textbf{相空间路径积分}：
+\begin{equation}\label{eq:phase-PI}
+\boxed{
+  K = \int\prod_{k=1}^{N-1}dq_k\prod_{k=0}^{N-1}\frac{dp_k}{2\pi}\;
+  \exp\!\left\{
+    i\sum_{k=0}^{N-1}\varepsilon\,
+    \Bigl[p_k\dot{q}_k - H(p_k, q_k)\Bigr]
+  \right\}
+}
+\end{equation}
+被积函数中的 $p\dot{q} - H$ 正是经典力学中相空间作用量的被积式。
+在连续极限 $N\to\infty$ 下，形式上记为\footnote{
+$\mathcal{D}q\,\mathcal{D}p$ 的严格定义是时间切片的极限。}：
+\[
+  K = \int\mathcal{D}q\,\mathcal{D}p\;
+  \exp\!\left\{i\int_{t_i}^{t_f}\!dt\;\bigl[p\dot{q} - H(p,q)\bigr]\right\}
+\]
+
+\vspace{8pt}
+\noindent\textbf{位型空间路径积分。}
+对于标准二次动能 $T(p) = p^2/(2m)$，(\ref{eq:short-time}) 中的 $p_k$ 积分是高斯型的，
+可以精确完成。将指数中的 $p_k$ 配方\footnote{
+$p\dot{q} - \frac{p^2}{2m} = -\frac{1}{2m}(p - m\dot{q})^2 + \frac{m\dot{q}^2}{2}$。}，
+提出与 $p_k$ 无关的部分后，
+利用 Fresnel 积分\footnote{
+$\displaystyle\int_{-\infty}^{+\infty}\!\frac{dp}{2\pi}\;e^{-iap^2/2}
+= \frac{1}{\sqrt{2\pi ia}}$，对 $\mathrm{Re}(ia) > 0$ 成立，
+这里 $a = \varepsilon/m$。}：
+\begin{equation}
+  \int\frac{dp_k}{2\pi}\;
+  \exp\!\left\{i\varepsilon\left[p_k\dot{q}_k - \frac{p_k^2}{2m}\right]\right\}
+  = \sqrt{\frac{m}{2\pi i\varepsilon}}\;
+    \exp\!\left\{\frac{i\varepsilon m}{2}\dot{q}_k^2\right\}
+\end{equation}
+将全部 $N$ 个 $p_k$ 积分的结果合并，
+并利用 $L(q,\dot{q}) = \frac{m}{2}\dot{q}^2 - V(q)$，
+得到\textbf{位型空间路径积分}（拉格朗日路径积分）：
+\begin{equation}\label{eq:config-PI}
+\boxed{
+  K(q_f,t_f;\,q_i,t_i) = \int\mathcal{D}q\;\exp\!\Bigl\{iS[q]\Bigr\}
+}
+\end{equation}
+其中经典作用量为
+$S[q] = \int_{t_i}^{t_f}dt\;L(q,\dot{q})$，
+泛函积分测度的严格定义为：
+\begin{equation}\label{eq:measure}
+  \int\mathcal{D}q
+  \;\equiv\;
+  \lim_{N\to\infty}
+  \left(\frac{m}{2\pi i\varepsilon}\right)^{\!N/2}
+  \int\prod_{k=1}^{N-1}dq_k
+\end{equation}
+其中归一化因子 $(m/2\pi i\varepsilon)^{N/2}$ 来自对动量的高斯积分。
+方程 (\ref{eq:config-PI}) 便是 Feynman 路径积分的核心结果：
+\begin{center}
+\fbox{\parbox{0.86\textwidth}{
+传播子等于对\textbf{所有}从 $(q_i,t_i)$ 到 $(q_f,t_f)$ 的路径 $q(t)$ 求和，
+每条路径的权重为 $e^{iS[q]}$。不要求路径可微甚至不要求连续——
+贡献最大的路径恰恰是"高度不规则"的\footnotemark。
+}}
+\end{center}
+\footnotetext{数学上，对路径积分有贡献的典型路径是处处连续但处处不可微的，
+类似于布朗运动的 Wiener 轨迹。}
+
+\vspace{4pt}
+\noindent\textbf{示例：自由粒子。}
+对于 $V = 0$，作用量是 $q$ 的二次泛函，可以精确计算。
+经典轨迹为 $q_{\text{cl}}(t) = q_i + (q_f - q_i)\frac{t - t_i}{t_f - t_i}$，
+经典作用量为
+$S_{\text{cl}} = \frac{m(q_f-q_i)^2}{2(t_f-t_i)}$。
+由于作用量是二次的，围绕经典解的涨落积分只贡献一个预指数因子，最终结果为：
+\begin{equation}\label{eq:free-K}
+  K_0(q_f,t_f;\,q_i,t_i)
+  = \sqrt{\frac{m}{2\pi i(t_f-t_i)}}\;
+    \exp\!\left\{\frac{im(q_f-q_i)^2}{2(t_f-t_i)}\right\}
+\end{equation}
+当 $t_f \to t_i^+$ 时，$K_0 \to \delta(q_f - q_i)$，
+符合 $e^{-iH\cdot 0} = \mathbf{1}$ 的要求。
+
+\subsection*{经典极限与驻相近似}
+
+路径积分提供了理解量子-经典过渡的最直观方式。暂时恢复 $\hbar$：
+\[
+  K = \int\mathcal{D}q\;\exp\!\left\{\frac{i}{\hbar}S[q]\right\}
+\]
+当 $\hbar \to 0$ 时，相位 $S/\hbar$ 对路径的微小偏离变化极为剧烈，
+不同路径的贡献因快速振荡而\textbf{相消干涉}——
+恰如 \S4.6 中集团分解论证所利用的 Riemann-Lebesgue 机制。
+唯一的例外是\textbf{驻相点}（使相位变化率为零的路径）：
+\begin{equation}
+  \frac{\delta S}{\delta q(t)}\bigg|_{q = q_{\text{cl}}} = 0
+  \qquad\Longleftrightarrow\qquad
+  \frac{d}{dt}\frac{\partial L}{\partial\dot{q}}
+  - \frac{\partial L}{\partial q} = 0
+\end{equation}
+这正是经典力学的 \textbf{Euler--Lagrange 方程}。因此：
+经典力学中粒子沿唯一的使作用量取极值的经典轨迹运动；
+量子力学中粒子"探索"所有可能的路径，
+但在 $\hbar\to 0$ 极限下只有经典路径附近的路径彼此相干增强。
+
+将 $q(t) = q_{\text{cl}}(t) + \eta(t)$（$\eta(t_i) = \eta(t_f) = 0$）代入作用量，
+展开到涨落 $\eta$ 的二阶\footnote{
+一阶项 $\delta S/\delta q|_{q_{\text{cl}}} = 0$ 因经典方程成立而消失。}：
+\begin{equation}
+  S[q] = S[q_{\text{cl}}]
+  + \frac{1}{2}\int\!dt\,dt'\;\eta(t)\,
+    \frac{\delta^2 S}{\delta q(t)\delta q(t')}\bigg|_{q_{\text{cl}}}\,\eta(t')
+  + O(\eta^3)
+\end{equation}
+对涨落 $\eta$ 做高斯积分，得到半经典（WKB）近似：
+\begin{equation}
+  K \;\approx\; \mathcal{N}\;\exp\!\left\{\frac{i}{\hbar}S[q_{\text{cl}}]\right\}
+\end{equation}
+其中预指数因子 $\mathcal{N}$ 由二阶涨落算符的函数行列式决定。
+

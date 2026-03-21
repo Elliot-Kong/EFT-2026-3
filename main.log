@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.11.8)  19 MAR 2026 02:28
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.11.8)  21 MAR 2026 17:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -239,6 +239,8 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2022/12/04 v6.7b set line spacing
 )) (./preamble/visual_packages.tex (/usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
 Package: tcolorbox 2024/10/22 version 6.4.1 text color boxes
  (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
@@ -1039,7 +1041,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 )
 \Hy@SectionHShift=\skip121
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 97.
+Package hyperref Info: Option `colorlinks' set `true' on input line 78.
 ) (./preamble/footnote.tex (/usr/local/texlive/2025/texmf-dist/tex/latex/chngcntr/chngcntr.sty
 Package: chngcntr 2018/04/09 v1.1a change counter resetting
 Package chngcntr Info: \counterwithout already defined.
@@ -1089,15 +1091,15 @@ LaTeX Font Info:    ... okay on input line 38.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(42.67912pt, 512.14963pt, 42.67912pt)
-* v-part:(T,H,B)=(34.14322pt, 776.7604pt, 34.14322pt)
+* h-part:(L,W,R)=(45.52458pt, 506.45871pt, 45.52458pt)
+* v-part:(T,H,B)=(42.67912pt, 759.6886pt, 42.67912pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=512.14963pt
-* \textheight=776.7604pt
-* \oddsidemargin=-29.59087pt
-* \evensidemargin=-29.59087pt
-* \topmargin=-70.00056pt
+* \textwidth=506.45871pt
+* \textheight=759.6886pt
+* \oddsidemargin=-26.7454pt
+* \evensidemargin=-26.7454pt
+* \topmargin=-61.46466pt
 * \headheight=12.0pt
 * \headsep=19.8738pt
 * \topskip=11.0pt
@@ -1166,55 +1168,96 @@ File: preamble//titlepage/titlepage3/cat.pdf Graphic file (type pdf)
 [1
 
 
-]) (./preamble/frontmatter.tex (./main.toc
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1.
+]) (./preamble/titlepage/first page.tex
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 7.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 7.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 1.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 7.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 1.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 7.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 1.
+(Font)              <10.95> on input line 7.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 1.
+(Font)              <8> on input line 7.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 1.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 1.
+(Font)              <6> on input line 7.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 7.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 1.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 7.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 1.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 7.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 2.
-)
-\tf@toc=\write6
-\openout6 = `main.toc'.
+(Font)              <9> on input line 7.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 7.
+) (./preamble/frontmatter.tex
 
-) (./preamble/citecolor.tex)
+[1
+
+] (./main.toc
+Overfull \hbox (27.92252pt too wide) in paragraph at lines 1--1
+[][] []  
+ []
+
+
+Overfull \hbox (27.92252pt too wide) in paragraph at lines 1--1
+[]  
+ []
+
+
+Overfull \hbox (27.92252pt too wide) in paragraph at lines 25--25
+[][] []  
+ []
+
+
+Overfull \hbox (27.92252pt too wide) in paragraph at lines 25--25
+[]  
+ []
+
+
 
 [1
 
 
-]
 
-[2
+]
+Overfull \hbox (27.92252pt too wide) in paragraph at lines 67--67
+[][] []  
+ []
+
+
+Overfull \hbox (27.92252pt too wide) in paragraph at lines 67--67
+[]  
+ []
+
+)
+\tf@toc=\write6
+\openout6 = `main.toc'.
+
+
+
+[2]) (./preamble/citecolor.tex)
+
+[1
+
+
 
 ]
 Chapter 1.
@@ -1225,21 +1268,15 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 14.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 14.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 23.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 23.
 
 Missing character: There is no ｜ ("FF5C) in font rm-lmr10!
 
 
-[3
+[2
 
 ]
 
-[4]
-
-[5]
+[3]
 Missing character: There is no 根 ("6839) in font rm-lmr8!
 Missing character: There is no 据 ("636E) in font rm-lmr8!
 Missing character: There is no 谱 ("8C31) in font rm-lmr8!
@@ -1255,173 +1292,208 @@ Missing character: There is no 形 ("5F62) in font rm-lmr8!
 Missing character: There is no 式 ("5F0F) in font rm-lmr8!
 Missing character: There is no 为 ("4E3A) in font rm-lmr8!
 Missing character: There is no ： ("FF1A) in font rm-lmr8!
-) (./quantum_theory_basic/canonical_commutation.tex) (./quantum_theory_basic/dynamics.tex
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3.
+[4]) (./quantum_theory_basic/canonical_commutation.tex) (./quantum_theory_basic/dynamics.tex
 
-
-LaTeX Warning: Command \" invalid in math mode on input line 5.
-
-Missing character: There is no ö ("F6) in font lmmi10!
-
+[5]
 
 [6]
 
-[7]) (./quantum_theory_basic/symmetry_about_qm.tex
+[7]
 
 [8]
 
 [9]
 
-[10]))
+[10]
 
 [11]
+
+[12]) (./quantum_theory_basic/symmetry_about_qm.tex
+
+[13]
+
+[14]
+
+[15]
+Overfull \vbox (1.45503pt too high) has occurred while \output is active []
+
+
+
+[16]))
+
+[17]
 Chapter 2.
-(./spacetime/chapter.tex (./spacetime/special_relativity.tex))
+(./spacetime/chapter.tex (./spacetime/special_relativity.tex
 
-[12
+[18
 
 ]
+
+[19]
+
+[20]
+
+[21]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 309.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
+
+[22]))
+
+[23]
 Chapter 3.
-(./particle_states/chapter.tex (./particle_states/quantum_poincare_transformation.tex) (./particle_states/poincare_algebra.tex
+(./particle_states/chapter.tex (./particle_states/poincare_algebra.tex
 
-[13
+[24
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 103--107
-
+Overfull \hbox (6.95134pt too wide) detected at line 84
+\OMS/lmsy/m/n/10.95 ) []\OML/lmm/m/it/10.95 ![]U\OT1/lmr/m/n/10.95 (^^C\OML/lmm/m/it/10.95 ;  a\OT1/lmr/m/n/10.95 )\U/rsfs/m/n/10.95 J[]\OML/lmm/m/it/10.95 U[]\OT1/lmr/m/n/10.95 (^^C\OML/lmm/m/it/10.95 ;  a\OT1/lmr/m/n/10.95 ) \OMS/lmsy/m/n/10.95 ^^@ \OML/lmm/m/it/10.95 i^^O[]U\OT1/lmr/m/n/10.95 (^^C\OML/lmm/m/it/10.95 ;  a\OT1/lmr/m/n/10.95 )\U/rsfs/m/n/10.95 P[]\OML/lmm/m/it/10.95 U[]\OT1/lmr/m/n/10.95 (^^C\OML/lmm/m/it/10.95 ;  a\OT1/lmr/m/n/10.95 ) = []\OML/lmm/m/it/10.95 ![]\OT1/lmr/m/n/10.95 ^^C[]^^C[] [] \OMS/lmsy/m/n/10.95 ^^@ \OML/lmm/m/it/10.95 i\OT1/lmr/m/n/10.95 ^^C[]\OML/lmm/m/it/10.95 ^^O[]\U/rsfs/m/n/10.95 P[]
  []
 
 
-Overfull \hbox (31.78783pt too wide) detected at line 178
+Overfull \hbox (63.92357pt too wide) detected at line 176
 [][]
  []
 
 
-Overfull \hbox (26.7226pt too wide) detected at line 189
+
+[25]
+Overfull \hbox (32.41351pt too wide) detected at line 187
 \OMS/lmsy/m/n/10.95 ) []\OML/lmm/m/it/10.95 ![] [] \OMS/lmsy/m/n/10.95 ^^@ \OML/lmm/m/it/10.95 i^^O[] [] \OT1/lmr/m/n/10.95 = []\OML/lmm/m/it/10.95 ![] [] \OT1/lmr/m/n/10.95 + \OML/lmm/m/it/10.95 ^^O[] []
  []
 
 
 
-[14]
+[26]) (./particle_states/one_particle_state.tex
 
-[15]) (./particle_states/one_particle_state.tex
-Underfull \hbox (badness 10000) in paragraph at lines 2--7
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 9--14
-
+[27]
+Underfull \hbox (badness 1320) in paragraph at lines 70--74
+$ \OT1/lmr/m/n/10.95 =[]\OMS/lmsy/m/n/10.95 ) $ \TU/SongtiSC(0)/m/n/10.95 所 以，|  任 意 小 群 作 用 在 标 准 动 量 的 本 质 态 $[]$ 是：| $\OML/lmm/m/it/10.95 U [] [] \OT1/lmr/m/n/10.95 =
  []
 
 
 
-[16]
-Missing character: There is no 图 ("56FE) in font rm-lmr8!
+[28]
 
+[29]
 
-[17]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\(' on input line 184.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\dagger' on input line 184.
+[30]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 212.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\)' on input line 184.
-
-
-
-[18]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\(' on input line 284.
+(hyperref)                removing `\(' on input line 212.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\dagger' on input line 284.
+(hyperref)                removing `\dagger' on input line 212.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\)' on input line 284.
+(hyperref)                removing `\)' on input line 212.
 
 
 
-[19]
+[31]
+Missing character: There is no 。 ("3002) in font rm-lmr10!
 
-[20]))
 
-[21]
+[32]
 
-[22]
+[33]
 
-[23
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\(' on input line 460.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\dagger' on input line 460.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\)' on input line 460.
+
+
+
+[34]
+
+[35]))
+
+[36]
+
+[37
 
 ]
 Chapter 4.
 (./scattering_theory/chapter.tex (./scattering_theory/in_out_states.tex
 
-[24
+[38
 
 ]
 Missing character: There is no 其 ("5176) in font rm-lmr9!
 Missing character: There is no 中 ("4E2D) in font rm-lmr9!
 
 
-[25]) (./scattering_theory/s_matrix.tex) (./scattering_theory/lorentz_symmetry_of_s_matrix.tex
+[39]) (./scattering_theory/s_matrix.tex) (./scattering_theory/lorentz_symmetry_of_s_matrix.tex
 
-[26]
+[40]
+
+[41]
 Missing character: There is no 𝑆 (U+1D446) in font [lmroman9-regular]:mapping=tex-text;!
 
-LaTeX Warning: Reference `3.18' on page 27 undefined on input line 87.
+LaTeX Warning: Reference `3.18' on page 42 undefined on input line 87.
 
 
-LaTeX Warning: Reference `3.18' on page 27 undefined on input line 87.
+LaTeX Warning: Reference `3.18' on page 42 undefined on input line 87.
 
 
 
-[27]
+[42] Excluding 'comment' comment.
 
-[28] Excluding 'comment' comment.
+[43]) (./scattering_theory/bosons_and_fermions.tex) (./scattering_theory/creation_and_annihilation_operators.tex) (./scattering_theory/cluster_decomposition_and_connected_amplitudes.tex
 
-[29]) (./scattering_theory/bosons_and_fermions.tex) (./scattering_theory/creation_and_annihilation_operators.tex) (./scattering_theory/cluster_decomposition_and_connected_amplitudes.tex
+[44]
+Overfull \hbox (9.69235pt too wide) in alignment at lines 99--100
+[] []
+ []
 
-[30]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <20.74> on input line 183.
 
+
+[45]
 Missing character: There is no ️ (U+FE0F) in font Songti SC Regular/OT:script=hani;language=dflt;!
 
 
-[31]
+[46]) (./scattering_theory/structure_of_the_interaction.tex) Excluding 'comment' comment.)
 
-[32]) (./scattering_theory/structure_of_the_interaction.tex))
-
-[33]
+[47]
 Chapter 5.
 (./fields_antiparticles/chapter.tex (./fields_antiparticles/field_emergence.tex
 
-[34
+[48
 
 ]
+Overfull \hbox (10.36362pt too wide) detected at line 101
+[]
+ []
 
-[35]
 
-[36]
 
-[37]) (./fields_antiparticles/general_fields.tex
+[49]
 
-[38]
+[50]
+
+[51]
+
+[52]) (./fields_antiparticles/general_fields.tex
+
+[53]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
@@ -1434,18 +1506,15 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
 
-LaTeX Font Info:    Trying to load font information for U+euf on input line 74.
-(/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/ueuf.fd
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-)
 
-[39] Excluding 'comment' comment.
 
-[40]
+[54] Excluding 'comment' comment.
 
-[41]
+[55]
 
-[42]) (./fields_antiparticles/massive_fields.tex
+[56]) (./fields_antiparticles/massive_fields.tex
+
+[57]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\(' on input line 2.
@@ -1460,31 +1529,35 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 
-[43]
+[58]
 
-[44]
+[59]
 
-[45] (./fields_antiparticles/spin0.tex
+[60] (./fields_antiparticles/spin0.tex
 
-[46]) (./fields_antiparticles/spin1:2.tex
+[61]) (./fields_antiparticles/spin1:2.tex
 
-[47]
+[62]
 
-[48]) (./fields_antiparticles/dirac_form.tex
+[63]) (./fields_antiparticles/dirac_form.tex
 
-[49]
+[64]
 
-[50]
+[65]
 
-[51]) (./fields_antiparticles/dirac_field.tex
+[66]
 
-[52]
+[67]) (./fields_antiparticles/dirac_field.tex
 
-[53]) (./fields_antiparticles/spin1.tex
+[68]
 
-[54]
+[69]) (./fields_antiparticles/spin1.tex
 
-[55])) (./fields_antiparticles/massless_fields.tex
+[70]
+
+[71]
+
+[72])) (./fields_antiparticles/massless_fields.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\(' on input line 1.
@@ -1497,49 +1570,73 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\)' on input line 1.
 
-Excluding 'comment' comment.))
 
-[56]
 
-[57]
+[73]
+
+[74]
+
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 160.
+
+
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 160.
+
+
+
+[75]))
+
+[76]
 Chapter 6.
 (./intercation_theory/chapter.tex (./intercation_theory/feynman_rules.tex) (./intercation_theory/canonical_formalism.tex) (./intercation_theory/interaction_picture_example.tex) (./intercation_theory/observables.tex
 
-[58
+[77
 
 ]
 
-[59]
+[78]
 
-[60]
+[79]
+Overfull \hbox (1.11986pt too wide) detected at line 179
+[][] [] [][]
+ []
 
-[61]) (./intercation_theory/physical_examples_and_applications.tex) (./intercation_theory/functional_methods.tex (./intercation_theory/bosonic_path_integrals.tex) (./intercation_theory/fermionic_path_integrals.tex)))
 
-[62]
 
-[63
+[80]) (./intercation_theory/physical_examples_and_applications.tex) (./intercation_theory/functional_methods.tex (./intercation_theory/bosonic_path_integrals.tex) (./intercation_theory/fermionic_path_integrals.tex)))
 
-]
+[81]
 Chapter 7.
 
 
-[64
+[82
 
 ]
 
-[65
+[83
 
 ]
 Chapter 8.
 
 
-[66
+[84
 
 ]
 Chapter 9.
 
 
-[67
+[85
+
+]
+Chapter 10.
+
+
+[86
+
+]
+Chapter 11.
+
+
+[87
 
 ] (./main.aux)
  ***********
@@ -1554,15 +1651,15 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: E47079419EED55D86A23AE0A3371195D;6923.
+(rerunfilecheck)             Checksum: 8B570BD47EDB5A8A5D558C2717442812;9659.
  ) 
 Here is how much of TeX's memory you used:
- 48230 strings out of 473832
- 1205962 string characters out of 5729481
- 1815795 words of memory out of 5000000
- 70319 multiletter control sequences out of 15000+600000
- 640456 words of font info for 208 fonts, out of 8000000 for 9000
+ 48335 strings out of 473832
+ 1208071 string characters out of 5729481
+ 1778977 words of memory out of 5000000
+ 70418 multiletter control sequences out of 15000+600000
+ 640700 words of font info for 210 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 121i,18n,124p,758b,1289s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 121i,24n,124p,758b,1290s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (68 pages).
+Output written on main.pdf (91 pages).

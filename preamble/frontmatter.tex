@@ -1,25 +1,44 @@
-% ============================================================
-% Front matter
-% - Table of contents
-% - Page numbering reset
-% ============================================================
-
 \cleardoublepage
 
-\pagestyle{empty}
-\hypersetup{linkcolor=black} 
-% keep TOC links 
-\begin{center}
-  \color{black}\rule{\linewidth}{0.6pt}
-\end{center}%%%%%%%%%%%%% content and titlepage
-%%%%%%%%%%%%%%%%%% Two-column table of contents
-%\tableofcontents
-\begin{multicols}{2}
-  \begin{center}
+% --- 前言/目录部分开始 ---
+\pagenumbering{roman} 
+% 1. 彻底隐藏默认的 "Contents" 标题
+\makeatletter
+\renewcommand{\@cftmaketoctitle}{}
+\makeatother
+
+% 2. 定制 Part (篇) 的目录格式：上下加横线，粗体，取消页码
+\cftpagenumbersoff{part} % 关闭 Part 的页码
+\renewcommand{\cftbeforepartskip}{1ex} % Part 前增加间距
+\renewcommand{\cftpartfont}{%
+    \noindent\rule{\linewidth}{0.5pt}\\[1ex] % 上横线
+    \large\bfseries % 字体放大且加粗
+}\vspace{-2ex}
+\renewcommand{\cftpartafterpnum}{%
+    \\[-1ex]\rule{\linewidth}{0.5pt}% 下横线
+}
+
+% 3. 定制 Chapter (章) 的目录格式：加粗体，并补充引导虚线
+\renewcommand{\cftchapfont}{\bfseries} % 章标题加粗
+\renewcommand{\cftchappagefont}{\bfseries} % 章页码加粗
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} % 【关键】为章添加点状引导线
+
+% 4. 微调各级别的缩进和间距（可选，让版面看起来更像图片）
+\setlength{\cftbeforechapskip}{1.5ex} % 章之间的间距
+\setlength{\cftbeforesecskip}{0.5ex}  % 节之间的间距
+\cftsetindents{section}{1.5em}{2.3em} % 节的缩进
+\cftsetindents{subsection}{3.8em}{3.2em} % 小节的缩进
+
+
+% --- 前言/目录部分 ---
+\frontmatter 
+\cleardoublepage
+  %\begin{multicols}{1}
     \tableofcontents
-  \end{center}
-\end{multicols}
-%\noindent\color{black}\rule{\linewidth}{0.6pt}%%%%%%%%%%%%%
-\pagenumbering{arabic}
-\setcounter{page}{1}
-\pagestyle{fancy}% 开启正文页码与页脚样式
+  %\end{multicols}
+\cleardoublepage
+
+% --- 正文部分 ---
+\mainmatter 
+\pagestyle{fancy}
+

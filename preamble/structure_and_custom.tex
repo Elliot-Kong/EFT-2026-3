@@ -47,7 +47,7 @@
 \usepackage[explicit]{titlesec}
 \usepackage{tocloft}
 \titleformat{\chapter}[block]
-  {\centering\huge\bfseries}
+  {\centering\huge\bfseries\vspace{10ex}}
   {第\,\thechapter\,章}
   {10pt}
   {
@@ -59,25 +59,6 @@
 % Chinese names for standard titles
 \renewcommand{\contentsname}{目录}
 \renewcommand{\partname}{部分}
-\renewcommand{\figurename}{图}
-\renewcommand{\tablename}{表}
-\renewcommand{\appendixname}{附录}
-\renewcommand{\bibname}{参考文献}
-\renewcommand{\listfigurename}{插图目录}
-\renewcommand{\listtablename}{表格目录}
-\renewcommand{\indexname}{索引}
-\providecommand*{\abstractname}{摘要}
-
-% Names used by `\autoref` (hyperref)
-\providecommand*{\chapterautorefname}{章}
-\providecommand*{\sectionautorefname}{节}
-\providecommand*{\subsectionautorefname}{小节}
-\providecommand*{\subsubsectionautorefname}{小节}
-\providecommand*{\paragraphautorefname}{段}
-\providecommand*{\subparagraphautorefname}{段}
-\providecommand*{\equationautorefname}{式}
-\providecommand*{\figureautorefname}{图}
-\providecommand*{\tableautorefname}{表}
 
 % Notes
 \usepackage{comment}
