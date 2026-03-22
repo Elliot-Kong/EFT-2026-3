@@ -1,1 +1,152 @@
-\section{相互作用的结构}
+\section{相互作用的结构}\label{sec:opstructure}
+
+在\ref{sec:cluster}中我们证明了集团分解原理的核心推论：
+$S$矩阵的连通部分$S^C$仅包含\textbf{单个}动量守恒$\delta$函数，
+其余部分是光滑函数。
+本节将此结果翻译成对相互作用哈密顿量的系统约束。
+\topictitle{Fock空间上算符的一般展开}
+在\ref{sec:fock}中，我们在Fock空间上定义了产生算符$a^\dagger$和湮灭算符$a$。
+由Fock空间的完备性，\textbf{任何}算符$\mathscr{O}$
+都可以展开为产生与湮灭算符的正规乘积之和：
+\begin{equation}\label{eq:opexpand}
+\mathscr{O} = \sum_{N=0}^{\infty}\sum_{M=0}^{\infty}
+\int\prod_{i=1}^{N}d^3p'_i\;\prod_{j=1}^{M}d^3p_j\;
+\mathscr{O}^{(NM)}(\boldsymbol{p}'_1,\ldots,\boldsymbol{p}'_N;\;
+\boldsymbol{p}_1,\ldots,\boldsymbol{p}_M)\;
+a^\dagger(\boldsymbol{p}'_1)\cdots a^\dagger(\boldsymbol{p}'_N)\;
+a(\boldsymbol{p}_M)\cdots a(\boldsymbol{p}_1)\,,
+\end{equation}
+其中核函数$\mathscr{O}^{(NM)}$是$c$-数函数
+（自旋与种类指标的求和已隐含）。
+这个展开的存在性本质上是Fock空间完备性的直接推论：
+$(N,M)$项恰好控制了$\mathscr{O}$在
+$M$粒子态$\to N$粒子态方向上的矩阵元。
+
+
+\subsubsection{对称性对核函数的约束}
+
+若算符$\mathscr{O}$在Poincar\'e变换下具有确定的变换性质，
+则核函数$\mathscr{O}^{(NM)}$被强烈约束：
+
+\begin{enumerate}
+\item \textbf{平移不变性}：若$[P^\mu,\mathscr{O}]=0$，
+则核函数包含且仅包含一个全局动量守恒$\delta$函数：
+\begin{equation}\label{eq:singledelta}
+\mathscr{O}^{(NM)} \propto
+\delta^3\!\bigg(\sum_{i=1}^{N}\boldsymbol{p}'_i - \sum_{j=1}^{M}\boldsymbol{p}_j\bigg)
+\times f(\text{光滑函数})\,.
+\end{equation}
+
+\item \textbf{Lorentz不变性}：
+若$\mathscr{O}$是Lorentz标量，
+则光滑函数$f$必须在Lorentz变换下不变，
+其具体形式由Wigner旋转矩阵$D^{(j)}$的耦合规则决定。
+
+\item \textbf{内部对称性}：
+若$\mathscr{O}$在某内部对称群$G$下不变，
+则核函数必须是$G$的不变张量。
+\end{enumerate}
+
+
+\subsubsection{集团分解原理的直接推论}
+
+"\textbf{仅包含单个$\delta$函数}"这一性质
+正是\ref{sec:cluster}中集团分解原理的推论。
+回顾其物理内容：
+
+\begin{mdframed}[backgroundcolor=blue!3]
+\textbf{核函数的光滑性与局域性}
+\begin{itemize}
+\item 核函数中动量守恒$\delta$函数之外的部分是\textbf{光滑的}
+      （无额外$\delta$函数奇点），
+      这保证了空间上远隔的实验互不影响。
+      若存在额外的$\delta$函数，
+      则在粒子子集空间分离时，
+      非连通贡献中的动量守恒因子无法正确因子化，
+      与集团分解矛盾。
+\item 当我们要求$\mathscr{O}$同时满足Lorentz不变性和集团分解原理时，
+      光滑函数$f$的形式被极大地约束——
+      它必须能够由场算符$\Psi_\ell(x)$的局域乘积的Fourier变换来表达。
+\end{itemize}
+\end{mdframed}
+
+
+\subsubsection{相互作用哈密顿量的一般形式}
+
+将上述约束施加于相互作用哈密顿量$V$，得到其一般结构：
+\begin{equation}\label{eq:Vgeneral}
+V = \sum_{N,M}\int\prod_{i=1}^{N}d^3p'_i\;
+\prod_{j=1}^{M}d^3p_j\;
+\delta^3\!\Big(\textstyle\sum\boldsymbol{p}'-\sum\boldsymbol{p}\Big)\;
+h^{(NM)}(\boldsymbol{p}';\,\boldsymbol{p})\;
+a^\dagger(\boldsymbol{p}'_1)\cdots a^\dagger(\boldsymbol{p}'_N)\;
+a(\boldsymbol{p}_M)\cdots a(\boldsymbol{p}_1)\,,
+\end{equation}
+其中$h^{(NM)}$是光滑函数。
+
+可以验证集团分解的自洽性：
+将\eqref{eq:Vgeneral}代入$S$矩阵的Dyson级数，
+构造初末态的位置空间波包，
+当两组粒子在空间上远离时，
+连通部分中$e^{i(\sum\mathbf{q}'-\sum\mathbf{q})\cdot\mathbf{d}}$
+的快速振荡相位（$|\mathbf{d}|\to\infty$）
+与$h^{(NM)}$的光滑性结合，
+由Riemann--Lebesgue引理保证连通振幅趋于零。
+非连通部分则正确因子化为独立子过程的$S$矩阵之积。
+
+
+\subsubsection{从产生湮灭算符到局域量子场}
+
+\eqref{eq:Vgeneral}的结构虽然完整，
+但仅用$a$和$a^\dagger$直接构造满足\textbf{Lorentz不变性}的$h^{(NM)}$
+是极其困难的：
+每个$a^\dagger(\boldsymbol{p},\sigma)$在Lorentz变换下
+按Wigner的诱导表示变换\eqref{eq:multiPoincare}，
+涉及动量依赖的Wigner旋转$W(\Lambda,p)$，
+这使得$h^{(NM)}$的Lorentz不变性条件变得非常复杂。
+
+解决方案是引入\textbf{因果场}$\Psi_\ell(x)$——
+它是$a$和$a^\dagger$的特定线性组合，
+其中展开系数$u_\ell(\boldsymbol{p},\sigma)$和$v_\ell(\boldsymbol{p},\sigma)$
+的选择使得$\Psi_\ell(x)$在Lorentz变换下按
+Lorentz群的\textbf{有限维表示}$\mathscr{D}(\Lambda^{-1})$变换：
+\begin{equation}
+U_0(\Lambda,a)\,\Psi_\ell(x)\,U_0^\dagger(\Lambda,a)
+= \sum_{\bar\ell}\mathscr{D}_{\ell\bar\ell}(\Lambda^{-1})\,
+\Psi_{\bar\ell}(\Lambda x+a)\,.
+\end{equation}
+此时，将相互作用密度写成场的局域多项式
+\begin{equation}\label{eq:Hdensity}
+V(t) = \int d^3x\;\mathscr{H}(\mathbf{x},t)\,,\qquad
+\mathscr{H}(x) = \sum_{i}g_i\,\mathscr{H}_i(x)\,,
+\end{equation}
+其中每个$\mathscr{H}_i(x)$是若干$\Psi_\ell(x)$的乘积，
+耦合常数$g_i$是Lorentz不变张量——
+Lorentz不变性就\textbf{自动}满足了。
+
+将\eqref{eq:Hdensity}中的场展开回$a$和$a^\dagger$，
+对空间坐标$\mathbf{x}$积分，
+恰好给出\eqref{eq:Vgeneral}的形式，
+其中$h^{(NM)}$自动由$u_\ell$、$v_\ell$和$g_i$的乘积构成，
+保证了光滑性和Lorentz不变性。
+
+\medskip
+
+这就是量子场论的核心逻辑链条：
+
+\begin{equation*}
+\boxed{
+\text{集团分解}
+\;\xrightarrow{\;\text{\eqref{eq:singledelta}}\;}\;
+h^{(NM)}\text{光滑}
+\;\xrightarrow{\;+\;\text{Lorentz不变性}\;}\;
+\text{局域因果场}\;\Psi_\ell(x)
+}
+\end{equation*}
+
+\noindent 因果场的具体构造——
+包括展开系数$u_\ell$、$v_\ell$的确定、
+微观因果性条件$[\Psi_\ell(x),\Psi_{\bar\ell}(y)]_\mp=0$
+对类空间隔$(x-y)^2<0$的要求、
+以及由此导出的自旋--统计定理和反粒子的涌现——
+将在第\ref{chap:fields}系统展开。

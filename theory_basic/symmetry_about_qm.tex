@@ -35,7 +35,7 @@
  平庸的对称变换 $\mathscr{R} \to \mathscr{R}$，是单位算符 $U=\mathbf{1}$ 显然，单位算符 $U=\mathbf{1}$ 是线性且么正的。由于\textbf{连续对称性}可以通过调节参数连续地变回单位算符，因此它们必须由线性么正算符表示。而反线性反么正算符仅用于涉及时间反演的非连续变换。
 \vspace{2ex}\par
  特别的，一个无限小的接近于平庸的对称变换可以表示为一个线性么正算符：$$U = \mathbf{1} + i\epsilon t$$其中$\epsilon$ 是一个实的无限小参量。由于 $U$ 是么正且线性的，$t$ 必须厄米且线性；所以它可能是可观测量，确实，大多数（也许是全部）物理的可观测量从对称变换中诞生。
-\subsection{对称群与投影表示}
+\subsection{对称群与投影表示}\label{sec:projective}
 
 对称变换构成一个群：两次连续变换 $T_1, T_2$ 等价于另一次变换 $T_3 = T_2 T_1$；存在逆变换 $T^{-1}$ 和单位变换 $\mathbf{1}$。数学表述是：
 \begin{tcolorbox}[colback=white!5,colframe=black!45]
@@ -83,29 +83,243 @@
 \begin{equation}
     U(T_2)U(T_1) = e^{i\varphi(T_2, T_1)} U(T_2 T_1) \;. \label{eq:projective_rep}
 \end{equation}
-这种包含相位因子的表示被称为群的\textbf{投影表示 (Projective Representation)}。
+这种包含相位因子的表示被称为群的\textbf{投影表示 }。
 \begin{itemize}
     \item 若对于所有 $T_1, T_2$ 均可选择相位使得 $\varphi=0$，则退化为\textbf{普通表示}。
     \item 在特定拓扑条件下（如庞加莱群），可以通过重新定义算符相位或考虑群的万有覆盖群，将投影表示提升为普通表示。
 \end{itemize}
-\vspace{2ex}\begin{center}
-    ***
-\end{center}\vspace{2ex}
-投影表示中的相位模糊性 $\varphi(T_2, T_1)$ 并非总能通过重定义相位来消除。这种不可消除性有一个深刻的\textbf{拓扑学根源}——它与对称群的群流形是否单连通直接相关。
+\topictitle{***}
+在上面的讨论中，我们已经证明了对称群在Hilbert空间上的实现必然是\textbf{投影表示}：
+\begin{equation}
+    U(T_2)\,U(T_1) = e^{i\varphi(T_2,T_1)}\,U(T_2 T_1)\,.
+\end{equation}
+一个自然的问题是：这个相位因子$\varphi(T_2,T_1)$能否通过重新定义算符$U(T)\to e^{i\alpha(T)}U(T)$来消除？
+如果能全部消除，投影表示就退化为普通表示，半整数自旋将不被允许。
 
-一个群流形是\textbf{单连通的}，意味着群空间中的任意闭合路径都可以连续地收缩为一个点。如果群流形不是单连通的（即存在不可收缩的闭合路径），那么群的投影表示中就可能出现不可消除的相位。
 
-消除这种拓扑障碍的系统方法是：构造原始群的\textbf{万有覆盖群（Universal Covering Group）}$\tilde{G}$。覆盖群 $\tilde{G}$ 是单连通的，并且存在一个从 $\tilde{G}$ 到 $G$ 的群同态映射（通常是多对一的）。在覆盖群 $\tilde{G}$ 上，所有投影表示都可以提升为普通表示。
+答案取决于对称群的\textbf{拓扑结构}。
+可以证明\footnote{%
+    严格的数学表述涉及群上同调$H^2(G,\,U(1))$。
+    对于单连通的李群，所有投影表示都可以提升为普通表示；
+    对于非单连通的李群，存在不可消除的相位因子，
+    其完整分类由万有覆盖群的表示给出。
+    参见Weinberg, \textit{QFT} Vol.\,I, \S2.7。
+}：
+\begin{itemize}
+    \item 若$G$是\textbf{单连通}的（$\pi_1(G)=0$），
+    则所有投影表示的相位因子都可以消除——只需考虑普通表示。
+    \item 若$G$\textbf{不是}单连通的（$\pi_1(G)\neq 0$），
+    则存在\emph{不可消除}的相位因子。
+    此时必须将$G$替换为其\textbf{万有覆盖群}$\widetilde{G}$，
+    用$\widetilde{G}$的普通表示来完整分类$G$的全部投影表示。
+\end{itemize}
 
-Lie 理论中有一条深刻的定理：\textbf{任一 Lie 代数仅对应一个单连通 Lie 群}。给定 Lie 代数，它可对应许多 Lie 群，而其中唯一的单连通群就是覆盖群——其他群都可以从覆盖群通过商掉某个离散正规子群来得到。
+因此，要判断旋转群$SO(3)$是否允许半整数自旋（即费米子是否在数学上合法），
+\textbf{关键问题}归结为：
 
-这一抽象定理在物理中有极其具体的体现。三维旋转群 $SO(3)$ 的群流形是双连通的（$\pi_1(SO(3)) = \mathbb{Z}_2$），因此它的投影表示可以携带不可消除的相位 $\pm 1$。它的万有覆盖群是 $SU(2)$，群流形为单连通的三维超球面 $S^3$。从 $SU(2)$ 到 $SO(3)$ 存在一个 $2:1$ 的覆盖映射：$SU(2)$ 中的两个矩阵 $U$ 和 $-U$ 映射为 $SO(3)$ 中的同一个旋转。
+\begin{center}
+\fbox{\parbox{0.75\textwidth}{\centering
+$SO(3)$是单连通的吗？\\[4pt]
+如果不是，它的万有覆盖群$\widetilde{SO(3)}$是什么？\\
+$\widetilde{SO(3)}$是否拥有$SO(3)$本身不具有的额外表示？
+}}
+\end{center}
 
-物理意义是深远的：$SO(3)$ 的投影表示直接对应于 $SU(2)$ 的普通表示。$SU(2)$ 除了拥有 $SO(3)$ 的全部整数自旋表示（$j = 0, 1, 2, \ldots$）之外，还额外拥有半整数自旋表示（$j = 1/2, 3/2, \ldots$）。在半整数自旋表示中，旋转 $2\pi$ 后态矢量获得一个负号：$U(2\pi) = -I$。但由于量子力学中 $|\psi\rangle$ 和 $-|\psi\rangle$ 描述同一个物理态，这个负号在物理上是不可观测的。
+\noindent 下面我们通过具体的几何构造来回答这些问题。
 
-这就解释了为什么自然界中存在费米子——自旋为半整数的粒子。它们的存在不是一个需要额外假设的经验事实，而是量子力学（射线等价性）与空间旋转群的拓扑结构（双连通性）\textbf{不可避免的数学推论}。
+\subsubsection*{$SO(3)$的参数空间}
 
-同样的逻辑在相对论中再次上演：固有正时 Lorentz 群 $SO(1,3)^\uparrow$ 也是双连通的，它的万有覆盖群是 $SL(2,\mathbb{C})$。为了描述自然界中所有可能的基本粒子，我们必须使用覆盖群 $SL(2,\mathbb{C})$ 的表示，而非 $SO(1,3)^\uparrow$ 自身的表示。这些内容将在第 2 章和第 3 章中详细展开。
+三维空间中的任意旋转可以用一个旋转轴$\hat{\boldsymbol{n}}$和一个旋转角$\theta\in[0,\pi]$来指定。
+我们可以将这对数据编码为一个三维矢量：
+\begin{equation}
+    \boldsymbol{v} = \theta\,\hat{\boldsymbol{n}}\,,\qquad |\boldsymbol{v}|\leq\pi\,.
+\end{equation}
+这样，$SO(3)$的每个群元素对应半径为$\pi$的实心球$B^3$中的一个点，
+球心$\boldsymbol{v}=\mathbf{0}$对应恒等变换$\mathbf{1}$。
+
+但是存在一个关键的\textbf{等价关系}：
+绕$\hat{\boldsymbol{n}}$旋转$\pi$和绕$-\hat{\boldsymbol{n}}$旋转$\pi$是\emph{同一个}旋转%
+\footnote{%
+绕$\hat{\boldsymbol{n}}$旋转$\pi$的效果是将垂直于$\hat{\boldsymbol{n}}$的分量反号，
+这与绕$-\hat{\boldsymbol{n}}$旋转$\pi$完全相同。}。
+因此球面$|\boldsymbol{v}|=\pi$上的\textbf{对径点}必须被认同：
+\begin{equation}
+    \pi\,\hat{\boldsymbol{n}} \;\sim\; -\pi\,\hat{\boldsymbol{n}}\,.
+\end{equation}
+这意味着$SO(3)$的参数空间不是普通的实心球，而是对径点被粘合后的空间——即实射影空间：
+\begin{equation}
+    SO(3) \;\cong\; B^3\!/\!\sim\;\; = \;\mathbb{R}\mathrm{P}^3\,.
+\end{equation}
+
+\subsubsection*{可缩路径与不可缩路径}
+
+现在考虑$SO(3)$中从恒等元$\mathbf{1}$出发并回到$\mathbf{1}$的闭合路径，
+判断它们能否被连续收缩为一个点。
+
+\begin{enumerate}
+    \item \textbf{可缩路径}（图~\ref{fig:SO3-paths}左）。
+    任何完全位于球\emph{内部}（不触及边界）的闭合环路，
+    都可以连续地缩小为球心处的一个点。
+    这类路径对应$SO(3)$中拓扑平凡的闭合回路。
+
+    \item \textbf{不可缩路径}（图~\ref{fig:SO3-paths}右）。
+    考虑如下路径：从球心$\mathbf{1}$出发，沿某个方向走到球面上的点$P$（旋转角$\theta=\pi$）；
+    由于对径认同，$P$和对径点$\bar{P}$是同一个群元素，
+    所以路径从$\bar{P}$``重新出现''，再走回球心$\mathbf{1}$。
+    
+    这是一条\textbf{闭合}路径（起点和终点都是$\mathbf{1}$），
+    但它\emph{穿越}了被认同的边界一次。
+    可以证明%
+    \footnote{严格证明可参考Nakahara, \textit{Geometry, Topology and Physics}, \S4.7。}%
+    这条路径\textbf{不能}被连续收缩为一个点——
+    它``钩住''了$\mathbb{R}\mathrm{P}^3$中不可收缩的拓扑结构。
+\end{enumerate}
+
+然而，如果我们将不可缩路径走\emph{两遍}%
+（即对应旋转角从$0$到$2\pi$再到$4\pi$），
+闭合路径穿越边界\emph{两次}——这条路径\emph{可以}被连续收缩为一个点%
+\footnote{%
+直观的理解：两次穿越可以通过连续形变``从两侧同时收回''而消除，
+类似于将绕柱子缠绕两圈的绳子解开。}。
+因此$SO(3)$的基本群恰好是：
+\begin{equation}\label{eq:pi1-SO3}
+    \boxed{\pi_1\bigl(SO(3)\bigr) = \mathbb{Z}_2}
+\end{equation}
+$SO(3)$是\textbf{双连通}的，不是单连通的。
+
+% ====== 图 ======
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[>=stealth, scale=1.0]
+
+% ====== 左图：可缩路径 ======
+\begin{scope}[shift={(-4.2,0)}]
+  % 实心球截面
+  \shade[ball color=gray!8, opacity=0.4] (0,0) circle (2.5);
+  \draw[gray!60, semithick] (0,0) circle (2.5);
+  
+  % 对径认同参考线
+  \draw[gray!40, thin, densely dotted] (2.5,0) -- (-2.5,0);
+  \draw[gray!40, thin, densely dotted] (0,2.5) -- (0,-2.5);
+  
+  % 可缩的闭合路径
+  \draw[blue!70!black, line width=2pt,
+    decoration={markings,
+      mark=at position 0.15 with {\arrow[scale=1.4]{stealth}},
+      mark=at position 0.55 with {\arrow[scale=1.4]{stealth}},
+      mark=at position 0.85 with {\arrow[scale=1.4]{stealth}}
+    }, postaction={decorate}]
+    (0,0) 
+    .. controls (0.3,0.8) and (1.0,1.2) .. (1.2,0.6)
+    .. controls (1.4,-0.2) and (0.8,-0.8) .. (0.2,-0.5)
+    .. controls (-0.4,-0.2) and (-0.2,0.3) .. (0,0);
+  
+  % 收缩暗示
+  \draw[red!60, ->, thick] (0.9,0.3) -- (0.4,0.1);
+  \node[red!60, font=\small] at (1.5,0.3) {可缩};
+  
+  % 球心
+  \fill[black] (0,0) circle (2.5pt);
+  \node[below left, font=\bfseries] at (0,0) {$\mathbf{1}$};
+  
+  \node[below, font=\small\bfseries] at (0,-3.0) {可缩路径};
+\end{scope}
+
+% ====== 右图：不可缩路径 ======
+\begin{scope}[shift={(4.2,0)}]
+  % 实心球截面
+  \shade[ball color=gray!8, opacity=0.4] (0,0) circle (2.5);
+  \draw[gray!60, semithick] (0,0) circle (2.5);
+  
+  % 对径认同参考线
+  \draw[gray!40, thin, densely dotted] (2.5,0) -- (-2.5,0);
+  \draw[gray!40, thin, densely dotted] (0,2.5) -- (0,-2.5);
+  
+  % 对径点坐标
+  \pgfmathsetmacro{\Px}{2.5*cos(50)}
+  \pgfmathsetmacro{\Py}{2.5*sin(50)}
+  
+  % 段1：球心 → 边界点 P
+  \draw[blue!70!black, line width=2pt,
+    decoration={markings,
+      mark=at position 0.35 with {\arrow[scale=1.4]{stealth}},
+      mark=at position 0.78 with {\arrow[scale=1.4]{stealth}}
+    }, postaction={decorate}]
+    (0,0) .. controls (0.4,0.6) and (0.8,1.3) .. ({\Px},{\Py});
+  
+  % 段2：对径点 P̄ → 球心
+  \draw[orange!80!black, line width=2pt,
+    decoration={markings,
+      mark=at position 0.3 with {\arrow[scale=1.4]{stealth}},
+      mark=at position 0.75 with {\arrow[scale=1.4]{stealth}}
+    }, postaction={decorate}]
+    ({-\Px},{-\Py}) .. controls (-0.8,-1.3) and (-0.4,-0.6) .. (0,0);
+  
+  % 对径认同标记
+  \draw[red!60!black, thick, densely dashed, <->] 
+    ({\Px+0.25},{\Py+0.2}) 
+    .. controls (3.2,1.0) and (3.2,-1.0) ..
+    ({-\Px-0.25},{-\Py-0.2});
+  \node[red!60!black, font=\small, right] at (3.3,0) {$P\sim\bar{P}$};
+  
+  % 边界点标记
+  \fill[blue!70!black] ({\Px},{\Py}) circle (3pt);
+  \node[above right, font=\small\bfseries, blue!70!black] at ({\Px},{\Py}) {$P$};
+  
+  \fill[orange!80!black] ({-\Px},{-\Py}) circle (3pt);
+  \node[below left, font=\small\bfseries, orange!80!black] at ({-\Px},{-\Py}) {$\bar{P}$};
+  
+  % 球心
+  \fill[black] (0,0) circle (2.5pt);
+  \node[below right, font=\bfseries] at (0.05,-0.05) {$\mathbf{1}$};
+  
+  \node[below, font=\small\bfseries] at (0,-3.0) {不可缩路径};
+\end{scope}
+
+\end{tikzpicture}
+\caption{$SO(3)$的参数空间$B^3/\mathbb{Z}_2 = \mathbb{R}\mathrm{P}^3$的截面示意图。
+圆盘表示半径为$\pi$的实心球的一个截面，球心为恒等元$\mathbf{1}$，
+边界上的对径点被认同（$P\sim\bar{P}$）。
+\textbf{左}：完全位于球内部的闭合路径，可以连续收缩为球心处的一个点。
+\textbf{右}：从$\mathbf{1}$出发到达边界点$P$（\textcolor{blue!70!black}{蓝色}段），
+由于$P$和$\bar{P}$被认同，路径从$\bar{P}$``重新出现''并返回$\mathbf{1}$（\textcolor{orange!80!black}{橙色}段）。
+这条闭合路径穿越了被认同的边界一次，拓扑上不可收缩。}
+\label{fig:SO3-paths}
+\end{figure}
+
+\subsubsection*{物理后果：费米子的合法性}
+
+现在回到投影表示的问题。$SO(3)$不是单连通的，
+因此存在不可消除的相位因子$\varphi(T_2,T_1)$。
+其万有覆盖群是$SU(2)$（群流形为单连通的三维超球面$S^3$），
+覆盖映射$\rho: SU(2)\to SO(3)$是$2:1$的：
+$SU(2)$中的$+\mathbf{I}$和$-\mathbf{I}$对应$SO(3)$中同一个旋转。
+
+上述不可缩路径在$SU(2)$中被``展开''为从$+\mathbf{I}$到$-\mathbf{I}$的\emph{开}路径——
+这正是旋量在$2\pi$旋转下获得负号的几何起源。
+$SU(2)$除了拥有$SO(3)$的全部整数自旋表示（$j=0,1,2,\ldots$）之外，
+还额外拥有\textbf{半整数自旋表示}（$j=1/2,3/2,\ldots$）。
+在半整数自旋表示中：
+\begin{equation}
+    U(2\pi) = -\mathbf{I}\,.
+\end{equation}
+由于量子力学中$|\psi\rangle$和$-|\psi\rangle$描述同一个物理态（射线等价性），
+这个负号在物理上是不可观测的——半整数自旋表示在物理上是\emph{完全合法}的。
+
+\begin{tcolorbox}[colback=white!5, colframe=black!45,]
+\textbf{费米子的存在}不是一个需要额外假设的经验事实，
+而是以下两个基本原理的\textbf{不可避免的数学推论}：
+\begin{enumerate}
+    \item 量子力学的射线等价性（态由射线而非矢量确定）；
+    \item 空间旋转群$SO(3)$的拓扑结构（$\pi_1 = \mathbb{Z}_2$，双连通）。
+\end{enumerate}
+同样的逻辑在相对论中再次上演：
+固有正时Lorentz群$SO^+(1,3)$也是双连通的（$\pi_1=\mathbb{Z}_2$），
+其万有覆盖群是$SL(2,\mathbb{C})$。
+为了描述自然界中所有可能的基本粒子，
+我们必须使用覆盖群$SL(2,\mathbb{C})$的表示，而非$SO^+(1,3)$自身的表示。
+\end{tcolorbox}
+
 
 \subsection{李群与李代数}
 物理中最重要的对称群是\textbf{连通李群} (Connected Lie Group)，即可以通过连续参数 $\theta^a$ 描述、且能连续变回单位元的群。这个群的乘法规则是：

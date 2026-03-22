@@ -8,15 +8,9 @@
 % Colors (load before `hyperref`)
 % `svgnames` gives named colors like `DarkGreen`.
 \usepackage[svgnames]{xcolor}
-\begin{comment}
-  \setcounter{tocdepth}{2}   % 目录深度 (只显示到 section)
+ \setcounter{tocdepth}{2}   % 目录深度 (只显示到 section)
 \usepackage{titlesec}
-\setcounter{secnumdepth}{2}
-\usepackage{tocloft} \renewcommand{\cftsecpresnum}{\S} 
-\setlength{\cftchapnumwidth}{1.5em}
-\setlength{\cftsecnumwidth}{1.5em}
-\setlength{\cftsubsecnumwidth}{1.5em}
-
+\usepackage{tocloft} 
 % Chapter 样式
 \titleformat{\chapter}[display]
   {\normalfont\LARGE\bfseries\raggedleft}
@@ -30,21 +24,10 @@
     \vspace{1em}
     \huge
   }[\vspace{1em}]
-\titlespacing*{\chapter}{0pt}{120pt}{20pt}
-
-\renewcommand\thesection{\arabic{section}}
-
-% Section 样式
-\titleformat{\section}[block]
-  {\normalfont\large\bfseries\raggedright\sffamily}
-  {\S\thesection}{1em}{}
-\titlespacing*{\section}{0pt}{1.5em}{1.5em}
-\end{comment}
-
-   %TOC depth: show up to `\subsection`
-\setcounter{tocdepth}{3}   % 目录深度 (只显示到 section)
+\titlespacing*{\chapter}{0pt}{80pt}{1ex}
 % Chapter titles
-\usepackage[explicit]{titlesec}
+\begin{comment}
+  \usepackage[explicit]{titlesec}
 \usepackage{tocloft}
 \titleformat{\chapter}[block]
   {\centering\huge\bfseries\vspace{10ex}}
@@ -53,7 +36,12 @@
   {
     #1
   }
-  
+\end{comment}
+  \usepackage{titlesec}
+\usepackage{xcolor}
+
+
+
 
 
 % Chinese names for standard titles
@@ -96,9 +84,9 @@
 \newtheorem{principle}{原理}
 
 \newcommand{\topictitle}[1]{%
-  \bigskip
+  \medskip
   \begin{center}
-    \textbf{\large #1}
+    \textbf{\large\color{blue!45!black} #1}
   \end{center}
   \medskip
 }

@@ -1,7 +1,7 @@
 \subsection{因果狄拉克场 }
 一般形式的场是：
 \begin{equation}
-    \Psi_{ab}(x) =(\frac{1}{2\pi})^\frac{3}{2}\sum_{\sigma}\int d^3p \, \left\{ u_{ab}(\boldsymbol{q},\sigma)b^\dagger(\boldsymbol{q},\sigma) e^{-ipx} + (-)^{2B}(-)^{j+\sigma}u_{ab}(\boldsymbol{q},\sigma) a(\boldsymbol{q},\sigma)e^{ipx} \right\}
+    \Psi_{ab}(x) =(\frac{1}{2\pi})^\frac{3}{2}\sum_{\sigma}\int d^3p \, \left\{(-)^{2B} u_{ab}(\boldsymbol{q},\sigma)b^\dagger(\boldsymbol{q},\sigma) e^{-ipx} + v_{ab}(\boldsymbol{q},\sigma) a(\boldsymbol{q},\sigma)e^{ipx} \right\}
 \end{equation}
 上述我们知道静止系系数 $u(0)$ 和 $v(0)$ 是正比于Clebsch-Gordan  系数 
 \begin{equation}
@@ -19,7 +19,7 @@
     \large\text{$(A, B) = (1/2, 0)\oplus(1/2, 0)$}
 \end{center}
 \vspace{0.5cm}
-对于自旋 $j=1/2$ 的有质量粒子，在静止参考系（$\mathbf{p}=\mathbf{0}$，$p^0=m$）中，狄拉克方程 $(\gamma^\mu p_\mu - m)u=0$ 退化为：
+对于自旋 $j=1/2$ 的有质量粒子，在静止参考系（$\boldsymbol{p}=\mathbf{0}$，$p^0=m$）中，狄拉克方程 $(\gamma^\mu p_\mu - m)u=0$ 退化为：
 \begin{equation}
     (m\gamma^0 - m)u(0,\sigma) = 0 \quad\Longrightarrow\quad \gamma^0 u(0,\sigma) = u(0,\sigma)
 \end{equation}
@@ -57,22 +57,22 @@
 \begin{equation}
     S(L(p)) = \begin{pmatrix} e^{+\frac{1}{2}\boldsymbol{\phi}\cdot\boldsymbol{\sigma}} & 0 \\ 0 & e^{-\frac{1}{2}\boldsymbol{\phi}\cdot\boldsymbol{\sigma}} \end{pmatrix}
 \end{equation}
-利用泡利矩阵的性质 $(\hat{\mathbf{p}}\cdot\boldsymbol{\sigma})^2 = I$ 以及双曲半角公式（$\cosh\phi = p^0/m$，$\sinh\phi = |\mathbf{p}|/m$）：
+利用泡利矩阵的性质 $(\hat{\boldsymbol{p}}\cdot\boldsymbol{\sigma})^2 = I$ 以及双曲半角公式（$\cosh\phi = p^0/m$，$\sinh\phi = |\boldsymbol{p}|/m$）：
 \begin{align}
-    e^{+\frac{1}{2}\boldsymbol{\phi}\cdot\boldsymbol{\sigma}} &= \cosh\frac{\phi}{2}\cdot I + \sinh\frac{\phi}{2}\cdot\hat{\mathbf{p}}\cdot\boldsymbol{\sigma} = \frac{(p^0+m)I + \mathbf{p}\cdot\boldsymbol{\sigma}}{\sqrt{2m(p^0+m)}} \\
-    e^{-\frac{1}{2}\boldsymbol{\phi}\cdot\boldsymbol{\sigma}} &= \cosh\frac{\phi}{2}\cdot I - \sinh\frac{\phi}{2}\cdot\hat{\mathbf{p}}\cdot\boldsymbol{\sigma} = \frac{(p^0+m)I - \mathbf{p}\cdot\boldsymbol{\sigma}}{\sqrt{2m(p^0+m)}}
+    e^{+\frac{1}{2}\boldsymbol{\phi}\cdot\boldsymbol{\sigma}} &= \cosh\frac{\phi}{2}\cdot I + \sinh\frac{\phi}{2}\cdot\hat{\boldsymbol{p}}\cdot\boldsymbol{\sigma} = \frac{(p^0+m)I + \boldsymbol{p}\cdot\boldsymbol{\sigma}}{\sqrt{2m(p^0+m)}} \\
+    e^{-\frac{1}{2}\boldsymbol{\phi}\cdot\boldsymbol{\sigma}} &= \cosh\frac{\phi}{2}\cdot I - \sinh\frac{\phi}{2}\cdot\hat{\boldsymbol{p}}\cdot\boldsymbol{\sigma} = \frac{(p^0+m)I - \boldsymbol{p}\cdot\boldsymbol{\sigma}}{\sqrt{2m(p^0+m)}}
 \end{align}
 将 Boost 矩阵作用于静止系旋量 $u(0,\sigma) = \sqrt{m}\binom{\xi_\sigma}{\xi_\sigma}$：
 \begin{equation}
-    u(\mathbf{p},\sigma) = S(L(p))\, u(0,\sigma) = \sqrt{m}\begin{pmatrix} e^{+\frac{1}{2}\boldsymbol{\phi}\cdot\boldsymbol{\sigma}}\xi_\sigma \\ e^{-\frac{1}{2}\boldsymbol{\phi}\cdot\boldsymbol{\sigma}}\xi_\sigma \end{pmatrix}
+    u(\boldsymbol{p},\sigma) = S(L(p))\, u(0,\sigma) = \sqrt{m}\begin{pmatrix} e^{+\frac{1}{2}\boldsymbol{\phi}\cdot\boldsymbol{\sigma}}\xi_\sigma \\ e^{-\frac{1}{2}\boldsymbol{\phi}\cdot\boldsymbol{\sigma}}\xi_\sigma \end{pmatrix}
 \end{equation}
-四维记号下： $\sqrt{p\cdot\bar{\sigma}} \equiv e^{+\frac{1}{2}\boldsymbol{\phi}\cdot\boldsymbol{\sigma}}\sqrt{m}$ 和 $\sqrt{p\cdot\sigma} \equiv e^{-\frac{1}{2}\boldsymbol{\phi}\cdot\boldsymbol{\sigma}}\sqrt{m}$（其中 $p\cdot\sigma = p^0 I - \mathbf{p}\cdot\boldsymbol{\sigma}$，$p\cdot\bar{\sigma} = p^0 I + \mathbf{p}\cdot\boldsymbol{\sigma}$），则：
+四维记号下： $\sqrt{p\cdot\bar{\sigma}} \equiv e^{+\frac{1}{2}\boldsymbol{\phi}\cdot\boldsymbol{\sigma}}\sqrt{m}$ 和 $\sqrt{p\cdot\sigma} \equiv e^{-\frac{1}{2}\boldsymbol{\phi}\cdot\boldsymbol{\sigma}}\sqrt{m}$（其中 $p\cdot\sigma = p^0 I - \boldsymbol{p}\cdot\boldsymbol{\sigma}$，$p\cdot\bar{\sigma} = p^0 I + \boldsymbol{p}\cdot\boldsymbol{\sigma}$），则：
 \begin{equation}
-    \boxed{u(\mathbf{p},\sigma) = \begin{pmatrix} \sqrt{p\cdot\bar{\sigma}}\,\xi_\sigma \\ \sqrt{p\cdot\sigma}\,\xi_\sigma \end{pmatrix}}
+    \boxed{u(\boldsymbol{p},\sigma) = \begin{pmatrix} \sqrt{p\cdot\bar{\sigma}}\,\xi_\sigma \\ \sqrt{p\cdot\sigma}\,\xi_\sigma \end{pmatrix}}
 \end{equation}
 将 Boost 矩阵作用于 $v(0,\sigma) = \sqrt{m}\binom{\chi_\sigma}{-\chi_\sigma}$（注意下半部分的负号在 Boost 后被保留）：
 \begin{equation}
-    \boxed{v(\mathbf{p},\sigma) = \begin{pmatrix} \sqrt{p\cdot\bar{\sigma}}\,\chi_\sigma \\ -\sqrt{p\cdot\sigma}\,\chi_\sigma \end{pmatrix}}
+    \boxed{v(\boldsymbol{p},\sigma) = \begin{pmatrix} \sqrt{p\cdot\bar{\sigma}}\,\chi_\sigma \\ -\sqrt{p\cdot\sigma}\,\chi_\sigma \end{pmatrix}}
 \end{equation}
 这些波函数在任意惯性系下自动满足 $(\slashed{p}-m)u=0$ 和 $(\slashed{p}+m)v=0$。
 \vspace{2ex}\par
@@ -80,19 +80,19 @@
 
 对 $\sigma = \pm 1/2$ 求和，利用 $\sum_\sigma\xi_\sigma\xi_\sigma^\dagger = I$，逐块计算 $4\times 4$ 矩阵的四个 $2\times 2$ 子块：
 \begin{itemize}
-    \item 左上块：$\sqrt{p\cdot\bar{\sigma}}\cdot I\cdot\sqrt{p\cdot\sigma} = \sqrt{(p\cdot\bar{\sigma})(p\cdot\sigma)}$。利用 $(p\cdot\bar{\sigma})(p\cdot\sigma) = (p^0)^2 - |\mathbf{p}|^2 = m^2$，得 $= mI$。
-    \item 右上块：$\sqrt{p\cdot\bar{\sigma}}\cdot I\cdot\sqrt{p\cdot\bar{\sigma}} = p\cdot\bar{\sigma} = p^0 I + \mathbf{p}\cdot\boldsymbol{\sigma}$。
-    \item 左下块：$\sqrt{p\cdot\sigma}\cdot I\cdot\sqrt{p\cdot\sigma} = p\cdot\sigma = p^0 I - \mathbf{p}\cdot\boldsymbol{\sigma}$。
+    \item 左上块：$\sqrt{p\cdot\bar{\sigma}}\cdot I\cdot\sqrt{p\cdot\sigma} = \sqrt{(p\cdot\bar{\sigma})(p\cdot\sigma)}$。利用 $(p\cdot\bar{\sigma})(p\cdot\sigma) = (p^0)^2 - |\boldsymbol{p}|^2 = m^2$，得 $= mI$。
+    \item 右上块：$\sqrt{p\cdot\bar{\sigma}}\cdot I\cdot\sqrt{p\cdot\bar{\sigma}} = p\cdot\bar{\sigma} = p^0 I + \boldsymbol{p}\cdot\boldsymbol{\sigma}$。
+    \item 左下块：$\sqrt{p\cdot\sigma}\cdot I\cdot\sqrt{p\cdot\sigma} = p\cdot\sigma = p^0 I - \boldsymbol{p}\cdot\boldsymbol{\sigma}$。
     \item 右下块：$\sqrt{p\cdot\sigma}\cdot I\cdot\sqrt{p\cdot\bar{\sigma}} = mI$。
 \end{itemize}
 因此：
 \begin{equation}
-    \sum_\sigma u(\mathbf{p},\sigma)\bar{u}(\mathbf{p},\sigma) = \begin{pmatrix} mI & p\cdot\bar{\sigma} \\ p\cdot\sigma & mI \end{pmatrix} = \gamma^\mu p_\mu + m \equiv \slashed{p}+m
+    \sum_\sigma u(\boldsymbol{p},\sigma)\bar{u}(\boldsymbol{p},\sigma) = \begin{pmatrix} mI & p\cdot\bar{\sigma} \\ p\cdot\sigma & mI \end{pmatrix} = \gamma^\mu p_\mu + m \equiv \slashed{p}+m
     \label{eq:pol_u}
 \end{equation}
 对于反粒子旋量 $v$，由于下半部分负号导致对角块反号：
 \begin{equation}
-   \sum_\sigma v(\mathbf{p},\sigma)\bar{v}(\mathbf{p},\sigma) = \slashed{p}-m
+   \sum_\sigma v(\boldsymbol{p},\sigma)\bar{v}(\boldsymbol{p},\sigma) = \slashed{p}-m
     \label{eq:pol_v}
 \end{equation}
 

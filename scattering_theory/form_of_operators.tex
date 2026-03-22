@@ -1,3 +1,124 @@
-\section{算符的一般形式}
-\subsection{玻色子与费米子}
-\subsection{算符的结构}
+\section{Fock空间与产生湮灭算符}\label{sec:fock}
+上一节中我们完成了自由多粒子Hilbert空间的构造，
+并将态按粒子数分为不同空间。
+但仍有两个问题悬而未决：
+
+\begin{enumerate}
+\item \textbf{技术问题}：始终手动保持态的全对称或全反对称，
+      在实际计算中极不方便。
+      能否发展一种\emph{自动}保持对称性的代数工具？
+\item \textbf{基本问题}：
+      如果多粒子Hilbert空间上只有动量算符$\boldsymbol{p}$，
+      我们只能构造对角的可观测量。
+      特别地，有没有算符能在\emph{不同粒子数}的态上具有非零矩阵元，
+      从而把不同空间联系起来？
+\end{enumerate}
+
+\noindent 引入\textbf{产生湮灭算符}将同时解决这两个问题。
+
+
+为了描述粒子数可变的系统
+（相对论中$E=mc^2$允许粒子对的产生与湮灭），
+将所有粒子数空间的Hilbert空间做\textbf{直和}，
+定义\textbf{Fock空间}：
+\begin{equation}\label{eq:fockspace}
+\boxed{\mathbb{F} = \bigoplus_{N=0}^{\infty}\mathbb{H}_N}
+\end{equation}
+其中$\mathbb{H}_0=\mathbb{C}$是真空态$|0\rangle$所在的一维空间，
+$\mathscr{H}_N$是$N$粒子态的（对称化或反对称化的）张量积空间。
+
+Fock空间的物理图像：
+它是所有可能粒子数的Hilbert空间的直和——
+$\mathbb{H}_0$描述真空，
+$\mathbb{H}_1$描述单粒子态，
+$\mathbb{H}_2$描述两粒子态，以此类推。
+一个一般的Fock空间态可以是不同粒子数态的\textbf{叠加}——
+这正是粒子可以产生和湮灭的数学基础。
+\topictitle{产生算符}
+在Fock空间上定义\textbf{产生算符}$a^\dagger(\boldsymbol{p},\sigma,n)$，
+其作用是在系统中添加一个动量$\boldsymbol{p}$、自旋$\sigma$、种类$n$的粒子：
+\begin{equation}\label{eq:creationdef}
+a^\dagger(\boldsymbol{p},\sigma,n)\,
+|\boldsymbol{p}_1,\sigma_1,n_1;\;\cdots;\;\boldsymbol{p}_N,\sigma_N,n_N\rangle
+= |\boldsymbol{p},\sigma,n;\;\boldsymbol{p}_1,\sigma_1,n_1;\;\cdots;\;
+\boldsymbol{p}_N,\sigma_N,n_N\rangle\,.
+\end{equation}
+从真空出发，反复施加产生算符即可构造任意多粒子态：
+\begin{equation}\label{eq:fockbuild}
+|\boldsymbol{p}_1,\sigma_1,n_1;\;\cdots;\;\boldsymbol{p}_N,\sigma_N,n_N\rangle
+= a^\dagger(\boldsymbol{p}_1,\sigma_1,n_1)\cdots
+  a^\dagger(\boldsymbol{p}_N,\sigma_N,n_N)\,|0\rangle\,.
+\end{equation}
+
+产生算符的引入在物理上是\textbf{必要的}：
+在相对论能标下粒子可以被产生，
+因此描述相互作用的算符\emph{必须}能够改变粒子数。
+产生算符正是实现这一功能的最自然的数学工具。
+\medskip
+
+
+湮灭算符产生可以从多粒子态的正交关系\eqref{eq:multinorm}直接推导出来。以$a(\boldsymbol{p},\sigma,n)$左乘一个$N$粒子态，
+利用\eqref{eq:multinorm}计算其与任意$(N{-}1)$粒子态的内积，可以得到：
+\begin{equation}\label{eq:annihilate}
+a(\boldsymbol{p},\sigma,n)\,|\boldsymbol{p}_1,\sigma_1,n_1;\;\cdots;\;
+\boldsymbol{p}_N,\sigma_N,n_N\rangle
+= \sum_{k=1}^{N}(\pm 1)^{k-1}\,
+\langle\boldsymbol{p},\sigma,n|\boldsymbol{p}_k,\sigma_k,n_k\rangle\;
+|\boldsymbol{p}_1,\ldots,\widehat{\boldsymbol{p}_k},\ldots,\boldsymbol{p}_N\rangle\,.
+\end{equation}
+其中$\widehat{\boldsymbol{p}_k}$表示省略第$k$个粒子，
+正号取玻色子、负号取费米子。
+物理含义很清楚：
+$a(\boldsymbol{p})$在态中"寻找"动量为$\boldsymbol{p}$的粒子并将其\textbf{湮灭}；
+如果态中不含这样的粒子，作用结果为零。
+特别地：
+\begin{equation}\label{eq:avac}
+a(\boldsymbol{p},\sigma,n)\,|0\rangle = 0\,.
+\end{equation}
+即真空中没有任何粒子可以被湮灭。
+
+
+\medskip
+
+在一个态上先产生再湮灭，与先湮灭再产生，
+结果一般不同——差别恰好编码了粒子的统计性质。
+直接计算可以验证，对任意态都有：
+\begin{tcolorbox}[colback=white!5,colframe=black!45]
+\textbf{玻色子}和\textbf{费米子}的产生湮灭算符满足\textbf{对易关系}：
+\begin{subequations}
+      \begin{align}
+      \big[a(\boldsymbol{p},\sigma,n),\;a^\dagger(\boldsymbol{p}',\sigma',n')\big]_\mp
+      &= \delta^3(\boldsymbol{p}-\boldsymbol{p}')\,\delta_{\sigma\sigma'}\,\delta_{nn'}\,,
+      \label{eq:bCR1}\\[4pt]
+      \big[a(\boldsymbol{p},\sigma,n),\;a(\boldsymbol{p}',\sigma',n')\big]_\mp
+      &= 0\,,\label{eq:bCR2}\\[4pt]
+      \big[a^\dagger(\boldsymbol{p},\sigma,n),\;a^\dagger(\boldsymbol{p}',\sigma',n')\big]_\mp
+      &= 0
+\end{align}
+\end{subequations}\label{eq:bCR3}
+\end{tcolorbox}
+
+\noindent 费米子的反对易关系\eqref{eq:bCR3}立即给出\textbf{Pauli不相容原理}：
+\begin{equation}
+a^\dagger(\boldsymbol{p},\sigma,n)\,a^\dagger(\boldsymbol{p},\sigma,n)\,|0\rangle
+= 0\,,
+\end{equation}
+即不可能有两个全同费米子占据同一量子态。
+
+\medskip
+
+至此，本节开头的两个问题都已解决：
+
+\begin{enumerate}
+\item \textbf{对称化是自动的}：
+      只需使用对易关系
+      或反对易关系\eqref{eq:bCR1}
+      玻色子的全对称态和费米子的全反对称态在代数上是自动保证的。
+
+\item \textbf{不同粒子数空间被联系起来}：
+      $a^\dagger$将$\mathscr{H}_N$映射到$\mathscr{H}_{N+1}$，
+      $a$将$\mathscr{H}_N$映射到$\mathscr{H}_{N-1}$。
+      因此，用$a$和$a^\dagger$的多项式可以构造
+      Fock空间上\textbf{任意}算符的矩阵元——
+      这将在第\ref{chap:scattering}章讨论相互作用时变得关键。
+      \end{enumerate}

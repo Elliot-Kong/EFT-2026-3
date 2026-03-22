@@ -1,5 +1,5 @@
 
-\section{Weyl 场：$(\tfrac12,0)$ 与 $(0,\tfrac12)$}
+\subsection{Weyl 场}
 
 现在考虑自旋 $j=\tfrac12$、质量 $m>0$ 的费米子。
 其最基本的 Lorentz 表示是
@@ -12,14 +12,14 @@
 （见式\,(5.83)）
 \begin{equation}\label{eq:weyl-general}
   \Psi_{ab}(x) = \frac{1}{(2\pi)^{3/2}}\sum_{\sigma}\!\int d^{3}p\,
-  \Bigl[(-)^{2B}\,u_{ab}(\mathbf{p},\sigma)\,a^{c\dagger}(\mathbf{p},\sigma)\,e^{-ip\cdot x}
-        + v_{ab}(\mathbf{p},\sigma)\,a(\mathbf{p},\sigma)\,e^{ip\cdot x}\Bigr],
+  \Bigl[(-)^{2B}\,u_{ab}(\boldsymbol{p},\sigma)\,a^{c\dagger}(\boldsymbol{p},\sigma)\,e^{-ip\cdot x}
+        + v_{ab}(\boldsymbol{p},\sigma)\,a(\boldsymbol{p},\sigma)\,e^{ip\cdot x}\Bigr],
 \end{equation}
 其中 $u,v$ 满足
 \[
-\frac{1}{2p^{0}}\sum_{\sigma}u_{ab}(\mathbf{p},\sigma)u^{*}_{cd}(\mathbf{p},\sigma)
-=\frac{1}{2p^{0}}\sum_{\sigma}v_{ab}(\mathbf{p},\sigma)v^{*}_{cd}(\mathbf{p},\sigma)
-= \frac{\pi_{ab,cd}(\mathbf{p})}{2p^{0}},
+\frac{1}{2p^{0}}\sum_{\sigma}u_{ab}(\boldsymbol{p},\sigma)u^{*}_{cd}(\boldsymbol{p},\sigma)
+=\frac{1}{2p^{0}}\sum_{\sigma}v_{ab}(\boldsymbol{p},\sigma)v^{*}_{cd}(\boldsymbol{p},\sigma)
+= \frac{\pi_{ab,cd}(\boldsymbol{p})}{2p^{0}},
 \]
 并在静止系内由 Clebsh–Gordan 系数唯一确定
 （5.60）：
@@ -28,19 +28,19 @@
   \,\langle A,a;\,B,b\mid j,\sigma\rangle,\qquad
   v_{ab}(\mathbf{0},\sigma)=(-)^{j+\sigma}\,u_{ab}(\mathbf{0},-\sigma)\;.
 \end{equation}
-对任意动量 $\mathbf{p}$，boost 一般公式（5.65）为
+对任意动量 $\boldsymbol{p}$，boost 一般公式（5.65）为
 \begin{equation}\label{eq:weyl-uboost}
-  u_{ab}(\mathbf{p},\sigma)
+  u_{ab}(\boldsymbol{p},\sigma)
   = \frac{1}{\sqrt{2p^{0}}}
   \sum_{\bar{a}\bar{b}}
-  \bigl[e^{-\boldsymbol{\varphi}\cdot A}\bigr]_{a\bar{a}}\;
-  \bigl[e^{+\boldsymbol{\varphi}\cdot B}\bigr]_{\bar{b}b}\;
+  \bigl[e^{-\boldsymbol{\phi}\cdot A}\bigr]_{a\bar{a}}\;
+  \bigl[e^{+\boldsymbol{\phi}\cdot B}\bigr]_{\bar{b}b}\;
   \langle A,\bar{a};\,B,\bar{b}\mid j,\sigma\rangle,
 \end{equation}
-其中 boost 快度向量 $\boldsymbol{\varphi}$ 定义为
-$\cosh\varphi=p^{0}/m,\ \sinh\varphi=|\mathbf{p}|/m,\
-\hat{\boldsymbol{\varphi}}=\hat{\mathbf{p}}$。
-$v_{ab}(\mathbf{p},\sigma)=(-)^{j+\sigma}\,u_{ab}(\mathbf{p},-\sigma)$。
+其中 boost 快度向量 $\boldsymbol{\phi}$ 定义为
+$\cosh\phi=p^{0}/m,\ \sinh\phi=|\boldsymbol{p}|/m,\
+\hat{\boldsymbol{\phi}}=\hat{\boldsymbol{p}}$。
+$v_{ab}(\boldsymbol{p},\sigma)=(-)^{j+\sigma}\,u_{ab}(\boldsymbol{p},-\sigma)$。
 
 下面分别对 $(A,B)=(\tfrac12,0)$ 与 $(0,\tfrac12)$
 求出这些系数的显式形式，并写出相应 Weyl 场。
@@ -86,43 +86,43 @@ $(\tfrac12,0)$ 表示下
 \]
 故
 \[
-  e^{-\boldsymbol{\varphi}\cdot A}
-  = \exp\!\Bigl(-\,\frac{\varphi}{2}\,\hat{\mathbf{p}}\!\cdot\!\boldsymbol{\sigma}\Bigr)
+  e^{-\boldsymbol{\phi}\cdot A}
+  = \exp\!\Bigl(-\,\frac{\phi}{2}\,\hat{\boldsymbol{p}}\!\cdot\!\boldsymbol{\sigma}\Bigr)
 \]
 是一个 $2\times2$ 的 SU(2) 矩阵。利用
-\((\hat{\mathbf{p}}\!\cdot\!\boldsymbol{\sigma})^{2}=\mathbf{1}_{2}\)
+\((\hat{\boldsymbol{p}}\!\cdot\!\boldsymbol{\sigma})^{2}=\mathbf{1}_{2}\)
 及双曲半角公式
 \[
-  \cosh\frac{\varphi}{2}
+  \cosh\frac{\phi}{2}
   = \sqrt{\frac{p^{0}+m}{2m}}\;,\qquad
-  \sinh\frac{\varphi}{2}
+  \sinh\frac{\phi}{2}
   = \sqrt{\frac{p^{0}-m}{2m}}\;,
 \]
 可得
 \begin{equation}\label{eq:weylL-boost-matrix}
-  e^{-\boldsymbol{\varphi}\cdot A}
-  = \cosh\frac{\varphi}{2}\,\mathbf{1}
-    - \sinh\frac{\varphi}{2}\,\hat{\mathbf{p}}\!\cdot\!\boldsymbol{\sigma}
+  e^{-\boldsymbol{\phi}\cdot A}
+  = \cosh\frac{\phi}{2}\,\mathbf{1}
+    - \sinh\frac{\phi}{2}\,\hat{\boldsymbol{p}}\!\cdot\!\boldsymbol{\sigma}
   = \frac{1}{\sqrt{2m}}
     \left[\sqrt{p^{0}+m}\,\mathbf{1}
-          -\sqrt{p^{0}-m}\,\hat{\mathbf{p}}\!\cdot\!\boldsymbol{\sigma}\right].
+          -\sqrt{p^{0}-m}\,\hat{\boldsymbol{p}}\!\cdot\!\boldsymbol{\sigma}\right].
 \end{equation}
 代入一般公式(\ref{eq:weyl-uboost})，并用(\ref{eq:weylL-u0+})–
 (\ref{eq:weylL-u0-})，得到任意动量下的系数两分量形式：
 \begin{equation}\label{eq:weylL-u}
-  u_{L}(\mathbf{p},\sigma)
+  u_{L}(\boldsymbol{p},\sigma)
   = \sqrt{\frac{p^{0}+m}{2p^{0}}}
     \left[\mathbf{1}
-          -\frac{\mathbf{p}\!\cdot\!\boldsymbol{\sigma}}{p^{0}+m}\right]\xi_{\sigma}\;.
+          -\frac{\boldsymbol{p}\!\cdot\!\boldsymbol{\sigma}}{p^{0}+m}\right]\xi_{\sigma}\;.
 \end{equation}
 反粒子系数由
-$v_{L}(\mathbf{p},\sigma)=(-)^{j+\sigma}\,u_{L}(\mathbf{p},-\sigma)$
+$v_{L}(\boldsymbol{p},\sigma)=(-)^{j+\sigma}\,u_{L}(\boldsymbol{p},-\sigma)$
 给出，这里 $j=\tfrac12$，故 $(-)^{j+\sigma} = (-)^{1/2+\sigma}$ 只贡献整体相位
 （可吸收进定义中），在物理上不影响反对易关系及传播子结构，
 因此通常可取
 \begin{equation}\label{eq:weylL-v}
-  v_{L}(\mathbf{p},\sigma)
-  \propto u_{L}(\mathbf{p},-\sigma)\;,
+  v_{L}(\boldsymbol{p},\sigma)
+  \propto u_{L}(\boldsymbol{p},-\sigma)\;,
 \end{equation}
 直选取一个方便的相位约定即可。
 
@@ -136,8 +136,8 @@ $(\tfrac12,0)$ 表示中 $B=0$，故 $(-)^{2B}=1$。
   \boxed{
   \Psi_{L}(x)
   = \frac{1}{(2\pi)^{3/2}}\sum_{\sigma}\int\frac{d^{3}p}{\sqrt{2p^{0}}}\,
-    \Bigl[u_{L}(\mathbf{p},\sigma)\,a^{c\dagger}(\mathbf{p},\sigma)\,e^{-ip\cdot x}
-         + v_{L}(\mathbf{p},\sigma)\,a(\mathbf{p},\sigma)\,e^{ip\cdot x}\Bigr]
+    \Bigl[u_{L}(\boldsymbol{p},\sigma)\,a^{c\dagger}(\boldsymbol{p},\sigma)\,e^{-ip\cdot x}
+         + v_{L}(\boldsymbol{p},\sigma)\,a(\boldsymbol{p},\sigma)\,e^{ip\cdot x}\Bigr]
   }
 \end{equation}
 其中 $u_{L}$ 的显式形式如(\ref{eq:weylL-u}) 所示，$v_{L}$ 由(\ref{eq:weylL-v}) 给出。
@@ -179,26 +179,26 @@ $(\tfrac12,0)$ 表示中 $B=0$，故 $(-)^{2B}=1$。
 
 boost 矩阵此时为
 \[
-  e^{+\boldsymbol{\varphi}\cdot B}
-  = \exp\!\Bigl(+\,\frac{\varphi}{2}\,\hat{\mathbf{p}}\!\cdot\!\boldsymbol{\sigma}\Bigr)
-  = \cosh\frac{\varphi}{2}\,\mathbf{1}
-    + \sinh\frac{\varphi}{2}\,\hat{\mathbf{p}}\!\cdot\!\boldsymbol{\sigma}
+  e^{+\boldsymbol{\phi}\cdot B}
+  = \exp\!\Bigl(+\,\frac{\phi}{2}\,\hat{\boldsymbol{p}}\!\cdot\!\boldsymbol{\sigma}\Bigr)
+  = \cosh\frac{\phi}{2}\,\mathbf{1}
+    + \sinh\frac{\phi}{2}\,\hat{\boldsymbol{p}}\!\cdot\!\boldsymbol{\sigma}
   = \frac{1}{\sqrt{2m}}
     \left[\sqrt{p^{0}+m}\,\mathbf{1}
-          +\sqrt{p^{0}-m}\,\hat{\mathbf{p}}\!\cdot\!\boldsymbol{\sigma}\right].
+          +\sqrt{p^{0}-m}\,\hat{\boldsymbol{p}}\!\cdot\!\boldsymbol{\sigma}\right].
 \]
-代回(\ref{eq:weyl-uboost}) 得到任意动量 $\mathbf{p}$ 下的系数：
+代回(\ref{eq:weyl-uboost}) 得到任意动量 $\boldsymbol{p}$ 下的系数：
 \begin{equation}\label{eq:weylR-u}
-  u_{R}(\mathbf{p},\sigma)
+  u_{R}(\boldsymbol{p},\sigma)
   = \sqrt{\frac{p^{0}+m}{2p^{0}}}
     \left[\mathbf{1}
-          +\frac{\mathbf{p}\!\cdot\!\boldsymbol{\sigma}}{p^{0}+m}\right]\xi_{\sigma}\;,
+          +\frac{\boldsymbol{p}\!\cdot\!\boldsymbol{\sigma}}{p^{0}+m}\right]\xi_{\sigma}\;,
 \end{equation}
 而
 \begin{equation}\label{eq:weylR-v}
-  v_{R}(\mathbf{p},\sigma)
-  =(-)^{j+\sigma}\,u_{R}(\mathbf{p},-\sigma)
-  \propto u_{R}(\mathbf{p},-\sigma)\;.
+  v_{R}(\boldsymbol{p},\sigma)
+  =(-)^{j+\sigma}\,u_{R}(\boldsymbol{p},-\sigma)
+  \propto u_{R}(\boldsymbol{p},-\sigma)\;.
 \end{equation}
 
 右手 Weyl 场的因果展开为
@@ -206,15 +206,15 @@ boost 矩阵此时为
   \boxed{
   \Psi_{R}(x)
   = \frac{1}{(2\pi)^{3/2}}\sum_{\sigma}\int\frac{d^{3}p}{\sqrt{2p^{0}}}\,
-    \Bigl[u_{R}(\mathbf{p},\sigma)\,a^{c\dagger}(\mathbf{p},\sigma)\,e^{-ip\cdot x}
-         + v_{R}(\mathbf{p},\sigma)\,a(\mathbf{p},\sigma)\,e^{ip\cdot x}\Bigr]
+    \Bigl[u_{R}(\boldsymbol{p},\sigma)\,a^{c\dagger}(\boldsymbol{p},\sigma)\,e^{-ip\cdot x}
+         + v_{R}(\boldsymbol{p},\sigma)\,a(\boldsymbol{p},\sigma)\,e^{ip\cdot x}\Bigr]
   }
 \end{equation}
 其中 $u_{R}$ 与 $v_{R}$ 分别由(\ref{eq:weylR-u}) 和(\ref{eq:weylR-v}) 给出。
 该场按 $(0,\tfrac12)$ 表示变换，
 在空间反演下与左手场 $\Psi_{L}$ 相互映射。
 
-\paragraph{Weyl 场的物理特征小结.}
+\paragraph{Weyl 场的物理特征}
 \begin{itemize}
   \item $(\tfrac12,0)$ 和 $(0,\tfrac12)$ 两个 Weyl 场
         分别对应左、右两种手征性；

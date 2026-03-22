@@ -6,18 +6,18 @@
 \]
 在 Weyl 场中，$(1/2, 0)$ 表示的生成元为：
 \begin{equation}
-    \mathbf{J}^{(A)} = \frac{1}{2}(\mathbf{J} + i\mathbf{K}) = \frac{\boldsymbol{\sigma}}{2}, \quad \mathbf{J}^{(B)} = \frac{1}{2}(\mathbf{J} - i\mathbf{K}) = 0
+    \boldsymbol{A} = \frac{1}{2}(\boldsymbol{J} + i\boldsymbol{K}) = \frac{\boldsymbol{\sigma}}{2}, \quad \boldsymbol{B} = \frac{1}{2}(\boldsymbol{J} - i\boldsymbol{K}) = 0
 \end{equation}
-空间反演使 $\mathbf{K} \to -\mathbf{K}$，$\mathbf{J} \to \mathbf{J}$，因此：
+空间反演使 $\boldsymbol{K} \to -\boldsymbol{K}$，$\boldsymbol{J} \to \boldsymbol{J}$，因此：
 \begin{equation}
-    \mathcal{P}: \quad \mathbf{J}^{(A)} = \frac{1}{2}(\mathbf{J} + i\mathbf{K}) \longrightarrow \frac{1}{2}(\mathbf{J} - i\mathbf{K}) = \mathbf{J}^{(B)}
+    \mathcal{P}: \quad \boldsymbol{A} = \frac{1}{2}(\boldsymbol{J} + i\boldsymbol{K}) \longrightarrow \frac{1}{2}(\boldsymbol{J} - i\boldsymbol{K}) = \boldsymbol{B}
 \end{equation}
 这表明宇称操作将 $(1/2, 0)$ 表示映射为 $(0, 1/2)$ 表示。
 为了在宇称变换下封闭，我们必须将两者组合为直和表示：
 \begin{equation}
     \left(\frac{1}{2}, 0\right) \oplus \left(0, \frac{1}{2}\right)
 \end{equation}
-这便是四分量狄拉克旋量的来源。我们将四分量 Dirac 旋量 $\psi$ 构造为左右手 Weyl 旋量的列向量：
+这便是四分量狄拉克旋量的来源。将四分量 Dirac 旋量 $\psi$ 构造为左右手 Weyl 旋量的列向量：
 \begin{equation}
     \psi = \begin{pmatrix} \psi_R \\ \psi_L \end{pmatrix}, \quad \psi_R \in \left(0, \frac{1}{2}\right), \quad \psi_L \in \left(\frac{1}{2}, 0\right)
 \end{equation}
@@ -42,11 +42,11 @@
 \paragraph{质量耦合与狄拉克方程}
 对于无质量的粒子，左手和右手分量可以独立存在，分别满足 Weyl 方程。在动量空间中：
 \begin{align}
-    p_\mu \bar{\sigma}^\mu \psi_R &= (p^0 + \mathbf{p}\cdot\boldsymbol{\sigma}) \psi_R = 0 \\
-    p_\mu \sigma^\mu \psi_L &= (p^0 - \mathbf{p}\cdot\boldsymbol{\sigma}) \psi_L = 0
+    p_\mu \bar{\sigma}^\mu \psi_R &= (p^0 + \boldsymbol{p}\cdot\boldsymbol{\sigma}) \psi_R = 0 \\
+    p_\mu \sigma^\mu \psi_L &= (p^0 - \boldsymbol{p}\cdot\boldsymbol{\sigma}) \psi_L = 0
 \end{align}
 其中 $\sigma^\mu = (I, \boldsymbol{\sigma})$，$\bar{\sigma}^\mu = (I, -\boldsymbol{\sigma})$。
-当粒子具有静止质量 $m \neq 0$ 时，在静止参考系中（$\mathbf{p}=0, p^0=m$），洛伦兹群退化为空间旋转群 $SU(2)$。此时，左手 Weyl 旋量与右手 Weyl 旋量在纯旋转下变换完全相同，它们无法通过旋转来区分。因此，一个有质量的粒子在静止时不具有确定的手征性——左手态和右手态必须不可避免地通过质量 $m$ 发生耦合。
+当粒子具有静止质量 $m \neq 0$ 时，在静止参考系中（$\boldsymbol{p}=0, p^0=m$），洛伦兹群退化为空间旋转群 $SU(2)$。此时，左手 Weyl 旋量与右手 Weyl 旋量在纯旋转下变换完全相同，它们无法通过旋转来区分。因此，一个有质量的粒子在静止时不具有确定的手征性——左手态和右手态必须不可避免地通过质量 $m$ 发生耦合。
 
 满足洛伦兹协变性且量纲正确的唯一线性交叉耦合方式为：
 \begin{align}
@@ -59,16 +59,14 @@
     \begin{pmatrix} 0 & p_\mu \bar{\sigma}^\mu \\ p_\mu \sigma^\mu & 0 \end{pmatrix} \begin{pmatrix} \psi_R \\ \psi_L \end{pmatrix} = m \begin{pmatrix} \psi_R \\ \psi_L \end{pmatrix}
 \end{equation}
 左侧的 $4 \times 4$ 矩阵恰好可以分解为动量 $p_\mu$ 乘以一组 $4 \times 4$ 矩阵。我们定义这组矩阵为 Dirac $\gamma$ 矩阵。
-
-\paragraph{Clifford 代数}
-
+\topictitle{Clifford 代数}
 在手征表示下，为了让上述分块矩阵精确地写成 $\gamma^\mu p_\mu$ 的形式，我们定义：
 \begin{equation}
     \gamma^0 = \begin{pmatrix} 0 & I \\ I & 0 \end{pmatrix}, \quad \gamma^i = \begin{pmatrix} 0 & -\sigma^i \\ \sigma^i & 0 \end{pmatrix}
 \end{equation}
 容易验证：
 \begin{equation}
-    \gamma^\mu p_\mu = \gamma^0 p^0 + \gamma^i p_i = \begin{pmatrix} 0 & p^0 I - \mathbf{p}\cdot\boldsymbol{\sigma} \\ p^0 I + \mathbf{p}\cdot\boldsymbol{\sigma} & 0 \end{pmatrix} = \begin{pmatrix} 0 & p_\mu \bar{\sigma}^\mu \\ p_\mu \sigma^\mu & 0 \end{pmatrix}
+    \gamma^\mu p_\mu = \gamma^0 p^0 + \gamma^i p_i = \begin{pmatrix} 0 & p^0 I - \boldsymbol{p}\cdot\boldsymbol{\sigma} \\ p^0 I + \boldsymbol{p}\cdot\boldsymbol{\sigma} & 0 \end{pmatrix} = \begin{pmatrix} 0 & p_\mu \bar{\sigma}^\mu \\ p_\mu \sigma^\mu & 0 \end{pmatrix}
 \end{equation}
 （其中 $p_i = -p^i$，因此 $\gamma^i p_i = -\gamma^i p^i$。）
 这恰好重现了我们的耦合方程！于是，统一的波动方程可以写为极为紧凑的狄拉克方程：
@@ -182,30 +180,30 @@
 \end{tabular}
 \end{center}
 总计 $1 + 1 + 4 + 4 + 6 = 16$ 个，完美匹配 $4 \times 4$ 矩阵空间的维度。
-\paragraph{分立对称性的矩阵算符}
+\topictitle{分立对称性}
 在当前的经典容器层面，分立对称性表现为旋量空间中的特殊矩阵：
 
-\textbf{1. 空间反演 (Parity, $\mathcal{P}$)}
+\textbf{1. 空间反演 }
 
-空间反演使坐标 $\mathbf{x} \to -\mathbf{x}$，在狄拉克方程中翻转空间微商 $\partial_i \to -\partial_i$。我们需要一个矩阵能够同时实现"交换左右手分量"和"翻转空间 $\gamma^i$ 的符号"。根据 Clifford 代数 \eqref{eq:clifford}：
+空间反演使坐标 $\boldsymbol{x} \to -\boldsymbol{x}$，在狄拉克方程中翻转空间微商 $\partial_i \to -\partial_i$。我们需要一个矩阵能够同时实现"交换左右手分量"和"翻转空间 $\gamma^i$ 的符号"。根据 Clifford 代数 \eqref{eq:clifford}：
 \begin{equation}
     \gamma^0 \gamma^i (\gamma^0)^{-1} = \gamma^0 \gamma^i \gamma^0 = -\gamma^i, \quad \gamma^0 \gamma^0 (\gamma^0)^{-1} = \gamma^0
 \end{equation}
 因此宇称矩阵正是 $\gamma^0$ 本身：
 \begin{equation}
-    \psi_P(t, \mathbf{x}) = \eta_P \gamma^0 \psi(t, -\mathbf{x})
+    \psi_P(t, \boldsymbol{x}) = \eta_P \gamma^0 \psi(t, -\boldsymbol{x})
 \end{equation}
 
-\textbf{2. 电荷共轭 (Charge Conjugation, $\mathcal{C}$)}
+\textbf{2. 电荷共轭 }
 
 电荷共轭将粒子解映射为反粒子解。对狄拉克方程 $(i\gamma^\mu\partial_\mu - m)\psi = 0$ 取复共轭后变为 $(-i\gamma^{\mu *}\partial_\mu - m)\psi^* = 0$。我们需要一个矩阵 $C$ 将 $-\gamma^{\mu *}$ 变回 $+\gamma^\mu$，即 $C^{-1}\gamma^\mu C = -(\gamma^\mu)^T$。在手征表示下：
 \begin{equation}
-    C = i\gamma^2\gamma^0, \quad \psi_C(t, \mathbf{x}) = \eta_C C \bar{\psi}^T(t, \mathbf{x})
+    C = i\gamma^2\gamma^0, \quad \psi_C(t, \boldsymbol{x}) = \eta_C C \bar{\psi}^T(t, \boldsymbol{x})
 \end{equation}
 
-\textbf{3. 时间反演 (Time Reversal, $\mathcal{T}$)}
+\textbf{3. 时间反演}
 
 时间反演是反线性算符，包含复共轭和时间坐标翻转 $t \to -t$：
 \begin{equation}
-    \psi_T(t, \mathbf{x}) = \eta_T B \psi^*(-t, \mathbf{x}), \quad \text{其中} \ B^{-1}\gamma^\mu B = (\gamma^\mu)^*
+    \psi_T(t, \boldsymbol{x}) = \eta_T B \psi^*(-t, \boldsymbol{x}), \quad \text{其中} \ B^{-1}\gamma^\mu B = (\gamma^\mu)^*
 \end{equation}

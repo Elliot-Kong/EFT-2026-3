@@ -1,0 +1,714 @@
+\section{规则的推导}\label{sec:derivation-rules}
+
+在前几章中，利用协变因果场构建相互作用密度 $\mathscr{H}(x)$ 的目的，
+是保证 $S$ 矩阵自动满足 Lorentz 不变性与集团分解原理。
+一旦这些条件在 $\mathscr{H}(x)$ 的层面得到保证，
+那么\emph{无论}用何种微扰展开形式来计算 $S$ 矩阵，
+结果都将逐阶满足这些条件。
+然而，实践中我们希望采用一种在计算的\emph{每一步}
+都保持 Lorentz 不变性与集团分解透明性的微扰方案。
+这正是 Feynman、Schwinger 与 Tomonaga 于 1940 年代末发展的方法，
+并由 Dyson 在 1949 年系统化\footnote{%
+  F.\ J.\ Dyson, \textit{Phys.\ Rev.}\ \textbf{75}, 486 (1949); 1736 (1949).}。
+本节将从 Dyson 级数出发，系统推导\textbf{坐标空间费曼规则}。
+
+%==========================================
+\paragraph{出发点}
+%==========================================
+
+将 Dyson 级数~(1.26) 与多粒子态的产生算符表述~(2.1) 合并，
+$S$ 矩阵元可以写为
+\begin{align}\label{eq:S-master}
+  &S_{\mathbf{p}'_1\sigma'_1 n'_1;\,\mathbf{p}'_2\sigma'_2 n'_2;\,\cdots\;;\;
+       \mathbf{p}_1\sigma_1 n_1;\,\mathbf{p}_2\sigma_2 n_2;\,\cdots}
+  \nonumber\\[4pt]
+  &\quad= \sum_{N=0}^{\infty}\frac{(-i)^N}{N!}
+    \int d^4x_1\cdots d^4x_N\;
+    \Big\langle \Phi_0,\;
+      \cdots a(\mathbf{p}'_2\sigma'_2 n'_2)\;a(\mathbf{p}'_1\sigma'_1 n'_1)
+  \nonumber\\[2pt]
+  &\qquad\qquad\times\;
+    T\bigl\{\mathscr{H}(x_1)\cdots\mathscr{H}(x_N)\bigr\}\;
+    a^\dagger(\mathbf{p}_1\sigma_1 n_1)\;a^\dagger(\mathbf{p}_2\sigma_2 n_2)\cdots
+    \;\Phi_0\Big\rangle \;.
+\end{align}
+提醒：
+$\mathbf{p},\sigma,n$ 分别标记三动量、自旋与种类；
+带撇号者标记末态粒子；
+$\Phi_0$ 是自由粒子真空；
+$a$ 和 $a^\dagger$ 是湮灭与产生算符；
+$T$ 表示编时乘积，将各 $\mathscr{H}(x_i)$ 按 $x^0$ 从左到右递减排列。
+
+相互作用密度取为场及其共轭的多项式：
+\begin{equation}\label{eq:H-sum}
+  \mathscr{H}(x)=\sum_i g_i\,\mathscr{H}_i(x)\;,
+\end{equation}
+每一项 $\mathscr{H}_i$ 是若干确定类型的场与场共轭的乘积，
+$g_i$ 为耦合常数（参见~(3.6)）。
+
+%==========================================
+\paragraph{场的分解回顾}
+%==========================================
+
+回顾~(3.28)，种类 $n$ 的因果场的一般形式为
+\begin{equation}\label{eq:psi-field}
+  \psi_\ell(x)=(2\pi)^{-3/2}\sum_\sigma\int d^3p\,
+  \Bigl[
+    u_\ell(\mathbf{p},\sigma,n)\;a(\mathbf{p},\sigma,n)\;e^{ip\cdot x}
+   +v_\ell(\mathbf{p},\sigma,n)\;a^{c\dagger}(\mathbf{p},\sigma,n)\;e^{-ip\cdot x}
+  \Bigr]\;,
+\end{equation}
+其中 $a^{c\dagger}(\mathbf{p},\sigma,n)=a^\dagger(\mathbf{p},\sigma,\bar{n})$ 
+产生种类 $n$ 的反粒子（参见~(3.29)）；
+$p^0\equiv+\sqrt{\mathbf{p}^2+m_n^2}$；
+系数 $u_\ell,v_\ell$ 在~\S3.3--\S3.4 中已确定。
+指标 $\ell$ 是复合指标，既遍历粒子种类，也遍历 Lorentz 表示的内部分量。
+场的导数 $\partial_\mu\psi_\ell$ 从我们的观点看只是另一种场，
+具有不同的 $u_\ell,v_\ell$，因此无需单独处理。
+
+为方便讨论配对过程，将场分为两部分：
+\begin{equation}\label{eq:psi-pm-def}
+  \psi_\ell(x)=\psi^+_\ell(x)+\psi^-_\ell(x)\;,
+\end{equation}
+\begin{minipage}[t]{0.47\textwidth}
+\begin{align}
+  \psi^+_\ell(x)&\equiv(2\pi)^{-3/2}\int d^3p\sum_\sigma
+    u_\ell\,a(\mathbf{p}\sigma n)\,e^{ip\cdot x}
+  \label{eq:psi-plus}
+\end{align}
+\vspace{-4pt}
+\begin{center}\small
+  {\bfseries 湮灭粒子}（含 $a$）
+\end{center}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.47\textwidth}
+\begin{align}
+  \psi^-_\ell(x)&\equiv(2\pi)^{-3/2}\int d^3p\sum_\sigma
+    v_\ell\,a^{c\dagger}(\mathbf{p}\sigma n)\,e^{-ip\cdot x}
+  \label{eq:psi-minus}
+\end{align}
+\vspace{-4pt}
+\begin{center}\small
+  {\bfseries 产生反粒子}（含 $a^{c\dagger}$）
+\end{center}
+\end{minipage}
+
+\medskip\noindent
+同理，场的共轭也分为两部分：
+$\psi^{\dagger+}_\ell$（湮灭反粒子，含 $a^c$）
+与 $\psi^{\dagger-}_\ell$（产生粒子，含 $a^\dagger$）。
+
+对于某些粒子（如光子、$\pi^0$），$\bar{n}=n$，
+场的共轭正比于场本身。
+
+%==========================================
+\paragraph{配对的一般思路}
+%==========================================
+
+我们的策略是：在~(\ref{eq:S-master}) 中，
+利用基本 (反) 对易关系
+\begin{align}
+  a(\mathbf{p}\sigma n)\,a^\dagger(\mathbf{p}'\sigma'n')
+  &= \pm\,a^\dagger(\mathbf{p}'\sigma'n')\,a(\mathbf{p}\sigma n)
+    +\delta^3(\mathbf{p}-\mathbf{p}')\,\delta_{\sigma\sigma'}\,\delta_{nn'}\;,
+  \label{eq:CR1}\\[2pt]
+  a(\mathbf{p}\sigma n)\,a(\mathbf{p}'\sigma'n')
+  &= \pm\,a(\mathbf{p}'\sigma'n')\,a(\mathbf{p}\sigma n)\;,
+  \label{eq:CR2}\\[2pt]
+  a^\dagger(\mathbf{p}\sigma n)\,a^\dagger(\mathbf{p}'\sigma'n')
+  &= \pm\,a^\dagger(\mathbf{p}'\sigma'n')\,a^\dagger(\mathbf{p}\sigma n)\;,
+  \label{eq:CR3}
+\end{align}
+（上号 $+$ 为玻色子，$-$ 为费米子），
+\emph{反复}将所有湮灭算符移至最右边，使之作用于真空给零。
+存活下来的贡献\emph{仅来自} $\delta$ 函数项——即~(\ref{eq:CR1}) 的第二项。
+每一种将所有算符两两配对（一个 $a$ 与一个 $a^\dagger$）的方式，
+对应一个确定的费曼图。
+
+以下分六种情况列出所有可能的配对，
+并在每种配对旁给出对应的图示元素与因子。
+
+%==========================================
+\paragraph{(a) 末态粒子与 $\mathscr{H}(x)$ 中场共轭的配对}
+%==========================================
+
+末态粒子的量子数为 $\mathbf{p}',\sigma',n'$。
+在~(\ref{eq:S-master}) 左侧出现的湮灭算符 $a(\mathbf{p}'\sigma'n')$，
+需要与 $\mathscr{H}_i(x)$ 中某个场共轭 $\psi^\dagger_\ell(x)$
+的产生粒子部分 $\psi^{\dagger-}_\ell(x)$（含 $a^\dagger$）配对。
+代入场展开~(\ref{eq:psi-field}) 的共轭，
+利用~(\ref{eq:CR1}) 提取 $\delta$ 函数，
+积掉 $d^3p$ 与 $\sum_\sigma$，得到：
+\begin{equation}\label{eq:pair-a}
+\boxed{
+  \bigl[a(\mathbf{p}'\sigma'n'),\;\psi^\dagger_\ell(x)\bigr]_\mp
+  =(2\pi)^{-3/2}\;e^{-ip'\cdot x}\;u^*_\ell(\mathbf{p}'\sigma'n')
+}\;.
+\end{equation}
+
+\begin{center}
+\begin{tikzpicture}[>=Stealth, thick, scale=0.9]
+  % vertex
+  \filldraw (0,0) circle (2.5pt);
+  \node[below=4pt] at (0,0) {$\scriptstyle \ell,\;x$};
+  % external line going up
+  \draw[->,thick] (0,0) -- (0,2.2);
+  \node[right=3pt] at (0,1.8) {$\scriptstyle\mathbf{p}'\sigma'n'$};
+  % label factor
+  \node[right=30pt] at (0.6,0.8) 
+    {$\displaystyle\longrightarrow\quad
+      \frac{e^{-ip'\cdot x}\;u^*_\ell(\mathbf{p}'\sigma'n')}{(2\pi)^{3/2}}$};
+\end{tikzpicture}
+\end{center}
+\noindent
+\emph{图示}：一条线从顶点 $\mathscr{H}(x)$ 出发\textbf{向上}离开图，
+箭头\textbf{朝上}（沿粒子运动方向），标注末态量子数。
+
+%==========================================
+\paragraph{(b) 末态反粒子与 $\mathscr{H}(x)$ 中场的配对}
+%==========================================
+
+末态反粒子的量子数为 $\mathbf{p}',\sigma',\bar{n}'$。
+$a(\mathbf{p}'\sigma'\bar{n}')$ 与 $\psi_\ell(x)$ 的
+产生反粒子部分 $\psi^-_\ell(x)$（含 $a^{c\dagger}$）配对：
+\begin{equation}\label{eq:pair-b}
+\boxed{
+  \bigl[a(\mathbf{p}'\sigma'\bar{n}'),\;\psi_\ell(x)\bigr]_\mp
+  =(2\pi)^{-3/2}\;e^{-ip'\cdot x}\;v_\ell(\mathbf{p}'\sigma'n')
+}\;.
+\end{equation}
+
+\begin{center}
+\begin{tikzpicture}[>=Stealth, thick, scale=0.9]
+  \filldraw (0,0) circle (2.5pt);
+  \node[below=4pt] at (0,0) {$\scriptstyle \ell,\;x$};
+  \draw[thick] (0,0) -- (0,2.2);
+  \draw[<-,thick] (0,0.3) -- (0,1.9);  % arrow pointing down
+  \node[right=3pt] at (0,1.8) {$\scriptstyle\mathbf{p}'\sigma'\bar{n}'$};
+  \node[right=30pt] at (0.6,0.8) 
+    {$\displaystyle\longrightarrow\quad
+      \frac{e^{-ip'\cdot x}\;v_\ell(\mathbf{p}'\sigma'n')}{(2\pi)^{3/2}}$};
+\end{tikzpicture}
+\end{center}
+\noindent
+图示同~(a)，但箭头\textbf{朝下}——
+反粒子的箭头方向与运动方向相反。
+对于粒子即反粒子的种类（如 $\gamma,\pi^0$），省略箭头。
+
+%==========================================
+\paragraph{(c) 初态粒子与 $\mathscr{H}(x)$ 中场的配对}
+%==========================================
+
+初态粒子的量子数为 $\mathbf{p},\sigma,n$。
+$a^\dagger(\mathbf{p}\sigma n)$ 出现在~(\ref{eq:S-master}) 的右侧。
+它与 $\psi_\ell(x)$ 的湮灭粒子部分 $\psi^+_\ell(x)$（含 $a$）配对：
+\begin{equation}\label{eq:pair-c}
+\boxed{
+  \bigl[\psi_\ell(x),\;a^\dagger(\mathbf{p}\sigma n)\bigr]_\mp
+  =(2\pi)^{-3/2}\;e^{ip\cdot x}\;u_\ell(\mathbf{p}\sigma n)
+}\;.
+\end{equation}
+
+\begin{center}
+\begin{tikzpicture}[>=Stealth, thick, scale=0.9]
+  \filldraw (0,2.2) circle (2.5pt);
+  \node[above=4pt] at (0,2.2) {$\scriptstyle \ell,\;x$};
+  \draw[->,thick] (0,0) -- (0,2.2);
+  \node[right=3pt] at (0,0.3) {$\scriptstyle\mathbf{p}\,\sigma\,n$};
+  \node[right=30pt] at (0.6,1) 
+    {$\displaystyle\longrightarrow\quad
+      \frac{e^{ip\cdot x}\;u_\ell(\mathbf{p}\sigma n)}{(2\pi)^{3/2}}$};
+\end{tikzpicture}
+\end{center}
+\noindent
+图示：线从图的\textbf{下方}进入，终止于顶点 $\mathscr{H}(x)$，箭头朝上。
+
+%==========================================
+\paragraph{(d) 初态反粒子与 $\mathscr{H}(x)$ 中场共轭的配对}
+%==========================================
+
+初态反粒子，量子数 $\mathbf{p},\sigma,\bar{n}$。
+$a^\dagger(\mathbf{p}\sigma\bar{n})$ 与 $\psi^\dagger_\ell(x)$ 的
+湮灭反粒子部分 $\psi^{\dagger+}_\ell(x)$（含 $a^c=a(\bar{n})$）配对：
+\begin{equation}\label{eq:pair-d}
+\boxed{
+  \bigl[\psi^\dagger_\ell(x),\;a^\dagger(\mathbf{p}\sigma\bar{n})\bigr]_\mp
+  =(2\pi)^{-3/2}\;e^{ip\cdot x}\;v^*_\ell(\mathbf{p}\sigma n)
+}\;.
+\end{equation}
+
+\begin{center}
+\begin{tikzpicture}[>=Stealth, thick, scale=0.9]
+  \filldraw (0,2.2) circle (2.5pt);
+  \node[above=4pt] at (0,2.2) {$\scriptstyle \ell,\;x$};
+  \draw[thick] (0,0) -- (0,2.2);
+  \draw[<-,thick] (0,0.3) -- (0,1.9);
+  \node[right=3pt] at (0,0.3) {$\scriptstyle\mathbf{p}\,\sigma\,\bar{n}$};
+  \node[right=30pt] at (0.6,1) 
+    {$\displaystyle\longrightarrow\quad
+      \frac{e^{ip\cdot x}\;v^*_\ell(\mathbf{p}\sigma n)}{(2\pi)^{3/2}}$};
+\end{tikzpicture}
+\end{center}
+\noindent
+同~(c)，但箭头朝下。
+
+%==========================================
+\paragraph{(e) 初态与末态的直接配对}
+%==========================================
+
+如果初态的某个粒子（或反粒子）直接出现在末态中，
+不参与任何相互作用，
+则 $a^\dagger(\mathbf{p}\sigma n)$ 与 $a(\mathbf{p}'\sigma'n')$ 直接配对：
+\begin{equation}\label{eq:pair-e}
+\boxed{
+  \bigl[a(\mathbf{p}'\sigma'n'),\;a^\dagger(\mathbf{p}\sigma n)\bigr]_\mp
+  =\delta^3(\mathbf{p}'-\mathbf{p})\;\delta_{\sigma'\sigma}\;\delta_{n'n}
+}\;.
+\end{equation}
+
+\begin{center}
+\begin{tikzpicture}[>=Stealth, thick, scale=0.9]
+  \draw[->,thick] (0,0) -- (0,2.8);
+  \node[right=3pt] at (0,0.3) {$\scriptstyle\mathbf{p}\,\sigma\,n$};
+  \node[right=3pt] at (0,2.5) {$\scriptstyle\mathbf{p}'\sigma'n'$};
+  \node[right=30pt] at (0.6,1.2) 
+    {$\displaystyle\longrightarrow\quad
+      \delta^3(\mathbf{p}'-\mathbf{p})\;\delta_{\sigma'\sigma}\;\delta_{n'n}$};
+  %  "or" label
+  \node[left=6pt] at (0,1.4) {\small 或};
+  % antiparticle version
+  \begin{scope}[xshift=-2cm]
+    \draw[thick] (0,0) -- (0,2.8);
+    \draw[<-,thick] (0,0.3) -- (0,2.5);
+    \node[right=3pt] at (0,0.3) {$\scriptstyle\mathbf{p}\,\sigma\,\bar{n}$};
+    \node[right=3pt] at (0,2.5) {$\scriptstyle\mathbf{p}'\sigma'\bar{n}'$};
+  \end{scope}
+\end{tikzpicture}
+\end{center}
+\noindent
+图示：一条线从底部直通顶部，\textbf{不经过任何顶点}。
+此类贡献属于 $S$ 矩阵的\textbf{非连通}部分。
+正如~\S2.5 所论证的，
+物理散射振幅仅来自\textbf{连通图}。
+
+%==========================================
+\paragraph{(f) $\mathscr{H}(x)$ 中场与 $\mathscr{H}(y)$ 中场共轭的配对：传播子}
+\label{par:propagator}
+%==========================================
+
+这是最重要的配对类型：它产生费曼图的\textbf{内线}。
+设 $\mathscr{H}_i(x)$ 中有一个场 $\psi_\ell(x)$，
+$\mathscr{H}_j(y)$ 中有一个场共轭 $\psi^\dagger_m(y)$。
+由于~(\ref{eq:S-master}) 中编时算符 $T$ 的存在，
+$\psi_\ell(x)$ 和 $\psi^\dagger_m(y)$ 在乘积中的顺序取决于 $x^0$ 与 $y^0$ 的大小关系。
+
+\medskip
+\noindent
+\underline{情况 1：$x^0>y^0$}
+
+$\mathscr{H}(x)$ 在 $\mathscr{H}(y)$ 的左边。
+$\psi_\ell(x)$ 的湮灭粒子部分 $\psi^+_\ell(x)$（含 $a$）
+与 $\psi^\dagger_m(y)$ 的产生粒子部分 $\psi^{\dagger-}_m(y)$（含 $a^\dagger$）配对。
+
+\medskip
+\noindent
+\underline{情况 2：$y^0>x^0$}
+
+$\mathscr{H}(y)$ 在 $\mathscr{H}(x)$ 的左边。
+$\psi^\dagger_m(y)$ 的湮灭反粒子部分 $\psi^{\dagger+}_m(y)$（含 $a^c$）
+与 $\psi_\ell(x)$ 的产生反粒子部分 $\psi^-_\ell(x)$（含 $a^{c\dagger}$）配对。
+
+\medskip
+\noindent
+综合两种情况，定义\textbf{传播子}（propagator）：
+
+\begin{equation}\label{eq:prop-def}
+\boxed{
+  -i\,\Delta_{\ell m}(x,y)
+  \equiv
+  \theta(x^0-y^0)\;\bigl[\psi^+_\ell(x),\;\psi^{\dagger-}_m(y)\bigr]_\mp
+  \;\pm\;
+  \theta(y^0-x^0)\;\bigl[\psi^{\dagger+}_m(y),\;\psi^-_\ell(x)\bigr]_\mp
+}
+\end{equation}
+上（下）号对应玻色（费米）场。
+$\theta(t)$ 是阶跃函数：$t>0$ 时为 $+1$，$t<0$ 时为 $0$。
+
+\begin{center}
+\begin{tikzpicture}[>=Stealth, thick, scale=0.9]
+  % left vertex
+  \filldraw (0,0) circle (2.5pt);
+  \node[below=4pt] at (0,0) {$\scriptstyle m,\;y$};
+  % right vertex
+  \filldraw (4,0) circle (2.5pt);
+  \node[below=4pt] at (4,0) {$\scriptstyle \ell,\;x$};
+  % propagator line
+  \draw[->,thick] (0,0) -- (4,0);
+  \node[above=5pt] at (2,0) {$q$};
+  % factor
+  \node[right=10pt] at (4.5,0) 
+    {$\displaystyle\longrightarrow\quad -i\,\Delta_{\ell m}(x,y)$};
+\end{tikzpicture}
+\end{center}
+\noindent
+图示：一条内线连接顶点 $y$ 与 $x$，箭头从 $y$ 指向 $x$。
+传播子~(\ref{eq:prop-def}) 同时包含正频（粒子）和负频（反粒子）的传播——
+编时算符 $T$ 自动选择了物理上正确的贡献。
+
+传播子的显式计算与 Fourier 表示将在~\S\ref{sec:propagator-calc} 中给出。
+此处只需知道对于每条内线，坐标空间费曼规则中需要包含因子 $-i\,\Delta_{\ell m}(x,y)$。
+
+\bigskip
+\begin{mdframed}[linewidth=1pt, linecolor=black, backgroundcolor=gray!5]
+\textbf{物理图像}\quad
+传播子~(\ref{eq:prop-def}) 的两项分别对应：
+\begin{enumerate}
+  \item 一个粒子从 $y$ 传播到 $x$（$x^0>y^0$）；
+  \item 一个反粒子从 $x$ 传播到 $y$（$y^0>x^0$）。
+\end{enumerate}
+费曼传播子将这两种因果上不同的过程统一到一个\emph{协变}的表达式中。
+这正是因果场$\psi_\ell = \psi^+_\ell + \psi^-_\ell$
+必须\emph{同时}包含湮灭与产生部分的深层原因
+（参见~\S3.1 中微观因果性的讨论）。
+\end{mdframed}
+
+%==========================================
+\paragraph{坐标空间费曼规则的总结}
+\label{par:coord-rules-summary}
+%==========================================
+
+综合以上六种配对，$S$ 矩阵的坐标空间微扰计算可以表述为如下的\textbf{费曼规则}。
+
+\begin{mdframed}[linewidth=1.5pt, linecolor=black]
+\textbf{坐标空间费曼规则}
+
+\medskip
+给定一个散射过程（初态和末态确定）以及相互作用密度~(\ref{eq:H-sum})，
+设每种相互作用 $\mathscr{H}_i$ 各出现 $N_i$ 次（$\sum_i N_i = N$），
+按如下步骤计算 $S$ 矩阵元的贡献：
+
+\begin{enumerate}
+
+\item \textbf{画图。}
+  画出所有包含 $N_i$ 个 $i$-型顶点的拓扑不同的费曼图。
+  每个顶点拥有与 $\mathscr{H}_i$ 中场（含场共轭）总数相同的附着线。
+  对每个初态粒子/反粒子画一条从底部进入图的外线，
+  对每个末态粒子/反粒子画一条从顶部离开图的外线，
+  其余线作为内线连接不同顶点。
+  每条线的箭头沿粒子方向（反粒子反向，自共轭粒子无箭头）。
+  每条外线标记初/末态量子数 $\mathbf{p},\sigma,n$；
+  每条内线标记与之对应的场指标 $\ell,m$。
+
+\item \textbf{顶点因子。}
+  对每个 $i$-型顶点，写下
+  \[
+    -i\,g_i \;,
+  \]
+  并乘以 $\mathscr{H}_i$ 中场的乘积所携带的耦合矩阵指标结构。
+
+\item \textbf{外线因子。}
+  对每条外线，按下表写下因子：
+
+  \smallskip
+  \begin{center}
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabular}{ccc}
+  \toprule
+  \textbf{类型} & \textbf{箭头} & \textbf{因子} \\
+  \midrule
+  末态粒子   & $\uparrow$\;离开 &
+    $(2\pi)^{-3/2}\;e^{-ip'\cdot x}\;u^*_\ell(\mathbf{p}'\sigma'n')$ \\
+  末态反粒子 & $\downarrow$\;离开 &
+    $(2\pi)^{-3/2}\;e^{-ip'\cdot x}\;v_\ell(\mathbf{p}'\sigma'n')$ \\
+  初态粒子   & $\uparrow$\;进入 &
+    $(2\pi)^{-3/2}\;e^{ip\cdot x}\;u_\ell(\mathbf{p}\sigma n)$ \\
+  初态反粒子 & $\downarrow$\;进入 &
+    $(2\pi)^{-3/2}\;e^{ip\cdot x}\;v^*_\ell(\mathbf{p}\sigma n)$ \\
+  \bottomrule
+  \end{tabular}
+  \end{center}
+
+\item \textbf{内线因子。}
+  对每条连接顶点 $y$ 与 $x$ 的内线（箭头从 $y$ 到 $x$），写下
+  \[
+    -i\,\Delta_{\ell m}(x,y) \;.
+  \]
+
+\item \textbf{直通线。}
+  不经过任何顶点的直通线给出 $\delta^3\,\delta_\sigma\,\delta_n$ 因子，
+  属非连通贡献——计算物理振幅时\emph{仅取连通图}。
+
+\item \textbf{积分。}
+  对所有顶点坐标做四维积分：$\displaystyle\int d^4x_1\cdots d^4x_N$。
+
+\item \textbf{求和与叠加。}
+  对所有内部场指标求和；
+  将所有拓扑不同的图的贡献相加。
+  完整微扰级数由逐阶递增各类 $N_i$ 获得。
+
+\end{enumerate}
+\end{mdframed}
+
+%==========================================
+\paragraph{$1/N!$ 的抵消}
+\label{par:1-over-N}
+%==========================================
+
+注意上述规则中\emph{没有}包含~(\ref{eq:S-master}) 中的因子 $1/N!$。
+原因如下：
+编时乘积 $T\{\mathscr{H}(x_1)\cdots\mathscr{H}(x_N)\}$
+对 $x_1,\ldots,x_N$ 的 $N!$ 种置换给出相同的被积函数
+（因为编时算符本身已经将它们排成了一个确定的顺序）。
+对于一个有 $N$ 个顶点的费曼图，
+$N!$ 种顶点标记的置换产生 $N!$ 个仅在标记上不同的"图"，
+它们的贡献完全相同。
+这一 $N!$ 的重数恰好抵消了分母中的 $N!$。
+
+\medskip
+\noindent
+\emph{因此，我们\textbf{不计入}仅以顶点重标记相区别的图。}
+
+\medskip
+\noindent
+\textbf{例外}：当顶点的重标记并不产生新图时，$1/N!$ 不被完全抵消。
+最常见的情形是真空-真空振幅中的\textbf{环形图}：
+一个 $N$ 个顶点的环，
+其 $N!$ 种顶点置换中只有 $(N-1)!$ 种产生拓扑不同的排列
+（因为绕环旋转不改变拓扑），
+因此留下额外因子
+\begin{equation}\label{eq:ring-factor}
+  \frac{(N-1)!}{N!}=\frac{1}{N}\;.
+\end{equation}
+在计算物理散射过程（连通图、有外线）时，
+这类例外通常不出现。
+
+%==========================================
+\paragraph{(v) 相同场的组合因子}
+\label{par:identical-fields}
+%==========================================
+
+设 $\mathscr{H}_i(x)$ 中包含同一种场的 $M$ 个因子
+（例如实标量场的 $M$ 次方相互作用）。
+按惯例，我们在定义耦合常数时已在 $\mathscr{H}_i$ 中包含 $1/M!$：
+\begin{equation}
+  \text{例如：}\quad \mathscr{H}_i(x) = \frac{g}{M!}\,\phi(x)^M\;.
+\end{equation}
+$M$ 个相同场中，第一个可以与 $M$ 个不同对象配对，
+第二个与 $M-1$ 个，以此类推，
+产生 $M!$ 种等价的配对方式。
+$1/M!$ 恰好抵消此多重计数。
+
+\smallskip
+\noindent
+但如果 $\mathscr{H}_i(x)$ 中的 $M$ 个相同场
+\emph{全部}与\emph{同一个} $\mathscr{H}_j(y)$ 中的 $M$ 个场共轭配对，
+则~$M!$ 种配对仅产生 $M!$（而非 $(M!)^2$）种不同的组合，
+此时 $1/M!$ 的抵消是不完全的，需要手动插入额外因子 $1/M!$。
+在实际计算中遇到这种情形时，需要逐图检查组合因子。
+
+%==========================================
+\paragraph{(vi) 费米场的符号规则}
+\label{par:fermion-signs}
+%==========================================
+
+在涉及费米场的理论中，
+利用反对易关系~(\ref{eq:CR1})--(\ref{eq:CR3})
+将湮灭算符移至右侧的过程中，
+每次\emph{交换两个费米算符的相对位置}都引入一个负号。
+因此：
+
+\begin{itemize}
+\item 对于每一种配对方案，
+  需要计算从~(\ref{eq:S-master}) 中算符的原始顺序
+  重排到该配对方案所需的费米算符交换次数，
+  奇数次引入一个 $(-1)$。
+
+\item 一个直接推论是：
+  传播子~(\ref{eq:prop-def}) 中第二项前的 $\pm$ 号
+  对费米子取 $-$。
+  这是因为两种时间排列之间恰好多一次费米算符交换。
+\end{itemize}
+
+\noindent
+\textbf{费米子-费米子散射的符号：一个例子}
+
+考虑相互作用
+\begin{equation}\label{eq:yukawa-int}
+  \mathscr{H}(x)=\sum_{\ell mk}g_{\ell mk}\;\psi^\dagger_\ell(x)\,\psi_m(x)\,\phi_k(x)\;,
+\end{equation}
+其中 $\psi$ 为复费米场，$\phi$ 为实玻色场。
+考虑费米子-费米子散射 $1\,2\to 1'\,2'$，二阶微扰。
+在~(\ref{eq:S-master}) 中，费米算符（略去玻色部分）按如下顺序出现：
+\begin{equation}\label{eq:f-order}
+  a(2')\;a(1')\;\psi^\dagger(x)\;\psi(x)\;\psi^\dagger(y)\;\psi(y)\;a^\dagger(1)\;a^\dagger(2)\;.
+\end{equation}
+有两种连通配对方式：
+
+\begin{center}
+\begin{tikzpicture}[>=Stealth, thick, scale=0.85]
+  %--- Diagram I ---
+  \begin{scope}
+    \node at (1.5,3.5) {\textbf{配对 I}};
+    % vertices
+    \filldraw (0,1.5) circle (2pt); \node[left] at (-0.2,1.5) {$x$};
+    \filldraw (3,1.5) circle (2pt); \node[right] at (3.2,1.5) {$y$};
+    % external lines
+    \draw[->,thick] (0,0) node[below]{$1$} -- (0,1.5);
+    \draw[->,thick] (0,1.5) -- (0,3) node[above]{$2'$};
+    \draw[->,thick] (3,0) node[below]{$2$} -- (3,1.5);
+    \draw[->,thick] (3,1.5) -- (3,3) node[above]{$1'$};
+    % boson internal line
+    \draw[dashed,thick] (0,1.5) -- (3,1.5);
+  \end{scope}
+  %--- Diagram II ---
+  \begin{scope}[xshift=6cm]
+    \node at (1.5,3.5) {\textbf{配对 II}};
+    \filldraw (0,1.5) circle (2pt); \node[left] at (-0.2,1.5) {$x$};
+    \filldraw (3,1.5) circle (2pt); \node[right] at (3.2,1.5) {$y$};
+    \draw[->,thick] (0,0) node[below]{$1$} -- (0,1.5);
+    \draw[->,thick] (0,1.5) -- (3,3) node[above]{$1'$};
+    \draw[->,thick] (3,0) node[below]{$2$} -- (3,1.5);
+    \draw[->,thick] (3,1.5) -- (0,3) node[above]{$2'$};
+    \draw[dashed,thick] (0,1.5) -- (3,1.5);
+  \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\noindent
+配对 I 对应的 (反) 对易子乘积为
+\begin{equation}\label{eq:pairing-I}
+  \bigl[a(2')\psi^\dagger(x)\bigr]\;\bigl[a(1')\psi^\dagger(y)\bigr]\;
+  \bigl[\psi(y)\,a^\dagger(1)\bigr]\;\bigl[\psi(x)\,a^\dagger(2)\bigr]\;,
+\end{equation}
+从~(\ref{eq:f-order}) 到此排列需要\textbf{偶数次}费米算符交换，无额外负号。
+
+\medskip\noindent
+配对 II 对应
+\begin{equation}\label{eq:pairing-II}
+  \bigl[a(1')\psi^\dagger(x)\bigr]\;\bigl[a(2')\psi^\dagger(y)\bigr]\;
+  \bigl[\psi(y)\,a^\dagger(1)\bigr]\;\bigl[\psi(x)\,a^\dagger(2)\bigr]\;,
+\end{equation}
+它与配对 I 的唯一差别是交换了 $a(1')$ 和 $a(2')$——
+这是一次费米算符交换。因此
+
+\begin{center}
+\fbox{\textbf{两种配对的贡献差一个负号。}}
+\end{center}
+
+\noindent
+这个相对负号正是费米统计所要求的：
+$S$ 矩阵在交换两个全同费米子的末态量子数 $1'\leftrightarrow 2'$ 时反对称。
+
+\bigskip
+\noindent
+\textbf{费米子-反费米子散射}
+
+用同样的相互作用~(\ref{eq:yukawa-int})，
+考虑 $1\,2^c\to 1'\,2'^c$ 散射。
+费米算符的原始顺序为
+\begin{equation}\label{eq:f-order-2}
+  a(2'^c)\;a(1')\;\psi^\dagger(x)\;\psi(x)\;\psi^\dagger(y)\;\psi(y)\;
+  a^\dagger(1)\;a^\dagger(2^c)\;.
+\end{equation}
+两种连通配对方式为：
+
+\begin{center}
+\begin{tikzpicture}[>=Stealth, thick, scale=0.85]
+  %--- Diagram I ---
+  \begin{scope}
+    \node at (1.5,3.5) {\textbf{配对 I}};
+    \filldraw (0,1.5) circle (2pt); \node[left] at (-0.2,1.5) {$x$};
+    \filldraw (3,1.5) circle (2pt); \node[right] at (3.2,1.5) {$y$};
+    % fermion line (particle)
+    \draw[->,thick] (0,0) node[below]{$1$} -- (0,1.5);
+    \draw[->,thick] (0,1.5) -- (0,3) node[above]{$1'$};
+    % fermion line (antiparticle, arrow reversed)
+    \draw[thick] (3,0) node[below]{$2^c$} -- (3,1.5);
+    \draw[<-,thick] (3,0.2) -- (3,1.3);
+    \draw[thick] (3,1.5) -- (3,3) node[above]{$2'^c$};
+    \draw[<-,thick] (3,1.7) -- (3,2.8);
+    % boson
+    \draw[dashed,thick] (0,1.5) -- (3,1.5);
+  \end{scope}
+  %--- Diagram II ---
+  \begin{scope}[xshift=6cm]
+    \node at (1.5,3.5) {\textbf{配对 II}};
+    \filldraw (0,1.5) circle (2pt); \node[left] at (-0.2,1.5) {$x$};
+    \filldraw (3,1.5) circle (2pt); \node[right] at (3.2,1.5) {$y$};
+    % crossed fermion lines
+    \draw[->,thick] (0,0) node[below]{$1$} -- (3,1.5);
+    \draw[->,thick] (3,1.5) -- (0,3) node[above]{$1'$};
+    \draw[thick] (3,0) node[below]{$2^c$} -- (0,1.5);
+    \draw[<-,thick] (2.8,0.2) -- (0.2,1.3);
+    \draw[thick] (0,1.5) -- (3,3) node[above]{$2'^c$};
+    \draw[<-,thick] (0.2,1.7) -- (2.8,2.8);
+    \draw[dashed,thick] (0,1.5) -- (3,1.5);
+  \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\noindent
+可以验证：从~(\ref{eq:f-order-2}) 到配对 I 需要偶数次交换（无额外负号），
+到配对 II 需要奇数次交换（额外 $-1$）。
+因此两种配对的贡献\emph{同样差一个负号}。
+
+%==========================================
+\paragraph{费米圈的符号}
+\label{par:fermion-loop}
+%==========================================
+
+在所有相互作用都具有~(\ref{eq:yukawa-int}) 形式的理论中，
+费米线在费曼图中要么形成\textbf{链}（从外线到外线），
+要么形成\textbf{闭合圈}。
+考虑一个有 $M$ 个顶点的费米圈，
+对应费米算符的配对为
+\begin{equation}\label{eq:loop-pairing}
+  \bigl[\psi(x_1)\bar\psi(x_2)\bigr]\;
+  \bigl[\psi(x_2)\bar\psi(x_3)\bigr]\;
+  \cdots\;
+  \bigl[\psi(x_M)\bar\psi(x_1)\bigr]\;.
+\end{equation}
+而在~(\ref{eq:S-master}) 中这些算符的原始顺序为
+\begin{equation}
+  \bar\psi(x_1)\psi(x_1)\;\bar\psi(x_2)\psi(x_2)\;\cdots\;
+  \bar\psi(x_M)\psi(x_M)\;.
+\end{equation}
+从后者到~(\ref{eq:loop-pairing}) 需要将 $\bar\psi(x_1)$ 
+向右移过 $2M-1$ 个费米算符——这是\textbf{奇数次}交换。
+
+\begin{center}
+\begin{tikzpicture}[>=Stealth, thick, scale=0.8]
+  % fermion loop (square for clarity)
+  \filldraw (0,0) circle (2pt); \node[below left] at (0,0) {$x_1$};
+  \filldraw (2.5,0) circle (2pt); \node[below right] at (2.5,0) {$x_2$};
+  \filldraw (2.5,2) circle (2pt); \node[above right] at (2.5,2) {$x_3$};
+  \filldraw (0,2) circle (2pt); \node[above left] at (0,2) {$x_4$};
+  \draw[->,thick] (0,0) -- (2.5,0);
+  \draw[->,thick] (2.5,0) -- (2.5,2);
+  \draw[->,thick] (2.5,2) -- (0,2);
+  \draw[->,thick] (0,2) -- (0,0);
+  % boson external lines (dashed)
+  \draw[dashed,thick] (0,0) -- (-1.2,-1);
+  \draw[dashed,thick] (2.5,0) -- (3.7,-1);
+  \draw[dashed,thick] (2.5,2) -- (3.7,3);
+  \draw[dashed,thick] (0,2) -- (-1.2,3);
+  % label
+  \node at (1.25,-2) {\small 费米圈 ($M=4$)};
+  \node at (5.5,1) {$\longrightarrow\quad \text{额外因子}\;(-1)$};
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\fbox{\parbox{0.85\textwidth}{%
+  \textbf{费米圈规则}：每一个闭合费米圈贡献一个额外的 $(-1)$ 因子。
+}}
+\end{center}
+
+\bigskip
+综合规则 (i)--(vii)、$1/N!$ 的抵消、相同场的组合因子~(v)、
+以及费米符号规则~(vi)，
+我们得到了完整的\textbf{坐标空间费曼规则}。
+在下一节~(\S\ref{sec:propagator-calc}) 中我们将计算传播子的显式表达式；
+在~\S\ref{sec:momentum-rules} 中将所有因子转换到动量空间，
+给出最终用于实际计算的\textbf{动量空间费曼规则}。

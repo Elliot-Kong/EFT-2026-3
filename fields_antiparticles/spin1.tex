@@ -2,7 +2,7 @@
 矢量场对应于洛伦兹群的 $(1/2,1/2)$ 表示，描述自旋 $j=1$ 的有质量粒子。本节我们将详细展示其静止系系数如何从角动量耦合中被唯一确定，以及如何通过 Boost 获得有限动量的系数。
 一般形式的场是：
 \begin{equation}
-    \Psi_{ab}(x) =(\frac{1}{2\pi})^\frac{3}{2}\sum_{\sigma}\int d^3p \, \left\{ u_{ab}(\boldsymbol{q},\sigma)b^\dagger(\boldsymbol{q},\sigma) e^{-ipx} + (-)^{2B}(-)^{j+\sigma}u_{ab}(\boldsymbol{q},\sigma) a(\boldsymbol{q},\sigma)e^{ipx} \right\}
+    \Psi_{ab}(x) =(\frac{1}{2\pi})^\frac{3}{2}\sum_{\sigma}\int d^3p \, \left\{(-)^{2B} u_{ab}(\boldsymbol{q},\sigma)b^\dagger(\boldsymbol{q},\sigma) e^{-ipx} + v_{ab}(\boldsymbol{q},\sigma) a(\boldsymbol{q},\sigma)e^{ipx} \right\}
 \end{equation}
 上述我们知道静止系系数 $u(0)$ 和 $v(0)$ 是正比于Clebsch-Gordan  系数 
 \begin{equation}
@@ -23,58 +23,41 @@
 \paragraph{角动量加法}
 对于 $(A,B)=(1/2,1/2)$ 表示，场的指标为 $a=\pm 1/2$（对应 $A=1/2$）和 $b=\pm 1/2$（对应 $B=1/2$）。表示空间的维度为 $(2A+1)(2B+1)=2\times 2=4$。
 
-在静止参考系（$\mathbf{p}=\mathbf{0}$）中，洛伦兹群退化为旋转群 $SU(2)$。总角动量 $\mathbf{J}=\mathbf{J}^{(A)}+\mathbf{J}^{(B)}$ 是两个自旋 $1/2$ 的耦合。根据角动量加法定理：
+在静止参考系（$\boldsymbol{p}=\mathbf{0}$）中，洛伦兹群退化为旋转群 $SU(2)$。总角动量 $\mathbf{J}=\mathbf{J}^{(A)}+\mathbf{J}^{(B)}$ 是两个自旋 $1/2$ 的耦合。根据角动量加法定理：
 \begin{equation}
     \frac{1}{2}\otimes\frac{1}{2} = 1\oplus 0
 \end{equation}
 即 $4$ 维空间分解为一个 $3$ 维的 $j=1$（三重态）和一个 $1$ 维的 $j=0$（单态）不可约表示。
-\vspace{2ex}\par
+
+\medskip
 我们逐一写出全部的 C-G 系数 $\langle 1/2,a;\,1/2,b\,|\,j,\sigma\rangle$。
-\textbf{$j=1$ 三重态（3 个状态）：}
-\begin{align}
+\begin{itemize}
+    \item \textbf{$j=1$ 三重态（3 个状态）：}
+    \begin{align}
     |1,+1\rangle &= |a{=}+\tfrac{1}{2},\, b{=}+\tfrac{1}{2}\rangle \\
     |1,\;0\;\rangle &= \frac{1}{\sqrt{2}}\Big(|a{=}+\tfrac{1}{2},\, b{=}-\tfrac{1}{2}\rangle + |a{=}-\tfrac{1}{2},\, b{=}+\tfrac{1}{2}\rangle\Big) \\
     |1,-1\rangle &= |a{=}-\tfrac{1}{2},\, b{=}-\tfrac{1}{2}\rangle
-\end{align}
+    \end{align} 
 对应的非零 C-G 系数为：
-\begin{equation}
+    \begin{equation}
     \begin{aligned}
         \langle +\tfrac{1}{2},+\tfrac{1}{2}\,|\,1,+1\rangle &= 1 \\
         \langle +\tfrac{1}{2},-\tfrac{1}{2}\,|\,1,\;0\;\rangle &= \tfrac{1}{\sqrt{2}},\quad \langle -\tfrac{1}{2},+\tfrac{1}{2}\,|\,1,\;0\;\rangle = \tfrac{1}{\sqrt{2}} \\
         \langle -\tfrac{1}{2},-\tfrac{1}{2}\,|\,1,-1\rangle &= 1
     \end{aligned}
-\end{equation}
-
-\textbf{$j=0$ 单态（1 个状态）：}
-\begin{equation}
-    |0,0\rangle = \frac{1}{\sqrt{2}}\Big(|a{=}+\tfrac{1}{2},\, b{=}-\tfrac{1}{2}\rangle - |a{=}-\tfrac{1}{2},\, b{=}+\tfrac{1}{2}\rangle\Big)
-\end{equation}
-对应非零 C-G 系数为：
-\begin{equation}
-    \langle +\tfrac{1}{2},-\tfrac{1}{2}\,|\,0,0\rangle = +\tfrac{1}{\sqrt{2}},\quad \langle -\tfrac{1}{2},+\tfrac{1}{2}\,|\,0,0\rangle = -\tfrac{1}{\sqrt{2}}
-\end{equation}
-\begin{itemize}
-    \item $j=0$ 部分：时间分量(标量):$j=0$ 态在旋转下不变（标量）。在四维矢量 $A^\mu$ 中，哪个分量在空间旋转下不变？答案是时间分量 $A^0$。
-
-    利用泡利矩阵 $\sigma^\mu=(I,\boldsymbol{\sigma})$ 将四维矢量指标 $\mu$ 与旋量指标 $(a,b)$ 联系起来，$(1/2,1/2)$ 表示空间中的 $2\times 2$ 矩阵可以展开为：
-    \begin{equation}
-    \phi_{ab} = (\sigma^\mu)_{ab}\, A_\mu = A_0\, I_{ab} + A_i\, (\sigma^i)_{ab}
     \end{equation}
-    时间分量 $A_0$ 对应 $\sigma^0=I$（$2\times 2$ 单位阵）。而单位阵 $I_{ab}\propto\delta_{ab}$ 恰好对应 $j=0$ 单态的结构——$j=0$ 的 C-G 系数给出的是反对称组合 $\propto|{+}{-}\rangle-|{-}{+}\rangle$，在缩并为 $2\times 2$ 矩阵时正是正比于 $\epsilon_{ab}$（Levi-Civita 符号），通过指标升降后等价于 $\delta_{ab}$。所以$j=0$ 部分精确对应于四维矢量的时间分量 $A^0$（旋转标量）。
-    \item$j=1$ 部分：空间分量(矢量):$j=1$ 态在旋转下按自旋 $1$ 变换。在四维矢量中，空间分量 $(A^1,A^2,A^3)$ 在旋转下构成三维矢量。
-
-    空间分量 $A_i$ 对应泡利矩阵 $\sigma^i$。而 $\sigma^1,\sigma^2,\sigma^3$ 构成的无迹 $2\times 2$ 矩阵空间，恰好对应 $j=1$ 三重态——$j=1$ 的 C-G 系数（对称组合 $|{+}{+}\rangle$，$|{+}{-}\rangle+|{-}{+}\rangle$，$|{-}{-}\rangle$）在缩并为矩阵时给出的正是泡利矩阵的结构。$j=1$ 部分精确对应于四维矢量的空间分量 $(A^1,A^2,A^3)$（旋转矢量）。
+    $j=1$ 部分：空间分量(矢量):$j=1$ 态在旋转下按自旋 $1$ 变换。在四维矢量中，空间分量 $(A^1,A^2,A^3)$ 在旋转下构成三维矢量。
+    \item \textbf{$j=0$ 单态（1 个状态）：}
+    \begin{equation}
+        |0,0\rangle = \frac{1}{\sqrt{2}}\Big(|a{=}+\tfrac{1}{2},\, b{=}-\tfrac{1}{2}\rangle - |a{=}-\tfrac{1}{2},\, b{=}+\tfrac{1}{2}\rangle\Big)
+    \end{equation}
+    对应非零 C-G 系数为：
+    \begin{equation}
+        \langle +\tfrac{1}{2},-\tfrac{1}{2}\,|\,0,0\rangle = +\tfrac{1}{\sqrt{2}},\quad \langle -\tfrac{1}{2},+\tfrac{1}{2}\,|\,0,0\rangle = -\tfrac{1}{\sqrt{2}}
+    \end{equation}
+    $j=0$ 部分：时间分量(标量):$j=0$ 态在旋转下不变（标量）。在四维矢量 $A^\mu$ 中，哪个分量在空间旋转下不变？答案是时间分量 $A^0$。
 \end{itemize}
-
-
-$j=1$ 态在旋转下按自旋 $1$ 变换。在四维矢量中，空间分量 $(A^1,A^2,A^3)$ 在旋转下构成三维矢量。
-
-空间分量 $A_i$ 对应泡利矩阵 $\sigma^i$。而 $\sigma^1,\sigma^2,\sigma^3$ 构成的无迹 $2\times 2$ 矩阵空间，恰好对应 $j=1$ 三重态——$j=1$ 的 C-G 系数（对称组合 $|{+}{+}\rangle$，$|{+}{-}\rangle+|{-}{+}\rangle$，$|{-}{-}\rangle$）在缩并为矩阵时给出的正是泡利矩阵的结构。
-
-\textbf{结论：$j=1$ 部分精确对应于四维矢量的空间分量 $(A^1,A^2,A^3)$（旋转矢量）。}
-
-\paragraph{$j=0$部分与横向条件}
-
+\topictitle{$j=0$部分与横向条件}
 我们要描述的是自旋 $j=1$ 的粒子（而非自旋 $0$）。因此在构造静止系系数时，只能使用 $j=1$ 的 C-G 系数：
 \begin{equation}
     u_{ab}(0,\sigma) = \frac{1}{\sqrt{2m}}\langle\tfrac{1}{2},a;\,\tfrac{1}{2},b\,|\,1,\sigma\rangle
@@ -84,7 +67,8 @@ $j=1$ 态在旋转下按自旋 $1$ 变换。在四维矢量中，空间分量 $(
     \varepsilon^0(0,\sigma)=0 \quad\Longrightarrow\quad p_\mu\varepsilon^\mu(0,\sigma)=m\cdot\varepsilon^0=0
 \end{equation}
 这就是横向条件 $p_\mu\varepsilon^\mu=0$ 的群论起源——它并非外加的人为约束，而是我们只取 $(1/2,1/2)$ 直积表示中 $j=1$ 不可约部分的自然后果。
-\vspace{2ex}\par
+
+\medskip
 排除了 $j=0$（时间分量）后，极化矢量完全由空间自旋 $1$ 的球面基矢给出：
 \begin{align}
     u^\mu(0,+1) &= \varepsilon^\mu(0,+1) = \frac{1}{\sqrt{2}}(0,-1,-i,0) \\
@@ -96,43 +80,35 @@ $j=1$ 态在旋转下按自旋 $1$ 变换。在四维矢量中，空间分量 $(
 
 由于 $(1/2,1/2)$ 表示等价于四维矢量表示，Boost 矩阵就是经典的 $4\times 4$ 洛伦兹变换矩阵 $\Lambda^\mu_{\;\nu}(L(p))$。一般公式为：
 \begin{equation}
-    u^\mu(\mathbf{p},\sigma) = \varepsilon^\mu(\mathbf{p},\sigma) = \Lambda^\mu_{\;\nu}(L(p))\,\varepsilon^\nu(0,\sigma)
+    u^\mu(\boldsymbol{p},\sigma) = \varepsilon^\mu(\boldsymbol{p},\sigma) = \Lambda^\mu_{\;\nu}(L(p))\,\varepsilon^\nu(0,\sigma)
 \end{equation}
 
-\vspace{2ex}\par 设粒子沿 $z$ 轴加速到动量 $|\mathbf{p}|$。洛伦兹 Boost 矩阵为：
+\vspace{2ex}\par 设粒子沿 $z$ 轴加速到动量 $|\boldsymbol{p}|$。洛伦兹 Boost 矩阵为：
 \begin{equation}
-    \Lambda^\mu_{\;\nu}(L(p)) = \begin{pmatrix} p^0/m & 0 & 0 & |\mathbf{p}|/m \\ 0&1&0&0 \\ 0&0&1&0 \\ |\mathbf{p}|/m & 0 & 0 & p^0/m \end{pmatrix}
+    \Lambda^\mu_{\;\nu}(L(p)) = \begin{pmatrix} p^0/m & 0 & 0 & |\boldsymbol{p}|/m \\ 0&1&0&0 \\ 0&0&1&0 \\ |\boldsymbol{p}|/m & 0 & 0 & p^0/m \end{pmatrix}
 \end{equation}
 横向极化只有 $x,y$ 分量，垂直于 Boost 方向，Boost 矩阵对其完全不起作用：
 \begin{equation}
-    \varepsilon^\mu(\mathbf{p},\pm 1) = \Lambda^\mu_{\;\nu}\,\varepsilon^\nu(0,\pm 1) = \varepsilon^\mu(0,\pm 1) = \frac{1}{\sqrt{2}}(0,\mp 1,-i,0)
+    \varepsilon^\mu(\boldsymbol{p},\pm 1) = \Lambda^\mu_{\;\nu}\,\varepsilon^\nu(0,\pm 1) = \varepsilon^\mu(0,\pm 1) = \frac{1}{\sqrt{2}}(0,\mp 1,-i,0)
 \end{equation}
 纵向极化只有 $z$ 分量，平行于 Boost 方向，时间和空间分量发生混合：
 \begin{equation}
-    \varepsilon^\mu(\mathbf{p},0) = \begin{pmatrix} p^0/m&0&0&|\mathbf{p}|/m\\0&1&0&0\\0&0&1&0\\|\mathbf{p}|/m&0&0&p^0/m \end{pmatrix}\begin{pmatrix}0\\0\\0\\1\end{pmatrix} = \begin{pmatrix}|\mathbf{p}|/m\\0\\0\\p^0/m\end{pmatrix} = \left(\frac{|\mathbf{p}|}{m},\,\frac{p^0}{m}\hat{\mathbf{p}}\right)
+    \varepsilon^\mu(\boldsymbol{p},0) = \begin{pmatrix} p^0/m&0&0&|\boldsymbol{p}|/m\\0&1&0&0\\0&0&1&0\\|\boldsymbol{p}|/m&0&0&p^0/m \end{pmatrix}\begin{pmatrix}0\\0\\0\\1\end{pmatrix} = \begin{pmatrix}|\boldsymbol{p}|/m\\0\\0\\p^0/m\end{pmatrix} = \left(\frac{|\boldsymbol{p}|}{m},\,\frac{p^0}{m}\hat{\boldsymbol{p}}\right)
 \end{equation}
-静止系中纯空间的纵向极化在 Boost 后获得了非零时间分量 $\varepsilon^0=|\mathbf{p}|/m$。但横向条件仍然成立：
+静止系中纯空间的纵向极化在 Boost 后获得了非零时间分量 $\varepsilon^0=|\boldsymbol{p}|/m$。但横向条件仍然成立：
 \begin{equation}
-    p_\mu\varepsilon^\mu(\mathbf{p},0) = p^0\cdot\frac{|\mathbf{p}|}{m} - |\mathbf{p}|\cdot\frac{p^0}{m} = 0
+    p_\mu\varepsilon^\mu(\boldsymbol{p},0) = p^0\cdot\frac{|\boldsymbol{p}|}{m} - |\boldsymbol{p}|\cdot\frac{p^0}{m} = 0
 \end{equation}
 \vspace{2ex}\par
 对三种极化状态 $\sigma=\pm 1,0$ 求和，利用洛伦兹张量的协变性写为：
 \begin{equation}
-    \boxed{\sum_{\sigma=\pm 1,0}\varepsilon^\mu(\mathbf{p},\sigma)\,\varepsilon^{\nu*}(\mathbf{p},\sigma) = -\eta^{\mu\nu}+\frac{p^\mu p^\nu}{m^2}}
+    \boxed{\sum_{\sigma=\pm 1,0}\varepsilon^\mu(\boldsymbol{p},\sigma)\,\varepsilon^{\nu*}(\boldsymbol{p},\sigma) = -\eta^{\mu\nu}+\frac{p^\mu p^\nu}{m^2}}
     \label{eq:vec_pol}
 \end{equation}
 物理含义：$-\eta^{\mu\nu}$ 对应全部 $4$ 个自由度的恒等投影；$+p^\mu p^\nu/m^2$ 精确扣除沿 $p^\mu$ 方向的非物理 $j=0$ 自由度（$4-1=3$ 个物理自由度）。
 
 
 
-\paragraph{无质量极限与规范不变性}
 
-当 $m\to 0$ 时，纵向极化 $\varepsilon^\mu(\mathbf{p},0)=(|\mathbf{p}|/m,\,p^0\hat{\mathbf{p}}/m)$ 发散，极化求和与传播子中的 $p^\mu p^\nu/m^2$ 项出现奇异性。
-
-Wigner 小群分析表明，无质量矢量粒子只有 $2$ 个横向螺旋度（$\lambda=\pm 1$），纵向自由度不物理。发散项总正比于 $p^\mu$。若矢量场仅与守恒流 $J_\mu$ 耦合（$\partial^\mu J_\mu=0$，即 $p^\mu J_\mu=0$），则所有奇异项严格消失。
-
-而要求流守恒等价于要求理论具有\textbf{局部规范不变性}：$A^\mu(x)\to A^\mu(x)+\partial^\mu\alpha(x)$。
-
-\textbf{终极结论：}微观因果性与洛伦兹不变性共同证明，自然界要容纳无质量自旋 $1$ 粒子，就必须以规范对称性作为其存在的数学保障。
 
    
