@@ -210,12 +210,7 @@ V^{(j)} .
 \begin{equation}
     u_{ab}(\boldsymbol{p}, \sigma)=(-)^{j+\sigma}v_{ab}(\boldsymbol{p}, -\sigma)
 \end{equation}
-
-\vspace{2ex}
-\begin{center}
-    \large\text{微观因果性和统计性质}
-\end{center}
-\vspace{2ex}
+\topictitle{微观因果性和统计性质}
 微观因果性的要求是：对于任意空间分离的事件 $x$ 和 $y$，场算符 $\Psi_{ab}(x)$ 和 $\widetilde{\Psi}_{cd}(y)$ 的（反）对易子必须为零：
 \begin{equation}
     [\Psi_{ab}(x), \widetilde{\Psi}_{cd}^{\dagger}(y)]_{\mp} = 0 \quad \text{for} \quad (x-y)^2 < 0
@@ -223,7 +218,8 @@ V^{(j)} .
 考虑描述\textbf{同一种}自旋为$j$、质量为$m$的粒子的两个因果场：$\Psi_{ab}(x)$
 按表示$(A,B)$变换，$\widetilde{\Psi}_{cd}(x)$按表示$(C,D)$变换。
 它们的一般形式分别为
-\begin{align}
+\begin{subequations}
+  \begin{align}
   \Psi_{ab}(x) &= \frac{1}{(2\pi)^{3/2}}\sum_{\sigma}\int d^{3}p\,
   \bigl\{\xi_{ab}\,u_{ab}(\boldsymbol{p},\sigma)\,a^{c\dagger}(\boldsymbol{p},\sigma)\,e^{-ip\cdot x}
   + \lambda_{ab}\,v_{ab}(\boldsymbol{p},\sigma)\,a(\boldsymbol{p},\sigma)\,e^{ip\cdot x}\bigr\}\;,
@@ -233,21 +229,41 @@ V^{(j)} .
   + \lambda_{cd}\,v_{cd}(\boldsymbol{p},\sigma)\,a(\boldsymbol{p},\sigma)\,e^{ip\cdot x}\bigr\}\;.
   \label{eq:field-CD}
 \end{align}
+\end{subequations}
+基本（反）对易关系是：
 
-利用基本（反）对易关系
-\[
-  [a(\boldsymbol{p},\sigma),\,a^{\dagger}(\boldsymbol{q},\sigma')]_{\mp}
-  = \delta^{3}(\boldsymbol{p}-\boldsymbol{q})\,\delta_{\sigma\sigma'}\;,\qquad
-  [a^{c\dagger}(\boldsymbol{p},\sigma),\,a^{c}(\boldsymbol{q},\sigma')]_{\mp}
-  = \mp\,\delta^{3}(\boldsymbol{p}-\boldsymbol{q})\,\delta_{\sigma\sigma'}\;,
-\]
-直接计算得到
-\begin{equation}\label{eq:comm-general}
+\begin{subequations}
+  \begin{align}
+      &[a(\boldsymbol{p},\sigma),\,a^{\dagger}(\boldsymbol{q},\sigma')]_{\mp}
+      = \delta^{3}(\boldsymbol{p}-\boldsymbol{q})\,\delta_{\sigma\sigma'}\\
+      &[a^{c\dagger}(\boldsymbol{p},\sigma),\,a^{c}(\boldsymbol{q},\sigma')]_{\mp}
+      = \mp\,\delta^{3}(\boldsymbol{p}-\boldsymbol{q})\,\delta_{\sigma\sigma'}\;,
+  \end{align}
+\end{subequations}
+
+\hrule
+\vspace{2ex}
+将其与 $\Psi_{ab}(x)$ 代入 (反) 对易子。由于交叉项（产生与产生、湮灭与湮灭）的对易子为零，即 $[a, a^c]_{\mp} = 0$ 与 $[a^{c\dagger}, a^\dagger]_{\mp} = 0$，展开后仅保留两项：
+\begin{align*}
+  [\Psi_{ab}(x),\,\widetilde{\Psi}_{cd}^{\dagger}(y)]_{\mp} 
+  ={}& \frac{1}{(2\pi)^{3}} \sum_{\sigma,\sigma'} \int d^3p \int d^3q \\
+  &\times \Bigl\{ \lambda_{ab}\lambda_{cd}^*\, v_{ab}(\boldsymbol{p},\sigma)v_{cd}^*(\boldsymbol{q},\sigma')\, e^{i(p\cdot x - q\cdot y)} \bigl[a(\boldsymbol{p},\sigma), a^\dagger(\boldsymbol{q},\sigma')\bigr]_{\mp} \\
+  &\quad+ \xi_{ab}\xi_{cd}^*\, u_{ab}(\boldsymbol{p},\sigma)u_{cd}^*(\boldsymbol{q},\sigma')\, e^{-i(p\cdot x - q\cdot y)} \bigl[a^{c\dagger}(\boldsymbol{p},\sigma), a^c(\boldsymbol{q},\sigma')\bigr]_{\mp} \Bigr\}\;.
+\end{align*}
+利用基本 (反) 对易关系；并注意对于第二项，交换算符顺序会产生额外的 $\mp$ 符号，即 $[a^{c\dagger}, a^c]_{\mp} = \mp[a^c, a^{c\dagger}]_{\mp} = \mp \delta^3(\boldsymbol{p}-\boldsymbol{q})\delta_{\sigma\sigma'}$。利用 $\delta$ 函数完成对 $\boldsymbol{q}$ 的积分与对 $\sigma'$ 的求和，令 $\boldsymbol{q}=\boldsymbol{p}$，于是有：
+\begin{align*}
+  [\Psi_{ab}(x),\,\widetilde{\Psi}_{cd}^{\dagger}(y)]_{\mp} 
+  ={}& \frac{1}{(2\pi)^{3}} \int d^3p \, \Bigl\{ \lambda_{ab}\lambda_{cd}^*\, e^{ip\cdot(x-y)} \Bigl( \sum_{\sigma} v_{ab}(\boldsymbol{p},\sigma)v_{cd}^*(\boldsymbol{p},\sigma) \Bigr) \\
+  &\qquad\qquad\quad \mp \xi_{ab}\xi_{cd}^*\, e^{-ip\cdot(x-y)} \Bigl( \sum_{\sigma} u_{ab}(\boldsymbol{p},\sigma)u_{cd}^*(\boldsymbol{p},\sigma) \Bigr) \Bigr\}\;.
+\end{align*}
+
+根据自旋多项式的定义式 \eqref{eq:spin-poly}，提取公共的多项式因子 $\sum_\sigma u u^* = \sum_\sigma v v^* = \frac{\pi_{ab,cd}(\boldsymbol{p})}{2p^0}$，最终得到：
+\begin{equation}
   [\Psi_{ab}(x),\,\widetilde{\Psi}_{cd}^{\dagger}(y)]_{\mp}
   = \frac{1}{(2\pi)^{3}}\int\frac{d^{3}p}{2p^{0}}\,
     \pi_{ab,cd}(\boldsymbol{p})\,
     \Bigl[\lambda_{ab}\lambda_{cd}^{*}\,e^{ip\cdot(x-y)}
-      \;\mp\; \xi_{ab}\xi_{cd}^{*}\,e^{-ip\cdot(x-y)}\Bigr]
+      \;\mp\; \xi_{ab}\xi_{cd}^{*}\,e^{-ip\cdot(x-y)}\Bigr]\;.
 \end{equation}
 函数$\pi_{ab,cd}(\boldsymbol{p})$定义为
 \begin{equation}\label{eq:pi-def}

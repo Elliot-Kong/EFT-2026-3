@@ -1,4 +1,4 @@
-\section{S-矩阵的对称性}
+\newpage\section{S-矩阵的对称性}
 \subsection{幺正性}
 入态和出态分别构成一套正交完备基矢，现在将入态用出态展开，同时将出态用入态展开：
 \[\begin{aligned}
@@ -172,7 +172,7 @@ H\,\Omega(\pm) &= \Omega(\pm) H_0 \\
         -\underbrace{e^{iH_0t}\boldsymbol{W}e^{-iH_0t}}_{\boldsymbol{W(t)}}U(t,t_0)+U(t,t_0)\underbrace{e^{iH_0t_0}\boldsymbol{W}e^{-iH_0t_0}}_{\boldsymbol{W(t_0)}}\\
     \end{aligned}
 \]
-如果满足$\boldsymbol{W}$满足在$H_0$本征态之间的矩阵元是能量光滑函数这一要求，那么当$t\rightarrow\pm\infty$时\footnote{这里的$t$指$t,t_0$},$\boldsymbol{W(t)}$在$H_0$本征态之间的矩阵元为零\footnote{这里指的是相互作用必须在时间 $t\to\mp\infty $时平滑地关闭（Adiabatic switching），或者说由于波包扩散，粒子在无穷远处不再重叠，因此相互作用项 $W(t) $在初末态矩阵元为零。}，那么有：
+\color{blue}如果满足$\boldsymbol{W}$满足在$H_0$本征态之间的矩阵元是能量光滑函数这一要求，那么当$t\rightarrow\pm\infty$时\footnote{这里的$t$指$t,t_0$},$\boldsymbol{W(t)}$在$H_0$本征态之间的矩阵元为零\footnote{这里指的是相互作用必须在时间 $t\to\mp\infty $时平滑地关闭（Adiabatic switching），或者说由于波包扩散，粒子在无穷远处不再重叠，因此相互作用项 $W(t) $在初末态矩阵元为零。}，\normalcolor 那么有：
 \begin{equation}
     \begin{aligned}
         [\boldsymbol{K}_0,U(0,\pm)]&=-\boldsymbol{W}U(0,\pm)+U(0,\pm)\underbrace{e^{iH_0t_0}\boldsymbol{W}e^{-iH_0t_0}}_{0}\\
@@ -183,6 +183,8 @@ H\,\Omega(\pm) &= \Omega(\pm) H_0 \\
     \end{aligned}
 \end{equation}
 成功得到第四式，这正是所要证明的。当$t\rightarrow\pm\infty$时$W(t)$为零，这提供了$S$矩阵Lorentz不变性的一个充分条件.
+
+\color{blue}上述表明S矩阵在满足一些条件下是严格Lorentz不变的；可是微观因果性的条件并没有出现，事实上将S矩阵改写为编时乘积形式，在证明编时算符的Lorentz不变性的时候，微观因果性会自然的浮现，在构造场论时，微观因果性也告诉我们反粒子是自然的\normalcolor,下面就来论述这一事实。
 
 \begin{comment}
     利用李代数$[\boldsymbol{K}_0, H_0] = -i \boldsymbol{P}_0$和$[\boldsymbol{K}, H] = -i \boldsymbol{P}= -i \boldsymbol{P}_0$，后者变为：
@@ -236,14 +238,7 @@ H\,\Omega(\pm) &= \Omega(\pm) H_0 \\
 ,\color{blue}还应该满足：$W$的矩阵元应该是能量的光滑函数，并且特定的没有形式为$\frac{1}{E_\alpha-E_\beta}$的奇点这一要
 求\normalcolor;现在证明满足上述条件，确实可以得到满足最后一式的Lorentz不变的条件$[\boldsymbol{K}_0,S]=0$。
 \end{comment}
-
-
-
-\begin{center}
-    \vspace{2ex}
-   \color{red}\Large ***
-   \vspace{2ex}
-\end{center}
+\topictitle{编时乘积与微观因果性}
 含有编时乘积的$S$矩阵为零
 \begin{equation}
             S_{\beta\alpha}=\braket{\beta|S|\alpha}=\braket{\beta|Te^{\left(-i\int_{-\infty}^{\infty} dtV(t)\right)}|\alpha}

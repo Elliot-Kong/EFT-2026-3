@@ -78,3 +78,27 @@
 }
 
 
+\usepackage{amsthm}
+
+% 在导言区定义
+\newtheoremstyle{postulate}  % 自定义样式名
+  {3ex}{3ex}               % 上下间距
+  {}{}                       % 正文字体、标签字体
+  {\large\bfseries}                % 标题字体
+  {.}{ }                     % 标题后标点、标题后空格
+  {}                         % 标题格式（空=默认）
+
+\theoremstyle{postulate}
+\newtheorem{postulate}{假设}  % 自动编号：假设 1, 假设 2, ...
+
+% 也可以定义其他类型
+\newtheorem{axiom}{公理}
+\newtheorem{principle}{原理}
+
+\newcommand{\topictitle}[1]{%
+  \bigskip
+  \begin{center}
+    \textbf{\large #1}
+  \end{center}
+  \medskip
+}

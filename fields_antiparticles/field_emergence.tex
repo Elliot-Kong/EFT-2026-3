@@ -246,11 +246,7 @@ $$ \mathscr{D}(\Lambda_1)\mathscr{D}(\Lambda_2) = D(\Lambda_1\Lambda_2) .  $$
 \end{itemize}
 \normalcolor
 这正是量子场论的核心，\textbf{集团分解}与\textbf{Lorentz不变性}，共同迫使相互作用密由局域的产生场和湮灭场来构建。
-\vspace{0.5cm}
-\begin{center}
-    Lorentz不变性的要求：微观因果性
-\end{center}
-\vspace{0.5cm}
+\topictitle{Lorentz不变性的要求：微观因果性}
 微观因果性是：$\text{当}(x-x')^2 \ge 0$有$[\mathscr{H}(\mathbf{x},t),\mathscr{H}(\mathbf{x}',t)]=0$，使用场算符的形式，那么对易关\footnote{$\mp$代表对易关系和反对易}系变为：
 \begin{subequations}
 \begin{align}
@@ -272,36 +268,9 @@ $$ \mathscr{D}(\Lambda_1)\mathscr{D}(\Lambda_2) = D(\Lambda_1\Lambda_2) .  $$
     [\Psi_\ell(x), \Psi_{\bar{\ell}}(x')]_{\mp} = 0
 \end{equation}
 在之后讨论各类场的时候，再决定系数如何选择；这个式子也叫做因果律。
-\begin{center}
-    \vspace{2ex}
-   \color{black}\text{***}
-   \vspace{2ex}
-\end{center}
-在前面的推导中，我们通过将产生场和湮灭场进行线性组合，构造了满足微观因果性的场 $\Psi(x)$，即在类空间隔 $(x-y)^2 \ge 0$ 下 $[\Psi(x), \Psi(y)] = 0$。然而，为了保证理论满足集团分解原理，相互作用密度必须写成正规乘积（Normal Ordered）的形式：
-\begin{equation}
-    V = \int d^3x \, N\!\left( \mathscr{F}(\Psi(x), \Psi^\dagger(x)) \right)
-\end{equation}
-正规乘积操作 $N(\cdots)$ 会强行将所有的产生算符重排到湮灭算符的左边。一个自然的问题是：这种强行重排的操作，是否会破坏构造的场算符对易关系，从而导致微观因果性的失效？计算一个模型：以最简单的双场乘积为例，普通乘积与正规乘积之间仅相差一个缩并项（真空期望值），而这个缩并项纯粹是一个 c-数：
-\begin{equation*}
-    \Psi(x)\Psi^\dagger(y) = N\!\left( \Psi(x)\Psi^\dagger(y) \right) + \text{c-数}
-\end{equation*}
-移项可知，正规乘积等价于普通乘积减去一个 c-数。将这一结论推广到任意多项式 $\mathscr{F}$，我们可以将其写为普通乘积与若干 c-数的组合：
-\begin{equation*}
-    N(\mathscr{F}(x)) = \mathscr{F}(x) - c_1
-\end{equation*}
-在计算两个时空点处正规乘积算符的对易子时，由于 c-数与任何算符的对易子皆为零，这些 c-数项会自动抵消：
-\begin{equation*}
-\begin{aligned}
-    \left[ N(\mathscr{F}(x)) \,,\, N(\mathscr{F}(y)) \right] 
-    &= \left[ \mathscr{F}(x) - c_1 \,,\, \mathscr{F}(y) - c_2 \right] \\
-    &= \left[ \mathscr{F}(x) \,,\, \mathscr{F}(y) \right]
-\end{aligned}
-\end{equation*}
-两个正规乘积算符的对易子完全等于它们普通乘积的对易子。既然普通的场多项式 $\mathscr{F}$ 在类空间隔下是对易的，那么它的正规乘积 $N(\mathscr{F})$ 也必然是对易的（要求：相互作用中任意费米场分量的数量为偶数）。 因此正规乘积（保证集团分解原理）与场的线性组合（保证微观因果性）在数学结构上完美自洽。
-
 \vspace{2ex}
 \begin{center}
-    \large 反粒子
+    \large 反粒子的涌现
 \end{center}
 \vspace{2ex}
 要满足微观因果性，现在出现了一个阻碍，就是荷守恒：
@@ -335,3 +304,29 @@ $$ \mathscr{D}(\Lambda_1)\mathscr{D}(\Lambda_2) = D(\Lambda_1\Lambda_2) .  $$
     a^{c\dagger}(\mathbf{p},\sigma,n)=a^{\dagger}(\mathbf{p},\sigma,\bar{n})
 \end{equation}
 $c$是$charge \,conjugate$，若理论本身无荷，，是$a^{c\dagger}(\mathbf{p},\sigma)=a^{\dagger}(\mathbf{p},\sigma)$
+\begin{center}
+    \vspace{2ex}
+   \color{black}\text{***}
+   \vspace{2ex}
+\end{center}
+在前面的推导中，我们通过将产生场和湮灭场进行线性组合，构造了满足微观因果性的场 $\Psi(x)$，即在类空间隔 $(x-y)^2 \ge 0$ 下 $[\Psi(x), \Psi(y)] = 0$。然而，为了保证理论满足集团分解原理，相互作用密度必须写成正规乘积（Normal Ordered）的形式：
+\begin{equation}
+    V = \int d^3x \, N\!\left( \mathscr{F}(\Psi(x), \Psi^\dagger(x)) \right)
+\end{equation}
+正规乘积操作 $N(\cdots)$ 会强行将所有的产生算符重排到湮灭算符的左边。一个自然的问题是：这种强行重排的操作，是否会破坏构造的场算符对易关系，从而导致微观因果性的失效？计算一个模型：以最简单的双场乘积为例，普通乘积与正规乘积之间仅相差一个缩并项（真空期望值），而这个缩并项纯粹是一个 c-数：
+\begin{equation*}
+    \Psi(x)\Psi^\dagger(y) = N\!\left( \Psi(x)\Psi^\dagger(y) \right) + \text{c-数}
+\end{equation*}
+移项可知，正规乘积等价于普通乘积减去一个 c-数。将这一结论推广到任意多项式 $\mathscr{F}$，我们可以将其写为普通乘积与若干 c-数的组合：
+\begin{equation*}
+    N(\mathscr{F}(x)) = \mathscr{F}(x) - c_1
+\end{equation*}
+在计算两个时空点处正规乘积算符的对易子时，由于 c-数与任何算符的对易子皆为零，这些 c-数项会自动抵消：
+\begin{equation*}
+\begin{aligned}
+    \left[ N(\mathscr{F}(x)) \,,\, N(\mathscr{F}(y)) \right] 
+    &= \left[ \mathscr{F}(x) - c_1 \,,\, \mathscr{F}(y) - c_2 \right] \\
+    &= \left[ \mathscr{F}(x) \,,\, \mathscr{F}(y) \right]
+\end{aligned}
+\end{equation*}
+两个正规乘积算符的对易子完全等于它们普通乘积的对易子。既然普通的场多项式 $\mathscr{F}$ 在类空间隔下是对易的，那么它的正规乘积 $N(\mathscr{F})$ 也必然是对易的（要求：相互作用中任意费米场分量的数量为偶数）。 因此正规乘积（保证集团分解原理）与场的线性组合（保证微观因果性）在数学结构上完美自洽。

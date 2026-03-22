@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.11.8)  21 MAR 2026 22:35
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.11.8)  22 MAR 2026 14:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1042,6 +1042,21 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 \Hy@SectionHShift=\skip121
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 78.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks57
+\thm@bodyfont=\toks58
+\thm@headfont=\toks59
+\thm@notefont=\toks60
+\thm@headpunct=\toks61
+\thm@preskip=\skip122
+\thm@postskip=\skip123
+\thm@headsep=\skip124
+\dth@everypar=\toks62
+)
+\c@postulate=\count401
+\c@axiom=\count402
+\c@principle=\count403
 ) (./preamble/footnote.tex (/usr/local/texlive/2025/texmf-dist/tex/latex/chngcntr/chngcntr.sty
 Package: chngcntr 2018/04/09 v1.1a change counter resetting
 Package chngcntr Info: \counterwithout already defined.
@@ -1104,7 +1119,7 @@ LaTeX Font Info:    ... okay on input line 38.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count401
+\c@lstlisting=\count404
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
@@ -1199,22 +1214,12 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 [1
 
 ] (./main.toc
-Overfull \hbox (27.92252pt too wide) in paragraph at lines 1--1
+Overfull \hbox (27.92252pt too wide) in paragraph at lines 18--18
 [][] []  
  []
 
 
-Overfull \hbox (27.92252pt too wide) in paragraph at lines 1--1
-[]  
- []
-
-
-Overfull \hbox (27.92252pt too wide) in paragraph at lines 25--25
-[][] []  
- []
-
-
-Overfull \hbox (27.92252pt too wide) in paragraph at lines 25--25
+Overfull \hbox (27.92252pt too wide) in paragraph at lines 18--18
 []  
  []
 
@@ -1224,46 +1229,32 @@ Overfull \hbox (27.92252pt too wide) in paragraph at lines 25--25
 
 
 
-]
-Overfull \hbox (27.92252pt too wide) in paragraph at lines 55--55
-[][] []  
- []
-
-
-Overfull \hbox (27.92252pt too wide) in paragraph at lines 55--55
-[]  
- []
-
-)
+])
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
 
 
 [2]) (./preamble/citecolor.tex)
+Chapter 1.
+(./theory_basic/chapter.tex (./theory_basic/principles.tex
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 15.
+
+Missing character: There is no ｜ ("FF5C) in font rm-lmr10!
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 51.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 51.
+
 
 [1
 
 
 
 ]
-Chapter 1.
-(./quantum_theory_basic/chapter.tex (./quantum_theory_basic/principles.tex
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 14.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 14.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 14.
 
-Missing character: There is no ｜ ("FF5C) in font rm-lmr10!
-
-
-[2
-
-]
-
-[3]
+[2]
 Missing character: There is no 根 ("6839) in font rm-lmr8!
 Missing character: There is no 据 ("636E) in font rm-lmr8!
 Missing character: There is no 谱 ("8C31) in font rm-lmr8!
@@ -1281,7 +1272,9 @@ Missing character: There is no 为 ("4E3A) in font rm-lmr8!
 Missing character: There is no ： ("FF1A) in font rm-lmr8!
 
 
-[4]) (./quantum_theory_basic/canonical_commutation.tex) (./quantum_theory_basic/dynamics.tex
+[3]) (./theory_basic/canonical_commutation.tex) (./theory_basic/dynamics.tex
+
+[4]
 
 [5]
 
@@ -1293,50 +1286,36 @@ Missing character: There is no ： ("FF1A) in font rm-lmr8!
 
 [9]
 
-[10]
+[10]) (./theory_basic/symmetry_about_qm.tex
 
 [11]
 
-[12]) (./quantum_theory_basic/symmetry_about_qm.tex
+[12]
 
 [13]
 
 [14]
-
-[15]
 Overfull \vbox (1.45503pt too high) has occurred while \output is active []
 
 
 
-[16]))
+[15]) (./theory_basic/special_relativity.tex
+
+[16]
 
 [17]
-Chapter 2.
-(./spacetime/chapter.tex (./spacetime/special_relativity.tex
 
-[18
-
-]
+[18]
 
 [19]
-
-[20]
-
-[21]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 309.
+LaTeX Font Info:    Trying to load font information for U+euf on input line 303.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
 
-[22]))
+[20]) (./theory_basic/poincare_algebra.tex
 
-[23]
-Chapter 3.
-(./particle_states/chapter.tex (./particle_states/poincare_algebra.tex
-
-[24
-
-]
+[21]
 Overfull \hbox (6.95134pt too wide) detected at line 84
 \OMS/lmsy/m/n/10.95 ) []\OML/lmm/m/it/10.95 ![]U\OT1/lmr/m/n/10.95 (^^C\OML/lmm/m/it/10.95 ;  a\OT1/lmr/m/n/10.95 )\U/rsfs/m/n/10.95 J[]\OML/lmm/m/it/10.95 U[]\OT1/lmr/m/n/10.95 (^^C\OML/lmm/m/it/10.95 ;  a\OT1/lmr/m/n/10.95 ) \OMS/lmsy/m/n/10.95 ^^@ \OML/lmm/m/it/10.95 i^^O[]U\OT1/lmr/m/n/10.95 (^^C\OML/lmm/m/it/10.95 ;  a\OT1/lmr/m/n/10.95 )\U/rsfs/m/n/10.95 P[]\OML/lmm/m/it/10.95 U[]\OT1/lmr/m/n/10.95 (^^C\OML/lmm/m/it/10.95 ;  a\OT1/lmr/m/n/10.95 ) = []\OML/lmm/m/it/10.95 ![]\OT1/lmr/m/n/10.95 ^^C[]^^C[] [] \OMS/lmsy/m/n/10.95 ^^@ \OML/lmm/m/it/10.95 i\OT1/lmr/m/n/10.95 ^^C[]\OML/lmm/m/it/10.95 ^^O[]\U/rsfs/m/n/10.95 P[]
  []
@@ -1348,30 +1327,27 @@ Overfull \hbox (63.92357pt too wide) detected at line 176
 
 
 
-[25]
+[22]
 Overfull \hbox (32.41351pt too wide) detected at line 187
 \OMS/lmsy/m/n/10.95 ) []\OML/lmm/m/it/10.95 ![] [] \OMS/lmsy/m/n/10.95 ^^@ \OML/lmm/m/it/10.95 i^^O[] [] \OT1/lmr/m/n/10.95 = []\OML/lmm/m/it/10.95 ![] [] \OT1/lmr/m/n/10.95 + \OML/lmm/m/it/10.95 ^^O[] []
  []
 
 
 
-[26]) (./particle_states/one_particle_state.tex
+[23]) (./theory_basic/one_particle_state.tex
 
-[27]
+[24]
 Underfull \hbox (badness 1320) in paragraph at lines 70--74
 $ \OT1/lmr/m/n/10.95 =[]\OMS/lmsy/m/n/10.95 ) $ \TU/SongtiSC(0)/m/n/10.95 所 以，|  任 意 小 群 作 用 在 标 准 动 量 的 本 质 态 $[]$ 是：| $\OML/lmm/m/it/10.95 U [] [] \OT1/lmr/m/n/10.95 =
  []
 
 
 
-[28]
+[25]
 
-[29]
+[26]
 
-[30]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 212.
-
+[27]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\(' on input line 212.
@@ -1386,13 +1362,13 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 
-[31]
+[28]
 Missing character: There is no 。 ("3002) in font rm-lmr10!
 
 
-[32]
+[29]
 
-[33]
+[30]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\(' on input line 460.
@@ -1407,63 +1383,67 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 
-[34]
+[31]
 
-[35]))
+[32]))
 
-[36]
+[33]
 
-[37
+[34
 
 ]
-Chapter 4.
+Chapter 2.
 (./scattering_theory/chapter.tex (./scattering_theory/in_out_states.tex
 
-[38
+[35
 
 ]
 Missing character: There is no 其 ("5176) in font rm-lmr9!
 Missing character: There is no 中 ("4E2D) in font rm-lmr9!
 
 
-[39]) (./scattering_theory/s_matrix.tex) (./scattering_theory/lorentz_symmetry_of_s_matrix.tex
+[36]) (./scattering_theory/s_matrix.tex
 
-[40]
+[37]) (./scattering_theory/lorentz_symmetry_of_s_matrix.tex
 
-[41]
+[38]
 Missing character: There is no 𝑆 (U+1D446) in font [lmroman9-regular]:mapping=tex-text;!
 
-LaTeX Warning: Reference `3.18' on page 42 undefined on input line 87.
+LaTeX Warning: Reference `3.18' on page 39 undefined on input line 87.
 
 
-LaTeX Warning: Reference `3.18' on page 42 undefined on input line 87.
+LaTeX Warning: Reference `3.18' on page 39 undefined on input line 87.
 
 
 
-[42] Excluding 'comment' comment.
+[39]
 
-[43]) (./scattering_theory/bosons_and_fermions.tex) (./scattering_theory/creation_and_annihilation_operators.tex) (./scattering_theory/cluster_decomposition_and_connected_amplitudes.tex
+[40] Excluding 'comment' comment.
 
-[44]
+[41]) (./scattering_theory/form_of_operators.tex) (./scattering_theory/cluster_decomposition_and_connected_amplitudes.tex
+
+[42]
 Overfull \hbox (9.69235pt too wide) in alignment at lines 99--100
 [] []
  []
 
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <20.74> on input line 183.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 183.
 
 
-[45]
+[43]
 Missing character: There is no ️ (U+FE0F) in font Songti SC Regular/OT:script=hani;language=dflt;!
 
 
-[46]) (./scattering_theory/structure_of_the_interaction.tex) Excluding 'comment' comment.)
+[44]) (./scattering_theory/structure_of_the_interaction.tex) Excluding 'comment' comment.)
 
-[47]
-Chapter 5.
+[45]
+Chapter 3.
 (./fields_antiparticles/chapter.tex (./fields_antiparticles/field_emergence.tex
 
-[48
+[46
 
 ]
 Overfull \hbox (10.36362pt too wide) detected at line 101
@@ -1472,15 +1452,15 @@ Overfull \hbox (10.36362pt too wide) detected at line 101
 
 
 
+[47]
+
+[48]
+
 [49]
 
-[50]
+[50]) (./fields_antiparticles/general_fields.tex
 
 [51]
-
-[52]) (./fields_antiparticles/general_fields.tex
-
-[53]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
@@ -1495,13 +1475,13 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 
-[54] Excluding 'comment' comment.
+[52] Excluding 'comment' comment.
+
+[53]
+
+[54]) (./fields_antiparticles/massive_fields.tex
 
 [55]
-
-[56]) (./fields_antiparticles/massive_fields.tex
-
-[57]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\(' on input line 2.
@@ -1516,19 +1496,27 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 
+[56]
+
+[57]
+
 [58]
+
+LaTeX Warning: Reference `eq:spin-poly' on page 59 undefined on input line 260.
+
+
 
 [59]
 
 [60]
 
+LaTeX Warning: Reference `eq:comm-general' on page 61 undefined on input line 368.
+
+
+
 [61]
 
-[62]
-
-[63]
-
-[64]) (./fields_antiparticles/massless_fields.tex
+[62]) (./fields_antiparticles/massless_fields.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\(' on input line 1.
@@ -1543,9 +1531,9 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 
-[65]
+[63]
 
-[66]
+[64]
 
 LaTeX Font Warning: Command \boldmath invalid in math mode on input line 137.
 
@@ -1554,60 +1542,32 @@ LaTeX Font Warning: Command \mathversion invalid in math mode on input line 137.
 
 ))
 
-[67]
+[65]
 
-[68]
-Chapter 6.
+[66]
+Chapter 4.
 (./intercation_theory/chapter.tex (./intercation_theory/feynman_rules.tex) (./intercation_theory/canonical_formalism.tex) (./intercation_theory/interaction_picture_example.tex) (./intercation_theory/observables.tex
 
-[69
+[67
 
 ]
 
-[70]
+[68]
 
-[71]
+[69]
 Overfull \hbox (1.11986pt too wide) detected at line 179
 [][] [] [][]
  []
 
 
 
-[72]) (./intercation_theory/physical_examples_and_applications.tex) (./intercation_theory/functional_methods.tex (./intercation_theory/bosonic_path_integrals.tex) (./intercation_theory/fermionic_path_integrals.tex)))
+[70]) (./intercation_theory/physical_examples_and_applications.tex) (./intercation_theory/functional_methods.tex (./intercation_theory/bosonic_path_integrals.tex) (./intercation_theory/fermionic_path_integrals.tex)))
 
-[73]
-Chapter 7.
+[71]
+Chapter 5.
+Excluding 'comment' comment.
 
-
-[74
-
-]
-
-[75
-
-]
-Chapter 8.
-
-
-[76
-
-]
-Chapter 9.
-
-
-[77
-
-]
-Chapter 10.
-
-
-[78
-
-]
-Chapter 11.
-
-
-[79
+[72
 
 ] (./main.aux)
  ***********
@@ -1619,15 +1579,15 @@ L3 programming layer <2022/08/05>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 970D40E9DFEA7A3608159C50C33969E6;9111.
+(rerunfilecheck)             Checksum: 459ED560D90A37A906C5C8F932204C5E;5390.
  ) 
 Here is how much of TeX's memory you used:
- 48273 strings out of 473832
- 1205027 string characters out of 5729481
- 1779036 words of memory out of 5000000
- 70371 multiletter control sequences out of 15000+600000
- 640700 words of font info for 210 fonts, out of 8000000 for 9000
+ 48330 strings out of 473832
+ 1204214 string characters out of 5729481
+ 1813822 words of memory out of 5000000
+ 70437 multiletter control sequences out of 15000+600000
+ 640668 words of font info for 206 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  121i,24n,124p,758b,1290s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (83 pages).
+Output written on main.pdf (76 pages).
