@@ -9,7 +9,7 @@
 
 % 2. 定制 Part (篇) 的目录格式：上下加横线，粗体，取消页码
 \cftpagenumbersoff{part} % 关闭 Part 的页码
-\renewcommand{\cftbeforepartskip}{1ex} % Part 前增加间距
+\renewcommand{\cftbeforepartskip}{2ex} % Part 前增加间距
 \renewcommand{\cftpartfont}{%
     \noindent\rule{\linewidth}{0.5pt}\\[1ex] % 上横线
     \large\bfseries % 字体放大且加粗
@@ -33,9 +33,9 @@
 % --- 前言/目录部分 ---
 \frontmatter 
 \cleardoublepage
-  %\begin{multicols}{1}
+  \begin{multicols}{2}
     \tableofcontents
-  %\end{multicols}
+  \end{multicols}
 \cleardoublepage
 
 % --- 正文部分 ---

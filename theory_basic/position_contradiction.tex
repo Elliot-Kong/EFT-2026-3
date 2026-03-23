@@ -1,0 +1,216 @@
+
+\section{Fock空间与产生湮灭算符}
+\subsection{从单粒子到多粒子：位置算符的困境}\label{sec:position-contradiction}
+
+在\ref{sec:massive-particle}和\ref{sec:massless-particle}中，完成了单粒子态的完整分类。
+自然的下一步是追问：单粒子Hilbert空间上还有哪些可观测量？
+
+按照非相对论量子力学的经验，除动量$\boldsymbol{P}$外，最重要的可观测量是位置算符$\boldsymbol{X}$，满足正则对易关系$[X_i, P_j] = i\delta_{ij}$。
+的确，在由$|\boldsymbol{p}\rangle$张成的单粒子Hilbert空间上，厄米算符$\boldsymbol{X} = i\boldsymbol{\nabla}_{\boldsymbol{p}}$在数学上是良定义的。
+
+但问题是：$\boldsymbol{X}$在\emph{物理上}可观测吗？
+
+\topictitle{三个不相容的前提}
+考虑以下三个看似无害的前提：
+\begin{enumerate}
+    \item 存在\textbf{不对易的算符}$\boldsymbol{X}$和$\boldsymbol{P}$，它们不依赖于空间位置。
+    \item \textbf{测量仪器是局域的}：信息传递速度不能超过光速，因此在有限时间内完成测量的仪器必然占据有限的空间区域\footnote{例如，若我们希望在一年内得到测量结果，那么即便仪器半径大于一光年，其一光年以外的部分也与实验结果无关。}。
+    \item \textbf{测量结果不能用来超光速传信}（相对论因果性）。
+\end{enumerate}
+我们将看到，这三者是\textbf{不相容}的。它们之间的矛盾将在第\ref{chap:scattering}章（S矩阵的Lorentz对称性）和第\ref{chap:fields}章（微观因果性）中被严格论述。这里先通过两个思想实验阐明矛盾的物理核心。
+
+\subsubsection*{思想实验一：位置算符与因果性的矛盾}
+
+\begin{tcolorbox}[colback=white, colframe=black!40]
+\textbf{1}：同一粒子,在地球上,第一次测量粒子动量；\\
+\textbf{2}：同一粒子,在比邻星上,第二次测量粒子位置；\\
+\textbf{2}：同一粒子,在地球上上,第三次测量粒子动量；
+\begin{itemize}
+    \item 第一次动量测量后，粒子处于动量本征态$|\boldsymbol{p}\rangle$。
+    \item 第二次位置测量后，粒子处于位置本征态$|\boldsymbol{x}\rangle$。
+    \item 那么第三次测量；粒子是处于位置本征态还是动量本征态？
+    \begin{enumerate}
+        \item 若答案是：位置本征态；那么矛盾出现了，由于比邻星距地球约4光年，而两次动量测量可以在极短时间间隔内完成，这构成了\textbf{超光速信号传递，违反相对论因果性}.
+        \item 若答案是：动量本征态；矛盾依然出现；如何不影响比邻星上的侧量呢；必然要对测量提出约束，\textbf{测量必须是局域的}
+    \end{enumerate}
+    \end{itemize}
+        因此，\textbf{相对论粒子不存在位置算符\footnote{这里``不存在''的准确含义是：不存在满足$[X_i, P_j] = i\delta_{ij}$且同时尊重相对论因果性的可观测量。数学上算符$X_i = i\partial/\partial p_i$当然存在，但它不对应任何物理上可实现的测量。作为可观测量，我们必须要求使用局域算符作为可观测量}}
+\end{tcolorbox}
+\noindent 
+\subsubsection*{思想实验二：强制定位与粒子对产生}
+\begin{tcolorbox}[colback=white, colframe=black!40]
+考虑一个活塞，下压时粒子被局限在越来越小的空间区域内。能否用这样的活塞无限精确地确定粒子位置？
+
+\textbf{不能}。假设粒子不能穿透容器壁，则活塞对粒子做功，粒子能量不断增加。根据不确定性原理，当活塞将粒子位置确定到\footnote{康普顿波长是$\frac{h}{mc}$}$\Delta x \sim 1/(mc)$时，根据质能关系$E^2=p^2c^c+m^2c^4$,系统能量达到$\sim mc^2$。进一步下压，$E = mc^2$的质能等价意味着活塞的做功足以产生粒子--反粒子对或者更多粒子。
+\medskip
+\\
+这意味\textbf{单粒子描述彻底失效},
+\textbf{必须扩展Hilbert空间，使其装下多粒子}
+\end{tcolorbox}
+\topictitle{场是必然的}
+位置算符的困境迫使我们对理论框架进行根本性的扩展：
+\begin{enumerate}
+    \item \textbf{必须引入多粒子态}。在相对论能标下粒子可以被产生和湮灭，单粒子Hilbert空间不再封闭。我们需要一个能够容纳任意数量粒子的Hilbert空间——这就是\ref{sec:fock}将要构造的Fock空间。
+
+    \item \textbf{可观测量必须局域化为场算符}。上述思想实验的真正教训不仅是``位置算符不可观测''，而是更一般的：在类空间隔上，可观测量算符必须彼此对易——否则就可以设计类似的思想实验来超光速传信。这要求可观测量取\textbf{场算符}的形式：
+    \begin{equation}
+        \Psi(t,\boldsymbol{x})
+    \end{equation}
+    并施加\textbf{微观因果性}条件\footnote{对费米子算符，对易子要换成反对易子。}：
+    \begin{equation}\label{eq:microcausality-preview}
+        [\Psi(x),\, \Psi(y)] = 0 \quad \text{当}\;(x-y)^2 < 0\;\text{（类空间隔）}
+    \end{equation}
+    这一条件将在第\ref{chap:fields}章构造因果场时被严格实现。
+\end{enumerate}
+\subsection{全同粒子：玻色子与费米子}\label{sec:identical}
+
+上一节表明，相对论要求我们从单粒子态出发，构建能够容纳任意数量粒子的多粒子Hilbert空间。
+在此之前，需要回答一个基本的运动学问题：如果多个粒子的所有内禀性质（质量、自旋、电荷等）完全相同——即\textbf{全同粒子}——多粒子态的结构会受到怎样的约束？
+
+\subsubsection*{置换与相因子}
+
+考虑两个全同粒子的态$|\boldsymbol{p}_1,\sigma_1;\,\boldsymbol{p}_2,\sigma_2\rangle$。定义置换算符$\mathscr{P}_{12}$交换两粒子的全部量子数。由于粒子全同，置换后的态与原态描述同一物理状态（同一条射线），它们只能相差一个相位因子：
+\begin{equation}
+\mathscr{P}_{12}\,|\boldsymbol{p}_1,\sigma_1;\,\boldsymbol{p}_2,\sigma_2\rangle
+= e^{i\alpha}\,|\boldsymbol{p}_1,\sigma_1;\,\boldsymbol{p}_2,\sigma_2\rangle\,.
+\end{equation}
+再次施加$\mathscr{P}_{12}$回到原态，得$e^{2i\alpha}=1$，因此\footnote{在三维及更高维空间中，粒子交换对应的路径拓扑只允许$\alpha=0$或$\alpha=\pi$。在二维空间中，交换可以看成两个粒子之间的``绕转''，存在绕了几圈的分别，因此可以有$e^{i\alpha}\neq\pm 1$的``任意子''(anyon)。}
+\begin{equation}\label{eq:boson-fermion}
+    e^{i\alpha} = \pm 1\,.
+\end{equation}
+
+\begin{itemize}
+\item $+1$：态在粒子交换下\textbf{对称}——\textbf{玻色子}（Bose--Einstein统计）。推广到$N$个全同粒子：态在任意两粒子的交换下全对称。
+\item $-1$：态在粒子交换下\textbf{反对称}——\textbf{费米子}（Fermi--Dirac统计）。推广到$N$个全同粒子：态在任意两粒子的交换下全反对称。
+\end{itemize}
+\topictitle{$SO(3)$与$SU(2)$：费米子为何存在}
+在\ref{sec:projective}中我们已经证明，三维旋转群$SO(3)$不是单连通的：其参数空间同胚于实射影空间$\mathbb{R}P^3$（半径为$\pi$的实心球，对径点被认同），基本群为
+\begin{equation}
+\pi_1\!\big(SO(3)\big) = \mathbb{Z}_2\,.
+\end{equation}
+具体地，绕$z$轴旋转$2\pi$的路径$R(t)$（$0\leqslant t\leqslant 1$）在$SO(3)$中是闭合的（$R(0)=R(1)=\mathbf{1}$），但在球的图像中它从球心出发穿越球面一次后返回，拓扑上不可收缩。
+
+$SO(3)$的万有覆盖群是$SU(2)$（群流形为单连通的$S^3$）。在$SU(2)$中，上述不可收缩路径被``展开''为从$+\mathbf{I}$到$-\mathbf{I}$的\emph{开}路径——这正是旋量在$2\pi$旋转下获得负号的几何起源：
+\begin{equation}
+U(2\pi) = (-1)^{2j}\,\mathbb{I}\,.
+\end{equation}
+整数自旋表示（$j=0,1,2,\ldots$）在$2\pi$旋转下不变，半整数自旋表示（$j=\tfrac12,\tfrac32,\ldots$）获得负号。但由于$|\psi\rangle$和$-|\psi\rangle$在量子力学中描述同一物理态（射线等价性），这个负号是不可观测的。
+
+这就给出了一个深刻的暗示：
+\begin{equation}\label{eq:spin-stat-hint}
+\text{整数自旋} \;\longleftrightarrow\; \text{玻色子}\,,\qquad
+\text{半整数自旋} \;\longleftrightarrow\; \text{费米子}\,.
+\end{equation}
+费米子的存在不是一个需要额外假设的经验事实，而是量子力学的射线结构与$SO(3)$双连通性的不可避免的数学推论。同样的逻辑在相对论中再次上演：固有正时Lorentz群$SO^+(1,3)$也是双连通的（$\pi_1(SO^+(1,3))=\mathbb{Z}_2$），其万有覆盖群$SL(2,\mathbb{C})$中的$A$和$-A$对应同一个Lorentz变换，覆盖映射恰好是$2{:}1$的。
+
+\begin{tcolorbox}[colback=white, colframe=black!45]
+\textbf{自旋--统计定理}\quad 对应关系\eqref{eq:spin-stat-hint}在本节中仅作为经验事实引入。其严格证明需要额外的物理输入——\textbf{微观因果性}（类空间隔下场算符的对易/反对易关系为零），将在第\ref{chap:fields}章\ref{sec:massive_fields}构造因果场时完成。
+\end{tcolorbox}
+
+\subsubsection*{多粒子态的正交完备关系}
+
+多粒子态假设为单粒子态的直积$|\boldsymbol{p}_1,\sigma_1,n_1;\;\boldsymbol{p}_2,\sigma_2,n_2;\;\cdots\rangle\equiv|\alpha\rangle$。对于不同种类的粒子无需修剪Hilbert空间；对于全同粒子，态空间被限制为对称（玻色子）或反对称（费米子）子空间。为了统一记号，我们约定：
+\begin{itemize}
+\item 两个粒子中至少有一个是玻色子时，$|1,2\rangle=|2,1\rangle$；
+\item 两个粒子都是费米子时，$|1,2\rangle=-|2,1\rangle$。
+\end{itemize}
+
+正交归一关系为
+\begin{equation}\label{eq:multinorm}
+\langle\boldsymbol{p}_1\cdots\boldsymbol{p}_m|\boldsymbol{q}_1\cdots\boldsymbol{q}_n\rangle
+= \delta_{mn}\sum_{\mathscr{P}} (\pm 1)^{\sigma(\mathscr{P})}
+  \prod_{i=1}^{m}\langle\boldsymbol{p}_i|\boldsymbol{q}_{\mathscr{P}_i}\rangle\,,
+\end{equation}
+其中$\mathscr{P}$遍历所有排列，$\sigma(\mathscr{P})$为排列的逆序数；上号取玻色子、下号取费米子。完备性关系为
+\begin{equation}\label{eq:multicomp}
+\mathbf{1} = \sum_{\{\sigma_i,n_i\}}\int\prod_i d^3p_i\;
+|\boldsymbol{p}_1,\sigma_1,n_1;\;\cdots\rangle
+\langle\boldsymbol{p}_1,\sigma_1,n_1;\;\cdots|\,.
+\end{equation}
+
+多粒子态在Poincar\'e变换下的表示为
+\begin{equation}\label{eq:multiPoincare}
+U(\Lambda,a)\,|\alpha\rangle
+\propto  e^{-ia_\mu\sum_i p_i^\mu}
+\prod_i\!\left[\left(\frac{(\Lambda p_i)^0}{p_i^0}\right)^{\!1/2}
+\sum_{\sigma'_i}D^{(j_i)}_{\sigma'_i\sigma_i}\!\big(W(\Lambda,p_i)\big)\right]
+|\Lambda\boldsymbol{p}_1,\sigma'_1,n_1;\;\cdots\rangle\,.
+\end{equation}
+即每个粒子\textbf{独立地}按单粒子态的规则变换——这是自由粒子的特征，也是渐近态（$t\to\pm\infty$）的定义基础。
+
+\subsection{Fock空间与产生湮灭算符}\label{sec:fock}
+
+上一节中我们完成了自由多粒子Hilbert空间的构造，并将态按粒子数分为不同扇区。但仍有两个问题悬而未决：
+\begin{enumerate}
+    \item \textbf{技术问题}：始终手动保持态的全对称或全反对称，在实际计算中极不方便。能否发展一种\emph{自动}保持对称性的代数工具？
+    \item \textbf{基本问题}：如果多粒子Hilbert空间上只有动量算符$\boldsymbol{p}$，我们只能构造对角的可观测量。特别地，有没有算符能在\emph{不同粒子数}的态上具有非零矩阵元，从而把不同扇区联系起来？
+\end{enumerate}
+引入\textbf{产生湮灭算符}将同时解决这两个问题。
+
+\subsubsection*{Fock空间}
+
+为了描述粒子数可变的系统(\ref{sec:position-contradiction})中已经看到，相对论下$E=mc^2$允许粒子对的产生与湮灭），将所有粒子数空间的Hilbert空间做直和，定义\textbf{Fock空间}：
+\begin{equation}\label{eq:fock-space}
+\boxed{\mathbb{F} = \bigoplus_{N=0}^{\infty} \mathbb{H}_N}
+\end{equation}
+其中$\mathbb{H}_0 = \mathbb{C}$是真空态$|0\rangle$所在的一维空间，$\mathbb{H}_N$是$N$粒子态的（对称化或反对称化的）张量积空间。
+
+Fock空间的物理图像：它是所有可能粒子数的Hilbert空间的直和——$\mathbb{H}_0$描述真空，$\mathbb{H}_1$描述单粒子态，$\mathbb{H}_2$描述两粒子态，以此类推。一个一般的Fock空间态可以是不同粒子数态的\textbf{叠加}——这正是粒子可以产生和湮灭的数学基础。
+
+\topictitle{产生算符}
+在Fock空间上定义\textbf{产生算符}$a^\dagger(\boldsymbol{p},\sigma,n)$，其作用是在系统中添加一个动量$\boldsymbol{p}$、自旋$\sigma$、种类$n$的粒子：
+\begin{equation}\label{eq:creation-def}
+a^\dagger(\boldsymbol{p},\sigma,n)\,|\boldsymbol{p}_1,\sigma_1,n_1;\;\cdots;\;\boldsymbol{p}_N,\sigma_N,n_N\rangle
+= |\boldsymbol{p},\sigma,n;\;\boldsymbol{p}_1,\sigma_1,n_1;\;\cdots;\;\boldsymbol{p}_N,\sigma_N,n_N\rangle\,.
+\end{equation}
+从真空出发，反复施加产生算符即可构造任意多粒子态：
+\begin{equation}
+|\boldsymbol{p}_1,\sigma_1,n_1;\;\cdots;\;\boldsymbol{p}_N,\sigma_N,n_N\rangle
+= a^\dagger(\boldsymbol{p}_1,\sigma_1,n_1)\cdots a^\dagger(\boldsymbol{p}_N,\sigma_N,n_N)\,|0\rangle\,.
+\end{equation}
+产生算符的引入在物理上是\textbf{必要}的：在相对论能标下粒子可以被产生，因此描述相互作用的算符必须能够改变粒子数。产生算符正是实现这一功能的最自然的数学工具。
+
+\medskip
+
+湮灭算符可以从多粒子态的正交关系\eqref{eq:multinorm}直接推导出来。以$a(\boldsymbol{p},\sigma,n)$左乘一个$N$粒子态，利用\eqref{eq:multinorm}计算其与任意$(N{-}1)$粒子态的内积，可以得到：
+\begin{equation}\label{eq:annihilation-action}
+a(\boldsymbol{p},\sigma,n)\,|\boldsymbol{p}_1,\sigma_1,n_1;\;\cdots;\;\boldsymbol{p}_N,\sigma_N,n_N\rangle
+= \sum_{k=1}^{N} (\pm 1)^{k-1}\,
+\langle\boldsymbol{p},\sigma,n|\boldsymbol{p}_k,\sigma_k,n_k\rangle\;
+|\boldsymbol{p}_1,\ldots,\widehat{\boldsymbol{p}_k},\ldots,\boldsymbol{p}_N\rangle\,.
+\end{equation}
+其中$\widehat{\boldsymbol{p}_k}$表示省略第$k$个粒子，正号取玻色子、负号取费米子。物理含义很清楚：$a(\boldsymbol{p})$在态中``寻找''动量为$\boldsymbol{p}$的粒子并将其湮灭；如果态中不含这样的粒子，作用结果为零。特别地：
+\begin{equation}
+a(\boldsymbol{p},\sigma,n)\,|0\rangle = 0\,.
+\end{equation}
+即真空中没有任何粒子可以被湮灭。
+\medskip
+在一个态上先产生再湮灭，与先湮灭再产生，就可以计算之间的对易关系；
+\begin{tcolorbox}[colback=white, colframe=black!70]
+玻色子和费米子的产生湮灭算符满足（反）对易关系：
+\begin{align}
+    \bigl[a(\boldsymbol{p},\sigma,n),\; a^\dagger(\boldsymbol{p}',\sigma',n')\bigr]_\mp
+    &= \delta^{3}(\boldsymbol{p}-\boldsymbol{p}')\,\delta_{\sigma\sigma'}\,\delta_{nn'}\,,
+    \label{eq:comm-1}\\[4pt]
+    \bigl[a(\boldsymbol{p},\sigma,n),\; a(\boldsymbol{p}',\sigma',n')\bigr]_\mp &= 0\,,
+    \label{eq:comm-2}\\[4pt]
+    \bigl[a^\dagger(\boldsymbol{p},\sigma,n),\; a^\dagger(\boldsymbol{p}',\sigma',n')\bigr]_\mp &= 0\,.
+    \label{eq:comm-3}
+\end{align}
+其中$[\cdot,\cdot]_-$为对易子（玻色子），$[\cdot,\cdot]_+\equiv\{\cdot,\cdot\}$为反对易子（费米子）。
+\end{tcolorbox}
+
+\noindent 费米子的反对易关系\eqref{eq:comm-3}立即给出\textbf{Pauli不相容原理}：
+\begin{equation}
+a^\dagger(\boldsymbol{p},\sigma,n)\,a^\dagger(\boldsymbol{p},\sigma,n)\,|0\rangle = 0\,,
+\end{equation}
+即不可能有两个全同费米子占据同一量子态。
+
+\subsubsection*{两个问题的解决}
+
+至此，本节开头的两个问题都已解决：
+\begin{enumerate}
+    \item \textbf{对称化是自动的}：只需使用对易关系或反对易关系\eqref{eq:comm-1}--\eqref{eq:comm-3}，玻色子的全对称态和费米子的全反对称态在代数上是自动保证的。
+
+    \item \textbf{不同粒子数空间被联系起来}：$a^\dagger$将$\mathbb{H}_N$映射到$\mathbb{H}_{N+1}$，$a$将$\mathbb{H}_N$映射到$\mathbb{H}_{N-1}$。因此，用$a$和$a^\dagger$的多项式可以构造Fock空间上\emph{任意}算符的矩阵元——这将在第\ref{chap:scattering}章\ref{sec:interaction-structure}讨论相互作用结构时变得关键：集团分解原理要求相互作用哈密顿量$V$的核函数仅包含单个动量守恒$\delta$函数且其余部分光滑，而这一约束最终迫使$V$写成局域因果场$\Psi_\ell(x)$的多项式。
+\end{enumerate}

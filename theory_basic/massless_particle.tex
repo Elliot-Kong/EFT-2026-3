@@ -1,0 +1,135 @@
+\subsection{零质量粒子\(\dagger\)}\label{sec:massless-particle}
+对于零质量粒子，由于 $p^\mu p_\mu = 0$，不存在静止参考系。沿 $z$ 轴正方向传播的动量作为“标准动量”：
+\begin{equation}
+    k^\mu = (\kappa, 0, 0, \kappa)^T, \quad (\kappa > 0)
+\end{equation}
+Wigner 小群的定义是：所有保持标准动量 $k^\mu$ 不变的$W^{\mu}_{\;\;\nu}$ 构成的子群，即满足：
+\begin{equation}
+    W^{\mu}_{\;\;\nu} k^\nu = k^\mu
+\end{equation}
+\topictitle{小群的确定}
+为了寻找小群的生成元，\footnote{为什么能这么操作，参考\refeq{total_lorentz_group}}考察Lorentz无穷小变换 $W^{\mu}_{\;\;\nu} = \delta^\mu_{\;\;\nu} + \omega^\mu_{\;\;\nu}$。代入小群条件：
+\begin{equation}
+    (\delta^\mu_{\;\;\nu} + \omega^\mu_{\;\;\nu}) k^\nu = k^\mu \implies \omega^\mu_{\;\;\nu} k^\nu = 0
+\end{equation}
+将 $k^\nu = (\kappa, 0, 0, \kappa)^T$ 代入上式并对 $\nu$ 求和，我们得到核心约束：
+\begin{equation}
+    \omega^\mu_{\;\;0} \kappa + \omega^\mu_{\;\;3} \kappa = 0 \implies \omega^\mu_{\;\;0} = -\omega^\mu_{\;\;3}
+\end{equation}
+小群的参数 $\omega_{\mu\nu}$ 在两个下指标时是严格反对称的（$\omega_{\mu\nu} = -\omega_{\nu\mu}$）。我们使用闵氏度规将上述约束的指标降下来：$\omega^\mu_{\;\;\nu} = \eta^{\mu\rho}\omega_{\rho\nu}$。
+\vspace{2ex}
+\\
+分别考察 $\mu = 1, 2, 3$ 的情况：
+\begin{itemize}
+    \item 当 $\mu = 1$ 时：$\eta^{11}\omega_{10} = -\eta^{11}\omega_{13} \implies -\omega_{10} = -(-\omega_{13}) \implies \omega_{10} + \omega_{13} = 0$
+    \item 当 $\mu = 2$ 时：$\eta^{22}\omega_{20} = -\eta^{22}\omega_{23} \implies -\omega_{20} = -(-\omega_{23}) \implies \omega_{20} + \omega_{23} = 0$
+    \item 当 $\mu = 3$ 时：$\eta^{33}\omega_{30} = -\eta^{33}\omega_{33}$。因为反对称性 $\omega_{33}=0$，所以 $\omega_{30}=0$（即不能有 $z$ 方向的 Boost）。
+\end{itemize}
+\color{blue}此外，约束方程中并未涉及 $\nu = 1, 2$ 的交叉项，因此空间旋转参数 $\mathbf{\omega_{12}}$ 是完全自由的。\normalcolor
+\vspace{2ex}
+\\
+至此，原有的 6 个 Lorentz 自由参数被约束减少了 3 个，只剩下 3 个独立参数：$\omega_{12}$，以及两组相互绑定的参数 $\omega_{01}=\omega_{13}$ 与 $\omega_{02}=\omega_{23}$。
+
+\vspace{2ex}
+任意无穷小 Lorentz 变换的幺正算符可以展开为生成元 $\mathscr{J}^{\mu\nu}$ 的组合：
+\begin{equation}
+    U(\Lambda) = 1 - \frac{i}{2} \omega_{\mu\nu} \mathscr{J}^{\mu\nu}
+\end{equation}
+其中Rotation生成元和Boost生成元是：
+\begin{equation}
+    J_i = \frac{1}{2}\epsilon_{ijk}\mathscr{J}^{jk}\qquad
+    K_i =\mathscr{J}^{0i}
+\end{equation}
+具体对应为：$\mathscr{J}^{12} = J_3$，$\mathscr{J}^{23} = J_1$，$\mathscr{J}^{31} = J_2$(其中 $\mathscr{J}^{13} = -J_2$)，$\mathscr{J}^{01} = K_1$，$\mathscr{J}^{02} = K_2$。
+\vspace{2ex}
+\par
+我们将 $\frac{1}{2} \omega_{\mu\nu} \mathscr{J}^{\mu\nu}$ 展开，并代入我们得到的参数约束（$\omega_{13}=\omega_{01}, \omega_{23}=\omega_{02}$）：
+\begin{align}
+    \frac{1}{2} \omega_{\mu\nu} \mathscr{J}^{\mu\nu} &= \omega_{01}\mathscr{J}^{01} + \omega_{02}\mathscr{J}^{02} + \omega_{12}\mathscr{J}^{12} + \omega_{23}\mathscr{J}^{23} + \omega_{31}\mathscr{J}^{31} \nonumber \\
+    &= \omega_{01}K_1 + \omega_{02}K_2 + \omega_{12}J_3 + \omega_{23}J_1 - \omega_{13}J_2 \nonumber \\
+    &= \omega_{12}J_3 + \omega_{01}K_1 + \omega_{02}K_2 + \omega_{02}J_1 - \omega_{01}J_2 \nonumber \\
+    &= \omega_{12} J_3 + \omega_{01} (K_1 - J_2) + \omega_{02} (K_2 + J_1)
+\end{align}\label{massless_lorentz_transf}
+此时，物理图像极其清晰，原来互相独立的旋转 $J$ 和推动 $K$，在零质量条件下被迫组合成了新的生成元。我们定义这三个独立的生成元为：
+\begin{equation}
+    J_3, \quad \Pi_1 \equiv K_1 - J_2, \quad \Pi_2 \equiv K_2 + J_1
+\end{equation}
+\vspace{2ex}
+\topictitle{  $ISO(2)$ 的 Lie 代数}
+最后，我们利用已知的 Lorentz 代数来计算这三个新生成元的对易关系。首先计算 $J_3$ 对 $\Pi_1, \Pi_2$ 的作用：
+\begin{subequations}
+    \begin{align}
+    [J_3, \Pi_1] &= [J_3, K_1] - [J_3, J_2] = iK_2 - (-iJ_1) = i(K_2 + J_1) = i\Pi_2 \\
+    [J_3, \Pi_2] &= [J_3, K_2] + [J_3, J_1] = -iK_1 + iJ_2 = -i(K_1 - J_2) = -i\Pi_1
+\end{align}
+\end{subequations}
+再计算 $\Pi_1, \Pi_2$ 自身的对易子：
+\begin{align}
+    [\Pi_1, \Pi_2] &= [K_1 - J_2, K_2 + J_1] \nonumber \\
+    &= [K_1, K_2] + [K_1, J_1] - [J_2, K_2] - [J_2, J_1] \nonumber \\
+    &= (-iJ_3) + 0 - 0 - (-iJ_3) \nonumber \\
+    &= 0
+\end{align}
+总结得到的代数关系：
+\begin{subequations}
+    \begin{align}
+        & [J_3, \Pi_1] = i\Pi_2 \\
+        & [J_3, \Pi_2] = -i\Pi_1 \\
+        & [\Pi_1, \Pi_2] = 0
+    \end{align}
+\end{subequations}
+这在数学上同构于二维欧几里得平面的刚体运动群 $ISO(2)$。其中 $\Pi_1, \Pi_2$ 表现为平面上互相独立的“平移”，而 $J_3$ 表现为平面上的“旋转”。
+\topictitle{物理的约束}
+$ISO(2)$ 的一般不可约表示可以用 $\Pi_1,\Pi_2$ 的本征值 $\pi_1,\pi_2$ 来标记\footnote{这里采用k标记动量，是约定俗称的}
+\begin{subequations}
+    \begin{align}
+        & \Pi_1|k,\pi_1,\pi_2\rangle = \pi_1 |k,\pi_1,\pi_2\rangle \\
+        & \Pi_2|k,\pi_1,\pi_2\rangle = \pi_2 |k,\pi_1,\pi_2\rangle
+    \end{align}
+\end{subequations}
+（因为 $[\Pi_1,\Pi_2]=0$，它们可以同时对角化）。\color{blue}但 $[J_3,\Pi_i]$ 的对易关系表明 $J_3$ 会将 $(\pi_1,\pi_2)$ 在二维平面内旋转，而不改变 $\pi_1^2+\pi_2^2$ 的值。因此 $\pi_1^2+\pi_2^2$ 是一个 Casimir 算符.\normalcolor
+\vspace{2ex}
+\\
+若 $\pi_1^2+\pi_2^2 \neq 0$，则 $J_3$ 的谱是连续的——$J_3$ 的作用等价于在以 $\sqrt{\pi_1^2+\pi_2^2}$ 为半径的圆上旋转。这样的表示称为\textbf{连续自旋表示}。自然界中从未观测到此类粒子。因此物理要求
+\begin{equation}
+\Pi_1 = \Pi_2 = 0
+\end{equation}
+即``平移''生成元的本征值为零。这将 $ISO(2)$ 的表示约化为其旋转子群 $SO(2)$ 的表示。
+
+在 $\Pi_1 = \Pi_2 = 0$ 的条件下，剩余的生成元仅有 $J_3$。$SO(2)$ 是阿贝尔群，其全部不可约表示都是一维的，由 $J_3$ 的本征值 $\lambda$ 标记：
+\begin{equation}
+J_3|k,\lambda\rangle = \lambda\;\;|k,\lambda\rangle
+\end{equation}
+$\lambda$ 称为\textbf{Helcity}——角动量在动量方向上的投影。
+\begin{equation}
+\lambda = \frac{\pmb{k} \cdot \pmb{p}}{|\pmb{k}|}
+\end{equation}
+由于使用的是 Lorentz 群的覆盖群 $SL(2,\mathbb{C})$（与 $SU(2)$ 覆盖 $SO(3)$ 的逻辑完全平行），$\lambda$ 可以取半整数值。对于给定的零质量粒子类型（自旋 $j$），螺旋度只取两个值：
+\begin{equation}
+\lambda = +j \quad \text{或} \quad \lambda = -j
+\end{equation}
+本征关系是：
+\begin{equation}
+  J_3|k,\lambda\rangle = \lambda\;\;|k,\lambda\rangle
+\end{equation}
+这与正定质量粒子具有 $2j+1$ 个自旋投影形成了鲜明对比。
+\topictitle{单粒子态的完整标记}
+综合以上分析，零质量单粒子态在 Lorentz 算符变成了
+\begin{equation}
+    U(\Lambda)=e^{iJ_3\omega_{12}}
+\end{equation}
+ Wigner 诱导表示框架与 $SU(2)$ 的不可约表示理论，零质量单粒子态由以下量子数完整标记：
+\begin{equation}
+|k^\mu,\lambda\rangle\;\;,\qquad \sigma = -j,+j
+\end{equation}
+\begin{itemize}
+    \item $k^\mu$：动量
+    \item $\lambda$；Helicity。由于 Casimir 算符 $W^2$ 失效，  $\lambda$ 成为了标记粒子内部状态的唯一合法量子数（在标准动量下即为 $J_3$ 的本征值）。对于给定的基本粒子，$\lambda$ 只能取固定的离散值.\normalcolor
+\end{itemize}
+\begin{equation}
+U(\Lambda)|\boldsymbol{p},\lambda\rangle
+= \sqrt{\frac{(\Lambda p)^0}{p^0}}\;
+e^{i\lambda\theta(\Lambda,p)}\;\delta_{\lambda\bar{\lambda}}
+|(\Lambda\boldsymbol{p}),\bar{\lambda}\rangle
+\end{equation}
+其中 $\theta(\Lambda,p)$ 是 Wigner 旋转中绕 $z$ 轴旋转的角度（Wigner 旋转在零质量情况下退化为一个 $SO(2)$ 旋转加上物理上不可观测的 $\Pi$``平移''）。

@@ -1,0 +1,239 @@
+\subsection{正定质量粒子\(\dagger\)}\label{sec:massive-particle}
+正定质量粒子（$p^2 = m^2 > 0$，$p^0 > 0$）的标准动量是$k
+^\mu=(m,0,0,0)$,保持空间旋转不变的小群是三维旋转群$SO(3)$；也就是Wigner 小群是三维旋转群 ；而为了容纳半整数自旋，必须使用其万有覆盖群 $SU(2)$，单粒子态的变换是：
+\begin{equation}
+U(\Lambda)|p^\mu,\sigma\rangle
+= \sqrt{\frac{(\Lambda p)^0}{p^0}}\;\;
+\sum_{\bar{\sigma}} D^{(j)}_{\bar{\sigma}\sigma}\{W(\Lambda,p)\}\;\;
+|(\Lambda p)^\mu,\bar{\sigma}\rangle
+\end{equation}
+其中 $W(\Lambda,p) = L^{-1}(\Lambda p)\;\;\Lambda\;\;L(p)$ 是 Wigner 旋转——一个纯粹的三维空间旋转，而 $D^{(j)}_{\bar{\sigma}\sigma}$ 是 $SU(2)$ 的 $(2j+1)$ 维不可约表示矩阵。因此，构造正定质量粒子态的全部问题归结为：\textbf{找出 $SU(2)$ 的所有有限维不可约表示}。下面利用 Lie 代数方法系统地完成这一任务。
+\topictitle{$SU(2)$代数}
+$SU(2)$ 的 Lie 代数由三个生成元 $J_1, J_2, J_3$ 构成，满足
+\begin{equation}
+[J_i, J_j] = i\epsilon_{ijk}\;\;J_k
+\end{equation}
+其中$SU(2)$包含一个Casimir算符$\pmb{J}^2$，它与所有生成元对易，以及cartan算符$J_3$，它与 $J_1, J_2$ ;且它们是对易的；
+\begin{equation}
+    [\pmb{J}^2,J_3]=0
+\end{equation}
+这是重要的，它们张开了一个完备的Hilbert空间，可以标记本征态为$\ket{a,b}$,有本征关系：
+\begin{subequations}
+    \begin{align}
+        &\pmb{J}^2\ket{b,m}=a\ket{b,m}\\
+        &J_3\ket{b,m}=m\ket{b,m}
+    \end{align}
+\end{subequations}
+利用$SU(2)$,可以定义一组新的算符：
+\begin{equation}
+J_{\pm} = J_1 \pm iJ_2
+\end{equation}
+这组算符满足：
+\begin{equation}
+[\pmb{J}^2, J_{\pm}]=0\;\;,\qquad
+[J_3, J_{\pm}] = \pm J_{\pm}\;\;,\qquad
+[J_+, J_-] = 2J_3
+\end{equation}
+\par
+考虑代数关系：
+\begin{equation}
+    \begin{aligned}
+        J_3\;\;J_\pm\ket{b,m}=&\left(J_\pm J_3\pm J_\pm\right)\ket{b,m}\\
+        &= (m \pm 1)\;\;J_\pm\ket{b,m}
+    \end{aligned}
+\end{equation}
+可以看到,$J_{\pm}\Ket{b,m}$也是$J_3$的本征态。本征值被提升或降低了1。可以得到代数关系：
+\begin{equation}
+    J_\pm\ket{b,m} =constant \ket{b,m \pm 1}
+\end{equation}
+所以算符$J_{\pm}$被称为升降算符。在$SU(2)$的有限维\footnote{具体表现在Hilbert空间中的范数正定}表示中，m应该是一个有限的值，应当有上界和下界,我们约定上界为$m_{max}$下界为$b_{min}$,可以断定代数关系：
+\begin{subequations}
+    \begin{align}
+        &J_+\ket{b,m_{max}}=0\\
+        &J_-\ket{b,m_{min}}=0
+    \end{align}
+\end{subequations}
+对第一式作用$J_-$，对第二式作用$J_+$；可以得到：
+\begin{equation}
+    \begin{aligned}
+    0=&J_-\;\;J_+\ket{b,m_{max}}\\
+    =& \left(\pmb{J}^2 - J_3^2 - J_3\right)\ket{b,m_{max}}\\  
+    =& \left(a - m_{max}^2 - m_{max}\right)\ket{b,m_{max}}  
+    \end{aligned}
+    \\
+    \begin{aligned}
+        0=&J_+\;\;J_-\ket{b,m_{min}}\\
+        =& \left(\pmb{J}^2 - J_3^2 +J_3\right)\ket{b,m_{min}}\\  
+        =& \left(a - m_{min}^2 + m_{min}\right)\ket{b,m_{min}}  
+    \end{aligned}
+\end{equation}
+解出$a$，得到；
+\[\begin{aligned}
+    &a=m_{max}^2 + m_{max}\\
+    &a=m_{min}^2 - m_{min}
+\end{aligned}\]
+为了使是一个确定的值，必须满足$m_{max}^2 + m_{max} = m_{min}^2 - m_{min}$，成立的条件(同时将b重新约定为j)是
+\begin{equation}
+    m_{max} = -m_{min} \equiv j
+\end{equation}
+因此，$J_3$ (同时将m重新约定为$\sigma$)的本征值序列为 
+\begin{equation}
+    \sigma=j, j-1, j-2, \ldots, -j+1, -j。
+\end{equation}
+由于 $m_{max} - m_{min} = 2j$ 必须是非负整数，得到 ：
+\begin{equation}
+    j = 0, \frac{1}{2}, 1, \frac{3}{2}, \ldots
+\end{equation}
+j的取值代表了$SU(2)$的有限维表示：
+\begin{align}
+& j = 0,   && \sigma = 0,                        && j(j+1) = 0 \nonumber \\
+& j = 1/2, && \sigma = 1/2, -1/2,                && j(j+1) = 3/4 \nonumber \\
+& j = 1,   && \sigma = 1, 0, -1,                 && j(j+1) = 2 \nonumber \\
+& j = 3/2, && \sigma = 3/2, 1/2, -1/2, -3/2, \quad && j(j+1) = 15/4 \nonumber \\
+& \dots    &&                               && 
+\end{align}
+在讨论$SU(2)$的低维表示前，还需要找出$J_\pm$的本征值，通过计算可以得到：
+\begin{equation}
+    \begin{aligned}
+        \braket{j,\sigma|J_-J_+|j,\sigma}=&\braket{j,\sigma|\pmb{J}^2 - J_3^2 - J_3|j,\sigma}\\
+        &= j(j+1) - \sigma^2 - \sigma
+    \end{aligned}
+\end{equation}
+可以看出$J_+$和$J_-$的本征值为：    
+\begin{equation}
+    J_{\pm}|j,\sigma\rangle = \sqrt{(j \mp \sigma)(j \pm \sigma + 1)}\;|j,\sigma \pm 1\rangle
+\end{equation}
+\topictitle{低维不可约表示}
+$\mathbf{j=0}$ 表示空间维度为 $1$。是平凡表示。
+\vspace{2ex}
+
+\noindent
+$\mathbf{j=1/2}$ 表示空间维度为 $2$。$J_3$ 的本征值为 $\pm 1/2$。生成元为 $2\times 2$ 矩阵
+\begin{equation}
+    J_3=\frac{1}{2}
+    \begin{bmatrix}
+        & 1&0\\
+        & 0&-1
+    \end{bmatrix}
+\end{equation}
+所以选择对应的本征矢量为：
+\begin{equation}
+    \ket{\frac{1}{2},\frac{1}{2}}
+    =\begin{bmatrix}
+        1 \\
+        0
+    \end{bmatrix},\qquad
+    \ket{\frac{1}{2},-\frac{1}{2}}
+    =\begin{bmatrix}
+        0 \\
+        1
+    \end{bmatrix}
+\end{equation}
+利用$J_\pm$和$J_1$,$J_2$,$J_3$之间的关系：
+\begin{equation}
+    \begin{aligned}
+        &J_1=\frac{1}{2}(J_++J_-)\\
+        &J_2=\frac{1}{2i}(J_+-J_-)
+    \end{aligned}
+\end{equation}
+所以可以得到$J_1$和$J_2$作用在本征态上的值
+\begin{equation}
+    \begin{aligned}
+    J_1\Ket{\frac{1}{2},\frac{1}{2}}
+    =&\frac{1}{2}(J_++J_-)\Ket{\frac{1}{2},\frac{1}{2}}\\
+    =&\frac{1}{2}\sqrt{(j - \sigma)(j + \sigma + 1)}\ket{\frac{1}{2},-\frac{1}{2}}\\
+    =&\frac{1}{2}\ket{\frac{1}{2},-\frac{1}{2}}\\
+    \end{aligned}\\
+    \begin{aligned}
+        J_1\Ket{\frac{1}{2},-\frac{1}{2}}
+        =&\frac{1}{2}(J_++J_-)\Ket{\frac{1}{2},-\frac{1}{2}}\\
+        =&\frac{1}{2}\sqrt{(j + \sigma)(j - \sigma + 1)}\ket{\frac{1}{2},\frac{1}{2}}\\
+        =&\frac{1}{2}\ket{\frac{1}{2},\frac{1}{2}}\\
+    \end{aligned}
+\end{equation}
+以及
+\begin{equation}
+    \begin{aligned}
+        J_2\Ket{\frac{1}{2},\frac{1}{2}}
+        =&\frac{1}{2i}(J_+-J_-)\Ket{\frac{1}{2},\frac{1}{2}}\\
+        =&-\frac{i}{2}\ket{\frac{1}{2},-\frac{1}{2}}\\
+    \end{aligned}\\
+    \begin{aligned}
+        J_2\Ket{\frac{1}{2},-\frac{1}{2}}
+        =&\frac{1}{2i}(J_+-J_-)\Ket{\frac{1}{2},-\frac{1}{2}}\\
+        =&\frac{i}{2}\ket{\frac{1}{2},\frac{1}{2}}\\
+    \end{aligned}
+\end{equation}
+最终得到$J_1$和$J_2$的矩阵表示为：
+\begin{equation}
+    J_1=\frac{1}{2}
+    \begin{bmatrix}
+        & 0&1\\
+        & 1&0
+    \end{bmatrix},\qquad
+    J_2=\frac{1}{2}
+    \begin{bmatrix}
+        & 0&-i\\
+        & i&0
+    \end{bmatrix}
+\end{equation}
+以及Casimir算符$\pmb{J}^2$的矩阵表示为：
+\begin{equation}
+    \pmb{J}^2=\frac{3}{4}
+    \begin{bmatrix}
+        & 1&0\\
+        & 0&1
+    \end{bmatrix}
+\end{equation}
+\vspace{2ex}
+$\mathbf{j=1}$,利用一样的步骤；可以得到
+\begin{equation}
+    J_3=
+    \begin{bmatrix}
+        & 1&0&0\\
+        & 0&0&0\\
+        & 0&-1&0
+    \end{bmatrix},\qquad
+    J_1=\frac{1}{\sqrt{2}}
+    \begin{bmatrix}
+        & 0&1&0\\
+        & 1&0&1\\
+        & 0&1&0
+    \end{bmatrix},\qquad
+    J_2=\frac{1}{\sqrt{2}}
+    \begin{bmatrix}
+        & 0&-i&0\\
+        & i&0&-i\\
+        & 0&i&0
+    \end{bmatrix}
+\end{equation}
+以及casimir算符$\pmb{J}^2$的矩阵表示为：
+\begin{equation}
+    \pmb{J}^2=
+    2
+    \begin{bmatrix}
+        & 1&0&0\\
+        & 0&1&0\\
+        & 0&0&1
+    \end{bmatrix}
+\end{equation}
+更高维度的表示可以通过同样的步骤得到。
+\topictitle{单粒子态的完整标记}
+综合 Wigner 诱导表示框架与 $SU(2)$ 的不可约表示理论，一个正定质量单粒子态由以下量子数完整标记：
+\begin{equation}
+|p^\mu,\sigma\rangle\;\;,\qquad \sigma = -j,\;\;-j+1,\;\;\ldots,\;\;+j
+\end{equation}
+\begin{itemize}
+\item $p^\mu$：动量
+\item $j$：自旋（Poincar\'{e} 群第二个 Casimir 算符 $W_\mu W^\mu$ 的本征值决定），取 $j = 0,\;\;\tfrac{1}{2},\;\;1,\;\;\tfrac{3}{2},\;\;\ldots$
+\item $\sigma$：自旋第三分量（$J_3$ 的本征值），取 $2j+1$ 个值。
+\end{itemize}
+
+粒子在一般 Lorentz 变换 $\Lambda$ 下的态变换为
+\begin{equation}
+U(\Lambda)|p,\sigma\rangle
+= \sqrt{\frac{(\Lambda p)^0}{p^0}}\;\;
+\sum_{\bar{\sigma}=-j}^{+j} D^{(j)}_{\bar{\sigma}\sigma}\{W(\Lambda,p)\}\;\;
+|(\Lambda p),\bar{\sigma}\rangle
+\end{equation}
+其中 $D^{(j)}_{\bar{\sigma}\sigma}$ 是 $SU(2)$ 自旋 $j$  旋转矩阵，$W(\Lambda,p) = L^{-1}(\Lambda p)\;\;\Lambda\;\;L(p)$ 是 Wigner 旋转。关键的物理图像是：粒子的动量在 Lorentz 变换下改变（$\boldsymbol{p}\to\Lambda\boldsymbol{p}$），而自旋态在 $2j+1$ 维内部空间中进行旋转混合——这种混合由 Wigner 旋转通过 $SU(2)$ 表示矩阵来实现。
