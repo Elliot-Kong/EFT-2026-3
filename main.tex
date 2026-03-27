@@ -33,39 +33,22 @@
 
 % 5) Footnote formatting (requires `xcolor`)
 \input{preamble/footnote.tex}
-
-
 \begin{document}
+
 \input{preamble/titlepage/titlepage3.tex}
 %\input{preamble/titlepage/titlepage2.tex}
 \input{preamble/titlepage/first page.tex}
-\input{preamble/frontmatter.tex}% Front matter (TOC, page numbering, etc.)
-
-
-
-
-
-% Link colors for the main content.
-% Keep TOC links black, then switch colors after the front matter.
+%\input{preamble/titlepage/1.tex}
+\input{preamble/frontmatter.tex}
 \input{preamble/citecolor.tex}
-        
-% ============================================================
+
 % Main content
 % ============================================================
 \chapter{理论基础}
 \input{theory_basic/chapter.tex}
+% ===================================================================================================
 % ============================================================
-%\input{nonrelativistic_particle_state/chapter.tex}
-% ============================================================
-%\chapter*{附录A：对称性理论}
-%\addcontentsline{toc}{chapter}{附录A：对称性}
-%\noindent
-%\input{symmetry/chapter.tex}
-% ============================================================
-% ============================================================
-\part{1+3维场论}% ============================================================
-%\chapter{理论框架}
-%\input{framework/chapter.tex}
+\part{1+3维场论}% ============================================================o
 % ============================================================
 \chapter{散射理论}\label{chap:scattering}
 \input{scattering_theory/chapter.tex}
@@ -76,14 +59,14 @@
 \chapter{费曼规则}
 \input{feynman_rule/chapter.tex}
 % ============================================================
-\chapter{算符方法}
-\input{intercation_theory/chapter.tex}
-\chapter{电动力学基本过程}
-
-
+\chapter{1+3维动力学}
+\input{intercation_theory/chapter.tex} 
+ \chapter{电动力学基本过程}
 \begin{comment}
-    \part{散射振幅的解析理论}
-\chapter{公理化体系}
+
+
+\part{散射振幅的解析理论}
+\chapter{Maybe公理化体系}
 
 \section{对称性}
 
@@ -104,18 +87,6 @@
 \section{色散关系}
 \chapter{量子电动力学的辐射修正}
 
-
-\chapter{系统重整化理论}
-\chapter{有效理论}
-
-\section{Wilsonian 重整化群}
-\subsection{动量截断与模式积分}
-\subsection{相关算符、边缘算符与无关算符}
-
-\section{有效场论的构建原则}
-\subsection{算符乘积展开}
-\subsection{退耦定理}
-\subsection{匹配与高能自由度的积分}
 \end{comment}
 
 \end{document}

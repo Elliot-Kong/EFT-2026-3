@@ -1,120 +1,89 @@
 \newpage
-\section{正定质量粒子因果场\(\dagger\)}\label{sec:massive_fields}
+\section{一般因果场}\label{sec:massive_fields}
 一般形式场写为：\begin{equation*}
     \Psi_\ell(x) =(\frac{1}{2\pi})^\frac{3}{2}\sum_{\sigma}\int d^3p \, \left\{\xi_\ell u_\ell(\boldsymbol{p},\sigma)a^{c\dagger}(\boldsymbol{p},\sigma) e^{-ipx} + \lambda_\ell v_\ell(\boldsymbol{p},\sigma) a(\boldsymbol{p},\sigma)e^{ipx} \right\}
 \end{equation*}
 若理论本身无荷，就有$a^{\dagger}(\boldsymbol{p},\sigma)=a^{c\dagger}(\boldsymbol{p},\sigma)=a^{\dagger}(\boldsymbol{p},\sigma)$；系数$u_\ell(\boldsymbol{p},\sigma)$和$v_\ell(\boldsymbol{p},\sigma)$的变换是
-\begin{equation*}
-    \begin{aligned}
-            &\sum_{\bar{\sigma}}
-            u_{\ell}(\boldsymbol{p},\bar{\sigma})
-            \sqrt{\frac{p^0}{(\Lambda p)^0}} 
-            D_{\sigma \bar{\sigma}}^{j_n}
-            \!\left\{W^{-1}(\Lambda,p)\right\} =
-            \sum_{\bar{\ell}}
-            \mathscr{D}_{\ell\bar{\ell}}(\Lambda^{-1})
-            u_{\bar{\ell}}(\Lambda \boldsymbol{p},\sigma)\\
-            &\sum_{\bar{\sigma}}
-            v_{\ell}(\boldsymbol{p},\bar{\sigma})
-            \sqrt{\frac{p^0}{(\Lambda p)^0}} 
-            D_{\sigma \bar{\sigma}}^{j_n*}
-            \!\left\{W^{-1}(\Lambda,p)\right\} =
-            \sum_{\bar{\ell}}
-            \mathscr{D}_{\ell\bar{\ell}}(\Lambda^{-1})
-            v_{\bar{\ell}}(\Lambda \boldsymbol{p},\sigma)
-            \end{aligned}
-\end{equation*}
-\begin{center}
-    \vspace{2ex}
-    \large\textbf{***}
-    \vspace{2ex}
-\end{center}
+\begin{subequations}
+    \begin{align}
+        &\sum_{\bar{\sigma}}u_{\bar{\ell}}(\Lambda \boldsymbol{p},\bar{\sigma})D_{\bar{\sigma}\sigma }^{j_n*}\left\{W(\Lambda,p)\right\}=\sqrt{\frac{p^0}{(\Lambda p)^0}}\sum_{\bar{\ell}}\mathscr{D}_{\bar{\ell}\ell}(\Lambda)u_{\ell}(\boldsymbol{p},\sigma)
+        \\
+        &\sum_{\bar{\sigma}}v_{\bar{\ell}}(\Lambda \boldsymbol{p},\bar{\sigma})D_{\bar{\sigma}\sigma }^{j_n}\left\{W(\Lambda,p)\right\}=\sqrt{\frac{p^0}{(\Lambda p)^0}}\sum_{\bar{\ell}}\mathscr{D}_{\bar{\ell}\ell}(\Lambda)v_{\ell}(\boldsymbol{p},\sigma)
+    \end{align}
+\end{subequations}
+\topictitle{***}
 通过 $SU(2)_L \times SU(2)_R$ 代数构建Lorentz群的有限维表示后。指标$\ell$在这里被替换为一对指标$a$、$b$：所以一般形式场可以写为：\begin{equation}
     \Psi_{ab}(x) =(\frac{1}{2\pi})^\frac{3}{2}\sum_{\sigma}\int d^3p \, \left\{\xi_{ab} u_{ab}(\boldsymbol{p},\sigma)a^{c\dagger}(\boldsymbol{p},\sigma) e^{-ipx} + \lambda_{ab} v_{ab}(\boldsymbol{p},\sigma) a(\boldsymbol{p},\sigma)e^{ipx} \right\}
 \end{equation}
 以及系数函数的选择变为：
 \begin{subequations}
     \begin{align}
-            &\sum_{\bar{\sigma}}
-            u_{ab}(\boldsymbol{p},\bar{\sigma})
-            \sqrt{\frac{p^0}{(\Lambda p)^0}} 
-            D_{\sigma \bar{\sigma}}^{j_n}
-            \!\left\{W^{-1}(\Lambda,p)\right\} =
-            \sum_{\bar{a}\bar{b}}
-            \mathscr{D}_{{ab};\bar{a}\bar{{b}}}(\Lambda^{-1})
-            u_{\bar{a}\bar{b}}(\Lambda \boldsymbol{p},\sigma)
-            \\
-             &\sum_{\bar{\sigma}}
-            v_{ab}(\boldsymbol{p},\bar{\sigma})
-            \sqrt{\frac{p^0}{(\Lambda p)^0}} 
-            D_{\sigma \bar{\sigma}}^{j_n*}
-            \!\left\{W^{-1}(\Lambda,p)\right\} =
-            \sum_{\bar{a}\bar{b}}
-            \mathscr{D}_{{ab};\bar{a}\bar{{b}}}(\Lambda^{-1})
-            v_{\bar{a}\bar{b}}(\Lambda \boldsymbol{p},\sigma)
-            \end{align}
+        &\sum_{\bar{\sigma}}u_{\bar{a}\bar{b}}(\Lambda \boldsymbol{p},\bar{\sigma})D_{\bar{\sigma}\sigma }^{j_n*}\left\{W(\Lambda,p)\right\}=\sqrt{\frac{p^0}{(\Lambda p)^0}}\sum_{\bar{a}\bar{b}}\mathscr{D}_{\bar{a}\bar{b};ab}(\Lambda)u_{ab}(\boldsymbol{p},\sigma)
+        \\
+        &\sum_{\bar{\sigma}}v_{\bar{a}\bar{b}}(\Lambda \boldsymbol{p},\bar{\sigma})D_{\bar{\sigma}\sigma }^{j_n}\left\{W(\Lambda,p)\right\}=\sqrt{\frac{p^0}{(\Lambda p)^0}}\sum_{\bar{a}\bar{b}}\mathscr{D}_{\bar{a}\bar{b};ab}(\Lambda)v_{ab}(\boldsymbol{p},\sigma)
+    \end{align}
 \end{subequations}
 首先确定系数的选择；考虑剩下的两组Poincar\'e变换，依次考察$\operatorname{Boost}$和$\operatorname{Rotation}$；
-\topictitle{Boost}
+\paragraph*{Boost} 
 \begin{itemize}
-  \item 令$p^\mu=(p^0,\boldsymbol{p})$，也就是任意动量系；
-  \item 选择$\Lambda=L^{-1}(p)$是任意系到静止系标准Lorentz变换，$\Lambda p=k=(m,0,0,0)$；
+  \item 令$p^\mu=(m,\boldsymbol{0})$，也就是标准动量系；
+  \item 选择$\Lambda=L^(q)$是静止系到任意系的标准Lorentz变换，即$\Lambda p=q=(q^0,\boldsymbol{q})$；
 \end{itemize}
-那么：
+在这种情况下：
 \[\begin{aligned}
-    &W(\Lambda,p)=1\to\sum_{\bar{\sigma}}D_{\sigma \bar{\sigma}}^{j_n}\!\left\{W^{-1}(\Lambda,p)\right\} =1\\
-    &\qquad(\Lambda p)^0\to m^0
+    &\begin{aligned}
+    &W(\Lambda,p)=L^{-1}(\Lambda P)\Lambda L(p)\\
+    &=L^{-1}(q) L(q)=1
+    \end{aligned}\to\sum_{\bar{\sigma}}D_{\sigma \bar{\sigma}}^{j_n}\!\left\{W^{-1}(\Lambda,p)\right\} =1\\
 \end{aligned}\]
 这种情况下，系数函数表述为：
-\begin{subequations}
-    \begin{align}\label{eq:8.38a}
-       &\sum_{\bar{\sigma}}u_{ab}(\boldsymbol{p},\bar{\sigma})\delta_{\sigma\bar{\sigma}}\sqrt{\frac{p^0}{m}}
-        =\sum_{\bar{a}\bar{b}}\mathscr{D}_{ab;\bar{a}\bar{b}}(L(p))u_{\bar{a}\bar{b}}(0,\sigma)\\
-       &\sum_{\bar{\sigma}}v_{ab}(\boldsymbol{p},\bar{\sigma})\delta_{\sigma\bar{\sigma}}\sqrt{\frac{p^0}{m}}
-        =\sum_{\bar{a}\bar{b}}\mathscr{D}_{ab;\bar{a}\bar{b}}(L())v_{\bar{a}\bar{b}}(0,\sigma)
-\end{align}
+\begin{subequations}\label{u_boost_massive}
+    \begin{align}
+        &\sum_{\bar{\sigma}}u_{\bar{a}\bar{b}}( \boldsymbol{q},\bar{\sigma})\delta_{\bar{\sigma}\sigma}=\sqrt{\frac{m}{q^0}}\sum_{\bar{a}\bar{b}}\mathscr{D}_{\bar{a}\bar{b};ab}(\Lambda)u_{ab}(\boldsymbol{0},\sigma)
+        \\
+        &\sum_{\bar{\sigma}}v_{\bar{a}\bar{b}}( \boldsymbol{q},\bar{\sigma})\delta_{\bar{\sigma}\sigma}=\sqrt{\frac{m}{q^0}}\sum_{\bar{a}\bar{b}}\mathscr{D}_{\bar{a}\bar{b};ab}(\Lambda)v_{ab}(\boldsymbol{0},\sigma)
+    \end{align}
 \end{subequations}
-\topictitle{Rotation}
+\paragraph*{Rotation}
 \begin{itemize}
-  \item 令$p^\mu=(p^0,0,0,0)$，也就是静止系；
-  \item 选择$\Lambda=R(\theta)$也就是在静止系下保持$p^\mu=(p^0,0,0,0)$不变的旋转，那么有$R(p)=p$以及$\Lambda p=p$；
+  \item 令$p^\mu=(p^0,\boldsymbol{0})$，也就是标准动量系；
+  \item 选择$\Lambda=R(\theta)$也就是在标准系下保持$p^\mu=(p^0,0,0,0)$不变的旋转，那么有$R(p)=p$以及$\Lambda p=p$；
 \end{itemize}
 那么：
 \[W(\Lambda,p)=R\]
-\color{blue}由于$\boldsymbol{J}=\boldsymbol{A}+\boldsymbol{B}$，$Winger$的转动表征为总的自旋$\boldsymbol{J}$,
-$$ D_{\sigma\bar{\sigma}}^{(j)}(R^{-1}) = \left[ \exp\left( +i \boldsymbol{\theta}\cdot\boldsymbol{J}^{(j)} \right) \right]_{\sigma\bar{\sigma}} $$
-场的自旋拆为$\boldsymbol{A}+\boldsymbol{B}$
-\[\mathscr{D}_{{ab};\bar{a}\bar{{b}}}(R^{-1})=\left[\exp\left( +i \boldsymbol{\theta}\cdot\boldsymbol{A}+i \boldsymbol{\theta}\cdot\boldsymbol{B}\right) \right]_{{ab};\bar{a}\bar{{b}}}\]\normalcolor
+\color{blue}由于$\boldsymbol{J}=\boldsymbol{\mathcal{A}}+\boldsymbol{\mathcal{B}}$，$Winger$的转动表征为总的自旋$\boldsymbol{J}$,
+$$ D_{\bar{\sigma}\sigma}^{(j)}(R^{-1}) = \left[ \exp\left( +i \boldsymbol{\theta}\cdot\boldsymbol{J}^{(j)} \right) \right]_{\bar{\sigma}\sigma} $$
+场的自旋拆为$\boldsymbol{\mathcal{A}}+\boldsymbol{\mathcal{B}}$
+\[\mathscr{D}_{{ab};\bar{a}\bar{{b}}}(R^{-1})=\left[\exp\left( +i \boldsymbol{\theta}\cdot\boldsymbol{\mathcal{A}}+i \boldsymbol{\theta}\cdot\boldsymbol{\mathcal{B}}\right) \right]_{\bar{a}\bar{{b}};{ab}}\]\normalcolor
 在这种分解下系数函数的选择\footnote{这个方程也叫做交织方程}变为：
 \begin{subequations}\label{u_0}
     \begin{align}
             &\sum_{\bar{\sigma}} 
-            \left[ \exp\left( -i \boldsymbol{\theta}\cdot\boldsymbol{J}^{(j)} \right) \right]_{\sigma\bar{\sigma}}u_{ab}(0,\bar{\sigma}) =
+            u_{\bar{a}\bar{b}}(0,\bar{\sigma})\left[ \exp\left( -i \boldsymbol{\theta}\cdot\boldsymbol{J}^{(j)} \right) \right]_{\bar{\sigma}\sigma} =
             \sum_{\bar{a}\bar{b}}
-            \left[\exp\left(  +i \boldsymbol{\theta}\cdot\boldsymbol{A}+i \boldsymbol{\theta}\cdot\boldsymbol{B} \right) \right]_{{ab};\bar{a}\bar{{b}}}
-            u_{\bar{a}\bar{b}}(0,\sigma)
+            \left[\exp\left(  +i \boldsymbol{\theta}\cdot\boldsymbol{\mathcal{A}}+i \boldsymbol{\theta}\cdot\boldsymbol{\mathcal{B}} \right) \right]_{\bar{a}\bar{{b}};{ab}}
+            u_{ab}(0,\sigma)
             \\
             &\sum_{\bar{\sigma}} 
-            \left[ \exp\left( +i \boldsymbol{\theta}\cdot\boldsymbol{J}^{(j)} \right) \right]_{\sigma\bar{\sigma}}v_{ab}(0,\bar{\sigma}) =
+            v_{\bar{a}\bar{b}}(0,\bar{\sigma})\left[ \exp\left( +i \boldsymbol{\theta}\cdot\boldsymbol{J}^{(j)} \right) \right]_{\bar{\sigma}\sigma} =
             \sum_{\bar{a}\bar{b}}
-            \left[\exp\left(  +i \boldsymbol{\theta}\cdot\boldsymbol{A}+i \boldsymbol{\theta}\cdot\boldsymbol{B} \right) \right]_{{ab};\bar{a}\bar{{b}}}
-            v_{\bar{a}\bar{b}}(0,\sigma)
+            \left[\exp\left(  +i \boldsymbol{\theta}\cdot\boldsymbol{\mathcal{A}}+i \boldsymbol{\theta}\cdot\boldsymbol{\mathcal{B}} \right) \right]_{\bar{a}\bar{{b}};{ab}}
+            v_{ab}(0,\sigma)
             \end{align}
 \end{subequations}
 \color{blue}下面只需要在静止系中确定系数的形式；之后通过选择一个标准的$boost$来获得动量。\normalcolor
-\paragraph*{系数$u(0,\sigma)$和$v(0,\sigma)$和角动量加法}
-\medskip
-交织方程(\refeq{u_1})在$\boldsymbol{\theta}$ 在 $\boldsymbol{\theta}=0$ 处展开至一阶对比两边 $\boldsymbol{\theta}$ 的系数，，到静止系下系数函数的代数关系变为
+\topictitle{构造一般因果场}
+\paragraph*{系数$u(0,\sigma)$和$v(0,\sigma)$和角动量加法}交织方程(\refeq{u_0})在$\boldsymbol{\theta}$ 在 $\boldsymbol{\theta}=0$ 处展开至一阶对比两边 $\boldsymbol{\theta}$ 的系数，到静止系下系数函数的代数关系变为
 \begin{subequations}
     \begin{align}
-       -\sum_{\bar{\sigma}} u_{ab}(0,\bar{\sigma}) \left[ \boldsymbol{J}^{(j)} \right]_{\bar{\sigma}\sigma} &= 
-       \sum_{\bar{a}\bar{b}} \left[ \mathbf{A}_{a\bar{a}} \delta_{b\bar{b}} + \delta_{a\bar{a}} \mathbf{B}_{b\bar{b}} \right] u_{\bar{a}\bar{b}}(0,\sigma)
+       -\sum_{\bar{\sigma}} u_{\bar{a}\bar{b}}(0,\bar{\sigma}) \left[ \boldsymbol{J}^{(j)} \right]_{\bar{\sigma}\sigma} &= 
+       \sum_{\bar{a}\bar{b}} \left[ \boldsymbol{\mathcal{A}}_{\bar{a}a} \delta_{\bar{b}b} + \delta_{\bar{a}a} \boldsymbol{\mathcal{B}}_{\bar{b}b} \right] u_{ab}(0,\sigma)
         \\
-        +\sum_{\bar{\sigma}} v_{ab}(0,\bar{\sigma}) \left[ \boldsymbol{J}^{(j)} \right]_{\bar{\sigma}\sigma} &= 
-        \sum_{\bar{a}\bar{b}} \left[ \mathbf{A}_{a\bar{a}} \delta_{b\bar{b}} + \delta_{a\bar{a}} \mathbf{B}_{b\bar{b}} \right] v_{\bar{a}\bar{b}}(0,\sigma)
+        +\sum_{\bar{\sigma}} v_{\bar{a}\bar{b}}(0,\bar{\sigma}) \left[ \boldsymbol{J}^{(j)} \right]_{\bar{\sigma}\sigma} &= 
+        \sum_{\bar{a}\bar{b}} \left[ \boldsymbol{\mathcal{A}}_{\bar{a}a} \delta_{\bar{b}b} + \delta_{\bar{a}a} \boldsymbol{\mathcal{B}}_{\bar{b}b} \right] v_{ab}(0,\sigma)
     \end{align}
 \end{subequations}
-\color{blue}这是一个极其深刻的物理方程。这是两个角动量算符的直积之和：$\boldsymbol{J}^{(A)} \otimes \mathbb{I} + \mathbb{I} \otimes \boldsymbol{J}^{(B)}$；而等式左边则是单一的总角动量算符 $\boldsymbol{J}^{(j)}$。实际上,系数 $v_{ab}(0, \sigma)$ 的等式，本质上就是角动量相加方法\normalcolor。为了清晰地展现这一点，首先明确系统的两种物理表象：
+\color{blue}这是一个极其深刻的物理方程。这是两个角动量算符的直积之和：$\boldsymbol{\mathcal{A}} \otimes \mathbb{I} + \mathbb{I} \otimes \boldsymbol{\mathcal{B}}$；而等式左边则是单一的总角动量算符 $\boldsymbol{J}^{(j)}$。实际上,系数 $v_{ab}(0, \sigma)$ 的等式，本质上就是角动量相加方法\normalcolor。为了清晰地展现这一点，首先明确系统的两种物理表象：
 \begin{enumerate}
     \item 非耦合表象：
     场的洛伦兹张量指标 $(a,b)$ 属于表示空间 $V_A \otimes V_B$。如果我们将 $A$ 和 $B$ 视为两个独立的子系统，，对应的正交归一基底为：
@@ -162,7 +131,7 @@ V^{(j)} .
 \end{equation}
 利用角动量态在反演下的相因子变换性质，及 C-G 系数的内在对称性，可以推导出 $v_{ab}$ 对应于物理自旋方向相反的态，带有一个标准的 Condon-Shortley 相位：
 \begin{equation}
-    u_{ab}(0,\bar{\sigma}) = \xi^{AB} \, (-1)^{j-\bar{\sigma}} \langle A, a ; B, b \,|\, j, -\bar{\sigma} \rangle
+    v_{ab}(0,\bar{\sigma}) = \xi^{AB} \, (-1)^{j-\bar{\sigma}} \langle A, a ; B, b \,|\, j, -\bar{\sigma} \rangle
     \label{eq:v_CG}
 \end{equation}
 其中 $\xi^{AB}$ 是与粒子的内禀宇称和场定义相关的纯相因子（通常取为 $\pm 1$ 或 $\pm i$）
@@ -170,38 +139,36 @@ V^{(j)} .
 \medskip
 已经确定了静止参考系下的系数 $V_{ab}(0, \sigma)$ 正比于 C-G 系数。那么如何获得具有任意有限动量 $\boldsymbol{p}$ 的物理态系数 $u_{ab}(\boldsymbol{p}, \sigma)$？ 
 
-采取的办法是做一个$boost$获得有限动，由于 $\mathscr{D}(\Lambda)$ 是洛伦兹群的表示矩阵，满足 $\mathscr{D}(L(p)) \mathscr{D}(L^{-1}(p)) = \mathbb{I}$。我们在方程\eqref{eq:8.38a} 两边同时左乘 $\mathscr{D}(L(p))$，以解出动量为 $\boldsymbol{p}$ 时的场系数：
+采取的办法是做一个$boost$获得有限动，利用(\refeq{u_boost_massive})
 \begin{equation}
-    \sum_{\bar{\sigma}}v_{ab}(\boldsymbol{p},\bar{\sigma})\delta_{\sigma\bar{\sigma}}
-        =\sqrt{\frac{m}{p^0}}\sum_{\bar{a}\bar{b}}\mathscr{D}_{ab;\bar{a}\bar{b}}(L(p))v_{\bar{a}\bar{b}}(0,\sigma)
-    \label{eq:u_boosted}
+  \sum_{\bar{\sigma}}v_{\bar{a}\bar{b}}( \boldsymbol{q},\bar{\sigma})\delta_{\bar{\sigma}\sigma}=\sqrt{\frac{m}{q^0}}\sum_{\bar{a}\bar{b}}\mathscr{D}_{\bar{a}\bar{b};ab}(\Lambda)v_{ab}(\boldsymbol{0},\sigma)
 \end{equation}
 物理图像到这里变得无比清晰：\color{blue}要构造一个动量为 $\boldsymbol{p}$、自旋投影为 $\sigma$ 的系数函数，我们只需要先在静止系用 C-G 系数把它“拼装”出来，然后再用一个标准的洛伦兹 Boost 矩阵 $\mathscr{D}(L(p))$ 把整个张量“加速”到动量 $p$ 即可。\normalcolor
 
-为了让这个公式具备实际的可计算性，需要写出 $\mathscr{D}(L(p))$ 在 $(A,B)$ 表示下的具体指数形式。设 Boost 的快度矢量为 $\boldsymbol{\phi} = \hat{\boldsymbol{p}} \text{arctanh}(|\boldsymbol{p}|/p^0)$\footnote{
-为了计算有限动量态的旋量系数，引入了“Rapidity” $\phi$ 作为核心参数，其定义为：
-\begin{align*}
-    \cosh\phi &= \frac{\sqrt{\boldsymbol{k}^2+m^2}}{m} \\
-    \sinh\phi&= \frac{|\boldsymbol{k}|}{m}
-\end{align*}
-这种参量化的最大物理优势在于，同向的 Boost 变换具有简单的加法性质：$L(\bar{\phi})L(\phi) = L(\bar{\phi}+\phi)$。
-}对应的生成元为 $\boldsymbol{K}$。在 $(A,B)$ 表示中，生成元满足：
+为了让这个公式具备实际的可计算性，需要写出 $\mathscr{D}(L(p))$ 在 $(A,B)$ 表示下的具体指数形式。设 Boost 的快度矢量为 $\boldsymbol{\phi} = \hat{\boldsymbol{p}} \text{arctanh}(|\boldsymbol{p}|/p^0)$对应的生成元为 $\boldsymbol{K}$。在 $(A,B)$ 表示中，生成元满足：
 \begin{equation}
-    \boldsymbol{J} = \mathbf{A} + \mathbf{B}, \quad \boldsymbol{k} = -i\mathbf{A} + i\mathbf{B}
+    \boldsymbol{J} = \boldsymbol{\mathcal{A}} + \boldsymbol{\mathcal{B}}, \quad \boldsymbol{K} = -i\boldsymbol{\mathcal{A}} + i\boldsymbol{\mathcal{B}}
 \end{equation}
 所以，有限 Boost 操作的表示矩阵可以彻底分解为左右两部分的张量积：
 \begin{align}
-    \mathscr{D}\bigl(L(q)\bigr) &= \exp\left( -i \boldsymbol{\phi} \cdot \boldsymbol{k} \right) \nonumber \\
-    &= \exp\left( -i \boldsymbol{\phi} \cdot (-i\mathbf{A} + i\mathbf{B}) \right) \nonumber \\
-    &= \exp\left( -\boldsymbol{\phi} \cdot \mathbf{A} \right) \otimes \exp\left( +\boldsymbol{\phi} \cdot \mathbf{B} \right)
+    \mathscr{D}\bigl(L(q)\bigr) &= \exp\left( -i \boldsymbol{\phi} \cdot \boldsymbol{K} \right) \nonumber \\
+    &= \exp\left( -i \boldsymbol{\phi} \cdot (-i\boldsymbol{\mathcal{A}} + i\boldsymbol{\mathcal{B}}) \right) \nonumber \\
+    &= \exp\left( -\boldsymbol{\phi} \cdot \boldsymbol{\mathcal{A}} \right) \otimes \exp\left( +\boldsymbol{\phi} \cdot \boldsymbol{\mathcal{B}} \right)
 \end{align}
-将此矩阵代入 \eqref{eq:u_boosted}，结合静止系下的 C-G 系数结果，最终得到了场论中\textbf{最一般的动力学系数展开式}：
+具体矩阵形式参考(\refeq{eq:general-boost}).
+将此矩阵代入 \eqref{u_boost_massive}，结合静止系下的 C-G 系数结果，最终得到了场论中\textbf{最一般的动力学系数展开式}：
 \begin{equation}
-   \sum_{\bar{\sigma}} v_{ab}(\boldsymbol{p}, \bar{\sigma}) \delta_{\sigma\bar{\sigma}}= \frac{1}{\sqrt{2p^0}} \sum_{\bar{a}\bar{b}} \left[ e^{-\boldsymbol{\phi} \cdot \mathbf{A}} \right]_{a\bar{a}} \left[ e^{+\boldsymbol{\phi} \cdot \mathbf{B}} \right]_{b\bar{b}} \langle A,a; B,b \,|\, j,\bar{\sigma} \rangle
+   \sum_{\bar{\sigma}} v_{ab}(\boldsymbol{q}, \bar{\sigma}) \delta_{\sigma\bar{\sigma}}= \frac{1}{\sqrt{2q^0}} \sum_{\bar{a}\bar{b}} \left[ e^{-\boldsymbol{\phi} \cdot \boldsymbol{\mathcal{A}}} \right]_{a\bar{a}} \left[ e^{+\boldsymbol{\phi} \cdot \boldsymbol{\mathcal{B}}} \right]_{b\bar{b}} \langle A,a; B,b \,|\, j,\bar{\sigma} \rangle
 \end{equation}
 而反粒子对应的系数的是：
 \begin{equation}
-    u_{ab}(\boldsymbol{p}, \sigma)=(-)^{j+\sigma}v_{ab}(\boldsymbol{p}, -\sigma)
+    u_{ab}(\boldsymbol{q}, \sigma)=(-)^{j+\sigma}v_{ab}(\boldsymbol{q}, -\sigma)
+\end{equation}
+最终给出场的一般形式：
+\begin{equation}
+  \Psi_{ab}(x) = \frac{1}{(2\pi)^{3/2}}\sum_{\sigma}\int d^{3}p\,
+  \bigl\{\xi_{ab}\,(-)^{j-\sigma}v_{ab}(\boldsymbol{p}, \sigma)\,a^{c\dagger}(\boldsymbol{p},\sigma)\,e^{-ip\cdot x}
+  + \lambda_{ab}\,v_{ab}(\boldsymbol{p},\sigma)\,a(\boldsymbol{p},\sigma)\,e^{ip\cdot x}\bigr\}
 \end{equation}
 \topictitle{微观因果性和统计性质}
 微观因果性的要求是：对于任意空间分离的事件 $x$ 和 $y$，场算符 $\Psi_{ab}(x)$ 和 $\widetilde{\Psi}_{cd}(y)$ 的（反）对易子必须为零：
@@ -224,7 +191,6 @@ V^{(j)} .
 \end{align}
 \end{subequations}
 基本（反）对易关系是：
-
 \begin{subequations}
   \begin{align}
       &[a(\boldsymbol{p},\sigma),\,a^{\dagger}(\boldsymbol{q},\sigma')]_{\mp}
@@ -233,7 +199,6 @@ V^{(j)} .
       = \mp\,\delta^{3}(\boldsymbol{p}-\boldsymbol{q})\,\delta_{\sigma\sigma'}\;,
   \end{align}
 \end{subequations}
-
 \hrule
 \vspace{2ex}
 将其与 $\Psi_{ab}(x)$ 代入 (反) 对易子。由于交叉项（产生与产生、湮灭与湮灭）的对易子为零，即 $[a, a^c]_{\mp} = 0$ 与 $[a^{c\dagger}, a^\dagger]_{\mp} = 0$，展开后仅保留两项：

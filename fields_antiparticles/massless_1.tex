@@ -1,0 +1,559 @@
+
+\subsection{光子场}
+\topictitle{螺旋度与表示的对应}
+由 3.4 节的核心结果 (3.93), $(A,B)$ 表示中零质量粒子的螺旋度为 $\lambda = B - A$。
+对于自旋-1 粒子 ($\lambda = \pm 1$), 有两种最小的不可约表示：
+\begin{center}
+\begin{tabular}{c c c}
+\hline
+表示 & $\lambda$ & 物理含义 \\
+\hline
+$(1,0)$ & $0-1=-1$ & 反自对偶 (anti-self-dual) \\
+$(0,1)$ & $1-0=+1$ & 自对偶 (self-dual) \\
+\hline
+\end{tabular}
+\end{center}
+由 3.2 节关于空间反演的讨论, 宇称变换将 
+$$\mathbb{P}:(A,B) \to (B,A)\to\mathbb{P}: (1,0) \leftrightarrow (0,1)$$
+因此, 为了保持空间反演对称性, 必须取直和表示
+\begin{equation}
+    (1,0) \oplus (0,1)
+\end{equation}
+这是一个 $3+3=6$ 维表示, 恰好对应四维反对称张量 $f_{\mu\nu} = -f_{\nu\mu}$ 的 6 个独立分量。
+在标准动量 $k^\mu=(\kappa,0,0,\kappa)$ 处, 系数函数由 ISO(2) 约束和 CG 系数完全确定,
+结果极其简单——仅一个分量非零, 值为 $1/\sqrt{2|\boldsymbol{p}|}$。
+推广到任意动量, 一般公式给出
+\begin{equation}
+    v_{ab}(\mathbf{k},\lambda) = \sqrt{\frac{1}{2k^0}}
+    \sum_{\bar{a}\bar{b}}
+    \bigl[R(\hat{k})\bigr]_{a\bar{a}}\,
+    \bigl[R(\hat{k})\bigr]_{b\bar{b}}\,
+    \langle A,-A;\,B,+B\,|\,j,\lambda\rangle
+    \tag{3.108}
+\end{equation}
+其中 $R(\hat{k})$ 是将 $\hat{z}$ 旋转到 $\hat{k}$ 方向的旋转矩阵,
+作用在球面基指标 $a$ 和 $b$ 上。
+最重要的问题是：如何将 (3.108) 中的指标 $(a,b)$ 转换到时空指标 $\mu\nu$ 上。
+
+
+\paragraph*{自对偶与反自对偶分解。}
+四维反对称张量 $f_{\mu\nu}=-f_{\nu\mu}$ 有 6 个独立分量, 
+恰好可以组织为两组三维矢量。约定
+\begin{subequations}\label{eq:EB-def}
+\begin{align}
+    E_i &\equiv f_{0i} \\
+    B_k &\equiv -\tfrac{1}{2}\epsilon_{ijk}f_{ij}
+\end{align}
+\end{subequations}
+即 $f_{ij} = -\epsilon_{ijk}B_k$, 
+逆关系 $B_k = \frac{1}{2}\epsilon_{ijk}f_{ij}$ 
+($B_1 = f_{32}$, $B_2 = f_{13}$, $B_3 = f_{21}$)。
+将全部分量列出：
+\begin{equation}
+    f_{\mu\nu} = \begin{pmatrix}
+    0 & E_1 & E_2 & E_3 \\
+    -E_1 & 0 & -B_3 & B_2 \\
+    -E_2 & B_3 & 0 & -B_1 \\
+    -E_3 & -B_2 & B_1 & 0
+    \end{pmatrix}
+    \label{eq:f-matrix}
+\end{equation}
+定义 $f_{\mu\nu}$ 的 Hodge 对偶张量为
+\begin{equation}
+    (\star f)_{\mu\nu} \equiv \tfrac{1}{2}\,\epsilon_{\mu\nu\rho\sigma}\,f^{\rho\sigma}
+    \label{eq:hodge-def}
+\end{equation}
+其中 $\epsilon_{0123}=-1$ ($\epsilon^{0123}=+1$)。
+显式计算：
+\begin{subequations}\label{eq:hodge-components}
+\begin{align}
+    (\star f)_{0i}
+    &= \tfrac{1}{2}\,\epsilon_{0ijk}\,f^{jk} 
+    = \tfrac{1}{2}\,\epsilon_{ijk}\,f^{jk} = B_i \\
+    (\star f)_{ij}
+    &= \tfrac{1}{2}\,\epsilon_{ij\rho\sigma}\,f^{\rho\sigma}
+    = \epsilon_{ij0k}\,f^{0k}
+    = -\epsilon_{ijk}\,f^{0k} = \epsilon_{ijk}\,E_k
+\end{align}
+\end{subequations}
+对偶张量具有与 (\ref{eq:f-matrix}) 相同的结构, 
+但 $\boldsymbol{E}$ 和 $\boldsymbol{B}$ 互换并带上符号：
+\begin{equation}
+    (\star f)_{\mu\nu}: \quad \boldsymbol{E} \to \boldsymbol{B}, \qquad 
+    \boldsymbol{B} \to -\boldsymbol{E}
+    \label{eq:hodge-EB}
+\end{equation}
+矩阵形式为
+\begin{equation}
+    (\star f)_{\mu\nu} = \begin{pmatrix}
+    0 & B_1 & B_2 & B_3 \\
+    -B_1 & 0 & E_3 & -E_2 \\
+    -B_2 & -E_3 & 0 & E_1 \\
+    -B_3 & E_2 & -E_1 & 0
+    \end{pmatrix}
+\end{equation}
+Hodge 对偶的平方：再作用一次,
+\begin{equation}
+    \star^2 f_{\mu\nu} = \tfrac{1}{2}\epsilon_{\mu\nu\rho\sigma}
+    \bigl(\tfrac{1}{2}\epsilon^{\rho\sigma\alpha\beta} f_{\alpha\beta}\bigr)
+    = -f_{\mu\nu}
+    \label{eq:hodge-squared}
+\end{equation}
+(闵氏时空中 Hodge 对偶平方为 $-1$)。
+由于 $\star^2=-1$, 算符 $i\star$ 满足 $(i\star)^2=1$, 本征值为 $\pm 1$。
+投影算符
+\begin{equation}
+    \mathbb{P}^\pm_{\mu\nu}{}^{\rho\sigma}
+    = \tfrac{1}{2}\bigl(
+    \delta^\rho_\mu\delta^\sigma_\nu - \delta^\rho_\nu\delta^\sigma_\mu
+    \pm \tfrac{i}{2}\,\epsilon_{\mu\nu}{}^{\rho\sigma}\bigr)
+\end{equation}
+满足 $\mathbb{P}^++\mathbb{P}^-=\mathbb{I}$,
+$\mathbb{P}^+\mathbb{P}^-=0$, $(\mathbb{P}^\pm)^2=\mathbb{P}^\pm$,
+给出分解
+\begin{subequations}\label{eq:f-pm-decomp}
+\begin{align}
+    f^\pm_{\mu\nu} &\equiv \mathbb{P}^\pm_{\mu\nu}{}^{\rho\sigma} f_{\rho\sigma}
+    = \tfrac{1}{2}\bigl(f_{\mu\nu} \pm i(\star f)_{\mu\nu}\bigr) \\
+    f_{\mu\nu} &= f^+_{\mu\nu} + f^-_{\mu\nu}, \qquad
+    i\star f^\pm_{\mu\nu} = \pm f^\pm_{\mu\nu}
+\end{align}
+\end{subequations}
+在三维矢量语言下, 该分解对应 Riemann--Silberstein 复矢量
+\begin{equation}
+    \boldsymbol{f}^{\,\pm} = \tfrac{1}{2}(\boldsymbol{E} \pm i\boldsymbol{B})
+    \label{eq:RS-def}
+\end{equation}
+满足 $\boldsymbol{f}^{\,-}=(\boldsymbol{f}^{\,+})^*$。
+
+
+\paragraph*{6 维表示空间的不可约分解。}
+上面的分解 (\ref{eq:RS-def}) 是代数定义。
+现在验证 $\boldsymbol{f}^{\,+}$ 确实按 $(0,1)$ 变换, 
+$\boldsymbol{f}^{\,-}$ 按 $(1,0)$ 变换。
+
+沿 $z$ 方向快度为 $\phi$ 的标准 boost 下,
+$f'_{\mu\nu}=\Lambda^\rho_{\ \mu}\Lambda^\sigma_{\ \nu}f_{\rho\sigma}$ 给出
+\begin{subequations}\label{eq:boost-EB}
+\begin{align}
+    E'_1 &= \cosh\phi\,E_1 - \sinh\phi\,B_2, &\quad 
+    E'_2 &= \cosh\phi\,E_2 + \sinh\phi\,B_1, &\quad 
+    E'_3 &= E_3 \label{eq:boost-E}\\
+    B'_1 &= \sinh\phi\,E_2 + \cosh\phi\,B_1, &\quad  
+    B'_2 &= -\sinh\phi\,E_1 + \cosh\phi\,B_2, &\quad  
+    B'_3 &= B_3 \label{eq:boost-B}
+\end{align}
+\end{subequations}
+boost 混合 $\boldsymbol{E}$ 和 $\boldsymbol{B}$, 
+而旋转把 $\boldsymbol{E}$ 和 $\boldsymbol{B}$ 各自内部旋转——
+6 维空间 $(\boldsymbol{E},\boldsymbol{B})$ 在 Lorentz 群下不是不可约的。
+计算 $f'^+_1=\frac{1}{2}(E'_1+iB'_1)$：
+\begin{align}
+    f'^+_1 &= \tfrac{1}{2}\bigl[(\cosh\phi\,E_1-\sinh\phi\,B_2)
+    +i(\sinh\phi\,E_2+\cosh\phi\,B_1)\bigr] \nonumber\\
+    &= \tfrac{1}{2}\bigl[\cosh\phi\,(E_1+iB_1)+i\sinh\phi\,(E_2+iB_2)\bigr]
+    = \cosh\phi\,f^+_1 + i\sinh\phi\,f^+_2
+\end{align}
+类似地
+$f'^+_2 = i\sinh\phi\,f^+_1+\cosh\phi\,f^+_2$, $f'^+_3=f^+_3$。
+$\boldsymbol{f}^{\,+}$ 的三个分量只和自己混合, 完全不涉及 $\boldsymbol{f}^{\,-}$;
+$\boldsymbol{f}^{\,-}$ 同理 ($i\to-i$)。
+6 维空间在 boost 下分裂为两个 3 维不变子空间。
+
+旋转不区分 $\boldsymbol{E}$ 和 $\boldsymbol{B}$,
+因此 $\boldsymbol{f}^{\,\pm}$ 的旋转生成元都是 $j=1$ 角动量矩阵 $J_i^{(1)}$,
+在 Cartesian 基下 $(J^{(1)}_k)_{ij}=-i\epsilon_{kij}$。
+但 Cartesian 基不是 $J_3$ 的本征态——
+$J^{(1)}_3$ 的显式形式为
+\begin{equation}
+    J^{(1)}_3 = \begin{pmatrix} 0&-i&0\\i&0&0\\0&0&0 \end{pmatrix}
+    \qquad\Longrightarrow\qquad
+    J^{(1)}_3 \begin{pmatrix} f_1\\f_2\\f_3 \end{pmatrix}
+    = \begin{pmatrix} -if_2\\if_1\\0 \end{pmatrix}
+\end{equation}
+为对角化 $J_3$, 引入球面基
+\begin{subequations}\label{eq:spherical-basis}
+\begin{align}
+    f_+ &\equiv -\tfrac{1}{\sqrt{2}}(f_1+if_2), &\quad
+    f_0 &\equiv f_3, &\quad
+    f_- &\equiv \tfrac{1}{\sqrt{2}}(f_1-if_2)
+    \label{eq:spherical-basis-def}\\[4pt]
+    f_1 &= -\tfrac{1}{\sqrt{2}}(f_+-f_-), &\quad
+    f_2 &= -\tfrac{i}{\sqrt{2}}(f_++f_-), &\quad
+    f_3 &= f_0
+    \label{eq:spherical-basis-inv}
+\end{align}
+\end{subequations}
+直接验证
+\begin{subequations}
+    \begin{align}
+    &J_3 f_+ = -\frac{1}{\sqrt{2}}(J_3 f_1+iJ_3 f_2)= -\frac{1}{\sqrt{2}}(-if_2-f_1) = +1\cdot f_+\\
+    &J_3 f_0=0\\
+    &J_3 f_-=-1\cdot f_-
+\end{align}
+\end{subequations}
+也就是
+\begin{equation}
+    J_3\,f_m = m\,f_m, \qquad m=+1,\,0,\,-1
+    \label{eq:J3-diag}
+\end{equation}
+将 boost 变换转到球面基, 利用 (\ref{eq:spherical-basis-def})：
+\begin{subequations}\label{eq:boost-spherical}
+\begin{align}
+    f'^+_m &= e^{+m\phi}\,f^+_m \label{eq:fplus-boost}\\
+    f'^-_m &= e^{-m\phi}\,f^-_m \label{eq:fminus-boost}
+\end{align}
+\end{subequations}
+有限 boost $e^{-i\phi K_3}$ 在 $f^+_m$ 上给出 $e^{+m\phi}$,
+即 $-iK_3^{(+)}=+J_3^{(1)}$\,\footnote{%
+$J_3^{(1)}$ 在权基上 $J_3 f_m=mf_m$, 所以 $e^{+\phi J_3}f_m=e^{+m\phi}f_m$。};
+推广到三个方向\footnote{%
+对 $x,y$ 方向 boost 同理, 或由 $[J_i,K_j]=i\epsilon_{ijk}K_k$ 的代数一致性得到。}：
+\begin{subequations}\label{eq:K-on-fpm}
+\begin{align}
+    \vec{K}^{(\boldsymbol{f}^+)} &= -i\boldsymbol{J}^{(1)} \\
+    \vec{K}^{(\boldsymbol{f}^-)} &= +i\boldsymbol{J}^{(1)}
+\end{align}
+\end{subequations}
+代入 $\boldsymbol{\mathcal{A}}=\frac{1}{2}(\boldsymbol{J}-i\boldsymbol{K})$,
+$\boldsymbol{\mathcal{B}}=\frac{1}{2}(\boldsymbol{J}+i\boldsymbol{K})$：
+\begin{subequations}\label{eq:AB-identification}
+\begin{align}
+    \boldsymbol{f}^+: &\quad 
+    \mathcal{A}_i &&= \tfrac{1}{2}(J_i-i(-iJ_i)) &&= 0, &\quad
+    \mathcal{B}_i &&= \tfrac{1}{2}(J_i+i(-iJ_i)) &&= J_i 
+    &\quad\Longrightarrow\quad (0,1) \\
+    \boldsymbol{f}^-: &\quad
+    \mathcal{A}_i &&= \tfrac{1}{2}(J_i-i(+iJ_i)) &&= J_i, &\quad
+    \mathcal{B}_i &&= \tfrac{1}{2}(J_i+i(+iJ_i)) &&= 0
+    &\quad\Longrightarrow\quad (1,0)
+\end{align}
+\end{subequations}
+与 $(A,B)$ 表示的 boost 矩阵 (3.64) 
+$\mathscr{D}(L(p))=\exp(-\phi\cdot\boldsymbol{\mathcal{A}})\otimes\exp(+\phi\cdot\boldsymbol{\mathcal{B}})$ 
+一致性检验：
+\begin{subequations}\label{eq:boost-check}
+\begin{align}
+    (0,1)&: \; e^{+\phi B_3} \text{ 的本征值 } e^{+b\phi}\;(b=+1,0,-1)
+    \;\longleftrightarrow\; f'^+_m=e^{+m\phi}f^+_m \;\checkmark \\
+    (1,0)&: \; e^{-\phi A_3} \text{ 的本征值 } e^{-a\phi}\;(a=+1,0,-1)
+    \;\longleftrightarrow\; f'^-_m=e^{-m\phi}f^-_m \;\checkmark
+\end{align}
+\end{subequations}
+由此确认
+\begin{equation}
+    \boxed{
+    \underbrace{f^+_{\mu\nu}}_{(0,1),\;\lambda=+1} \oplus 
+    \underbrace{f^-_{\mu\nu}}_{(1,0),\;\lambda=-1} = f_{\mu\nu}
+    }
+    \label{eq:dictionary}
+\end{equation}
+
+
+\paragraph*{从球面基到极化矢量。}(\ref{eq:dictionary}) 建立后, 
+ISO(2) 约束 (3.91) 要求物理态锁定为：
+\begin{subequations}\label{eq:ISO2-select}
+\begin{align}
+    \lambda=+1,\;(0,1): &\quad a=0,\;b=+1 
+    \quad\Longrightarrow\quad \text{仅 }f^+_+\text{ 存活} \\
+    \lambda=-1,\;(1,0): &\quad a=-1,\;b=0 
+    \quad\Longrightarrow\quad \text{仅 }f^-_-\text{ 存活}
+\end{align}
+\end{subequations}
+在标准动量处, 全部场强信息被编码在唯一一个球面基分量中。
+下面将球面基还原为 Cartesian 分量, 分别处理两种螺旋度。
+
+$\lambda=+1$: 仅 $(0,1)$ 扇区的 $b=+1$ 非零, $(1,0)$ 扇区不贡献, 
+即 $\boldsymbol{f}^-=0$。
+由 (\ref{eq:spherical-basis-def}), 
+$|b=+1\rangle = -\frac{1}{\sqrt{2}}(\hat{e}_1+i\hat{e}_2)$, 
+这给出了 $\boldsymbol{f}^+$ 的 Cartesian 方向。
+由逆关系 (\ref{eq:RS-def}):
+\begin{equation}
+    \boldsymbol{E} = \boldsymbol{f}^+ + \underbrace{\boldsymbol{f}^-}_{=0} 
+    = \boldsymbol{f}^+, \qquad
+    \boldsymbol{B} = -i(\boldsymbol{f}^+ - \underbrace{\boldsymbol{f}^-}_{=0}) 
+    = -i\boldsymbol{f}^+ = -i\boldsymbol{E}
+\end{equation}
+因此 $\boldsymbol{E}$ 的方向就是 $\boldsymbol{f}^+$ 的方向：
+\begin{equation}
+    \boldsymbol{E} = \boldsymbol{f}^+ 
+    \propto -\tfrac{1}{\sqrt{2}}(\hat{e}_1+i\hat{e}_2) 
+    = \tfrac{1}{\sqrt{2}}(-1,-i,0)
+    \label{eq:E-plus}
+\end{equation}
+
+$\lambda=-1$: 仅 $(1,0)$ 扇区的 $a=-1$ 非零, $(0,1)$ 扇区不贡献, 
+即 $\boldsymbol{f}^+=0$。
+由 (\ref{eq:spherical-basis-def}), 
+$|a=-1\rangle = \frac{1}{\sqrt{2}}(\hat{e}_1-i\hat{e}_2)$, 
+这给出了 $\boldsymbol{f}^-$ 的 Cartesian 方向。
+由逆关系 (\ref{eq:RS-def}):
+\begin{equation}
+    \boldsymbol{E} = \underbrace{\boldsymbol{f}^+}_{=0} + \boldsymbol{f}^- 
+    = \boldsymbol{f}^-, \qquad
+    \boldsymbol{B} = -i(\underbrace{\boldsymbol{f}^+}_{=0} - \boldsymbol{f}^-) 
+    = +i\boldsymbol{f}^- = +i\boldsymbol{E}
+\end{equation}
+因此
+\begin{equation}
+    \boldsymbol{E} = \boldsymbol{f}^- 
+    \propto \tfrac{1}{\sqrt{2}}(\hat{e}_1-i\hat{e}_2)
+    = \tfrac{1}{\sqrt{2}}(+1,-i,0)
+    \label{eq:E-minus}
+\end{equation}
+
+两种螺旋度的结果可以对比写为
+\begin{subequations}\label{eq:E-from-spherical}
+\begin{align}
+    \lambda=+1: &\quad \boldsymbol{E} \propto \tfrac{1}{\sqrt{2}}(-1,-i,0), 
+    \qquad \boldsymbol{B} = -i\boldsymbol{E} \\
+    \lambda=-1: &\quad \boldsymbol{E} \propto \tfrac{1}{\sqrt{2}}(+1,-i,0),
+    \qquad \boldsymbol{B} = +i\boldsymbol{E}
+\end{align}
+\end{subequations}
+$\lambda=+1$ 对应 $\boldsymbol{E}$ 和 $\boldsymbol{B}$ 右旋旋转 (球面基 $m=+1$), 
+$\lambda=-1$ 对应左旋 ($m=-1$)——
+这正是圆极化的定义。
+
+\paragraph*{从三维极化方向到四维极化矢量。}
+在标准动量 $k^\mu=(\kappa,0,0,\kappa)$ 处, 光子沿 $z$ 传播,
+电场在横向平面 $xy$ 内振荡。
+(\ref{eq:E-from-spherical}) 给出空间分量, 
+纵向分量 $\epsilon^3=0$ (电场垂直于传播方向),
+时间分量由横向性 $k_\mu\epsilon^\mu=0$ 确定：
+\begin{equation}
+    k_\mu\epsilon^\mu = \kappa\,\epsilon^0 - \kappa\,\underbrace{\epsilon^3}_{=0} = 0
+    \quad\Longrightarrow\quad \epsilon^0=0
+\end{equation}
+四维极化矢量为
+\begin{subequations}\label{eq:circ-pol}
+\begin{align}
+    \epsilon^\mu(+1) &= \tfrac{1}{\sqrt{2}}(0,-1,-i,0) \\
+    \epsilon^\mu(-1) &= \tfrac{1}{\sqrt{2}}(0,+1,-i,0)
+\end{align}
+\end{subequations}
+满足 $k\cdot\epsilon=0$, $\epsilon\cdot\epsilon^*=-1$,
+$J_3\epsilon(\lambda)=\lambda\epsilon(\lambda)$。
+圆极化矢量不是凭空约定的, 而是球面基 + ISO(2) 约束嵌入四维的唯一产物：
+\begin{equation*}
+    \underbrace{J_3\text{ 对角化}}_{\text{球面基}}
+    \xrightarrow{\;\text{ISO(2)}\;}
+    \underbrace{|m=\pm 1\rangle\text{ 存活}}_{\text{圆极化方向}}
+    \xrightarrow{\;\text{嵌入四维}\;}
+    \underbrace{\epsilon^\mu(\lambda)}_{\text{极化矢量}}
+\end{equation*}
+
+
+\paragraph*{构造反对称极化张量。}
+用 $k_\mu$ 和 $\epsilon_\mu$ 构造反对称张量, 
+约束为
+\begin{enumerate}
+    \item $e_{\mu\nu}=-e_{\nu\mu}$;
+    \item $k^\mu e_{\mu\nu}=0$;
+    \item $\lambda=+1$ 自对偶, $\lambda=-1$ 反自对偶。
+\end{enumerate} 
+最一般的反对称组合为\footnote{%
+$k_\mu k_\nu$ 和 $\epsilon_\mu\epsilon_\nu$ 反对称化后为零, 
+故已是最一般形式。两项均自动满足横向性。}
+\begin{equation}
+    e_{\mu\nu} = \alpha\,\underbrace{(k_\mu\epsilon_\nu-k_\nu\epsilon_\mu)}_{T^{(1)}_{\mu\nu}}
+    +\beta\,\underbrace{\epsilon_{\mu\nu\rho\sigma}k^\rho\epsilon^\sigma}_{T^{(2)}_{\mu\nu}}
+    \label{eq:general-ansatz}
+\end{equation}
+圆极化矢量已编码对偶性——
+在标准动量处直接计算\footnote{%
+以 $\lambda=+1$ 为例:
+$T^{(2)}_{01}=\epsilon_{0132}k^3\epsilon^2(+1)
+=(+1)\kappa\frac{-i}{\sqrt{2}}=\frac{-i\kappa}{\sqrt{2}}$;
+$T^{(1)}_{01}=k_0\epsilon_1(+1)=\kappa\frac{1}{\sqrt{2}}$;
+比值 $T^{(2)}_{01}/T^{(1)}_{01}=-i$。其余分量同。}验证：
+\begin{equation}
+    \epsilon_{\mu\nu\rho\sigma}k^\rho\epsilon^\sigma(\lambda)
+    = -i\lambda(k_\mu\epsilon_\nu(\lambda)-k_\nu\epsilon_\mu(\lambda))
+    \label{eq:duality-auto}
+\end{equation}
+代入 (\ref{eq:general-ansatz}):
+$e_{\mu\nu}=(\alpha-i\lambda\beta)T^{(1)}$, 
+两项合并为同一结构, 只剩一个自由常数。
+选取 $\alpha=i$, $\beta=0$\,\footnote{%
+$\beta\neq 0$ 由 (\ref{eq:duality-auto}) 不改变 $e_{\mu\nu}$ 的值。
+$\alpha=i$ 使 $e_{0i}$ 直接给出电场极化 (差 $k^0$ 因子)。}:
+\begin{equation}
+    \boxed{e_{\mu\nu}(\mathbf{k},\lambda)
+    = i\bigl(k_\mu\epsilon_\nu(\mathbf{k},\lambda)
+    -k_\nu\epsilon_\mu(\mathbf{k},\lambda)\bigr)}
+    \label{eq:pol-tensor}
+\end{equation}
+形式上与 $\partial_\mu A_\nu-\partial_\nu A_\mu$ 在动量空间相同,
+但 $A_\mu$ 尚未引入——(\ref{eq:pol-tensor}) 完全来自
+$(1,0)\oplus(0,1)$ 的表示论。
+
+\paragraph*{验证自对偶性。}
+以 $\lambda=+1$ 为例, 取 $k^\mu=(\kappa,0,0,\kappa)$,
+$\epsilon_\mu=\eta_{\mu\nu}\epsilon^\nu=\frac{1}{\sqrt{2}}(0,1,i,0)$。
+由 (\ref{eq:pol-tensor}) 计算\footnote{%
+$k_3=\eta_{33}k^3=-\kappa$, 所以 $e_{3i}=-e_{0i}$
+(即 $k^2=0$ 的推论)。}：
+\begin{subequations}\label{eq:e-components}
+\begin{align}
+    e_{01} &= ik_0\epsilon_1 = \tfrac{i\kappa}{\sqrt{2}}, &\quad
+    e_{02} &= ik_0\epsilon_2 = -\tfrac{\kappa}{\sqrt{2}} \\
+    e_{31} &= -ik_3\epsilon_1 = -\tfrac{i\kappa}{\sqrt{2}}, &\quad
+    e_{32} &= -ik_3\epsilon_2 = \tfrac{\kappa}{\sqrt{2}}
+\end{align}
+\end{subequations}
+读出\footnote{%
+$E_i=e_{0i}$; $B_1=e_{32}$, $B_2=e_{13}=-e_{31}$, $B_3=e_{21}=0$。}：
+\begin{subequations}\label{eq:EB-from-pol}
+\begin{align}
+    \boldsymbol{E} &= \tfrac{\kappa}{\sqrt{2}}(i,-1,0) \\
+    \boldsymbol{B} &= \tfrac{\kappa}{\sqrt{2}}(1,i,0)
+\end{align}
+\end{subequations}
+验证：
+\begin{subequations}\label{eq:self-dual-check}
+\begin{align}
+    \boldsymbol{E}+i\boldsymbol{B} &= \sqrt{2}\kappa(i,-1,0) \neq 0 \\
+    \boldsymbol{E}-i\boldsymbol{B} &= \boldsymbol{0} \quad\checkmark
+\end{align}
+\end{subequations}
+纯自对偶 $(0,1)$。$\lambda=-1$ 类似, 纯反自对偶 $(1,0)$。也就是说$\lambda=+1$ 的光子, 
+$\boldsymbol{E}$ 和 $\boldsymbol{B}$ 在横向平面内右旋旋转,
+$\boldsymbol{B}=-i\boldsymbol{E}$; 
+$\lambda=-1$ 左旋, $\boldsymbol{B}=+i\boldsymbol{E}$。
+
+
+\topictitle{场展开}
+光子是自身的反粒子 ($a^{c\dagger}=a^\dagger$),
+$(-1)^{2B}=1$ 对两个扇区均成立\footnote{%
+$(1,0)$: $B=0$, $(-1)^{2B}=1$; $(0,1)$: $B=1$, $(-1)^{2B}=1$。};
+由 (3.100), $u_{\mu\nu}=v_{\mu\nu}^*=e^*_{\mu\nu}$。场展开为
+\begin{equation}
+    \boxed{
+    f_{\mu\nu}(x) = \frac{1}{(2\pi)^{3/2}} \sum_{\lambda=\pm 1} 
+    \int \frac{d^3k}{\sqrt{2k^0}}
+    \left[e_{\mu\nu}(\mathbf{k},\lambda)\,a(\mathbf{k},\lambda)\,e^{ik\cdot x}
+    + e^*_{\mu\nu}(\mathbf{k},\lambda)\,a^\dagger(\mathbf{k},\lambda)\,e^{-ik\cdot x}\right]
+    }
+    \label{eq:f-expansion}
+\end{equation}
+其中 $k^0=|\mathbf{k}|$, 对易关系为
+\begin{subequations}\label{eq:photon-ccr}
+\begin{align}
+    [a(\mathbf{k},\lambda),\,a^\dagger(\mathbf{k}',\lambda')] 
+    &= \delta^3(\mathbf{k}-\mathbf{k}')\,\delta_{\lambda\lambda'} \\
+    [a(\mathbf{k},\lambda),\,a(\mathbf{k}',\lambda')] 
+    &= [a^\dagger(\mathbf{k},\lambda),\,a^\dagger(\mathbf{k}',\lambda')] = 0
+\end{align}
+\end{subequations}
+逐项解读：
+\begin{itemize}
+    \item $a(\mathbf{k},\lambda)\,e^{ik\cdot x}$ (正频): 湮灭动量 $\mathbf{k}$、螺旋度 $\lambda$ 的光子;
+    $a^\dagger(\mathbf{k},\lambda)\,e^{-ik\cdot x}$ (负频): 产生同一光子。
+    \item $e_{\mu\nu}$, $e^*_{\mu\nu}$: 极化张量, 编码该模式的 $\boldsymbol{E}$-$\boldsymbol{B}$ 构型。
+    \item $1/\sqrt{2k^0}$: Lorentz 不变归一化, 使 $d^3k/(2k^0)$ 构成不变测度。
+\end{itemize}
+正频与负频的同时出现是微观因果性的要求 (3.1 节 (3.22))。
+由于光子是自身的反粒子, 不需引入额外的反粒子算符。
+
+\textbf{厄米性。}对 (\ref{eq:f-expansion}) 取厄米共轭,
+$a\leftrightarrow a^\dagger$, $e_{\mu\nu}\leftrightarrow e^*_{\mu\nu}$,
+$e^{ikx}\leftrightarrow e^{-ikx}$, 恰好交换两项, 因此
+$f_{\mu\nu}^\dagger(x) = f_{\mu\nu}(x)$。
+经典极限中, 这对应 $\boldsymbol{E}$, $\boldsymbol{B}$ 是实矢量场。
+
+\textbf{经典极限。}对相干态 $|\alpha\rangle$
+($a(\mathbf{k},\lambda)|\alpha\rangle = \alpha(\mathbf{k},\lambda)|\alpha\rangle$) 取期望值,
+得到经典场强张量的 Fourier 展开。对于单色平面波, 期望值化为
+$\langle f_{\mu\nu}\rangle \propto e_{\mu\nu}(\mathbf{k}_0,\lambda)\,e^{ik_0\cdot x} + \text{c.c.}$
+——传播方向 $\hat{k}_0$、圆极化 $\lambda$ 的经典平面电磁波, 极化张量的命名由此而来。
+
+\textbf{极化求和。}利用 $e_{\mu\nu}=i(k_\mu\epsilon_\nu - k_\nu\epsilon_\mu)$ 展开：
+\begin{equation}
+    \sum_{\lambda=\pm 1} e_{\mu\nu}(\mathbf{k},\lambda)\,e^*_{\rho\sigma}(\mathbf{k},\lambda)
+    = k_\mu k_\rho\,P_{\nu\sigma} - k_\mu k_\sigma\,P_{\nu\rho}
+    - k_\nu k_\rho\,P_{\mu\sigma} + k_\nu k_\sigma\,P_{\mu\rho}
+\end{equation}
+其中 $P_{\mu\nu}=\sum_\lambda \epsilon_\mu\epsilon^*_\nu$。
+对于耦合到守恒流 $j^\mu$ ($k_\mu j^\mu=0$) 的过程,
+Ward 恒等式允许 $P_{\mu\nu}\to -\eta_{\mu\nu}$。
+
+\textbf{推广到非阿贝尔规范场。}
+上述构造对\textbf{任何}零质量自旋-1 粒子都成立, 区别仅在于内部对称性。
+对于规范群 $G$ 的规范玻色子, 场强张量携带伴随表示指标 $a=1,\ldots,\dim G$,
+极化张量 $e_{\mu\nu}$ 与色指标无关——Lorentz 结构和内部对称性完全解耦。
+对易关系推广为
+$[a^a(\mathbf{k},\lambda),\,a^{b\dagger}(\mathbf{k}',\lambda')]
+= \delta^{ab}\,\delta^3(\mathbf{k}-\mathbf{k}')\,\delta_{\lambda\lambda'}$。
+在完整的非阿贝尔理论中, 场强张量包含非线性项
+$F^a_{\mu\nu} = \partial_\mu A^a_\nu - \partial_\nu A^a_\mu + gf^{abc}A^b_\mu A^c_\nu$,
+自由场展开仅对应其线性化部分。
+
+这个场展开\textbf{不包含任何规范冗余}——
+它直接描述了光子 (或胶子) 的两个物理自由度 $\lambda=\pm 1$。
+
+\topictitle{矢量势与规范对称性}
+描述光子的另一种方式是使用四矢量场 $A^\mu$, 按 $(\frac{1}{2},\frac{1}{2})$ 表示变换。
+角动量加法 $\frac{1}{2}\otimes\frac{1}{2}=0\oplus 1$ 包含 $j=0$ 和 $j=1$ 两个扇区,
+共 4 个分量, 但光子只有 $\lambda=\pm 1$ 两个物理自由度,
+多出的分量正是规范自由度的来源。
+理解规范冗余的关键在于 Wigner 小群 $ISO(2)$。
+``平移"生成元 $\Pi_1,\Pi_2$ 在物理态上本征值为零 (排除连续自旋),
+但在四矢量表示中, 小群变换作用在 $\epsilon^\mu$ 上时产生额外项：
+\begin{equation}
+    W^\mu_{\ \nu}\,\epsilon^\nu(\mathbf{k},\lambda) =
+    e^{i\lambda\theta}\,\epsilon^\mu(\mathbf{k},\lambda) + \Omega(\theta,\alpha,\beta)\,k^\mu
+\end{equation}
+第二项 $\propto k^\mu$ 在坐标空间中对应 $A_\mu(x)\to A_\mu(x)+\partial_\mu\Omega(x)$
+——这正是规范变换。
+
+\begin{center}
+\fbox{\parbox{0.88\textwidth}{
+规范对称性不是额外施加的, 而是 Poincar\'{e} 群在零质量矢量场上表示论的自然推论。
+$ISO(2)$ 小群的``平移"生成元在物理态上本征值为零,
+但在 $A^\mu$ 上产生了 $\delta A_\mu = \partial_\mu\Omega$ 的规范变换。
+}}
+\end{center}
+
+从表示论看, 取反对称导数实现了映射
+\begin{equation}
+    \underbrace{A^\mu}_{(\frac{1}{2},\frac{1}{2})}
+    \xrightarrow{\;\partial_\mu A_\nu - \partial_\nu A_\mu\;}
+    \underbrace{f_{\mu\nu}}_{(1,0)\oplus(0,1)}
+\end{equation}
+``投射掉"了 $j=0$ 分量, 只保留 $j=1$ 的两个横向自由度。
+
+矢量势的场展开 (辐射规范 $A^0=0$, $\nabla\cdot\boldsymbol{A}=0$) 为
+\begin{equation}
+    A^\mu(x) = \frac{1}{(2\pi)^{3/2}} \sum_{\lambda=\pm 1}
+    \int \frac{d^3k}{\sqrt{2k^0}}
+    \left[\epsilon^\mu(\mathbf{k},\lambda)\,a(\mathbf{k},\lambda)\,e^{ik\cdot x}
+    + \epsilon^{*\mu}(\mathbf{k},\lambda)\,a^\dagger(\mathbf{k},\lambda)\,e^{-ik\cdot x}\right]
+\end{equation}
+其中产生湮灭算符与 (\ref{eq:f-expansion}) 中的完全相同。
+取反对称导数, 利用 $\partial_\mu e^{\pm ik\cdot x}=\pm ik_\mu e^{\pm ik\cdot x}$,
+精确回到 (\ref{eq:f-expansion}): $\partial_\mu A_\nu - \partial_\nu A_\mu = f_{\mu\nu}$
+
+\topictitle{为什么需要矢量势}
+
+$f_{\mu\nu}$ 完整描述自由光子, 引入 $A^\mu$ 的理由在于相互作用：
+
+\begin{enumerate}
+    \item 局域相互作用:
+    最小耦合 $\mathscr{H}_{\text{int}}=j^\mu A_\mu$ (维度 4, 可重整);
+    $f_{\mu\nu}$ 耦合为 $j^{\mu\nu}f_{\mu\nu}$ (维度 5, 不可重整)。
+    
+    \item 规范不变性作为代价:
+    $A^\mu$ 带来规范冗余, 需规范固定与 Faddeev-Popov 程序,
+    换来可重整性与局域性。
+    
+    \item Aharonov-Bohm 效应:
+    $\exp(ie\oint A_\mu dx^\mu)$ 在 $f_{\mu\nu}=0$ 区域仍可观测,
+    $A_\mu$ 在量子理论中有超越 $f_{\mu\nu}$ 的物理内容。
+\end{enumerate}
+
+$(1,0)\oplus(0,1)$ 提供自由光子的完整描述;
+$(\frac{1}{2},\frac{1}{2})$ 是引入相互作用的必要工具。
+
+

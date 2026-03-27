@@ -1,1 +1,385 @@
 \section{规则的推导}\label{sec:derivation-rules}
+
+出发点是 $S$-矩阵的 Dyson 级数与自由粒子态合并后的公式：
+\begin{align}
+S_{\beta\alpha} &= \langle \beta;-|\alpha;+\rangle \nonumber\\
+&= \langle \boldsymbol{p}'_1\sigma'_1 n'_1;\,\boldsymbol{p}'_2\sigma'_2 n'_2;\cdots
+\,|\,\hat{S}\,|\,\boldsymbol{p}_1\sigma_1 n_1;\,\boldsymbol{p}_2\sigma_2 n_2;\cdots\rangle \nonumber\\
+&= \sum_{N=0}^{\infty}\frac{(-i)^N}{N!}
+\int d^4x_1\cdots d^4x_N\;
+\Big\langle 0\Big|\cdots a(\boldsymbol{p}'_2,\sigma'_2,n'_2)\,a(\boldsymbol{p}'_1,\sigma'_1,n'_1) \nonumber\\
+&\qquad\times T\!\big\{\mathscr{H}(x_1)\cdots\mathscr{H}(x_N)\big\}\;
+a^\dagger(\boldsymbol{p}_1,\sigma_1,n_1)\,a^\dagger(\boldsymbol{p}_2,\sigma_2,n_2)\cdots\Big|0\Big\rangle \,.
+\label{eq:S-Dyson}
+\end{align}
+
+\noindent\textbf{记号提醒：}
+$\boldsymbol{p}$、$\sigma$、$n$ 标记粒子的动量、自旋与种类；
+加撇代表末态粒子的指标；
+$|0\rangle$ 是自由粒子真空态；
+$a$ 和 $a^\dagger$ 是湮灭算符和产生算符；
+$T$ 代表编时，使 $\mathscr{H}(x)$ 按 $x^0$ 从左到右依次递减排列；
+$\mathscr{H}(x)$ 是相互作用哈密顿量密度，取为场及其厄密伴的多项式：
+\begin{equation}
+\mathscr{H}(x) = \sum_i g_i\,\mathscr{H}_i(x)\,,
+\label{eq:H-sum}
+\end{equation}
+其中 $g_i$ 是耦合常数，
+$\mathscr{H}_i(x)$ 是每类场与其自伴的有限乘积。\textbf{例如：}
+\begin{enumerate}
+\item[\textbf{I.}]
+  费米子与玻色子的相互作用，量子电动力学、弱相互作用以及强相互作用的整个``标准模型''所有的费米相互作用都可以写成这种形式
+  \begin{equation}
+  \mathscr{H}(x) = \sum_{\ell,m,k}g_{\ell mk}\,
+    \Psi^\dagger_\ell(x)\,\Psi_m(x)\,\phi_k(x)\,,
+  \label{eq:H-I}
+  \end{equation}
+  其中 $\Psi_\ell$、$\Psi_m$ 是复费米场，
+  $\phi_k$ 是实玻色场（不必须是标量场）。
+
+\item[\textbf{II.}]
+  纯玻色子三线相互作用：
+  \begin{equation}
+  \mathscr{H}(x) = \sum_{\ell,m,n}g_{\ell mn}\,
+    \phi_\ell(x)\,\phi_m(x)\,\phi_n(x)\,.
+  \label{eq:H-II}
+  \end{equation}
+\end{enumerate}
+
+\bigskip\noindent
+\textbf{粒子与反粒子的约定.}\;
+对于武断地称为``粒子''的种类（如电子、质子等），用种类标签 $n$ 标记；
+其反粒子（如正电子、反质子等）用 $\bar{n}$ 标记。
+算符始终只有 $a$ 和 $a^\dagger$ 两种：
+\begin{itemize}
+  \item $a(\boldsymbol{p},\sigma,n)$\;湮灭种类 $n$ 的粒子；
+  \item $a^\dagger(\boldsymbol{p},\sigma,n)$\;产生种类 $n$ 的粒子；
+  \item $a(\boldsymbol{p},\sigma,\bar{n})$\;湮灭种类 $n$ 的反粒子；
+  \item $a^\dagger(\boldsymbol{p},\sigma,\bar{n})$\;产生种类 $n$ 的反粒子。
+\end{itemize}
+对于像 $\gamma$、$\pi^0$ 这样反粒子即其本身的粒子，$\bar{n}=n$。
+
+\medskip\noindent
+因果场的一般形式是：
+\begin{equation}
+\Psi_\ell(x)
+= (2\pi)^{-3/2}\sum_\sigma\int d^3p\;\Big[
+  \underbrace{u_\ell(\boldsymbol{p},\sigma,n)\;
+    a^{\dagger}(\boldsymbol{p},\sigma,\bar{n})\;e^{-ip\cdot x}
+  }_{\text{产生反粒子}\;\bar{n}}
+  +\;
+  \underbrace{v_\ell(\boldsymbol{p},\sigma,n)\;
+    a(\boldsymbol{p},\sigma,n)\;e^{ip\cdot x}
+  }_{\text{湮灭粒子}\;n}
+\Big]\,,
+\label{eq:field}
+\end{equation}
+场的厄密伴为
+\begin{equation}
+\Psi_\ell^\dagger(x)
+= (2\pi)^{-3/2}\sum_\sigma\int d^3p\;\Big[
+  \underbrace{u_\ell^*(\boldsymbol{p},\sigma,n)\;
+    a(\boldsymbol{p},\sigma,\bar{n})\;e^{ip\cdot x}
+  }_{\text{湮灭反粒子}\;\bar{n}}
+  +\;
+  \underbrace{v_\ell^*(\boldsymbol{p},\sigma,n)\;
+    a^\dagger(\boldsymbol{p},\sigma,n)\;e^{-ip\cdot x}
+  }_{\text{产生粒子}\;n}
+\Big]\,.
+\label{eq:field-dag}
+\end{equation}
+这里种类标签 $n$ 由场指标 $\ell$ 决定，在场展开中不独立。
+但在 $S$-矩阵和配对规则的外线中，$n$ 是独立的外部量子数。
+
+%=================================================================
+\topictitle{规则推导所需的配对}
+%=================================================================
+出发点是产生湮灭算符的（反）对易关系。
+由于算符只有 $a$ 和 $a^\dagger$ 两种，
+种类标签 $n$ 可取粒子种类也可取反粒子种类 $\bar{n}$，
+对易关系统一为：
+\begin{subequations}\label{eq:comm-all}
+\begin{align}
+  [a(\boldsymbol{p},\sigma,n),\;a^\dagger(\boldsymbol{p}',\sigma',n')]_\mp
+  &= \delta^{(3)}(\boldsymbol{p}-\boldsymbol{p}')\;\delta_{\sigma\sigma'}\;\delta_{nn'}\,,
+  \label{eq:comm-aad}\\[4pt]
+  [a(\boldsymbol{p},\sigma,n),\;a(\boldsymbol{p}',\sigma',n')]_\mp
+  &= [a^\dagger(\boldsymbol{p},\sigma,n),\;a^\dagger(\boldsymbol{p}',\sigma',n')]_\mp = 0\,,
+  \label{eq:comm-aa}
+\end{align}
+\end{subequations}
+其中 $n,n'$ 遍历全部种类（包括反粒子种类 $\bar{n}$）。
+利用真空湮灭：
+\begin{equation}
+  a(\boldsymbol{p},\sigma,n)\,|0\rangle = 0\,,\qquad
+  \langle 0|\,a^\dagger(\boldsymbol{p},\sigma,n) = 0\,,
+\label{eq:vacuum}
+\end{equation}
+我们把 \eqref{eq:S-Dyson} 中所有湮灭算符移到右边，
+每一次利用 $\delta$-函数项完成一次配对。
+全部可能的配对总结如下。
+
+%-------------- (1) --------------
+\bigskip\noindent
+\textbf{(1) 末态粒子与场厄密伴 $\Psi_\ell^\dagger(x)$ 配对}
+
+$\Psi_\ell^\dagger(x)$ 中产生粒子的部分
+$v_\ell^*\,a^\dagger(\boldsymbol{p},\sigma,n)\,e^{-ip\cdot x}$
+与末态粒子湮灭算符 $a(\boldsymbol{p}',\sigma',n')$ 配对：
+\begin{equation}
+  [a(\boldsymbol{p}',\sigma',n'),\;\Psi_\ell^\dagger(x)]_\mp
+  = (2\pi)^{-3/2}\;e^{-ip'\cdot x}\;v_\ell^*(\boldsymbol{p}',\sigma',n')
+\label{eq:pair1}
+\end{equation}
+
+\begin{center}
+\begin{tikzpicture}[>=stealth, scale=1.5]
+  \filldraw (0,0) circle (2pt);
+  \node[left] at (-0.2,0) {$\ell,\,x$};
+  \draw[thick, postaction={decorate},
+      decoration={markings, mark=at position 0.55 with {\arrow{>}}}]
+      (0,0) -- (0,1.8);
+  \node[right] at (0.1,1.8) {$\boldsymbol{p}',\sigma',n'$};
+  \node[right] at (1.5,0.9)
+    {$\displaystyle\frac{e^{-ip'\cdot x}\;v_\ell^*(\boldsymbol{p}',\sigma',n')}
+      {(2\pi)^{3/2}}$};
+\end{tikzpicture}
+\end{center}
+
+%-------------- (2) --------------
+\bigskip\noindent
+\textbf{(2) 末态反粒子与场 $\Psi_\ell(x)$ 配对}
+
+$\Psi_\ell(x)$ 中产生反粒子的部分
+$u_\ell\,a^\dagger(\boldsymbol{p},\sigma,\bar{n})\,e^{-ip\cdot x}$
+与末态反粒子湮灭算符 $a(\boldsymbol{p}',\sigma',\bar{n}')$ 配对：
+\begin{equation}
+  [a(\boldsymbol{p}',\sigma',\bar{n}'),\;\Psi_\ell(x)]_\mp
+  = (2\pi)^{-3/2}\;e^{-ip'\cdot x}\;u_\ell(\boldsymbol{p}',\sigma',n')
+\label{eq:pair2}
+\end{equation}
+
+\begin{center}
+\begin{tikzpicture}[>=stealth, scale=1.5]
+  \filldraw (0,0) circle (2pt);
+  \node[left] at (-0.2,0) {$\ell,\,x$};
+  \draw[thick, postaction={decorate},
+      decoration={markings, mark=at position 0.55 with {\arrow{<}}}]
+      (0,0) -- (0,1.8);
+  \node[right] at (0.1,1.8) {$\boldsymbol{p}',\sigma',\bar{n}'$};
+  \node[right] at (1.5,0.9)
+    {$\displaystyle\frac{e^{-ip'\cdot x}\;u_\ell(\boldsymbol{p}',\sigma',n')}
+      {(2\pi)^{3/2}}$};
+\end{tikzpicture}
+\end{center}
+
+\noindent
+（对于 $\gamma$、$\pi^0$ 等 $\bar{n}=n$ 的粒子，箭头省略。）
+
+%-------------- (3) --------------
+\bigskip\noindent
+\textbf{(3) 初态粒子与场 $\Psi_\ell(x)$ 配对}
+
+$\Psi_\ell(x)$ 中湮灭粒子的部分
+$v_\ell\,a(\boldsymbol{p},\sigma,n)\,e^{ip\cdot x}$
+与初态粒子产生算符 $a^\dagger(\boldsymbol{p},\sigma,n)$ 配对：
+\begin{equation}
+  [\Psi_\ell(x),\;a^\dagger(\boldsymbol{p},\sigma,n)]_\mp
+  = (2\pi)^{-3/2}\;e^{ip\cdot x}\;v_\ell(\boldsymbol{p},\sigma,n)
+\label{eq:pair3}
+\end{equation}
+
+\begin{center}
+\begin{tikzpicture}[>=stealth, scale=1.5]
+  \filldraw (0,0) circle (2pt);
+  \node[left] at (-0.2,0) {$\ell,\,x$};
+  \draw[thick, postaction={decorate},
+      decoration={markings, mark=at position 0.55 with {\arrow{>}}}]
+      (0,-1.8) -- (0,0);
+  \node[right] at (0.1,-1.8) {$\boldsymbol{p},\sigma,n$};
+  \node[right] at (1.5,-0.9)
+    {$\displaystyle\frac{e^{ip\cdot x}\;v_\ell(\boldsymbol{p},\sigma,n)}
+      {(2\pi)^{3/2}}$};
+\end{tikzpicture}
+\end{center}
+
+%-------------- (4) --------------
+\bigskip\noindent
+\textbf{(4) 初态反粒子与场厄密伴 $\Psi_\ell^\dagger(x)$ 配对}
+
+$\Psi_\ell^\dagger(x)$ 中湮灭反粒子的部分
+$u_\ell^*\,a(\boldsymbol{p},\sigma,\bar{n})\,e^{ip\cdot x}$
+与初态反粒子产生算符 $a^\dagger(\boldsymbol{p},\sigma,\bar{n})$ 配对：
+\begin{equation}
+  [\Psi_\ell^\dagger(x),\;a^\dagger(\boldsymbol{p},\sigma,\bar{n})]_\mp
+  = (2\pi)^{-3/2}\;e^{ip\cdot x}\;u_\ell^*(\boldsymbol{p},\sigma,n)
+\label{eq:pair4}
+\end{equation}
+
+\begin{center}
+\begin{tikzpicture}[>=stealth, scale=1.5]
+  \filldraw (0,0) circle (2pt);
+  \node[left] at (-0.2,0) {$\ell,\,x$};
+  \draw[thick, postaction={decorate},
+      decoration={markings, mark=at position 0.55 with {\arrow{<}}}]
+      (0,-1.8) -- (0,0);
+  \node[right] at (0.1,-1.8) {$\boldsymbol{p},\sigma,\bar{n}$};
+  \node[right] at (1.5,-0.9)
+    {$\displaystyle\frac{e^{ip\cdot x}\;u_\ell^*(\boldsymbol{p},\sigma,n)}
+      {(2\pi)^{3/2}}$};
+\end{tikzpicture}
+\end{center}
+
+%-------------- (5) --------------
+\bigskip\noindent
+\textbf{(5) 末态粒子（或反粒子）与初态粒子（或反粒子）配对}
+
+不经过任何顶点，从 $t\to-\infty$ 到 $t\to+\infty$，
+对粒子和反粒子都是同一公式：
+\begin{equation}
+  [a(\boldsymbol{p}',\sigma',n'),\;a^\dagger(\boldsymbol{p},\sigma,n)]_\mp
+  = \delta^{(3)}(\boldsymbol{p}'-\boldsymbol{p})\;\delta_{\sigma'\sigma}\;\delta_{n'n}
+\label{eq:pair5}
+\end{equation}
+其中 $n,n'$ 可以是粒子种类也可以是反粒子种类。
+
+\begin{center}
+\begin{tikzpicture}[>=stealth, scale=1.5]
+  % 粒子
+  \draw[thick, postaction={decorate},
+      decoration={markings, mark=at position 0.55 with {\arrow{>}}}]
+      (0,-1.5) -- (0,0.5);
+  \node[right] at (0.1,-1.5) {$\boldsymbol{p},\sigma,n$};
+  \node[right] at (0.1,0.5)  {$\boldsymbol{p}',\sigma',n'$};
+  % 反粒子
+  \draw[thick, postaction={decorate},
+      decoration={markings, mark=at position 0.55 with {\arrow{<}}}]
+      (5,-1.5) -- (5,0.5);
+  \node[right] at (5.1,-1.5) {$\boldsymbol{p},\sigma,\bar{n}$};
+  \node[right] at (5.1,0.5)  {$\boldsymbol{p}',\sigma',\bar{n}'$};
+  % 因子
+  \node at (2.5,-0.5)
+    {$\delta^{(3)}(\boldsymbol{p}'-\boldsymbol{p})\,\delta_{\sigma'\sigma}\,\delta_{n'n}$};
+\end{tikzpicture}
+\end{center}
+
+%-------------- (6) --------------
+\bigskip\noindent
+\textbf{(6) $\mathscr{H}_i(x)$ 中的场与 $\mathscr{H}_j(y)$
+  中的场厄密伴配对——传播子}
+
+将场分为湮灭部分和产生部分：
+\begin{align}
+\Psi_\ell^{-}(x) &= (2\pi)^{-3/2}\sum_\sigma\int d^3p\;
+  v_\ell(\boldsymbol{p},\sigma,n)\;a(\boldsymbol{p},\sigma,n)\;e^{ip\cdot x}\,,
+\label{eq:psi-ann}\\[4pt]
+\Psi_\ell^{+}(x) &= (2\pi)^{-3/2}\sum_\sigma\int d^3p\;
+  u_\ell(\boldsymbol{p},\sigma,n)\;a^\dagger(\boldsymbol{p},\sigma,\bar{n})\;e^{-ip\cdot x}\,.
+\label{eq:psi-cre}
+\end{align}
+$\Psi_\ell^{-}(x)$ 湮灭粒子 $n$，
+$\Psi_\ell^{+}(x)$ 产生反粒子 $\bar{n}$。
+类似地，$\Psi_m^{\dagger\,-}(y)$ 湮灭反粒子 $\bar{n}$，
+$\Psi_m^{\dagger\,+}(y)$ 产生粒子 $n$。
+\medskip
+
+
+
+编时序列要求：
+当 $x^0>y^0$ 时，$\mathscr{H}(x)$ 在 $\mathscr{H}(y)$ 左边，
+遇到 $\Psi_\ell^{-}(x)$ 与 $\Psi_m^{\dagger\,+}(y)$ 的配对；
+当 $y^0>x^0$ 时，$\mathscr{H}(y)$ 在 $\mathscr{H}(x)$ 左边，
+遇到 $\Psi_m^{\dagger\,-}(y)$ 与 $\Psi_\ell^{+}(x)$ 的配对。
+二者之和定义为\textbf{传播子}：
+\begin{equation}
+        -i\,\Delta_{\ell m}(x,y)
+        \;\equiv\;
+        \theta(x^0\!-y^0)\,
+        \big[\Psi_\ell^{-}(x),\;\Psi_m^{-\dagger\,}(y)\big]_\mp
+        \;\pm\;
+        \theta(y^0\!-x^0)\,
+        \big[\Psi_m^{+\dagger}(y),\;\Psi_\ell^{+}(x)\big]_\mp
+        \label{eq:propagator}
+\end{equation}
+
+\begin{center}
+\begin{tikzpicture}[>=stealth, scale=1.5]
+  \filldraw (0,0) circle (2pt);
+  \node[left] at (-0.2,0) {$\ell,\,x$};
+  \filldraw (0,2.5) circle (2pt);
+  \node[left] at (-0.2,2.5) {$m,\,y$};
+  \draw[thick, postaction={decorate},
+      decoration={markings, mark=at position 0.55 with {\arrow{>}}}]
+      (0,0) -- (0,2.5);
+  \node[right] at (0.8,1.25) {$-i\,\Delta_{\ell m}(x,y)$};
+\end{tikzpicture}
+\end{center}
+
+\noindent
+箭头的指向总是和粒子运动方向相同、
+与反粒子运动方向相反。
+对于 $\bar{n}=n$ 的粒子（如光子），箭头省略。
+\medskip
+
+
+
+
+总结为
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{c|c|c|c}
+\hline
+配对 & 外线标记 & 配对的场 & 因子（不含 $(2\pi)^{-3/2}$）\\
+\hline\hline
+(1) 末态粒子 & $\boldsymbol{p}',\sigma',n'$ & $\Psi_\ell^\dagger(x)$
+  & $v_\ell^*(\boldsymbol{p}',\sigma',n')\;e^{-ip'\cdot x}$ \\
+(2) 末态反粒子 & $\boldsymbol{p}',\sigma',\bar{n}'$ & $\Psi_\ell(x)$
+  & $u_\ell(\boldsymbol{p}',\sigma',n')\;e^{-ip'\cdot x}$ \\
+(3) 初态粒子 & $\boldsymbol{p},\sigma,n$ & $\Psi_\ell(x)$
+  & $v_\ell(\boldsymbol{p},\sigma,n)\;e^{ip\cdot x}$ \\
+(4) 初态反粒子 & $\boldsymbol{p},\sigma,\bar{n}$ & $\Psi_\ell^\dagger(x)$
+  & $u_\ell^*(\boldsymbol{p},\sigma,n)\;e^{ip\cdot x}$ \\
+(5) 末态$\leftrightarrow$初态 & — & 无顶点
+  & $\delta^{(3)}(\boldsymbol{p}'-\boldsymbol{p})\,\delta_{\sigma'\sigma}\,\delta_{n'n}$ \\
+(6) 内线 & — & $\Psi_\ell(x)\leftrightarrow\Psi_m^\dagger(y)$
+  & $-i\,\Delta_{\ell m}(x,y)$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent
+注意：(2) 和 (4) 中外线标记的是\emph{反粒子}种类 $\bar{n}'$ 或 $\bar{n}$，
+但系数函数 $u_\ell$ 的参数仍写\emph{粒子}种类 $n'$ 或 $n$，
+这是因为 $u_\ell$ 的定义本身就是相对于粒子种类而言的
+（参见 \eqref{eq:field}）。
+
+%=================================================================
+\topictitle{计算 $S$-矩阵的展开步骤}
+%=================================================================
+
+\begin{enumerate}
+\item 画出包含 $N_i$ 个 $i$ 类顶点的\textbf{所有 Feynman 图}
+  （$N_i$ 个顶点取决于微扰阶数）；
+
+\item 每个 $i$ 类顶点，计入因子 $(-ig_i)$；
+
+\item 对每条线赋予 \eqref{eq:pair1}--\eqref{eq:propagator} 中对应的因子；
+
+\item 对所有因子的乘积沿每个顶点的坐标 $x_1,x_2,\ldots$ 积分；
+
+\item 将所有 Feynman 图的贡献相加，
+  逐阶直到所需精度；
+
+\item \textbf{$1/N!$ 的抵消}：
+  对于 $N$ 个顶点的 Feynman 图，
+  $N!$ 个仅相差顶点标记的等价图
+  恰好抵消 \eqref{eq:S-Dyson} 中的 $1/N!$。
+  所以 $S_{\beta\alpha}$ 中的 $\frac{1}{N!}$ 刚好被抵消，
+  其余特殊情况具体对应；
+
+\item \textbf{费米符号}：
+  费米算符的每次交换引入一个负号。
+  特别地，每个闭合费米圈贡献一个额外的 $(-1)$。
+\end{enumerate}
+
+

@@ -1,22 +1,20 @@
 
-\section{Noether's 定理}
-\begin{tcolorbox}
+\subsection{Noether's 定理}
+\begin{tcolorbox}[colback=white!5,colframe=black!45]
           \centering
       \textbf{连续的对称性} 
       \(\longrightarrow \)\textbf{守恒律}
 \end{tcolorbox}
 \noindent
 \\
-场论中的Noether's theorem 推导有一些细节(\textbf{比如测度的影响,场的影响,坐标的影响}),推导过程如下：
-
-\begin{tcolorbox}[colback=gray!10!white, colframe=black!75!,title=\textbf{坐标和场的无穷小小变换}]
+场论中的Noether's theorem 推导有一些细节(\text{\color{blue}比如测度的影响,场的影响,坐标的影响}),推导过程如下：
+\medskip
         $$
         x^\mu \rightarrow x'^\mu = x^\mu + \delta x^\mu(x)
         $$
         $$
-        \varphi ^{(a)}(x) \rightarrow \varphi '^{(a)}(x) = \varphi ^{(a)}(x) + \delta \varphi ^{(a)}(x)
+        \Psi_\ell(x) \rightarrow \Psi_\ell (x) = \Psi_\ell(x) + \delta \Psi_\ell(x)
         $$
-\end{tcolorbox}
 \noindent
 场和坐标的变换带来如下两种影响：
 \begin{itemize}
@@ -24,15 +22,15 @@
             \begin{enumerate}
               \item \textbf{坐标固定的边分}:
                 \(x^\mu\) 是固定的,仅是场的变化：
-                \[\delta\varphi ^{(a)}(x)=\varphi '^{(a)}(x) - \varphi ^{(a)}(x)\]
+                \[\delta\Psi_\ell(x)=\Psi_\ell (x) - \Psi_\ell(x)\]
               \item \textbf{全变分(这里包含了场和坐标的共同影响)}这是指在无穷小坐标变换 
                 \(x^\mu \rightarrow x'^\mu = x^\mu + \delta x^\mu(x)\)下，坐标变化与场的变化共同作用所导致的场的总变化:
                     \begin{align*}
-                \delta_{total} \varphi ^{(a)}(x)&= \varphi '^{(a)}(x') - \varphi ^{(a)}(x) \\
-                &= \varphi '^{(a)}(x + \delta x) - \varphi ^{(a)}(x) \\
-                &= \varphi '^{(a)}(x) + \left(\partial_\nu \varphi '^{(a)}(x)\right) \delta x^\nu - \varphi ^{(a)}(x) \\
-                &= \left(\varphi ^{(a)}(x) + \delta \varphi ^{(a)}(x)\right) + \partial_\nu \left(\varphi ^{(a)}(x) + \delta \varphi ^{(a)}(x)\right) \delta x^\nu - \varphi ^{(a)}(x) \\
-                &= \delta \varphi ^{(a)}(x) + \left(\partial_\nu \varphi ^{(a)}(x) \right)\delta  x^\nu+ \mathscr{O}(\delta^2)
+                \delta_{total} \Psi_\ell(x)&= \Psi_\ell (x') - \Psi_\ell(x) \\
+                &= \Psi_\ell (x + \delta x) - \Psi_\ell(x) \\
+                &= \Psi_\ell (x) + \left(\partial_\nu \Psi_\ell (x)\right) \delta x^\nu - \Psi_\ell(x) \\
+                &= \left(\Psi_\ell(x) + \delta \Psi_\ell(x)\right) + \partial_\nu \left(\Psi_\ell(x) + \delta \Psi_\ell(x)\right) \delta x^\nu - \Psi_\ell(x) \\
+                &= \delta \Psi_\ell(x) + \left(\partial_\nu \Psi_\ell(x) \right)\delta  x^\nu+ \mathscr{O}(\delta^2)
                 \end{align*}
                 区分这两种形式对于研究对称变换和推导诺特流至关重要,因为它同时考虑了场变量和时空坐标的变化。
             \end{enumerate}
@@ -45,13 +43,13 @@
 \(\implies\)\textbf{他们共同导致了作用量的变化：}\footnote{推导中，我加入了一个全导数项，它并不影响运动方程的变化，这实际上是规范项。在其他地方好像是诺特第二定理，我并不懂数学，这里暂且放在一起} 
 \begin{equation}
     \begin{aligned}\label{3.2}
-          \Delta I &=I[\varphi '^{(a)}(x'),x']-I[\varphi ^{(a)}(x),x]+\underbrace{\int d^4x\partial_\mu F^\mu}_\text{这实际上是规范项}\\
-          &= \int d^4 x' \, \mathscr{L}'[\varphi '^{(a)}(x'), \partial_\mu \varphi '^{(a)}(x')] - \int d^4 x \, \mathscr{L}[\varphi ^{(a)}(x), \partial_\mu \varphi ^{(a)}(x)]+\int d^4x\partial_\mu F^\mu \\
-          &= \int d^4 x (1 + \partial_\mu \delta x^\mu) \underbrace{\mathscr{L}'[\varphi '^{(a)}(x'), \partial_\mu \varphi '^{(a)}(x')]}_{\text{所有的变化都放在差值项里}\Delta\mathscr{L}} - \int d^4 x \, \mathscr{L}[\varphi ^{(a)}(x), \partial_\mu \varphi ^{(a)}(x)] +\int d^4x\partial_\mu F^\mu \\
-          &= \int d^4 x (1 + \partial_\mu \delta x^\mu) \left\{\mathscr{L}[\varphi ^{(a)}(x), \partial_\mu \varphi ^{(a)}(x)]+\Delta\mathscr{L}\right\} - \int d^4 x \, \mathscr{L}[\varphi ^{(a)}(x), \partial_\mu \varphi ^{(a)}(x)]  +\int d^4x\partial_\mu F^\mu\\          
-          &= \int d^4 x \left\{ \mathscr{L}[\varphi ^{(a)}, \partial_\mu \varphi ^{(a)}]+\Delta\mathscr{L} + (\partial_\mu \delta x^\mu) \mathscr{L}[\varphi '^{(a)}, \partial_\mu \varphi '^{(a)}]  +\mathscr{O}(\varphi^{(a)})- \mathscr{L}[\varphi ^{(a)}, \partial_\mu \varphi ^{(a)}]\right\} +\int d^4x\partial_\mu F^\mu\\
+          \Delta I &=I[\Psi_\ell (x'),x']-I[\Psi_\ell(x),x]+\underbrace{\int d^4x\partial_\mu F^\mu}_\text{这实际上是规范项}\\
+          &= \int d^4 x' \, \mathscr{L}'[\Psi_\ell (x'), \partial_\mu \Psi_\ell (x')] - \int d^4 x \, \mathscr{L}[\Psi_\ell(x), \partial_\mu \Psi_\ell(x)]+\int d^4x\partial_\mu F^\mu \\
+          &= \int d^4 x (1 + \partial_\mu \delta x^\mu) \underbrace{\mathscr{L}'[\Psi_\ell (x'), \partial_\mu \Psi_\ell (x')]}_{\text{所有的变化都放在差值项里}\Delta\mathscr{L}} - \int d^4 x \, \mathscr{L}[\Psi_\ell(x), \partial_\mu \Psi_\ell(x)] +\int d^4x\partial_\mu F^\mu \\
+          &= \int d^4 x (1 + \partial_\mu \delta x^\mu) \left\{\mathscr{L}[\Psi_\ell(x), \partial_\mu \Psi_\ell(x)]+\Delta\mathscr{L}\right\} - \int d^4 x \, \mathscr{L}[\Psi_\ell(x), \partial_\mu \Psi_\ell(x)]  +\int d^4x\partial_\mu F^\mu\\          
+          &= \int d^4 x \left\{ \mathscr{L}[\Psi_\ell, \partial_\mu \Psi_\ell]+\Delta\mathscr{L} + (\partial_\mu \delta x^\mu) \mathscr{L}[\Psi_\ell , \partial_\mu \Psi_\ell ]  +\mathscr{O}(\varphi^{(a)})- \mathscr{L}[\Psi_\ell, \partial_\mu \Psi_\ell]\right\} +\int d^4x\partial_\mu F^\mu\\
           &= \int d^4 x \left\{ \underbrace{\Delta\mathscr{L}}_{\mathbf{1}}
-          + \underbrace{(\partial_\mu \delta x^\mu )\mathscr{L}[\varphi '^{(a)}(x), \partial_\mu \varphi '^{(a)}(x)]}_{\mathbf{2}} +\partial_\mu F^\mu\right\} \\
+          + \underbrace{(\partial_\mu \delta x^\mu )\mathscr{L}[\Psi_\ell (x), \partial_\mu \Psi_\ell (x)]}_{\mathbf{2}} +\partial_\mu F^\mu\right\} \\
     \end{aligned}
 \end{equation}
 上式(\refeq{3.2}),细节的来处理一些东西：
@@ -59,15 +57,15 @@
   \item \textbf{第1项\(\Delta\mathscr{L}\):}
 值得注意的是，由于我们已经固定（或统一）了积分测度，因此这里应当采用在固定坐标下进行的变分。
     \begin{align*}
-      \Delta \mathscr{L} &= \mathscr{L}[\varphi '^{(a)}, \partial_\mu \varphi '^{(a)}] - \mathscr{L}[\varphi ^{(a)}, \partial_\mu \varphi ^{(a)}] \\
-        &= \mathscr{L}[\varphi ^{(a)}+\delta\varphi ^{(a)}, \partial_\mu \varphi ^{(a)}+\delta\varphi ^{(a)}] - \mathscr{L}[\varphi ^{(a)}, \partial_\mu \varphi ^{(a)}] \\
-        &=\frac{\partial\mathscr{L}}{\partial \varphi ^{(a)}}\delta\varphi ^{(a)}+\frac{\partial \mathscr{L}}{\partial (\partial_\mu \varphi ^{(a)})}\partial_\mu\delta\varphi ^{(a)}\\
-        &=\left[\frac{\partial\mathscr{L}}{\partial \varphi ^{(a)}}-\frac{\partial \mathscr{L}}{\partial (\partial_\mu \varphi ^{(a)})} \right]\delta\varphi ^{(a)}+\partial_\mu\left(\frac{\partial \mathscr{L}}{\partial (\partial_\mu \varphi ^{(a)})}\delta\varphi ^{(a)}\right)
+      \Delta \mathscr{L} &= \mathscr{L}[\Psi_\ell , \partial_\mu \Psi_\ell ] - \mathscr{L}[\Psi_\ell, \partial_\mu \Psi_\ell] \\
+        &= \mathscr{L}[\Psi_\ell+\delta\Psi_\ell, \partial_\mu \Psi_\ell+\delta\Psi_\ell] - \mathscr{L}[\Psi_\ell, \partial_\mu \Psi_\ell] \\
+        &=\frac{\partial\mathscr{L}}{\partial \Psi_\ell}\delta\Psi_\ell+\frac{\partial \mathscr{L}}{\partial (\partial_\mu \Psi_\ell)}\partial_\mu\delta\Psi_\ell\\
+        &=\left[\frac{\partial\mathscr{L}}{\partial \Psi_\ell}-\frac{\partial \mathscr{L}}{\partial (\partial_\mu \Psi_\ell)} \right]\delta\Psi_\ell+\partial_\mu\left(\frac{\partial \mathscr{L}}{\partial (\partial_\mu \Psi_\ell)}\delta\Psi_\ell\right)
     \end{align*}
-  \item \textbf{第2项 \(\mathscr{L}[\varphi '^{(a)}(x), \partial_\mu \varphi '^{(a)}(x)]\):}
+  \item \textbf{第2项 \(\mathscr{L}[\Psi_\ell (x), \partial_\mu \Psi_\ell (x)]\):}
     \begin{align*}
-      \mathscr{L}[\varphi '^{(a)}(x), \partial_\mu \varphi '^{(a)}(x)] 
-      &= \mathscr{L} + \frac{\partial \mathscr{L}}{\partial \varphi ^{(a)}} \left( \delta \varphi ^{(a)} + \partial_\nu \varphi ^{(a)} \delta x^\nu \right) + \mathscr{O}(\delta^2)
+      \mathscr{L}[\Psi_\ell (x), \partial_\mu \Psi_\ell (x)] 
+      &= \mathscr{L} + \frac{\partial \mathscr{L}}{\partial \Psi_\ell} \left( \delta \Psi_\ell + \partial_\nu \Psi_\ell \delta x^\nu \right) + \mathscr{O}(\delta^2)
     \end{align*}
 \end{itemize}
 带回(\refeq{3.2}):
@@ -76,18 +74,18 @@
 \Delta I &= \int d^4 x \left\{ 
 \Delta \mathscr{L} + \partial_\mu F^\mu 
 + \partial_\mu \delta x^\mu 
-\mathscr{L}[\varphi '^{(a)}(x'), \partial_\mu \varphi '^{(a)}(x')] 
+\mathscr{L}[\Psi_\ell (x'), \partial_\mu \Psi_\ell (x')] 
 \right\} \\
-&= \int d^4 x \left[\frac{\partial\mathscr{L}}{\partial \varphi ^{(a)}}-\frac{\partial \mathscr{L}}{\partial (\partial_\mu \varphi ^{(a)})} \right]\delta\varphi ^{(a)}+\partial_\mu\left(\frac{\partial \mathscr{L}}{\partial (\partial_\mu \varphi ^{(a)})}\delta\varphi ^{(a)}\right)\\
+&= \int d^4 x \left[\frac{\partial\mathscr{L}}{\partial \Psi_\ell}-\frac{\partial \mathscr{L}}{\partial (\partial_\mu \Psi_\ell)} \right]\delta\Psi_\ell+\partial_\mu\left(\frac{\partial \mathscr{L}}{\partial (\partial_\mu \Psi_\ell)}\delta\Psi_\ell\right)\\
 &\quad + \partial_\mu F^\mu 
-+ \partial_\mu \delta x^\mu \left[ \mathscr{L} + \frac{\partial \mathscr{L}}{\partial \varphi ^{(a)}} \left( \delta \varphi ^{(a)} 
-+ \partial_\nu \varphi ^{(a)} \delta x^\nu \right) \right] 
++ \partial_\mu \delta x^\mu \left[ \mathscr{L} + \frac{\partial \mathscr{L}}{\partial \Psi_\ell} \left( \delta \Psi_\ell 
++ \partial_\nu \Psi_\ell \delta x^\nu \right) \right] 
 + \mathscr{O}(\delta^2)
 \Big\} \\
 &= \int d^4 x \left\{ 
-\left[ \frac{\partial \mathscr{L}}{\partial \varphi ^{(a)}} 
-- \partial_\mu \frac{\partial \mathscr{L}}{\partial (\partial_\mu \varphi ^{(a)})} \right] \delta \varphi ^{(a)}
-+ \partial_\mu \left[ F^\mu +\left(\frac{\partial \mathscr{L}}{\partial (\partial_\mu \varphi ^{(a)})}\delta\varphi ^{(a)}\right)
+\left[ \frac{\partial \mathscr{L}}{\partial \Psi_\ell} 
+- \partial_\mu \frac{\partial \mathscr{L}}{\partial (\partial_\mu \Psi_\ell)} \right] \delta \Psi_\ell
++ \partial_\mu \left[ F^\mu +\left(\frac{\partial \mathscr{L}}{\partial (\partial_\mu \Psi_\ell)}\delta\Psi_\ell\right)
 + \delta x^\mu \mathscr{L} \right] 
 \right\}
 \end{aligned}
@@ -95,22 +93,19 @@
 如果在要求作用量在该变换下严格保持不变，同时假设运动方程成立的情况下，我们得到：
 \begin{equation*}
     \partial_\mu \mathbb{J}^\mu=0\qquad
-    \mathbb{J}^\mu = F^\mu +\frac{\partial \mathscr{L}}{\partial (\partial_\mu \varphi ^{(a)})}\delta\varphi ^{(a)}
+    \mathbb{J}^\mu = F^\mu +\frac{\partial \mathscr{L}}{\partial (\partial_\mu \Psi_\ell)}\delta\Psi_\ell
 + \delta x^\mu \mathscr{L} 
 \end{equation*}
-
-\begin{tcolorbox}[colback=gray!10!white, colframe=black!75!]
-  写为更加简洁的形式，\textbf{诺特流}是：
+写为更加简洁的形式，\text{\color{blue}诺特流}是：
   \begin{equation}\label{3.3}
       \begin{aligned}
-        &\partial_\mu \mathbb{J}^\mu=0\\
-        &\mathbb{J}^\mu=\underbrace{F^\mu}_\text{规范项}+\frac{\partial \mathscr{L}}{\partial (\partial_\mu \varphi ^{(a)})}\delta_{total}\varphi ^{(a)}
-        -\delta x^\nu\left\{\frac{\partial \mathscr{L}}{\partial (\partial_\mu \varphi ^{(a)})}\partial_\nu\varphi ^{(a)}-g^\mu_\nu \mathscr{L} \right\}
+        &\partial_\mu \mathcal{J}^\mu=0\\
+        &\mathcal{J}^\mu=\underbrace{F^\mu}_\text{规范项}+\frac{\partial \mathscr{L}}{\partial (\partial_\mu \Psi_\ell)}\delta_{total}\Psi_\ell
+        -\delta x^\nu\left\{\frac{\partial \mathscr{L}}{\partial (\partial_\mu \Psi_\ell)}\partial_\nu\Psi_\ell-g^\mu_\nu \mathscr{L} \right\}
       \end{aligned}
 \end{equation}
-\end{tcolorbox}
-\subsection{时空平移对称性和能动张量}
-\begin{tcolorbox}[colback=gray!10!white, colframe=black!75!,title={在平直时空中，假定四维时空具有平移均匀性，我们因此考虑以下变换：}]
+\topictitle{时空平移对称性和能动张量}
+在平直时空中，假定四维时空具有平移均匀性，我们因此考虑以下变换：
   \begin{itemize}
   \item \textbf{坐标平移}
   \begin{equation*}
@@ -118,16 +113,15 @@
   \end{equation*}
   \item \textbf{场的不变性}
   \begin{equation*}
-    \varphi '^{(a)}(x') \rightarrow \varphi ^{(a)}(x)
+    \Psi_\ell (x') \rightarrow \Psi_\ell(x)
   \end{equation*}
 \end{itemize}
-\end{tcolorbox}
 所以我们得到：
 \begin{equation*}
 \left\{
   \begin{aligned}
-    &\delta_{\text{total}} \varphi ^{(a)} = \varphi '^{(a)}(x') - \varphi ^{(a)}(x) = 0 \\
-    &\partial^\nu \varphi ^{(a)}(x) \delta x^\nu = \epsilon^\nu \varphi ^{(a)}(x)
+    &\delta_{\text{total}} \Psi_\ell = \Psi_\ell (x') - \Psi_\ell(x) = 0 \\
+    &\partial^\nu \Psi_\ell(x) \delta x^\nu = \epsilon^\nu \Psi_\ell(x)
   \end{aligned}
 \right.  
 \end{equation*}
@@ -135,39 +129,35 @@
 代入诺特流\refeq{3.3}
 \begin{align*}
   \mathbb{J}^\mu &= 
-  F^\mu + \frac{\partial \mathscr{L}}{\partial (\partial_\mu \varphi ^{(a)})} \delta_{\text{total}} \varphi ^{(a)}
+  F^\mu + \frac{\partial \mathscr{L}}{\partial (\partial_\mu \Psi_\ell)} \delta_{\text{total}} \Psi_\ell
   - \delta x^\nu \left\{
-  \frac{\partial \mathscr{L}}{\partial (\partial_\mu \varphi ^{(a)})} \partial_\nu \varphi ^{(a)}
+  \frac{\partial \mathscr{L}}{\partial (\partial_\mu \Psi_\ell)} \partial_\nu \Psi_\ell
   - g^\mu_{\ \nu} \mathscr{L} \right\} \\
   &= F^\mu - \epsilon^\nu \left\{
-  \frac{\partial \mathscr{L}}{\partial (\partial_\mu \varphi ^{(a)})} \partial_\nu \varphi ^{(a)}
+  \frac{\partial \mathscr{L}}{\partial (\partial_\mu \Psi_\ell)} \partial_\nu \Psi_\ell
   - g^\mu_{\ \nu} \mathscr{L} \right\}
 \end{align*}
 不考虑规范变换,剩下的诺特流是：
 \begin{equation*}
     \mathbb{J}^\mu = -\epsilon^\nu \left\{
-    \frac{\partial \mathscr{L}}{\partial (\partial_\mu \varphi ^{(a)})} \partial_\nu \varphi ^{(a)}
+    \frac{\partial \mathcal{L}}{\partial (\partial_\mu \Psi_\ell)} \partial_\nu \Psi_\ell
     - g^\mu_{\ \nu} \mathscr{L} \right\}
 \end{equation*}
 
 
 \noindent
-
-\begin{tcolorbox}
   $\epsilon$的选择具有任意性时,这便是一个守恒量,即:\textbf{能量动量张量}
     \begin{equation}
         \begin{aligned}
-          &\partial_\mu \mathscr{T}^\mu_{\ \nu} = 0\\
-          &\mathscr{T}^\mu_{\ \nu} = \partial_\nu \varphi ^{(a)} \frac{\partial \mathscr{L}}{\partial (\partial_\mu \varphi ^{(a)})}
+          &\partial_\mu \mathcal{T}^\mu_{\ \nu} = 0\\
+          &\mathcal{T}^\mu_{\ \nu} = \partial_\nu \Psi_\ell \frac{\partial \mathscr{L}}{\partial (\partial_\mu \Psi_\ell)}
           - g^\mu_{\ \nu} \mathscr{L}
         \end{aligned}
   \end{equation}
-\end{tcolorbox}
 
 
-\subsection{Lorentz不变性和角动量张量}
-
-\textbf{In four-dimensional spacetime, we assume not only homogeneity but also isotropy. Hence, we consider the following transformation:}
+\topictitle{Lorentz不变性和角动量张量}
+In four-dimensional spacetime, we assume not only homogeneity but also isotropy. Hence, we consider the following transformation:
 \begin{itemize}
   \item \textbf{Infinitesimal Lorentz transformation of coordinates}
   \[
@@ -175,86 +165,70 @@
   \]
   \item \textbf{Intrinsic transformation of the field}
   \[
-    \varphi '^{(a)}(x') = \varphi ^{(a)}(x) + \delta_{\text{total}} \varphi ^{(a)}(x), \quad
-    \delta_{\text{total}} \varphi ^{(a)} = \frac{i}{2} \omega_{\mu\nu} (S^{\mu\nu})^{a}_{\ b} \varphi ^{(b)}
+    \Psi_\ell (x') = \Psi_\ell(x) + \delta_{\text{total}} \Psi_\ell(x), \quad
+    \delta_{\text{total}} \Psi_\ell = \frac{i}{2} \omega_{\mu\nu} (S^{\mu\nu})^{a}_{\ b} \varphi ^{(b)}
   \]
 \end{itemize}
-
-\noindent
 Substituting into the Noether current expression:
 \begin{align*}
    \mathbb{J}^\mu &= F^\mu +
-   \frac{\partial \mathscr{L}}{\partial (\partial_\mu \varphi ^{(a)})}
-   \delta_{\text{total}} \varphi ^{(a)}
-  - \delta x^\nu \left\{ \frac{\partial \mathscr{L}}{\partial (\partial_\mu \varphi ^{(a)})} \partial_\nu \varphi ^{(a)}
+   \frac{\partial \mathscr{L}}{\partial (\partial_\mu \Psi_\ell)}
+   \delta_{\text{total}} \Psi_\ell
+  - \delta x^\nu \left\{ \frac{\partial \mathscr{L}}{\partial (\partial_\mu \Psi_\ell)} \partial_\nu \Psi_\ell
   - g^\mu_{\ \nu} \mathscr{L} \right\} \\
   &= F^\mu +
   \frac{i}{2} \omega_{\nu\rho} (S^{\nu\rho})^{a}_{\ b} \varphi ^{(b)}
-  \frac{\partial \mathscr{L}}{\partial (\partial_\mu \varphi ^{(a)})} +
-  \omega^{\nu\rho} x_\rho \mathscr{T}^\mu_{\ \nu}
+  \frac{\partial \mathscr{L}}{\partial (\partial_\mu \Psi_\ell)} +
+  \omega^{\nu\rho} x_\rho \mathcal{T}^\mu_{\ \nu}
 \end{align*}
-
-\noindent
-We rewrite $\omega^{\nu\rho} x_\rho \mathscr{T}^{\mu\nu}$ by exchanging indices:
+We rewrite $\omega^{\nu\rho} x_\rho \mathcal{T}^{\mu\nu}$ by exchanging indices:
 \begin{align*}
-\omega^{\nu\rho} x_\rho \mathscr{T}^\mu_{\ \nu} 
-= \omega^\nu_{\ \rho} x^\rho \mathscr{T}^{\mu\nu}
-= \frac{1}{2} \omega_{\nu\rho} \left( x^\rho \mathscr{T}^{\mu\nu} 
-- x^\nu \mathscr{T}^{\mu\rho} \right)
+\omega^{\nu\rho} x_\rho \mathcal{T}^\mu_{\ \nu} 
+= \omega^\nu_{\ \rho} x^\rho \mathcal{T}^{\mu\nu}
+= \frac{1}{2} \omega_{\nu\rho} \left( x^\rho \mathcal{T}^{\mu\nu} 
+- x^\nu \mathcal{T}^{\mu\rho} \right)
 \end{align*}
-
-\noindent
 Thus the Noether current becomes:
 \begin{align*}
   \mathbb{J}^\mu &= F^\mu +
   \frac{i}{2} \omega_{\nu\rho} (S^{\nu\rho})^{a}_{\ b} \varphi ^{(b)}
-  \frac{\partial \mathscr{L}}{\partial (\partial_\mu \varphi ^{(a)})} +
-  \frac{1}{2} \omega_{\nu\rho} \left( x^\rho \mathscr{T}^{\mu\nu} 
-  - x^\nu \mathscr{T}^{\mu\rho} \right) \\
+  \frac{\partial \mathscr{L}}{\partial (\partial_\mu \Psi_\ell)} +
+  \frac{1}{2} \omega_{\nu\rho} \left( x^\rho \mathcal{T}^{\mu\nu} 
+  - x^\nu \mathcal{T}^{\mu\rho} \right) \\
   &= F^\mu +
   \frac{1}{2} \omega_{\nu\rho} \left[ i (S^{\nu\rho})^{a}_{\ b} \varphi ^{(b)}
-  \frac{\partial \mathscr{L}}{\partial (\partial_\mu \varphi ^{(a)})} +
-   \left( x^\rho \mathscr{T}^{\mu\nu} 
-  - x^\nu \mathscr{T}^{\mu\rho} \right) \right]
+  \frac{\partial \mathscr{L}}{\partial (\partial_\mu \Psi_\ell)} +
+   \left( x^\rho \mathcal{T}^{\mu\nu} 
+  - x^\nu \mathcal{T}^{\mu\rho} \right) \right]
 \end{align*}
 
 \noindent
 If we consider only Lorentz invariance and neglect internal symmetries, we obtain:
-
-\begin{tcolorbox}
     \begin{equation}
     \mathbb{J}^\mu =
     \frac{\omega_{\nu\rho}}{2} \left[ i (S^{\nu\rho})^{a}_{\ b} \varphi ^{(b)}
-    \frac{\partial \mathscr{L}}{\partial (\partial_\mu \varphi ^{(a)})} +
-    \left( x^\rho \mathscr{T}^{\mu\nu} 
-    - x^\nu \mathscr{T}^{\mu\rho} \right) \right]
+    \frac{\partial \mathscr{L}}{\partial (\partial_\mu \Psi_\ell)} +
+    \left( x^\rho \mathcal{T}^{\mu\nu} 
+    - x^\nu \mathcal{T}^{\mu\rho} \right) \right]
   \end{equation}
-\end{tcolorbox}
-
-
-\noindent
 Clearly, this is a conserved quantity. We define:
-\begin{tcolorbox}
     \begin{equation}
-    \mathscr{M}^{\mu\nu\rho} = i (S^{\nu\rho})^{a}_{\ b} \varphi ^{(b)}
-    \frac{\partial \mathscr{L}}{\partial (\partial_\mu \varphi ^{(a)})} +
-    \left( x^\rho \mathscr{T}^{\mu\nu}
-    - x^\nu \mathscr{T}^{\mu\rho} \right) \quad \text{and} \quad
-    \partial_\mu \mathscr{M}^{\mu\nu\rho} = 0
+    \mathcal{M}^{\mu\nu\rho} = i (S^{\nu\rho})^{a}_{\ b} \varphi ^{(b)}
+    \frac{\partial \mathscr{L}}{\partial (\partial_\mu \Psi_\ell)} +
+    \left( x^\rho \mathcal{T}^{\mu\nu}
+    - x^\nu \mathcal{T}^{\mu\rho} \right) \quad \text{and} \quad
+    \partial_\mu \mathcal{M}^{\mu\nu\rho} = 0
   \end{equation}
-\end{tcolorbox}
 \noindent
 It can be seen that this conserved quantity consists of two terms, which are, in fact, the “orbital angular momentum density” and the “spin angular momentum density”:
-\begin{tcolorbox}
     \begin{equation}
     \begin{aligned}
-          \mathscr{M}^{\mu\nu\rho}&
+          \mathcal{M}^{\mu\nu\rho}&
     = \underbrace{i (S^{\nu\rho})^{a}_{\ b} \varphi ^{(b)} 
-    \frac{\partial \mathscr{L}}{\partial (\partial_\mu \varphi ^{(a)})}}_{\text{Spin angular momentum density } } 
-    + \underbrace{\left( x^\rho \mathscr{T}^{\mu\nu} 
-    - x^\nu \mathscr{T}^{\mu\rho} \right)}_{\text{Orbital angular momentum density } }\\
-    &=\mathscr{S}^{\mu\nu\rho}+\mathscr{L}^{\mu\nu\rho}
+    \frac{\partial \mathscr{L}}{\partial (\partial_\mu \Psi_\ell)}}_{\text{Spin angular momentum density } } 
+    + \underbrace{\left( x^\rho \mathcal{T}^{\mu\nu} 
+    - x^\nu \mathcal{T}^{\mu\rho} \right)}_{\text{Orbital angular momentum density } }\\
+    &=\mathcal{M}^{\mu\nu\rho}+\mathscr{L}^{\mu\nu\rho}
     \end{aligned}
   \end{equation}
-\end{tcolorbox}
 

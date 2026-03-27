@@ -1,7 +1,7 @@
 \subsection{0+1维动力学:算符方法}
 在 1.1.2 节中我们已经建立了态的幺正演化 $|\psi(t)\rangle = U(t,0)|\psi(0)\rangle$，并由此导出了 Schr\"{o}dinger 方程。现在我们系统地比较两种等价的动力学描述方式。
 \topictitle{Schr\"odinger 绘景}
-在 Schr\"{o}dinger 绘景中，\textbf{态随时间演化，算符不变}。具体地：
+在 Schr\"{o}dinger 绘景中，\text{\color{blue}态随时间演化，算符不变}。具体地：
 \begin{itemize}
 \item 态矢量携带全部时间依赖性：
 \begin{equation}
@@ -20,7 +20,7 @@ i\frac{d}{dt}|\psi(t)\rangle_S = H\,|\psi(t)\rangle_S
 \end{equation}
 就是这一绘景中的运动方程。
 \topictitle{Heisenberg 绘景}
-在 Heisenberg 绘景中，\textbf{态不变，算符随时间演化}。两种绘景通过幺正变换联系：
+在 Heisenberg 绘景中，\text{\color{blue}态不变，算符随时间演化}。两种绘景通过幺正变换联系：
 \begin{equation}
 |\psi\rangle_H \equiv |\psi(0)\rangle_S\,,\qquad
 \mathcal{O}_H(t) \equiv e^{iHt}\,\mathcal{O}_S\,e^{-iHt}
@@ -43,11 +43,9 @@ i\frac{d}{dt}|\psi(t)\rangle_S = H\,|\psi(t)\rangle_S
 \begin{equation}
 \frac{d}{dt}\mathcal{O}_H(t) = i[H,\,\mathcal{O}_H(t)]
 \end{equation}
-这是 \textbf{Heisenberg 运动方程}。
+这是 \text{\color{blue}Heisenberg 运动方程}。
 
-\begin{center}\vspace{2ex}
-\textbf{***}
-\vspace{2ex}\end{center}
+\topictitle{***}
 
 两种绘景在数学上严格等价，选择哪一种纯粹是方便性的问题：
 
@@ -56,7 +54,7 @@ i\frac{d}{dt}|\psi(t)\rangle_S = H\,|\psi(t)\rangle_S
 
 \item Heisenberg 绘景在相对论量子场论中具有根本性的优势。在这种绘景中，场算符 $\phi_H(\pmb{x},t)$ 同时依赖于空间和时间，因此可以被视为时空点 $x^\mu=(\pmb{x},t)$ 的函数——这使得 Lorentz 协变性得以显式体现\footnote{这也是为什么在第 4 章讨论散射理论时，``入''态和``出''态被定义为不随时间改变的 Heisenberg 绘景态。}。
 \end{itemize}
-下面讨论\textbf{相互作用绘景}（Dirac 绘景）是这两种绘景的混合体;但此绘景本身存在些许问题。
+下面讨论\text{\color{blue}相互作用绘景}（Dirac 绘景）是这两种绘景的混合体;但此绘景本身存在些许问题。
 \topictitle{相互作用绘景和Dyson级数}
 在Schr\"odinger和Heisenberg绘景中，系统的动力学演化都可以被精确处理；而在现实情况中，动力学行为十分复杂，基本没有解析解，所以在这种情况下我们将完整的哈密顿量$H$分为自由部分$H_0$相互作用部分$V$：
 \begin{equation}
@@ -135,7 +133,7 @@ i\frac{d}{dt}|\psi(t)\rangle_S = H\,|\psi(t)\rangle_S
         &+(-i)^3\int^{\infty}_{-\infty}dt_1\int^{t_1}_{-\infty}dt_2\int^{t_2}_{-\infty}dt_3V(t_1)V(t_2)V(t_3)+\cdots
     \end{aligned}
 \end{equation}
-这里利用算符的\textbf{编时乘积}(按时间排序)写为编时乘积的形式，编时算符的形式为：
+这里利用算符的\text{\color{blue}编时乘积}(按时间排序)写为编时乘积的形式，编时算符的形式为：
 \[
 \begin{aligned}
 T\{V(t)\} &= V(t), \\
@@ -171,7 +169,7 @@ U = \exp\!\left(-i\int_{-\infty}^{\infty} dt\,V(t)\right).
 
 \subsection{0+1 维动力学: 泛函方法}
 
-前文中算符方法处理了量子动力学；本节引入一种概念上截然不同但数学上严格等价的描述——\textbf{路径积分}
+前文中算符方法处理了量子动力学；本节引入一种概念上截然不同但数学上严格等价的描述——\text{\color{blue}路径积分}
 与算符方法不同，路径积分的出发点不是 Hilbert 空间中的算符和态矢量，而是经典构型空间中所有可能路径的加权求和——
 每一条路径 $q(t)$ 被赋予权重 $e^{iS[q]}$，其中 $S[q]$ 是沿该路径计算的经典作用量
 
@@ -204,7 +202,7 @@ U = \exp\!\left(-i\int_{-\infty}^{\infty} dt\,V(t)\right).
   [Q_i,P_j]=\delta_{ij}\to \braket{q|p}=\frac{1}{2\pi}e^{ipq}
 \end{equation}
 \medskip
-路径积分的自然语言是 Heisenberg 绘景——在这种描述中，\textbf{所有的时间演化都被编码在算符 $e^{iHt}$ 中}。
+路径积分的自然语言是 Heisenberg 绘景——在这种描述中，\text{\color{blue}所有的时间演化都被编码在算符 $e^{iHt}$ 中}。
 Heisenberg 绘景中的位置和动量算符定义为：
 \begin{subequations}\label{eq:Heis-ops}
     \begin{align}
@@ -234,7 +232,7 @@ Heisenberg 绘景中的位置和动量算符定义为：
   \end{align}
 \end{subequations}
 \topictitle{传播子：核心动力学}
-现在考虑两个\textbf{不同时刻}的 Heisenberg 位置本征态的内积：
+现在考虑两个\text{\color{blue}不同时刻}的 Heisenberg 位置本征态的内积：
 \begin{equation}\label{eq:propagator}
   K(q_f, t_f;\, q_i, t_i)
   \;\equiv\; \langle q_f, t_f\,|\,q_i, t_i\rangle
@@ -288,16 +286,16 @@ $$\varepsilon = \frac{t_f - t_i}{N+1}$$
   K = \int\mathcal{D}q\;\exp\!\left\{\frac{i}{\hbar}S[q]\right\}
 \]
 当 $\hbar \to 0$ 时，相位 $S/\hbar$ 对路径的微小偏离变化极为剧烈，
-不同路径的贡献因快速振荡而\textbf{相消干涉}——
+不同路径的贡献因快速振荡而\text{\color{blue}相消干涉}——
 恰如集团分解论证所利用的 Riemann-Lebesgue 机制。
-唯一的例外是\textbf{驻相点}（使相位变化率为零的路径）：
+唯一的例外是\text{\color{blue}驻相点}（使相位变化率为零的路径）：
 \begin{equation}
   \frac{\delta S}{\delta q(t)}\bigg|_{q = q_{\text{cl}}} = 0
   \qquad\Longleftrightarrow\qquad
   \frac{d}{dt}\frac{\partial L}{\partial\dot{q}}
   - \frac{\partial L}{\partial q} = 0
 \end{equation}
-这正是经典力学的 \textbf{Euler--Lagrange 方程}。因此：
+这正是经典力学的 \text{\color{blue}Euler--Lagrange 方程}。因此：
 经典力学中粒子沿唯一的使作用量取极值的经典轨迹运动；
 量子力学中粒子"探索"所有可能的路径，
 但在 $\hbar\to 0$ 极限下只有经典路径附近的路径彼此相干增强。

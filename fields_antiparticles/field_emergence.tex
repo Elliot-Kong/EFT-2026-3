@@ -79,94 +79,70 @@ $$ \mathscr{D}(\Lambda_1)\mathscr{D}(\Lambda_2) = D(\Lambda_1\Lambda_2) .  $$
 \hrule
 \vspace{2ex}
 \centerline{\text{产生场的系数}}
-\begin{flalign}
-&\begin{aligned}
+\[\begin{aligned}
     L.H.S=&\;U_0(\Lambda,a)\Psi^{+}_\ell(x)U_0^\dagger(\Lambda,a)\\
     =&\sum_{\sigma,n}\int d^3p\, u_{\ell}(x;\boldsymbol{p},\sigma,n) U_0(\Lambda,a)a^\dagger(\boldsymbol{p},\sigma,n)U_0^\dagger(\Lambda,a)\\
     =&\sum_{\sigma,n}\int d^3p\, u_{\ell}(x;\boldsymbol{p},\sigma,n)\,e^{-i(\Lambda p)^\mu a_\mu}\sqrt{\frac{(\Lambda p)^0}{p^0}}\sum_{\bar{\sigma}}D_{\sigma \bar{\sigma}}^{j_n*}\left\{W^{-1}(\Lambda,p)\right\}a^\dagger(\Lambda\boldsymbol{p},\bar{\sigma},n)\\
     &\xrightarrow{d^3p\to \frac{d^3(\Lambda p)}{(\Lambda p)^0}p^0}\sum_{\sigma\bar{\sigma},n}\int d^3\Lambda p\, u_{\ell}(x;\boldsymbol{p},\sigma,n)\,e^{-i(\Lambda p)^\mu a_\mu}\sqrt{\frac{p^0}{(\Lambda p)^0}}\,D_{\sigma \bar{\sigma}}^{j_n*}\left\{W^{-1}(\Lambda,p)\right\} a^\dagger(\Lambda\boldsymbol{p},\bar{\sigma},n)
-\end{aligned}&
-\end{flalign}
-\begin{flalign}
-&\begin{aligned}
-    R.H.S=&\sum_{\bar{\ell}}\mathscr{D}_{\ell\bar{\ell}}(\Lambda^{-1})\Psi_{\bar{\ell}}^+(\Lambda x+a)\\
-    =&\sum_{\bar{\ell}}\sum_{\sigma,n}\int d^3\Lambda p\,\mathscr{D}_{\ell\bar{\ell}}(\Lambda^{-1}) u_{\bar{\ell}}(\Lambda x+a;\Lambda \boldsymbol{p},\sigma,n) a^\dagger(\Lambda \boldsymbol{p},\sigma,n)
-\end{aligned}& 
-\end{flalign}
-\begin{flalign}
-    &\begin{aligned}L.H.S=R.H.S\implies
-    \sum_{\sigma\bar{\sigma}}u_{\ell}(x;\boldsymbol{p},\sigma,n)\,e^{-i(\Lambda p)^\mu a_\mu}\sqrt{\frac{p^0}{(\Lambda p)^0}}
-    &D_{\sigma \bar{\sigma}}^{j_n*}\left\{W^{-1}(\Lambda,p)\right\}a^\dagger(\Lambda\boldsymbol{p},\bar{\sigma},n)\\&=\sum_{\bar{\ell}}\sum_{\sigma}\mathscr{D}_{\ell\bar{\ell}}(\Lambda^{-1})u_{\bar{\ell}}(\Lambda x+a;\Lambda \boldsymbol{p},\sigma,n) a^\dagger(\Lambda \boldsymbol{p},\sigma,n)
-\end{aligned}&
-\end{flalign}
-\label{u_1}
-\begin{flalign}
-    &\begin{aligned}\text{
-令 $\bar{\sigma}\rightleftarrows \sigma$所以：}
-    \sum_{\sigma\bar{\sigma}}u_{\ell}(x;\boldsymbol{p},\bar{\sigma},n)\,e^{-i(\Lambda p)^\mu a_\mu}\sqrt{\frac{p^0}{(\Lambda p)^0}} &D_{\sigma \bar{\sigma}}^{j_n*}\left\{W^{-1}(\Lambda,p)\right\}a^\dagger(\Lambda\boldsymbol{p},\sigma,n)
-    \\
-    =&\sum_{\bar{\ell}}\sum_{\sigma}\mathscr{D}_{\ell\bar{\ell}}(\Lambda^{-1})u_{\bar{\ell}}(\Lambda x+a;\Lambda \boldsymbol{p},\sigma,n)a^\dagger(\Lambda \boldsymbol{p},\sigma,n)
-\end{aligned}&
-\end{flalign}
-\centerline{\text{湮灭场的系数}}
-\begin{flalign}
- &\begin{aligned}
-    L.H.S&=\;U_0(\Lambda,a)\Psi^{-}_\ell(x)U_0^\dagger(\Lambda,a)\\
-    =&\sum_{\sigma,n}\int d^3p\, v_{\ell}(x;\boldsymbol{p},\sigma,n) U_0(\Lambda,a)a(\boldsymbol{p},\sigma,n)U_0^\dagger(\Lambda,a)\\
-    =&\sum_{\sigma,n}\int d^3p\, v_{\ell}(x;\boldsymbol{p},\sigma,n)\,e^{i(\Lambda p)^\mu a_\mu}\sqrt{\frac{(\Lambda p)^0}{p^0}}\sum_{\bar{\sigma}}D_{\sigma \bar{\sigma}}^{j_n}\left\{W^{-1}(\Lambda,p)\right\}a(\Lambda\boldsymbol{p},\bar{\sigma},n)\\
-    &\xrightarrow{d^3p\to \frac{d^3(\Lambda p)}{(\Lambda p)^0}p^0}\sum_{\sigma\bar{\sigma},n}\int d^3\Lambda p\, v_{\ell}(x;\boldsymbol{p},\sigma,n)\,e^{i(\Lambda p)^\mu a_\mu}\sqrt{\frac{p^0}{(\Lambda p)^0}}\,D_{\sigma \bar{\sigma}}^{j_n}\left\{W^{-1}(\Lambda,p)\right\} a(\Lambda\boldsymbol{p},\bar{\sigma},n)
-\end{aligned}&   
-\end{flalign}
-\begin{flalign}
-    &\begin{aligned}
-    R.H.S=&\sum_{\bar{\ell}}\mathscr{D}_{\ell\bar{\ell}}(\Lambda^{-1})\Psi_{\bar{\ell}}^-(\Lambda x+a)\\
-    =&\sum_{\bar{\ell}}\sum_{\sigma,n}\int d^3\Lambda p\,\mathscr{D}_{\ell\bar{\ell}}(\Lambda^{-1}) v_{\bar{\ell}}(\Lambda x+a;\Lambda \boldsymbol{p},\sigma,n) a(\Lambda \boldsymbol{p},\sigma,n)
-\end{aligned}&
-\end{flalign}
+\end{aligned}\]
+\[\begin{aligned}
+    R.H.S=\sum_{\bar{\ell}}\mathscr{D}_{\ell\bar{\ell}}(\Lambda^{-1})\Psi_{\bar{\ell}}^+(\Lambda x+a)
+    =\sum_{\bar{\ell}}\sum_{\bar{\sigma},n}\int d^3\Lambda p\,\mathscr{D}_{\ell\bar{\ell}}(\Lambda^{-1}) u_{\bar{\ell}}(\Lambda x+a;\Lambda \boldsymbol{p},\bar{\sigma},n) a^\dagger(\Lambda \boldsymbol{p},\bar{\sigma},n)
+\end{aligned}\]
+左右两边相等$L.H.S=R.H.S$所以,
+\[    \begin{aligned}
+    &\sum_{\sigma\bar{\sigma}}u_{\ell}(x;\boldsymbol{p},\sigma,n)\,e^{-i(\Lambda p)^\mu a_\mu}\sqrt{\frac{p^0}{(\Lambda p)^0}}
+    D_{\sigma \bar{\sigma}}^{j_n*}\left\{W^{-1}(\Lambda,p)\right\}a^\dagger(\Lambda\boldsymbol{p},\bar{\sigma},n)
+    \\=&\sum_{\bar{\ell}}\sum_{\bar{\sigma}}\mathscr{D}_{\ell\bar{\ell}}(\Lambda^{-1})u_{\bar{\ell}}(\Lambda x+a;\Lambda \boldsymbol{p},\bar{\sigma},n) a^\dagger(\Lambda \boldsymbol{p},\bar{\sigma},n)
+\end{aligned}\]
+\[\implies
+    \begin{aligned}
+            \sum_{\bar{\sigma}}u_{\ell}(x;\boldsymbol{p},\sigma,n)\,e^{-i(\Lambda p)^\mu a_\mu}\sqrt{\frac{p^0}{(\Lambda p)^0}}D_{\sigma \bar{\sigma}}^{j_n*}\left\{W^{-1}(\Lambda,p)\right\}=\sum_{\bar{\ell}}\mathscr{D}_{\ell\bar{\ell}}(\Lambda^{-1})u_{\bar{\ell}}(\Lambda x+a;\Lambda \boldsymbol{p},\bar{\sigma},n)
+    \end{aligned}\]
 
-
-\begin{flalign}
-    &\begin{aligned}L.H.S=R.H.S\implies
-        \sum_{\sigma\bar{\sigma}}v_{\ell}(x;\boldsymbol{p},\sigma,n)\,e^{i(\Lambda p)^\mu a_\mu}\sqrt{\frac{p^0}{(\Lambda p)^0}} &D_{\sigma \bar{\sigma}}^{j_n}\left\{W^{-1}(\Lambda,p)\right\}a(\Lambda\boldsymbol{p},\bar{\sigma},n)\\
-        =&\sum_{\bar{\ell}}\sum_{\sigma}\mathscr{D}_{\ell\bar{\ell}}(\Lambda^{-1})v_{\bar{\ell}}(\Lambda x+a;\Lambda \boldsymbol{p},\sigma,n) a(\Lambda \boldsymbol{p},\sigma,n)
-    \end{aligned}&
-\end{flalign}
-\begin{flalign}
-    &\begin{aligned}\text{
-    令 $\bar{\sigma}\rightleftarrows \sigma$所以：}
-        \sum_{\sigma\bar{\sigma}}v_{\ell}(x;\boldsymbol{p},\bar{\sigma},n)\,e^{i(\Lambda p)^\mu a_\mu}\sqrt{\frac{p^0}{(\Lambda p)^0}} &D_{\sigma \bar{\sigma}}^{j_n}\left\{W^{-1}(\Lambda,p)\right\}a(\Lambda\boldsymbol{p},\sigma,n)
-        \\
-        =&\sum_{\bar{\ell}}\sum_{\sigma}\mathscr{D}_{\ell\bar{\ell}}(\Lambda^{-1})v_{\bar{\ell}}(\Lambda x+a;\Lambda \boldsymbol{p},\sigma,n) a(\Lambda \boldsymbol{p},\sigma,n)
-    \end{aligned}&
-\end{flalign}
-最终得到
+最后写为，
 \begin{equation}
     \begin{aligned}
-            \sum_{\bar{\sigma}}
-            u_{\ell}(x;\boldsymbol{p},\bar{\sigma},n)
-            e^{-i(\Lambda p)^\mu a_\mu}
-            \sqrt{\frac{p^0}{(\Lambda p)^0}} 
-            &D_{\sigma \bar{\sigma}}^{j_n*}
-            \!\left\{W^{-1}(\Lambda,p)\right\} \\
-            &=
-            \sum_{\bar{\ell}}
-            \mathscr{D}_{\ell\bar{\ell}}(\Lambda^{-1})
-            u_{\bar{\ell}}(\Lambda x+a;\Lambda \boldsymbol{p},\sigma,n)\\
-            %
-            \sum_{\bar{\sigma}}
-            v_{\ell}(x;\boldsymbol{p},\bar{\sigma},n)
-            e^{i(\Lambda p)^\mu a_\mu}
-            \sqrt{\frac{p^0}{(\Lambda p)^0}} 
-            &D_{\sigma \bar{\sigma}}^{j_n}
-            \!\left\{W^{-1}(\Lambda,p)\right\} \\&=
-            \sum_{\bar{\ell}}
-            \mathscr{D}_{\ell\bar{\ell}}(\Lambda^{-1})
-            v_{\bar{\ell}}(\Lambda x+a;\Lambda \boldsymbol{p},\sigma,n)
-            \end{aligned}
+            \sum_{\bar{\sigma}}u_{\bar{\ell}}(\Lambda x+a;\Lambda \boldsymbol{p},\bar{\sigma},n)D_{\bar{\sigma}\sigma }^{j_n*}\left\{W(\Lambda,p)\right\}=\sqrt{\frac{p^0}{(\Lambda p)^0}}\,e^{-i(\Lambda p)^\mu a_\mu}\sum_{\bar{\ell}}\mathscr{D}_{\bar{\ell}\ell}(\Lambda)u_{\ell}(x;\boldsymbol{p},\sigma,n)
+    \end{aligned}
 \end{equation}
-\vspace{2ex}
+\centerline{\text{湮灭场的系数}}
+\[\begin{aligned}
+    L.H.S=&\;U_0(\Lambda,a)\Psi^{-}_\ell(x)U_0^\dagger(\Lambda,a)\\
+    =&\sum_{\sigma,n}\int d^3p\, v_{\ell}(x;\boldsymbol{p},\sigma,n) U_0(\Lambda,a)a^\dagger(\boldsymbol{p},\sigma,n)U_0^\dagger(\Lambda,a)\\
+    =&\sum_{\sigma,n}\int d^3p\, v_{\ell}(x;\boldsymbol{p},\sigma,n)\,e^{+i(\Lambda p)^\mu a_\mu}\sqrt{\frac{(\Lambda p)^0}{p^0}}\sum_{\bar{\sigma}}D_{\sigma \bar{\sigma}}^{j_n}\left\{W^{-1}(\Lambda,p)\right\}a^\dagger(\Lambda\boldsymbol{p},\bar{\sigma},n)\\
+    &\xrightarrow{d^3p\to \frac{d^3(\Lambda p)}{(\Lambda p)^0}p^0}\sum_{\sigma\bar{\sigma},n}\int d^3\Lambda p\, v_{\ell}(x;\boldsymbol{p},\sigma,n)\,e^{+i(\Lambda p)^\mu a_\mu}\sqrt{\frac{p^0}{(\Lambda p)^0}}\,D_{\sigma \bar{\sigma}}^{j_n}\left\{W^{-1}(\Lambda,p)\right\} a^\dagger(\Lambda\boldsymbol{p},\bar{\sigma},n)
+\end{aligned}\]
+\[\begin{aligned}
+    R.H.S=\sum_{\bar{\ell}}\mathscr{D}_{\ell\bar{\ell}}(\Lambda^{-1})\Psi_{\bar{\ell}}^+(\Lambda x+a)
+    =\sum_{\bar{\ell}}\sum_{\bar{\sigma},n}\int d^3\Lambda p\,\mathscr{D}_{\ell\bar{\ell}}(\Lambda^{-1}) v_{\bar{\ell}}(\Lambda x+a;\Lambda \boldsymbol{p},\bar{\sigma},n) a^\dagger(\Lambda \boldsymbol{p},\bar{\sigma},n)
+\end{aligned}\]
+左右两边相等$L.H.S=R.H.S$所以,
+\[    \begin{aligned}
+    &\sum_{\sigma\bar{\sigma}}v_{\ell}(x;\boldsymbol{p},\sigma,n)\,e^{+i(\Lambda p)^\mu a_\mu}\sqrt{\frac{p^0}{(\Lambda p)^0}}
+    D_{\sigma \bar{\sigma}}^{j_n}\left\{W^{-1}(\Lambda,p)\right\}a^\dagger(\Lambda\boldsymbol{p},\bar{\sigma},n)
+    \\=&\sum_{\bar{\ell}}\sum_{\bar{\sigma}}\mathscr{D}_{\ell\bar{\ell}}(\Lambda^{-1})v_{\bar{\ell}}(\Lambda x+a;\Lambda \boldsymbol{p},\bar{\sigma},n) a^\dagger(\Lambda \boldsymbol{p},\bar{\sigma},n)
+\end{aligned}\]
+\[\implies
+    \begin{aligned}
+            \sum_{\bar{\sigma}}v_{\ell}(x;\boldsymbol{p},\sigma,n)\,e^{i(\Lambda p)^\mu a_\mu}\sqrt{\frac{p^0}{(\Lambda p)^0}}D_{\sigma \bar{\sigma}}^{j_n}\left\{W^{-1}(\Lambda,p)\right\}=\sum_{\bar{\ell}}\mathscr{D}_{\ell\bar{\ell}}(\Lambda^{-1})v_{\bar{\ell}}(\Lambda x+a;\Lambda \boldsymbol{p},\bar{\sigma},n)
+    \end{aligned}\]
+最后写为，
+\begin{equation}
+    \begin{aligned}
+            \sum_{\bar{\sigma}}v_{\bar{\ell}}(\Lambda x+a;\Lambda \boldsymbol{p},\bar{\sigma},n)D_{\bar{\sigma}\sigma }^{j_n}\left\{W(\Lambda,p)\right\}=\sqrt{\frac{p^0}{(\Lambda p)^0}}\,e^{+i(\Lambda p)^\mu a_\mu}\sum_{\bar{\ell}}\mathscr{D}_{\bar{\ell}\ell}(\Lambda)v_{\ell}(x;\boldsymbol{p},\sigma,n)
+    \end{aligned}
+\end{equation}
 \hrule
 \vspace{2ex}
+将产生场和湮灭场的系数变换公式写在一起，它们是：
+\begin{subequations}
+    \begin{align}
+        &\sum_{\bar{\sigma}}u_{\bar{\ell}}(\Lambda x+a;\Lambda \boldsymbol{p},\bar{\sigma},n)D_{\bar{\sigma}\sigma }^{j_n*}\left\{W(\Lambda,p)\right\}=\sqrt{\frac{p^0}{(\Lambda p)^0}}\,e^{-i(\Lambda p)^\mu a_\mu}\sum_{\bar{\ell}}\mathscr{D}_{\bar{\ell}\ell}(\Lambda)u_{\ell}(x;\boldsymbol{p},\sigma,n)
+        \\
+        &\sum_{\bar{\sigma}}v_{\bar{\ell}}(\Lambda x+a;\Lambda \boldsymbol{p},\bar{\sigma},n)D_{\bar{\sigma}\sigma }^{j_n}\left\{W(\Lambda,p)\right\}=\sqrt{\frac{p^0}{(\Lambda p)^0}}\,e^{+i(\Lambda p)^\mu a_\mu}\sum_{\bar{\ell}}\mathscr{D}_{\bar{\ell}\ell}(\Lambda)v_{\ell}(x;\boldsymbol{p},\sigma,n)
+    \end{align}
+\end{subequations}
 \color{blue}到现在为止，一直在回避一个问题：构建局域场算符时：“粒子”对应 $\text{Poincar\'e}$ 群，而“场”对应Lorentz群
 \begin{itemize}
     \item \textbf{粒子（物理态）：} 存在于动量空间，必须依赖时空平移来定义其质量(无质量的也是依赖的)和动量属性。
@@ -203,25 +179,10 @@ $$ \mathscr{D}(\Lambda_1)\mathscr{D}(\Lambda_2) = D(\Lambda_1\Lambda_2) .  $$
 我们得出结论：平移在粒子态的表述上是非$trivial$的，但在场的表述上是$trivial$的，将剩下的系数矩阵的变换关系写出，就是：
 \begin{subequations}
     \begin{align}
-            &\sum_{\bar{\sigma}}
-            u_{\ell}(\boldsymbol{p},\bar{\sigma},n)
-            \sqrt{\frac{p^0}{(\Lambda p)^0}} 
-            D_{\sigma \bar{\sigma}}^{j_n*}
-            \!\left\{W^{-1}(\Lambda,p)\right\} =
-            \sum_{\bar{\ell}}
-            \mathscr{D}_{\ell\bar{\ell}}(\Lambda^{-1})
-            u_{\bar{\ell}}(\Lambda \boldsymbol{p},\sigma,n)
-            \\[10pt]
-            %
-            &\sum_{\bar{\sigma}}
-            v_{\ell}(\boldsymbol{p},\bar{\sigma},n)
-            \sqrt{\frac{p^0}{(\Lambda p)^0}} 
-            D_{\sigma \bar{\sigma}}^{j_n}
-            \!\left\{W^{-1}(\Lambda,p)\right\} =
-            \sum_{\bar{\ell}}
-            \mathscr{D}_{\ell\bar{\ell}}(\Lambda^{-1})
-            v_{\bar{\ell}}(\Lambda \boldsymbol{p},\sigma,n)
-            \end{align}
+        &\sum_{\bar{\sigma}}u_{\bar{\ell}}(\Lambda \boldsymbol{p},\bar{\sigma},n)D_{\bar{\sigma}\sigma }^{j_n*}\left\{W(\Lambda,p)\right\}=\sqrt{\frac{p^0}{(\Lambda p)^0}}\sum_{\bar{\ell}}\mathscr{D}_{\bar{\ell}\ell}(\Lambda)u_{\ell}(\boldsymbol{p},\sigma,n)
+        \\
+        &\sum_{\bar{\sigma}}v_{\bar{\ell}}(\Lambda \boldsymbol{p},\bar{\sigma},n)D_{\bar{\sigma}\sigma }^{j_n}\left\{W(\Lambda,p)\right\}=\sqrt{\frac{p^0}{(\Lambda p)^0}}\sum_{\bar{\ell}}\mathscr{D}_{\bar{\ell}\ell}(\Lambda)v_{\ell}(\boldsymbol{p},\sigma,n)
+    \end{align}
 \end{subequations}
 正常接下来应该讨论$Boost$和$Rotation$；但这里先停止，将这两种变换与系数矩阵的关系放在构造场之前.
 \topictitle{验证集团分解}
@@ -231,7 +192,7 @@ $$ \mathscr{D}(\Lambda_1)\mathscr{D}(\Lambda_2) = D(\Lambda_1\Lambda_2) .  $$
     V(t)&=\int d^3x\mathscr{H}(x)\sum_{NM} \sum_{\sigma'_1 \cdots \sigma'_N} \sum_{\sigma_1 \cdots \sigma_M} \sum_{n'_1 \cdots n'_N} \sum_{n_1 \cdots n_M} \sum_{\ell'_1 \cdots \ell'_N} \sum_{\ell_1 \cdots \ell_M}\times(2\pi)^{3 - \frac{3N}{2} - \frac{3M}{2}} \\
     &\times\int d^3\mathbf{p}'_1 \cdots d^3\mathbf{p}'_N d^3\mathbf{p}_1 \cdots d^3\mathbf{p}_M  \delta^3(\mathbf{p}'_1 + \cdots  - \mathbf{p}_1 - \cdots- ) \\
     &\times a^\dagger(\mathbf{p}'_1 \sigma'_1 n'_1) \cdots a^\dagger(\mathbf{p}'_N \sigma'_N n'_N) a(\mathbf{p}_M \sigma_M n_M) \cdots a(\mathbf{p}_1 \sigma_1 n_1) \\
-    &g_{\ell'_1 \cdots \ell'_N, \, \ell_1 \cdots \ell_M}  u_{\ell'_1}(\mathbf{p}'_1 \sigma'_1 n'_1) \cdots u_{\ell'_N}(\mathbf{p}'_N \sigma'_N n'_N) v_{\ell_1}(\mathbf{p}_1 \sigma_1 n_1) \cdots v_{\ell_M}(\mathbf{p}_M \sigma_M n_M) \ .
+    &g_{\ell'_1 \cdots \ell'_N, \, \ell_1 \cdots \ell_M}  v_{\ell'_1}(\mathbf{p}'_1 \sigma'_1 n'_1) \cdots v_{\ell'_N}(\mathbf{p}'_N \sigma'_N n'_N) u_{\ell_1}(\mathbf{p}_1 \sigma_1 n_1) \cdots u_{\ell_M}(\mathbf{p}_M \sigma_M n_M) \ .
 \end{aligned}
 \end{equation}
 \color{blue}可以看出，上式中包含且仅包含一个“唯一”的全局动量守恒 $\delta$ 函数（即 $\delta^3(\mathbf{p}'_1 + \cdots - \mathbf{p}_1 - \cdots)$），而剩下的动量空间系数（由 $g$ 张量和 $u, v$ 展开系数构成）则是充分光滑的函数（至多在零动量处有分支点奇异性，但不包含任何额外的 $\delta$ 函数奇点）。这种“单一 $\delta$ 函数 $\times$ 光滑函数”的漂亮的结构并不是巧合，正是 $S$-矩阵能够满足集团分解原理的的推论事实上，Weinberg 指出我们可以\textbf{反转}这一逻辑来思考：
@@ -252,7 +213,7 @@ $$ \mathscr{D}(\Lambda_1)\mathscr{D}(\Lambda_2) = D(\Lambda_1\Lambda_2) .  $$
     &[\Psi^-_\ell(x), \Psi^-_{\bar{\ell}}(x')]_{\mp}  = 0 \\
     % 第三行：交叉部分（湮灭场与产生场）
     &[\Psi^-_\ell(x), \Psi^+_{\bar{\ell}}(x')]_{\mp} = 
-    \frac{1}{(2\pi)^3}\sum_{\sigma,n}\int d^3 \boldsymbol{p}\,u_\ell(\boldsymbol{p},\sigma,n)v_{\bar{\ell}}(i\boldsymbol{p},\sigma,n)e^{p_\mu(x-x')^\mu}
+    \frac{1}{(2\pi)^3}\sum_{\sigma,n}\int d^3 \boldsymbol{p}\,v_\ell(\boldsymbol{p},\sigma,n)u_{\bar{\ell}}(\boldsymbol{p},\sigma,n)e^{ip_\mu(x-x')^\mu}
 \end{align}
 \end{subequations}
 这违背了微观因果性，唯一的解决办法是：将产生场和湮灭场线性组合：即：

@@ -1,17 +1,16 @@
-\section{Lagrangian 形式}对于场,变分原理是：
+\section{理论框架}
+\subsection{Lagrangian 形式}对于场,变分原理是：
 \begin{equation*}
     \begin{aligned}
         0 &= \delta I \\
-        &= \int d^4x \left[ \frac{\partial \mathscr{L}}{\partial \varphi ^{(a)}} \delta\varphi ^{(a)} + \frac{\partial \mathscr{L}}{\partial (\partial_\mu \varphi ^{(a)})} \delta(\partial_\mu \varphi ^{(a)}) \right] \\
-        &= \int d^4x \left\{ \left[ \frac{\partial \mathscr{L}}{\partial \varphi ^{(a)}} - \partial_\mu \frac{\partial \mathscr{L}}{\partial (\partial_\mu \varphi ^{(a)})} \right] \delta\varphi ^{(a)} +
-        \partial_\mu \left[ \frac{\partial \mathscr{L}}{\partial (\partial_\mu \varphi ^{(a)})} \delta\varphi ^{(a)} \right] \right\}
+        &= \int d^4x \left[ \frac{\partial \mathscr{L}}{\partial \Psi_\ell} \delta\Psi_\ell + \frac{\partial \mathscr{L}}{\partial (\partial_\mu \Psi_\ell)} \delta(\partial_\mu \Psi_\ell) \right] \\
+        &= \int d^4x \left\{ \left[ \frac{\partial \mathscr{L}}{\partial \Psi_\ell} - \partial_\mu \frac{\partial \mathscr{L}}{\partial (\partial_\mu \Psi_\ell)} \right] \delta\Psi_\ell +
+        \partial_\mu \left[ \frac{\partial \mathscr{L}}{\partial (\partial_\mu \Psi_\ell)} \delta\Psi_\ell \right] \right\}
     \end{aligned}
 \end{equation*}
 
 \noindent
 我们假设场在无穷远处是趋于$-\infty$,所以第二项自然的消失,我们得到了场的运动方程。
-\begin{tcolorbox}
     \begin{equation}
-    \frac{\partial \mathscr{L}}{\partial \varphi ^{(a)}} - \partial_\mu \frac{\partial \mathscr{L}}{\partial (\partial_\mu \varphi ^{(a)})} = 0
+    \frac{\partial \mathscr{L}}{\partial \Psi_\ell} - \partial_\mu \frac{\partial \mathscr{L}}{\partial (\partial_\mu \Psi_\ell)} = 0
 \end{equation}
-\end{tcolorbox}
