@@ -10,18 +10,83 @@ S-算符是：
 \begin{equation}
     S=\Omega^\dagger(\infty)\Omega(-\infty)=U(-\infty,\infty)
 \end{equation}
-利用编时乘积(\refeq{dyson_ser})\begin{equation}\label{5.5.2}
+其中，
+\begin{equation}\label{5.5.2}
    \begin{aligned}
     U(t,t_0)=&\Omega^\dagger(t)\Omega(t_0)\\
     =&e^{iH_0t}e^{-iH(t-t_0)}e^{-iH_0t_0}\\
-   &\overset{t\to\infty,t_0\to-\infty}{\longrightarrow}\\
-   S=&U(\infty,-\infty)=T \exp\!\left(-i\int_{-\infty}^{\infty} dt\,V(t)\right)
    \end{aligned}
 \end{equation}
-在这种情况下，$S$矩阵变为
+现在来推导时间演化算符$U(t,t_0)$的形式，对$U(t,t_0)=e^{iH_0t}e^{-iH(t-t_0)}e^{-iH_0t_0}$两端求时间的导数：
+\begin{equation*}
+        \begin{aligned}
+        \frac{d}{dt}U(t,t_0)=&\frac{d}{dt}\left\{e^{iH_0t}e^{-iH(t-t_0)}e^{iH_0t_0}\right\}\\
+        =&iH_0U(t,t_0)-ie^{iH_0t}He^{-iH(t-t_0)}e^{iH_0t_0}\\
+        =&iH_0U(t,t_0)-ie^{iH_0t}H\underbrace{e^{-iH_0t}e^{-iH_0t}}_{\mathbf{1}}e^{-iH(t-t_0)}e^{iH_0t_0}\\
+        =&iH_0U(t,t_0)-ie^{iH_0t}He^{-iH_0t}U(t,t_0)\\
+        =&iH_0U(t,t_0)-ie^{iH_0t}(\underbrace{H_0}_\text{自由哈密顿量时间演化后不变}+V)e^{-iH_0t}U(t,t_0)\\
+        =&-ie^{iH_0t}Ve^{-iH_0t}U(t,t_0)\\
+        =&-iV(t)U(t,t_0)
+    \end{aligned}
+\end{equation*}
+对上式积分:
+\begin{equation*}
+    \begin{aligned}
+        &\int^{t}_{t_0}dU(t,t_0)=\int^{t}_{t_0}dt\left[-iV(t)U(t,t_0)\right]\\
+        &\rightarrow U(t,t_0)-U(t_0,t_0)=-i\int^{t}_{t_0}dt\left[V(t)U(t,t_0)\right]\\
+        &\rightarrow U(t,t_0)=1-i\int^{t}_{t_0}dt\left[V(t)U(t,t_0)\right]\\
+    \end{aligned}
+\end{equation*}
+ 不断迭代这个积分,可以得到对于$V$的幂次展开的积分式：
+\[    \begin{aligned}
+        \rightarrow U(t,t_0)=1-&i\int^{t}_{t_0}dt_1V(t_1)+(-i)^2\int^{t}_{t_0}dt_1\int_{t_0}^{t_1}dt_2V(t_1)V(t_1)\\
+        &+(-i)^3\int^{t}_{t_0}dt_1\int^{t_1}_{t_0}dt_2\int^{t_2}_{t_0}dt_3V(t_1)V(t_2)V(t_3)+\cdots
+    \end{aligned}\]
+取渐近极限$t\rightarrow\infty$和$t_0\rightarrow-\infty$,就给出了时间演化算符的渐近展开形式：
+\begin{equation}\label{dyson}
+    \begin{aligned}
+        \rightarrow U(\infty,-\infty)=1-&i\int^{\infty}_{-\infty}dt_1V(t_1)+(-i)^2\int^{\infty}_{-\infty}dt_1\int_{-\infty}^{t_1}dt_2V(t_1)V(t_1)\\
+        &+(-i)^3\int^{\infty}_{-\infty}dt_1\int^{t_1}_{-\infty}dt_2\int^{t_2}_{-\infty}dt_3V(t_1)V(t_2)V(t_3)+\cdots
+    \end{aligned}
+\end{equation}
+这里利用算符的\text{\color{blue}编时乘积}(按时间排序)写为编时乘积的形式，编时算符的形式为：
+\[
+\begin{aligned}
+T\{V(t)\} &= V(t), \\
+T\{V(t_1)V(t_2)\} &= \theta(t_1-t_2)V(t_1)V(t_2)
++ \theta(t_2-t_1)V(t_2)V(t_1)\\
+&\ldots
+\end{aligned}
+\]
+其中 $\theta(\tau)$ 是阶跃函数，$\tau>0$ 时等于 $+1$ 而 $\tau<0$ 时等于 $0$。
+$n$ 个 $V$ 的编时乘积是对全部 $n!$ 个 $V$ 的置换的求和，
+每一个都对所有的 $t_1,\ldots,t_n$ 积分，所以方程(\refeq{dyson})可以写为
+\begin{equation*}
+    \begin{aligned}
+        U(\infty,-\infty)
+        = 1 + \sum_{n=1}^{\infty} \frac{(-i)^n}{n!}
+        \int_{-\infty}^{\infty} dt_1\,dt_2 \cdots dt_n\,
+        T\{V(t_1)\cdots V(t_n)\}
+\end{aligned}
+\end{equation*}
+如果不同时刻的所有 $V(t)$ 是对易的，
+这个级数可以进行求和，其和是
+\[
+\begin{aligned}
+U = \exp\!\left(-i\int_{-\infty}^{\infty} dt\,V(t)\right).
+\end{aligned}
+\]
+当然，通常不是这种情况；一般而言，上式甚至不收敛，
+它充其量是 $V$ 中出现的任何耦合常数的渐近展开\footnote{关于渐近展开的入门介绍，Erdelyi的短篇专著《Asymptotic Expansions》（Dover, 1956）非常有用}式。
+然而在一般情况下，上式有时写为
+\begin{equation}\label{dyson_ser}
+        U = T \exp\!\left(-i\int_{-\infty}^{\infty} dt\,V(t)\right)   
+\end{equation}
+这被叫做Dyson级数，在这种情况下，$S$矩阵变为
 \begin{equation}\label{time_order_s_matrix}
     S_{\beta\alpha}\to\braket{\beta|T \exp\!\left(-i\int_{-\infty}^{\infty} dt\,V(t)\right)|\alpha}
 \end{equation}
+
 \begin{tcolorbox}[colback=white!5,colframe=black!45]
 计算Dyson级数最有力的方法是微扰展开(也就是费曼规则)，但这并不限制$V(t)$的大小，只不过在较小的时候，微扰才有效
 

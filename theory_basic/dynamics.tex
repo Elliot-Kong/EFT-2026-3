@@ -166,8 +166,295 @@ U = \exp\!\left(-i\int_{-\infty}^{\infty} dt\,V(t)\right).
 \begin{equation}\label{dyson_ser}
         U = T \exp\!\left(-i\int_{-\infty}^{\infty} dt\,V(t)\right)   
 \end{equation}
+\subsection{0+1 维动力学: 泛函方法}\label{0+1_path}
 
-\subsection{0+1 维动力学: 泛函方法}
+前文中算符方法处理了量子动力学；本节引入一种概念上截然不同但数学上严格等价的描述——\text{\color{blue}路径积分}。
+与算符方法不同，路径积分的出发点不是 Hilbert 空间中的算符和态矢量，
+而是经典构型空间中所有可能路径的加权求和——
+每一条路径 $q(t)$ 被赋予权重 $e^{iS[q]}$，其中 $S[q]$ 是沿该路径计算的经典作用量。
+
+\medskip
+量子力学的全部运动学结构，归根到底建立在两类对易关系之上：
+\begin{subequations}\label{eq:CCR}
+  \begin{align}
+    &[Q_i,Q_j]=0\\
+    &[P_i,P_j]=0\\
+    &[Q_i,P_j]=i\,\delta_{ij}
+  \end{align}
+\end{subequations}
+其中对易的算符提供了本征关系以及完备正交基：
+\begin{subequations}\label{eq:eigen-rel}
+    \begin{align}
+      &Q\ket{q}=q\ket{q}\,,\quad
+      \braket{q|q'}=\delta(q-q')\,,\quad
+      \mathbf{1}=\int dq\,\ket{q}\bra{q}\,,\\[4pt]
+      &P\ket{p}=p\ket{p}\,,\quad
+      \braket{p|p'}=\delta(p-p')\,,\quad
+      \mathbf{1}=\int dp\,\ket{p}\bra{p}\,.
+    \end{align}
+\end{subequations}
+而不对易的算符 $[Q_i,P_j]=i\,\delta_{ij}$
+提供了两组基之间的内积\footnote{%
+  证明：从 $[Q,P]=i$ 出发，$P$ 作为 $-i\,\partial/\partial q$
+  作用在 $q$-基的波函数上。
+  $\braket{q|p}$ 的右边被视为 $P$ 的本征态
+  $\ket{p}$ 在 $q$-基下的波函数；
+  因子 $1/\sqrt{2\pi}$ 由归一化要求
+  $\braket{p|p'}=\delta(p-p')$ 确定。}：
+\begin{equation}\label{eq:qp-overlap}
+  \braket{q|p}=\frac{1}{\sqrt{2\pi}}\,e^{ipq}
+\end{equation}
+% ──────────────────────────────────────────────
+路径积分的自然语言是 Heisenberg 绘景。
+在这种描述中，\text{\color{blue}所有的时间演化都被编码在算符 $e^{iHt}$ 中}：
+\begin{equation}\label{eq:Heis-ops}
+  Q(t)=e^{iHt}\,Q\,e^{-iHt}\,,\qquad
+  P(t)=e^{iHt}\,P\,e^{-iHt}\,,
+\end{equation}
+而对应的本征态是
+\begin{equation}\label{eq:Heis-states}
+  \ket{q,t}=e^{iHt}\ket{q}\,,\qquad
+  \ket{p,t}=e^{iHt}\ket{p}\,.
+\end{equation}
+容易验证：Heisenberg 绘景下的算符和态依然满足
+本征关系~(\ref{eq:eigen-rel})
+以及内积~(\ref{eq:qp-overlap})：
+\[
+  Q(t)\ket{q,t}
+  =e^{iHt}\,Q\,e^{-iHt}\,e^{iHt}\ket{q}
+  =e^{iHt}\,Q\ket{q}=q\ket{q,t}\,,
+\]
+所以
+\begin{subequations}\label{eq:Heis-complete}
+  \begin{align}
+    &\braket{q,t|q',t}=\delta(q-q')\,,\quad
+      \mathbf{1}=\int dq\,\ket{q,t}\bra{q,t}\,,\\
+    &\braket{p,t|p',t}=\delta(p-p')\,,\quad
+      \mathbf{1}=\int dp\,\ket{p,t}\bra{p,t}\,,\\
+    &\braket{q,t|p,t}=\frac{1}{\sqrt{2\pi}}\,e^{ipq}\,.
+  \end{align}
+\end{subequations}
+
+% ──────────────────────────────────────────────
+\topictitle{传播子：核心动力学}
+核心问题是计算两个\text{\color{blue}不同时刻}的
+Heisenberg 位置本征态的内积：
+\begin{equation}\label{eq:propagator}
+  K(q_f,t_f;\,q_i,t_i)
+  \;\equiv\;\braket{q_f,t_f\,|\,q_i,t_i}
+  \;=\;\bra{q_f}\,e^{-i(t_f-t_i)H}\,\ket{q_i}\,.
+\end{equation}
+传播子包含算符 $e^{-i\Delta t\,H}$，
+对于一般的哈密顿量无法直接计算。
+
+\medskip\noindent
+\textbf{单步传播子。}
+令 $t_f=t+\epsilon$、$t_i=t$，其中 $\epsilon$ 是无穷小量：
+\begin{equation}\label{eq:single-step-0}
+  \braket{q',t{+}\epsilon\,|\,q,t}
+  =\bra{q'}\,e^{-i\epsilon\,H(Q,P)}\,\ket{q}
+  =\bra{q'}\bigl(1-i\epsilon\,H+\mathscr{O}(\epsilon^2)\bigr)\ket{q}\,.
+\end{equation}
+\text{\color{blue}关于算符排序}：哈密顿量 $H(Q,P)$ 可以通过对易关系重写为
+\textbf{所有 $Q$ 处在 $P$ 左边}的标准形式\footnote{%
+  Weinberg 称之为``标准排序''（standard ordering）。
+  例如 $P\,Q\,P = Q\,P^2 - i\,P$，
+  第一项已是标准排序，第二项是 $\mathscr{O}(\hbar)$ 的修正。
+  注意这\textbf{不是} Weyl（对称）排序；
+  不同排序方案之间的差异正比于 $\hbar$，
+  体现为哈密顿量中各项系数的不同选择——
+  这些系数在理论构建时本就是自由参数。}。
+在标准排序下，$Q$ 的本征值可从 $\bra{q'}$ 中提取。
+为了处理 $P$，在展开式中插入动量完备基
+$\mathbf{1}=\int dp\,\ket{p}\bra{p}$：
+\begin{align}
+  \braket{q',t{+}\epsilon\,|\,q,t}
+  &=\int dp\,
+    \bra{q'}\bigl(1-i\epsilon\,H(Q,P)+\cdots\bigr)
+    \ket{p}\braket{p|q}
+    \notag\\[4pt]
+  &=\int dp\,
+    \bigl(1-i\epsilon\,H(q',p)+\cdots\bigr)
+    \braket{q'|p}\braket{p|q}\,.
+    \label{eq:single-step-1}
+\end{align}
+第二个等号利用了标准排序：$Q$ 的本征值取 $\bra{q'}$ 提供的 $q'$，
+$P$ 的本征值取 $\ket{p}$ 提供的 $p$，
+于是\textbf{算符}哈密顿量变成了 c-\textbf{数}函数 $H(q',p)$。
+
+\medskip\noindent
+代入内积 $\braket{q'|p}=\frac{1}{\sqrt{2\pi}}e^{ipq'}$
+以及
+$\braket{p|q}=\braket{q|p}^*=\frac{1}{\sqrt{2\pi}}e^{-ipq}$：
+\begin{align}
+  \braket{q',t{+}\epsilon\,|\,q,t}
+  &=\int dp\;e^{-i\epsilon H(q',p)}\;
+    \underbrace{\frac{1}{\sqrt{2\pi}}\,e^{ipq'}}_{%
+      \braket{q'|p}}\;
+    \underbrace{\frac{1}{\sqrt{2\pi}}\,e^{-ipq}}_{%
+      \braket{p|q}}
+    \notag\\[4pt]
+  &=\int\frac{dp}{2\pi}\;
+    e^{ip(q'-q)-i\epsilon\,H(q',p)}
+    \notag\\[4pt]
+  &=\int\frac{dp}{2\pi}\;
+    \exp\!\Bigl[\,
+      i\bigl(p\,\underbrace{(q'-q)}_{dq}
+      -\epsilon\,H(q',p)\bigr)
+    \Bigr]
+    \notag\\[4pt]
+  &=\int\frac{dp}{2\pi}\;
+    \exp\!\biggl[\,
+      i\,\epsilon\,\biggl(
+        p\,\frac{dq}{\epsilon}-H(q',p)
+      \biggr)
+    \biggr]\,.
+    \label{eq:single-step-final}
+\end{align}
+将时间区间 $[t_i,t_f]$ 等分为 $N{+}1$ 份，
+每份宽度
+\begin{equation}
+  \epsilon=\frac{t_f-t_i}{N+1}\,,
+\end{equation}
+在每个中间时刻 $\tau_k=t_i+k\epsilon$\;($k=1,\dots,N$) 处
+插入位置完备基
+$\mathbf{1}=\int dq_k\,\ket{q_k,\tau_k}\bra{q_k,\tau_k}$：
+\begin{equation}\label{eq:propagator-sliced}
+  \braket{q_f,t_f|q_i,t_i}
+  =\int dq_1\cdots dq_N\;
+    \braket{q_f,t_f|q_N,\tau_N}
+    \braket{q_N,\tau_N|q_{N-1},\tau_{N-1}}
+    \cdots
+    \braket{q_1,\tau_1|q_i,t_i}\,.
+\end{equation}
+将每个单步传播子代入~(\ref{eq:single-step-final})，
+记 $q_0\equiv q_i$、$q_{N+1}\equiv q_f$：
+\begin{equation}\label{eq:PI-discrete}
+  \braket{q_f,t_f|q_i,t_i}
+  =\int\biggl(\prod_{k=1}^{N}dq_k\biggr)
+    \biggl(\prod_{k=0}^{N}\frac{dp_k}{2\pi}\biggr)
+  \exp\!\biggl[\,
+    i\,\epsilon\sum_{k=0}^{N}\biggl(
+      p_k\,\frac{q_{k+1}-q_k}{\epsilon}
+      -H(q_{k+1},p_k)
+    \biggr)
+  \biggr]
+\end{equation}
+
+\medskip\noindent
+\textbf{连续极限。}
+定义光滑插值函数 $q(\tau)$、$p(\tau)$
+使得 $q(\tau_k)=q_k$、$p(\tau_k)=p_k$。
+当 $\epsilon\to 0$（即 $N\to\infty$）时，
+离散求和变为 $\tau$ 的积分：
+\[
+  \epsilon\sum_{k=0}^{N}\biggl(
+    p_k\,\frac{q_{k+1}-q_k}{\epsilon}-H(q_{k+1},p_k)
+  \biggr)
+  \;\xrightarrow{\;\epsilon\to 0\;}
+  \;\int_{t_i}^{t_f}\!d\tau\;
+    \bigl[\,p(\tau)\,\dot{q}(\tau)-H\bigl(q(\tau),p(\tau)\bigr)\,\bigr]\,.
+\]
+定义泛函积分测度
+\begin{equation}
+  \int\prod_{\tau}dq(\tau)\prod_{\tau}\frac{dp(\tau)}{2\pi}\;\cdots
+  \;\equiv\;
+  \lim_{\epsilon\to 0}\int
+    \prod_{k}dq_k\prod_{k}\frac{dp_k}{2\pi}\;\cdots\,,
+\end{equation}
+最终得到\textbf{相空间路径积分}：
+\begin{equation}\label{eq:PI-phase-space}
+  \braket{q_f,t_f|q_i,t_i}
+  =\int_{\substack{q(t_i)=q_i\\q(t_f)=q_f}}
+    \prod_{\tau}dq(\tau)\prod_{\tau}\frac{dp(\tau)}{2\pi}
+    \exp\!\biggl[\,i\int_{t_i}^{t_f}\!d\tau\;
+      \bigl(\,p\,\dot{q}-H(q,p)\,\bigr)
+    \biggr]
+\end{equation}
+\begin{itemize}
+  \item 对坐标空间中所有满足边界条件
+    $q(t_i)=q_i$、$q(t_f)=q_f$ 的路径 $q(\tau)$ 积分；
+  \item 对动量空间中\textbf{所有}路径 $p(\tau)$ 积分
+    （$p$ 无边界条件约束，
+    积分区间为 $(-\infty,+\infty)$）。
+\end{itemize}
+
+% ──────────────────────────────────────────────
+\topictitle{编时乘积的路径积分}
+在这种方式下将算符 $\mathcal{O}\bigl(P(\tau),Q(\tau)\bigr)$
+（约定所有 $P$ 在左、$Q$ 在右）
+插入传播子的推导中，
+可以得到编时乘积的路径积分表示。
+对于\textbf{任意}时间排列的 $t_A,t_B,\ldots\in[t_i,t_f]$：
+\begin{equation}\label{eq:PI-T-product}
+\begin{aligned}
+  &\bra{q_f,t_f}\,T\!\bigl\{
+    \mathcal{O}_A\bigl(p(t_A),q(t_A)\bigr)\,
+    \mathcal{O}_B\bigl(p(t_B),q(t_B)\bigr)\cdots
+  \bigr\}\ket{q_i,t_i}\\[6pt]
+  &\quad=\int\!\mathcal{D}q\;\frac{\mathcal{D}p}{2\pi}\;
+    \mathcal{O}_A\bigl(p(t_A),q(t_A)\bigr)\,
+    \mathcal{O}_B\bigl(p(t_B),q(t_B)\bigr)\cdots\;
+    \exp\!\biggl[\,i\int_{t_i}^{t_f}\!d\tau\;
+      \bigl(p\dot{q}-H\bigr)
+    \biggr]
+\end{aligned}
+\end{equation}
+\text{\color{blue}%
+公式右边的 $q(\tau)$ 与 $p(\tau)$ 仅是 c-数积分变量；
+它们\textbf{不}满足 Hamilton 方程，
+也\textbf{不}通过 Legendre 变换互相关联。}
+\begin{comment}
+% ──────────────────────────────────────────────
+\topictitle{经典极限与驻相近似}
+
+路径积分提供了理解量子-经典过渡的最直观方式。
+暂时恢复 $\hbar$：
+\[
+  K=\int\mathcal{D}q\;\exp\!\biggl\{\frac{i}{\hbar}\,S[q]\biggr\}
+\]
+当 $\hbar\to 0$ 时，
+相位 $S/\hbar$ 对路径的微小偏离变化极为剧烈，
+不同路径的贡献因快速振荡而相消干涉——
+恰如集团分解论证所利用的 Riemann--Lebesgue 机制。
+唯一的例外是\textbf{驻相点}：
+\begin{equation}\label{eq:EL}
+  \frac{\delta S}{\delta q(t)}\biggr|_{q=q_{\mathrm{cl}}}=0
+  \quad\Longleftrightarrow\quad
+  \frac{d}{dt}\frac{\partial L}{\partial\dot{q}}
+  -\frac{\partial L}{\partial q}=0
+\end{equation}
+这正是经典力学的 Euler--Lagrange 方程。
+将 $q(t)=q_{\mathrm{cl}}(t)+\eta(t)$
+（$\eta(t_i)=\eta(t_f)=0$）代入作用量，
+展开到涨落 $\eta$ 的二阶\footnote{%
+  一阶项 $\delta S/\delta q|_{q_{\mathrm{cl}}}=0$
+  因经典方程成立而消失。}：
+\begin{equation}\label{eq:saddle}
+  S[q]=S[q_{\mathrm{cl}}]
+  +\frac{1}{2}\int\!dt\,dt'\;
+    \eta(t)\,
+    \frac{\delta^2 S}{\delta q(t)\,\delta q(t')}
+    \biggr|_{q_{\mathrm{cl}}}
+    \eta(t')
+  +\mathscr{O}(\eta^3)\,.
+\end{equation}
+对涨落 $\eta$ 做高斯积分，得到半经典（WKB）近似：
+\begin{equation}\label{eq:WKB}
+  K\approx\mathcal{N}\,
+  \exp\!\biggl\{\frac{i}{\hbar}\,S[q_{\mathrm{cl}}]\biggr\}
+\end{equation}
+其中预指数因子 $\mathcal{N}$ 由二阶涨落算符的函数行列式决定。
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{
+\textbf{物理图像：}
+经典力学中粒子沿唯一的使作用量取极值的经典轨迹运动；
+量子力学中粒子``探索''所有可能的路径，
+但在 $\hbar\to 0$ 极限下只有经典路径附近的路径彼此相干增强。
+}}
+\end{center}
+
+  \subsection{0+1 维动力学: 泛函方法}
 
 前文中算符方法处理了量子动力学；本节引入一种概念上截然不同但数学上严格等价的描述——\text{\color{blue}路径积分}
 与算符方法不同，路径积分的出发点不是 Hilbert 空间中的算符和态矢量，而是经典构型空间中所有可能路径的加权求和——
@@ -315,3 +602,5 @@ $$\varepsilon = \frac{t_f - t_i}{N+1}$$
 \end{equation}
 其中预指数因子 $\mathcal{N}$ 由二阶涨落算符的函数行列式决定。
 
+
+\end{comment}

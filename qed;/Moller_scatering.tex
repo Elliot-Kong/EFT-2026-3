@@ -1,0 +1,170 @@
+\s{Møller散射}
+
+\subsection*{费曼图与振幅}
+
+Møller 散射描述两个电子的散射：$e^-(p_1) + e^-(p_2) \to e^-(p_3) + e^-(p_4)$。
+由于初末态粒子全同，存在两个费曼图（$t$ 道与 $u$ 道），总振幅需要考虑全同费米子的反号。
+
+\paragraph{$t$ 道振幅}
+
+\begin{equation}
+    \mathcal{M}_t = \bar{u}_3 (-ie\gamma^\mu) u_1 \cdot \frac{-g_{\mu\nu}}{t} \cdot \bar{u}_4 (-ie\gamma^\nu) u_2
+\end{equation}
+
+\paragraph{$u$ 道振幅}
+
+\begin{equation}
+    \mathcal{M}_u = \bar{u}_3 (-ie\gamma^\mu) u_2 \cdot \frac{-g_{\mu\nu}}{u} \cdot \bar{u}_4 (-ie\gamma^\nu) u_1
+\end{equation}
+
+\paragraph{总振幅}
+
+由于两个末态电子全同，需减去交换项：
+\begin{equation}
+    \mathcal{M} = \mathcal{M}_t - \mathcal{M}_u
+\end{equation}
+
+因此
+\begin{equation}
+    |\mathcal{M}|^2 = |\mathcal{M}_t|^2 + |\mathcal{M}_u|^2 - \mathcal{M}_t \mathcal{M}_u^* - \mathcal{M}_t^* \mathcal{M}_u
+\end{equation}
+
+\subsection*{对自旋求和}
+
+利用完全性关系 $\sum_s u^s \bar{u}^s = \slashed{p} + m$，各项分别计算。
+
+\paragraph{① $\sum_{\mathrm{spins}} |\mathcal{M}_t|^2$}
+
+\begin{equation}
+    \sum_{\mathrm{spins}} |\mathcal{M}_t|^2
+    = \frac{e^4}{t^2}
+    \operatorname{tr}\!\bigl\{\gamma^\mu (\slashed{p}_1 + m)\gamma^\nu (\slashed{p}_3 + m)\bigr\}
+    \operatorname{tr}\!\bigl\{\gamma_\mu (\slashed{p}_2 + m)\gamma_\nu (\slashed{p}_4 + m)\bigr\}
+\end{equation}
+
+\paragraph{② $\sum_{\mathrm{spins}} |\mathcal{M}_u|^2$}
+
+\begin{equation}
+    \sum_{\mathrm{spins}} |\mathcal{M}_u|^2
+    = \frac{e^4}{u^2}
+    \operatorname{tr}\!\bigl\{\gamma^\mu (\slashed{p}_2 + m)\gamma^\nu (\slashed{p}_3 + m)\bigr\}
+    \operatorname{tr}\!\bigl\{\gamma_\mu (\slashed{p}_1 + m)\gamma_\nu (\slashed{p}_4 + m)\bigr\}
+\end{equation}
+
+\paragraph{③ 干涉项 $\sum_{\mathrm{spins}} \mathcal{M}_t \mathcal{M}_u^*$}
+
+展开后利用完全性关系，色因子提出：
+\begin{equation}
+    \sum_{\mathrm{spins}} \mathcal{M}_t \mathcal{M}_u^*
+    = \frac{g_{\mu\nu} g_{\rho\sigma}}{tu}
+    \operatorname{tr}\!\bigl\{\gamma^\mu (\slashed{p}_1 + m)\gamma^\rho (\slashed{p}_4 + m)
+    (-ie\gamma^\sigma)(\slashed{p}_3 + m)(-ie\gamma^\nu)(\slashed{p}_2 + m)\bigr\}
+\end{equation}
+
+最终化为一个四阶迹：
+\begin{equation}
+    \sum_{\mathrm{spins}} \mathcal{M}_t \mathcal{M}_u^*
+    = \frac{e^4}{tu}
+    \operatorname{tr}\!\bigl\{\gamma^\mu (\slashed{p}_1 + m)\gamma^\nu (\slashed{p}_4 + m)
+    \gamma_\mu (\slashed{p}_2 + m)\gamma_\nu (\slashed{p}_3 + m)\bigr\}
+\end{equation}
+
+\subsection*{迹的计算}
+
+利用以下迹公式（奇数个 $\gamma$ 矩阵的迹为零）：
+
+\begin{align}
+    \operatorname{tr}\!\bigl\{\gamma^\mu (\slashed{p}_1 + m)\gamma^\nu (\slashed{p}_3 + m)\bigr\}
+    &= 4\Bigl(p_1^\mu p_3^\nu - g^{\mu\nu} p_1 \cdot p_3 + p_1^\nu p_3^\mu + m^2 g^{\mu\nu}\Bigr)
+\end{align}
+
+\begin{align}
+    \operatorname{tr}\!\bigl\{\gamma_\mu (\slashed{p}_2 + m)\gamma_\nu (\slashed{p}_4 + m)\bigr\}
+    &= 4\Bigl((p_2)_\mu (p_4)_\nu - g_{\mu\nu} p_2 \cdot p_4 + (p_2)_\nu (p_4)_\mu + m^2 g_{\mu\nu}\Bigr)
+\end{align}
+
+收缩后（使用 $\gamma^\mu \slashed{a} \gamma_\mu = -2\slashed{a}$，$\gamma^\mu \gamma^\nu \gamma^\rho \gamma^\sigma \gamma_\mu = -2\gamma^\sigma\gamma^\rho\gamma^\nu$，$\gamma^\mu \slashed{a}\slashed{b}\gamma_\mu = 4(a\cdot b)$）：
+
+\begin{equation}
+    \sum_{\mathrm{spins}} |\mathcal{M}_t|^2
+    = \frac{16e^4}{t^2}
+    \Bigl[
+    2(p_1 \cdot p_2)(p_3 \cdot p_4) + 2(p_1 \cdot p_4)(p_3 \cdot p_2)
+    - 2m^2(p_1 \cdot p_3) - 2m^2(p_2 \cdot p_4) + 4m^4
+    \Bigr]
+\end{equation}
+
+\begin{equation}
+    \sum_{\mathrm{spins}} |\mathcal{M}_u|^2
+    = \frac{16e^4}{u^2}
+    \Bigl[
+    2(p_1 \cdot p_2)(p_3 \cdot p_4) + 2(p_2 \cdot p_4)(p_3 \cdot p_1)
+    - 2m^2(p_1 \cdot p_3) - 2m^2(p_2 \cdot p_4) + 4m^4
+    \Bigr]
+\end{equation}
+
+对于干涉项，利用四阶迹的化简（$\gamma^\mu \slashed{a}\slashed{b}\slashed{c}\slashed{d}\gamma_\mu = -2\slashed{d}\slashed{c}\slashed{b}\slashed{a}$ 等）：
+
+\begin{align}
+    \sum_{\mathrm{spins}} \mathcal{M}_t \mathcal{M}_u^* &= \frac{e^4}{tu}
+    \operatorname{tr}\!\bigl\{
+    4m^2(\slashed{p}_4 \slashed{p}_\phi + \slashed{p}_1\slashed{p}_3 + \slashed{p}_2\slashed{p}_1 + \slashed{p}_4\slashed{p}_3)
+    - 8 p_1 \cdot p_2 \slashed{p}_4 \slashed{p}_3 \notag \\
+    &\quad + 4m^2 \slashed{p}_4\slashed{p}_1 + 4m^2 \slashed{p}_2\slashed{p}_3 - 8m^4
+    \bigr\} \notag \\[4pt]
+    &= \frac{e^4}{tu}\Bigl\{
+    16m^2\bigl[(p_3 \cdot p_4) + (p_2 \cdot p_4) + (p_1 \cdot p_3) + (p_1 \cdot p_2) + (p_4 \cdot p_1) + (p_3 \cdot p_2)\bigr] \notag\\
+    &\quad - 32\bigl[m^2 + (p_1 \cdot p_2)(p_3 \cdot p_4)\bigr]
+    \Bigr\}
+\end{align}
+
+\subsection*{引入 Mandelstam 变量}
+
+定义 Mandelstam 变量：
+\begin{align}
+    s &= (p_1 + p_2)^2 = 2m^2 + 2\, p_1 \cdot p_2 & &\Rightarrow\quad 2\,p_1\cdot p_2 = 2\,p_3\cdot p_4 = s - 2m^2 \\
+    t &= (p_1 - p_3)^2 = 2m^2 - 2\, p_1 \cdot p_3 & &\Rightarrow\quad 2\,p_1\cdot p_3 = 2\,p_2\cdot p_4 = s+u-2m^2 \\
+    u &= (p_1 - p_4)^2 = 2m^2 - 2\, p_1 \cdot p_4 & &\Rightarrow\quad 2\,p_1\cdot p_4 = 2\,p_2\cdot p_3 = 2m^2 - u
+\end{align}
+
+利用这些关系代入，得：
+
+\begin{align}
+    \frac{1}{4}\sum_{\mathrm{spins}}|\mathcal{M}|^2
+    &= \frac{2e^4}{t^2}
+    \Bigl\{(s-2m^2)^2 + (2m^2 - u)^2 + 8m^4 \notag\\
+    &\qquad - 2m^2(s+u-2m^2) - 2m^2(s+u-2m^2)\Bigr\} \notag\\
+    &\quad +\frac{2e^4}{u^2}
+    \Bigl\{(s-2m^2)^2 + (s+u-2m^2)^2 \notag\\
+    &\qquad - 2m^2(2m^2-u) - 2m^2(2m^2-u) + 8m^4\Bigr\} \notag\\
+    &\quad -\frac{4e^4}{ut}
+    \Bigl\{m^2(s-2m^2) + m^2(s+u-2m^2) - (s-2m^2)^2 \notag\\
+    &\qquad + m^2(2m^2-u)
+    + m^2(s+u-2m^2) + m^2(s-2m^2) \notag\\
+    &\qquad + m^2(2m^2-u) - 4m^4\Bigr\}
+\end{align}
+
+\subsection*{高能极限}
+
+在高能极限 $p_b > 10\ \mathrm{MeV}$，$m \to 0$ 下，
+
+\begin{align}
+    \frac{1}{4}\sum_{\mathrm{spins}}|\mathcal{M}|^2
+    &\approx
+    \frac{2e^4}{t^2}\bigl\{s^2 + u^2\bigr\}
+    + \frac{2e^4}{u^2}\bigl\{s^2 + (s+u)^2\bigr\}
+    + \frac{4e^4}{tu} s^2
+\end{align}
+
+最终结果为：
+
+\begin{equation}
+\boxed{
+    \sum_{\mathrm{spins}}|\mathcal{M}|^2
+    = 8e^4 \left(
+    \frac{s^2 + u^2}{t^2}
+    + \frac{s^2 + (s+u)^2}{u^2}
+    + \frac{s^2}{tu}
+    \right)
+}
+\end{equation}

@@ -51,23 +51,23 @@
 \end{itemize}
 那么：
 \[W(\Lambda,p)=R\]
-\color{blue}由于$\boldsymbol{J}=\boldsymbol{\mathcal{A}}+\boldsymbol{\mathcal{B}}$，$Winger$的转动表征为总的自旋$\boldsymbol{J}$,
+\color{blue}由于$\boldsymbol{J}=\boldsymbol{J}^{(A)}+\boldsymbol{J}^{(B)}$，$Winger$的转动表征为总的自旋$\boldsymbol{J}$,
 $$ D_{\bar{\sigma}\sigma}^{(j)}(R^{-1}) = \left[ \exp\left( +i \boldsymbol{\theta}\cdot\boldsymbol{J}^{(j)} \right) \right]_{\bar{\sigma}\sigma} $$
-场的自旋拆为$\boldsymbol{\mathcal{A}}+\boldsymbol{\mathcal{B}}$
-\[\mathscr{D}_{{ab};\bar{a}\bar{{b}}}(R^{-1})=\left[\exp\left( +i \boldsymbol{\theta}\cdot\boldsymbol{\mathcal{A}}+i \boldsymbol{\theta}\cdot\boldsymbol{\mathcal{B}}\right) \right]_{\bar{a}\bar{{b}};{ab}}\]\normalcolor
+场的自旋拆为$\boldsymbol{J}^{(A)}+\boldsymbol{J}^{(B)}$
+\[\mathscr{D}_{{ab};\bar{a}\bar{{b}}}(R^{-1})=\left[\exp\left( +i \boldsymbol{\theta}\cdot\boldsymbol{J}^{(A)}+i \boldsymbol{\theta}\cdot\boldsymbol{J}^{(B)}\right) \right]_{\bar{a}\bar{{b}};{ab}}\]\normalcolor
 在这种分解下系数函数的选择\footnote{这个方程也叫做交织方程}变为：
 \begin{subequations}\label{u_0}
     \begin{align}
             &\sum_{\bar{\sigma}} 
             u_{\bar{a}\bar{b}}(0,\bar{\sigma})\left[ \exp\left( -i \boldsymbol{\theta}\cdot\boldsymbol{J}^{(j)} \right) \right]_{\bar{\sigma}\sigma} =
             \sum_{\bar{a}\bar{b}}
-            \left[\exp\left(  +i \boldsymbol{\theta}\cdot\boldsymbol{\mathcal{A}}+i \boldsymbol{\theta}\cdot\boldsymbol{\mathcal{B}} \right) \right]_{\bar{a}\bar{{b}};{ab}}
+            \left[\exp\left(  +i \boldsymbol{\theta}\cdot\boldsymbol{J}^{(A)}+i \boldsymbol{\theta}\cdot\boldsymbol{J}^{(B)} \right) \right]_{\bar{a}\bar{{b}};{ab}}
             u_{ab}(0,\sigma)
             \\
             &\sum_{\bar{\sigma}} 
             v_{\bar{a}\bar{b}}(0,\bar{\sigma})\left[ \exp\left( +i \boldsymbol{\theta}\cdot\boldsymbol{J}^{(j)} \right) \right]_{\bar{\sigma}\sigma} =
             \sum_{\bar{a}\bar{b}}
-            \left[\exp\left(  +i \boldsymbol{\theta}\cdot\boldsymbol{\mathcal{A}}+i \boldsymbol{\theta}\cdot\boldsymbol{\mathcal{B}} \right) \right]_{\bar{a}\bar{{b}};{ab}}
+            \left[\exp\left(  +i \boldsymbol{\theta}\cdot\boldsymbol{J}^{(A)}+i \boldsymbol{\theta}\cdot\boldsymbol{J}^{(B)} \right) \right]_{\bar{a}\bar{{b}};{ab}}
             v_{ab}(0,\sigma)
             \end{align}
 \end{subequations}
@@ -77,13 +77,13 @@ $$ D_{\bar{\sigma}\sigma}^{(j)}(R^{-1}) = \left[ \exp\left( +i \boldsymbol{\thet
 \begin{subequations}
     \begin{align}
        -\sum_{\bar{\sigma}} u_{\bar{a}\bar{b}}(0,\bar{\sigma}) \left[ \boldsymbol{J}^{(j)} \right]_{\bar{\sigma}\sigma} &= 
-       \sum_{\bar{a}\bar{b}} \left[ \boldsymbol{\mathcal{A}}_{\bar{a}a} \delta_{\bar{b}b} + \delta_{\bar{a}a} \boldsymbol{\mathcal{B}}_{\bar{b}b} \right] u_{ab}(0,\sigma)
+       \sum_{\bar{a}\bar{b}} \left[ \boldsymbol{J}^{(A)}_{\bar{a}a} \delta_{\bar{b}b} + \delta_{\bar{a}a} \boldsymbol{J}^{(B)}_{\bar{b}b} \right] u_{ab}(0,\sigma)
         \\
         +\sum_{\bar{\sigma}} v_{\bar{a}\bar{b}}(0,\bar{\sigma}) \left[ \boldsymbol{J}^{(j)} \right]_{\bar{\sigma}\sigma} &= 
-        \sum_{\bar{a}\bar{b}} \left[ \boldsymbol{\mathcal{A}}_{\bar{a}a} \delta_{\bar{b}b} + \delta_{\bar{a}a} \boldsymbol{\mathcal{B}}_{\bar{b}b} \right] v_{ab}(0,\sigma)
+        \sum_{\bar{a}\bar{b}} \left[ \boldsymbol{J}^{(A)}_{\bar{a}a} \delta_{\bar{b}b} + \delta_{\bar{a}a} \boldsymbol{J}^{(B)}_{\bar{b}b} \right] v_{ab}(0,\sigma)
     \end{align}
 \end{subequations}
-\color{blue}这是一个极其深刻的物理方程。这是两个角动量算符的直积之和：$\boldsymbol{\mathcal{A}} \otimes \mathbb{I} + \mathbb{I} \otimes \boldsymbol{\mathcal{B}}$；而等式左边则是单一的总角动量算符 $\boldsymbol{J}^{(j)}$。实际上,系数 $v_{ab}(0, \sigma)$ 的等式，本质上就是角动量相加方法\normalcolor。为了清晰地展现这一点，首先明确系统的两种物理表象：
+\color{blue}这是一个极其深刻的物理方程。这是两个角动量算符的直积之和：$\boldsymbol{J}^{(A)} \otimes \mathbb{I} + \mathbb{I} \otimes \boldsymbol{J}^{(B)}$；而等式左边则是单一的总角动量算符 $\boldsymbol{J}^{(j)}$。实际上,系数 $v_{ab}(0, \sigma)$ 的等式，本质上就是角动量相加方法\normalcolor。为了清晰地展现这一点，首先明确系统的两种物理表象：
 \begin{enumerate}
     \item 非耦合表象：
     场的洛伦兹张量指标 $(a,b)$ 属于表示空间 $V_A \otimes V_B$。如果我们将 $A$ 和 $B$ 视为两个独立的子系统，，对应的正交归一基底为：
@@ -147,18 +147,18 @@ V^{(j)} .
 
 为了让这个公式具备实际的可计算性，需要写出 $\mathscr{D}(L(p))$ 在 $(A,B)$ 表示下的具体指数形式。设 Boost 的快度矢量为 $\boldsymbol{\phi} = \hat{\boldsymbol{p}} \text{arctanh}(|\boldsymbol{p}|/p^0)$对应的生成元为 $\boldsymbol{K}$。在 $(A,B)$ 表示中，生成元满足：
 \begin{equation}
-    \boldsymbol{J} = \boldsymbol{\mathcal{A}} + \boldsymbol{\mathcal{B}}, \quad \boldsymbol{K} = -i\boldsymbol{\mathcal{A}} + i\boldsymbol{\mathcal{B}}
+    \boldsymbol{J} = \boldsymbol{J}^{(A)} + \boldsymbol{J}^{(B)}, \quad \boldsymbol{K} = -i\boldsymbol{J}^{(A)} + i\boldsymbol{J}^{(B)}
 \end{equation}
 所以，有限 Boost 操作的表示矩阵可以彻底分解为左右两部分的张量积：
 \begin{align}
     \mathscr{D}\bigl(L(q)\bigr) &= \exp\left( -i \boldsymbol{\phi} \cdot \boldsymbol{K} \right) \nonumber \\
-    &= \exp\left( -i \boldsymbol{\phi} \cdot (-i\boldsymbol{\mathcal{A}} + i\boldsymbol{\mathcal{B}}) \right) \nonumber \\
-    &= \exp\left( -\boldsymbol{\phi} \cdot \boldsymbol{\mathcal{A}} \right) \otimes \exp\left( +\boldsymbol{\phi} \cdot \boldsymbol{\mathcal{B}} \right)
+    &= \exp\left( -i \boldsymbol{\phi} \cdot (-i\boldsymbol{J}^{(A)} + i\boldsymbol{J}^{(B)}) \right) \nonumber \\
+    &= \exp\left( -\boldsymbol{\phi} \cdot \boldsymbol{J}^{(A)} \right) \otimes \exp\left( +\boldsymbol{\phi} \cdot \boldsymbol{J}^{(B)} \right)
 \end{align}
 具体矩阵形式参考(\refeq{eq:general-boost}).
 将此矩阵代入 \eqref{u_boost_massive}，结合静止系下的 C-G 系数结果，最终得到了场论中\textbf{最一般的动力学系数展开式}：
 \begin{equation}
-   \sum_{\bar{\sigma}} v_{ab}(\boldsymbol{q}, \bar{\sigma}) \delta_{\sigma\bar{\sigma}}= \frac{1}{\sqrt{2q^0}} \sum_{\bar{a}\bar{b}} \left[ e^{-\boldsymbol{\phi} \cdot \boldsymbol{\mathcal{A}}} \right]_{a\bar{a}} \left[ e^{+\boldsymbol{\phi} \cdot \boldsymbol{\mathcal{B}}} \right]_{b\bar{b}} \langle A,a; B,b \,|\, j,\bar{\sigma} \rangle
+   \sum_{\bar{\sigma}} v_{ab}(\boldsymbol{q}, \bar{\sigma}) \delta_{\sigma\bar{\sigma}}= \frac{1}{\sqrt{2q^0}} \sum_{\bar{a}\bar{b}} \left[ e^{-\boldsymbol{\phi} \cdot \boldsymbol{J}^{(A)}} \right]_{a\bar{a}} \left[ e^{+\boldsymbol{\phi} \cdot \boldsymbol{J}^{(B)}} \right]_{b\bar{b}} \langle A,a; B,b \,|\, j,\bar{\sigma} \rangle
 \end{equation}
 而反粒子对应的系数的是：
 \begin{equation}
@@ -214,7 +214,8 @@ V^{(j)} .
   ={}& \frac{1}{(2\pi)^{3}} \int d^3p \, \Bigl\{ \lambda_{ab}\lambda_{cd}^*\, e^{ip\cdot(x-y)} \Bigl( \sum_{\sigma} v_{ab}(\boldsymbol{p},\sigma)v_{cd}^*(\boldsymbol{p},\sigma) \Bigr) \\
   &\qquad\qquad\quad \mp \xi_{ab}\xi_{cd}^*\, e^{-ip\cdot(x-y)} \Bigl( \sum_{\sigma} u_{ab}(\boldsymbol{p},\sigma)u_{cd}^*(\boldsymbol{p},\sigma) \Bigr) \Bigr\}\;.
 \end{align*}
-定义自旋和$\pi_{ab,cd}(\boldsymbol{p})$
+定义自旋和
+$\pi_{ab,cd}(\boldsymbol{p})$
 \begin{equation}\label{eq:pi-def}
   \frac{\pi_{ab,cd}(\boldsymbol{p})}{2p^{0}}
   \;\equiv\; \sum_{\sigma}u_{ab}(\boldsymbol{p},\sigma)\,
@@ -223,7 +224,14 @@ V^{(j)} .
     v_{cd}^{*}(\boldsymbol{p},\sigma)\;.
 \end{equation}
 第二个等号利用了$u_{ab}(\boldsymbol{p},\sigma)=(-)^{j+\sigma}\,v_{ab}(\boldsymbol{p},-\sigma)$
-（对$v$同理），对$\sigma$重标记即得。
+（对$v$同理），对$\sigma$重标记即得。以及：
+\begin{equation}
+\begin{aligned}
+    \pi_{ab,cd}(\boldsymbol{p}) &= \sum_{\bar{a}\bar{b}} \sum_{\bar{c}\bar{d}} \sum_{\sigma} \langle A, \bar{a}; B, \bar{b} | j, \sigma \rangle \langle C, \bar{c}; D, \bar{d} | j, \sigma \rangle \\
+    &\quad \times \left[ \exp \left(-\boldsymbol{\phi} \cdot \boldsymbol{J}^{(A)}\right) \right]_{a\bar{a}} \left[ \exp \left(+\boldsymbol{\phi} \cdot \boldsymbol{J}^{(B)}\right) \right]_{b\bar{b}} \\
+    &\quad \times \left[ \exp \left(-\boldsymbol{\phi} \cdot \boldsymbol{J}^{(C)}\right) \right]_{c\bar{c}}^* \left[ \exp \left(+\boldsymbol{\phi} \cdot \boldsymbol{J}^{(D)}\right) \right]_{d\bar{d}}^* \;.
+\end{aligned}
+\end{equation}
 根据自旋多项式的定义式 \eqref{eq:pi-def}，提取公共的多项式因子 $\sum_\sigma u u^* = \sum_\sigma v v^* = \frac{\pi_{ab,cd}(\boldsymbol{p})}{2p^0}$，最终得到：
 \begin{equation}
   [\Psi_{ab}(x),\,\widetilde{\Psi}_{cd}^{\dagger}(y)]_{\mp}
@@ -494,10 +502,6 @@ $|\xi_{ab}|=|\lambda_{ab}|$和$|\xi_{cd}|=|\lambda_{cd}|$。
         $\widetilde{\Psi}_{cd}$，产生部分的系数换为$(-)^{2D}$，
         常数$c$相同。
 \end{itemize}
-\newpage
 
-\input{fields_antiparticles/spin0.tex}
-\input{fields_antiparticles/spin1:2.tex}
-\input{fields_antiparticles/dirac_form.tex}
-\input{fields_antiparticles/dirac_field.tex}
-\input{fields_antiparticles/spin1.tex}
+
+\newpage\input{fields_antiparticles/spin0.tex}\newpage\input{fields_antiparticles/spin1:2.tex}\newpage\input{fields_antiparticles/dirac_form.tex}\newpage\input{fields_antiparticles/dirac_field.tex}\newpage\input{fields_antiparticles/spin1.tex}

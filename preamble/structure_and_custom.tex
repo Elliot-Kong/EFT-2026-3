@@ -25,22 +25,16 @@
     \huge
   }[\vspace{1em}]
 \titlespacing*{\chapter}{0pt}{80pt}{1ex}
-% Chapter titles
-\begin{comment}
-  \usepackage[explicit]{titlesec}
-\usepackage{tocloft}
-\titleformat{\chapter}[block]
-  {\centering\huge\bfseries\vspace{10ex}}
-  {第\,\thechapter\,章}
-  {10pt}
-  {
-    #1
-  }
-\end{comment}
-  \usepackage{titlesec}
-\usepackage{xcolor}
+\newcounter{s}
+\renewcommand{\thes}{\Large\S\arabic{s}}
 
-
+\newcommand{\s}[1]{%
+  \refstepcounter{s}%
+  \par\vspace{1em}%
+  \noindent\textbf{\thes\quad #1}%
+  \par\vspace{0.5em}%
+  \addcontentsline{toc}{section}{\thes\quad #1}%
+}
 
 
 

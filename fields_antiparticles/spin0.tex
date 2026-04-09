@@ -1,25 +1,23 @@
 \subsection{因果标量场 }
 一般形式的场是：
 \begin{equation}
-    \Psi_{ab}(x) =(\frac{1}{2\pi})^\frac{3}{2}\sum_{\sigma}\int d^3p \, \left\{ u_{ab}(\boldsymbol{q},\sigma)b^\dagger(\boldsymbol{q},\sigma) e^{-ipx} + (-)^{2B}(-)^{j+\sigma}u_{ab}(\boldsymbol{q},\sigma) a(\boldsymbol{q},\sigma)e^{ipx} \right\}
+    \Psi_{ab}(x) =(\frac{1}{2\pi})^\frac{3}{2}\sum_{\sigma}\int d^3p \, \left\{ (-)^{2B}(-)^{j+\sigma}v_{ab}(\boldsymbol{q},\sigma)a^{c\dagger}(\boldsymbol{q},\sigma) e^{-ipx} + v_{ab}(\boldsymbol{q},\sigma) a(\boldsymbol{q},\sigma)e^{ipx} \right\}
 \end{equation}
-上述我们知道静止系系数 $u(0)$ 和 $v(0)$ 是正比于Clebsch-Gordan  系数 
+上述我们知道静止系系数$v(0)$ 是正比于Clebsch-Gordan  系数 
 \begin{equation}
-    u_{ab}(0, \sigma) = \frac{1}{\sqrt{2m}} \langle A, a; B, b | j, \sigma \rangle
+    v_{ab}(0, \sigma) = \frac{1}{\sqrt{2m}} \langle A, a; B, b | j, \sigma \rangle
     \label{eq:u0_general}
 \end{equation}
 通过 Boost 获得有限动量系数 $u(\boldsymbol{q})$ 和 $v(\boldsymbol{q})$的一般公式是：
 \begin{equation}
-    u_{ab}(\boldsymbol{q}, \sigma) = \frac{1}{\sqrt{2q^0}} \sum_{\bar{a},\bar{b}} \left[e^{-\boldsymbol{\phi}\cdot\mathbf{J}^{(A)}}\right]_{a\bar{a}} \left[e^{+\boldsymbol{\phi}\cdot\mathbf{J}^{(B)}}\right]_{b\bar{b}} \langle A,\bar{a}; B,\bar{b} | j, \sigma \rangle
+    v_{ab}(\boldsymbol{p}, \sigma) = \frac{1}{\sqrt{2p^0}} \sum_{\bar{a},\bar{b}} \left[e^{-\boldsymbol{\phi}\cdot\mathbf{J}^{(A)}}\right]_{a\bar{a}} \left[e^{+\boldsymbol{\phi}\cdot\mathbf{J}^{(B)}}\right]_{b\bar{b}} \langle A,\bar{a}; B,\bar{b} | j, \sigma \rangle
     \label{eq:u_finite_general}
 \end{equation}
-其中$\boldsymbol{\phi} = \hat{\boldsymbol{q}} \text{arctanh}(|\boldsymbol{q}|/q^0)$
-\vspace{0.5cm}
-\begin{center}
-    \large\text{$(A, B) = (0, 0)$}
-\end{center}
-\vspace{0.5cm}
-对于标量场，$(A, B) = (0, 0)$，粒子自旋 $j = 0$。此时：
+其中$\boldsymbol{\phi} = \hat{\boldsymbol{p}} \text{arctanh}(|\boldsymbol{p}|/p^0)$
+
+\topictitle{$(A, B) = (0, 0)$}
+
+对于标量场，$(A, B) = (0, 0)$，此时：
 \begin{itemize}
     \item 角动量生成元全为零：$\mathbf{J}^{(A)} = \mathbf{J}^{(B)} = 0$。
     \item 表示指标只有一个值：$a = 0$，$b = 0$。
@@ -28,7 +26,7 @@
 \end{itemize}
 代入式 \eqref{eq:u0_general}，唯一的 C-G 系数为 $\langle 0, 0; 0, 0 | 0, 0 \rangle = 1$。因此静止系下的系数为：
 \begin{equation}
-    u(0, 0) = \frac{1}{\sqrt{2m}}
+    v(0, 0) = \frac{1}{\sqrt{2m}}
 \end{equation}
 \vspace{2ex}
 对于标量场，$\mathbf{J}^{(A)} = 0$ 且 $\mathbf{J}^{(B)} = 0$。因此，指数演化矩阵完全退化为恒等映射：
@@ -37,7 +35,7 @@
 \end{equation}
 代入式 \eqref{eq:u_finite_general}，并利用 $\langle 0,0;0,0|0,0\rangle = 1$，有限动量系数极为简单：
 \begin{equation}
-    u(\boldsymbol{q}, 0) = \frac{1}{\sqrt{2q^0}}
+    v(\boldsymbol{p}, 0) = \frac{1}{\sqrt{2p^0}}
 \end{equation}
 
 

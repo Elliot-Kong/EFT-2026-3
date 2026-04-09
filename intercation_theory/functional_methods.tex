@@ -1,3 +1,653 @@
+
 \section{泛函方法}
+\subsection{一般的路径积分方法}
+从量子理论的正则对易关系出发，其有正则``坐标'' $Q_a$ 以及共轭``动量'' $P_b$，
+满足正则对易关系\footnote{%
+  我们在这里隐含假定了任何第一类约束通过选择规范被消除了，
+  而剩下的任何第二类约束通过将约束自由度
+  写成非约束 $Q_a$ 和 $P_a$ 的形式被``解出''了，
+  就像 \S5.2.3 中做的那样。
+  路径积分方法对约束系统的直接应用被 Faddeev 所描述
+  （参见讨论~2）。}：
+\begin{subequations}\label{eq:CCR-gen}
+\begin{align}
+  [Q_a,\,P_b] &= i\,\delta_{ab}\,,\label{eq:QP}\\
+  [Q_a,\,Q_b] &= [P_a,\,P_b] = 0\,.\label{eq:QQ-PP}
+\end{align}
+\end{subequations}
+指标 $a$ 由空间位置 $\mathbf{x}$
+和一个离散的 Lorentz 及种类指标 $n$ 构成：
+\begin{equation}\label{eq:field-index}
+  Q_a \;\longleftrightarrow\; Q_n(\mathbf{x})\,,\qquad
+  P_a \;\longleftrightarrow\; P_n(\mathbf{x})\,,\qquad
+  \delta_{ab} \;\longleftrightarrow\;
+    \delta_{nm}\,\delta^{(3)}(\mathbf{x}-\mathbf{y})\,.
+\end{equation}
+这些算符是``Schr\"odinger-绘景''算符，取在固定时刻（例如 $t=0$）。
+\medskip
+
+
+既然 $Q_a$ 和$P_b$全部对易，可以构造本征值为 $q_a$和$p_a$ 的同时本征态：
+\begin{subequations}
+  \begin{align}
+    &Q_a\ket{q} = q_a\ket{q}\\
+    &P_a\ket{p} = p_a\ket{p}
+  \end{align}
+\end{subequations}
+这些本征矢是完备且正交的
+\begin{subequations}
+  \begin{align}
+    &\braket{q'|q} = \prod_a \delta(q'_a - q_a)
+    \equiv \delta(q'-q)\\
+    &\mathbf{1} = \int\prod_a dq_a\;\ket{q}\bra{q}\\
+    &\braket{p'|p} = \delta(p'-p)\\
+    &\mathbf{1} = \int\prod_a dp_a\;\ket{p}\bra{p}
+  \end{align}
+\end{subequations}
+从不对易的关系 (\ref{eq:QP})，可以得出这两组完备本征态之间的标量积
+\begin{equation}\label{eq:qp-inner}
+  \braket{q|p} = \prod_a \frac{1}{\sqrt{2\pi}}\,
+    \exp(i\,q_a\,p_a)\,.
+\end{equation}
+算符$Q_a$ 和$P_b$全部的时间依赖性都由时间演化算符确定，由$H$总的哈密顿量确定；它们
+严格定义在 Heisenberg 绘景中
+\begin{subequations}\label{eq:Heis-ops}
+  \begin{align}
+    &Q_a(t) \equiv e^{iHt}\,Q_a\,e^{-iHt}\\
+    &P_a(t) \equiv e^{iHt}\,P_a\,e^{-iHt}
+  \end{align}
+\end{subequations}
+以及本征态的时间依赖性：
+\begin{subequations}\label{eq:Heis-states}
+  \begin{align}
+  &\ket{q;t} = e^{iHt}\ket{q}\\
+  &\ket{p;t} = e^{iHt}\ket{p}
+  \end{align}
+\end{subequations}
+可以证明 $\ket{q;t}$ 是 $Q_a(t)$ 本征值为 $q_a$ 的本征态($\ket{p}$同理):
+\[Q_a(t)\ket{q;t}=e^{iHt}\,Q_a\,e^{-iHt}e^{iHt}\ket{q}=q_ae^{iHt}\ket{q}=q_a\ket{q;t}\]
+这些态满足
+\begin{subequations}
+  \begin{align}
+  &\braket{q';t|q;t}=\delta(q'-q)\,,\qquad
+  \mathbf{1}=\int\prod_a dq_a\;\ket{q;t}\bra{q;t}\\
+  &\braket{p';t|p;t}=\delta(p'-p)\,,\qquad
+  \mathbf{1}=\int\prod_a dp_a\;\ket{p;t}\bra{p;t}
+  \end{align}
+\end{subequations}
+以及
+\begin{equation}\label{eq:Heis-qp}
+  \braket{q;t|p;t}
+  =\prod_a\frac{1}{\sqrt{2\pi}}\,\exp(i\,q_a\,p_a)\,.
+\end{equation}
+我们核心的动力学问题是计算标量积
+$\braket{q';t'|q;t}$（$t'>t$,
+\begin{equation}\label{eq:Feynman_k}
+  \braket{q';t'|q;t}=\braket{q'|e^{i(t'-t)H(Q(t),P(t))}|q}
+\end{equation}
+然而直接计算是十分不易的，原因如下：
+\begin{enumerate}
+  \item $(t'-t)$是一个有限间隔，也就是说$H$并不是线性的；
+  \item $H=H(Q(t),P(t))$是$Q(t)$和$P(t)$的泛函，是一个算符，并不能直接计算。
+\end{enumerate}
+上述问题解决的办法：
+\begin{enumerate}
+  \item 将时间切片，对于无穷小的间隔，$H$是线性的；
+  \item 在其中一段时间间隔内插入完备关系$\mathbf{1} = \int\prod_a dp_a\;\ket{p}\bra{p}$，并规定$H$中的$Q(t)$在$P(t)$的左边这样的标准形式，对于不是标准形式的，可以利用对易关系(\refeq{eq:QP})替换为标准形式，比如给定哈密顿量中一项的形式为 $P_a\,Q_b\,P_c$，将其重写为
+        \[
+          P_a\,Q_b\,P_c = Q_b\,P_a\,P_c - i\,\delta_{ab}\,P_c\,.
+        \]
+\end{enumerate}
+这样的处理方式，使得我们可以计算标量积(\refeq{eq:Feynman_k}).
+\medskip
+
+
+取一个小间隔，当 $t'$ 和 $t$ 无限接近时，
+即 $t'=\tau+d\tau$、$t=\tau$，利用 (\ref{eq:Heis-states})：
+\begin{equation}\label{eq:inf-step-0}
+  \braket{q';\tau{+}d\tau\,|\,q;\tau}
+  =\bra{q';\tau}\exp(-iH\,d\tau)\ket{q;\tau}\,.
+\end{equation}
+在 $P$-本征态下展开 $\ket{p;\tau}$：
+\begin{align}
+  \braket{q';\tau{+}d\tau\,|\,q;\tau}
+  &= \int\prod_a dp_a\;
+    \bra{q';\tau}\exp\bigl(-iH(Q(\tau),P(\tau))\,d\tau\bigr)
+    \ket{p;\tau}\braket{p;\tau|q;\tau}
+    \notag\\[6pt]
+  &= \int\prod_a\frac{dp_a}{2\pi}\;
+    \exp\!\biggl\{
+      -iH(q',p)\,d\tau
+      +i\sum_a(q'_a-q_a)\,p_a
+    \biggr\}\,,
+    \label{eq:single-step}
+\end{align}
+其中每个 $p_a$ 从 $-\infty$ 积到 $+\infty$。
+\medskip
+
+
+回到有限间隔$[t,t']$中，为了计算 $t<t'$ 的 $\braket{q';t'|q;t}$，
+将从 $t$ 到 $t'$ 的时间间隔分解成
+$t,\,\tau_1,\,\tau_2,\,\cdots,\,\tau_N,\,t'$，其中
+\begin{equation}\label{eq:dt}
+  \tau_{k+1}-\tau_k = d\tau = \frac{t'-t}{N+1}\,,
+\end{equation}
+并对每个时刻 $\tau_k$ 的态 $\ket{q;\tau_k}$
+的完全集求和：
+\begin{equation}\label{eq:slicing}
+  \braket{q';t'|q;t}
+  =\int dq_1\cdots dq_N\;
+    \braket{q';t'|q_N;\tau_N}
+    \braket{q_N;\tau_N|q_{N-1};\tau_{N-1}}
+    \cdots
+    \braket{q_1;\tau_1|q;t}\,.
+\end{equation}
+利用 (\ref{eq:single-step})，
+令 $q_0\equiv q$、$q_{N+1}\equiv q'$，得到
+\begin{equation}\label{eq:PI-discrete}
+  \begin{aligned}
+      \braket{q';t'|q;t}
+  =\int\biggl[\prod_{k=1}^{N}\prod_a dq_{k,a}\biggr]
+    &\biggl[\prod_{k=0}^{N}\prod_a
+      \frac{dp_{k,a}}{2\pi}\biggr]\\\times
+  &\exp\!\biggl[
+    i\sum_{k=1}^{N}\biggl\{
+      \sum_a(q_{k+1,a}-q_{k,a})\,p_{k,a}
+      -H(q_k+1,p_{k})\,d\tau
+    \biggr\}
+  \biggr]\,.
+  \end{aligned}
+\end{equation}
+
+\medskip\noindent
+我们将$q$和$p$的指标$k$的依赖性放到时间中，定义光滑插值函数 $q_a(\tau)$ 和 $p_a(\tau)$，
+使得 $q_a(\tau_k)\equiv q_{k,a}$、$p_a(\tau_k)\equiv p_{k,a}$。
+在极限 $d\tau\to 0$（即 $N\to\infty$）下，
+(\ref{eq:PI-discrete}) 中指数的求和变成对 $\tau$ 的积分：
+\begin{align}
+  &\sum_{k=1}^{N}\biggl\{
+    \sum_a(q_{k+1,a}-q_{k,a})\,p_{k,a}
+    -H(q_k+1,p_{k})\,d\tau
+  \biggr\}
+  \notag\\[4pt]
+  &\quad=\sum_{k=1}^{N}\biggl\{
+    \sum_a\dot{q}_a(\tau_k)\,p_a(\tau_k)
+    -H\bigl(q(\tau_k),p(\tau_k)\bigr)
+  \biggr\}d\tau + \mathscr{O}(d\tau^2)
+  \notag\\[4pt]
+  &\quad\longrightarrow\;
+  \int_{t}^{t'}\!d\tau\;\biggl\{
+    \sum_a\dot{q}_a(\tau)\,p_a(\tau)
+    -H\bigl(q(\tau),p(\tau)\bigr)
+  \biggr\}\,.
+  \label{eq:cont-limit}
+\end{align}
+在这操作下，指标$k$全部换为时间的依赖性，函数 $q_a(\tau)$、$p_a(\tau)$ 的路径积分测度为
+\begin{equation}\label{eq:measure}
+  \int \mathcal{D}q\frac{\mathcal{D}p}{2\pi}\cdots=\int\prod_{\tau,a}dq_a(\tau)
+    \prod_{\tau,b}\;\frac{dp_b(\tau)}{2\pi}\;\cdots
+  \;\equiv\;
+  \lim_{d\tau\to 0}\int
+    \prod_{k,a}dq_{k,a}
+    \prod_{k,b}\frac{dp_{k,b}}{2\pi}\;\cdots
+\end{equation}
+那么 (\ref{eq:PI-discrete}) 变成\textbf{相空间路径积分}：
+\begin{equation}\label{eq:PI-phase}
+  \begin{aligned}
+  \braket{q';t'|q;t}
+  =&\int_{\substack{q_a(t)=q_a\\q_a(t')=q'_a}}
+    \prod_{\tau,a}dq_a(\tau)
+    \prod_{\tau,b}\frac{dp_b(\tau)}{2\pi}\\
+    &\times\exp\!\biggl[
+    i\int_{t}^{t'}\!d\tau\;\biggl\{
+      \sum_a\dot{q}_a(\tau)\,p_a(\tau)
+      -H\bigl(q(\tau),p(\tau)\bigr)
+    \biggr\}
+  \biggr]\\
+  =&\int_{\substack{q_a(t)=q_a\\q_a(t')=q'_a}}
+    \mathcal{D}q\frac{\mathcal{D}p}{2\pi}\exp\!\biggl[
+    i\int_{t}^{t'}\!d\tau\;\biggl\{
+      \sum_a\dot{q}_a(\tau)\,p_a(\tau)
+      -H\bigl(q(\tau),p(\tau)\bigr)
+    \biggr\}
+  \biggr]\\
+  \end{aligned}
+\end{equation}
+这称为路径积分，是对所有从 $\tau=t$ 时的 $q$
+到 $\tau=t'$ 时的 $q'$ 的路径 $q(\tau)$ 积分，
+并对所有 $p(\tau)$ 积分。
+\medskip
+
+
+
+路径积分形式体系不仅允许我们计算跃迁振幅
+$\braket{q';t'|q;t}$，
+还可以推广至，插入任意算符$\mathcal{O}\bigl(P(\tau),Q(\tau)\bigr)$
+的矩阵元
+
+\medskip\noindent
+对于无穷小的间隔的矩阵元，插入算符$\mathcal{O}\bigl(P(\tau),Q(\tau)\bigr)$，这里规定\text{\color{blue}所有的 $P$ 处在左边而所有的 $Q$ 处在右边}，那么有：
+\begin{align}
+  &\braket{q';\tau{+}d\tau\,|\mathcal{O}\bigl(P(\tau),Q(\tau)\bigr)|\,q;\tau}\\
+  &= \int\prod_a dp_a\;
+    \bra{q';\tau}\exp\bigl(-iH(Q(\tau),P(\tau))\,d\tau\bigr)
+    \ket{p;\tau}\braket{p;\tau|\mathcal{O}\bigl(P(\tau),Q(\tau)\bigr)|q;\tau}
+    \notag\\[6pt]
+  &= \int\prod_a\frac{dp_a}{2\pi}\mathcal{O}\bigl(p(\tau),q(\tau)\bigr)\;
+    \exp\!\biggl\{
+      -iH(q',p)\,d\tau
+      +i\sum_a(q'_a-q_a)\,p_a
+    \biggr\}\,,
+    \label{eq:single-step}
+\end{align}
+回到任意有限间隔的矩阵元，\color{blue} 由于小间隔是按时间切片了，所以插入的算符理应有一定的顺序;例如$t_A\in (t_{k+1},t'_k)$，那么在矩阵元$\braket{q_{k+1};t_{k+1}|q_k;t_k}$之间插入的算符之能是$\mathcal{O}_A \bigl(P(t_A),Q(t_A)\bigr)$ \normalcolor;那么对于任意时间顺序的算符，可以利用\text{编时算符}，使其有：
+\[T:t'>t_A>t_B>\dots>t\]
+这是唯一的，所以路径积分变成了
+\begin{equation}\label{eq:PI-field}
+\begin{aligned}
+  &\bra{q',t'}T\bigl\{
+    \mathcal{O}_A[\,p(t_A),q(t_A)\,]\;
+    \mathcal{O}_B[\,p(t_B),q(t_B)\,]\;\cdots
+  \bigr\}\ket{q,t}\\[6pt]
+  &\;=\int_{\substack{q_a(t)=q_a\\q_a(t')=q'_a}}
+    \prod_{\tau,a}dq_a(\tau)\;
+    \prod_{\tau,b}
+      \frac{dp_b(\tau)}{2\pi}
+    \mathcal{O}_A\bigl[\,p(t_A),q(t_A)\,\bigr]\;
+    \mathcal{O}_B\bigl[\,p(t_B),q(t_B)\,\bigr]\;\cdots\\
+  &\;\quad\times
+    \exp\!\biggl[
+      i\int_{t}^{t'}\!d\tau\;\biggl\{
+        \sum_n\dot{q}_a(\tau)\,
+          p_b(\tau)
+        -H\bigl[\,q(\tau),p(\tau)\,\bigr]
+      \biggr\}
+    \biggr]\\
+    &\;=\int_{\substack{q_a(t)=q_a\\q_a(t')=q'_a}}
+    \mathcal{D}q\frac{\mathcal{D}p}{2\pi}
+    \mathcal{O}_A\bigl[\,p(t_A),q(t_A)\,\bigr]\;
+    \mathcal{O}_B\bigl[\,p(t_B),q(t_B)\,\bigr]\;\cdots\\
+  &\;\quad\times
+    \exp\!\biggl[
+      i\int_{t}^{t'}\!d\tau\;\biggl\{
+        \sum_n\dot{q}_a(\tau)\,
+          p_b(\tau)
+        -H\bigl[\,q(\tau),p(\tau)\,\bigr]
+      \biggr\}
+    \biggr]\\
+    &\;=\int_{\substack{q_a(t)=q_a\\q_a(t')=q'_a}}
+    \mathcal{D}q\frac{\mathcal{D}p}{2\pi}
+    \mathcal{O}_A\bigl[\,p(t_A),q(t_A)\,\bigr]\;
+    \mathcal{O}_B\bigl[\,p(t_B),q(t_B)\,\bigr]\;e^{iI(q,p)}
+\end{aligned}
+\end{equation}
+其中约定作用量泛函是：
+\begin{equation}\label{eq:action-func}
+  I[q,p] \equiv \int_{t}^{t'}\!d\tau\;\biggl\{
+    \sum_a\dot{q}_a(\tau)\,p_a(\tau)
+    -H\bigl(q(\tau),p(\tau)\bigr)
+  \biggr\}
+\end{equation}
+% ─────────────────────────────────────────────
+% =============================================================
+%   讨论 1：运动方程的涌现与接触项
+% =============================================================
+
+\topictitle{***}
+\text{\color{blue}或许该强调一下}
+在推导路径积分的过程中，算符 $Q_a,P_b$
+被替换为 c-数积分变量 $q_a(\tau),p_a(\tau)$。
+算符形式体系中的两大核心结构似乎因此消失了：
+\begin{itemize}
+  \item[(A)] Heisenberg 运动方程
+    $\dot{Q}_a=\partial H/\partial P_a$，
+    $\dot{P}_a=-\partial H/\partial Q_a$；
+  \item[(B)] 正则对易关系
+    $[Q_a,\,P_b]=i\,\delta_{ab}$。
+\end{itemize}
+讨论的核心是：\textbf{完全从路径积分内部，
+把 (A) 和 (B) 都找回来}，
+从而确认两种表述的等价性。
+
+
+\bigskip
+\medskip\noindent
+出发点是一个简单的事实：被积函数对自由积分变量的全导数，积分后为零。 具体地说：
+\begin{itemize}
+  \item \textbf{$p_a(\tau)$}：
+    在\textbf{所有}时刻 $\tau\in[t,t']$
+    都是完全自由的积分变量
+    （积分区间 $(-\infty,+\infty)$，无边界条件）。
+    因此对任意 $t_A\in[t,t']$，
+    分部积分
+    \begin{equation}\label{eq:IBP-p}
+      \int_{-\infty}^{+\infty}\!dp_a(t_A)\;
+      \frac{\partial}{\partial p_a(t_A)}[\,\cdots\,]=0
+    \end{equation}
+    总是成立的。
+
+  \item \textbf{$q_a(\tau)$}：
+    在端点 $\tau=t$ 和 $\tau=t'$ 处
+    被边界条件 $q_a(t)=q_a$、$q_a(t')=q'_a$
+    所\textbf{固定}（不是积分变量）。
+    只有在\textbf{中间}时刻 $t<\tau<t'$，
+    $q_a(\tau)$ 才是自由积分变量。
+    因此分部积分
+    \begin{equation}\label{eq:IBP-q}
+      \int_{-\infty}^{+\infty}\!dq_a(t_A)\;
+      \frac{\partial}{\partial q_a(t_A)}[\,\cdots\,]=0
+    \end{equation}
+    仅在 $t<t_A<t'$（\textbf{严格不等号}）时成立。
+\end{itemize}
+这是我们唯一的出发点。
+但要利用它推出物理结论，
+需要知道
+$\frac{\delta e^{iI}}{\delta p_a(t_A)}$以及$\frac{\delta e^{iI}}{\delta q_a(t_A)}$ 到底等于什么?依次考察这两个量：
+\[\begin{aligned}
+  \frac{\delta e^{iI}}{\delta p_a(t_A)}=
+  ie^{iI}\frac{\delta I}{\delta p_a(t_A)}&=ie^{iI}\int_{t}^{t'}d\tau \Biggl\{ \frac{\delta \sum_{b}\dot{q}_b(\tau) p_{b}(\tau)}{\delta p_a(t_A)}-\frac{\delta H(q(\tau),p(\tau))}{\delta p_a(t_A)}\Biggr\}
+  \\
+  \;&=ie^{iI}\int_{t}^{t'}d\tau \Biggl\{ \sum_{b}\frac{\delta p_{b}(\tau) }{\delta p_a(t_A)}\dot{q}_b(\tau)-\frac{\partial H(q(\tau),p(\tau))}{\partial p_b(\tau)}\frac{\delta p_b(\tau)}{\delta p_a(t_A)}\Biggr\}
+  \\
+  \;&=ie^{iI}\int_{t}^{t'}d\tau \Biggl\{ \sum_{b}\delta_{ab}\delta(\tau-t_A)\dot{q}_b(\tau)-\frac{\partial H(q(\tau),p(\tau))}{\partial p_b(\tau)}\delta_{ab}\delta(\tau-t_A)\Biggr\}
+  \\
+  \;&=ie^{iI} \Biggl\{ \dot{q}_a(t_A)-\frac{\partial H(q(t_A),p(t_A))}{\partial p_a(t_A)}\Biggr\}
+\end{aligned}\]
+以及
+\[\begin{aligned}
+  \frac{\delta e^{iI}}{\delta q_a(t_A)}=
+  ie^{iI}\frac{\delta I}{\delta q_a(t_A)}&=ie^{iI}\int_{t}^{t'}d\tau \Biggl\{ \frac{\delta \sum_{b}\dot{q}_b(\tau) p_{b}(\tau)}{\delta q_a(t_A)}-\frac{\delta H(q(\tau),p(\tau))}{\delta q_a(t_A)}\Biggr\}
+  \\
+  \;&=ie^{iI}\int_{t}^{t'}d\tau \Biggl\{ \frac{\delta \sum_{b}\frac{d(q_b(\tau)p_b(\tau))}{dt}-q_b(\tau)\dot{p}_b(\tau)}{\delta q_a(t_A)}-\frac{\delta H(q(\tau),p(\tau))}{\delta q_a(t_A)}\Biggr\}
+  \\
+  \;&=ie^{iI}\int_{t}^{t'}d\tau \Biggl\{ \text{边界项}-\sum_{b}\frac{\delta q_{b}(\tau) }{\delta q_a(t_A)}\dot{p}_b(\tau)-\frac{\partial H(q(\tau),p(\tau))}{\partial q_b(\tau)}\frac{\delta q_b(\tau)}{\delta q_a(t_A)}\Biggr\}
+  \\
+  \;&=ie^{iI}\int_{t}^{t'}d\tau \Biggl\{0- \sum_{b}\delta_{ab}\delta(\tau-t_A)\dot{p}_b(\tau)-\frac{\partial H(q(\tau),p(\tau))}{\partial q_b(\tau)}\delta_{ab}\delta(\tau-t_A)\Biggr\}
+  \\
+  \;&=-ie^{iI} \Biggl\{ \dot{p}_a(t_A)+\frac{\partial H(q(t_A),p(t_A))}{\partial q_a(t_A)}\Biggr\}
+\end{aligned}\]
+写在一起也就是：
+\begin{subequations}\label{eq:can_eq}
+  \begin{align}
+    & \frac{\delta }{\delta p_a(t_A)}e^{iI}=i\Biggl\{ \dot{q}_a(t_A)-\frac{\partial H(q(t_A),p(t_A))}{\partial p_a(t_A)}\Biggr\}e^{iI}
+    \\
+    &\frac{\delta }{\delta q_a(t_A)}=-i \Biggl\{ \dot{p}_a(t_A)+\frac{\partial H(q(t_A),p(t_A))}{\partial q_a(t_A)}\Biggr\}e^{iI}
+  \end{align}
+\end{subequations}
+\color{blue}%
+在这一组方程中看到了正则方程，上述方程连接了``运动方程''与``全导数''，
+说明了``全导数积分为零''有更深一层的物理意义\normalcolor
+
+
+
+\medskip\noindent
+\color{blue}%
+在路径积分中，
+$\dot{q}_a(\tau)-\partial H/\partial p_a(\tau)$
+在绝大多数路径上\textbf{不为零}
+（因为积分变量不受运动方程约束）。
+但下面将证明，
+对所有路径求和后，
+正负贡献精确抵消，期望值为零。
+这不是对任意函数都成立的性质
+（例如 $q_a^2$ 的期望值一般不为零），
+而是运动方程左边所独有的——
+因为\textbf{只有它}能被写成 $e^{iI}$ 的全导数。\normalcolor
+% =====================================================
+%   Schwinger–Dyson 方程（一般形式）
+% =====================================================
+
+
+\medskip\noindent
+从路径积分表示 (\ref{eq:PI-field}) 出发，
+考虑最一般的编时关联函数，
+插入任意多个算符
+$\mathcal{O}_A[p(t_A),q(t_A)]$、
+$\mathcal{O}_B[p(t_B),q(t_B)]$、$\cdots$。
+对 (\ref{eq:IBP-p}) 取被积函数为
+$\mathcal{O}_A\,\mathcal{O}_B\,\cdots\,e^{iI}$：
+\begin{equation}\label{eq:SD-gen-start}
+  0=\int\!\mathcal{D}q\,\frac{\mathcal{D}p}{2\pi}\;
+  \frac{\delta}{\delta p_a(t_A)}
+  \Bigl[\,
+    \mathcal{O}_A\bigl[p(t_A),q(t_A)\bigr]\;
+    \mathcal{O}_B\bigl[p(t_B),q(t_B)\bigr]\;\cdots\;
+    e^{iI}
+  \,\Bigr]\,.
+\end{equation}
+使用\textbf{泛函莱布尼茨法则}，
+$\delta/\delta p_a(t_A)$ 依次作用在每个因子上。
+不同时刻的 $p$ 是独立积分变量，
+$\delta p_b(t')/\delta p_a(t_A)=\delta_{ab}\,\delta(t'-t_A)$，
+$\delta q_b(t')/\delta p_a(t_A)=0$，
+因此：
+\begin{itemize}
+\item 作用在 $\mathcal{O}_A[p(t_A),q(t_A)]$ 上：
+  直接给出偏导数 $\partial\mathcal{O}_A/\partial p_a$；
+\item 作用在 $\mathcal{O}_B[p(t_B),q(t_B)]$ 上：
+  贡献 $(\partial\mathcal{O}_B/\partial p_a)\,\delta(t_A-t_B)$；
+\item 作用在后续因子上：类推；
+\item 作用在 $e^{iI}$ 上：
+  由 (\ref{eq:can_eq}) 给出
+  $i(\dot{q}_a-\partial H/\partial p_a)\,e^{iI}$。
+\end{itemize}
+写成编时期望值并移项，
+记全部插入算符为 $\mathcal{O}_J$（$J=A,B,\dots$），
+得到\textbf{Schwinger--Dyson 方程}：
+\begin{equation}\label{eq:SD-general}
+  \biggl\langle T\!\biggl\{
+    \biggl(\dot{q}_a(t_A)
+      -\frac{\partial H}{\partial p_a(t_A)}\biggr)
+    \;\prod_{J}\mathcal{O}_J(t_J)
+  \biggr\}\biggr\rangle
+  =\;-\,i\;\sum_{K}\delta(t_A-t_K)\;
+  \biggl\langle T\!\biggl\{
+    \frac{\partial\,\mathcal{O}_K}{\partial\,p_a}\;
+    \prod_{J\neq K}\mathcal{O}_J(t_J)
+  \biggr\}\biggr\rangle\,.
+\end{equation}
+对 $q_a(t_A)$ 做泛函导数，类似可得 $p_a$ 运动方程的版本：
+\begin{equation}\label{eq:SD-general-q}
+  \biggl\langle T\!\biggl\{
+    \biggl(\dot{p}_a(t_A)
+      +\frac{\partial H}{\partial q_a(t_A)}\biggr)
+    \;\prod_{J}\mathcal{O}_J(t_J)
+  \biggr\}\biggr\rangle
+  =\;-\,i\;\sum_{K}\delta(t_A-t_K)\;
+  \biggl\langle T\!\biggl\{
+    \frac{\partial\,\mathcal{O}_K}{\partial\,q_a}\;
+    \prod_{J\neq K}\mathcal{O}_J(t_J)
+  \biggr\}\biggr\rangle\,.
+\end{equation}
+
+\medskip\noindent
+(\ref{eq:SD-general}) 的右边是对所有插入算符的求和：
+第 $K$ 项非零，当且仅当 $\mathcal{O}_K$ 显含 $p_a$，
+此时 $\delta(t_A-t_K)$ 将时刻钉死在 $t_K=t_A$——
+这称为\textbf{接触项}。
+若所有 $\mathcal{O}_J$ 都不含 $p_a$，右边为零，
+经典运动方程在编时期望值中精确成立。
+
+\medskip\noindent
+在算符形式中，
+对编时乘积 $T\{Q_a(t_A)\prod_J\mathcal{O}_J(t_J)\}$
+求 $t_A$ 导数时，
+$\theta$-函数的导数产生等时对易子：
+\begin{equation}\label{eq:T-deriv-gen}
+  \frac{\partial}{\partial t_A}\,
+  T\Bigl\{Q_a(t_A)\,\prod_{J}\mathcal{O}_J(t_J)\Bigr\}
+  =T\Bigl\{\dot{Q}_a(t_A)\,\prod_{J}\mathcal{O}_J\Bigr\}
+  +\sum_{K}\delta(t_A-t_K)\;
+  T\Bigl\{
+    \bigl[Q_a,\,\mathcal{O}_K\bigr]
+    \prod_{J\neq K}\mathcal{O}_J
+  \Bigr\}\,.
+\end{equation}
+利用 $[Q_a,\mathcal{O}_K]=i\,\partial\mathcal{O}_K/\partial P_a$
+与 Heisenberg 方程 $\dot{Q}_a=\partial H/\partial P_a$，
+恰好复现 (\ref{eq:SD-general})。因此
+\begin{equation}\label{eq:contact-comm}
+  \underbrace{%
+    -\,i\;\sum_{K}\delta(t_A-t_K)\;
+    \biggl\langle T\!\biggl\{
+      \frac{\partial\,\mathcal{O}_K}{\partial\,p_a}\;
+      \prod_{J\neq K}\mathcal{O}_J
+    \biggr\}\biggr\rangle
+  }_{\text{路径积分：接触项}}
+  \quad\longleftrightarrow\quad
+  \underbrace{%
+    \sum_{K}\delta(t_A-t_K)\;
+    \bigl\langle T\bigl\{
+      [Q_a,\,\mathcal{O}_K]\,
+      \textstyle\prod_{J\neq K}\mathcal{O}_J
+    \bigr\}\bigr\rangle
+  }_{\text{算符形式：等时对易子}}\,.
+\end{equation}
+路径积分中的接触项与算符形式中的等时对易关系
+是同一量子效应的两种语言。
+
+
+% =============================================================
+%   讨论 2：约束系统与黑塞矩阵
+% =============================================================
+\topictitle{约束系统与黑塞矩阵}
+
+\noindent
+\textbf{1.\;从相空间到构型空间}
+
+\medskip\noindent
+对许多理论（如实标量场
+$\mathcal{L}=\frac{1}{2}\partial_\mu\phi\,\partial^\mu\phi-V(\phi)$），
+$p_a$ 在指数 $p\dot{q}-\mathscr{H}$
+中仅出现为高斯形式。
+对 $p$ 完成高斯积分后，
+相空间路径积分退化为构型空间路径积分：
+\begin{equation}\label{eq:config-PI}
+  Z=\int\!\mathcal{D}q\;e^{iS[q]}\,,\qquad
+  S[q]=\int\!d^4x\;\mathcal{L}(q,\partial_\mu q)\,.
+\end{equation}
+这一步能否执行，取决于\textbf{黑塞矩阵}
+\begin{equation}\label{eq:Hessian}
+  \mathcal{M}_{ab}
+  \equiv
+  \frac{\partial^2\mathcal{L}}
+    {\partial\dot{q}_a\,\partial\dot{q}_b}
+\end{equation}
+是否非退化（$\det\mathcal{M}\neq 0$）。
+\begin{itemize}
+  \item $\det\mathcal{M}\neq 0$：
+    Legendre 变换 $p_a=\partial\mathcal{L}/\partial\dot{q}_a$
+    可唯一解出 $\dot{q}_a(q,p)$，
+    高斯积分产生因子 $(\det\mathcal{M})^{1/2}$
+    吸收进测度。
+  \item $\det\mathcal{M}=0$：
+    不能解出所有速度，
+    存在\textbf{约束} $\chi_\alpha(q,p)=0$，
+    Legendre 变换失败。
+\end{itemize}
+
+\medskip\noindent
+\textbf{2.\;约束的物理来源}
+
+\medskip\noindent
+以电磁场
+$\mathcal{L}=-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}$ 为例，
+$\mathcal{L}$ 不含 $\dot{A}_0$，故
+$P^0=\partial\mathcal{L}/\partial\dot{A}_0=0$（初级约束）。
+黑塞矩阵在 $A_0$ 方向有零本征值——
+正是\textbf{规范冗余度}的信号。
+对规范理论，Faddeev--Popov 方法在路径积分中
+引入规范固定条件和鬼场，
+将冗余积分约化为物理自由度上的积分。
+这将在非阿贝尔规范理论中系统展开。
+
+
+
+% =============================================================
+%   讨论 4：欧几里得路径积分
+% =============================================================
+\topictitle{欧几里得路径积分与非微扰物理}
+
+\noindent
+\textbf{1.\;闵可夫斯基路径积分的困难}
+
+\medskip\noindent
+(\ref{eq:PI-phase}) 的被积函数
+$e^{iI}$（$I\in\mathbb{R}$）的模为
+$|e^{iI}|=1$——纯振荡。
+这使得数值计算（如格点 QCD）遭遇
+符号问题，Monte Carlo 采样失效；
+严格分析中收敛性难以定义；
+对非微扰效应缺乏数学控制。
+
+\medskip\noindent
+\textbf{2.\;Wick 转动}
+
+\medskip\noindent
+做解析延拓 $t=-i\tau_E$
+（$\tau_E\in\mathbb{R}$，欧几里得时间）。
+在构型空间路径积分（已对 $p$ 完成高斯积分后）中，
+以 $L=\frac{1}{2}m\dot{q}^2-V(q)$ 为例：
+\[
+  iS = i\!\int\!dt\,
+    \bigl(\tfrac{1}{2}m\dot{q}^2-V\bigr)
+  = -\!\int\!d\tau_E\,
+    \bigl(\tfrac{1}{2}m\dot{q}_E^{\,2}+V\bigr)
+  \equiv -S_E\,,
+\]
+因此
+\begin{equation}\label{eq:Wick}
+  e^{\,iS}\;\longrightarrow\;e^{-S_E}\,,\qquad
+  S_E\geq 0\,.
+\end{equation}
+被积函数从纯振荡变为\textbf{指数衰减}：
+远离经典路径的构型被强烈压低。
+对一般 $3{+}1$ 维场论
+（$x^0=-ix^0_E$，度规变为欧几里得），
+以实标量场为例：
+\begin{equation}\label{eq:ZE}
+  Z_E=\int\!\mathcal{D}\phi\;e^{-S_E[\phi]}\,,\qquad
+  S_E[\phi]=\int\!d^4x_E\,
+    \Bigl(\tfrac{1}{2}(\nabla_E\phi)^2+V(\phi)\Bigr)
+    \geq 0\,.
+\end{equation}
+此形式的优点：
+(i)~$e^{-S_E}\leq 1$ 提供自然截断，
+收敛性可严格讨论；
+(ii)~$e^{-S_E}$ 正定，
+Monte Carlo 采样可行——格点场论的基础；
+(iii)~$Z_E$ 与统计力学配分函数形式相同
+（$S_E\leftrightarrow\beta E$），
+重正化群等工具直接移植；
+(iv)~解析延拓 $\tau_E\to it$
+恢复闵可夫斯基 Feynman 振幅
+（Osterwalder--Schrader 重建定理）。
+
+\medskip\noindent
+\textbf{3.\;非微扰物理}
+
+\medskip\noindent
+路径积分远不止是导出 Feynman 规则的工具。
+用路径积分计算欧几里得空间中的振幅，
+指数的变量是一个\textbf{负的实量}——
+取代了锯齿状路径产生的激烈振荡，
+所有远离经典路径的构型被指数式地抑制。
+这使得以下非微扰效应可以被系统地处理：
+
+\begin{itemize}
+  \item \textbf{瞬子}
+  \item \textbf{$\theta$-真空}
+  \item \textbf{格点场论与禁闭}
+\end{itemize}
+
+\noindent
+正如 Weinberg 所强调：
+路径积分方法允许我们解释那些
+在零耦合常数处有显然奇异性的 S-矩阵贡献，
+这样的贡献无法在任何有限阶微扰论中被发现。
+自此以后，路径积分方法就变成了
+所有使用量子场论的物理学家的工具中
+不可分割的一部分。
+
 \input{intercation_theory/bosonic_path_integrals.tex}
 \input{intercation_theory/fermionic_path_integrals.tex}
